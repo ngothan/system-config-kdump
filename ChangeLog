@@ -1,0 +1,8 @@
+2006-10-10  Dave Lehman  <dlehman@redhat.com>
+
+	* src/system-config-kdump.py,src/system-config-kdump.glade:
+	fix various bugs in writeDumpConfig and writeBootloaderConfig
+	reflect pre-existing "ifc" and "default" lines in GUI on startup
+	don't ever freeze the net interface checkbutton
+	minor GUI tweaks
+	
