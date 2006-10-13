@@ -3,17 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-06 23:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2006-10-14 01:01+0800\n"
+"Last-Translator: ProgramFan <zyangmath@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #.
@@ -21,87 +20,86 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:66 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:66
+#: system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
-msgstr ""
+msgstr "内核转储配置"
 
 #: ../src/system-config-kdump.py:67
 msgid "Configure kdump/kexec"
-msgstr ""
+msgstr "配置 kdump/kexec"
 
 #: ../src/system-config-kdump.py:113
 msgid "Sorry, Xen kernels do not support kdump at this time!"
-msgstr ""
+msgstr "对不起，Xen 内核目前尚不支持 kdump ！"
 
-#: ../src/system-config-kdump.py:130 ../src/system-config-kdump.py:173
+#: ../src/system-config-kdump.py:130
+#: ../src/system-config-kdump.py:173
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/system-config-kdump.py:154
 msgid "This system does not have enoughmemory for kdump to be viable"
-msgstr ""
+msgstr "系统没有足够的内存来正常运行 kdump。"
 
 #: ../src/system-config-kdump.py:201
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: ../src/system-config-kdump.py:203
 msgid "Location"
-msgstr ""
+msgstr "位置"
 
 #: ../src/system-config-kdump.py:243
 #, python-format
-msgid ""
-"Changing Kdump settings requires rebooting the system to reallocate memory "
-"accordingly. %sYou will have to reboot the system for the new settings to "
-"take effect."
-msgstr ""
+msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
+msgstr "改变 Kdump 设置要求重新启动系统以重新分配内存。%s 您必须重启系统以使新设置生效。"
 
 #: ../src/system-config-kdump.py:273
 msgid "Edit Location"
-msgstr ""
+msgstr "编辑位置"
 
 #: ../src/system-config-kdump.py:275
 msgid "New Location"
-msgstr ""
+msgstr "新建位置"
 
 #: ../src/system-config-kdump.py:287
 msgid "Select or enter a location type:"
-msgstr ""
+msgstr "选择或输入位置类型："
 
 #. TODO: provide a hint depending on type?  ("eg: user@host:/path")
 #: ../src/system-config-kdump.py:305
 msgid "Enter location:"
-msgstr ""
+msgstr "输入位置："
 
 #: ../src/system-config-kdump.py:542
 msgid "Error! No bootloader config file found, aborting configuration!"
-msgstr ""
+msgstr "错误！没有找到引导程序的配置文件，将退出配置程序！"
 
 #: ../src/system-config-kdump.py:664
 msgid "You must be root to run this application."
-msgstr ""
+msgstr "您必须作为 root 方能运行该程序。"
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
-msgstr ""
+msgstr "启用 kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr ""
+msgstr "系统总内存 (MB):"
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr ""
+msgstr "kdump 内存 (MB):"
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr ""
+msgstr "可用内存 (MB):"
 
 #: system-config-kdump.gladestrings:12
 msgid "Default Action:"
-msgstr ""
+msgstr "默认动作："
 
 #: system-config-kdump.gladestrings:13
 msgid "Network Interface Override:"
@@ -109,16 +107,17 @@ msgstr ""
 
 #: system-config-kdump.gladestrings:14
 msgid "Reboot"
-msgstr ""
+msgstr "重新启动"
 
 #: system-config-kdump.gladestrings:15
 msgid "Shell"
-msgstr ""
+msgstr "Shell"
 
 #: system-config-kdump.gladestrings:16
 msgid "Move Up"
-msgstr ""
+msgstr "上移"
 
 #: system-config-kdump.gladestrings:17
 msgid "Move Down"
-msgstr ""
+msgstr "下移"
+
