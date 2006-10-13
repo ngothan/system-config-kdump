@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-06 23:32-0500\n"
-"PO-Revision-Date: 2006-10-14 01:01+0800\n"
+"PO-Revision-Date: 2006-10-14 02:31+0800\n"
 "Last-Translator: ProgramFan <zyangmath@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,11 +75,11 @@ msgstr "输入位置："
 
 #: ../src/system-config-kdump.py:542
 msgid "Error! No bootloader config file found, aborting configuration!"
-msgstr "错误！没有找到引导程序的配置文件，将退出配置程序！"
+msgstr "错误！没有找到引导程序配置文件，将退出本配置程序！"
 
 #: ../src/system-config-kdump.py:664
 msgid "You must be root to run this application."
-msgstr "您必须作为 root 方能运行该程序。"
+msgstr "您必须作为 root 方能运行本程序。"
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -87,23 +87,24 @@ msgstr "启用 kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr "系统总内存 (MB):"
+msgstr "系统总内存(MB)："
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr "kdump 内存 (MB):"
+msgstr "kdump 内存(MB)："
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr "可用内存 (MB):"
+msgstr "可用内存(MB)："
 
 #: system-config-kdump.gladestrings:12
 msgid "Default Action:"
 msgstr "默认动作："
 
+# (如果转储到网络)
 #: system-config-kdump.gladestrings:13
 msgid "Network Interface Override:"
-msgstr ""
+msgstr "网络接口设定："
 
 #: system-config-kdump.gladestrings:14
 msgid "Reboot"
@@ -111,7 +112,7 @@ msgstr "重新启动"
 
 #: system-config-kdump.gladestrings:15
 msgid "Shell"
-msgstr "Shell"
+msgstr "进入Shell"
 
 #: system-config-kdump.gladestrings:16
 msgid "Move Up"
