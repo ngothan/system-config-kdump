@@ -168,8 +168,8 @@ class mainWindow:
         if cmdLine.find("crashkernel=") > 1:
             self.kdumpEnabled = True
             self.kdumpEnableCheckButton.set_active(True)
-            crashString = filter(lambda t: t.startswith("crashkernel="), cmdLine.split())[0]
-            (kdumpMem, kdumpOffset) = [m[:-1] for m in crashString.split("=")]
+            crashString = filter(lambda t: t.startswith("crashkernel="), cmdLine.split())[0].split("=")[1]
+            (kdumpMem, kdumpOffset) = [int(m[:-1]) for m in crashString.split("@")]
             totalMem += kdumpMem
             self.origCrashKernel = "%dM@%dM" % (kdumpMem, kdumpOffset)
         else:
