@@ -1,7 +1,7 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
 Version: 1.0.1
-Release: 1
+Release: 3
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
 ExclusiveOS: Linux
@@ -73,6 +73,9 @@ fi
 #%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-display.png
 
 %changelog
+* Mon Oct 16 2006 Dave Lehman <dlehman@redhat.com> 1.0.1-3
+- Fix parsing of "crashkernel=..." string from /proc/cmdline
+
 * Tue Oct 10 2006 Dave Lehman <dlehman@redhat.com> 1.0.1-1
 - Fix bugs in writeDumpConfig and writeBootloaderConfig
 - Fix handling of pre-existing "ifc" and "default" directives
