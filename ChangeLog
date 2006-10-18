@@ -1,3 +1,13 @@
+2006-10-18  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	add support for "core_collector" and "path" handlers
+	give choices of "ssh" and "nfs" instead of "net"
+	add validation of edit location dialog results
+	add choice of "none" to default actions
+	remove "ifc" support since it's gone from kexec-tools
+	update kdump config file header
+	fix a couple of strings that weren't getting translated
+
 2006-10-16  Dave Lehman  <dlehman@redhat.com>
 
 	* src/system-config-kdump.py:

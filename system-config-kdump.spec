@@ -1,7 +1,7 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.1
-Release: 3
+Version: 1.0.2
+Release: 1
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
 ExclusiveOS: Linux
@@ -73,8 +73,20 @@ fi
 #%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-display.png
 
 %changelog
+* Tue Oct 18 2006 Dave Lehman <dlehman@redhat.com> 1.0.2-1
+- add support for "core_collector" and "path" handlers
+- give choices of "ssh" and "nfs" instead of "net"
+- validate results of edit location dialog
+- add choice of "none" to default actions
+- remove "ifc" support since it's gone from kexec-tools
+- update kdump config file header
+- fix a couple of strings that weren't getting translated
+
 * Mon Oct 16 2006 Dave Lehman <dlehman@redhat.com> 1.0.1-3
 - Fix parsing of "crashkernel=..." string from /proc/cmdline
+
+* Fri Oct 13 2006 Dave Lehman <dlehman@redhat.com> 1.0.1-2
+- convert crashkernel values to ints when parsing
 
 * Tue Oct 10 2006 Dave Lehman <dlehman@redhat.com> 1.0.1-1
 - Fix bugs in writeDumpConfig and writeBootloaderConfig

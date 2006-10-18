@@ -25,6 +25,7 @@ import gtk.glade
 
 import sys
 import os
+import stat
 
 ##
 ## I18N
@@ -46,8 +47,11 @@ bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16),
                 "yaboot" : ("/boot/etc/yaboot.conf", 16),
                 "elilo"  : ("/boot/efi/efi/redhat/elilo.conf", 256) }
 
-locationTypes = ["net", "raw"]
-defaultActions = ["reboot", "shell"]
+locationTypes = ["nfs", "ssh", "raw"]
+netLocationTypes = ("nfs", "ssh")
+defaultActions = ["reboot", "shell", "none"]
+
+DEFAULT_PATH = "/var/crash"
 
 unsupportedArches = ("ppc", "s390", "s390x", "i386", "i586")
 kernelKdumpArches = ("ppc64")
@@ -65,7 +69,8 @@ If no locations are specified, the vmcore will be placed in
 /var/crash/YYYY-MM-DD-HH:mm/
 """
 
-KDUMP_CONFIG_HEADER = """#
+KDUMP_CONFIG_HEADER = """# Configures where to put the kdump /proc/vmcore files
+#
 # This file contains a series of commands to perform (in order) when a
 # kernel crash has happened and the kdump kernel has been loaded
 # 
@@ -73,31 +78,50 @@ KDUMP_CONFIG_HEADER = """#
 # primary choice is not available at crash time
 #
 # Basics commands supported are:
-# raw <partition>     - will dd /proc/vmcore into <partition>
+# raw <partition> - will dd /proc/vmcore into <partition>
 # net <nfs mount>     - will mount fs and copy /proc/vmcore to 
 #			<mnt>/var/crash/%DATE/ , supports DNS
 # net <user@location> - will scp /proc/vmcore to 
 #			<user@location>:/var/crash/%DATE/, supports DNS
-# <fs type>           - will mount -t <fs type> /mnt and copy /proc/vmcore to 
-#			/mnt/var/crash/%DATE/
-# ifc <interface>     - instead of bringing up the interface that is normally 
-#                       associated with the next hop of the ip address you plan
-#                       to use with scp or nfs activate this interface instead.
-#                       This is sometimes needed in the event that the kdump 
-#                       kernel assigns your interface a different name, given
-#                       that it only loads the driver needed for the specific 
-#                       interface you are going to use
-# default reboot      - if all of the above fail, then reboot the system 
-#			and accept the /proc/vmcore is lost, else 
-#			comment out 'default' to fall through and fix 
-#			the system (if the disk is available)
-#
-# Examples
+#			NOTE: Currently only the root user is supported
+# <fs type> <partition> - will mount -t <fs type> <partition> /mnt and 
+#                         copy /proc/vmcore to /mnt/var/crash/%DATE/.
+#			  NOTE: <partition> can be a device node, label or uuid.
+# path <path>	      - Append this path to the filesystem device which you 
+#                       are dumping to 
+#                       NOTE: only used with actual filesystems (ssh, nfs, 
+#                             local fs).
+#			NOTE: if unset, will default to /var/crash
+# core_collector makedumpfile <options> - This directive allows you to use 
+#                                         the dump filtering program 
+#                                         makedumpfile to retrieve your core, 
+#                                         which on some arches can drastically
+#		                          reduce core file size.  see 
+#                                         /sbin/makedumpfile --help for a list 
+#                                         of options
+#		        NOTE: the -i and -g options are not needed here, as 
+#                             the initrd will automatically be populated with
+#                             a config file appropriate for the running kernel 
+# default <reboot | shell> - if all of the above fail, do the default action. 
+#		      reboot: if the default action is reboot simply reboot 
+#                             the system and lose the core that you are trying
+#                             to retrieve
+#		      shell:  if the default action is shell, then drop to an 
+#                             msh session inside the initramfs from which you 
+#                             can try to record the core manually.  exiting 
+#                             this shell reboots the system
+#		      NOTE: If no default action is specified, the initramfs 
+#                           will mount the root file system and run init.
+
 #raw /dev/sda5
 #ext3 /dev/sda3
+#ext3 LABEL=/boot
+#ext3 UUID=03138356-5e61-4ab3-b58e-27507ac41937
 #net my.server.com:/export/tmp
 #net user@my.server.com
-#default reboot
+#path /var/crash
+#core_collector makedumpfile -c
+#default shell
 """
 
 """
@@ -112,12 +136,12 @@ class mainWindow:
 
         self.xml = xml
         self.locations = []
-        #self._defaultLocation = ('', '/var/crash/YYYY-MM-DD-HH:mm')
 
         self.arch = None
 
-        self.networkInterface = ""
         self.defaultAction = "reboot"
+        self.path = DEFAULT_PATH
+        self.coreCollector = ""
 
         self.kdumpEnabled = False
         self.totalMem = 0
@@ -143,7 +167,7 @@ class mainWindow:
         self.arch = os.popen("/bin/uname -m").read().strip()
 
         if self.arch in unsupportedArches:
-            self.showErrorMessage("Sorry, this architecture does not currently support kdump")
+            self.showErrorMessage(_("Sorry, this architecture does not currently support kdump"))
             sys.exit(1)
 
         memInfo = open("/proc/meminfo").readlines()
@@ -153,7 +177,7 @@ class mainWindow:
                 totalMem = int(line.split()[1]) / 1024
 
         if not totalMem:
-            self.showErrorMessage("Failed to detect total system memory")
+            self.showErrorMessage(_("Failed to detect total system memory"))
             sys.exit(1)
        
         self.runningKernel = os.popen("/bin/uname -r").read().strip()
@@ -225,14 +249,15 @@ class mainWindow:
 
         self.advancedConfigTable = self.xml.get_widget("advancedConfigTable")
         self.defaultActionCombo = self.xml.get_widget("defaultActionCombo")
-        self.networkInterfaceButton = self.xml.get_widget("networkInterfaceCheckButton")
-        self.networkInterfaceEntry = self.xml.get_widget("networkInterfaceEntry")
-        self.networkInterfaceButton.set_active(False)
-        self.networkInterfaceEntry.set_sensitive(False)
-        self.networkInterfaceButton.connect("toggled", self.networkInterfaceButtonToggled)
+
+        for action in defaultActions:
+            self.defaultActionCombo.append_text(action)
 
         self.defaultActionCombo.set_active(defaultActions.index(self.defaultAction))
         self.defaultActionCombo.connect("changed", self.setDefaultAction)
+
+        self.pathEntry = self.xml.get_widget("pathEntry")
+        self.coreCollectorEntry = self.xml.get_widget("coreCollectorEntry")
 
         self.locationVBox = self.xml.get_widget("locationVBox")
         self.locationToolbar = self.xml.get_widget("locationToolbar")
@@ -279,10 +304,14 @@ class mainWindow:
         gtk.main_quit()
 
     def okClicked(self, *args):
-        self.setNetworkInterface()
-        self.setBootloader()
+        if not self.setBootloader():
+            return
 
-        # TODO: sanity check all input
+        if not self.setCoreCollector():
+            return
+
+        if not self.setPath():
+            return
 
         kernelKdumpNote = ""
         if self.arch in kernelKdumpArches:
@@ -312,10 +341,6 @@ class mainWindow:
 
     def cancelClicked(self, *args):
         self.destroy()
-
-    def networkInterfaceButtonToggled(self, *args):
-        state = self.networkInterfaceButton.get_active()
-        self.networkInterfaceEntry.set_sensitive(state)
 
     def locationEditDialog(self, type=None, location=None):
         if type and location:
@@ -372,25 +397,67 @@ class mainWindow:
             entry2.set_text(location)
             combo.set_sensitive(False)
 
-        rc = d.run()
-        d.destroy()
-
-        if rc == gtk.RESPONSE_ACCEPT:
+        while d.run() == gtk.RESPONSE_ACCEPT:
             if rb1.get_active():
                 iter = combo.get_active_iter()
                 new_type = combo.get_model().get_value(iter, 0).strip()
             else:
-                new_type = entry1.get_text().strip() # FIXME: validate this!!!
-                assert new_type.strip()
+                new_type = entry1.get_text().strip()
+                if not new_type:
+                    self.showErrorMessage(_("You must specify a type for this location"))
+                    continue
 
-            new_location = entry2.get_text().strip() # FIXME: validate this!!!
+            new_location = entry2.get_text().strip()
 
-            assert new_location.strip()
+            # try to validate the new location
+            if new_type == "ssh":
+                if new_location.find(":") == -1 or new_location.find("@") == -1:
+                    self.showErrorMessage(_("SSH locations must be of the form 'user@host:/path'"))
+                    continue
+            elif new_type == "nfs":
+                if new_location.find(":") == -1:
+                    self.showErrorMessage(_("NFS locations must be of the form 'host:/path'"))
+                    continue
+            elif new_type == "raw":
+                try:
+                    st = os.stat(new_location)
+                except OSError:
+                    self.showErrorMessage(_("Failed to stat device node '%s'" % new_location))
+                    continue
+                else:
+                    if not stat.S_ISBLK(st.st_mode):
+                        self.showErrorMessage(_("For raw locations you must specify a valid device node."))
+                        continue
+            else:
+                if not os.access("/sbin/fsck.%s" % new_type, os.X_OK):
+                    self.showErrorMessage(_("Support for filesystem type '%s' is not present on this system" % new_type)) 
+                    continue
 
+                # XXX need to find a way to validate labels & uuids
+                if new_location.startswith("LABEL="):
+                    # look up and validate the device
+                    pass
+                elif new_location.startswith("UUID="):
+                    # look up and validate the device
+                    pass
+                else:
+                    try:
+                        st = os.stat(new_location)
+                    except OSError:
+                        self.showErrorMessage(_("Failed to stat device node '%s'" % new_location))
+                        continue
+                    else:
+                        if not stat.S_ISBLK(st.st_mode):
+                            self.showErrorMessage(_("'%s' locations must specify a valid device node." % new_type))
+                            continue
+
+            # everything appears to be in order
             retval = (new_type, new_location)
+            break
         else:
             retval = (type, location)
 
+        d.destroy()
         return retval
 
     def addLocationHandler(self, *args):
@@ -499,6 +566,12 @@ class mainWindow:
             print "addLocation (%s, %s)" % (type, location)
             print "locations is", self.locations
 
+        # fixup the type
+        if type == "net" and location.find("@") > -1:
+            type = "ssh"
+        elif type == "net":
+            type = "nfs"
+
         if (type, location) in self.locations:
             if debug:
                 print "location (\'%s\', \'%s\') already in locations" % (type, 
@@ -533,11 +606,15 @@ class mainWindow:
                 print "  \'%s\'" % (line,)
                 continue
 
-            # FIXME: is case going to be an issue?
+            # XXX is case going to be an issue?
             if type == "default":
                 self.setDefaultAction(location)
             elif type == "ifc":
-                self.setNetworkInterface(location)
+                continue
+            elif type == "path":
+                self.setPath(location)
+            elif type == "core_collector":
+                self.setCoreCollector(location)
             else:
                 self.addLocation(type, location)
 
@@ -554,24 +631,31 @@ class mainWindow:
 
         fd = open(KDUMP_CONFIG_FILE, "w")
         fd.write(KDUMP_CONFIG_HEADER)
-        if self.networkInterface and self.networkInterfaceButton.get_active():
-            fd.write("ifc %s\n" % (self.networkInterface,))
-
         for location in self.locations:
-            fd.write("%s %s\n" % location)
+            if location[0] in netLocationTypes:
+                fd.write("net %s %s\n" % location)
+            else:
+                fd.write("%s %s\n" % location)
 
-        fd.write("default %s\n" % (self.defaultAction,))
+        fd.write("path %s\n" % self.path)
+
+        if self.coreCollector:
+            fd.write("core_collector %s\n" % self.coreCollector)
+
+        if self.defaultAction != "none":
+            fd.write("default %s\n" % (self.defaultAction,))
+
         fd.close()
 
     def setBootloader(self):
         for (name, (conf, offset)) in bootloaders.items():
-            # I hope I'm right to think that order doesn't matter
+            # I hope order doesn't matter
             if os.access(conf, os.W_OK) or (testing and os.path.exists(conf)):
                 self.bootloader = name
 
         if self.bootloader is None:
             self.showErrorMessage(_("Error! No bootloader config file found, aborting configuration!"))
-            self.destroy() # FIXME: gracefully, my son
+            self.destroy()
 
         return self.bootloader
 
@@ -621,17 +705,35 @@ class mainWindow:
         if debug:
             print "setting defaultAction to", self.defaultAction
 
-    def setNetworkInterface(self, interface=None):
-        if interface:
-            self.networkInterface = interface
-            self.networkInterfaceEntry.set_text(interface)
-            if not self.networkInterfaceButton.get_active():
-                self.networkInterfaceButton.set_active(True)
-        else:
-            self.networkInterface = self.networkInterfaceEntry.get_text().strip()
+        return True
 
-        if debug:
-            print "setting networkInterface to", self.networkInterface
+    def setPath(self, path=None):
+        if path is None:
+            # grab the path from the UI
+            path = self.pathEntry.get_text().strip()
+            if not path:
+                path = DEFAULT_PATH
+
+        if not path.startswith("/"):
+            self.showErrorMessage(_("Path must start with '/'"))
+            return False
+
+        self.path = path
+        self.pathEntry.set_text(path)
+        return True
+
+    def setCoreCollector(self, collector=None):
+        if collector is None:
+            # grab the value from the UI
+            collector = self.coreCollectorEntry.get_text().strip()
+
+        if collector and not collector.startswith("makedumpfile"):
+            self.showErrorMessage(_("Core collector must begin with 'makedumpfile'"))
+            return False
+
+        self.coreCollector = collector
+        self.coreCollectorEntry.set_text(collector)
+        return True
 
     def kdumpEnableToggled(self, *args):
         if self.kdumpEnabled:
@@ -647,7 +749,7 @@ class mainWindow:
         self.locationVBox.set_sensitive(self.kdumpEnabled)
 
     def showErrorMessage(self, text):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _(text))
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, text)
         dlg.set_position(gtk.WIN_POS_CENTER)
         dlg.set_modal(True)
         dlg.run()
