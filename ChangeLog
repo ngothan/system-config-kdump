@@ -1,3 +1,14 @@
+2006-10-19  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	rearrange UI to allow only one location
+	declare global variables for the type, action string constants
+	check for a usable bootloader early on
+	* system-config-kdump.spec:
+	remove BuildRoot before %install
+	add gettext BuildRequires
+	remove ExclusiveOS tag
+	remove explicit python2 Requires
+
 2006-10-18  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	add support for "core_collector" and "path" handlers

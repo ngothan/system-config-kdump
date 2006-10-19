@@ -43,31 +43,48 @@ else:
 
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
+#             bootloader : (config file, kdump offset)
 bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16),
                 "yaboot" : ("/boot/etc/yaboot.conf", 16),
                 "elilo"  : ("/boot/efi/efi/redhat/elilo.conf", 256) }
 
-locationTypes = ["nfs", "ssh", "raw"]
-netLocationTypes = ("nfs", "ssh")
-defaultActions = ["reboot", "shell", "none"]
+TYPE_LOCAL = _("local")
+TYPE_NET = "net"
+TYPE_NFS = "nfs"
+TYPE_SSH = "ssh"
+TYPE_RAW = "raw"
+TYPE_DEFAULT = TYPE_LOCAL
 
-DEFAULT_PATH = "/var/crash"
+ACTION_REBOOT = "reboot"
+ACTION_SHELL = "shell"
+ACTION_DEFAULT = _("mount rootfs and run /sbin/init")
+
+PATH_DEFAULT = "/var/crash"
+CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
+
+locationTypes = [TYPE_LOCAL, TYPE_NFS, TYPE_SSH, TYPE_RAW]
+netLocationTypes = (TYPE_NFS, TYPE_SSH)
+defaultActions = [ACTION_REBOOT, ACTION_SHELL, ACTION_DEFAULT]
 
 unsupportedArches = ("ppc", "s390", "s390x", "i386", "i586")
 kernelKdumpArches = ("ppc64")
 debug = 0 
 testing = 0
 
-KDUMP_BLURB = """
-Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses.
-"""
+KDUMP_BLURB = _("Kdump is a new kernel crash dumping mechanism. In the event "
+                "of a system crash, a core file can be captured using kdump, "
+                "which runs in the context of a freshly booted kernel, making "
+                "it far more reliable than methods capturing within the "
+                "context of the crashed kernel. Being able to capture a core "
+                "file can be invaluable in helping determine the root cause "
+                "of a system crash. Note that kdump does require reserving a "
+                "portion of system memory that will be unavailable for other "
+                "uses.")
 
-LOCATION_BLURB = """
-Kdump will attempt to place the vmcore at each of the following locations, in order, until it either succeeds or runs out of locations to try. In the event that it fails to place the vmcore at any location, the default action (specified above) will be executed.
-
-If no locations are specified, the vmcore will be placed in 
-/var/crash/YYYY-MM-DD-HH:mm/
-"""
+LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
+                   "location. In the event that it fails to place the vmcore "
+                   "at location, the default action (specified below) will "
+                   "be executed.")
 
 KDUMP_CONFIG_HEADER = """# Configures where to put the kdump /proc/vmcore files
 #
@@ -126,7 +143,6 @@ KDUMP_CONFIG_HEADER = """# Configures where to put the kdump /proc/vmcore files
 
 """
     TODO:
-        - validate all input before writing configs (ASAP, really)
 
 """
 class mainWindow:
@@ -135,13 +151,15 @@ class mainWindow:
         commentTag = _("Configure kdump/kexec")
 
         self.xml = xml
-        self.locations = []
+        self.location = (TYPE_DEFAULT, PATH_DEFAULT)
 
         self.arch = None
 
-        self.defaultAction = "reboot"
-        self.path = DEFAULT_PATH
-        self.coreCollector = ""
+        self._quiet = False # if set, don't pop up any message boxes or dialogs
+
+        self.defaultAction = ACTION_DEFAULT
+        self.path = PATH_DEFAULT
+        self.coreCollector = CORE_COLLECTOR_DEFAULT
 
         self.kdumpEnabled = False
         self.totalMem = 0
@@ -167,7 +185,8 @@ class mainWindow:
         self.arch = os.popen("/bin/uname -m").read().strip()
 
         if self.arch in unsupportedArches:
-            self.showErrorMessage(_("Sorry, this architecture does not currently support kdump"))
+            self.showErrorMessage(_("Sorry, this architecture does not "
+                                    "currently support kdump"))
             sys.exit(1)
 
         memInfo = open("/proc/meminfo").readlines()
@@ -182,17 +201,19 @@ class mainWindow:
        
         self.runningKernel = os.popen("/bin/uname -r").read().strip()
         if self.runningKernel.find("xen") != -1:
-            self.showErrorMessage(_("Sorry, Xen kernels do not support kdump at this time!"))
+            self.showErrorMessage(_("Sorry, Xen kernels do not support kdump "
+                                    "at this time!"))
             sys.exit(1)
 
         # Fix up memory calculations in case kdump is already on
         cmdLine = open("/proc/cmdline").read()
         kdumpMem = 0
         kdumpOffset = 0
-        if cmdLine.find("crashkernel=") > 1:
+        if cmdLine.find("crashkernel=") > -1:
             self.kdumpEnabled = True
             self.kdumpEnableCheckButton.set_active(True)
-            crashString = filter(lambda t: t.startswith("crashkernel="), cmdLine.split())[0].split("=")[1]
+            crashString = filter(lambda t: t.startswith("crashkernel="), 
+                                  cmdLine.split())[0].split("=")[1]
             (kdumpMem, kdumpOffset) = [int(m[:-1]) for m in crashString.split("@")]
             totalMem += kdumpMem
             self.origCrashKernel = "%dM@%dM" % (kdumpMem, kdumpOffset)
@@ -223,7 +244,7 @@ class mainWindow:
                 upperBound = 128
                 # Okay, they simply don't have enough memory for kdump to be viable
                 if (totalMem - upperBound) < 192:
-                    self.showErrorMessage(_("This system does not have enough"
+                    self.showErrorMessage(_("This system does not have enough "
                                              "memory for kdump to be viable"))
                     sys.exit(1)
         
@@ -247,7 +268,6 @@ class mainWindow:
         if debug:
             print "totalMem = %dM\nkdumpMem = %dM\nusableMem = %dM" % (totalMem, kdumpMem, self.usableMem)
 
-        self.advancedConfigTable = self.xml.get_widget("advancedConfigTable")
         self.defaultActionCombo = self.xml.get_widget("defaultActionCombo")
 
         for action in defaultActions:
@@ -258,35 +278,17 @@ class mainWindow:
 
         self.pathEntry = self.xml.get_widget("pathEntry")
         self.coreCollectorEntry = self.xml.get_widget("coreCollectorEntry")
-
-        self.locationVBox = self.xml.get_widget("locationVBox")
-        self.locationToolbar = self.xml.get_widget("locationToolbar")
-        self.locationAddButton = self.xml.get_widget("locationAddButton")
-        self.locationRemoveButton = self.xml.get_widget("locationRemoveButton")
         self.locationEditButton = self.xml.get_widget("locationEditButton")
-        self.locationUpButton = self.xml.get_widget("locationUpButton")
-        self.locationDownButton = self.xml.get_widget("locationDownButton")
-        self.locationScrolledWindow = self.xml.get_widget("locationScrolledWindow")
-        self.locationTreeView = self.xml.get_widget("locationTreeView")
+        self.locationEntry = self.xml.get_widget("locationEntry")
 
-        self.locationStore = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
-       
-        self.tooltips.set_tip(self.locationTreeView, _(LOCATION_BLURB))
-        col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=0)
-        self.locationTreeView.append_column(col)
-        col = gtk.TreeViewColumn(_("Location"), gtk.CellRendererText(), text=1)
-        self.locationTreeView.append_column(col)
-
-        self.locationAddButton.connect("clicked", self.addLocationHandler)
-        self.locationEditButton.connect("clicked", self.editLocationHandler)
-        self.locationRemoveButton.connect("clicked", self.removeLocationHandler)
-        self.locationUpButton.connect("clicked", self.promoteLocationHandler)
-        self.locationDownButton.connect("clicked", self.demoteLocationHandler)
-
+        self.setLocation(self.location)
+        self.setPath()
+        self.setCoreCollector()
         self.loadDumpConfig()
 
-        self.locationTreeView.set_model(self.locationStore)
-
+        self.advancedConfigTable = self.xml.get_widget("advancedConfigTable")
+        self.locationEditButton.connect("clicked", self.editLocationHandler)
+        self.pathEntry.connect("changed", self.updateLocationString)
         self.kdumpEnableCheckButton.connect("toggled", self.kdumpEnableToggled)
         self.kdumpEnabled = not self.kdumpEnabled # gonna get toggled next line
         self.kdumpEnableToggled()
@@ -295,6 +297,9 @@ class mainWindow:
         self.cancelButton = self.xml.get_widget("cancelButton")
         self.cancelButton.connect("clicked", self.cancelClicked)
         self.toplevel.connect("destroy", self.destroy)
+
+        if not self.setBootloader():
+            sys.exit(1)
 
     def run(self):
         self.toplevel.show_all()
@@ -313,15 +318,31 @@ class mainWindow:
         if not self.setPath():
             return
 
+        if self.location[0] not in (TYPE_RAW, TYPE_LOCAL) and not self.path:
+            rc = self.yesNoDialog(_("Path cannot be empty for '%s' locations. "
+                                    "Reset path to default ('%s')?."
+                                    % (self.location[0], PATH_DEFAULT)))
+            if rc == True:
+                self.setPath(PATH_DEFAULT)
+            else:
+                return
+
         kernelKdumpNote = ""
         if self.arch in kernelKdumpArches:
-            kernelKdumpNote = "\n\nNote that the %s architecture does not feature a relocatable kernel at this time, and thus requires a separate kernel-kdump package to be installed for kdump to function. This can be installed via 'yum install kernel-kdump' at your convenience.\n\n" % self.arch
+            kernelKdumpNote = _("\n\nNote that the %s architecture does not "
+                                "feature a relocatable kernel at this time, "
+                                "and thus requires a separate kernel-kdump "
+                                "package to be installed for kdump to "
+                                "function. This can be installed via 'yum "
+                                "install kernel-kdump' at your convenience."
+                                "\n\n" % self.arch)
 
         if self.kdumpEnabled:
-            self.showMessage(_("Changing Kdump settings requires rebooting the "
-                           "system to reallocate memory accordingly. %sYou will"
-                           " have to reboot the system for the new settings to "
-                           "take effect." % kernelKdumpNote))
+            self.showMessage(_("Changing Kdump settings requires rebooting "
+                               "the system to reallocate memory accordingly. "
+                               "%sYou will have to reboot the system for the "
+                               "new settings to take effect." 
+                               % kernelKdumpNote))
 
         if not testing:
             if debug:
@@ -357,6 +378,21 @@ class mainWindow:
             button, widget = args
             widget.set_sensitive(button.get_active())
 
+        def typeChanged(*args):
+            combo, locationEntry = args
+            iter = combo.get_active_iter()
+            type = combo.get_model().get_value(iter, 0).strip()
+            if type == TYPE_DEFAULT:
+                locationEntry.set_text(PATH_DEFAULT)
+                locationEntry.set_sensitive(False)
+                self.defaultActionCombo.set_active(defaultActions.index(ACTION_DEFAULT))
+                self.defaultActionCombo.set_sensitive(False)
+            else:
+                locationEntry.set_sensitive(True)
+                if locationEntry.get_text().strip() == PATH_DEFAULT:
+                    locationEntry.set_text("")
+                self.defaultActionCombo.set_sensitive(True)
+
         vbox1 = gtk.VBox()
         label1 = gtk.Label(str=_("Select or enter a location type:"))
         vbox1.add(label1)
@@ -379,6 +415,7 @@ class mainWindow:
         vbox1.add(label2)
         entry2 = gtk.Entry()
         vbox1.add(entry2)
+        combo.connect("changed", typeChanged, entry2)
         vbox1.show_all()
         d.vbox.pack_start(vbox1)
 
@@ -404,190 +441,166 @@ class mainWindow:
             else:
                 new_type = entry1.get_text().strip()
                 if not new_type:
-                    self.showErrorMessage(_("You must specify a type for this location"))
+                    self.showErrorMessage(_("You must specify a type for "
+                                            "this location"))
                     continue
 
             new_location = entry2.get_text().strip()
-
-            # try to validate the new location
-            if new_type == "ssh":
-                if new_location.find(":") == -1 or new_location.find("@") == -1:
-                    self.showErrorMessage(_("SSH locations must be of the form 'user@host:/path'"))
-                    continue
-            elif new_type == "nfs":
-                if new_location.find(":") == -1:
-                    self.showErrorMessage(_("NFS locations must be of the form 'host:/path'"))
-                    continue
-            elif new_type == "raw":
-                try:
-                    st = os.stat(new_location)
-                except OSError:
-                    self.showErrorMessage(_("Failed to stat device node '%s'" % new_location))
-                    continue
-                else:
-                    if not stat.S_ISBLK(st.st_mode):
-                        self.showErrorMessage(_("For raw locations you must specify a valid device node."))
-                        continue
-            else:
-                if not os.access("/sbin/fsck.%s" % new_type, os.X_OK):
-                    self.showErrorMessage(_("Support for filesystem type '%s' is not present on this system" % new_type)) 
-                    continue
-
-                # XXX need to find a way to validate labels & uuids
-                if new_location.startswith("LABEL="):
-                    # look up and validate the device
-                    pass
-                elif new_location.startswith("UUID="):
-                    # look up and validate the device
-                    pass
-                else:
-                    try:
-                        st = os.stat(new_location)
-                    except OSError:
-                        self.showErrorMessage(_("Failed to stat device node '%s'" % new_location))
-                        continue
-                    else:
-                        if not stat.S_ISBLK(st.st_mode):
-                            self.showErrorMessage(_("'%s' locations must specify a valid device node." % new_type))
-                            continue
-
-            # everything appears to be in order
-            retval = (new_type, new_location)
-            break
+            if self.setLocation((new_type, new_location)):
+                retval = (new_type, new_location)
+                break
         else:
             retval = (type, location)
 
         d.destroy()
         return retval
 
-    def addLocationHandler(self, *args):
-        (type, location) = self.locationEditDialog()
-        if type and location:
-            self.addLocation(type, location)
-
-    def getActiveLocation(self):
-        iter = self.locationTreeView.get_selection().get_selected()[1]
-        if iter is None:
-            return
-
-        return self.locationStore.get(iter, 0, 1)
-
     def editLocationHandler(self, *args):
-        iter = self.locationTreeView.get_selection().get_selected()[1]
-        if iter is None:
-            return
-
-        (type, location) = self.locationStore.get(iter, 0, 1)
+        (type, location) = self.location
         
-        new_loc = self.locationEditDialog(type, location)
-        if new_loc == (type, location):
-            return
-
-        if new_loc[0] and new_loc[1]:
-            self.locationStore.set(iter, 0, new_loc[0], 1, new_loc[1])
-
-    def removeLocationHandler(self, *args):
-        iter = self.locationTreeView.get_selection().get_selected()[1]
-        if iter is None:
-            return
-
-        location = self.locationStore.get(iter, 0, 1)
-        if not location in self.locations:
-            return
-        self.locationStore.remove(iter)
-        self.removeLocation(location)
-
-    def promoteLocationHandler(self, *args):
-        iter = self.locationTreeView.get_selection().get_selected()[1]
-        if iter is None:
-            return
-
-        activeLocation = self.locationStore.get(iter, 0, 1)
-        if not activeLocation in self.locations:
-            return
-
-        if activeLocation == self.locations[0]:
-            return
-
-        if debug:
-            print "promoting location", activeLocation
-            print "locations is", self.locations
-
-        i = self.locations.index(activeLocation)
-        l2 = self.locations[i-1:i+1]
-        l2.reverse()
-        self.locations[i-1:i+1] = l2
-        row = self.locationStore.get_string_from_iter(iter)
-        prevRow = str(int(row) - 1)
-        prevIter = self.locationStore.get_iter_from_string(prevRow)
-        self.locationStore.swap(prevIter, iter)
-        
-        if debug:
-            print "locations modified; now", self.locations
-
-    def demoteLocationHandler(self, *args):
-        iter = self.locationTreeView.get_selection().get_selected()[1]
-        if iter is None:
-            return
-
-        activeLocation = self.locationStore.get(iter, 0, 1)
-        if not activeLocation in self.locations:
-            return
-
-        if activeLocation == self.locations[-1]:
-            return
-
-        if debug:
-            print "demoting location", activeLocation
-            print "locations is", self.locations
-
-        i = self.locations.index(activeLocation)
-        l2 = self.locations[i:i+2]
-        l2.reverse()
-        self.locations[i:i+2] = l2
-        next = self.locationStore.iter_next(iter)
-        self.locationStore.swap(iter, next)
-        if debug:
-            print "locations modified; now", self.locations
-
-    def removeLocation(self, item):
-        (type, location) = item
-
-        if debug:
-            print "removeLocation (%s, %s)" % (type, location)
-            print "locations is", self.locations
-
-        self.locations.remove(item)
-        if debug:
-            print "locations modified; now", self.locations
-
-    def addLocation(self, type, location):
-        if debug:
-            print "addLocation (%s, %s)" % (type, location)
-            print "locations is", self.locations
-
-        # fixup the type
-        if type == "net" and location.find("@") > -1:
-            type = "ssh"
-        elif type == "net":
-            type = "nfs"
-
-        if (type, location) in self.locations:
+        if type == TYPE_NET and location.count("@"):
             if debug:
-                print "location (\'%s\', \'%s\') already in locations" % (type, 
-                                                                      location)
-            return
+                print "FIXUP: %s://%s => %s://%s" % (type, location,
+                                                     TYPE_SSH, location)
+            type = TYPE_SSH
+        elif type == TYPE_NET:
+            if debug:
+                print "FIXUP: %s://%s => %s://%s" % (type, location,
+                                                     TYPE_NFS, location)
+            type = TYPE_NFS
+            
+        (type, location) = self.locationEditDialog(type, location)
 
-        self.locations.append((type, location))
-        self.locationStore.append([type, location])
+    def setLocation(self, locationTuple=None):
         if debug:
-            print "locations modified; now", self.locations
+            print "setLocation(", locationTuple, ")"
+
+        if locationTuple is None and self.location is not None:
+            type, location = self.location
+        else:
+            type, location = locationTuple         
+
+        # fixup the type if necessary
+        if type == TYPE_NET and location.count("@"):
+            if debug:
+                print "FIXUP: %s://%s => %s://%s" % (type, location,
+                                                     TYPE_SSH, location)
+            type = TYPE_SSH
+        elif type == TYPE_NET:
+            if debug:
+                print "FIXUP: %s://%s => %s://%s" % (type, location,
+                                                     TYPE_NFS, location)
+            type = TYPE_NFS
+
+        rc = True
+
+        # try to validate the new location
+        if type == TYPE_SSH:
+            if not location.count("@") or location.count(":"):
+                self.showErrorMessage(_("SSH locations must be of the form "
+                                        "'user@host'. A path can be specified "
+                                        "in the main window."))
+                rc = False
+        elif type == TYPE_NFS:
+            if not location.count(":") or location.count("@"):
+                self.showErrorMessage(_("NFS locations must be of the form "
+                                        "'host:/path'"))
+                rc = False
+        elif type == TYPE_RAW:
+            try:
+                st = os.stat(location)
+            except OSError:
+                self.showErrorMessage(_("For raw locations you must specify "
+                                        "a valid device node."))
+                rc = False
+            else:
+                if not stat.S_ISBLK(st.st_mode):
+                    self.showErrorMessage(_("For raw locations you must "
+                                            "specify a valid device node."))
+                    rc = False
+        elif type == TYPE_LOCAL:
+            pass
+        else:
+            if not os.access("/sbin/fsck.%s" % type, os.X_OK):
+                self.showErrorMessage(_("Support for filesystem type '%s' "
+                                        "is not present on this system" % type))
+                rc = False
+
+            # XXX need to find a way to validate labels & uuids
+            if location.startswith("LABEL="):
+                # look up and validate the device
+                pass
+            elif location.startswith("UUID="):
+                # look up and validate the device
+                pass
+            else:
+                try:
+                    st = os.stat(location)
+                except OSError:
+                    self.showErrorMessage(_("Failed to stat device node "
+                                            "'%s'" % location))
+                    rc = False
+                else:
+                    if not stat.S_ISBLK(st.st_mode):
+                        self.showErrorMessage(_("'%s' locations must specify "
+                                                "a valid device node." % type))
+                        rc = False
+
+        if rc == True:
+            self.location = (type, location)
+
+            if type in (TYPE_RAW, TYPE_LOCAL):
+                # unset path and freeze the entry
+                self.setPath("")
+                self.pathEntry.set_sensitive(False)
+            else:
+                path = self.pathEntry.get_text().strip()
+                if not path or path == "/":
+                    path = PATH_DEFAULT
+                self.setPath(path)
+                self.pathEntry.set_sensitive(True)
+
+            if type in (TYPE_SSH, TYPE_RAW, TYPE_LOCAL):
+                # unset core_collector and freeze the entry
+                self.setCoreCollector("")
+                self.coreCollectorEntry.set_sensitive(False)
+            else:
+                self.coreCollectorEntry.set_sensitive(True)
+
+            self.updateLocationString()
+
+            if debug:
+                print "location modified; now", self.location
+
+        return rc
+
+    def updateLocationString(self, *args):
+        type, location = self.location
+        if type in (TYPE_RAW, TYPE_LOCAL):
+            self.setPath("")
+            path = self.path
+        else:
+            self.setPath(self.pathEntry.get_text())
+            path = self.path
+
+        if type in (TYPE_NFS, TYPE_LOCAL, TYPE_RAW):
+            delim = ""
+            if path and not path.startswith("/"):
+                # we're not really changing the path, just the locationText
+                path = "/" + path
+        else:
+            delim = ":"
+
+        locationText = "%s://%s%s%s" % (type, location, delim, path)
+        self.locationEntry.set_text(locationText)
             
     def loadDumpConfig(self):
         try:
             lines = open(KDUMP_CONFIG_FILE).readlines()
         except IOError:
             return
+
+        self._quiet = True  # suppress error popups temporarily
 
         for line in [l.strip() for l in lines]:
             if not line:
@@ -600,10 +613,10 @@ class mainWindow:
                     continue
 
             try:
-                type, location = line.split()
+                type, location = line.split(' ', 1)
             except ValueError:
-                print "Failed to parse line; chucking it..."
-                print "  \'%s\'" % (line,)
+                print >> sys.stderr, "Failed to parse line; chucking it..."
+                print >> sys.stderr, "  \'%s\'" % (line,)
                 continue
 
             # XXX is case going to be an issue?
@@ -616,7 +629,21 @@ class mainWindow:
             elif type == "core_collector":
                 self.setCoreCollector(location)
             else:
-                self.addLocation(type, location)
+                self.setLocation((type, location))
+
+        # now we fix up the loaded config as needed
+        if self.location[0] in (TYPE_LOCAL, TYPE_RAW):
+            self.setPath("")
+            self.pathEntry.set_sensitive(False)
+
+        if self.location[0] in (TYPE_RAW, TYPE_SSH, TYPE_LOCAL):
+            self.setCoreCollector("")
+            self.coreCollectorEntry.set_sensitive(False)
+
+        self.updateLocationString()
+        # end fixups
+
+        self._quiet = False
 
     def writeDumpConfig(self):
         if testing or not self.kdumpEnabled:
@@ -631,18 +658,18 @@ class mainWindow:
 
         fd = open(KDUMP_CONFIG_FILE, "w")
         fd.write(KDUMP_CONFIG_HEADER)
-        for location in self.locations:
-            if location[0] in netLocationTypes:
-                fd.write("net %s %s\n" % location)
-            else:
-                fd.write("%s %s\n" % location)
+        if self.location[0] in netLocationTypes:
+            fd.write("net %s\n" % self.location[1])
+        elif self.location[0] != TYPE_DEFAULT:
+            fd.write("%s %s\n" % self.location)
 
-        fd.write("path %s\n" % self.path)
+        if self.path and self.path != PATH_DEFAULT:
+            fd.write("path %s\n" % self.path)
 
-        if self.coreCollector:
+        if self.coreCollector != CORE_COLLECTOR_DEFAULT:
             fd.write("core_collector %s\n" % self.coreCollector)
 
-        if self.defaultAction != "none":
+        if self.defaultAction != ACTION_DEFAULT:
             fd.write("default %s\n" % (self.defaultAction,))
 
         fd.close()
@@ -650,12 +677,13 @@ class mainWindow:
     def setBootloader(self):
         for (name, (conf, offset)) in bootloaders.items():
             # I hope order doesn't matter
-            if os.access(conf, os.W_OK) or (testing and os.path.exists(conf)):
+            if os.access(conf, os.W_OK) or (testing and os.access(conf, os.F_OK)):
                 self.bootloader = name
 
         if self.bootloader is None:
-            self.showErrorMessage(_("Error! No bootloader config file found, aborting configuration!"))
-            self.destroy()
+            self.showErrorMessage(_("No bootloader config file found, "
+                                    "aborting configuration!"))
+            return
 
         return self.bootloader
 
@@ -708,29 +736,36 @@ class mainWindow:
         return True
 
     def setPath(self, path=None):
-        if path is None:
-            # grab the path from the UI
-            path = self.pathEntry.get_text().strip()
-            if not path:
-                path = DEFAULT_PATH
+        if path is None and self.path is not None:
+            path = self.path
+        elif path is None:
+            path = PATH_DEFAULT
 
-        if not path.startswith("/"):
-            self.showErrorMessage(_("Path must start with '/'"))
-            return False
+        # XXX are there are times (local_fs) when leading "/" is needed?
+        #if path and not path.startswith("/"):
+        #    path = "/" + path
+        #    self.showErrorMessage(_("Path must start with '/'"))
+        #    return False
 
+        if debug:
+            print "setting path to '%s'" % path
         self.path = path
         self.pathEntry.set_text(path)
         return True
 
     def setCoreCollector(self, collector=None):
-        if collector is None:
-            # grab the value from the UI
-            collector = self.coreCollectorEntry.get_text().strip()
+        if collector is None and self.coreCollector is not None:
+            collector = self.coreCollector
+        elif not collector:
+            collector = CORE_COLLECTOR_DEFAULT
 
         if collector and not collector.startswith("makedumpfile"):
-            self.showErrorMessage(_("Core collector must begin with 'makedumpfile'"))
+            self.showErrorMessage(_("Core collector must begin with "
+                                    "'makedumpfile'"))
             return False
 
+        if debug:
+            print "setting core_collector to '%s'" % collector
         self.coreCollector = collector
         self.coreCollectorEntry.set_text(collector)
         return True
@@ -746,16 +781,24 @@ class mainWindow:
 
         self.memoryTable.set_sensitive(self.kdumpEnabled)
         self.advancedConfigTable.set_sensitive(self.kdumpEnabled)
-        self.locationVBox.set_sensitive(self.kdumpEnabled)
 
     def showErrorMessage(self, text):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, text)
+        if self._quiet:
+            print >> sys.stderr, text
+            return
+
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
+                                gtk.BUTTONS_OK, text)
         dlg.set_position(gtk.WIN_POS_CENTER)
         dlg.set_modal(True)
         dlg.run()
         dlg.destroy()
 
     def showMessage(self, text, type=None):
+        if self._quiet:
+            print >> sys.stderr, text
+            return
+
         if type is None:
             type = gtk.MESSAGE_INFO
 
@@ -764,26 +807,25 @@ class mainWindow:
         dlg.set_modal(True)
         dlg.run()
         dlg.destroy()
+           
+    def yesNoDialog(self, text):
+        if self._quiet:
+            print >> sys.stderr, text
+            return True
 
-    def okCancelDialog(self, text):
-        dlg = gtk.Dialog(title=title, parent=None, 
-                         flags=gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT,
-                         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
- 
-        dlg.vbox.add(gtk.Label(str=text))
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION, 
+                                gtk.BUTTONS_YES_NO, text)
         dlg.set_position(gtk.WIN_POS_CENTER)
         dlg.set_modal(True)
         ret = dlg.run()
         dlg.destroy()
-        if ret == gtk.RESPONSE_ACCEPT:
+        if ret == gtk.RESPONSE_YES:
             rc = True
         else:
             rc = False
 
         return rc
-            
-
+ 
 if __name__ == "__main__":
     import getopt
 

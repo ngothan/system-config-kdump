@@ -1,20 +1,18 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.2
+Version: 1.0.3
 Release: 1
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
-ExclusiveOS: Linux
 Group: System Environment/Base
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Source0: %{name}-%{version}.tar.bz2
 ExcludeArch: s390 s390x
 BuildRequires: desktop-file-utils
-BuildRequires: intltool
+BuildRequires: intltool, gettext
 Requires: pygtk2 >= 2.8.6
 Requires: pygtk2-libglade
-Requires: python2
 Requires: usermode >= 1.36
 Requires: rhpl >= 0.185-1
 Requires: redhat-artwork >= 0.61-1
@@ -33,13 +31,14 @@ dumping via kdump and kexec.
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make INSTROOT=$RPM_BUILD_ROOT install
 desktop-file-install --vendor system --delete-original       \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications             \
   --add-category X-Red-Hat-Base                             \
   $RPM_BUILD_ROOT%{_datadir}/applications/system-config-kdump.desktop
 
-#%find_lang %name
+%find_lang %name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,8 +61,7 @@ fi
 #fi
 
 
-#%files -f %{name}.lang
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %{_bindir}/system-config-kdump
 %{_datadir}/system-config-kdump
@@ -73,7 +71,11 @@ fi
 #%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-display.png
 
 %changelog
-* Tue Oct 18 2006 Dave Lehman <dlehman@redhat.com> 1.0.2-1
+* Thu Oct 19 2006 Dave Lehman <dlehman@redhat.com> 1.0.3-1
+- rework UI to only allow one location
+- minor spec file cleanup
+
+* Wed Oct 18 2006 Dave Lehman <dlehman@redhat.com> 1.0.2-1
 - add support for "core_collector" and "path" handlers
 - give choices of "ssh" and "nfs" instead of "net"
 - validate results of edit location dialog
