@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.3
+Version: 1.0.4
 Release: 1
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -18,7 +18,7 @@ Requires: rhpl >= 0.185-1
 Requires: redhat-artwork >= 0.61-1
 Requires: kexec-tools
 Prereq: gtk2 >= 2.8.20
-#PreReq: hicolor-icon-theme
+PreReq: hicolor-icon-theme
 
 %description
 system-config-kdump is a graphical tool for configuring kernel crash
@@ -48,17 +48,17 @@ if [ -d /usr/share/system-config-kdump ] ; then
   rm -rf /usr/share/system-config-kdump/*.pyc
 fi
 
-#%postun
-#touch --no-create %{_datadir}/icons/hicolor
-#if [ -x /usr/bin/gtk-update-icon-cache ]; then
-#  gtk-update-icon-cache -q %{_datadir}/icons/hicolor
-#fi
+%postun
+touch --no-create %{_datadir}/icons/hicolor
+if [ -x /usr/bin/gtk-update-icon-cache ]; then
+  gtk-update-icon-cache -q %{_datadir}/icons/hicolor
+fi
 
-#%post
-#touch --no-create %{_datadir}/icons/hicolor
-#if [ -x /usr/bin/gtk-update-icon-cache ]; then
-#  gtk-update-icon-cache -q %{_datadir}/icons/hicolor
-#fi
+%post
+touch --no-create %{_datadir}/icons/hicolor
+if [ -x /usr/bin/gtk-update-icon-cache ]; then
+  gtk-update-icon-cache -q %{_datadir}/icons/hicolor
+fi
 
 
 %files -f %{name}.lang
@@ -68,9 +68,14 @@ fi
 %{_datadir}/applications/*
 %attr(0644,root,root) %config /etc/security/console.apps/system-config-kdump
 %attr(0644,root,root) %config /etc/pam.d/system-config-kdump
-#%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-display.png
+%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
 
 %changelog
+* Tue Oct 24 2006 Dave Lehman <dlehman@redhat.com> 1.0.4-1
+- all location types now in combo box (no text entry for type)
+- preserve comment lines from kdump.conf instead of writing config header
+- add hicolor icon from Diana Fong
+
 * Thu Oct 19 2006 Dave Lehman <dlehman@redhat.com> 1.0.3-1
 - rework UI to only allow one location
 - minor spec file cleanup

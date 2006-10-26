@@ -28,14 +28,14 @@ install: ${PKGNAME}.desktop
 	mkdir -p $(INSTROOT)/usr/sbin
 	mkdir -p $(INSTROOT)$(PAMD_DIR)
 	mkdir -p $(INSTROOT)$(SECURITY_DIR)
-#	mkdir -p $(INSTROOT)$(PKGDATADIR)/pixmaps
+	mkdir -p $(INSTROOT)$(PKGDATADIR)/pixmaps
 	mkdir -p $(INSTROOT)/usr/share/applications
-#	mkdir -p $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
+	mkdir -p $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
 	install src/*.py $(INSTROOT)$(PKGDATADIR)
 	install src/${PKGNAME} $(INSTROOT)$(PKGDATADIR)/${PKGNAME}
 	install src/system-config-kdump.glade $(INSTROOT)$(PKGDATADIR)
-#	install pixmaps/*.png $(INSTROOT)$(PKGDATADIR)/pixmaps
-#	install pixmaps/${PKGNAME}.png $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
+	install pixmaps/*.png $(INSTROOT)$(PKGDATADIR)/pixmaps
+	install pixmaps/${PKGNAME}.png $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
 	install ${PKGNAME}.pam $(INSTROOT)$(PAMD_DIR)/${PKGNAME}
 	install ${PKGNAME}.console $(INSTROOT)$(SECURITY_DIR)/${PKGNAME}
 	install ${PKGNAME}.desktop $(INSTROOT)/usr/share/applications/${PKGNAME}.desktop

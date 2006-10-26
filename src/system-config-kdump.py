@@ -86,61 +86,6 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
                    "at location, the default action (specified below) will "
                    "be executed.")
 
-KDUMP_CONFIG_HEADER = """# Configures where to put the kdump /proc/vmcore files
-#
-# This file contains a series of commands to perform (in order) when a
-# kernel crash has happened and the kdump kernel has been loaded
-# 
-# The commands are chained together to allow redundancy in case the 
-# primary choice is not available at crash time
-#
-# Basics commands supported are:
-# raw <partition> - will dd /proc/vmcore into <partition>
-# net <nfs mount>     - will mount fs and copy /proc/vmcore to 
-#			<mnt>/var/crash/%DATE/ , supports DNS
-# net <user@location> - will scp /proc/vmcore to 
-#			<user@location>:/var/crash/%DATE/, supports DNS
-#			NOTE: Currently only the root user is supported
-# <fs type> <partition> - will mount -t <fs type> <partition> /mnt and 
-#                         copy /proc/vmcore to /mnt/var/crash/%DATE/.
-#			  NOTE: <partition> can be a device node, label or uuid.
-# path <path>	      - Append this path to the filesystem device which you 
-#                       are dumping to 
-#                       NOTE: only used with actual filesystems (ssh, nfs, 
-#                             local fs).
-#			NOTE: if unset, will default to /var/crash
-# core_collector makedumpfile <options> - This directive allows you to use 
-#                                         the dump filtering program 
-#                                         makedumpfile to retrieve your core, 
-#                                         which on some arches can drastically
-#		                          reduce core file size.  see 
-#                                         /sbin/makedumpfile --help for a list 
-#                                         of options
-#		        NOTE: the -i and -g options are not needed here, as 
-#                             the initrd will automatically be populated with
-#                             a config file appropriate for the running kernel 
-# default <reboot | shell> - if all of the above fail, do the default action. 
-#		      reboot: if the default action is reboot simply reboot 
-#                             the system and lose the core that you are trying
-#                             to retrieve
-#		      shell:  if the default action is shell, then drop to an 
-#                             msh session inside the initramfs from which you 
-#                             can try to record the core manually.  exiting 
-#                             this shell reboots the system
-#		      NOTE: If no default action is specified, the initramfs 
-#                           will mount the root file system and run init.
-
-#raw /dev/sda5
-#ext3 /dev/sda3
-#ext3 LABEL=/boot
-#ext3 UUID=03138356-5e61-4ab3-b58e-27507ac41937
-#net my.server.com:/export/tmp
-#net user@my.server.com
-#path /var/crash
-#core_collector makedumpfile -c
-#default shell
-"""
-
 """
     TODO:
 
@@ -156,6 +101,8 @@ class mainWindow:
         self.arch = None
 
         self._quiet = False # if set, don't pop up any message boxes or dialogs
+    
+        self.kdumpConfigComments = []
 
         self.defaultAction = ACTION_DEFAULT
         self.path = PATH_DEFAULT
@@ -299,6 +246,7 @@ class mainWindow:
         self.toplevel.connect("destroy", self.destroy)
 
         if not self.setBootloader():
+            # find out now if they have a bootloader we know what to do with
             sys.exit(1)
 
     def run(self):
@@ -309,9 +257,6 @@ class mainWindow:
         gtk.main_quit()
 
     def okClicked(self, *args):
-        if not self.setBootloader():
-            return
-
         if not self.setCoreCollector():
             return
 
@@ -374,10 +319,6 @@ class mainWindow:
                         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
         
-        def radioToggled(*args):
-            button, widget = args
-            widget.set_sensitive(button.get_active())
-
         def typeChanged(*args):
             combo, locationEntry = args
             iter = combo.get_active_iter()
@@ -394,22 +335,19 @@ class mainWindow:
                 self.defaultActionCombo.set_sensitive(True)
 
         vbox1 = gtk.VBox()
-        label1 = gtk.Label(str=_("Select or enter a location type:"))
+        label1 = gtk.Label(str=_("Select a location type:"))
         vbox1.add(label1)
-        table = gtk.Table(rows=2, columns=2, homogeneous=True)
-        rb1 = gtk.RadioButton()
-        rb2 = gtk.RadioButton(rb1)
         combo = gtk.combo_box_new_text()
         for typeStr in locationTypes:
             combo.append_text(typeStr)
-        entry1 = gtk.Entry()
-        rb1.connect("toggled", radioToggled, combo)
-        rb2.connect("toggled", radioToggled, entry1)
-        table.attach(rb1, 0, 1, 0, 1)
-        table.attach(combo, 1, 2, 0, 1)
-        table.attach(rb2, 0, 1, 1, 2)
-        table.attach(entry1, 1, 2, 1, 2)
-        vbox1.add(table)
+        fstypes = []
+        for fsck in [f for f in os.listdir("/sbin") if f.startswith("fsck.")]:
+            fstypes.append(fsck[5:])
+        fstypes.sort()
+        for fstype in fstypes:
+            combo.append_text(fstype)
+
+        vbox1.add(combo)
         vbox1.add(gtk.HSeparator())
         label2 = gtk.Label(str=_("Enter location:"))
         vbox1.add(label2)
@@ -421,39 +359,21 @@ class mainWindow:
 
         if type is None:
             combo.set_active(0)
-            rb1.set_active(True)
-            entry1.set_sensitive(False)
         elif type in locationTypes:
             combo.set_active(locationTypes.index(type))
-            rb1.set_active(True)
             entry2.set_text(location)
-            entry1.set_sensitive(False)
-        else:
-            entry1.set_text(type)
-            rb2.set_active(True)
+        elif type in fstypes:
+            combo.set_active(fstypes.index(type) + len(locationTypes))
             entry2.set_text(location)
-            combo.set_sensitive(False)
 
         while d.run() == gtk.RESPONSE_ACCEPT:
-            if rb1.get_active():
-                iter = combo.get_active_iter()
-                new_type = combo.get_model().get_value(iter, 0).strip()
-            else:
-                new_type = entry1.get_text().strip()
-                if not new_type:
-                    self.showErrorMessage(_("You must specify a type for "
-                                            "this location"))
-                    continue
-
+            iter = combo.get_active_iter()
+            new_type = combo.get_model().get_value(iter, 0).strip()
             new_location = entry2.get_text().strip()
             if self.setLocation((new_type, new_location)):
-                retval = (new_type, new_location)
                 break
-        else:
-            retval = (type, location)
 
         d.destroy()
-        return retval
 
     def editLocationHandler(self, *args):
         (type, location) = self.location
@@ -469,7 +389,7 @@ class mainWindow:
                                                      TYPE_NFS, location)
             type = TYPE_NFS
             
-        (type, location) = self.locationEditDialog(type, location)
+        self.locationEditDialog(type, location)
 
     def setLocation(self, locationTuple=None):
         if debug:
@@ -600,7 +520,7 @@ class mainWindow:
         except IOError:
             return
 
-        self._quiet = True  # suppress error popups temporarily
+        self.quiet(True)  # suppress error popups temporarily
 
         for line in [l.strip() for l in lines]:
             if not line:
@@ -608,8 +528,11 @@ class mainWindow:
 
             i = line.find("#")
             if i != -1:
+                origLine = line
                 line = line[:i].strip()
                 if not line:
+                    # save comment lines to put in the updated config
+                    self.kdumpConfigComments.append(origLine)
                     continue
 
             try:
@@ -643,7 +566,7 @@ class mainWindow:
         self.updateLocationString()
         # end fixups
 
-        self._quiet = False
+        self.quiet(False)
 
     def writeDumpConfig(self):
         if testing or not self.kdumpEnabled:
@@ -657,7 +580,8 @@ class mainWindow:
                 pass
 
         fd = open(KDUMP_CONFIG_FILE, "w")
-        fd.write(KDUMP_CONFIG_HEADER)
+        # dump all of the comment lines from the original file into the new one
+        fd.write("\n".join(self.kdumpConfigComments) + "\n")
         if self.location[0] in netLocationTypes:
             fd.write("net %s\n" % self.location[1])
         elif self.location[0] != TYPE_DEFAULT:
@@ -782,8 +706,14 @@ class mainWindow:
         self.memoryTable.set_sensitive(self.kdumpEnabled)
         self.advancedConfigTable.set_sensitive(self.kdumpEnabled)
 
+    def quiet(self, flag=None):
+        if flag in (True, False):
+            self._quiet = flag
+
+        return self._quiet
+
     def showErrorMessage(self, text):
-        if self._quiet:
+        if self.quiet():
             print >> sys.stderr, text
             return
 
@@ -795,7 +725,7 @@ class mainWindow:
         dlg.destroy()
 
     def showMessage(self, text, type=None):
-        if self._quiet:
+        if self.quiet():
             print >> sys.stderr, text
             return
 
@@ -809,8 +739,8 @@ class mainWindow:
         dlg.destroy()
            
     def yesNoDialog(self, text):
-        if self._quiet:
-            print >> sys.stderr, text
+        if self.quiet():
+            print >> sys.stderr, text, "(assuming yes)"
             return True
 
         dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION, 

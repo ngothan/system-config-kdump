@@ -1,3 +1,12 @@
+2006-10-24  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	move all location types into combo box
+	scan /sbin/fsck.* for available fs types
+	get rid of kdump config header; preserve kdump config comments instead
+	create a set/get method for the "quiet" attribute
+	* pixmaps/system-config-kdump.png:
+	add 48x48 hicolor icon made by Diana Fong
+
 2006-10-19  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	rearrange UI to allow only one location
