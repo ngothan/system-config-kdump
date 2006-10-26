@@ -1,4 +1,9 @@
 2006-10-26  Dave Lehman  <dlehman@redhat.com>
+	* Makefile:
+	fix modes on installed files
+	* system-config-kdump.spec:
+	remove unnecessary %preun
+	various minor tweaks to appease rpmlint
 	* src/system-config-kdump.glade:
 	fix path to icon
 	remove reference to stock weather icon (placeholder)
