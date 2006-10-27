@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.5
+Version: 1.0.6
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -61,12 +61,22 @@ fi
 %{_bindir}/system-config-kdump
 %{_datadir}/system-config-kdump
 %{_datadir}/applications/*
-%attr(0644,root,root) %config(noreplace) /etc/security/console.apps/system-config-kdump
-%attr(0644,root,root) %config(noreplace) /etc/pam.d/system-config-kdump
-%attr(0644,root,root) %{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
+%config(noreplace) %{_sysconfdir}/security/console.apps/system-config-kdump
+%config(noreplace) %{_sysconfdir}/pam.d/system-config-kdump
+%{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
+%doc ChangeLog COPYING
 
 %changelog
-* Thu Oct 26 2006 Dave Lehman <dlehman@redhat.com> 1.0.5-1
+* Fri Oct 27 2006 Dave Lehman <dlehman@redhat.com> 1.0.6-1%{?dist}
+- add ChangeLog and COPYING as docs
+
+* Thu Oct 26 2006 Dave Lehman <dlehman@redhat.com> 1.0.5-3%{?dist}
+- use %%{_sysconfdir} instead of /etc in specfile
+
+* Thu Oct 26 2006 Dave Lehman <dlehman@redhat.com> 1.0.5-2%{?dist}
+- remove #!/usr/bin/python from system-config-kdump.py (for rpmlint)
+
+* Thu Oct 26 2006 Dave Lehman <dlehman@redhat.com> 1.0.5-1%{?dist}
 - fix install make target to specify modes where needed
 - remove unnecessary %%preun
 - various specfile fixes to appease rpmlint

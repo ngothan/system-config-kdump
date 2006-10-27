@@ -1,6 +1,4 @@
-#!/usr/bin/python
-
-# system-config-kdump - configures kexec/kdump
+# system-config-kdump.py - configures kexec/kdump
 # Copyright (c) 2006 Red Hat, Inc.
 # Authors: Dave Lehman <dlehman@redhat.com>
 #          Jarod Wilson <jwilson@redhat.com>

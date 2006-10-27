@@ -71,7 +71,7 @@ local: clean
 
 clean:
 	@rm -fv *~
-	@rm -fv *.pyc
+	@rm -fv src/*.pyc
 	@rm -fv ${PKGNAME}.desktop
 
 srpm:

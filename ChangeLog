@@ -1,3 +1,11 @@
+2006-10-27  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	remove #!/usr/bin/python
+	* COPYING:
+	add license
+	* system-config-kdump.spec:
+	package ChangeLog and COPYING
+
 2006-10-26  Dave Lehman  <dlehman@redhat.com>
 	* Makefile:
 	fix modes on installed files
