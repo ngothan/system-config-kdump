@@ -1,4 +1,9 @@
 # translation of it.po to 
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006.
 #
@@ -7,7 +12,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-06 23:32-0500\n"
-"PO-Revision-Date: 2006-11-01 07:39+0100\n"
+"PO-Revision-Date: 2006-11-09 02:22+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,15 +44,15 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:154
 msgid "This system does not have enoughmemory for kdump to be viable"
-msgstr ""
+msgstr "Il sistema non possiede memoria sufficiente per far si che kdump risulti disponibile"
 
 #: ../src/system-config-kdump.py:201
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: ../src/system-config-kdump.py:203
 msgid "Location"
-msgstr ""
+msgstr "Posizione"
 
 #: ../src/system-config-kdump.py:243
 #, python-format
@@ -55,70 +60,70 @@ msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr ""
+msgstr "La modifica delle impostazioni di Kdump necessita di un riavvio del sistema per allocare nuovamente la memoria in modo corretto.  %sPer confermare le modifiche appena apportate, sarà necessario riavviare il vostro sistema."
 
 #: ../src/system-config-kdump.py:273
 msgid "Edit Location"
-msgstr ""
+msgstr "Modifica posizione"
 
 #: ../src/system-config-kdump.py:275
 msgid "New Location"
-msgstr ""
+msgstr "Nuova posizione"
 
 #: ../src/system-config-kdump.py:287
 msgid "Select or enter a location type:"
-msgstr ""
+msgstr "Seleziona o inserisci un tipo di posizione:"
 
 #. TODO: provide a hint depending on type?  ("eg: user@host:/path")
 #: ../src/system-config-kdump.py:305
 msgid "Enter location:"
-msgstr ""
+msgstr "Inserisci pozione:"
 
 #: ../src/system-config-kdump.py:542
 msgid "Error! No bootloader config file found, aborting configuration!"
-msgstr ""
+msgstr "Errore! Nessun file di configurazione del bootloader trovato, interrompere la configurazione!"
 
 #: ../src/system-config-kdump.py:664
 msgid "You must be root to run this application."
-msgstr ""
+msgstr "Per poter eseguire questa applicazione è necessario essere utenti root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
-msgstr ""
+msgstr "Abilita kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr ""
+msgstr "Memoria totale del sistema (MB):"
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr ""
+msgstr "Memoria di kdump (MB):"
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr ""
+msgstr "Memoria disponibile (MB):"
 
 #: system-config-kdump.gladestrings:12
 msgid "Default Action:"
-msgstr ""
+msgstr "Azione predefinita:"
 
 #: system-config-kdump.gladestrings:13
 msgid "Network Interface Override:"
-msgstr ""
+msgstr "Override dell'interfaccia di rete:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Reboot"
-msgstr ""
+msgstr "Riavvio"
 
 #: system-config-kdump.gladestrings:15
 msgid "Shell"
-msgstr ""
+msgstr "Shell"
 
 #: system-config-kdump.gladestrings:16
 msgid "Move Up"
-msgstr ""
+msgstr "Vai in alto"
 
 #: system-config-kdump.gladestrings:17
 msgid "Move Down"
-msgstr ""
+msgstr "Vai in basso"
 
