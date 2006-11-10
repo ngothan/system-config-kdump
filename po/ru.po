@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
+# Translation system-config-kdump to Russian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Andrew Martynov <andrewm@inventa.ru>, 2006.
 #
-#, fuzzy
+#, 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-06 23:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-11-20 13:50+0300\n"
+"Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
+"Language-Team: Russian <fedora-trans-ru@redhat.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,32 +23,32 @@ msgstr ""
 #.
 #: ../src/system-config-kdump.py:66 system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
-msgstr ""
+msgstr "Настройка Kernel Dump"
 
 #: ../src/system-config-kdump.py:67
 msgid "Configure kdump/kexec"
-msgstr ""
+msgstr "Настройка kdump/kexec"
 
 #: ../src/system-config-kdump.py:113
 msgid "Sorry, Xen kernels do not support kdump at this time!"
-msgstr ""
+msgstr "Извините, но ядра с технологией Xen не поддерживают kdump в настоящий момент!"
 
 #: ../src/system-config-kdump.py:130 ../src/system-config-kdump.py:173
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/system-config-kdump.py:154
 msgid "This system does not have enoughmemory for kdump to be viable"
-msgstr ""
+msgstr "Эта система не имеет достаточного количества памяти для задействования kdump"
 
 #: ../src/system-config-kdump.py:201
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: ../src/system-config-kdump.py:203
 msgid "Location"
-msgstr ""
+msgstr "Расположение"
 
 #: ../src/system-config-kdump.py:243
 #, python-format
@@ -57,68 +57,71 @@ msgid ""
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
+"Изменение настроек Kdump потребует перезагруки системы для выделения "
+"необходимой памяти. %sВам необходимо перезагрузить систему для того, "
+"чтобы настройки вступили в силу."
 
 #: ../src/system-config-kdump.py:273
 msgid "Edit Location"
-msgstr ""
+msgstr "Изменить расположение"
 
 #: ../src/system-config-kdump.py:275
 msgid "New Location"
-msgstr ""
+msgstr "Новое расположение"
 
 #: ../src/system-config-kdump.py:287
 msgid "Select or enter a location type:"
-msgstr ""
+msgstr "Выберите или введите тип расположения:"
 
 #. TODO: provide a hint depending on type?  ("eg: user@host:/path")
 #: ../src/system-config-kdump.py:305
 msgid "Enter location:"
-msgstr ""
+msgstr "Введите расположение:"
 
 #: ../src/system-config-kdump.py:542
 msgid "Error! No bootloader config file found, aborting configuration!"
-msgstr ""
+msgstr "Ошибка! Не найден файл настроек загрузчика - настройка аварийно завершена!"
 
 #: ../src/system-config-kdump.py:664
 msgid "You must be root to run this application."
-msgstr ""
+msgstr "Для запуска этой программы необходимы права пользователя root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
-msgstr ""
+msgstr "Включить kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr ""
+msgstr "Общий объем системной памяти (Мб):"
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr ""
+msgstr "Память kdump (Мб):"
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr ""
+msgstr "Доступная память (Мб):"
 
 #: system-config-kdump.gladestrings:12
 msgid "Default Action:"
-msgstr ""
+msgstr "Действие по умолчанию:"
 
 #: system-config-kdump.gladestrings:13
 msgid "Network Interface Override:"
-msgstr ""
+msgstr "Переопределение сетевого интерфейса:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Reboot"
-msgstr ""
+msgstr "Перезагрузка"
 
 #: system-config-kdump.gladestrings:15
 msgid "Shell"
-msgstr ""
+msgstr "Оболочка"
 
 #: system-config-kdump.gladestrings:16
 msgid "Move Up"
-msgstr ""
+msgstr "Вверх"
 
 #: system-config-kdump.gladestrings:17
 msgid "Move Down"
-msgstr ""
+msgstr "Вниз"
