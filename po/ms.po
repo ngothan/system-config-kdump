@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-06 23:32-0500\n"
-"PO-Revision-Date: 2006-10-14 08:15+0800\n"
+"PO-Revision-Date: 2006-11-15 00:09+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,19 +102,16 @@ msgid "kdump Memory (MB):"
 msgstr "Ruang Swap (MB)"
 
 #: system-config-kdump.gladestrings:11
-#, fuzzy
 msgid "Usable Memory (MB):"
-msgstr "Ruang Swap (MB)"
+msgstr "Memori Bolehguna (MB):"
 
 #: system-config-kdump.gladestrings:12
-#, fuzzy
 msgid "Default Action:"
-msgstr "default:LTR"
+msgstr "Tindakan Default:"
 
 #: system-config-kdump.gladestrings:13
-#, fuzzy
 msgid "Network Interface Override:"
-msgstr "Ulangtetap antaramuka rangkaian"
+msgstr "Langkau Antaramuka Rangkaian:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Reboot"
