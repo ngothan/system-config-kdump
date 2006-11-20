@@ -324,13 +324,10 @@ class mainWindow:
             if type == TYPE_DEFAULT:
                 locationEntry.set_text(PATH_DEFAULT)
                 locationEntry.set_sensitive(False)
-                self.defaultActionCombo.set_active(defaultActions.index(ACTION_DEFAULT))
-                self.defaultActionCombo.set_sensitive(False)
             else:
                 locationEntry.set_sensitive(True)
                 if locationEntry.get_text().strip() == PATH_DEFAULT:
                     locationEntry.set_text("")
-                self.defaultActionCombo.set_sensitive(True)
 
         vbox1 = gtk.VBox()
         label1 = gtk.Label(str=_("Select a location type:"))
@@ -484,6 +481,12 @@ class mainWindow:
                 self.coreCollectorEntry.set_sensitive(False)
             else:
                 self.coreCollectorEntry.set_sensitive(True)
+
+            if type == TYPE_LOCAL:
+                self.defaultActionCombo.set_active(defaultActions.index(ACTION_DEFAULT))
+                self.defaultActionCombo.set_sensitive(False)
+            else:
+                self.defaultActionCombo.set_sensitive(True)
 
             self.updateLocationString()
 
