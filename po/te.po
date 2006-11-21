@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-21 14:53+0530\n"
+"PO-Revision-Date: 2006-11-21 14:56+0530\n"
 "Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:192
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "ఈ కంప్యూటరు కెడంపును అనుసరించటానికి కావలసిన మెమోరీని కలిగి లే"
+msgstr "ఈ కంప్యూటరు కెడంపును అనుసరించటానికి కావలసిన మెమోరీని కలిగి లేదు"
 
 #: ../src/system-config-kdump.py:265
 #, python-format
