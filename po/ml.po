@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-10-13 14:08+0530\n"
+"PO-Revision-Date: 2006-11-21 14:00+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 
 #: ../src/system-config-kdump.py:49
 msgid "local"
-msgstr ""
+msgstr "ലോക്കല്‍"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
-msgstr ""
+msgstr "rootfs മൊണ്ട് ചെയ്ത് /sbin/init പ്രവര്‍ത്തിപ്പിക്കുക"
 
 #: ../src/system-config-kdump.py:72
 msgid ""
@@ -59,11 +59,11 @@ msgstr "kdump/kexec കോണ്‍ഫിഗര്‍ ചെയ്യുക"
 
 #: ../src/system-config-kdump.py:133
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr ""
+msgstr "ഈ ആര്‍ക്കിറ്റെക്ച്ചര്‍ kdump പിന്തുണയ്ക്കുന്നില്ല"
 
 #: ../src/system-config-kdump.py:144
 msgid "Failed to detect total system memory"
-msgstr ""
+msgstr "സിസ്റ്റമിന്‍റെ മൊത്തം മെമ്മറി ലഭ്യമാക്കുന്നതില്‍ പരാജയം"
 
 #: ../src/system-config-kdump.py:149
 msgid "Sorry, Xen kernels do not support kdump at this time!"
@@ -75,14 +75,15 @@ msgid "%s"
 msgstr "%s"
 
 #: ../src/system-config-kdump.py:192
-#, fuzzy
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "kdump-ന് ആവളശ്യമുളള മെമ്മറി ഈ സിസ്റ്റമില്‍ ലഭ്യമല്ല"
+msgstr "kdump-ന് ആവളശ്യമുളള മെമ്മറി ഈ സിസ്റ്റമില്‍ ലഭ്യമല്ല "
 
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
+"'%s' സ്ഥാനങ്ങള്‍ക്ക് പാഥ് കാലി ആകാന്‍ പാടില്ല. പാഥ് ഡീഫോള്‍ട്ട് ('%s') ആയി വീണ്ടും "
+"സെറ്റ് ചെയ്യണമോ?."
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -116,9 +117,8 @@ msgid "New Location"
 msgstr "പുതിയ സ്ഥാനം"
 
 #: ../src/system-config-kdump.py:333
-#, fuzzy
 msgid "Select a location type:"
-msgstr "ഏതെങ്കിലും ഒരു സ്ഥാനം തിരഞ്ഞെടുക്കുക അല്ലെങ്കില്‍ എന്‍റര്‍ ചെയ്യുക:"
+msgstr "ഒരു സ്ഥാനം തിരഞ്ഞെടുക്കുക:"
 
 #: ../src/system-config-kdump.py:347
 msgid "Enter location:"
@@ -129,38 +129,39 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
+"SSH സ്ഥാനങ്ങള്‍ 'user@host' എന്ന ഫോര്‍മാറ്റിലാകണം. പ്രധാന ജാലകത്തില്‍ ഒരു "
+"പാഥ് നല്‍കാവുന്നതാണ്."
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr ""
+msgstr "NFS സ്ഥാനങ്ങള്‍ 'host:/path' എന്ന ഫോര്‍മാറ്റിലാകണം"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
-msgstr ""
+msgstr "റൊ ലൊക്കേഷനുകള്‍ക്ക് ശരിയായ ഒരു ഡിവൈസ് കോഡ് നല്‍കേണ്ടതാണ്."
 
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr ""
+msgstr "'%s' രീതിയിലുളള ഫയല്‍ സിസ്റ്റമുകള്‍ക്കുളള പിന്തുണ ഈ സിസ്റ്റമില്‍ ലഭ്യമല്ല"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr ""
+msgstr "ഡിവൈസ് നോഡ് '%s' സ്റ്റാറ്റ് ചെയ്യുന്നതില്‍ പരാജയം"
 
 #: ../src/system-config-kdump.py:460
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr ""
+msgstr "'%s' ലൊക്കേഷനുകള്‍ ശരിയായ ഡിവൈസ് കോഡ് നല്‍കേണ്ടതാണ്."
 
 #: ../src/system-config-kdump.py:609
-#, fuzzy
 msgid "No bootloader config file found, aborting configuration!"
-msgstr "പിശക്! ബൂട്ട് ലോഡര്‍ കോണ്‍ഫിഗ് ഫയല്‍ ലഭ്യമല്ല, കോണ്‍ഫിഗറേഷന്‍ നിര്‍ത്തുന്നു!"
+msgstr "ബൂട്ട് ലോഡര്‍ കോണ്‍ഫിഗ് ഫയല്‍ ലഭ്യമല്ല, കോണ്‍ഫിഗറേഷന്‍ നിര്‍ത്തുന്നു!"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr ""
+msgstr "കോര്‍ കലക്ടര്‍ 'makedumpfile'-ല്‍ തുടങ്ങേണ്ടതാകുന്നു"
 
 #: ../src/system-config-kdump.py:778
 msgid "You must be root to run this application."
@@ -183,36 +184,18 @@ msgid "Usable Memory (MB):"
 msgstr "ഉപയോഗിക്കാവുന്ന മെമ്മറി (MB):"
 
 #: system-config-kdump.gladestrings:12
-#, fuzzy
 msgid "Location:"
-msgstr "സ്ഥാനം"
+msgstr "സ്ഥാനം:"
 
 #: system-config-kdump.gladestrings:13
 msgid "Path:"
-msgstr ""
+msgstr "പാഥ്:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr ""
+msgstr "കോര്‍ കലക്ടര്‍:"
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "ഡീഫോള്‍ട്ടായ പ്രവര്‍ത്തനം:"
 
-#~ msgid "Network Interface Override:"
-#~ msgstr "നെറ്റ്‍വര്‍ക്ക് ഇന്‍റഫെയിസ് ഓവര്‍ റൈഡ്:"
-
-#~ msgid "Reboot"
-#~ msgstr "റീബൂട്ട് ചെയ്യുക"
-
-#~ msgid "Shell"
-#~ msgstr "ഷെല്‍"
-
-#~ msgid "Move Up"
-#~ msgstr "മുകളിലേക്ക് നീങ്ങുക"
-
-#~ msgid "Move Down"
-#~ msgstr "താഴേക്ക് നീങ്ങുക"
-
-#~ msgid "Type"
-#~ msgstr "ഏത് തരം"
