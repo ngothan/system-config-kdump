@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-21 18:46+0530\n"
+"PO-Revision-Date: 2006-11-22 10:53+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -125,11 +125,11 @@ msgstr "ଅବସ୍ଥାନ ଭରଣ କରନ୍ତୁ:"
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
-msgstr ""
+msgstr "SSH ଅବସ୍ଥାନ ଗୁଡିକ 'user@host' ରୂପରେ ରହିବା ଉଚିତ। ପ୍ରମୂଖ ୱିଣ୍ଡୋରେ ଗୋଟିଏ ପଥ ନିର୍ଦ୍ଦିଷ୍ଟ କରାଯାଇ ପାରିବ।"
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr "NFS ଅବସ୍ଥାନ ଗୁଡିକ 'ଆଧାର:/ପଥ' ରୂପରେ ରହିବା ଉଚିତିତ"
+msgstr "NFS ଅବସ୍ଥାନ ଗୁଡିକ 'host:/path' ରୂପରେ ରହିବା ଉଚିତିତ"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
