@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-23 01:18+1000\n"
+"PO-Revision-Date: 2006-11-24 22:38+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,29 +107,29 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
 msgid "Edit Location"
-msgstr ""
+msgstr "編輯位置"
 
 #: ../src/system-config-kdump.py:313
 msgid "New Location"
-msgstr ""
+msgstr "新的位置"
 
 #: ../src/system-config-kdump.py:333
 msgid "Select a location type:"
-msgstr ""
+msgstr "選擇位置的類型："
 
 #: ../src/system-config-kdump.py:347
 msgid "Enter location:"
-msgstr ""
+msgstr "輸入位置："
 
 #: ../src/system-config-kdump.py:415
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
-msgstr ""
+msgstr "SSH 位置的格式必須是「user@host」。路徑可以在主視窗中指定。"
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr ""
+msgstr "NFS 位置的格式必須是「host:/path」"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
@@ -168,23 +168,23 @@ msgstr ""
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr ""
+msgstr "系統總記憶體（MB）："
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr ""
+msgstr "kdump 記憶體（MB）："
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr ""
+msgstr "可用記憶體（MB）："
 
 #: system-config-kdump.gladestrings:12
 msgid "Location:"
-msgstr ""
+msgstr "位置："
 
 #: system-config-kdump.gladestrings:13
 msgid "Path:"
-msgstr ""
+msgstr "路徑："
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
@@ -192,5 +192,5 @@ msgstr ""
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
-msgstr ""
+msgstr "預設動作："
 
