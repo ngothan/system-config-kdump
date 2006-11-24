@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-24 17:02+1000\n"
+"PO-Revision-Date: 2006-11-24 17:06+1000\n"
 "Last-Translator: Decroux Fabien <fdecroux@redhat.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,7 @@ msgid "mount rootfs and run /sbin/init"
 msgstr "monte rootfs et exécute /sbin/init"
 
 #: ../src/system-config-kdump.py:72
+#, fuzzy
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
