@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-24 22:38+1000\n"
+"PO-Revision-Date: 2006-11-26 19:50+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr ""
+msgstr "要改變 Kdump 的設定，使用者必須重新開機，才能重新分配記憶體。%s 要讓新的設定生效，請重新啟動系統。"
 
 #: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
 msgid "Edit Location"
@@ -133,38 +133,38 @@ msgstr "NFS 位置的格式必須是「host:/path」"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
-msgstr ""
+msgstr "對於地點，您必須指定有效的裝置節點。"
 
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr ""
+msgstr "對「%s」檔案系統的支援並不存在於這台電腦上"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr ""
+msgstr "無法統計裝置節點「%s」"
 
 #: ../src/system-config-kdump.py:460
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr ""
+msgstr "「%s」位置必須指定有效的裝置節點。"
 
 #: ../src/system-config-kdump.py:609
 msgid "No bootloader config file found, aborting configuration!"
-msgstr ""
+msgstr "找不到 bootloader 的設定檔，放棄設定！"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr ""
+msgstr "核心蒐集程式必須以「makedumpfile」起始"
 
 #: ../src/system-config-kdump.py:778
 msgid "You must be root to run this application."
-msgstr ""
+msgstr "您必須是 root 才能執行這個應用程式。"
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
-msgstr ""
+msgstr "啟用 kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
@@ -188,7 +188,7 @@ msgstr "路徑："
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr ""
+msgstr "核心蒐集程式："
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
