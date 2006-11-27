@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-27 17:08+1000\n"
+"PO-Revision-Date: 2006-11-28 08:59+1000\n"
 "Last-Translator: Noriko Mizumoto <noriko@redhat.com>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgstr "ファイルシステムタイプ '%s' のサポートはこのシステ
 #: ../src/system-config-kdump.py:455
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr "デバイスノード '%s' の起動に失敗しました"
+msgstr "デバイスノード '%s' の stat に失敗しました"
 
 #: ../src/system-config-kdump.py:460
 #, python-format
