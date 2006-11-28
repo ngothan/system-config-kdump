@@ -38,13 +38,14 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump ist ein neuer Mechanismus zum Dumpen von Kernel-Abstürzen. Im Falle eines "
-"Systemabsturzes kann eine Core-Datei mit Hilfe von kdump aufgezeichnet werden, "
-"welches im Kontext eines frisch gebooteten Kernels läuft. Dies ist wesentlich zuverlässiger, "
-"als Methoden, die den Kontext in einem abgestürzten Kernel aufzeichnen. Die Möglichkeit, "
-"eine Core-Datei aufzuzeichnen, kann sehr hilfreich bei der Ursachenforschung eines "
-"Systemabsturzes sein. Beachten Sie, dass kdump einen Anteil des Systemspeichers "
-"beansprucht, der ansonsten nicht zur Verfügung steht."
+"Kdump ist ein neuer Mechanismus zum Dumpen von Kernel-Abstürzen. Im Falle "
+"eines Systemabsturzes kann eine Core-Datei mit Hilfe von kdump aufgezeichnet "
+"werden, welches im Kontext eines frisch gebooteten Kernels läuft. Dies ist "
+"wesentlich zuverlässiger, als Methoden, die den Kontext in einem "
+"abgestürzten Kernel aufzeichnen. Die Möglichkeit, eine Core-Datei "
+"aufzuzeichnen, kann sehr hilfreich bei der Ursachenforschung eines "
+"Systemabsturzes sein. Beachten Sie, dass kdump einen Anteil des "
+"Systemspeichers beansprucht, der ansonsten nicht zur Verfügung steht."
 
 #: ../src/system-config-kdump.py:82
 msgid ""
@@ -92,7 +93,9 @@ msgstr "Dieses System besitzt für die Realisierung von kdump zu wenig Speicher"
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr "Der Pfad kann für '%s' Orte nicht leer sein. Pfad auf Standard ('%s') zurücksetzen?"
+msgstr ""
+"Der Pfad kann für '%s' Orte nicht leer sein. Pfad auf Standard ('%s') "
+"zurücksetzen?"
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -109,8 +112,8 @@ msgstr ""
 "\n"
 "Beachten Sie, dass die %s-Architektur derzeit keine relozierbare Kernels "
 "bietet, und daher die Installation eines separaten kernel-kdump-Paketes für "
-"die Funktion von kdump erforderlich ist. Dies kann nach Belieben via "
-"'yum install kernel-dump' installiert werden.\n"
+"die Funktion von kdump erforderlich ist. Dies kann nach Belieben via 'yum "
+"install kernel-dump' installiert werden.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:284
@@ -145,8 +148,8 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"SSH-Ortsangaben müssen die Form 'user@host' aufweisen. Im Hauptfenster kann ein "
-"Pfad angegeben werden."
+"SSH-Ortsangaben müssen die Form 'user@host' aufweisen. Im Hauptfenster kann "
+"ein Pfad angegeben werden."
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
@@ -159,7 +162,9 @@ msgstr "Für raw-Ortsangaben muss ein gültiger Geräteknoten angegeben werden."
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Es existiert derzeit keine Unterstützung für den Dateisystemtyp '%s' auf diesem System"
+msgstr ""
+"Es existiert derzeit keine Unterstützung für den Dateisystemtyp '%s' auf "
+"diesem System"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
@@ -173,7 +178,9 @@ msgstr "'%s' Orte müssen einen gültigen Geräteknoten angeben."
 
 #: ../src/system-config-kdump.py:609
 msgid "No bootloader config file found, aborting configuration!"
-msgstr "Keine Bootloader-Konfigurationsdatei gefunden, die Konfiguration wird abgebrochen!"
+msgstr ""
+"Keine Bootloader-Konfigurationsdatei gefunden, die Konfiguration wird "
+"abgebrochen!"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
@@ -214,4 +221,3 @@ msgstr "Core-Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Standard-Aktion:"
-

@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 "\n"
 
 #: ../src/system-config-kdump.py:49
@@ -36,12 +37,12 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump ஒரு புதிய கர்னல் crash dumping தொழில்நுட்பமாகும். கணினி சிக்கலாகும் போது,"
-"ஒரு கோர் கோப்பு kdumpஐ பயன்படுத்தி, புதிதாக துவக்கப்பட்ட கர்னல் சூழலில் இயங்குவதை மீட்கும், "
-"அதை மிகவும் உகந்ததாக இருப்பதை விட அழிக்கப்பட்ட கர்னல் சூழலுக்குள் எடுக்கலாம்."
-"ஒரு கோர் கோப்பினை மீட்பதை விட ரூட்டில் கணினி அழிப்பது வரையறுக்கப்படும்."
-"kdumpக்கு கணினியின் நினைவகம் பதிவு செய்வது தேவைப்படும் அது வேறு பயனர்களுக்கு இருக்காது "
-"என்பதை குறித்து கொள்ளவும்."
+"Kdump ஒரு புதிய கர்னல் crash dumping தொழில்நுட்பமாகும். கணினி சிக்கலாகும் போது,ஒரு "
+"கோர் கோப்பு kdumpஐ பயன்படுத்தி, புதிதாக துவக்கப்பட்ட கர்னல் சூழலில் இயங்குவதை மீட்கும், "
+"அதை மிகவும் உகந்ததாக இருப்பதை விட அழிக்கப்பட்ட கர்னல் சூழலுக்குள் எடுக்கலாம்.ஒரு கோர் "
+"கோப்பினை மீட்பதை விட ரூட்டில் கணினி அழிப்பது வரையறுக்கப்படும்.kdumpக்கு கணினியின் "
+"நினைவகம் பதிவு செய்வது தேவைப்படும் அது வேறு பயனர்களுக்கு இருக்காது என்பதை குறித்து "
+"கொள்ளவும்."
 
 #: ../src/system-config-kdump.py:82
 msgid ""
@@ -49,8 +50,8 @@ msgid ""
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
 msgstr ""
-"Kdump குறிப்பிட்ட இடத்தில் vmcoreஐ வைக்க முயற்சிக்கும். இந்த நிகழ்வில் "
-"vmcoreஐ ஒரு இடத்தில் வைக்க தவறும், அப்போது முன்னிருப்பு செயல் (கீழே குறிப்பிட்டது போல) "
+"Kdump குறிப்பிட்ட இடத்தில் vmcoreஐ வைக்க முயற்சிக்கும். இந்த நிகழ்வில் vmcoreஐ ஒரு "
+"இடத்தில் வைக்க தவறும், அப்போது முன்னிருப்பு செயல் (கீழே குறிப்பிட்டது போல) "
 "செயல்படுத்தப்படும்."
 
 #.
@@ -90,7 +91,9 @@ msgstr "kdump இல் இருக்க இந்த கணினியில
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr "'%s' இடங்களுக்கு பாதை வெற்றாக இருக்கக்கூடாது. பாதையை முன்னிருப்பு ('%s')க்கு மறுஅமைக்க வேண்டுமா?."
+msgstr ""
+"'%s' இடங்களுக்கு பாதை வெற்றாக இருக்கக்கூடாது. பாதையை முன்னிருப்பு ('%s')க்கு "
+"மறுஅமைக்க வேண்டுமா?."
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -105,10 +108,9 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"%s வடிவமைப்பு இந்த நேரத்தில் மாறும் கர்னல் வசதியை கொண்டிருக்கவில்லை,"
-"அதனால் இதற்கு ஒரு தனி kernel-kdump தொகுப்பு kdumpக்கு நிறுவப்பட்டு "
-"செயல்படுத்தப்பட வேண்டும். இது 'yum install kernel-kdump' வழியாக உங்கள் "
-"தேவைப்கேற்ப நிறுவப்படும்.\n"
+"%s வடிவமைப்பு இந்த நேரத்தில் மாறும் கர்னல் வசதியை கொண்டிருக்கவில்லை,அதனால் இதற்கு ஒரு "
+"தனி kernel-kdump தொகுப்பு kdumpக்கு நிறுவப்பட்டு செயல்படுத்தப்பட வேண்டும். இது 'yum "
+"install kernel-kdump' வழியாக உங்கள் தேவைப்கேற்ப நிறுவப்படும்.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:284
@@ -142,8 +144,8 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"SSH இடங்கள் 'user@host' வடிவில் இருக்க வேண்டும். ஒரு பாதை முக்கிய சாளரத்தில் குறிப்பிடப்படலாம். "
-"the main window."
+"SSH இடங்கள் 'user@host' வடிவில் இருக்க வேண்டும். ஒரு பாதை முக்கிய சாளரத்தில் "
+"குறிப்பிடப்படலாம். the main window."
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
@@ -211,4 +213,3 @@ msgstr "கோர் சேகரிப்பவர்:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "முன்னிருப்பு செயல்:"
-

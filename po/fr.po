@@ -34,11 +34,12 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump est un nouveau mécanisme de capture lors du plantage d'un noyau. Si un système "
-"échoue, un fichier noyau peut être capturé en utilisant kdump, qui est exécuté dans "
-"le contexte d'un noyau récemment démarré, ce qui le rend beaucoup plus fiable que les méthodes "
-"de capture dans le contexte d'un noyau qui a échoué. Être capable de capturer un "
-"fichier noyau peut être inestimable pour aider à déterminer la cause principale de l'échec d'un "
+"Kdump est un nouveau mécanisme de capture lors du plantage d'un noyau. Si un "
+"système échoue, un fichier noyau peut être capturé en utilisant kdump, qui "
+"est exécuté dans le contexte d'un noyau récemment démarré, ce qui le rend "
+"beaucoup plus fiable que les méthodes de capture dans le contexte d'un noyau "
+"qui a échoué. Être capable de capturer un fichier noyau peut être "
+"inestimable pour aider à déterminer la cause principale de l'échec d'un "
 "système. Notez que kdump requiert une partie de la mémoire système qui sera "
 "indisponible pour d'autres utilisations."
 
@@ -83,12 +84,15 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:192
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
+msgstr ""
+"Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
 
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr "Le chemin ne peut pas être vide pour les emplacements '%s'. Réinitialisez le chemin par défaut ('%s') ?."
+msgstr ""
+"Le chemin ne peut pas être vide pour les emplacements '%s'. Réinitialisez le "
+"chemin par défaut ('%s') ?."
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -103,9 +107,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Notez que pour le moment l'architecture %s ne fournit pas un noyau relocalisable "
-"et requiert ainsi l'installation d'un paquetage kernel-kdump indépendant afin que kdump puisse fonctionner. "
-"Celui-ci peut être installé via 'yum install kernel-kdump' selon votre convenance.\n"
+"Notez que pour le moment l'architecture %s ne fournit pas un noyau "
+"relocalisable et requiert ainsi l'installation d'un paquetage kernel-kdump "
+"indépendant afin que kdump puisse fonctionner. Celui-ci peut être installé "
+"via 'yum install kernel-kdump' selon votre convenance.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:284
@@ -140,8 +145,8 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"Les emplacements SSH doivent avoir le format 'user@host'. Un chemin peut être spécifié "
-"dans la fenêtre principale."
+"Les emplacements SSH doivent avoir le format 'user@host'. Un chemin peut "
+"être spécifié dans la fenêtre principale."
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
@@ -149,12 +154,15 @@ msgstr "Les emplacements NFS doivent avoir le format 'host:/path'"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
-msgstr "Pour les emplacements nus vous devez spécifier un noeud périphérique valide."
+msgstr ""
+"Pour les emplacements nus vous devez spécifier un noeud périphérique valide."
 
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Le support pour le type de système de fichiers '%s' n'est pas présent sur ce système"
+msgstr ""
+"Le support pour le type de système de fichiers '%s' n'est pas présent sur ce "
+"système"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
@@ -164,11 +172,14 @@ msgstr "Échec de stat pour le noeud périphérique '%s'"
 #: ../src/system-config-kdump.py:460
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr "Les emplacements '%s' doivent spécifier un noeud de périphérique valide."
+msgstr ""
+"Les emplacements '%s' doivent spécifier un noeud de périphérique valide."
 
 #: ../src/system-config-kdump.py:609
 msgid "No bootloader config file found, aborting configuration!"
-msgstr "Aucun fichier de configuration bootloader trouvé, abandon de la configuration !"
+msgstr ""
+"Aucun fichier de configuration bootloader trouvé, abandon de la "
+"configuration !"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
@@ -209,4 +220,3 @@ msgstr "Core Collector :"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Action par défaut :"
-
