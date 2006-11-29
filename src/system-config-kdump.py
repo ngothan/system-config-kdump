@@ -171,31 +171,31 @@ class mainWindow:
         #
         # Defaults
         lowerBound = 128
-        upperBound = 512
+        minUsable = 256
         step = 64
-        enoughMem = True
-        # ia64 usually needs at *least* 256M, page-aligned... :(
-        if self.arch == "ia64":
+
+        if self.arch == 'ia64':
+            # ia64 needs at least 256M, page-aligned
             lowerBound = 256
+            minUsable = 512
             step = 256
-            if (totalMem - upperBound) < 512:
-                enoughMem = False
-        # If less than 1GB and not ia64, lower bounds
-        elif (totalMem - upperBound) < 512:
-            lowerBound = 64
-            upperBound = 256
-            # If less than 512MB, lower bounds further
-            if (totalMem - upperBound) < 256:
-                upperBound = 128
-                # Okay, they simply don't have enough memory for kdump to be viable
-                if (totalMem - upperBound) < 192:
-                    self.showErrorMessage(_("This system does not have enough "
-                                             "memory for kdump to be viable"))
-                    sys.exit(1)
+        elif self.arch == 'ppc64':
+            lowerBound = 256
+            minUsable = 1024
+    
+        upperBound = (totalMem - minUsable) - (totalMem % step) 
+
+        if upperBound < lowerBound:
+            self.showErrorMessage(_("This system does not have enough "
+                                    "memory for kdump to be viable"))
+            sys.exit(1)
         
-        # Set spinner to lowerBound to start unless already set on kernel command line
+        # Set spinner to lowerBound unless already set on kernel command line
         if kdumpMem == 0:
             kdumpMem = lowerBound
+        else:
+            # round it down to a multiple of %step
+            kdumpMem = kdumpMem - (kdumpMem % step)
 
         self.totalMem = totalMem
         self.kdumpMem = kdumpMem

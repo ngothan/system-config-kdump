@@ -1,3 +1,7 @@
+2006-11-28  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	rework memory constraints for increased flexibility (#215990)
+
 2006-11-20  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	improve consistency WRT freezing/thawing of widgets (#215991)
