@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.6
+Version: 1.0.7
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -67,6 +67,11 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Wed Nov 29 2006 Dave Lehman <dlehman@redhat.com> 1.0.7-1%{?dist}
+- rework memory constraints for increased flexibility (#215990)
+- improve consistency WRT freezing/thawing of widgets (#215991)
+- update translations (#216596)
+
 * Fri Oct 27 2006 Dave Lehman <dlehman@redhat.com> 1.0.6-1%{?dist}
 - add ChangeLog and COPYING as docs
 
