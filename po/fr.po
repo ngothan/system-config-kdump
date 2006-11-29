@@ -1,20 +1,21 @@
-# translation of fr.po to French
+# translation of fr.po to Français
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Decroux Fabien <fdecroux@redhat.com>, 2006.
 #
+# Decroux Fabien <fdecroux@redhat.com>, 2006.
+# Alain PORTAL <aportal@univ-montp2.fr>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-27 12:48+1000\n"
-"Last-Translator: Decroux Fabien <fdecroux@redhat.com>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2006-11-29 06:26+0100\n"
+"Last-Translator: Alain PORTAL <aportal@univ-montp2.fr>\n"
+"Language-Team: Français <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../src/system-config-kdump.py:49
 msgid "local"
@@ -49,7 +50,7 @@ msgid ""
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
 msgstr ""
-"Kdump essayera de placer le vmcore à l'emplacement spécifié. Si ça devait "
+"Kdump essayera de placer le vmcore à l'emplacement spécifié. Si cela devait "
 "échouer, l'action par défaut (spécifiée ci-dessous) sera exécutée."
 
 #.
@@ -84,15 +85,14 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:192
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr ""
-"Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
+msgstr "Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
 
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
-"Le chemin ne peut pas être vide pour les emplacements '%s'. Réinitialisez le "
-"chemin par défaut ('%s') ?."
+"Le chemin ne peut pas être vide pour les emplacements « %s ». Souhaitez-vous réinitialiser le "
+"chemin à sa valeur par défaut (« %s ») ?"
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -107,10 +107,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Notez que pour le moment l'architecture %s ne fournit pas un noyau "
-"relocalisable et requiert ainsi l'installation d'un paquetage kernel-kdump "
+"Notez que pour le moment, l'architecture %s ne fournit pas un noyau "
+"relogeable et nécessite donc l'installation d'un paquetage kernel-kdump "
 "indépendant afin que kdump puisse fonctionner. Celui-ci peut être installé "
-"via 'yum install kernel-kdump' selon votre convenance.\n"
+"via « yum install kernel-kdump » selon votre convenance.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:284
@@ -120,8 +120,8 @@ msgid ""
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
-"Changer les paramètres de Kdump requiert un redémarrage du système afin "
-"réallouer la mémoire convenablement. %sVous devrez redémarrer le système "
+"Modifier les paramètres de kdump nécessite un redémarrage du système afin de"
+"réallouer convenablement la mémoire. %sVous devrez redémarrer le système "
 "pour que les nouveaux paramètres prennent effet."
 
 #: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
@@ -145,49 +145,47 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"Les emplacements SSH doivent avoir le format 'user@host'. Un chemin peut "
+"Les emplacements SSH doivent être de la forme « user@host ». Un chemin peut "
 "être spécifié dans la fenêtre principale."
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr "Les emplacements NFS doivent avoir le format 'host:/path'"
+msgstr "Les emplacements NFS doivent être de la forme « host:/path »"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
-msgstr ""
-"Pour les emplacements nus vous devez spécifier un noeud périphérique valide."
+msgstr "Pour les emplacements nus, vous devez spécifier un noeud de périphérique valide."
 
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr ""
-"Le support pour le type de système de fichiers '%s' n'est pas présent sur ce "
+"La gestion de ce type de système de fichiers '%s' n'est pas disponible sur ce "
 "système"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr "Échec de stat pour le noeud périphérique '%s'"
+msgstr "Échec de stat pour le noeud de périphérique « %s »"
 
 #: ../src/system-config-kdump.py:460
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr ""
-"Les emplacements '%s' doivent spécifier un noeud de périphérique valide."
+msgstr "Les emplacements « %s » doivent spécifier un noeud de périphérique valide."
 
 #: ../src/system-config-kdump.py:609
 msgid "No bootloader config file found, aborting configuration!"
 msgstr ""
-"Aucun fichier de configuration bootloader trouvé, abandon de la "
+"Aucun fichier de configuration bootloader n'a été trouvé, abandon de la "
 "configuration !"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr "Le Core collector doit commencer avec 'makedumpfile'"
+msgstr "Le « Core collector » doit commencer avec « makedumpfile »"
 
 #: ../src/system-config-kdump.py:778
 msgid "You must be root to run this application."
-msgstr "Vous devez être super-utilisateur pour démarrer cette application."
+msgstr "Vous devez être le superutilisateur pour pouvoir lancer cette application."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -195,15 +193,15 @@ msgstr "Activer kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr "Mémoire totale du système (MB) :"
+msgstr "Mémoire totale du système (Mo) :"
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
-msgstr "Mémoire kdump (MB) :"
+msgstr "Mémoire kdump (Mo) :"
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
-msgstr "Mémoire utilisable (MB) :"
+msgstr "Mémoire utilisable (Mo) :"
 
 #: system-config-kdump.gladestrings:12
 msgid "Location:"
@@ -220,3 +218,4 @@ msgstr "Core Collector :"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Action par défaut :"
+
