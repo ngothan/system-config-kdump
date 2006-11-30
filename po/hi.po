@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-23 13:21+0530\n"
+"PO-Revision-Date: 2006-11-30 12:39+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
@@ -89,8 +89,7 @@ msgstr "यह सिस्टम के पास पर्याप्त स�
 #: ../src/system-config-kdump.py:265
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr ""
-"पथ को '%s' स्थान के लिये खाली नहीं छोड़ा जा सकता है. ('%s') मूलभूत में पथ फिर सेट करें?."
+msgstr "पथ को '%s' स्थान के लिये खाली नहीं छोड़ा जा सकता है. ('%s') मूलभूत में पथ फिर सेट करें?."
 
 #: ../src/system-config-kdump.py:275
 #, python-format
@@ -183,7 +182,7 @@ msgstr "आपको इस अनुप्रयोग को चलाने �
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
-msgstr "kdump सक्रिय करे"
+msgstr "kdump सक्रिय करें"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
@@ -212,3 +211,4 @@ msgstr "केंद्रीय संग्राहक:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "मूलभूत क्रिया:"
+
