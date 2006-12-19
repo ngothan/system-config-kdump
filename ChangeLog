@@ -1,3 +1,10 @@
+2006-12-18  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	use file: URIs instead of local: (#218878)
+
+	* system-config-kdump.spec:
+	bump version
+
 2006-11-28  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	rework memory constraints for increased flexibility (#215990)

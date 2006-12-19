@@ -46,7 +46,7 @@ bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16),
                 "yaboot" : ("/boot/etc/yaboot.conf", 16),
                 "elilo"  : ("/boot/efi/efi/redhat/elilo.conf", 256) }
 
-TYPE_LOCAL = _("local")
+TYPE_LOCAL = "file"
 TYPE_NET = "net"
 TYPE_NFS = "nfs"
 TYPE_SSH = "ssh"
