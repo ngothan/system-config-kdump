@@ -41,10 +41,10 @@ else:
 
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
-#             bootloader : (config file, kdump offset)
-bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16),
-                "yaboot" : ("/boot/etc/yaboot.conf", 16),
-                "elilo"  : ("/boot/efi/efi/redhat/elilo.conf", 256) }
+#             bootloader : (config file, kdump offset, kernel path)
+bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
+                "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
+                "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
 TYPE_LOCAL = "file"
 TYPE_NET = "net"
@@ -600,7 +600,7 @@ class mainWindow:
         fd.close()
 
     def setBootloader(self):
-        for (name, (conf, offset)) in bootloaders.items():
+        for (name, (conf, offset, kpath)) in bootloaders.items():
             # I hope order doesn't matter
             if os.access(conf, os.W_OK) or (testing and os.access(conf, os.F_OK)):
                 self.bootloader = name
@@ -616,17 +616,17 @@ class mainWindow:
         if testing:
             return
 
-        offset = bootloaders[self.bootloader][1]
+        (blConfig, offset, kpath) = bootloaders[self.bootloader]
 
         # Are we adding or removing the crashkernel param?
         if self.kdumpEnabled:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=/boot/vmlinuz-%s --args="crashkernel=%iM@%iM"' \
-                        % (self.bootloader, self.runningKernel, 
+            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --args="crashkernel=%iM@%iM"' \
+                        % (self.bootloader, kpath, self.runningKernel, 
                            self.kdumpMem, offset)
             chkconfigStatus = "on"
         else:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=/boot/vmlinuz-%s --remove-args="crashkernel=%s"' \
-                        % (self.bootloader, self.runningKernel, 
+            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-args="crashkernel=%s"' \
+                        % (self.bootloader, kpath, self.runningKernel, 
                            self.origCrashKernel)
             chkconfigStatus = "off"
 

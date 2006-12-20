@@ -1,3 +1,11 @@
+2006-12-20  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	include kernel path in bootloader info list so bootloader
+	config is modified correctly on ia64 (#220231)
+
+	* src/system-config-kdump.glade:
+	make locationEditButton ("Edit Location") translatable (#216596)
+
 2006-12-18  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	use file: URIs instead of local: (#218878)
