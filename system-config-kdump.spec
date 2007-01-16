@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.9
+Version: 1.0.10
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -67,6 +67,10 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Tue Jan 16 2007 Dave Lehman <dlehman@redhat.com> 1.0.10-1%{?dist}
+- handle ia64 bootloader correctly (#220231)
+- make "Edit Location" button translatable (#216596)
+
 * Mon Dec 18 2006 Dave Lehman <dlehman@redhat.com> 1.0.9-1%{?dist}
 - more translations
 - use file: URIs instead of local: (#218878)
