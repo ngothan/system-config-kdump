@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-15 00:09+0800\n"
+"PO-Revision-Date: 2007-01-22 01:26+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,29 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/system-config-kdump.py:49
+#, fuzzy
 msgid "local"
-msgstr ""
+msgstr "lokal"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
 msgstr ""
 
 #: ../src/system-config-kdump.py:72
-msgid ""
-"Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of "
-"a freshly booted kernel, making it far more reliable than methods capturing "
-"within the context of the crashed kernel. Being able to capture a core file "
-"can be invaluable in helping determine the root cause of a system crash. "
-"Note that kdump does require reserving a portion of system memory that will "
-"be unavailable for other uses."
+msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
 msgstr ""
 
 #: ../src/system-config-kdump.py:82
-msgid ""
-"Kdump will attempt to place the vmcore at the specified location. In the "
-"event that it fails to place the vmcore at location, the default action "
-"(specified below) will be executed."
+msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
 msgstr ""
 
 #.
@@ -46,7 +37,8 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:93 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:93
+#: system-config-kdump.gladestrings:7
 #, fuzzy
 msgid "Kernel Dump Configuration"
 msgstr "Konfigurasi Pemuat But"
@@ -68,7 +60,8 @@ msgstr ""
 msgid "Sorry, Xen kernels do not support kdump at this time!"
 msgstr ""
 
-#: ../src/system-config-kdump.py:168 ../src/system-config-kdump.py:211
+#: ../src/system-config-kdump.py:168
+#: ../src/system-config-kdump.py:211
 #, python-format
 msgid "%s"
 msgstr "%s"
@@ -87,22 +80,17 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
+"Note that the %s architecture does not feature a relocatable kernel at this time, and thus requires a separate kernel-kdump package to be installed for kdump to function. This can be installed via 'yum install kernel-kdump' at your convenience.\n"
 "\n"
 msgstr ""
 
 #: ../src/system-config-kdump.py:284
 #, python-format
-msgid ""
-"Changing Kdump settings requires rebooting the system to reallocate memory "
-"accordingly. %sYou will have to reboot the system for the new settings to "
-"take effect."
+msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
 msgstr ""
 
-#: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:311
+#: system-config-kdump.gladestrings:16
 #, fuzzy
 msgid "Edit Location"
 msgstr "Lokasi Baru"
@@ -112,8 +100,9 @@ msgid "New Location"
 msgstr "Lokasi Baru"
 
 #: ../src/system-config-kdump.py:333
+#, fuzzy
 msgid "Select a location type:"
-msgstr ""
+msgstr "Pilih Jenis Peranti"
 
 #: ../src/system-config-kdump.py:347
 #, fuzzy
@@ -121,16 +110,15 @@ msgid "Enter location:"
 msgstr "Lokasi Baru"
 
 #: ../src/system-config-kdump.py:415
-msgid ""
-"SSH locations must be of the form 'user@host'. A path can be specified in "
-"the main window."
+msgid "SSH locations must be of the form 'user@host'. A path can be specified in the main window."
 msgstr ""
 
 #: ../src/system-config-kdump.py:421
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr ""
 
-#: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
+#: ../src/system-config-kdump.py:428
+#: ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
 msgstr ""
 
@@ -140,9 +128,9 @@ msgid "Support for filesystem type '%s' is not present on this system"
 msgstr ""
 
 #: ../src/system-config-kdump.py:455
-#, python-format
+#, fuzzy, python-format
 msgid "Failed to stat device node '%s'"
-msgstr ""
+msgstr "Gagal menaikkan ${DEVICE}."
 
 #: ../src/system-config-kdump.py:460
 #, python-format
@@ -175,43 +163,25 @@ msgstr "Ralat membaca maklumat memori sistem:"
 #: system-config-kdump.gladestrings:10
 #, fuzzy
 msgid "kdump Memory (MB):"
-msgstr "Ruang Swap (MB)"
+msgstr "Memori Bolehguna (MB):"
 
 #: system-config-kdump.gladestrings:11
 msgid "Usable Memory (MB):"
 msgstr "Memori Bolehguna (MB):"
 
 #: system-config-kdump.gladestrings:12
-#, fuzzy
 msgid "Location:"
-msgstr "Lokasi"
+msgstr "Lokasi:"
 
 #: system-config-kdump.gladestrings:13
 msgid "Path:"
-msgstr ""
+msgstr "Laluan:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr ""
+msgstr "Pengutip Teras:"
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Tindakan Default:"
 
-#~ msgid "Network Interface Override:"
-#~ msgstr "Langkau Antaramuka Rangkaian:"
-
-#~ msgid "Reboot"
-#~ msgstr "Ulangbut"
-
-#~ msgid "Shell"
-#~ msgstr "Shell"
-
-#~ msgid "Move Up"
-#~ msgstr "Naik Atas"
-
-#~ msgid "Move Down"
-#~ msgstr "Turun Bawah"
-
-#~ msgid "Type"
-#~ msgstr "Jenis"
