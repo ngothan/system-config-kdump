@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-12-17 13:02+0100\n"
+"PO-Revision-Date: 2007-03-11 01:03-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "montiraj rootfs i pokreni /sbin/init"
 
 #: ../src/system-config-kdump.py:72
 msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
-msgstr "Kdump je novi mehanizam za izbačaj kraha jezgra. U slučaju kraha sistema, datoteka srži se može zadržati koristeći kdump, koji se izvršava u kontekstu sveže pokrenutog jezgra, što je mnogo pouzdanije od zadržavanja unutar  konteksta krahiranog jezgra. Imati mogućnost zadržavanja datoteke srži može biti neprocenjivo u pomaganju određivanja uzroka u korenu kraha sistema. Primetite da kdump ne zahteva zauzimanje dela sistemske memorije koji neće biti dostupan za drugu upotrebu."
+msgstr "Kdump je novi mehanizam za izbačaj kraha jezgra. U slučaju kraha sistema, datoteka srži se može zadržati koristeći kdump, koji se izvršava u kontekstu sveže pokrenutog jezgra, što je mnogo pouzdanije od zadržavanja unutar  konteksta krahiranog jezgra. Imati mogućnost zadržavanja datoteke srži može biti neprocenjivo u pomaganju određivanja uzroka u korenu kraha sistema. Primetite da kdump zahteva zauzimanje dela sistemske memorije koji neće biti dostupan za drugu upotrebu."
 
 #: ../src/system-config-kdump.py:82
 msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
