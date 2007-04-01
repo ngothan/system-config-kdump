@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2007-02-11 21:46+0800\n"
+"PO-Revision-Date: 2007-04-01 18:08+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -105,9 +105,8 @@ msgid "Select a location type:"
 msgstr "Pilih Jenis Peranti"
 
 #: ../src/system-config-kdump.py:347
-#, fuzzy
 msgid "Enter location:"
-msgstr "Lokasi Baru"
+msgstr "Masukkan lokasi:"
 
 #: ../src/system-config-kdump.py:415
 msgid "SSH locations must be of the form 'user@host'. A path can be specified in the main window."
@@ -128,9 +127,9 @@ msgid "Support for filesystem type '%s' is not present on this system"
 msgstr ""
 
 #: ../src/system-config-kdump.py:455
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to stat device node '%s'"
-msgstr "Gagal menaikkan ${DEVICE}."
+msgstr "Gagal untuk stat nod peranti '%s'"
 
 #: ../src/system-config-kdump.py:460
 #, python-format
@@ -146,9 +145,8 @@ msgid "Core collector must begin with 'makedumpfile'"
 msgstr ""
 
 #: ../src/system-config-kdump.py:778
-#, fuzzy
 msgid "You must be root to run this application."
-msgstr "Anda mestilah root untuk melaksanakan program ini.\n"
+msgstr "Anda mestilah root untuk melaksanakan aplikasi ini."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
