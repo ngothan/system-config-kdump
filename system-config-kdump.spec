@@ -69,7 +69,12 @@ fi
 %changelog
 * Tue Jan 16 2007 Dave Lehman <dlehman@redhat.com> 1.0.10-1%{?dist}
 - handle ia64 bootloader correctly (#220231)
-- make "Edit Location" button translatable (#216596)
+
+* Wed Dec 27 2006 Dave Lehman <dlehman@redhat.com> 1.0.9-3%{?dist}
+- only present ext2 and ext3 as filesystem type choices (#220223)
+
+* Wed Dec 27 2006 Dave Lehman <dlehman@redhat.com> 1.0.9-2%{?dist}
+- make "Edit Location" button translatable (#216596, again)
 
 * Mon Dec 18 2006 Dave Lehman <dlehman@redhat.com> 1.0.9-1%{?dist}
 - more translations

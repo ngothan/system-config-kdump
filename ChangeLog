@@ -1,3 +1,12 @@
+2007-02-06  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py:
+	only present ext2 and ext3 filesystem types as options (#220223)
+
+	* src/system-config-kdump.py:
+	align memory requirements with documented system limits (#228711)
+
+	* system-config-kdump.spec: update changelog
+
 2006-12-20  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	include kernel path in bootloader info list so bootloader

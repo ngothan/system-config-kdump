@@ -64,6 +64,8 @@ locationTypes = [TYPE_LOCAL, TYPE_NFS, TYPE_SSH, TYPE_RAW]
 netLocationTypes = (TYPE_NFS, TYPE_SSH)
 defaultActions = [ACTION_REBOOT, ACTION_SHELL, ACTION_DEFAULT]
 
+supportedFilesystemTypes = ("ext2", "ext3")
+
 unsupportedArches = ("ppc", "s390", "s390x", "i386", "i586")
 kernelKdumpArches = ("ppc64")
 debug = 0 
@@ -171,17 +173,16 @@ class mainWindow:
         #
         # Defaults
         lowerBound = 128
-        minUsable = 256
+        minUsable = 512
         step = 64
 
         if self.arch == 'ia64':
             # ia64 needs at least 256M, page-aligned
             lowerBound = 256
-            minUsable = 512
             step = 256
         elif self.arch == 'ppc64':
             lowerBound = 256
-            minUsable = 1024
+            minUsable = 2048
     
         upperBound = (totalMem - minUsable) - (totalMem % step) 
 
@@ -337,7 +338,8 @@ class mainWindow:
             combo.append_text(typeStr)
         fstypes = []
         for fsck in [f for f in os.listdir("/sbin") if f.startswith("fsck.")]:
-            fstypes.append(fsck[5:])
+            if fsck[5:] in supportedFilesystemTypes:
+                fstypes.append(fsck[5:])
         fstypes.sort()
         for fstype in fstypes:
             combo.append_text(fstype)
