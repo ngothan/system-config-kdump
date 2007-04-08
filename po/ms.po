@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2007-04-01 18:08+0800\n"
+"PO-Revision-Date: 2007-04-08 23:31+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,9 +44,8 @@ msgid "Kernel Dump Configuration"
 msgstr "Konfigurasi Pemuat But"
 
 #: ../src/system-config-kdump.py:94
-#, fuzzy
 msgid "Configure kdump/kexec"
-msgstr "Konfigurasi mengguna _DHCP"
+msgstr "Tetapkan kdump/kexec"
 
 #: ../src/system-config-kdump.py:133
 msgid "Sorry, this architecture does not currently support kdump"
@@ -91,18 +90,16 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:311
 #: system-config-kdump.gladestrings:16
-#, fuzzy
 msgid "Edit Location"
-msgstr "Lokasi Baru"
+msgstr "Sunting Lokasi"
 
 #: ../src/system-config-kdump.py:313
 msgid "New Location"
 msgstr "Lokasi Baru"
 
 #: ../src/system-config-kdump.py:333
-#, fuzzy
 msgid "Select a location type:"
-msgstr "Pilih Jenis Peranti"
+msgstr "Pilih jenis lokasi:"
 
 #: ../src/system-config-kdump.py:347
 msgid "Enter location:"
