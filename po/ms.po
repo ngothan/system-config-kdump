@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2007-04-14 23:22+0800\n"
+"PO-Revision-Date: 2007-05-13 00:26+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr ""
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr ""
+msgstr "Sokongan untuk sistemfail jenis '%s' tiada dalam sistem ini"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
@@ -129,11 +129,11 @@ msgstr "Gagal untuk stat nod peranti '%s'"
 #: ../src/system-config-kdump.py:460
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr ""
+msgstr "lokasi '%s' mesti menyatakan nod peranti yang sah."
 
 #: ../src/system-config-kdump.py:609
 msgid "No bootloader config file found, aborting configuration!"
-msgstr ""
+msgstr "Tiada fail tetapan pemuat boot dijumpai, menghentikan tetapan!"
 
 #: ../src/system-config-kdump.py:688
 msgid "Core collector must begin with 'makedumpfile'"
