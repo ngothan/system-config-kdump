@@ -1,4 +1,5 @@
-# translation of it.po to 
+# translation of it.po to Italiano
+# translation of it.po to
 # translation of it.po to
 # translation of it.po to
 # translation of it.po to
@@ -13,18 +14,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006.
 #
+# Francesco Tombolini <tombo@adamantio.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2006-11-22 04:41+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <it@li.org>\n"
+"PO-Revision-Date: 2007-06-09 20:43+0200\n"
+"Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
+"Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../src/system-config-kdump.py:49
 msgid "local"
@@ -137,7 +140,7 @@ msgid ""
 msgstr ""
 "La modifica delle impostazioni di Kdump necessita di un riavvio del sistema "
 "per allocare nuovamente la memoria in modo corretto.  %sPer confermare le "
-"modifiche appena apportate, sarà necessario riavviare il vostro sistema."
+"modifiche appena apportate, sarà necessario riavviare il sistema."
 
 #: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
 msgid "Edit Location"
@@ -169,14 +172,12 @@ msgstr "Le posizioni NFS devono essere nel seguente formato, 'host:/path'"
 
 #: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
 msgid "For raw locations you must specify a valid device node."
-msgstr ""
-"Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
+msgstr "Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
 
 #: ../src/system-config-kdump.py:440
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr ""
-"Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
+msgstr "Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
 
 #: ../src/system-config-kdump.py:455
 #, python-format
@@ -200,8 +201,7 @@ msgstr "Il Core collector deve iniziare con 'makedumpfile'"
 
 #: ../src/system-config-kdump.py:778
 msgid "You must be root to run this application."
-msgstr ""
-"Per poter eseguire questa applicazione è necessario essere utenti root."
+msgstr "Per poter eseguire questa applicazione è necessario essere utenti root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -234,3 +234,4 @@ msgstr "Core Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Azione predefinita:"
+
