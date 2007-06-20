@@ -68,7 +68,10 @@ fi
 
 %changelog
 * Tue Jan 16 2007 Dave Lehman <dlehman@redhat.com> 1.0.10-1%{?dist}
-- handle ia64 bootloader correctly (#220231)
+- handle ia64 bootloader correctly
+  Resolves: #220231
+- align memory requirements with documented system limits
+  Resolves: #228711
 
 * Wed Dec 27 2006 Dave Lehman <dlehman@redhat.com> 1.0.9-3%{?dist}
 - only present ext2 and ext3 as filesystem type choices (#220223)

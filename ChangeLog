@@ -1,3 +1,7 @@
+2007-04-05  Dave Lehman  <dlehman@redhat.com>
+
+	* system-config-kdump.spec: bump version, add changelog.
+
 2007-02-06  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py:
 	only present ext2 and ext3 filesystem types as options (#220223)
