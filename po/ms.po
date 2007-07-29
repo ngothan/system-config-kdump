@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2007-07-15 15:56+0800\n"
+"PO-Revision-Date: 2007-07-29 14:02+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -51,11 +51,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:144
 msgid "Failed to detect total system memory"
-msgstr ""
+msgstr "Gagal untuk mengesan jumlah keseluruhan memori sistem"
 
 #: ../src/system-config-kdump.py:149
 msgid "Sorry, Xen kernels do not support kdump at this time!"
-msgstr ""
+msgstr "Maaf, kernel Xen tidak menyokong kdump pada masa ini!"
 
 #: ../src/system-config-kdump.py:168
 #: ../src/system-config-kdump.py:211
@@ -65,7 +65,7 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:192
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr ""
+msgstr "Sistem ini tidak mempunyai cukup memori untuk kdump menjadi berguna"
 
 #: ../src/system-config-kdump.py:265
 #, python-format
