@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-20 11:00-0600\n"
-"PO-Revision-Date: 2007-08-05 01:49+0800\n"
+"PO-Revision-Date: 2007-08-14 00:38+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "lekap rootfs dan laksana /sbin/init"
 
 #: ../src/system-config-kdump.py:72
 msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
-msgstr ""
+msgstr "Kdump adalah mekanisma baru kekandasan kernel. Dalam kejadian kekandasan sistem, fail teras akan dicekup menggunakan kdump, yang dilaksanakan dalam konteks kernel yang baru diboot, menjadikannya lebih dipercayai berbanding kaedah cekupan dalam konteks kernel terkandas. Kebolehan mencekup fail teras amat berguna dalam membantu menentukan sebab utama kekandasan sistem. Perhatian yang kdump memerlukan simpanan sebahagian memori sistem yang tidak akan didapati untuk kegunaan lain."
 
 #: ../src/system-config-kdump.py:82
 msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
