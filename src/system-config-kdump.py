@@ -145,23 +145,47 @@ class mainWindow:
         if not totalMem:
             self.showErrorMessage(_("Failed to detect total system memory"))
             sys.exit(1)
-       
+
         self.runningKernel = os.popen("/bin/uname -r").read().strip()
-        if self.runningKernel.find("xen") != -1:
-            self.showErrorMessage(_("Sorry, Xen kernels do not support kdump "
-                                    "at this time!"))
+
+        # Check for a xen kernel, we do things a bit different w/xen
+        self.xenKernel = False
+        if os.access("/proc/xen", os.R_OK):
+            self.xenKernel = True
+
+        if self.xenKernel and self.arch == 'ia64':
+            self.showErrorMessage(_("Sorry, ia64 xen kernels do not support kdump "
+                                    "at this time."))
             sys.exit(1)
 
-        # Fix up memory calculations in case kdump is already on
-        cmdLine = open("/proc/cmdline").read()
+        # Check to see if kdump memory is already reserved
+        # Read from /proc/iomem so we're portable across xen and non-xen
         kdumpMem = 0
         kdumpOffset = 0
-        if cmdLine.find("crashkernel=") > -1:
+        self.origCrashKernel = ""
+        self.kdumpEnabled = False
+        # PowerPC64 doesn't list crashkernel reservation in /proc/iomem
+        if self.arch != 'ppc64':
+            ioMem = open("/proc/iomem").readlines()
+            for line in ioMem:
+                if line.find("Crash kernel") != -1:
+                    hexCKstart = line.strip().split("-")[0]
+                    hexCKend = line.strip().split("-")[1].split(":")[0].strip()
+                    kdumpOffset = self.hex2mb(hexCKstart)
+                    kdumpMem = self.hex2mb(hexCKend) - kdumpOffset
+                    break
+        else:
+            cmdLine = open("/proc/cmdline").read()
+            if cmdLine.find("crashkernel=") > -1:
+                crashString = filter(lambda t: t.startswith("crashkernel="), 
+                                     cmdLine.split())[0].split("=")[1]
+                (kdumpMem, kdumpOffset) = \
+                           [int(m[:-1]) for m in crashString.split("@")]
+
+        # Fix up memory calculations, if need be
+        if kdumpMem != 0:
             self.kdumpEnabled = True
             self.kdumpEnableCheckButton.set_active(True)
-            crashString = filter(lambda t: t.startswith("crashkernel="), 
-                                  cmdLine.split())[0].split("=")[1]
-            (kdumpMem, kdumpOffset) = [int(m[:-1]) for m in crashString.split("@")]
             totalMem += kdumpMem
             self.origCrashKernel = "%dM@%dM" % (kdumpMem, kdumpOffset)
         else:
@@ -183,14 +207,14 @@ class mainWindow:
         elif self.arch == 'ppc64':
             lowerBound = 256
             minUsable = 2048
-    
+
         upperBound = (totalMem - minUsable) - (totalMem % step) 
 
         if upperBound < lowerBound:
             self.showErrorMessage(_("This system does not have enough "
                                     "memory for kdump to be viable"))
             sys.exit(1)
-        
+
         # Set spinner to lowerBound unless already set on kernel command line
         if kdumpMem == 0:
             kdumpMem = lowerBound
@@ -280,6 +304,13 @@ class mainWindow:
                                 "function. This can be installed via 'yum "
                                 "install kernel-kdump' at your convenience."
                                 "\n\n" % self.arch)
+
+        if self.xenKernel and self.kdumpEnabled:
+            self.showMessage(_("WARNING: xen kdump support requires a "
+                               "non-xen kernel to perform actual crash "
+                               "dump capture. Please be sure you have "
+                               "the non-xen kernel of the same version "
+                               "as your xen kernel installed."))
 
         if self.kdumpEnabled:
             self.showMessage(_("Changing Kdump settings requires rebooting "
@@ -620,16 +651,25 @@ class mainWindow:
 
         (blConfig, offset, kpath) = bootloaders[self.bootloader]
 
+        # crashkerenl line goes in different places for xen vs. non-xen
+        if self.xenKernel:
+            args = 'mbargs'
+            # x86_64 xen has issues @16M, use 32M instead
+            if self.arch == 'x86_64':
+                offset = 32
+        else:
+            args = 'args'
+
         # Are we adding or removing the crashkernel param?
         if self.kdumpEnabled:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --args="crashkernel=%iM@%iM"' \
+            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%iM@%iM"' \
                         % (self.bootloader, kpath, self.runningKernel, 
-                           self.kdumpMem, offset)
+                           args, self.kdumpMem, offset)
             chkconfigStatus = "on"
         else:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-args="crashkernel=%s"' \
+            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-%s="crashkernel=%s"' \
                         % (self.bootloader, kpath, self.runningKernel, 
-                           self.origCrashKernel)
+                           args, self.origCrashKernel)
             chkconfigStatus = "off"
 
         if debug:
@@ -661,6 +701,13 @@ class mainWindow:
             print "setting defaultAction to", self.defaultAction
 
         return True
+
+    # convert hex memory values into MB of RAM so we can
+    # read /proc/iomem and show something a human understands
+    def hex2mb(self, hex):
+        divisor = 1048575
+        mb = int(hex,16) / divisor
+        return mb
 
     def setPath(self, path=None):
         if path is None and self.path is not None:
