@@ -1,24 +1,23 @@
-# translation of de.po to 
 # translation of de.po to
 # German translations for PACKAGE package
 # German messages for PACKAGE.
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2006.
 #
+# PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-22 11:35+1000\n"
+"PO-Revision-Date: 2007-08-29 09:30+1000\n"
 "Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
-"Language-Team:  <en@li.org>\n"
+"Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -74,9 +73,8 @@ msgid "Failed to detect total system memory"
 msgstr "Konnte den gesamten Systemspeicher nicht ermitteln"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Leider unterstützen Xen-Kernels derzeit kdump nicht!"
+msgstr "Leider unterstützen ia64 Xen-Kernels kdump derzeit nicht."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -119,6 +117,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
 msgstr ""
+"WARNUNG: Die Unterstützung für xen-kdump setzt einen Nicht-Xen-Kernel voraus, "
+"um die tatsächliche Aufzeichnung von Crash-Dumps durchzuführen. Stellen Sie "
+"bitte sicher, dass der Nicht-Xen-Kernel Ihrem installierten Xen-Kernel entspricht."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -226,5 +227,3 @@ msgstr "Core-Collector:"
 msgid "Default Action:"
 msgstr "Standard-Aktion:"
 
-#~ msgid "local"
-#~ msgstr "lokal"
