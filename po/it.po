@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 11:00-0600\n"
+"POT-Creation-Date: 2007-08-24 12:04-0500\n"
 "PO-Revision-Date: 2007-06-09 20:43+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
@@ -29,15 +29,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../src/system-config-kdump.py:49
-msgid "local"
-msgstr "locale"
-
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
 msgstr "mount rootfs ed eseguire /sbin/init"
 
-#: ../src/system-config-kdump.py:72
+#: ../src/system-config-kdump.py:74
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -57,7 +53,7 @@ msgstr ""
 "porzione di memoria del sistema che conseguentemente risulterà non "
 "disponibile ad altri utenti."
 
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:84
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -73,45 +69,46 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:93 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:95 system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
 msgstr "Configurazione del Kernel-Dump"
 
-#: ../src/system-config-kdump.py:94
+#: ../src/system-config-kdump.py:96
 msgid "Configure kdump/kexec"
 msgstr "Configura kdump/kexec"
 
-#: ../src/system-config-kdump.py:133
+#: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "Spiacenti, questa architettura attualmente non supporta kdump"
 
-#: ../src/system-config-kdump.py:144
+#: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
 msgstr "Impossibile rilevare la memoria totale del sistema"
 
-#: ../src/system-config-kdump.py:149
-msgid "Sorry, Xen kernels do not support kdump at this time!"
+#: ../src/system-config-kdump.py:157
+#, fuzzy
+msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "Spiacenti, attualmente i kernel Xen non supportano il kdump!"
 
-#: ../src/system-config-kdump.py:168 ../src/system-config-kdump.py:211
+#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:192
+#: ../src/system-config-kdump.py:214
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr ""
 "Il sistema non possiede memoria sufficiente per far si che kdump risulti "
 "disponibile"
 
-#: ../src/system-config-kdump.py:265
+#: ../src/system-config-kdump.py:290
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "Per le posizioni '%s' il percorso non può essere lasciato vuoto. Usare il "
 "valore predefinito ('%s')?."
 
-#: ../src/system-config-kdump.py:275
+#: ../src/system-config-kdump.py:300
 #, python-format
 msgid ""
 "\n"
@@ -131,7 +128,14 @@ msgstr ""
 "momento a voi più opportuno.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:284
+#: ../src/system-config-kdump.py:309
+msgid ""
+"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
+"dump capture. Please be sure you have the non-xen kernel of the same version "
+"as your xen kernel installed."
+msgstr ""
+
+#: ../src/system-config-kdump.py:316
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -142,23 +146,23 @@ msgstr ""
 "per allocare nuovamente la memoria in modo corretto.  %sPer confermare le "
 "modifiche appena apportate, sarà necessario riavviare il sistema."
 
-#: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Modifica posizione"
 
-#: ../src/system-config-kdump.py:313
+#: ../src/system-config-kdump.py:345
 msgid "New Location"
 msgstr "Nuova posizione"
 
-#: ../src/system-config-kdump.py:333
+#: ../src/system-config-kdump.py:365
 msgid "Select a location type:"
 msgstr "Seleziona un tipo di posizione:"
 
-#: ../src/system-config-kdump.py:347
+#: ../src/system-config-kdump.py:380
 msgid "Enter location:"
 msgstr "Inserisci pozione:"
 
-#: ../src/system-config-kdump.py:415
+#: ../src/system-config-kdump.py:448
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -166,42 +170,45 @@ msgstr ""
 "Il formato delle posizioni SSH deve essere simile a 'user@host'. È possibile "
 "specificare un percorso all'interno della finestra principale."
 
-#: ../src/system-config-kdump.py:421
+#: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "Le posizioni NFS devono essere nel seguente formato, 'host:/path'"
 
-#: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
+#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
 msgid "For raw locations you must specify a valid device node."
-msgstr "Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
+msgstr ""
+"Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
 
-#: ../src/system-config-kdump.py:440
+#: ../src/system-config-kdump.py:473
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
+msgstr ""
+"Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
 
-#: ../src/system-config-kdump.py:455
+#: ../src/system-config-kdump.py:488
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Impossibile ottenere informazioni sul nodo del dispositivo '%s'"
 
-#: ../src/system-config-kdump.py:460
+#: ../src/system-config-kdump.py:493
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "Le posizioni '%s' devono specificare un nodo del dispositivo valido."
 
-#: ../src/system-config-kdump.py:609
+#: ../src/system-config-kdump.py:642
 msgid "No bootloader config file found, aborting configuration!"
 msgstr ""
 "Nessun file di configurazione del bootloader trovato, interrompere la "
 "configurazione!"
 
-#: ../src/system-config-kdump.py:688
+#: ../src/system-config-kdump.py:737
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Il Core collector deve iniziare con 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:778
+#: ../src/system-config-kdump.py:827
 msgid "You must be root to run this application."
-msgstr "Per poter eseguire questa applicazione è necessario essere utenti root."
+msgstr ""
+"Per poter eseguire questa applicazione è necessario essere utenti root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -235,3 +242,5 @@ msgstr "Core Collector:"
 msgid "Default Action:"
 msgstr "Azione predefinita:"
 
+#~ msgid "local"
+#~ msgstr "locale"

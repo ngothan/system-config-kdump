@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 11:00-0600\n"
+"POT-Creation-Date: 2007-08-24 12:04-0500\n"
 "PO-Revision-Date: 2006-11-21 16:28+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
@@ -19,15 +19,11 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../src/system-config-kdump.py:49
-msgid "local"
-msgstr "સ્થાનીય"
-
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
 msgstr "rootfs માઉન્ટ કરો અને /sbin/init ચલાવો"
 
-#: ../src/system-config-kdump.py:72
+#: ../src/system-config-kdump.py:74
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -44,7 +40,7 @@ msgstr ""
 "સાબિત થઈ શકે. નોંધ કરો કે kdump સિસ્ટમ મેમરીનો ભાગ આરક્ષિત કરવાનું જરૂરી રહે છે કે જે અન્ય "
 "વપરાશો માટે બિનઉપલબ્ધ રહશે."
 
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:84
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -58,42 +54,43 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:93 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:95 system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
 msgstr "કર્નલ ડમ્પ રૂપરેખાંકન"
 
-#: ../src/system-config-kdump.py:94
+#: ../src/system-config-kdump.py:96
 msgid "Configure kdump/kexec"
 msgstr "kdump/kexec રૂપરેખાંકિત કરો"
 
-#: ../src/system-config-kdump.py:133
+#: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "માફ કરજો, આ આર્કીટેક્ચર વર્તમાનમાં kdump ને આધાર આપતું નથી"
 
-#: ../src/system-config-kdump.py:144
+#: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
 msgstr "કુલ સિસ્ટમ મેમરી શોધવામાં નિષ્ફળ"
 
-#: ../src/system-config-kdump.py:149
-msgid "Sorry, Xen kernels do not support kdump at this time!"
+#: ../src/system-config-kdump.py:157
+#, fuzzy
+msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "માફ કરજો, Xen કર્નલો આ સમયે kdump ને આધાર આપતા નથી!"
 
-#: ../src/system-config-kdump.py:168 ../src/system-config-kdump.py:211
+#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:192
+#: ../src/system-config-kdump.py:214
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "આ સિસ્ટમ પાસે kdump ને યોગ્ય રાખવા માટે પૂરતી મેમરી નથી"
 
-#: ../src/system-config-kdump.py:265
+#: ../src/system-config-kdump.py:290
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "'%s' સ્થાનો માટે પાથ ખાલી હોઈ શકે નહિં. શું પાથને મૂળભૂત ('%s') માં પુનઃસુયોજિત કરવો છે?."
 
-#: ../src/system-config-kdump.py:275
+#: ../src/system-config-kdump.py:300
 #, python-format
 msgid ""
 "\n"
@@ -111,7 +108,14 @@ msgstr ""
 "install kernel-kdump' મારફતે તમારી સરળતાએ કરીને સ્થાપિત કરી શકાય છે.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:284
+#: ../src/system-config-kdump.py:309
+msgid ""
+"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
+"dump capture. Please be sure you have the non-xen kernel of the same version "
+"as your xen kernel installed."
+msgstr ""
+
+#: ../src/system-config-kdump.py:316
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -121,61 +125,61 @@ msgstr ""
 "Kdump સુયોજનો બદલવા માટે મેમરીને અનુલક્ષીને ફરીથી ફાળવણી કરવા માટે સિસ્ટમને રીબુટ "
 "કરવાની જરૂર છે. %s તમારે સિસ્ટમને નવા સુયોજનોની અસર જોવા માટે રીબુટ કરવાની જરૂર રહેશે."
 
-#: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "સ્થાનમાં ફેરફાર કરો"
 
-#: ../src/system-config-kdump.py:313
+#: ../src/system-config-kdump.py:345
 msgid "New Location"
 msgstr "નવું સ્થાન"
 
-#: ../src/system-config-kdump.py:333
+#: ../src/system-config-kdump.py:365
 msgid "Select a location type:"
 msgstr "સ્થાન પ્રકાર પસંદ કરો:"
 
-#: ../src/system-config-kdump.py:347
+#: ../src/system-config-kdump.py:380
 msgid "Enter location:"
 msgstr "સ્થાન દાખલ કરો:"
 
-#: ../src/system-config-kdump.py:415
+#: ../src/system-config-kdump.py:448
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
 "SSH સ્થાનો 'user@host' સ્વરૂપના હોવા જ જોઈએ. પાથ મુખ્ય વિન્ડોમાં સ્પષ્ટ કરી શકાય છે."
 
-#: ../src/system-config-kdump.py:421
+#: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS સ્થાનો 'host:/path' સ્વરૂપમાં જ હોવા જોઈએ"
 
-#: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
+#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
 msgid "For raw locations you must specify a valid device node."
 msgstr "કાચા સ્થાનો માટે તમારે માન્ય ઉપકરણ નોડ સ્પષ્ટ કરવો જ પડશે."
 
-#: ../src/system-config-kdump.py:440
+#: ../src/system-config-kdump.py:473
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "ફાઈલસિસ્ટમ પ્રકાર '%s' માટેનો આધાર આ સિસ્ટમ પર હાજર નથી"
 
-#: ../src/system-config-kdump.py:455
+#: ../src/system-config-kdump.py:488
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "ઉપકરણ નોડ '%s' ની પરિસ્થિતિ કહેવામાં નિષ્ફળ"
 
-#: ../src/system-config-kdump.py:460
+#: ../src/system-config-kdump.py:493
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "'%s' સ્થાનો માન્ય ઉપકરણ નોડ સ્પષ્ટ કરતા હોવા જ જોઈએ."
 
-#: ../src/system-config-kdump.py:609
+#: ../src/system-config-kdump.py:642
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "કોઈ બુટલોડર રૂપરેખા ફાઈલ મળી નહિં, રૂપરેખાંકન અડધેથી બંધ કરી રહ્યા છીએ!"
 
-#: ../src/system-config-kdump.py:688
+#: ../src/system-config-kdump.py:737
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "મૂળ સંગ્રહનાર 'makedumpfile' સાથે શરૂ થવો જ જોઈએ"
 
-#: ../src/system-config-kdump.py:778
+#: ../src/system-config-kdump.py:827
 msgid "You must be root to run this application."
 msgstr "આ કાર્યક્રમ ચલાવવા માટે તમે રુટ હોવા જ જોઈએ."
 
@@ -210,3 +214,6 @@ msgstr "મૂળ સંગ્રહ કરનાર:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "મૂળભૂત ક્રિયા:"
+
+#~ msgid "local"
+#~ msgstr "સ્થાનીય"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 11:00-0600\n"
+"POT-Creation-Date: 2007-08-24 12:04-0500\n"
 "PO-Revision-Date: 2007-01-27 11:37+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -15,15 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/system-config-kdump.py:49
-msgid "local"
-msgstr "místní"
-
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
 msgstr "připojit kořenový FS a spustit /sbin/init"
 
-#: ../src/system-config-kdump.py:72
+#: ../src/system-config-kdump.py:74
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -36,12 +32,12 @@ msgstr ""
 "Kdump je nový nástroj pro výpis paměti po havárii. Pokud systém zhavaruje, "
 "soubor core je zachycen nástrojem kdump, který je spuštěn v kontextu "
 "speciálního jádra. Tato metoda je spolehlivější, než způsob, kdy se core "
-"zachytává v kontextu jádra, které zhavarovalo. Zachycení výpisu stavu systému "
-"při havárii přináší neocenitelnou pomoc při zjišťování důvodu selhání. "
-"Upozoròujeme na to, že kdump pro svoji činnost potřebuje část systémové "
-"paměti, která pak není přístupná pro jiné použití."
+"zachytává v kontextu jádra, které zhavarovalo. Zachycení výpisu stavu "
+"systému při havárii přináší neocenitelnou pomoc při zjišťování důvodu "
+"selhání. Upozoròujeme na to, že kdump pro svoji činnost potřebuje část "
+"systémové paměti, která pak není přístupná pro jiné použití."
 
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:84
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -55,41 +51,42 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:93 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:95 system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
 msgstr "Konfigurace Kdump (Kernel Dump)"
 
-#: ../src/system-config-kdump.py:94
+#: ../src/system-config-kdump.py:96
 msgid "Configure kdump/kexec"
 msgstr "Nastavení kdump/kexec"
 
-#: ../src/system-config-kdump.py:133
+#: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "Omlouváme se, ale tato architektura zatím kdump nepodporuje."
 
-#: ../src/system-config-kdump.py:144
+#: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
 msgstr "Selhala detekce celkové velikosti paměti"
 
-#: ../src/system-config-kdump.py:149
-msgid "Sorry, Xen kernels do not support kdump at this time!"
+#: ../src/system-config-kdump.py:157
+#, fuzzy
+msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "Omlouvá se, ale Xen jádra zatím kdump nepodporují."
 
-#: ../src/system-config-kdump.py:168 ../src/system-config-kdump.py:211
+#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:192
+#: ../src/system-config-kdump.py:214
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Tento systém nemá dostatek paměti pro běh nástroje kdump"
 
-#: ../src/system-config-kdump.py:265
+#: ../src/system-config-kdump.py:290
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr "Cesta pro '%s' nesmí být prázdná. Obnovit do výchozí hodnoty ('%s')?"
 
-#: ../src/system-config-kdump.py:275
+#: ../src/system-config-kdump.py:300
 #, python-format
 msgid ""
 "\n"
@@ -102,76 +99,84 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Upozornění: architektura %s v tuto dobu nepodporuje relokatibilní kernel, a proto "
-"je potřeba speciální balíček kernel-kdump, který můžete nainstalovat příkazem "
-"'yum install kernel-kdump'.\n"
+"Upozornění: architektura %s v tuto dobu nepodporuje relokatibilní kernel, a "
+"proto je potřeba speciální balíček kernel-kdump, který můžete nainstalovat "
+"příkazem 'yum install kernel-kdump'.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:284
+#: ../src/system-config-kdump.py:309
+msgid ""
+"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
+"dump capture. Please be sure you have the non-xen kernel of the same version "
+"as your xen kernel installed."
+msgstr ""
+
+#: ../src/system-config-kdump.py:316
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
-"Změna nastavení Kdump vyžaduje restart systému, aby mohla být alokována "
-"v systému potřebná paměť %s."
+"Změna nastavení Kdump vyžaduje restart systému, aby mohla být alokována v "
+"systému potřebná paměť %s."
 
-#: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Změna umístění"
 
-#: ../src/system-config-kdump.py:313
+#: ../src/system-config-kdump.py:345
 msgid "New Location"
 msgstr "Nové umístění"
 
-#: ../src/system-config-kdump.py:333
+#: ../src/system-config-kdump.py:365
 msgid "Select a location type:"
 msgstr "Volba typu umístění:"
 
-#: ../src/system-config-kdump.py:347
+#: ../src/system-config-kdump.py:380
 msgid "Enter location:"
 msgstr "Vložte umístění:"
 
-#: ../src/system-config-kdump.py:415
+#: ../src/system-config-kdump.py:448
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"SSH umístění musí být ve tvaru 'user@host'. V hlavním okně může být uvedena cesta."
+"SSH umístění musí být ve tvaru 'user@host'. V hlavním okně může být uvedena "
+"cesta."
 
-#: ../src/system-config-kdump.py:421
+#: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS umístění musí být ve tvaru 'host:/path'"
 
-#: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
+#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
 msgid "For raw locations you must specify a valid device node."
 msgstr "Raw (přímé) umístění vyžaduje platné zařízení."
 
-#: ../src/system-config-kdump.py:440
+#: ../src/system-config-kdump.py:473
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "Podpora systému souborů '%s' není v tomto systému k dispozici"
 
-#: ../src/system-config-kdump.py:455
+#: ../src/system-config-kdump.py:488
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Selhalo zjištění stavu zařízení '%s'"
 
-#: ../src/system-config-kdump.py:460
+#: ../src/system-config-kdump.py:493
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "Umístění '%s' musí být platným zařízením."
 
-#: ../src/system-config-kdump.py:609
+#: ../src/system-config-kdump.py:642
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "Nenalezena konfigurace zavaděče systému, konfigurace zrušena!"
 
-#: ../src/system-config-kdump.py:688
+#: ../src/system-config-kdump.py:737
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Core collector musí začínat na 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:778
+#: ../src/system-config-kdump.py:827
 msgid "You must be root to run this application."
 msgstr "Pro spusštění této aplikace musíte být root."
 
@@ -206,3 +211,6 @@ msgstr "Core Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Implicitní akce:"
+
+#~ msgid "local"
+#~ msgstr "místní"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 11:00-0600\n"
+"POT-Creation-Date: 2007-08-24 12:04-0500\n"
 "PO-Revision-Date: 2006-11-28 08:59+1000\n"
 "Last-Translator: Noriko Mizumoto <noriko@redhat.com>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
@@ -16,15 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 
-#: ../src/system-config-kdump.py:49
-msgid "local"
-msgstr "ローカル"
-
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
 msgstr "rootfs をマウントして /sbin/init を実行"
 
-#: ../src/system-config-kdump.py:72
+#: ../src/system-config-kdump.py:74
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -42,7 +38,7 @@ msgstr ""
 "因を確定するのに非常に役立ちます。 kdump には他の目的に使用できないシステムメ"
 "モリの一部を予約する必要があるので注意してください。"
 
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:84
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -56,43 +52,44 @@ msgstr ""
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../src/system-config-kdump.py:93 system-config-kdump.gladestrings:7
+#: ../src/system-config-kdump.py:95 system-config-kdump.gladestrings:7
 msgid "Kernel Dump Configuration"
 msgstr "カーネルダンプの設定"
 
-#: ../src/system-config-kdump.py:94
+#: ../src/system-config-kdump.py:96
 msgid "Configure kdump/kexec"
 msgstr "kdump/kexec の設定"
 
-#: ../src/system-config-kdump.py:133
+#: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "残念ですが、このアーキテクチャは現在 kdump をサポートしていません"
 
-#: ../src/system-config-kdump.py:144
+#: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
 msgstr "システムメモリの合計を検出するのに失敗しました"
 
-#: ../src/system-config-kdump.py:149
-msgid "Sorry, Xen kernels do not support kdump at this time!"
+#: ../src/system-config-kdump.py:157
+#, fuzzy
+msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "残念ながら Xen カーネルはこの時点で kdump をサポートしていません。"
 
-#: ../src/system-config-kdump.py:168 ../src/system-config-kdump.py:211
+#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:192
+#: ../src/system-config-kdump.py:214
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "このシステムには kdump が実行できるほどのメモリがありません。"
 
-#: ../src/system-config-kdump.py:265
+#: ../src/system-config-kdump.py:290
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "'%s' の場所に対するパスは空白にできません。 パスをデフォルトにリセットします"
 "か ('%s')?"
 
-#: ../src/system-config-kdump.py:275
+#: ../src/system-config-kdump.py:300
 #, python-format
 msgid ""
 "\n"
@@ -111,7 +108,14 @@ msgstr ""
 "できます。\n"
 "\n"
 
-#: ../src/system-config-kdump.py:284
+#: ../src/system-config-kdump.py:309
+msgid ""
+"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
+"dump capture. Please be sure you have the non-xen kernel of the same version "
+"as your xen kernel installed."
+msgstr ""
+
+#: ../src/system-config-kdump.py:316
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -121,23 +125,23 @@ msgstr ""
 "Kdump 設定を変更すると、変更に応じてメモリを再割り当てするため再起動が必要に"
 "なります。 %s 新しい設定を反映させるにはシステムを再起動する必要があります。"
 
-#: ../src/system-config-kdump.py:311 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "場所の編集"
 
-#: ../src/system-config-kdump.py:313
+#: ../src/system-config-kdump.py:345
 msgid "New Location"
 msgstr "新しい場所"
 
-#: ../src/system-config-kdump.py:333
+#: ../src/system-config-kdump.py:365
 msgid "Select a location type:"
 msgstr "場所のタイプを選択してください:"
 
-#: ../src/system-config-kdump.py:347
+#: ../src/system-config-kdump.py:380
 msgid "Enter location:"
 msgstr "場所を入力してください:"
 
-#: ../src/system-config-kdump.py:415
+#: ../src/system-config-kdump.py:448
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -145,38 +149,38 @@ msgstr ""
 "SSH の場所は 'user@host' のような形式にする必要があります。 パスはメインウィ"
 "ンドウ内で指定できます。"
 
-#: ../src/system-config-kdump.py:421
+#: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS の場所は 'host:/path' のような形式にする必要があります"
 
-#: ../src/system-config-kdump.py:428 ../src/system-config-kdump.py:433
+#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
 msgid "For raw locations you must specify a valid device node."
 msgstr "raw の場所には、 有効なデバイスノードを指定する必要があります。"
 
-#: ../src/system-config-kdump.py:440
+#: ../src/system-config-kdump.py:473
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "ファイルシステムタイプ '%s' のサポートはこのシステムにはありません"
 
-#: ../src/system-config-kdump.py:455
+#: ../src/system-config-kdump.py:488
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "デバイスノード '%s' の stat に失敗しました"
 
-#: ../src/system-config-kdump.py:460
+#: ../src/system-config-kdump.py:493
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "'%s' の場所は有効なデバイスノードを指定している必要があります。"
 
-#: ../src/system-config-kdump.py:609
+#: ../src/system-config-kdump.py:642
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "ブートローダの設定ファイルが見つかりませんでした、設定を中止します。"
 
-#: ../src/system-config-kdump.py:688
+#: ../src/system-config-kdump.py:737
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "コアコレクタは 'makedumpfile' で始まらなければなりません。"
 
-#: ../src/system-config-kdump.py:778
+#: ../src/system-config-kdump.py:827
 msgid "You must be root to run this application."
 msgstr "このアプリケーションを実行するには root になる必要があります。"
 
@@ -211,3 +215,6 @@ msgstr "コアコレクタ:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "デフォルトの動作:"
+
+#~ msgid "local"
+#~ msgstr "ローカル"
