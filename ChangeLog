@@ -1,3 +1,7 @@
+2007-08-29  Dave Lehman  <dlehman@redhat.com>
+
+	* system-config-kdump.spec: bump version, update changelog.
+
 2007-08-28  Dave Lehman  <dlehman@redhat.com>
 
 	* src/system-config-kdump.py: Add support for enabling and configuring 

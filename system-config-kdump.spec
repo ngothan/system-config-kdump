@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.10
+Version: 1.0.11
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -67,6 +67,10 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Wed Aug 29 2007 Dave Lehman <dlehman@redhat.com> 1.0.11-1%{?dist}
+- add support for xen (patch from Jarod Wilson)
+  Resolves: #243191
+
 * Tue Jan 16 2007 Dave Lehman <dlehman@redhat.com> 1.0.10-1%{?dist}
 - handle ia64 bootloader correctly
   Resolves: #220231
