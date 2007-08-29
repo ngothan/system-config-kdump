@@ -1,20 +1,20 @@
 # translation of ml.po to Malayalam
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Ani Peter <apeter@redhat.com>, 2006.
 #
+# Ani Peter <apeter@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-29 12:47+0530\n"
+"PO-Revision-Date: 2007-08-29 17:34+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
-"Language-Team: Malayalam\n"
+"Language-Team: Malayalam <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
@@ -71,9 +71,8 @@ msgid "Failed to detect total system memory"
 msgstr "സിസ്റ്റമിന്‍റെ മൊത്തം മെമ്മറി ലഭ്യമാക്കുന്നതില്‍ പരാജയം"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "ക്ഷമിക്കണം, ഈ സമയത്ത് Xen കേര്‍ണലുകള്‍ kdump പിന്തുണയ്ക്കുന്നില്ല!"
+msgstr "ക്ഷമിക്കണം, ഈ സമയത്ത് ia64 xen കേര്‍ണലുകള്‍ kdump പിന്തുണയ്ക്കുന്നില്ല."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -116,6 +115,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
 msgstr ""
+"മുന്നറിയിപ്പ്: xen kdump-നുള്ള പിന്തുണയ്ക്ക് ശരിയായ ഒരു ക്റാഷ് ഡംപ് ചെയ്യുന്നതിനായി "
+"ഒരു xen അല്ലാത്ത കേറ്‍ണല്‍ ആവശ്യമുണ്ട്. നിങ്ങളുടെ സിസ്റ്റമില്‍ ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടുള്ള "
+"xen കേറ്‍ണലിന്റെ അതേ വേറ്‍ഷനിലുള്ള xen അല്ലാത്ത കേറ്‍ണല്‍ ആയിരിക്കണം എന്നുറപ്പ് വരുത്തുക. "
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -148,8 +150,7 @@ msgstr "സ്ഥാനം എന്‍റര്‍ ചെയ്യുക:"
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
-msgstr ""
-"SSH സ്ഥാനങ്ങള്‍ 'user@host' എന്ന ഫോര്‍മാറ്റിലാകണം. പ്രധാന ജാലകത്തില്‍ ഒരു പാഥ് നല്‍കാവുന്നതാണ്."
+msgstr "SSH സ്ഥാനങ്ങള്‍ 'user@host' എന്ന ഫോര്‍മാറ്റിലാകണം. പ്രധാന ജാലകത്തില്‍ ഒരു പാഥ് നല്‍കാവുന്നതാണ്."
 
 #: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
@@ -218,5 +219,3 @@ msgstr "കോര്‍ കലക്ടര്‍:"
 msgid "Default Action:"
 msgstr "ഡീഫോള്‍ട്ടായ പ്രവര്‍ത്തനം:"
 
-#~ msgid "local"
-#~ msgstr "ലോക്കല്‍"
