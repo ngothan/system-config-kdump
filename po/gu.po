@@ -1,21 +1,21 @@
 # translation of gu.po to Gujarati
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Ankit Patel <ankit@redhat.com>, 2006.
 #
+# Ankit Patel <ankit@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-21 16:28+0530\n"
+"PO-Revision-Date: 2007-08-29 12:32+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
@@ -71,9 +71,8 @@ msgid "Failed to detect total system memory"
 msgstr "કુલ સિસ્ટમ મેમરી શોધવામાં નિષ્ફળ"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "માફ કરજો, Xen કર્નલો આ સમયે kdump ને આધાર આપતા નથી!"
+msgstr "માફ કરજો, ia64 xen કર્નલો આ સમયે kdump ને આધાર આપતા નથી!"
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -87,8 +86,7 @@ msgstr "આ સિસ્ટમ પાસે kdump ને યોગ્ય રા�
 #: ../src/system-config-kdump.py:290
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr ""
-"'%s' સ્થાનો માટે પાથ ખાલી હોઈ શકે નહિં. શું પાથને મૂળભૂત ('%s') માં પુનઃસુયોજિત કરવો છે?."
+msgstr "'%s' સ્થાનો માટે પાથ ખાલી હોઈ શકે નહિં. શું પાથને મૂળભૂત ('%s') માં પુનઃસુયોજિત કરવો છે?."
 
 #: ../src/system-config-kdump.py:300
 #, python-format
@@ -113,7 +111,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "ચેતવણી: xen kdump આધારને વાસ્તવિક ભંગાણ ડમ્પ મેળવવા માટે બિન-xen કર્નલ જરૂરી છે. મહેરબાની કરીને તમારી સ્થાપિત xen કર્નલની આવૃત્તિ જેટલી જ બિન-xen કર્નલ હોય તેની ખાતરી કરો."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -145,8 +143,7 @@ msgstr "સ્થાન દાખલ કરો:"
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
-msgstr ""
-"SSH સ્થાનો 'user@host' સ્વરૂપના હોવા જ જોઈએ. પાથ મુખ્ય વિન્ડોમાં સ્પષ્ટ કરી શકાય છે."
+msgstr "SSH સ્થાનો 'user@host' સ્વરૂપના હોવા જ જોઈએ. પાથ મુખ્ય વિન્ડોમાં સ્પષ્ટ કરી શકાય છે."
 
 #: ../src/system-config-kdump.py:454
 msgid "NFS locations must be of the form 'host:/path'"
@@ -215,5 +212,3 @@ msgstr "મૂળ સંગ્રહ કરનાર:"
 msgid "Default Action:"
 msgstr "મૂળભૂત ક્રિયા:"
 
-#~ msgid "local"
-#~ msgstr "સ્થાનીય"
