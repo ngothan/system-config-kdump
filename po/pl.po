@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-21 16:05+0200\n"
+"PO-Revision-Date: 2007-08-29 10:38+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -68,9 +68,8 @@ msgid "Failed to detect total system memory"
 msgstr "Wykrycie całkowitej pamięci systemu nie powiodło się"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Przepraszamy, jadra Xen nie obsługują jeszcze kdump!"
+msgstr "Przepraszamy, jadra Xen ia64 nie obsługują jeszcze kdump."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -114,6 +113,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
 msgstr ""
+"OSTRZEŻENIE: obsługa Xena kdump wymaga jądra nie będącego Xenem, aby "
+"wykonywać właściwe przechwycenie zrzutu błędu. Upewnij się, że jądro nie "
+"jest Xenem i jest w tej samej wersji, co zainstalowane jądro Xen."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -218,6 +220,3 @@ msgstr "Zbieracz plików core:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Domyślne działanie:"
-
-#~ msgid "local"
-#~ msgstr "lokalne"
