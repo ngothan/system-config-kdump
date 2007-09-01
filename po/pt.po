@@ -66,9 +66,8 @@ msgid "Failed to detect total system memory"
 msgstr "Não foi possível detectar a memória total do sistema"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Infelizmente, os 'kernels' do Xen não suportam o 'kdump' nesta altura!"
+msgstr "Infelizmente, os 'kernels' do Xen do IA64 não suportam o 'kdump' nesta altura."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
