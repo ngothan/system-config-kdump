@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-20 19:06+0000\n"
+"PO-Revision-Date: 2007-09-02 06:42+0100\n"
 "Last-Translator: José Nuno Coelho Pires <jncp@netcabo.pt>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -109,7 +109,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "ATENÇÃO: o suporte do kdump para o Xen necessita de um 'kernel' não-Xen para efectuar a captura do resultado actual do estoiro. Certifique-se por favor que tem o 'kernel' não-Xen da mesma versão do seu 'kernel' de Xen instalado."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
