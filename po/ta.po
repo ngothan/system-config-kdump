@@ -1,4 +1,4 @@
-# translation of ta.po to Tamil
+# translation of ta.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Felix <ifelix@redhat.com>, 2006.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-28 12:45+0530\n"
-"Last-Translator: Felix <ifelix@redhat.com>\n"
-"Language-Team: Tamil <ta@li.org>\n"
+"PO-Revision-Date: 2007-09-03 14:26+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
@@ -73,9 +73,8 @@ msgid "Failed to detect total system memory"
 msgstr "மொத்த கணினி நினைவகத்தை காண முடியவில்லை"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "இந்த நேரத்தில் Xen கர்னல்கள் kdumpக்கு துணைபுரியாது!"
+msgstr "இந்த நேரத்தில் ia64 Xen கர்னல்கள் kdumpக்கு துணைபுரியவில்லை."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -116,7 +115,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "எச்சரிக்கை: xen kdump க்கு ஒரு xen கர்னல் அல்லாத துணை அசல் crash dumpஐ கைப்பற்ற தேவைப்படுகிறது. எனவே xen கர்னல் அல்லாத அதே பதிப்பை உங்கள் xen கர்னலை நிறுவும் போது வைத்திருக்கவும்."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -219,5 +218,3 @@ msgstr "கோர் சேகரிப்பவர்:"
 msgid "Default Action:"
 msgstr "முன்னிருப்பு செயல்:"
 
-#~ msgid "local"
-#~ msgstr "உள்ளமை"
