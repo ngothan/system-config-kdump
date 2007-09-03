@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2007-09-02 15:32+1000\n"
+"PO-Revision-Date: 2007-09-03 11:12+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -106,12 +106,11 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:309
-#, fuzzy
 msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr "경고: xen kdump 지원"
+msgstr "경고: 크래시 덤프를 캡쳐하기 위해 xen kdump 지원에서 비-xen 커널이 필요합니다. 설치된 xen 커널과 같은 버전의 비-xen 커널이 있는 지를 확인하시기 바랍니다."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
