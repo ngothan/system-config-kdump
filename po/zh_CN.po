@@ -1,21 +1,23 @@
-# translation of zh_CN.po to 
+# translation of zh_CN.po to Chinese, Simplied（简体中文）
+# translation of zh_CN.po to
 # translation of zh_CN.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Xi Huang <xhuang@redhat.com>, 2006.
 #
+# Xi Huang <xhuang@redhat.com>, 2006.
+# Leah Liu <lliu@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-11-30 17:54+1000\n"
-"Last-Translator: Xi Huang <xhuang@redhat.com>\n"
-"Language-Team:  <zh@li.org>\n"
+"PO-Revision-Date: 2007-09-05 10:59+1000\n"
+"Last-Translator: Leah Liu <lliu@redhat.com>\n"
+"Language-Team: Chinese, Simplied（简体中文） <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -67,9 +69,8 @@ msgid "Failed to detect total system memory"
 msgstr "检测系统内存的总数失败了"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "对不起，Xen 内核目前尚不支持 kdump ！"
+msgstr "对不起，ia64 xen 内核目前尚不支持 kdump。"
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -108,7 +109,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "注意：xen kdump 支持要求一个非 xen 内核来捕获实际崩溃转储。请确定您的这个非 xen 内核和您安装的 xen 内核是同一个版本。"
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -209,5 +210,3 @@ msgstr "核心控制器："
 msgid "Default Action:"
 msgstr "默认动作："
 
-#~ msgid "local"
-#~ msgstr "本地"
