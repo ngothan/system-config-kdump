@@ -1,7 +1,7 @@
 # Catalan translations for system-config-kdump package.
 # Copyright (C) 2004, 2005, 2006 Red Hat, Inc.
 # This file is distributed under the same license as the
-#  system-config-securitylevel package.
+#  system-config-kdump package.
 #
 # This file is translated according to the glossary and style guide of
 #   Softcatalà. If you plan to modify this file, please read first the page
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-24 12:04-0500\n"
-"PO-Revision-Date: 2006-12-09 23:32+0100\n"
+"PO-Revision-Date: 2007-09-07 23:32+0100\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -82,9 +82,8 @@ msgid "Failed to detect total system memory"
 msgstr "No s'ha pogut detectar la memòria total del sistema"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "El nuclis Xen no disposen de kdump per ara"
+msgstr "El nuclis Xen per a ia64 no disposen de kdump per ara."
 
 #: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
 #, python-format
@@ -126,6 +125,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
 msgstr ""
+"Atenció: per fer servir el kdump amb xen es necessita un nucli no-xen per a "
+"realitzar la captura de bolcat. Assegureu-vos que teniu un nucli sense xen "
+"de la mateixa versió que el nucli instal·lat."
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -230,23 +232,3 @@ msgstr "Col·lector de cores:"
 msgid "Default Action:"
 msgstr "Acció predeterminada:"
 
-#~ msgid "local"
-#~ msgstr "local"
-
-#~ msgid "Network Interface Override:"
-#~ msgstr "Ignora la interfície de xarxa:"
-
-#~ msgid "Reboot"
-#~ msgstr "Reinicia"
-
-#~ msgid "Shell"
-#~ msgstr "Intèrpret d'ordres"
-
-#~ msgid "Move Up"
-#~ msgstr "Mou adalt"
-
-#~ msgid "Move Down"
-#~ msgstr "Mou abaix"
-
-#~ msgid "Type"
-#~ msgstr "Tipus"
