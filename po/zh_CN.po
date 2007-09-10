@@ -109,7 +109,9 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
 "dump capture. Please be sure you have the non-xen kernel of the same version "
 "as your xen kernel installed."
-msgstr "注意：xen kdump 支持要求一个非 xen 内核来捕获实际崩溃转储。请确定您的这个非 xen 内核和您安装的 xen 内核是同一个版本。"
+msgstr ""
+"注意：xen kdump 支持要求一个非 xen 内核来捕获实际崩溃转储。请确定您的这个非 "
+"xen 内核和您安装的 xen 内核是同一个版本。"
 
 #: ../src/system-config-kdump.py:316
 #, python-format
@@ -209,4 +211,3 @@ msgstr "核心控制器："
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "默认动作："
-
