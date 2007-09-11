@@ -182,6 +182,17 @@ class mainWindow:
                 (kdumpMem, kdumpOffset) = \
                            [int(m[:-1]) for m in crashString.split("@")]
 
+        # i686 xen requires kernel-PAE for kdump if any memory
+        # is mapped above 4GB
+        self.xenKdumpKernel = "kernel"
+        if self.arch == "i686" and self.xenKernel:
+            for line in ioMem:
+                if line.find("System RAM") != -1:
+                    rangeEnd = line.strip().split("-")[1].split(":")[0].strip()
+                    if rangeEnd >= 0x100000000L:
+                        self.xenKdumpKernel = "kernel-PAE"
+                        break
+
         # Fix up memory calculations, if need be
         if kdumpMem != 0:
             self.kdumpEnabled = True
@@ -307,10 +318,11 @@ class mainWindow:
 
         if self.xenKernel and self.kdumpEnabled:
             self.showMessage(_("WARNING: xen kdump support requires a "
-                               "non-xen kernel to perform actual crash "
+                               "non-xen %s RPM to perform actual crash "
                                "dump capture. Please be sure you have "
-                               "the non-xen kernel of the same version "
-                               "as your xen kernel installed."))
+                               "the non-xen %s RPM of the same version "
+                               "as your xen kernel installed." %
+                               (self.xenKdumpKernel, self.xenKdumpKernel)))
 
         if self.kdumpEnabled:
             self.showMessage(_("Changing Kdump settings requires rebooting "
