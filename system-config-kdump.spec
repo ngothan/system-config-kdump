@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.11
+Version: 1.0.12
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL
@@ -67,6 +67,10 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Tue Sep 11 2007 Dave Lehman <dlehman@redhat.com> 1.0.12-1%{?dist}
+- prompt user for a PAE kernel for 32-bit xen with >4G memory (Jarod Wilson)
+  Resolves: rhbz#284851
+
 * Wed Aug 29 2007 Dave Lehman <dlehman@redhat.com> 1.0.11-1%{?dist}
 - add support for xen (patch from Jarod Wilson)
   Resolves: #243191
