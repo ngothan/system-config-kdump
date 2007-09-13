@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-09-07 23:32+0100\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
@@ -85,23 +85,23 @@ msgstr "No s'ha pogut detectar la memòria total del sistema"
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "El nuclis Xen per a ia64 no disposen de kdump per ara."
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Aquest sistema no té prou memòria per a fer un kdump"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "No es pot emprar un camí buit per a les ubicacions '%s'. Voleu reiniciar-lo "
 "al valor predeterminat ('%s')?."
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -119,17 +119,18 @@ msgstr ""
 "kdump funcioni. Podeu instal·lar-lo amb l'ordre 'yum install kernel-dump'.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, fuzzy, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
 "Atenció: per fer servir el kdump amb xen es necessita un nucli no-xen per a "
 "realitzar la captura de bolcat. Assegureu-vos que teniu un nucli sense xen "
 "de la mateixa versió que el nucli instal·lat."
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -140,23 +141,23 @@ msgstr ""
 "reubicar la memòria adequadament. %sHaureu de reiniciar el sistema perquè "
 "s'apliquin els nous canvis."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Edita la ubicació"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "Nova ubicació"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "Seleccioneu un tipus d'ubicació:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "Introduïu la ubicació:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -164,39 +165,39 @@ msgstr ""
 "Les ubicacions SSH han de tenir la forma 'usuari@servidor'. A la finestra "
 "principal es pot especificar un camí."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "Les ubicaciones NFS han de tenir la forma 'servidor:/camí'"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr ""
 "Per a ubicacions directes, heu d'especificar un node de dispositiu vàlid"
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "En aquest sistema no es disposa del tipus de sistema de fitxers '%s'"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "No s'ha pogut obtenir informació el node de dispositiu '%s'"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "Les ubicacions '%s' han d'especificar un node de dispositiu vàlid."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "No s'ha trobat el fitxer de configuració del carregador d'arrencada."
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "El col·lector de cores ha de començar amb 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "S'ha de ser superusuari per executar aquesta aplicació."
 
@@ -231,4 +232,3 @@ msgstr "Col·lector de cores:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Acció predeterminada:"
-

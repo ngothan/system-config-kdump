@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-03-27 21:53+0200\n"
 "Last-Translator: Arpad Biro <biro_arpad@yahoo.com>\n"
 "Language-Team: \n"
@@ -72,23 +72,23 @@ msgstr "Nem sikerült meghatározni a rendszermemória méretét"
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "A Xen-kernelek jelenleg nem támogatják a Kdump programot."
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "A rendszerben nincs elég memória a Kdump használatához"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "\"%s\"-helyek útvonala nem lehet üres. Kívánja az alapértelmezett értékre "
 "(\"%s\") állítani az útvonalt?"
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -107,14 +107,15 @@ msgstr ""
 "paranccsal: \"yum install kernel-kdump\".\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -125,23 +126,23 @@ msgstr ""
 "memória megfelelő újraosztásának érdekében. %sAz új beállítások érvénybe "
 "léptetéséhez Önnek újra kell indítania a rendszert."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Hely módosítása"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "Új hely"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "Válasszon egy helytípust:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "Adja meg a helyet:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -149,40 +150,40 @@ msgstr ""
 "Az SSH-helyek formátuma \"felhasználó@gép\" kell, hogy legyen. A főablakban "
 "lehet megadni útvonalt."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "Az NFS-helyek formátuma \"gép:/útvonal\" kell, hogy legyen."
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr ""
 "A nyers formátumú helyekhez meg kell adni egy érvényes eszköz-csomópontot."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "Ez a rendszer nem támogatja a következő fájlrendszer-típust: \"%s\""
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Nem sikerült lekérdezni ezen eszköz-csomópont adatait: \"%s\""
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "\"%s\"-helyeknek érvényes eszköz-csomópontot kell megadniuk."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr ""
 "Nem található beállítási fájl a rendszerindítóhoz - a beállítás megszakítása."
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Az adatkivonat-gyűjtőnek ezzel kell kezdődnie: \"makedumpfile\""
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "Ezen alkalmazás futtatásához rendszergazdai jogosultság szükséges."
 

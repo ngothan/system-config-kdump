@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system_config_kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2006-12-01 12:36+0530\n"
 "Last-Translator: shankar prasad <svenkate@redhat.com>\n"
 "Language-Team: kannada <en@li.org>\n"
@@ -74,23 +74,23 @@ msgstr "ವ್ಯವಸ್ಥೆಯ ಪೂರ್ಣ ಮೆಮೊರಿಯನ್�
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "ಕ್ಷಮಿಸಿ, ಸದ್ಯಕ್ಕೆ Xen ಕರ್ನಲ್ ಗಳು ಕೆಡಂಪ್ ಗೆ ಬೆಂಬಲ ನೀಡುತ್ತಿಲ್ಲ!"
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "ಕೆಡಂಪ್ ಅನ್ನು ಸುಗಮ ಸಾಧ್ಯವಾಗಿಸಲು ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "'%s' ತಾಣಗಳಿಗೆ ಪಥ ಖಾಲಿ ಇರಲು ಸಾಧ್ಯವಿಲ್ಲ. ಪಥವನ್ನು ಪೂರ್ವ ನಿಯೋಜಿತ ('%s') ಕ್ಕೆ ಹೊಂದಿಸ "
 "ಬೇಕೆ ?."
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -109,14 +109,15 @@ msgstr ""
 "ಬಹುದು.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -127,23 +128,23 @@ msgstr ""
 "ರೀಬೂಟ್ ಮಾಡುವುದು ಆವಶ್ಯಕವಾಗುತ್ತದೆ. %sಹೊಸ ಹೊಂದಾಣಿಕೆಗಳನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲು ನೀವು "
 "ವ್ಯವಸ್ಥೆಯನ್ನು ರೀಬೂಟ್ ಮಾಡಬೇಕು."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "ತಾಣವನ್ನು ಸಂಪಾದಿಸು"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "ಹೊಸ ತಾಣ"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "ಒಂದು ತಾಣ ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "ತಾಣವನ್ನು ಪ್ರವೇಶಿಸಿ:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -151,38 +152,38 @@ msgstr ""
 "SSH ತಾಣಗಳು 'user@host' ನ ಮಾದರಿಯಲ್ಲಿರ ಬೇಕು. ಮುಖ್ಯ ವಿಂಡೊನಲ್ಲಿ ಪಥವನ್ನು "
 "ನಿಗದಿಗೊಳಿಸಬಹದು."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS ತಾಣಗಳು 'host:/path' ನ ಮಾದರಿಯಲ್ಲಿರ ಬೇಕು"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr "ಕಚ್ಛಾ ತಾಣಗಳಿಗಾಗಿ ಒಂದು ಸರಿಯಾದ ಸಾಧನಾ ಜಾಲಘಟಕವನ್ನ ಆರಿಸಿ."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "'%s'ಕಡತ ವ್ಯವಸ್ಥಾ ಪ್ರಕಾರಕ್ಕೆ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಸಮರ್ಥನೆ ಲಭ್ಯವಿಲ್ಲ"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "stat device node '%s' ವಿಫಲವಾಗಿದೆ"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "'%s' ತಾಣಗಳು ಒಂದು ಸರಿಯಾದ ಸಾಧನಾ ಜಾಲಘಟಕವನ್ನ ಸ್ಪಷ್ಟೀಕರಿಸ ಬೇಕುಸಿ."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "bootloader config file ಕಾಣುತ್ತಿಲ್ಲ, ಸ್ವರೂಪಿಸುವ ಕ್ರಿಯೆಯನ್ನು ನಿಲ್ಲಿಸಲಾಗುತ್ತಿದೆ!"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "ಕೋರ್ ಕಲೆಕ್ಟರ್ 'makedumpfile'ಎಂಬುದರಿಂದ ಪ್ರಾರಂಭವಾಗಬೇಕು"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "ಈ ಅನ್ವಯವನ್ನು ಚಾಲನೆ ಮಾಡಬೇಕೆಂದರೆ ನೀವು ಮೂಲದಲ್ಲಿರ ಬೇಕು."
 

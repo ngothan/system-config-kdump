@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-08-30 10:37+0200\n"
 "Last-Translator: Thomas Canniot <mrtom@fedoraproject.org>\n"
 "Language-Team: Français <fedora-trans-fr@redhat.com>\n"
@@ -73,25 +73,28 @@ msgstr "Échec de la détection de toute la mémoire du système"
 
 #: ../src/system-config-kdump.py:157
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Désolé, les noyaux Xen pour les architectures ia64 ne supportent pas kdump pour le moment !"
+msgstr ""
+"Désolé, les noyaux Xen pour les architectures ia64 ne supportent pas kdump "
+"pour le moment !"
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
+msgstr ""
+"Ce système ne dispose pas d'assez de mémoire pour que kdump soit viable"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "Le chemin ne peut pas être vide pour les emplacements « %s ». Souhaitez-vous "
 "réinitialiser le chemin à sa valeur par défaut (« %s ») ?"
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -110,14 +113,18 @@ msgstr ""
 "via « yum install kernel-kdump » selon votre convenance.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, fuzzy, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr "AVERTISSEMENT : la prise en charge de kdump par xen nécessite un noyau non-xen pour effectuer la capture du plantage système actuel. Assurez-vous que les versions du noyau non-xen et du noyau xen installés sont identiques."
+msgstr ""
+"AVERTISSEMENT : la prise en charge de kdump par xen nécessite un noyau non-"
+"xen pour effectuer la capture du plantage système actuel. Assurez-vous que "
+"les versions du noyau non-xen et du noyau xen installés sont identiques."
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -128,23 +135,23 @@ msgstr ""
 "deréallouer convenablement la mémoire. %sVous devrez redémarrer le système "
 "pour que les nouveaux paramètres prennent effet."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Modifier l'emplacement"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "Nouvel emplacement"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "Sélectionner un type d'emplacement :"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "Entrer un emplacement :"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -152,46 +159,48 @@ msgstr ""
 "Les emplacements SSH doivent être de la forme « user@host ». Un chemin peut "
 "être spécifié dans la fenêtre principale."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "Les emplacements NFS doivent être de la forme « host:/path »"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr ""
 "Pour les emplacements nus, vous devez spécifier un noeud de périphérique "
 "valide."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr ""
 "La gestion de ce type de système de fichiers '%s' n'est pas disponible sur "
 "ce système"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Échec de stat pour le noeud de périphérique « %s »"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr "Les emplacements « %s » doivent spécifier un noeud de périphérique valide."
+msgstr ""
+"Les emplacements « %s » doivent spécifier un noeud de périphérique valide."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr ""
 "Aucun fichier de configuration bootloader n'a été trouvé, abandon de la "
 "configuration !"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Le « Core collector » doit commencer avec « makedumpfile »"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
-msgstr "Vous devez être le superutilisateur pour pouvoir lancer cette application."
+msgstr ""
+"Vous devez être le superutilisateur pour pouvoir lancer cette application."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -224,4 +233,3 @@ msgstr "Core Collector :"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Action par défaut :"
-

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-09-04 22:44+0200\n"
 "Last-Translator: Adam Přibyl <pribyl@lowlevel.cz>\n"
 "Language-Team: Czech <fedora-cs-list@redhat.com>\n"
@@ -74,21 +74,21 @@ msgstr "Selhala detekce celkové velikosti paměti"
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "Omlouváme se, ale jádra xen ia64 zatím kdump nepodporují."
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Tento systém nemá dostatek paměti pro běh nástroje kdump"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr "Cesta pro '%s' nesmí být prázdná. Obnovit do výchozí hodnoty ('%s')?"
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -106,14 +106,18 @@ msgstr ""
 "příkazem 'yum install kernel-kdump'.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, fuzzy, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr "VAROVÁNÍ: podpora xen kdump vyžaduje jádro bez xenu k vytvoření skutečného záznamu pádu. Prosím ujistěte se, že máte nainstalováno i jádro stejné verze ale bez xenu."
+msgstr ""
+"VAROVÁNÍ: podpora xen kdump vyžaduje jádro bez xenu k vytvoření skutečného "
+"záznamu pádu. Prosím ujistěte se, že máte nainstalováno i jádro stejné verze "
+"ale bez xenu."
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -123,23 +127,23 @@ msgstr ""
 "Změna nastavení Kdump vyžaduje restart systému, aby mohla být alokována v "
 "systému potřebná paměť %s."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Změna umístění"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "Nové umístění"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "Volba typu umístění:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "Vložte umístění:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -147,38 +151,38 @@ msgstr ""
 "SSH umístění musí být ve tvaru 'user@host'. V hlavním okně může být uvedena "
 "cesta."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS umístění musí být ve tvaru 'host:/path'"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr "Raw (přímé) umístění vyžaduje platné zařízení."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "Podpora systému souborů '%s' není v tomto systému k dispozici"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Selhalo zjištění stavu zařízení '%s'"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "Umístění '%s' musí být platným zařízením."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "Nenalezena konfigurace zavaděče systému, konfigurace zrušena!"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Core collector musí začínat na 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "Pro spusštění této aplikace musíte být root."
 
@@ -216,4 +220,3 @@ msgstr "Implicitní akce:"
 
 #~ msgid "local"
 #~ msgstr "místní"
-

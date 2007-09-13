@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-08-30 06:49+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <it@li.org>\n"
@@ -90,25 +90,25 @@ msgstr "Impossibile rilevare la memoria totale del sistema"
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "Spiacenti, attualmente i kernel xen ia64 non supportano il kdump."
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr ""
 "Il sistema non possiede memoria sufficiente per far si che kdump risulti "
 "disponibile"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "Per le posizioni '%s' il percorso non può essere lasciato vuoto. Usare il "
 "valore predefinito ('%s')?."
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -128,14 +128,18 @@ msgstr ""
 "momento a voi più opportuno.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, fuzzy, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr "AVVERTENZA: il supporto kdump xen necessita di un kernel non-xen per eseguire la cattura del crash dump. Assicuratevi di essere in possesso di un kernel non-xen della stessa versione del kernel xen installato."
+msgstr ""
+"AVVERTENZA: il supporto kdump xen necessita di un kernel non-xen per "
+"eseguire la cattura del crash dump. Assicuratevi di essere in possesso di un "
+"kernel non-xen della stessa versione del kernel xen installato."
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -146,23 +150,23 @@ msgstr ""
 "per allocare nuovamente la memoria in modo corretto.  %sPer confermare le "
 "modifiche appena apportate, sarà necessario riavviare il sistema."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "Modifica posizione"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "Nuova posizione"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "Seleziona un tipo di posizione:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "Inserisci pozione:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -170,42 +174,45 @@ msgstr ""
 "Il formato delle posizioni SSH deve essere simile a 'user@host'. È possibile "
 "specificare un percorso all'interno della finestra principale."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "Le posizioni NFS devono essere nel seguente formato, 'host:/path'"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
-msgstr "Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
+msgstr ""
+"Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
+msgstr ""
+"Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "Impossibile ottenere informazioni sul nodo del dispositivo '%s'"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "Le posizioni '%s' devono specificare un nodo del dispositivo valido."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr ""
 "Nessun file di configurazione del bootloader trovato, interrompere la "
 "configurazione!"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Il Core collector deve iniziare con 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
-msgstr "Per poter eseguire questa applicazione è necessario essere utenti root."
+msgstr ""
+"Per poter eseguire questa applicazione è necessario essere utenti root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -238,4 +245,3 @@ msgstr "Core Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Azione predefinita:"
-

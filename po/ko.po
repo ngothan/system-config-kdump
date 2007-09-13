@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2007-09-03 11:12+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -71,23 +71,23 @@ msgstr "전체 시스템 메모리 용량 검색 실패"
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "죄송합니다, ia64 Xen 커널이 kdump를 지원하지 않습니다!"
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "이 시스템은 kdump를 실행할 수 있는 공간이 충분하지 않습니다"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "'%s' 위치에서 경로를 비울 수 없습니다. 기본값('%s')으로 경로를 재설정하시겠습"
 "니까?"
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -105,14 +105,18 @@ msgstr ""
 "install kernel-kdump'를 통해 설치될 수 있습니다.\n"
 "\n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, fuzzy, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr "경고: 크래시 덤프를 캡쳐하기 위해 xen kdump 지원에서 비-xen 커널이 필요합니다. 설치된 xen 커널과 같은 버전의 비-xen 커널이 있는 지를 확인하시기 바랍니다."
+msgstr ""
+"경고: 크래시 덤프를 캡쳐하기 위해 xen kdump 지원에서 비-xen 커널이 필요합니"
+"다. 설치된 xen 커널과 같은 버전의 비-xen 커널이 있는 지를 확인하시기 바랍니"
+"다."
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -122,23 +126,23 @@ msgstr ""
 "Kdump 설정을 변경하면 변경에 따른 메모리를 재배치하기 위해 시스템을 재부팅해"
 "야 합니다. %s 새로운 설정 사항을 적용하시려면 시스템을 재부팅해야 합니다."
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "편집 위치"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "새 위치"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "위치 유형 선택:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "위치 입력:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -146,38 +150,38 @@ msgstr ""
 "SSH 위치는 'user@host'의 형태로 되어야 합니다. 경로는 주요 윈도우에 지정될 "
 "수 있습니다."
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS 위치는 'host:/path'의 형태로 되어야 합니다"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr "raw 위치에 해당하는 유효한 장치 노드를 지정해 주셔야 합니다."
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "파일 시스템 유형 '%s'에 대한 지원은 이 시스템에 나타나지 않습니다"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "장치 노드 '%s' 시작 실패"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "'%s' 위치에 해당하는 유효한 장치 노드를 지정해야 합니다."
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "부트로더 설정 파일을 찾을 수 없어 설정을 중지합니다!"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "주요 콜렉터(collector)는 'makedumpfile'로 시작해야 합니다"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "이 응용 프로그램을 실행하기 위해 root 계정을 사용하셔야 합니다."
 
@@ -212,4 +216,3 @@ msgstr "주요 콜렉터:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "기본 명령:"
-

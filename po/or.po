@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 12:04-0500\n"
+"POT-Creation-Date: 2007-09-12 15:45-0500\n"
 "PO-Revision-Date: 2006-11-24 11:46+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -77,23 +77,23 @@ msgstr "ସମ୍ପୂର୍ଣ୍ଣ ତନ୍ତ୍ର ସ୍ମୃତିକ�
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "କ୍ଷମା କରିବେ, Xen କର୍ଣ୍ଣଲ ବର୍ତ୍ତମାନ kdump କୁ ସହାୟତା ପ୍ରଦାନ କରୁନାହିଁ!"
 
-#: ../src/system-config-kdump.py:194 ../src/system-config-kdump.py:236
+#: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/system-config-kdump.py:214
+#: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "kdump ର ସକ୍ଷମତା ପାଇଁ ଏହି ତନ୍ତ୍ରରେ ଯଥେଷ୍ଟ ସ୍ମୃତି ନାହିଁ"
 
-#: ../src/system-config-kdump.py:290
+#: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
 msgstr ""
 "'%s' ଅବସ୍ଥାନ ମାନଙ୍କ ପାଇଁ ପଥକୁ ଖାଲି କରିହେବ ନାହିଁ। ପଥକୁ ପୂର୍ବନିର୍ଦ୍ଧାରିତ ('%s') ଭାବରେ "
 "ପୁନଃସ୍ଥାପନ କରନ୍ତୁ? "
 
-#: ../src/system-config-kdump.py:300
+#: ../src/system-config-kdump.py:311
 #, python-format
 msgid ""
 "\n"
@@ -111,14 +111,15 @@ msgstr ""
 "ଆପଣଙ୍କ ସୁବିଧା ପାଇଁ, ଏହାକୁ ଆପଣ 'yum install kernel-kdump' ନିର୍ଦ୍ଦେଶ ଚଳାଇ ସ୍ଥାପନ "
 "କରିପାରିବେ। \n"
 
-#: ../src/system-config-kdump.py:309
+#: ../src/system-config-kdump.py:320
+#, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen kernel to perform actual crash "
-"dump capture. Please be sure you have the non-xen kernel of the same version "
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:316
+#: ../src/system-config-kdump.py:328
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -128,23 +129,23 @@ msgstr ""
 "Kdump ବିନ୍ଯାସର ପରିବର୍ତ୍ତନ ପାଇଁ ତଦନୁସାରେ ସ୍ମୃତି ପୁନଃବଣ୍ଟନ ପାଇଁ ତନ୍ତ୍ରକୁ ପୁନର୍ଚାଳନ କରିବା ଆବଶ୍ଯକ। %"
 "s, ନୂତନ ବିନ୍ଯାସକୁ ପ୍ରଭାବିତ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ତନ୍ତ୍ରକୁ ପୁନର୍ଚାଳନ କରିବା ପାଇଁ ପଡିବ।"
 
-#: ../src/system-config-kdump.py:343 system-config-kdump.gladestrings:16
+#: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
 msgid "Edit Location"
 msgstr "ଅବସ୍ଥାନକୁ ସମ୍ପାଦନ କରନ୍ତୁ"
 
-#: ../src/system-config-kdump.py:345
+#: ../src/system-config-kdump.py:357
 msgid "New Location"
 msgstr "ନୂତନ ଅବସ୍ଥାନ"
 
-#: ../src/system-config-kdump.py:365
+#: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
 msgstr "ଗୋଟିଏ ଅବସ୍ଥାନ ପ୍ରକାରକୁ ଚୟନ କରନ୍ତୁ:"
 
-#: ../src/system-config-kdump.py:380
+#: ../src/system-config-kdump.py:392
 msgid "Enter location:"
 msgstr "ଅବସ୍ଥାନ ଭରଣ କରନ୍ତୁ:"
 
-#: ../src/system-config-kdump.py:448
+#: ../src/system-config-kdump.py:460
 msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
@@ -152,38 +153,38 @@ msgstr ""
 "SSH ଅବସ୍ଥାନ ଗୁଡିକ 'user@host' ରୂପରେ ରହିବା ଉଚିତ। ପ୍ରମୂଖ ୱିଣ୍ଡୋରେ ଗୋଟିଏ ପଥ ନିର୍ଦ୍ଦିଷ୍ଟ କରାଯାଇ "
 "ପାରିବ।"
 
-#: ../src/system-config-kdump.py:454
+#: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
 msgstr "NFS ଅବସ୍ଥାନ ଗୁଡିକ 'host:/path' ରୂପରେ ରହିବା ଉଚିତିତ"
 
-#: ../src/system-config-kdump.py:461 ../src/system-config-kdump.py:466
+#: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
 msgstr "ପ୍ରକୃତ ଅବସ୍ଥାନ ପାଇଁ ଆପଣ ଗୋଟିଏ ବୈଧ ଉପକରଣ ନୋଡ ନିର୍ଦ୍ଦିଷ୍ଟ କରିବା ଉଚିତ।"
 
-#: ../src/system-config-kdump.py:473
+#: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
 msgstr "ଏହି ତନ୍ତ୍ରରେ ଫାଇଲ ତନ୍ତ୍ର ପ୍ରକାର '%s' ପାଇଁ କୌଣସି ସହାୟତା ନାହିଁ"
 
-#: ../src/system-config-kdump.py:488
+#: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
 msgstr "ଉପକରଣ ନୋଡ '%s' କୁ stat କରିବାରେ ବିଫଳ"
 
-#: ../src/system-config-kdump.py:493
+#: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
 msgstr "'%s' ଅବସ୍ଥାନ ଗୋଟିଏ ବୈଧ ଉପକରଣ ନୋଡକୁ ନିର୍ଦ୍ଦିଷ୍ଟ କରିବା ଉଚିତ।"
 
-#: ../src/system-config-kdump.py:642
+#: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
 msgstr "କୌଣସି ବୁଟ-ଲୋଡର config ଫାଇଲ ମିଳିଲା ନାହିଁ, ବିନ୍ଯାସକୁ ପରିତ୍ଯାଗ କରୁଅଛି!"
 
-#: ../src/system-config-kdump.py:737
+#: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "ଅନ୍ତଃସ୍ଥଳ ସଂଗ୍ରହକଟି 'makedumpfile' ସହିତ ପ୍ରାରମ୍ଭ ଉଚିତ"
 
-#: ../src/system-config-kdump.py:827
+#: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
 msgstr "ଏହି ପ୍ରୟୋଗକୁ ଚଳାଇବା ପାଇଁ ଆପଣ ଗୋଟିଏ ପ୍ରମୂଖ ଚାଳକ (ରୁଟ) ହେବା ଉଚିତ।"
 
