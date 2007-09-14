@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-08-29 23:44-0000\n"
+"PO-Revision-Date: 2007-09-14 20:59-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -110,14 +110,14 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"УПОЗОРЕЊЕ: xen kdump подршка захтева не-xen језгро за обављање прихватаја "
-"стварног избачаја краха. Постарајте се да имате не-xen језгро исте верзије "
+"УПОЗОРЕЊЕ: xen kdump подршка захтева не-xen %s RPM за обављање прихватаја "
+"стварног избачаја краха. Постарајте се да имате не-xen %s RPM исте верзије "
 "као и инсталирано xen језгро."
 
 #: ../src/system-config-kdump.py:328
