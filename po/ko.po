@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-09-03 11:12+1000\n"
+"PO-Revision-Date: 2007-09-14 15:44+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -106,14 +106,14 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"경고: 크래시 덤프를 캡쳐하기 위해 xen kdump 지원에서 비-xen 커널이 필요합니"
-"다. 설치된 xen 커널과 같은 버전의 비-xen 커널이 있는 지를 확인하시기 바랍니"
+"경고: 크래시 덤프를 캡쳐하기 위해 xen kdump 지원에서 비-xen %s RPM이 필요합니"
+"다. 설치된 xen 커널과 같은 버전의 비-xen %s RPM이 있는 지를 확인하시기 바랍니"
 "다."
 
 #: ../src/system-config-kdump.py:328
@@ -216,3 +216,4 @@ msgstr "주요 콜렉터:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "기본 명령:"
+
