@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-08-29 09:30+1000\n"
+"PO-Revision-Date: 2007-09-14 14:46+1000\n"
 "Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
 "Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -112,15 +112,15 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"WARNUNG: Die Unterstützung für xen-kdump setzt einen Nicht-Xen-Kernel "
+"WARNUNG: Die Unterstützung für xen-kdump setzt ein Nicht-Xen-RPM %s "
 "voraus, um die tatsächliche Aufzeichnung von Crash-Dumps durchzuführen. "
-"Stellen Sie bitte sicher, dass der Nicht-Xen-Kernel Ihrem installierten Xen-"
+"Stellen Sie bitte sicher, dass das Nicht-Xen-RPM %s Ihrem installierten Xen-"
 "Kernel entspricht."
 
 #: ../src/system-config-kdump.py:328
@@ -228,3 +228,4 @@ msgstr "Core-Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Standard-Aktion:"
+
