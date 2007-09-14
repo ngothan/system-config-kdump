@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-08-29 10:38+0200\n"
+"PO-Revision-Date: 2007-09-14 03:40+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -108,14 +108,14 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"OSTRZEŻENIE: obsługa Xena kdump wymaga jądra nie będącego Xenem, aby "
-"wykonywać właściwe przechwycenie zrzutu błędu. Upewnij się, że jądro nie "
+"OSTRZEŻENIE: obsługa Xena kdump wymaga RPM-a %s nie będącego Xenem, aby "
+"wykonywać właściwe przechwycenie zrzutu błędu. Upewnij się, że RPM %s nie "
 "jest Xenem i jest w tej samej wersji, co zainstalowane jądro Xen."
 
 #: ../src/system-config-kdump.py:328
