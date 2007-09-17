@@ -3,13 +3,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Runa Bhattacharjee <runab@redhat.com>, 2006, 2007.
+# Runa Bhattacharjee <runabh@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-08-29 10:52+0530\n"
-"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"PO-Revision-Date: 2007-09-17 10:46+0530\n"
+"Last-Translator: Runa Bhattacharjee <runabh@gmail.com>\n"
 "Language-Team: Bengali INDIA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgid ""
 "be unavailable for other uses."
 msgstr ""
 "Kdump মূলত কার্নেল বিপর্যয়ের সময় ব্যবহারযোগ্য ডাম্প ব্যবস্থা। সিস্টেম বিপর্যস্ত হলে মূল "
-"(core) ফাইলটি kdump'র সাহায্যে সংগ্রহ করা যাবে। নতুন বুট করা কার্নেলের অপেক্ষায় "
+"(core) ফাইলটি kdump-র সাহায্যে সংগ্রহ করা যাবে। নতুন বুট করা কার্নেলের অপেক্ষায় "
 "এটি সঞ্চালিত হয় যার ফলে বিপর্যস্ত কার্নেলের অপেক্ষায় চলমান পদ্ধতির তুলনায় এটি "
 "অত্যাধিক নির্ভরযোগ্য। মূল (core) ফাইল সংগ্রহ করা হলে সিস্টেম বিপর্যের প্রধান কারণ "
 "সহজে জানা সম্ভব হবে। উল্লেখ্য, kdump দ্বারা সিস্টেম মেমরির একটি অংশ সংরক্ষিত করা "
@@ -104,20 +105,20 @@ msgstr ""
 "\n"
 "\n"
 "উল্লেখ্য, %s আর্কিটেকচারের মধ্যে এই মুহূর্তে স্থানান্তরযোগ্য কার্নেল উপলব্ধ নেই যার ফলে "
-"kdump'র কর্ম সঞ্চালনের জন্য পৃথক kernel-kdump প্যাকেজ ইনস্টল করা আবশ্যক। আপনার "
+"kdump-র কর্ম সঞ্চালনের জন্য পৃথক kernel-kdump প্যাকেজ ইনস্টল করা আবশ্যক। আপনার "
 "সুবিধা অনুযায়ী 'yum install kernel-kdump'-র সাহায্যে এটি ইনস্টল করা যাবে।\n"
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
 "সতর্কবার্তা: xen kdump সমর্থনের জন্য প্রকৃত ক্র্যাশ-ডাম্প সংগ্রহ করার জন্য একটি xen-"
-"বিহীন কার্নেলেরে উপস্থিত আবশ্যক। অনুগ্রহ করে, ইনস্টল করা xen কার্নেল সংস্করণের সমকক্ষ "
-"xen-বিহীন কার্নেল ইনস্টল করুন।"
+"বিহীন %s RPM-র উপস্থিতি আবশ্যক। অনুগ্রহ করে, ইনস্টল করা xen কার্নেল সংস্করণের সমকক্ষ "
+"xen-বিহীন %s RPM ইনস্টল করুন।"
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -126,7 +127,7 @@ msgid ""
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
-"Kdump'র বৈশিষ্ট্যের মান পরিবর্তন করা হলে মেমরি নতুন করে বিভাজনের উদ্দেশ্যে সিস্টেম "
+"Kdump-র বৈশিষ্ট্যের মান পরিবর্তন করা হলে মেমরি নতুন করে বিভাজনের উদ্দেশ্যে সিস্টেম "
 "পুনরায় বুট করা আবশ্যক। %sনতুন বৈশিষ্ট্যগুলি প্রয়োগ করার জন্য সিস্টেম পুনরায় বুট করুন।"
 
 #: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
@@ -219,3 +220,4 @@ msgstr "Core কালেক্টার:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "ডিফল্ট কর্ম:"
+
