@@ -107,15 +107,15 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"VAROVÁNÍ: podpora xen kdump vyžaduje jádro bez xenu k vytvoření skutečného "
-"záznamu pádu. Prosím ujistěte se, že máte nainstalováno i jádro stejné verze "
-"ale bez xenu."
+"VAROVÁNÍ: podpora xen kdump vyžaduje RPM %s jádra bez xenu k vytvoření skutečného "
+"záznamu pádu. Prosím ujistěte se, že máte nainstalováno i RPM %s jádra stejné verze "
+"jako je jádro s xenem."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
