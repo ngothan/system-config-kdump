@@ -3,20 +3,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
-# Amitakhya Phukan <aphukan@redhat.com>, 2006.
+# Amitakhya Phukan <aphukan@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-12-15 17:34+0530\n"
+"PO-Revision-Date: 2007-09-19 16:51+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@redhat.com>\n"
-"Language-Team: Assamese <assam@mm.assam-glug.org>\n"
+"Language-Team: Assamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1)\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -71,9 +71,8 @@ msgid "Failed to detect total system memory"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ মুঠ স্মৃতিশক্তি সন্ধান কৰৰিব'লৈ অক্ষম"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "ক্ষমা কৰিব, Xen কাৰ্ণেলে এই সময়ত kdump ৰ সমৰ্থন নকৰে !"
+msgstr "ক্ষমা কৰিব, ia64 Xen কাৰ্ণেলে এই সময়ত kdump ৰ সমৰ্থন নকৰে !"
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -87,8 +86,7 @@ msgstr "kdump লাভদায়ক হোৱাৰ বাবে এই ব্�
 #: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr ""
-"'%s' স্তানৰ বাবে পথ ৰিক্ত হ'ব নোৱাৰো । অবিকল্পিত পথ('%s') লৈ পুনঃ প্ৰতিষ্ঠা কৰোঁ ?."
+msgstr "'%s' স্তানৰ বাবে পথ ৰিক্ত হ'ব নোৱাৰো । অবিকল্পিত পথ('%s') লৈ পুনঃ প্ৰতিষ্ঠা কৰোঁ ?."
 
 #: ../src/system-config-kdump.py:311
 #, python-format
@@ -116,6 +114,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"সতৰ্কবাৰ্তা: xen kdump সমৰ্থনৰ বাবে প্ৰকৃত বিজুতি জমা কৰাৰ বাবে এটা xen-"
+"বিহীন %s RPM ৰ উপস্থিতি আৱশ্যক । অনুগ্ৰহ কৰি, সংস্থাপন কৰা xen কাৰ্ণেল সংস্কৰণৰ সমকক্ষ "
+"xen-বিহীন %s RPM সংস্থাপন কৰক ।"
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -219,5 +220,3 @@ msgstr "মূল সংগ্ৰাহক:"
 msgid "Default Action:"
 msgstr "অবিকল্পিত ক্ৰিয়া:"
 
-#~ msgid "local"
-#~ msgstr "স্থানীয়"
