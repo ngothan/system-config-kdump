@@ -1,21 +1,21 @@
 # translation of hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2006.
 #
+# Rajesh Ranjan <rranjan@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-11-30 12:39+0530\n"
+"PO-Revision-Date: 2007-09-21 14:06+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
-"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language-Team: Hindi <hindi.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n\n"
 "\n"
 "\n"
 "\n"
@@ -71,9 +71,8 @@ msgid "Failed to detect total system memory"
 msgstr "कुल सिस्टम स्मृति जांचने में विफल"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "क्षमा करें, Xen कर्नेल kdump को इस समय समर्थन नहीं करता है!"
+msgstr "क्षमा करें, ia64 Xen कर्नेल kdump को इस समय समर्थन नहीं करता है."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -87,8 +86,7 @@ msgstr "यह सिस्टम के पास पर्याप्त स�
 #: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr ""
-"पथ को '%s' स्थान के लिये खाली नहीं छोड़ा जा सकता है. ('%s') मूलभूत में पथ फिर सेट करें?."
+msgstr "पथ को '%s' स्थान के लिये खाली नहीं छोड़ा जा सकता है. ('%s') मूलभूत में पथ फिर सेट करें?."
 
 #: ../src/system-config-kdump.py:311
 #, python-format
@@ -115,7 +113,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "चेतावनी: xen kdump समर्थन के लिए एक गैर-xen %s RPM की जरूरत वास्तविक क्रैश डंप कैप्चर करने के लिए होती है. कृपया निश्चित करें कि आपके पास समान संस्करण का गैर-xen %s RPM है जैसा आपने xen कर्नेल अधिष्ठापित किया है."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -219,5 +217,3 @@ msgstr "केंद्रीय संग्राहक:"
 msgid "Default Action:"
 msgstr "मूलभूत क्रिया:"
 
-#~ msgid "local"
-#~ msgstr "स्थानीय"
