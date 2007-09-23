@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-09-05 08:40+0300\n"
+"PO-Revision-Date: 2007-09-24 02:20+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -109,15 +109,15 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"ВНИМАНИЕ: xen kdump поддръжката се нуждае от не-xen ядро, което да извърши "
-"самото записване при авария. Моля проверете дали имате не-xen ядра, чиято "
-"версия е като тази на xen ядрата."
+"ВНИМАНИЕ: xen kdump поддръжката се нуждае от не-xen %s RPM за "
+"извършване на самото записване при авария. Моля проверете дали "
+"имате не-xen %s RPM, чиято версия е като тази на xen ядрото."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -220,3 +220,4 @@ msgstr "Колектор:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Подразбиращо се действие:"
+
