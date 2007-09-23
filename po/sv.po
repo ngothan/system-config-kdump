@@ -1,7 +1,6 @@
 # Swedish translation of system-config-kdump.
-# Copyright (C) 2006 THE system-config-kdump'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the system-config-kdump package.
-# Magnus Larsson <fedoratrans@gmail.com>, 2006.
+# Copyright © 2001-2007 Free Software Foundation, Inc.
+# Magnus Larsson <fedoratrans@gmail.com>, 2006, 2007.
 # 
 # 
 msgid ""
@@ -9,12 +8,12 @@ msgstr ""
 "Project-Id-Version: system-config-kdump 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-01-18 17:55-0500\n"
+"PO-Revision-Date: 2007-09-22 23:05-0400\n"
 "Last-Translator: Magnus Larsson <fedoratrans@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -69,9 +68,8 @@ msgid "Failed to detect total system memory"
 msgstr "Misslyckades att se det totala systemminnet"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Tyvärr så stöder inte Xen-kärnor inte kdump för närvarande!"
+msgstr "Tyvärr så stöder inte ia64-xen-kärnor inte kdump för närvarande."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -115,6 +113,8 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"VARNING: Stöd för xen kdump kräver en icke-xen %s RPM för att kunna fånga krashdumpar. Kontrollera att du har installerat en icke-xen %s RPM av samma  version "
+"som din xen-kernel."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
