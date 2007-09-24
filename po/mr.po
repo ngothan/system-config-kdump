@@ -1,21 +1,22 @@
-# translation of mr.po to Marathi
+# translation of mr.po to marathi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
 #
+# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
+# sandeep shedmake <sandeep.shedmake@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-11-28 17:05+0530\n"
-"Last-Translator: Rahul Bhalerao <b.rahul.pm@gmail.com>\n"
-"Language-Team: Marathi\n"
+"PO-Revision-Date: 2007-09-23 09:39+0530\n"
+"Last-Translator: sandeep shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -69,9 +70,8 @@ msgid "Failed to detect total system memory"
 msgstr "पूर्ण प्रणाली स्मृती शोधण्यात अपयश"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "माफ करा, Xen कर्नल सध्या kdupm ला यावेळी आधार देत नाहीत!"
+msgstr "माफ करा, ia64 xen कर्नल सध्या kdump ला यावेळी आधार देत नाहीत."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -85,8 +85,7 @@ msgstr "kdump सफलक्षम होण्यासाठी या प्
 #: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr ""
-"%s ठिकाणांसाठी पथ रिकामा असू शकत नाही. पथ मुलभूत('%s') वर पुनर्निधारित करावा?."
+msgstr "%s ठिकाणांसाठी पथ रिकामा असू शकत नाही. पथ मुलभूत('%s') वर पुनर्निधारित करावा?."
 
 #: ../src/system-config-kdump.py:311
 #, python-format
@@ -112,7 +111,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "WARNING: मुळस्तव डंप हाताळण्याकरीता xen kdump आधारास non-xen %s RPM ची गरज आहे. कृपया आपल्याकडे non-xen %s RPM प्रतिष्ठापीत xen कर्नल च्या परस्पर आवृत्तीशी असावी याची खात्री घ्या."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -215,5 +214,3 @@ msgstr "कोर संग्रहक:"
 msgid "Default Action:"
 msgstr "मुलभूत क्रिया:"
 
-#~ msgid "local"
-#~ msgstr "स्थानिक"
