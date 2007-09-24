@@ -1,4 +1,5 @@
 # translation of it.po to 
+# translation of it.po to
 # translation of it.po to Italiano
 # translation of it.po to
 # translation of it.po to
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-08-30 06:49+0200\n"
+"PO-Revision-Date: 2007-09-24 02:56+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -129,15 +130,15 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"AVVERTENZA: il supporto kdump xen necessita di un kernel non-xen per "
+"AVVERTENZA: il supporto kdump xen necessita di un RPM %s non-xen per "
 "eseguire la cattura del crash dump. Assicuratevi di essere in possesso di un "
-"kernel non-xen della stessa versione del kernel xen installato."
+"RPM %s non-xen della stessa versione del kernel xen installato."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -180,14 +181,12 @@ msgstr "Le posizioni NFS devono essere nel seguente formato, 'host:/path'"
 
 #: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
-msgstr ""
-"Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
+msgstr "Per posizioni raw è necessario specificare un nodo valdo del dispositivo."
 
 #: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr ""
-"Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
+msgstr "Su questo sistema non è presente il supporto per filesystem di tipo '%s'"
 
 #: ../src/system-config-kdump.py:500
 #, python-format
@@ -211,8 +210,7 @@ msgstr "Il Core collector deve iniziare con 'makedumpfile'"
 
 #: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
-msgstr ""
-"Per poter eseguire questa applicazione è necessario essere utenti root."
+msgstr "Per poter eseguire questa applicazione è necessario essere utenti root."
 
 #: system-config-kdump.gladestrings:8
 msgid "Enable kdump"
@@ -245,3 +243,4 @@ msgstr "Core Collector:"
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
 msgstr "Azione predefinita:"
+
