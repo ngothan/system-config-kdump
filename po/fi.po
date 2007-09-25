@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-03-10 01:14+0200\n"
+"PO-Revision-Date: 2007-09-25 23:05+0300\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,9 +69,8 @@ msgid "Failed to detect total system memory"
 msgstr "Järjestelmän muistin kokonaismäärän tunnistaminen epäonnistui"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Xen-ytimet eivät tue kdumpia tällä hetkellä!"
+msgstr "IA64-xen-ytimet eivät tue kdumpia tällä hetkellä."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -114,6 +113,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"VAROITUS: xen-kdump-tuki vaatii xenittömän RPM-paketin %s tallentaakseen "
+"kaatumavedoksen. Varmista että asennettuna on xenitön RPM-paketti %s, joka "
+"on samaa versiota kuin asennettu xen-ydin."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
