@@ -3,20 +3,21 @@
 # translation of te.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006.
-# Sree Ganesh <sthottem@redhat.com>, 2006.
 #
+# Sree Ganesh <sthottem@redhat.com>, 2006.
+# Krishna Babu K <kkrothap@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-11-21 14:56+0530\n"
-"Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
-"Language-Team: Telugu <en@li.org>\n"
+"PO-Revision-Date: 2007-09-26 00:02+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -69,9 +70,8 @@ msgid "Failed to detect total system memory"
 msgstr "మొత్తం కంప్యూటరు మెమోరీని సోధించటంలో విఫలమైంది"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "క్షమించండి, Xen కెర్నర్లు కెడంపుకి ఈ సమయంలో మద్దతివ్వవు!"
+msgstr "క్షమించండి, ia64 Xen కెర్నల్సు కెడంపుకి ఈ సమయంలో మద్దతివ్వవు!"
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -112,6 +112,8 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"హెచ్చరిక: వాస్తవ క్రాష్ డంప్ కాప్చరు కోరకు xen కెడంప్ మద్దతుకు non-xen %s RPM అవసరం. "
+"మీరు సంస్థాపించిన xen కెర్నల్ విడుదలకు సమాలమైన non-xen %s RPM కలిగి ఉండునట్లు చూసుకొనండి."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -212,5 +214,3 @@ msgstr "కోర్ కలక్టర్:"
 msgid "Default Action:"
 msgstr "సిద్ధ క్రియ:"
 
-#~ msgid "local"
-#~ msgstr "స్థానికం"
