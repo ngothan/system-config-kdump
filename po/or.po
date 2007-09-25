@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-09-21 00:29+0530\n"
+"PO-Revision-Date: 2007-09-25 12:13+0530\n"
 "Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,10 +20,11 @@ msgstr ""
 "\n"
 "\n"
 "\n"
+"\n"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
-msgstr "rootfs କୁ ଆରୋହଣ କରନ୍ତୁ ଏବଂ /sbin/init ନିର୍ଦ୍ଦେଶକୁ ଚଳାନ୍ତୁ"
+msgstr "rootfs କୁ ମାଉଣ୍ଟ କରନ୍ତୁ ଏବଂ /sbin/init ନିର୍ଦ୍ଦେଶକୁ ଚଳାନ୍ତୁ"
 
 #: ../src/system-config-kdump.py:74
 msgid ""
@@ -118,6 +119,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"ଚେତାବନୀ: ବାସ୍ତବିକ ବିଫଳ ଅଦରକାରୀ ତଥ୍ଯ ସଂଗ୍ରହ କରିବା ପାଇଁ xen kdump ସମର୍ଥନ ଗୋଟିଏ "
+"xen ବିହୀନ %s RPM ଆବଶ୍ଯକ କରିଥାଏ। ଦୟାକରି ଏହା ନିଶ୍ଚିତ ହୁଅନ୍ତୁ ଯେ ଆପଣଙ୍କ ନିକଟରେ ଆପଣଙ୍କ "
+"ତନ୍ତ୍ରରେ ସ୍ଥାପିତ xen ସଂସ୍କରଣ ପରି ସମାନ ସଂସ୍କରଣର xen ବିହୀନ %s RPM ଅଛି।"
 
 #: ../src/system-config-kdump.py:328
 #, python-format
