@@ -3,7 +3,7 @@ Name: system-config-kdump
 Version: 1.0.12
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
-License: GPL
+License: GPL2+
 Group: System Environment/Base
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
