@@ -1,3 +1,10 @@
+2008-01-18  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py: add 'halt' default action and passthrough 
+	handling of unknown configuration items (#253603)
+
+	* src/system-config-kdump.py: handle kdump service stop/start and only 
+	prompt to reboot if memory reservation changed (#239324)
+
 2007-10-18  Dave Lehman  <dlehman@redhat.com>
 
 	* system-config-kdump.spec: Change License to GPL2+

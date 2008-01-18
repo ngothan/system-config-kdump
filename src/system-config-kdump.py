@@ -55,6 +55,7 @@ TYPE_DEFAULT = TYPE_LOCAL
 
 ACTION_REBOOT = "reboot"
 ACTION_SHELL = "shell"
+ACTION_HALT = "halt"
 ACTION_DEFAULT = _("mount rootfs and run /sbin/init")
 
 PATH_DEFAULT = "/var/crash"
@@ -62,7 +63,7 @@ CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
 
 locationTypes = [TYPE_LOCAL, TYPE_NFS, TYPE_SSH, TYPE_RAW]
 netLocationTypes = (TYPE_NFS, TYPE_SSH)
-defaultActions = [ACTION_REBOOT, ACTION_SHELL, ACTION_DEFAULT]
+defaultActions = [ACTION_REBOOT, ACTION_SHELL, ACTION_DEFAULT, ACTION_HALT]
 
 supportedFilesystemTypes = ("ext2", "ext3")
 
@@ -103,6 +104,7 @@ class mainWindow:
         self._quiet = False # if set, don't pop up any message boxes or dialogs
     
         self.kdumpConfigComments = []
+        self.miscConfig = []
 
         self.defaultAction = ACTION_DEFAULT
         self.path = PATH_DEFAULT
@@ -162,8 +164,6 @@ class mainWindow:
         # Read from /proc/iomem so we're portable across xen and non-xen
         kdumpMem = 0
         kdumpOffset = 0
-        self.origCrashKernel = ""
-        self.kdumpEnabled = False
         # PowerPC64 doesn't list crashkernel reservation in /proc/iomem
         if self.arch != 'ppc64':
             ioMem = open("/proc/iomem").readlines()
@@ -324,7 +324,12 @@ class mainWindow:
                                "as your xen kernel installed." %
                                (self.xenKdumpKernel, self.xenKdumpKernel)))
 
-        if self.kdumpEnabled:
+        try:
+            origKdumpMem = int(self.origCrashKernel.split("@")[0][:-1])
+        except ValueError:
+            origKdumpMem = 0
+
+        if self.kdumpEnabled and self.kdumpMem != origKdumpMem:
             self.showMessage(_("Changing Kdump settings requires rebooting "
                                "the system to reallocate memory accordingly. "
                                "%sYou will have to reboot the system for the "
@@ -597,8 +602,10 @@ class mainWindow:
                 self.setPath(location)
             elif type == "core_collector":
                 self.setCoreCollector(location)
-            else:
+            elif type in (TYPE_RAW, TYPE_NET) or type in supportFilesystemTypes:
                 self.setLocation((type, location))
+            else:
+                self.miscConfig.append(" ".join((type, location)))
 
         # now we fix up the loaded config as needed
         if self.location[0] in (TYPE_LOCAL, TYPE_RAW):
@@ -628,6 +635,9 @@ class mainWindow:
         fd = open(KDUMP_CONFIG_FILE, "w")
         # dump all of the comment lines from the original file into the new one
         fd.write("\n".join(self.kdumpConfigComments) + "\n")
+        for line in self.miscConfig:
+            fd.write(line + "\n")
+
         if self.location[0] in netLocationTypes:
             fd.write("net %s\n" % self.location[1])
         elif self.location[0] != TYPE_DEFAULT:
@@ -674,15 +684,21 @@ class mainWindow:
 
         # Are we adding or removing the crashkernel param?
         if self.kdumpEnabled:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%iM@%iM"' \
+            crashKernel = "%iM@%iM" % (self.kdumpMem, offset)
+            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%s"' \
                         % (self.bootloader, kpath, self.runningKernel, 
-                           args, self.kdumpMem, offset)
+                           args, crashKernel)
             chkconfigStatus = "on"
+            if self.origCrashKernel:
+                serviceOp = "restart"
+            else:
+                serviceOp = "start"
         else:
             grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-%s="crashkernel=%s"' \
                         % (self.bootloader, kpath, self.runningKernel, 
                            args, self.origCrashKernel)
             chkconfigStatus = "off"
+            serviceOp = "stop"
 
         if debug:
             print "Using %s bootloader with %iM offset" % (self.bootloader, offset)
@@ -691,6 +707,7 @@ class mainWindow:
         # FIXME: use rhpl.executil (and handle errors)!
         os.system(grubbyCmd)
         os.system("/sbin/chkconfig kdump %s" % chkconfigStatus)
+        os.system("/sbin/service kdump %s" % serviceOp)
         if self.bootloader == 'yaboot':
             os.system('/sbin/ybin')
 
