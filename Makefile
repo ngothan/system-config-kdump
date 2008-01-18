@@ -3,8 +3,8 @@
 
 PKGNAME=system-config-kdump
 MODULENAME=system-config-kdump
-VERSION=$(shell rpm -q --qf '%{version}\n' --specfile ${PKGNAME}.spec |head -1)
-RELEASE=$(shell rpm -q --qf '%{release}\n' --specfile ${PKGNAME}.spec |head -1)
+VERSION=$(shell rpm -q --define 'dist %{nil}' --qf '%{version}\n' --specfile ${PKGNAME}.spec |head -1)
+RELEASE=$(shell rpm -q --define 'dist %{nil}' --qf '%{release}\n' --specfile ${PKGNAME}.spec |head -1)
 CVSTAG=$(PKGNAME)-$(subst .,_,$(VERSION)-$(RELEASE))
 SUBDIRS=po
 
