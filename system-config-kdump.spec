@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.12
+Version: 1.0.13
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL2+
@@ -67,6 +67,16 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Fri Jan 18 2008 Dave Lehman <dlehman@redhat.com> 1.0.13-1%{?dist}
+- handle kdump service start/stop
+  Resolves: rhbz#239324
+- only suggest reboot if memory reservation altered
+  Related: rhbz#239324
+- preserve unknown config options
+  Resolves: rhbz#253603
+- add 'halt' default action
+  Related: rhbz#253603
+
 * Tue Sep 11 2007 Dave Lehman <dlehman@redhat.com> 1.0.12-1%{?dist}
 - prompt user for a PAE kernel for 32-bit xen with >4G memory (Jarod Wilson)
   Resolves: rhbz#284851
