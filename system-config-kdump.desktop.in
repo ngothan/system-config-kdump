@@ -1,8 +1,8 @@
 [Desktop Entry]
 _Name=Kdump
 _Comment=Configure kernel crash dumps
-Categories=System;Application;SystemSetup;GTK;
-Icon=system-config-kdump.png
+Categories=System;Settings;Application;GTK;
+Icon=system-config-kdump
 Exec=/usr/bin/system-config-kdump
 Type=Application
 Terminal=false
