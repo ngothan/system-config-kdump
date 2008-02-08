@@ -1,3 +1,6 @@
+2008-02-08  Dave Lehman  <dlehman@redhat.com>
+	* src/system-config-kdump.py: fix typo
+
 2008-01-18  Dave Lehman  <dlehman@redhat.com>
 	* system-config-kdump.spec: update to version 1.0.13
 

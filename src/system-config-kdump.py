@@ -602,7 +602,7 @@ class mainWindow:
                 self.setPath(location)
             elif type == "core_collector":
                 self.setCoreCollector(location)
-            elif type in (TYPE_RAW, TYPE_NET) or type in supportFilesystemTypes:
+            elif type in (TYPE_RAW, TYPE_NET) or type in supportedFilesystemTypes:
                 self.setLocation((type, location))
             else:
                 self.miscConfig.append(" ".join((type, location)))
