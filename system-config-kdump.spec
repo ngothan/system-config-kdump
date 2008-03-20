@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.13
+Version: 1.0.14
 Release: 1%{?dist}
 URL: http://fedora.redhat.com/projects/config-tools/
 License: GPL2+
@@ -68,6 +68,12 @@ fi
 %doc ChangeLog COPYING
 
 %changelog
+* Thu Mar 20 2008 Dave Lehman <dlehman@redhat.com> 1.0.14-1%{?dist}
+- require bitmap-fonts
+  Resolves: rhbz#433858
+- make sure translations containing format specifiers are found
+  Resolves: rhbz#314341
+
 * Fri Jan 18 2008 Dave Lehman <dlehman@redhat.com> 1.0.13-1%{?dist}
 - handle kdump service start/stop
   Resolves: rhbz#239324
