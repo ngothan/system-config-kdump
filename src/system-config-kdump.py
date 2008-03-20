@@ -202,7 +202,7 @@ class mainWindow:
         else:
             self.kdumpEnableCheckButton.set_active(False)
 
-        self.totalMemLabel.set_text(_("%s" % (totalMem,)))
+        self.totalMemLabel.set_text("%s" % (totalMem,))
 
         # Do some sanity-checking and try to present only sane options.
         #
@@ -244,7 +244,7 @@ class mainWindow:
         self.kdumpMemSpinButton.connect("value_changed", self.updateUsableMem)
         self.kdumpMemSpinButton.set_value(kdumpMem)
 
-        self.usableMemLabel.set_text(_("%s" % (self.usableMem,)))
+        self.usableMemLabel.set_text("%s" % (self.usableMem,))
 
         if debug:
             print "totalMem = %dM\nkdumpMem = %dM\nusableMem = %dM" % (totalMem, kdumpMem, self.usableMem)
@@ -299,8 +299,8 @@ class mainWindow:
 
         if self.location[0] not in (TYPE_RAW, TYPE_LOCAL) and not self.path:
             rc = self.yesNoDialog(_("Path cannot be empty for '%s' locations. "
-                                    "Reset path to default ('%s')?."
-                                    % (self.location[0], PATH_DEFAULT)))
+                                    "Reset path to default ('%s')?.")
+                                    % (self.location[0], PATH_DEFAULT))
             if rc == True:
                 self.setPath(PATH_DEFAULT)
             else:
@@ -314,15 +314,15 @@ class mainWindow:
                                 "package to be installed for kdump to "
                                 "function. This can be installed via 'yum "
                                 "install kernel-kdump' at your convenience."
-                                "\n\n" % self.arch)
+                                "\n\n") % self.arch
 
         if self.xenKernel and self.kdumpEnabled:
             self.showMessage(_("WARNING: xen kdump support requires a "
                                "non-xen %s RPM to perform actual crash "
                                "dump capture. Please be sure you have "
                                "the non-xen %s RPM of the same version "
-                               "as your xen kernel installed." %
-                               (self.xenKdumpKernel, self.xenKdumpKernel)))
+                               "as your xen kernel installed.") %
+                               (self.xenKdumpKernel, self.xenKdumpKernel))
 
         try:
             origKdumpMem = int(self.origCrashKernel.split("@")[0][:-1])
@@ -333,8 +333,8 @@ class mainWindow:
             self.showMessage(_("Changing Kdump settings requires rebooting "
                                "the system to reallocate memory accordingly. "
                                "%sYou will have to reboot the system for the "
-                               "new settings to take effect." 
-                               % kernelKdumpNote))
+                               "new settings to take effect.")
+                               % kernelKdumpNote)
 
         if not testing:
             if debug:
@@ -488,7 +488,7 @@ class mainWindow:
         else:
             if not os.access("/sbin/fsck.%s" % type, os.X_OK):
                 self.showErrorMessage(_("Support for filesystem type '%s' "
-                                        "is not present on this system" % type))
+                                        "is not present on this system") % type)
                 rc = False
 
             # XXX need to find a way to validate labels & uuids
@@ -503,12 +503,12 @@ class mainWindow:
                     st = os.stat(location)
                 except OSError:
                     self.showErrorMessage(_("Failed to stat device node "
-                                            "'%s'" % location))
+                                            "'%s'") % location)
                     rc = False
                 else:
                     if not stat.S_ISBLK(st.st_mode):
                         self.showErrorMessage(_("'%s' locations must specify "
-                                                "a valid device node." % type))
+                                                "a valid device node.") % type)
                         rc = False
 
         if rc == True:

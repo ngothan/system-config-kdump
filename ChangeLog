@@ -1,3 +1,9 @@
+2008-03-20  Dave Lehman  <dlehman@redhat.com>
+	* system-config-kdump.spec: require bitmap-fonts (#433858)
+
+	* src/system-config-kdump.py: translate strings before resolving
+	format specifiers so the translations get found (#314341)
+
 2008-02-08  Dave Lehman  <dlehman@redhat.com>
 	* src/system-config-kdump.py: fix typo
 

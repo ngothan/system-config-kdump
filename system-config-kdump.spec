@@ -17,6 +17,7 @@ Requires: usermode >= 1.36
 Requires: rhpl >= 0.185-1
 Requires: redhat-artwork >= 0.61-1
 Requires: kexec-tools
+Requires: bitmap-fonts
 Requires(pre): gtk2 >= 2.8.20
 Requires(pre): hicolor-icon-theme
 
