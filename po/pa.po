@@ -1,21 +1,21 @@
 # translation of pa.po to Punjabi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# A S Alam <apbrar@gmail.com>, 2006.
-# Jaswinder Singh <jsingh@redhat.com>, 2006.
 #
+# A S Alam <apbrar@gmail.com>, 2006.
+# Jaswinder Singh <jsingh@redhat.com>, 2006, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-12-01 11:17+0530\n"
+"PO-Revision-Date: 2008-03-24 12:33+0530\n"
 "Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
@@ -70,9 +70,8 @@ msgid "Failed to detect total system memory"
 msgstr "ਕੁੱਲ ਸਿਸਟਮ ਮੈਮੋਰੀ ਪਤਾ ਨਹੀਂ ਕਰ ਸਕਿਆ"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "ਅਫਸੋਸ ਹੈ ਕਿ Xen ਕਰਨਲ kdump ਨੂੰ ਹਾਲੇ ਸਹਿਯੋਗ ਨਹੀਂ ਕਰਦੇ ਹਨ!"
+msgstr "ਅਫਸੋਸ ਹੈ ਕਿ ia64 Xen ਕਰਨਲ kdump ਨੂੰ ਹਾਲੇ ਸਹਿਯੋਗ ਨਹੀਂ ਕਰਦੇ ਹਨ!"
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -112,7 +111,7 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr ""
+msgstr "ਚੇਤਾਵਨੀ: xen kdump ਸਹਿਯੋਗ ਲਈ ਇੱਕ ਨਾਲ-xen %s RPM ਦੀ ਲੋੜ ਹੈ ਤਾਂ ਕਿ ਅਸਲੀ ਕਰੈਸ਼ ਡੰਪ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕੇ। ਕਿਰਪਾ ਕਰਕੇ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡੇ ਕੋਲ ਆਪਣੇ xen ਕਰਨਲ ਤੌਰ ਤੇ ਉਸੇ ਵਰਜਨ ਦੇ non-xen %s RPM ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ।"
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -215,5 +214,3 @@ msgstr "ਕੋਰ ਕੁਲੈਕਟਰ:"
 msgid "Default Action:"
 msgstr "ਮੂਲ ਕਾਰਵਾਈ:"
 
-#~ msgid "local"
-#~ msgstr "ਲੋਕਲ"
