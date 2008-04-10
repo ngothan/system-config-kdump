@@ -3,22 +3,22 @@
 # translation of ru.po to
 # Translation system-config-kdump to Russian
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER.
 # Andrew Martynov <andrewm@inventa.ru>, 2006.
 # Yulia Poyarkova <ypoyarko@redhat.com>, 2006.
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2006-11-23 17:33+1000\n"
+"PO-Revision-Date: 2008-04-10 16:53+0300\n"
 "Last-Translator: Yulia Poyarkova <ypoyarko@redhat.com>\n"
-"Language-Team: \n"
+"Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../src/system-config-kdump.py:58
 msgid "mount rootfs and run /sbin/init"
@@ -72,10 +72,8 @@ msgid "Failed to detect total system memory"
 msgstr "Ошибка при определении общей системной памяти"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr ""
-"Извините, но ядра с технологией Xen не поддерживают kdump в настоящий момент!"
+msgstr "Извините, ядра ia64 xen не поддерживают kdump в настоящий момент."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -120,6 +118,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"ПРЕДУПРЕЖДЕНИЕ: xen·kdump поддерживает требование не xen %s RPM выполнение "
+"снимка дампа сбоя. Пожалуйста будьте уверены что у вас не xen %s RPM такое же как "
+"установленное xen ядро."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
