@@ -1,5 +1,5 @@
 # Catalan translations for system-config-kdump package.
-# Copyright (C) 2004, 2005, 2006 Red Hat, Inc.
+# Copyright (C) 2004-8 Red Hat, Inc.
 # This file is distributed under the same license as the
 #  system-config-kdump package.
 #
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-09-07 23:32+0100\n"
+"PO-Revision-Date: 2008-09-27 23:32+0100\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -120,14 +120,14 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:320
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"Atenció: per fer servir el kdump amb xen es necessita un nucli no-xen per a "
-"realitzar la captura de bolcat. Assegureu-vos que teniu un nucli sense xen "
+"Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a "
+"realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen "
 "de la mateixa versió que el nucli instal·lat."
 
 #: ../src/system-config-kdump.py:328
