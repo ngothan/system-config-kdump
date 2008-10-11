@@ -3,7 +3,7 @@
 # Copyright (C) 2007 THE pt_BR'S COPYRIGHT HOLDER.
 # Valnir Ferreira Jr. <vferreir@redhat.com>, 2006.
 # Igor Pires Soares <igor@projetofedora.org>, 2007.
-#
+# Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
@@ -46,7 +46,7 @@ msgstr "Configurar o kdump/kexec"
 
 #: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr "Desculpe, mas esta arquitetura atualmente não suporta o kdump"
+msgstr "Desculpe, mas esta arquitetura atualmente não tem suporte ao kdump"
 
 #: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
@@ -54,7 +54,7 @@ msgstr "Falha ao detectar memória total do sistema"
 
 #: ../src/system-config-kdump.py:157
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Desculpe, mas os kernels do Xen ia64 ainda não suportam o kdump."
+msgstr "Desculpe, mas os kernels do Xen ia64 ainda não têm suporte ao kdump."
 
 #: ../src/system-config-kdump.py:205
 #: ../src/system-config-kdump.py:247
@@ -69,7 +69,7 @@ msgstr "Este sistema não possui memória suficiente para que o kdump seja viáv
 #: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr "O caminho não pode ser vazio para localidades '%s'. Restaurar caminho para o padrão ('%s')?."
+msgstr "O caminho não pode ser vazio para localidades \"%s\". Restaurar caminho para o padrão (\"%s\")?."
 
 #: ../src/system-config-kdump.py:311
 #, python-format
@@ -81,27 +81,27 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Note que a arquitetura %s não possui um kernel realocável no momento, e portanto requer a instalação do pacote kernel-kdump para que o kdump funcione. Isto pode ser feito através do comando 'yum install kernel-kdump' quando lhe for conveniente.\n"
+"Note que a arquitetura %s não possui um kernel realocável no momento, e portanto requer a instalação do pacote kernel-kdump para que o kdump funcione. Isto pode ser feito através do comando \"yum install kernel-kdump\" quando lhe for conveniente.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:320
 #, python-format
 msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture. Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
-msgstr "AVISO: o suporte do kdump ao xen necessita de um RPM %s não-xen para realizar a real captura do despejo de travamento. Por favor, certifique-se de que você tem o RPM %s não-xen da mesma versão do seu kernel xen instalado."
+msgstr "AVISO: o suporte ao kdump ao xen necessita de um RPM %s não-xen para realizar a real captura do despejo de travamento. Por favor, certifique-se de que você tem o RPM %s não-xen da mesma versão do seu kernel xen instalado."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
 msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
-msgstr "Mudanças na configuração do kdump requerem a reinicialização do sistema para que a memória seja alocada adequadamente. %sVocê precisará reinicializar o sistema para que a nova configuração tenha efeito."
+msgstr "Alterações na configuração do kdump requerem a reinicialização do sistema para que a memória seja alocada adequadamente. %sVocê precisará reinicializar o sistema para que a nova configuração tenha efeito."
 
 #: ../src/system-config-kdump.py:355
 #: system-config-kdump.gladestrings:16
 msgid "Edit Location"
-msgstr "Editar Localidade"
+msgstr "Editar localidade"
 
 #: ../src/system-config-kdump.py:357
 msgid "New Location"
-msgstr "Nova Localidade"
+msgstr "Nova localidade"
 
 #: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
@@ -109,7 +109,7 @@ msgstr "Selecione um tipo de localidade:"
 
 #: ../src/system-config-kdump.py:392
 msgid "Enter location:"
-msgstr "Indique a localidade:"
+msgstr "Digite a localidade:"
 
 #: ../src/system-config-kdump.py:460
 msgid "SSH locations must be of the form 'user@host'. A path can be specified in the main window."
@@ -117,7 +117,7 @@ msgstr "Localidades SSH devem ter o formato 'user@host'. Um caminho pode ser esp
 
 #: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr "Localidades NFS devem ter o formato 'host:/caminho'"
+msgstr "Localidades NFS devem ter o formato \"host:/caminho\""
 
 #: ../src/system-config-kdump.py:473
 #: ../src/system-config-kdump.py:478
@@ -127,25 +127,25 @@ msgstr "Para localidades raw, você deve especificar um nó de dispositivo váli
 #: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Não existe suporte para sistemas de arquivos do tipo '%s' neste sistema"
+msgstr "Não existe suporte para sistemas de arquivos do tipo \"%s\" neste sistema"
 
 #: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr "Falha ao tentar obter estatísticas do dispositivo de nó '%s'"
+msgstr "Falha ao tentar obter estatísticas do dispositivo de nó \"%s\""
 
 #: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr "Localidades '%s' devem especificar um dispositivo de nó válido."
+msgstr "Localidades \"%s\" devem especificar um dispositivo de nó válido."
 
 #: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
-msgstr "O arquivo de configuração do gerenciador de inicialização não foi encontrado, abortando a configuração!"
+msgstr "O arquivo de configuração do gerenciador de inicialização não foi localizado, abortando a configuração!"
 
 #: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr "O coletor do core deve iniciar com 'makedumpfile'"
+msgstr "O coletor do core deve iniciar com \"makedumpfile\""
 
 #: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
@@ -157,7 +157,7 @@ msgstr "Habilitar o kdump"
 
 #: system-config-kdump.gladestrings:9
 msgid "Total System Memory (MB):"
-msgstr "Memória Total do Sistema (MB):"
+msgstr "Memória total do sistema (MB):"
 
 #: system-config-kdump.gladestrings:10
 msgid "kdump Memory (MB):"
@@ -177,11 +177,11 @@ msgstr "Caminho:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr "Coletor do Core:"
+msgstr "Coletor do core:"
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
-msgstr "Ação Padrão:"
+msgstr "Ação padrão:"
 
 #~ msgid "local"
 #~ msgstr "local"
