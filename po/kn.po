@@ -115,7 +115,10 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
-msgstr "ಎಚ್ಚರಿಕೆ: ವಾಸ್ತವವಾದ ಕುಸಿತ ಬಿಸುಡನ್ನು ಸೆರೆಹಿಡಿಯಲು xen kdump ಬೆಂಬಲಕ್ಕೆ ಒಂದು xen ಅಲ್ಲದ್ %s RPM ನ ಅಗತ್ಯವಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮಲ್ಲಿ ಅನುಸ್ಥಾಪಿತಗೊಂಡ xen ಕರ್ನಲ್ಲಿನಂತಹದೆ ಆವೃತ್ತಿಯ xen ಅಲ್ಲದ %s RPM ಇದೆಯಂದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
+msgstr ""
+"ಎಚ್ಚರಿಕೆ: ವಾಸ್ತವವಾದ ಕುಸಿತ ಬಿಸುಡನ್ನು ಸೆರೆಹಿಡಿಯಲು xen kdump ಬೆಂಬಲಕ್ಕೆ ಒಂದು xen "
+"ಅಲ್ಲದ್ %s RPM ನ ಅಗತ್ಯವಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮಲ್ಲಿ ಅನುಸ್ಥಾಪಿತಗೊಂಡ xen ಕರ್ನಲ್ಲಿನಂತಹದೆ "
+"ಆವೃತ್ತಿಯ xen ಅಲ್ಲದ %s RPM ಇದೆಯಂದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -213,9 +216,8 @@ msgstr "ಪಥ:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr "ಕೋರ್ ಕಲೆಕ್ಟರ್:"
+msgstr "ಕೋರ್ ಸಂಗ್ರಾಹಕ:"
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
-msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಕಾರ್ಯ:"
-
+msgstr "ಡೀಫಾಲ್ಟ್‍  ಕಾರ್ಯ:"
