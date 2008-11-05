@@ -1,3 +1,4 @@
+# comment ;)
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
 Version: 1.0.14
