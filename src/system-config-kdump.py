@@ -1,7 +1,9 @@
+#!/usr/bin/python
 # system-config-kdump.py - configures kexec/kdump
 # Copyright (c) 2006 Red Hat, Inc.
 # Authors: Dave Lehman <dlehman@redhat.com>
 #          Jarod Wilson <jwilson@redhat.com>
+#          Roman Rakus <rrakus@redhat.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +28,42 @@ import os
 import stat
 
 ##
+## dbus and polkit
+##
+import dbus
+
+try:
+    # try to import the module installed in the system
+    import slip.dbus.service
+except ImportError:
+    # try to find the module in the unpacked source tree
+    import sys
+    import os.path
+    import import_marker
+
+    # try to find the slip.dbus module
+
+    modfile = import_marker.__file__
+    path = os.path.dirname (modfile)
+    found = False
+    oldsyspath = sys.path
+    while not found and path and path != "/":
+        path = os.path.abspath (os.path.join (path, os.path.pardir))
+        sys.path = oldsyspath + [path]
+        try:
+            import slip.dbus.service
+            found = True
+        except ImportError:
+            pass
+    if not found:
+        import slip.dbus.service
+    sys.path = oldsyspath
+
+system_bus = dbus.SystemBus ()
+
+from slip.dbus import polkit
+
+##
 ## I18N
 ##
 from rhpl.translate import _, N_
@@ -41,10 +79,10 @@ else:
 
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
-#             bootloader : (config file, kdump offset, kernel path)
-bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
-                "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
-                "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
+##             bootloader : (config file, kdump offset, kernel path)
+#bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
+#                "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
+#                "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
 TYPE_LOCAL = "file"
 TYPE_NET = "net"
@@ -53,17 +91,32 @@ TYPE_SSH = "ssh"
 TYPE_RAW = "raw"
 TYPE_DEFAULT = TYPE_LOCAL
 
+NUM_FILTERS = 5
+
 ACTION_REBOOT = "reboot"
 ACTION_SHELL = "shell"
 ACTION_HALT = "halt"
 ACTION_DEFAULT = _("mount rootfs and run /sbin/init")
 
+FSTAB_FILE = "/etc/fstab"
+PROC_PARTITIONS = "/proc/partitions"
+
+TAG_CURRENT = _("(current)")
+TAG_DEFAULT = _("(default)")
+#GRUBBY_CMD = "/sbin/grubby"
+
+# get from kernel/Documentation/devices.txt
+SUPPORTED_MAJOR = [ '2', '3', '8', '9', '13', '14', '19', '21', '22', '28',
+                    '31', '33', '34', '36', '40', '44', '45', '47', '48', '49',
+                    '50', '51', '52', '53', '54', '55', '56', '57', '65', '66',
+                    '67', '68', '69', '70', '71', '88', '89', '90', '91', '94',
+                    '99', '128', '129', '130', '131', '132', '133', '134',
+                    '135', '147', '180' ]
+
 PATH_DEFAULT = "/var/crash"
 CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
 
-locationTypes = [TYPE_LOCAL, TYPE_NFS, TYPE_SSH, TYPE_RAW]
-netLocationTypes = (TYPE_NFS, TYPE_SSH)
-defaultActions = [ACTION_REBOOT, ACTION_SHELL, ACTION_DEFAULT, ACTION_HALT]
+defaultActions = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT]
 
 supportedFilesystemTypes = ("ext2", "ext3")
 
@@ -89,15 +142,59 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
 
 """
     TODO:
-
+write dump config
+write bootloader config
+page 2 filter setup
+localizations
+dbus & polkit things
+XEN support
 """
+
+class DBusProxy (object):
+    def __init__ (self):
+        self.bus = dbus.SystemBus ()
+        self.dbus_object = self.bus.get_object ("org.fedoraproject.systemconfig.kdump.mechanism", "/org/fedoraproject/systemconfig/kdump/object")
+
+# Get default kernel from grubby
+    @polkit.enable_proxy
+    def getdefaultkernel (self):
+        return self.dbus_object.getdefaultkernel (dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+# Get command line arguments for specific kernel from grubby
+    @polkit.enable_proxy
+    def getcmdline (self, kernel):
+        return self.dbus_object.getcmdline (kernel, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+# Get all kernel names from grubby
+    @polkit.enable_proxy
+    def getallkernels (self):
+        return self.dbus_object.getallkernels (dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+# Write kdump configuration data to /etc/kdump.conf
+    @polkit.enable_proxy
+    def writedumpconfig (self, configString):
+        return self.dbus_object.writedumpconfig (configString, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+# Write bootloader configuration
+    @polkit.enable_proxy
+    def writebootconfig (self, configString):
+        return self.dbus_object.writebootconfig (configString, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+
 class mainWindow:
     def __init__(self):
+        self.dbusObject = DBusProxy()
         nameTag = _("Kernel Dump Configuration")
         commentTag = _("Configure kdump/kexec")
 
         self.xml = xml
-        self.location = (TYPE_DEFAULT, PATH_DEFAULT)
+        self.targetType = TYPE_DEFAULT
+        self.serverName = ""
+        self.userName = ""
+
+        #                  fsType, partition
+        self.partitions = [(None, "file:///")]
+        self.rawDevices = []
 
         self.arch = None
 
@@ -105,6 +202,9 @@ class mainWindow:
     
         self.kdumpConfigComments = []
         self.miscConfig = []
+
+        self.filters = [False for x in range(NUM_FILTERS)]
+        self.filterCheckbutton = [gtk.CheckButton for x in range(NUM_FILTERS)]
 
         self.defaultAction = ACTION_DEFAULT
         self.path = PATH_DEFAULT
@@ -115,29 +215,120 @@ class mainWindow:
         self.kdumpMem = 0
         self.usableMem = 0
         self.origCrashKernel = ""
+        self.kernelPrefix = "/"
+
+        self.defaultKernel = self.defaultKernelName()
+        self.runningKernel = os.popen("/bin/uname -r").read().strip()
+        self.selectedKernel = self.defaultKernel
 
         self.bootloader = None
+        self.arch = os.popen("/bin/uname -m").read().strip()
 
     def setupScreen(self):
+        # load widgets from glade file
         self.toplevel = self.xml.get_widget("mainWindow")
-        self.toplevel.set_position(gtk.WIN_POS_CENTER)
 
-        self.memoryTable = self.xml.get_widget("memoryTable")
+        self.kdumpNotebook = self.xml.get_widget("kdumpNotebook");
+
+        self.okButton = self.xml.get_widget("okButton")
+        self.cancelButton = self.xml.get_widget("cancelButton")
+
+
         self.kdumpEnableCheckButton = self.xml.get_widget("kdumpEnableCheckButton")
-        self.totalMemLabel = self.xml.get_widget("totalMem")
-        self.kdumpMemSpinButton = self.xml.get_widget("kdumpMemSpinButton")
-        self.usableMemLabel = self.xml.get_widget("usableMem")
+
+        # page 0
+        self.memoryTable            = self.xml.get_widget("memoryTable")
+        self.totalMemLabel          = self.xml.get_widget("totalMem")
+	self.kdumpMemCurrentLabel   = self.xml.get_widget("kdumpMemCurrent")
+        self.kdumpMemSpinButton     = self.xml.get_widget("kdumpMemSpinButton")
+        self.usableMemLabel         = self.xml.get_widget("usableMem")
+
+        # page 1
+        self.localfsRadiobutton      = self.xml.get_widget("localfsRadiobutton")
+        self.partitionCombobox       = self.xml.get_widget("partitionCombobox")
+        self.locationEntry           = self.xml.get_widget("locationEntry")
+        self.localFilechooserbutton  = self.xml.get_widget("localFilechooserbutton")
+        self.rawDeviceRadiobutton    = self.xml.get_widget("rawDeviceRadiobutton")
+        self.deviceCombobox          = self.xml.get_widget("deviceCombobox")
+        self.networkRadiobutton      = self.xml.get_widget("networkRadiobutton")
+        self.networkTypeVbox         = self.xml.get_widget("networkTypeVbox")
+        self.nfsRadiobutton          = self.xml.get_widget("nfsRadiobutton")
+        self.sshRadiobutton          = self.xml.get_widget("sshRadiobutton")
+        self.networkConfigTable      = self.xml.get_widget("networkConfigTable")
+        self.usernameEntry           = self.xml.get_widget("usernameEntry")
+        self.pathEntry               = self.xml.get_widget("pathEntry")
+        self.servernameEntry         = self.xml.get_widget("servernameEntry")
+
+        # page 2
+        for x in range(NUM_FILTERS):
+            self.filterCheckbutton[x]      = self.xml.get_widget("filterCheckbutton%d" % x)
+        self.filterLevelLabel              = self.xml.get_widget("filterLevelLabel")
+        self.elfFileFormatRadioButton      = self.xml.get_widget("elfFileFormatRadioButton")
+        self.diskdupmFileFormatRadioButton = self.xml.get_widget("diskdumpFileFormatRadioButton")
+
+
+        # page 3
+        self.defaultInitrdRadiobutton = self.xml.get_widget("defaultInitrdRadiobutton")
+        self.customInitrdRadiobutton  = self.xml.get_widget("customInitrdRadiobutton")
+        self.initrdFilechooserbutton  = self.xml.get_widget("initrdFilechooserbutton")
+        self.defaultKernelRadiobutton = self.xml.get_widget("defaultKernelRadiobutton")
+        self.customKernelRadiobutton  = self.xml.get_widget("customKernelRadiobutton")
+        self.customKernelCombobox     = self.xml.get_widget("customKernelCombobox")
+        self.commandLineEntry         = self.xml.get_widget("commandLineEntry")
+        self.clearCmdlineButton       = self.xml.get_widget("clearCmdlineButton")
+        self.defaultActionCombo       = self.xml.get_widget("defaultActionCombo")
+        self.coreCollectorEntry       = self.xml.get_widget("coreCollectorEntry")
+
+
+        # widgets setup and signals connect
+        self.okButton.connect("clicked", self.okClicked)
+        self.cancelButton.connect("clicked", self.cancelClicked)
+        self.toplevel.connect("destroy", self.destroy)
+        self.kdumpEnableCheckButton.connect("toggled", self.kdumpEnableToggled)
+
+        # page 0
+        self.kdumpMemSpinButton.connect("value_changed", self.updateUsableMem)
+
+        # page 1
+        self.localfsRadiobutton.connect("toggled", self.targetTypeChanged)
+        self.rawDeviceRadiobutton.connect("toggled", self.targetTypeChanged)
+        self.networkRadiobutton.connect("toggled", self.targetTypeChanged)
+        self.nfsRadiobutton.connect("toggled", self.nfsChanged)
+        self.setupPartitions(self.partitionCombobox)
+        self.setupRawDevices(self.deviceCombobox)
+        self.locationEntry.connect("focus-out-event", self.locationChanged)
+        self.localFilechooserbutton.connect("selection-changed", self.locationChanged)
+        self.pathEntry.connect("focus-out-event", self.pathChanged)
+        self.servernameEntry.connect("focus-out-event", self.servernameChanged)
+        self.usernameEntry.connect("focus-out-event", self.usernameChanged)
+
+        # page 2
+        for x in range(NUM_FILTERS):
+            self.filterCheckbutton[x].connect("toggled", self.filterChanged)
+
+        # page 3
+        self.customInitrdRadiobutton.connect("toggled", self.customInitrdChanged)
+        self.customKernelRadiobutton.connect("toggled", self.customKernelChanged)
+        self.initrdFilechooserbutton.set_current_folder("/boot")
+        self.commandLineEntry.set_text(self.getCmdLine(self.defaultKernel))
+        self.setupCustomKernelCombobox(self.customKernelCombobox)
+        self.customKernelCombobox.connect("changed", self.updateCmdLine)
+        self.commandLineEntry.connect("focus-out-event", self.cmdlineChanged)
+        self.clearCmdlineButton.connect("clicked", self.resetCmdline)
+        self.coreCollectorEntry.connect("focus-out-event", self.collectorEntryChanged)
+        self.defaultActionCombo.connect("changed", self.setDefaultAction)
 
         self.tooltips = gtk.Tooltips()
         self.tooltips.set_tip(self.kdumpEnableCheckButton, _(KDUMP_BLURB))
 
-        self.arch = os.popen("/bin/uname -m").read().strip()
 
+        # check architecture
         if self.arch in unsupportedArches:
             self.showErrorMessage(_("Sorry, this architecture does not "
                                     "currently support kdump"))
             sys.exit(1)
 
+        # get total memory of system
         memInfo = open("/proc/meminfo").readlines()
         totalMem = None
         for line in memInfo:
@@ -148,7 +339,6 @@ class mainWindow:
             self.showErrorMessage(_("Failed to detect total system memory"))
             sys.exit(1)
 
-        self.runningKernel = os.popen("/bin/uname -r").read().strip()
 
         # Check for a xen kernel, we do things a bit different w/xen
         self.xenKernel = False
@@ -163,7 +353,9 @@ class mainWindow:
         # Check to see if kdump memory is already reserved
         # Read from /proc/iomem so we're portable across xen and non-xen
         kdumpMem = 0
+	kdumpMemGrubby = 0
         kdumpOffset = 0
+	kdumpOffsetGrubby = 0
         # PowerPC64 doesn't list crashkernel reservation in /proc/iomem
         if self.arch != 'ppc64':
             ioMem = open("/proc/iomem").readlines()
@@ -179,8 +371,10 @@ class mainWindow:
             if cmdLine.find("crashkernel=") > -1:
                 crashString = filter(lambda t: t.startswith("crashkernel="), 
                                      cmdLine.split())[0].split("=")[1]
-                (kdumpMem, kdumpOffset) = \
-                           [int(m[:-1]) for m in crashString.split("@")]
+                tokens = crashString.split("@")
+                kdumpMem = int(tokens[0][:-1])
+                if len(tokens) == 2:
+                    kdumpOffset = int(tokens[1][:-1])
 
         # i686 xen requires kernel-PAE for kdump if any memory
         # is mapped above 4GB
@@ -193,23 +387,26 @@ class mainWindow:
                         self.xenKdumpKernel = "kernel-PAE"
                         break
 
-        # Fix up memory calculations, if need be
-        if kdumpMem != 0:
-            self.kdumpEnabled = True
-            self.kdumpEnableCheckButton.set_active(True)
-            totalMem += kdumpMem
-            self.origCrashKernel = "%dM@%dM" % (kdumpMem, kdumpOffset)
-        else:
-            self.kdumpEnableCheckButton.set_active(False)
+	# read current kdump settings from grubby
+	if debug:
+            print "grubby --default-kernel: " + self.defaultKernel
+        line = self.getCmdLine(self.defaultKernel)
+        if line.find("crashkernel") != -1:
+            crashString = filter(lambda t: t.startswith("crashkernel="),
+                                          line.split())[0].split("=")[1]
+            tokens = crashString.split("@")
+            kdumpMemGrubby = int(tokens[0][:-1])
+            if len(tokens) == 2:
+                kdumpOffsetGrubby = int(tokens[2][:-1])
+            if debug:
+                print "grubby --info: crashkernel=%iM@%iM" \
+                       % (kdumpMemGrubby, kdumpOffsetGrubby)
 
-        self.totalMemLabel.set_text("%s" % (totalMem,))
-
-        # Do some sanity-checking and try to present only sane options.
-        #
         # Defaults
         lowerBound = 128
         minUsable = 512
         step = 64
+
 
         if self.arch == 'ia64':
             # ia64 needs at least 256M, page-aligned
@@ -219,6 +416,26 @@ class mainWindow:
             lowerBound = 256
             minUsable = 2048
 
+
+
+        # Fix up memory calculations, if need be
+	if kdumpMemGrubby != 0:
+            self.kdumpEnableCheckButton.set_active(True)
+            self.kdumpEnableCheckButton.toggled()
+            totalMem += kdumpMem
+            if kdumpOffset == 0:
+                self.origCrashKernel = "%dM" % kdumpMem
+            else:
+                self.origCrashKernel = "%dM@%dM" % (kdumpMem, kdumpOffset)
+        else:
+	    kdumpMemGrubby = lowerBound
+            self.kdumpEnableCheckButton.set_active(False)
+            self.kdumpEnableCheckButton.toggled()
+
+        self.totalMemLabel.set_text("%s" % (totalMem,))
+
+        # Do some sanity-checking and try to present only sane options.
+        #
         upperBound = (totalMem - minUsable) - (totalMem % step) 
 
         if upperBound < lowerBound:
@@ -227,61 +444,37 @@ class mainWindow:
             sys.exit(1)
 
         # Set spinner to lowerBound unless already set on kernel command line
-        if kdumpMem == 0:
-            kdumpMem = lowerBound
-        else:
+        if kdumpMem != 0:
             # round it down to a multiple of %step
             kdumpMem = kdumpMem - (kdumpMem % step)
+            self.kdumpMem = kdumpMem
 
         self.totalMem = totalMem
-        self.kdumpMem = kdumpMem
         self.usableMem = self.totalMem - self.kdumpMem
+
+	self.kdumpMemCurrentLabel.set_text(_("%s" % (kdumpMem)))
 
         kdumpMemAdj = gtk.Adjustment(kdumpMem, lowerBound, upperBound, step, step, 64)
         self.kdumpMemSpinButton.set_adjustment(kdumpMemAdj)
         self.kdumpMemSpinButton.set_update_policy(gtk.UPDATE_IF_VALID)
         self.kdumpMemSpinButton.set_numeric(True)
-        self.kdumpMemSpinButton.connect("value_changed", self.updateUsableMem)
-        self.kdumpMemSpinButton.set_value(kdumpMem)
+        self.kdumpMemSpinButton.set_value(kdumpMemGrubby)
+        self.updateUsableMem(self.kdumpMemSpinButton)
 
         self.usableMemLabel.set_text("%s" % (self.usableMem,))
 
         if debug:
-            print "totalMem = %dM\nkdumpMem = %dM\nusableMem = %dM" % (totalMem, kdumpMem, self.usableMem)
-
-        self.defaultActionCombo = self.xml.get_widget("defaultActionCombo")
+            print "totalMem = %dM\nkdumpMem = %dM\nkdumpMemGrubby = %dM\nusableMem = %dM" % (totalMem, kdumpMem, kdumpMemGrubby, self.usableMem)
 
         for action in defaultActions:
             self.defaultActionCombo.append_text(action)
+        self.defaultActionCombo.set_active(0)
+        self.setDefaultAction()
 
-        self.defaultActionCombo.set_active(defaultActions.index(self.defaultAction))
-        self.defaultActionCombo.connect("changed", self.setDefaultAction)
-
-        self.pathEntry = self.xml.get_widget("pathEntry")
-        self.coreCollectorEntry = self.xml.get_widget("coreCollectorEntry")
-        self.locationEditButton = self.xml.get_widget("locationEditButton")
-        self.locationEntry = self.xml.get_widget("locationEntry")
-
-        self.setLocation(self.location)
-        self.setPath()
-        self.setCoreCollector()
+        self.setLocation(TYPE_DEFAULT, PATH_DEFAULT)
+        self.setPath(PATH_DEFAULT)
+        self.setCoreCollector(CORE_COLLECTOR_DEFAULT)
         self.loadDumpConfig()
-
-        self.advancedConfigTable = self.xml.get_widget("advancedConfigTable")
-        self.locationEditButton.connect("clicked", self.editLocationHandler)
-        self.pathEntry.connect("changed", self.updateLocationString)
-        self.kdumpEnableCheckButton.connect("toggled", self.kdumpEnableToggled)
-        self.kdumpEnabled = not self.kdumpEnabled # gonna get toggled next line
-        self.kdumpEnableToggled()
-        self.okButton = self.xml.get_widget("okButton")
-        self.okButton.connect("clicked", self.okClicked)
-        self.cancelButton = self.xml.get_widget("cancelButton")
-        self.cancelButton.connect("clicked", self.cancelClicked)
-        self.toplevel.connect("destroy", self.destroy)
-
-        if not self.setBootloader():
-            # find out now if they have a bootloader we know what to do with
-            sys.exit(1)
 
     def run(self):
         self.toplevel.show_all()
@@ -291,20 +484,26 @@ class mainWindow:
         gtk.main_quit()
 
     def okClicked(self, *args):
-        if not self.setCoreCollector():
-            return
-
-        if not self.setPath():
-            return
-
-        if self.location[0] not in (TYPE_RAW, TYPE_LOCAL) and not self.path:
+        if self.targetType not in (TYPE_RAW, TYPE_LOCAL) and not self.path:
             rc = self.yesNoDialog(_("Path cannot be empty for '%s' locations. "
                                     "Reset path to default ('%s')?.")
-                                    % (self.location[0], PATH_DEFAULT))
+                                    % (self.targetType, PATH_DEFAULT))
             if rc == True:
                 self.setPath(PATH_DEFAULT)
             else:
                 return
+
+        if (self.targetType == TYPE_RAW) and\
+           (self.deviceCombobox.get_active() < 0):
+            self.showErrorMessage(_("You must select one of the raw devices"))
+            return
+
+        if (self.targetType == TYPE_LOCAL) and\
+           (self.partitionCombobox.get_active() < 0):
+            self.showErrorMessage(_("You must select one of the partitions"))
+            return
+
+
 
         kernelKdumpNote = ""
         if self.arch in kernelKdumpArches:
@@ -340,12 +539,14 @@ class mainWindow:
             if debug:
                 print "writing kdump config"
 
-            self.writeDumpConfig()
+            if not self.writeDumpConfig():
+                return
 
             if debug:
                 print "writing bootloader config"
 
-            self.writeBootloaderConfig()
+            if not self.writeBootloaderConfig():
+                return
         else:
             print "would have called writeDumpConfig"
             print "would have called writeBootloaderConfig"
@@ -355,223 +556,47 @@ class mainWindow:
     def cancelClicked(self, *args):
         self.destroy()
 
-    def locationEditDialog(self, type=None, location=None):
-        if type and location:
-            title = _("Edit Location")
-        else:
-            title = _("New Location")
 
-        d = gtk.Dialog(title=title, parent=self.toplevel, 
-                        flags=gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                        buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                                   gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-        
-        def typeChanged(*args):
-            combo, locationEntry = args
-            iter = combo.get_active_iter()
-            type = combo.get_model().get_value(iter, 0).strip()
-            if type == TYPE_DEFAULT:
-                locationEntry.set_text(PATH_DEFAULT)
-                locationEntry.set_sensitive(False)
-            else:
-                locationEntry.set_sensitive(True)
-                if locationEntry.get_text().strip() == PATH_DEFAULT:
-                    locationEntry.set_text("")
-
-        vbox1 = gtk.VBox()
-        label1 = gtk.Label(str=_("Select a location type:"))
-        vbox1.add(label1)
-        combo = gtk.combo_box_new_text()
-        for typeStr in locationTypes:
-            combo.append_text(typeStr)
-        fstypes = []
-        for fsck in [f for f in os.listdir("/sbin") if f.startswith("fsck.")]:
-            if fsck[5:] in supportedFilesystemTypes:
-                fstypes.append(fsck[5:])
-        fstypes.sort()
-        for fstype in fstypes:
-            combo.append_text(fstype)
-
-        vbox1.add(combo)
-        vbox1.add(gtk.HSeparator())
-        label2 = gtk.Label(str=_("Enter location:"))
-        vbox1.add(label2)
-        entry2 = gtk.Entry()
-        vbox1.add(entry2)
-        combo.connect("changed", typeChanged, entry2)
-        vbox1.show_all()
-        d.vbox.pack_start(vbox1)
-
-        if type is None:
-            combo.set_active(0)
-        elif type in locationTypes:
-            combo.set_active(locationTypes.index(type))
-            entry2.set_text(location)
-        elif type in fstypes:
-            combo.set_active(fstypes.index(type) + len(locationTypes))
-            entry2.set_text(location)
-
-        while d.run() == gtk.RESPONSE_ACCEPT:
-            iter = combo.get_active_iter()
-            new_type = combo.get_model().get_value(iter, 0).strip()
-            new_location = entry2.get_text().strip()
-            if self.setLocation((new_type, new_location)):
-                break
-
-        d.destroy()
-
-    def editLocationHandler(self, *args):
-        (type, location) = self.location
-        
-        if type == TYPE_NET and location.count("@"):
-            if debug:
-                print "FIXUP: %s://%s => %s://%s" % (type, location,
-                                                     TYPE_SSH, location)
-            type = TYPE_SSH
-        elif type == TYPE_NET:
-            if debug:
-                print "FIXUP: %s://%s => %s://%s" % (type, location,
-                                                     TYPE_NFS, location)
-            type = TYPE_NFS
-            
-        self.locationEditDialog(type, location)
-
-    def setLocation(self, locationTuple=None):
+    def setLocation(self, locationType, path):
         if debug:
-            print "setLocation(", locationTuple, ")"
+            print "setLocation " + locationType  + " " + path
 
-        if locationTuple is None and self.location is not None:
-            type, location = self.location
+        # SSH or NFS
+        if locationType == TYPE_NET:
+            self.networkRadiobutton.set_active(True)
+            if path.find("@") != -1:
+                # SSH
+                self.sshRadiobutton.set_active(True)
+                (self.userName, self.serverName) = path.split("@")
+                self.servernameEntry.set_text(self.serverName)
+                self.usernameEntry.set_text(self.userName)
+            else:
+                # NFS
+                self.nfsRadiobutton.set_active(True)
+                self.serverName = path
+                self.servernameEntry.set_text(path)
+            self.nfsRadiobutton.toggled()
+
+        # RAW
+        elif locationType == TYPE_RAW:
+            if self.setActiveRawDevice(path):
+                self.rawDeviceRadiobutton.set_active(True)
+
+        elif locationType == TYPE_LOCAL:
+            self.setPath(path)
+
+        # One of supported partition type
         else:
-            type, location = locationTuple         
+            self.setActivePartition(locationType, path)
+        self.localfsRadiobutton.toggled()
 
-        # fixup the type if necessary
-        if type == TYPE_NET and location.count("@"):
-            if debug:
-                print "FIXUP: %s://%s => %s://%s" % (type, location,
-                                                     TYPE_SSH, location)
-            type = TYPE_SSH
-        elif type == TYPE_NET:
-            if debug:
-                print "FIXUP: %s://%s => %s://%s" % (type, location,
-                                                     TYPE_NFS, location)
-            type = TYPE_NFS
-
-        rc = True
-
-        # try to validate the new location
-        if type == TYPE_SSH:
-            if not location.count("@") or location.count(":"):
-                self.showErrorMessage(_("SSH locations must be of the form "
-                                        "'user@host'. A path can be specified "
-                                        "in the main window."))
-                rc = False
-        elif type == TYPE_NFS:
-            if not location.count(":") or location.count("@"):
-                self.showErrorMessage(_("NFS locations must be of the form "
-                                        "'host:/path'"))
-                rc = False
-        elif type == TYPE_RAW:
-            try:
-                st = os.stat(location)
-            except OSError:
-                self.showErrorMessage(_("For raw locations you must specify "
-                                        "a valid device node."))
-                rc = False
-            else:
-                if not stat.S_ISBLK(st.st_mode):
-                    self.showErrorMessage(_("For raw locations you must "
-                                            "specify a valid device node."))
-                    rc = False
-        elif type == TYPE_LOCAL:
-            pass
-        else:
-            if not os.access("/sbin/fsck.%s" % type, os.X_OK):
-                self.showErrorMessage(_("Support for filesystem type '%s' "
-                                        "is not present on this system") % type)
-                rc = False
-
-            # XXX need to find a way to validate labels & uuids
-            if location.startswith("LABEL="):
-                # look up and validate the device
-                pass
-            elif location.startswith("UUID="):
-                # look up and validate the device
-                pass
-            else:
-                try:
-                    st = os.stat(location)
-                except OSError:
-                    self.showErrorMessage(_("Failed to stat device node "
-                                            "'%s'") % location)
-                    rc = False
-                else:
-                    if not stat.S_ISBLK(st.st_mode):
-                        self.showErrorMessage(_("'%s' locations must specify "
-                                                "a valid device node.") % type)
-                        rc = False
-
-        if rc == True:
-            self.location = (type, location)
-
-            if type in (TYPE_RAW, TYPE_LOCAL):
-                # unset path and freeze the entry
-                self.setPath("")
-                self.pathEntry.set_sensitive(False)
-            else:
-                path = self.pathEntry.get_text().strip()
-                if not path or path == "/":
-                    path = PATH_DEFAULT
-                self.setPath(path)
-                self.pathEntry.set_sensitive(True)
-
-            if type in (TYPE_SSH, TYPE_RAW, TYPE_LOCAL):
-                # unset core_collector and freeze the entry
-                self.setCoreCollector("")
-                self.coreCollectorEntry.set_sensitive(False)
-            else:
-                self.coreCollectorEntry.set_sensitive(True)
-
-            if type == TYPE_LOCAL:
-                self.defaultActionCombo.set_active(defaultActions.index(ACTION_DEFAULT))
-                self.defaultActionCombo.set_sensitive(False)
-            else:
-                self.defaultActionCombo.set_sensitive(True)
-
-            self.updateLocationString()
-
-            if debug:
-                print "location modified; now", self.location
-
-        return rc
-
-    def updateLocationString(self, *args):
-        type, location = self.location
-        if type in (TYPE_RAW, TYPE_LOCAL):
-            self.setPath("")
-            path = self.path
-        else:
-            self.setPath(self.pathEntry.get_text())
-            path = self.path
-
-        if type in (TYPE_NFS, TYPE_LOCAL, TYPE_RAW):
-            delim = ""
-            if path and not path.startswith("/"):
-                # we're not really changing the path, just the locationText
-                path = "/" + path
-        else:
-            delim = ":"
-
-        locationText = "%s://%s%s%s" % (type, location, delim, path)
-        self.locationEntry.set_text(locationText)
-            
     def loadDumpConfig(self):
         try:
             lines = open(KDUMP_CONFIG_FILE).readlines()
         except IOError:
             return
 
-        self.quiet(True)  # suppress error popups temporarily
+        #self.quiet(True)  # suppress error popups temporarily
 
         for line in [l.strip() for l in lines]:
             if not line:
@@ -603,113 +628,128 @@ class mainWindow:
             elif type == "core_collector":
                 self.setCoreCollector(location)
             elif type in (TYPE_RAW, TYPE_NET) or type in supportedFilesystemTypes:
-                self.setLocation((type, location))
+                self.setLocation(type, location)
             else:
                 self.miscConfig.append(" ".join((type, location)))
 
-        # now we fix up the loaded config as needed
-        if self.location[0] in (TYPE_LOCAL, TYPE_RAW):
-            self.setPath("")
-            self.pathEntry.set_sensitive(False)
-
-        if self.location[0] in (TYPE_RAW, TYPE_SSH, TYPE_LOCAL):
-            self.setCoreCollector("")
-            self.coreCollectorEntry.set_sensitive(False)
-
-        self.updateLocationString()
-        # end fixups
-
-        self.quiet(False)
-
     def writeDumpConfig(self):
         if testing or not self.kdumpEnabled:
-            return
+            return 1
 
-        if os.access(KDUMP_CONFIG_FILE, os.W_OK):
-            # make a minimal effort at backing up an existing config
-            try:
-                os.rename(KDUMP_CONFIG_FILE, KDUMP_CONFIG_FILE + ".backup")
-            except:
-                pass
+        # start point
+        configString = ""
 
-        fd = open(KDUMP_CONFIG_FILE, "w")
-        # dump all of the comment lines from the original file into the new one
-        fd.write("\n".join(self.kdumpConfigComments) + "\n")
+        # comment lines
+        configString += "".join(self.kdumpConfigComments) + "\n"
+
+        # misc. config
         for line in self.miscConfig:
-            fd.write(line + "\n")
+            configString += "%s\n" % line
 
-        if self.location[0] in netLocationTypes:
-            fd.write("net %s\n" % self.location[1])
-        elif self.location[0] != TYPE_DEFAULT:
-            fd.write("%s %s\n" % self.location)
+        # target type
+        #   rawdevice
+        if self.targetType == TYPE_RAW:
+            configString += "raw %s\n" % self.rawDevices[self.deviceCombobox.get_active()]
 
-        if self.path and self.path != PATH_DEFAULT:
-            fd.write("path %s\n" % self.path)
+        #   nfs
+        elif self.targetType == TYPE_NFS:
+            configString += "net %s\n" % self.serverName
+            configString += "path %s\n" % self.pathEntry.get_text()
 
-        if self.coreCollector != CORE_COLLECTOR_DEFAULT:
-            fd.write("core_collector %s\n" % self.coreCollector)
+        #   scp
+        elif self.targetType == TYPE_SSH:
+            configString += "net %s@%s\n" % (self.userName ,self.serverName)
+            configString += "path %s\n" % self.pathEntry.get_text()
 
-        if self.defaultAction != ACTION_DEFAULT:
-            fd.write("default %s\n" % (self.defaultAction,))
+        #   local
+        elif self.targetType == TYPE_LOCAL:
+            (fsType, partition) = self.partitions[self.partitionCombobox.get_active()]
+            if fsType and partition:
+                configString += "%s %s\n" % (fsType, partition)
 
-        fd.close()
+        # path
+        configString += "path %s\n" % self.path
 
-    def setBootloader(self):
-        for (name, (conf, offset, kpath)) in bootloaders.items():
-            # I hope order doesn't matter
-            if os.access(conf, os.W_OK) or (testing and os.access(conf, os.F_OK)):
-                self.bootloader = name
+        # core collector
+        configString += "core_collector %s\n" % self.coreCollector
 
-        if self.bootloader is None:
-            self.showErrorMessage(_("No bootloader config file found, "
-                                    "aborting configuration!"))
-            return
+        # default
+        if self.defaultAction is not ACTION_DEFAULT:
+            configString += "default %s\n" % self.defaultAction
 
-        return self.bootloader
+        written = self.dbusObject.writedumpconfig(configString)
+
+        if debug:
+            print "written kdump config:"
+            print written
+        if (configString != written):
+            self.showErrorMessage("Error writing kdump configuration")
+            return 0
+        return 1
 
     def writeBootloaderConfig(self):
         if testing:
             return
 
-        (blConfig, offset, kpath) = bootloaders[self.bootloader]
+        configString = ""
+        if debug: print "Write bootloader conf:"
+        
+        # kernel name to change
+        configString += " --update-kernel=" + self.selectedKernel[:-1]
+        if debug: print "  Updating kernel '%s'" % (self.selectedKernel[:-1])
 
-        # crashkerenl line goes in different places for xen vs. non-xen
-        if self.xenKernel:
-            args = 'mbargs'
-            # x86_64 xen has issues @16M, use 32M instead
-            if self.arch == 'x86_64':
-                offset = 32
-        else:
-            args = 'args'
-
-        # Are we adding or removing the crashkernel param?
+        # arguments
         if self.kdumpEnabled:
-            crashKernel = "%iM@%iM" % (self.kdumpMem, offset)
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%s"' \
-                        % (self.bootloader, kpath, self.runningKernel, 
-                           args, crashKernel)
-            chkconfigStatus = "on"
-            if self.origCrashKernel:
-                serviceOp = "restart"
-            else:
-                serviceOp = "start"
+            configString += " --args=\"" + self.commandLineEntry.get_text() + "\""
+            if debug: print "  Setting args to '%s'" % (self.commandLineEntry.get_text())
         else:
-            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-%s="crashkernel=%s"' \
-                        % (self.bootloader, kpath, self.runningKernel, 
-                           args, self.origCrashKernel)
-            chkconfigStatus = "off"
-            serviceOp = "stop"
+            configString += " --remove-args=\"crashkernel=%s\"" % (self.origCrashKernel)
+            if debug: print "  Removing crashkernel=%s" % (self.origCrashKernel)
+        
+        check = self.dbusObject.writebootconfig(configString)
+        if debug: print "  check: " + check
 
-        if debug:
-            print "Using %s bootloader with %iM offset" % (self.bootloader, offset)
-            print "Grubby command:\n    %s" % grubbyCmd
+        return 1
 
-        # FIXME: use rhpl.executil (and handle errors)!
-        os.system(grubbyCmd)
-        os.system("/sbin/chkconfig kdump %s" % chkconfigStatus)
-        os.system("/sbin/service kdump %s" % serviceOp)
-        if self.bootloader == 'yaboot':
-            os.system('/sbin/ybin')
+#        (blConfig, offset, kpath) = bootloaders[self.bootloader]
+#
+#        # crashkerenl line goes in different places for xen vs. non-xen
+#        if self.xenKernel:
+#            args = 'mbargs'
+#            # x86_64 xen has issues @16M, use 32M instead
+#            if self.arch == 'x86_64':
+#                offset = 32
+#        else:
+#            args = 'args'
+#
+#        # Are we adding or removing the crashkernel param?
+#        if self.kdumpEnabled:
+#            crashKernel = "%iM" % (self.kdumpMem)
+#            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%s"' \
+#                        % (self.bootloader, kpath, self.runningKernel, 
+#                           args, crashKernel)
+#            chkconfigStatus = "on"
+#            if self.origCrashKernel:
+#                serviceOp = "restart"
+#            else:
+#                serviceOp = "start"
+#        else:
+#            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-%s="crashkernel=%s"' \
+#                        % (self.bootloader, kpath, self.runningKernel, 
+#                           args, self.origCrashKernel)
+#            chkconfigStatus = "off"
+#            serviceOp = "stop"
+#
+#        if debug:
+#            print "Using %s bootloader with %iM offset" % (self.bootloader, offset)
+#            print "Grubby command:\n    %s" % grubbyCmd
+#
+#        # FIXME: use rhpl.executil (and handle errors)!
+#        os.system(grubbyCmd)
+#        os.system("/sbin/chkconfig kdump %s" % chkconfigStatus)
+#        os.system("/sbin/service kdump %s" % serviceOp)
+#        if self.bootloader == 'yaboot':
+#            os.system('/sbin/ybin')
 
     def updateUsableMem(self, *args):
         self.kdumpMem = int(args[0].get_value())
@@ -717,6 +757,7 @@ class mainWindow:
         self.usableMemLabel.set_text("%s" % (self.usableMem,))
         if debug:
             print "setting usableMem to", self.usableMem
+        self.setCrashkernel(self.commandLineEntry, self.kdumpMem)
 
     def setDefaultAction(self, *args):
         if args and args[0] in defaultActions:
@@ -738,12 +779,7 @@ class mainWindow:
         mb = int(hex,16) / divisor
         return mb
 
-    def setPath(self, path=None):
-        if path is None and self.path is not None:
-            path = self.path
-        elif path is None:
-            path = PATH_DEFAULT
-
+    def setPath(self, path):
         # XXX are there are times (local_fs) when leading "/" is needed?
         #if path and not path.startswith("/"):
         #    path = "/" + path
@@ -753,15 +789,18 @@ class mainWindow:
         if debug:
             print "setting path to '%s'" % path
         self.path = path
-        self.pathEntry.set_text(path)
+
+        if (self.pathEntry.get_text() != path):
+            self.pathEntry.set_text(path)
+
+        if (self.locationEntry.get_text() != path):
+            self.locationEntry.set_text(path)
+
+        if (self.localFilechooserbutton.get_filename() != path):
+            self.localFilechooserbutton.set_current_folder(path)
         return True
 
-    def setCoreCollector(self, collector=None):
-        if collector is None and self.coreCollector is not None:
-            collector = self.coreCollector
-        elif not collector:
-            collector = CORE_COLLECTOR_DEFAULT
-
+    def setCoreCollector(self, collector):
         if collector and not collector.startswith("makedumpfile"):
             self.showErrorMessage(_("Core collector must begin with "
                                     "'makedumpfile'"))
@@ -770,20 +809,20 @@ class mainWindow:
         if debug:
             print "setting core_collector to '%s'" % collector
         self.coreCollector = collector
-        self.coreCollectorEntry.set_text(collector)
+        if self.coreCollectorEntry.get_text() != collector:
+            self.coreCollectorEntry.set_text(collector)
+            self.collectorEntryChanged(self.coreCollectorEntry)
         return True
 
     def kdumpEnableToggled(self, *args):
-        if self.kdumpEnabled:
-            self.kdumpEnabled = False
-        else:
-            self.kdumpEnabled = True
-
+        self.kdumpEnabled = self.kdumpEnableCheckButton.get_active()
         if debug:
             print "setting kdumpEnabled to", self.kdumpEnabled
 
         self.memoryTable.set_sensitive(self.kdumpEnabled)
-        self.advancedConfigTable.set_sensitive(self.kdumpEnabled)
+        self.kdumpNotebook.set_sensitive(self.kdumpEnabled)
+        if self.kdumpEnabled:
+            self.updateUsableMem(self.kdumpMemSpinButton)
 
     def quiet(self, flag=None):
         if flag in (True, False):
@@ -802,6 +841,7 @@ class mainWindow:
         dlg.set_modal(True)
         dlg.run()
         dlg.destroy()
+        return False
 
     def showMessage(self, text, type=None):
         if self.quiet():
@@ -834,7 +874,234 @@ class mainWindow:
             rc = False
 
         return rc
- 
+
+    def targetTypeChanged(self, *args):
+        local = self.localfsRadiobutton.get_active()
+        raw = self.rawDeviceRadiobutton.get_active()
+        net = self.networkRadiobutton.get_active()
+
+        self.locationEntry.set_sensitive(local)
+        self.localFilechooserbutton.set_sensitive(local)
+        self.partitionCombobox.set_sensitive(local)
+
+        self.deviceCombobox.set_sensitive(raw)
+
+        self.networkTypeVbox.set_sensitive(net)
+        self.networkConfigTable.set_sensitive(net)
+        
+        if (local):
+            self.targetType = TYPE_LOCAL
+        elif (raw):
+            self.targetType = TYPE_RAW
+
+    def nfsChanged(self, nfsRadioButton, *args):
+        if (nfsRadioButton.get_active()):
+            self.usernameEntry.set_sensitive(False)
+            self.targetType = TYPE_NFS
+        else:
+            self.usernameEntry.set_sensitive(True)
+            self.targetType = TYPE_SSH
+            
+
+    def customKernelChanged(self, button, *args):
+        self.customKernelCombobox.set_sensitive(self.customKernelRadiobutton.get_active())
+        if not button.get_active():
+            self.selectedKernel = self.defaultKernel
+            self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+        else:
+            self.updateCmdLine(self.customKernelCombobox)
+        self.updateUsableMem(self.kdumpMemSpinButton)
+
+    def customInitrdChanged(self, *args):
+        self.initrdFilechooserbutton.set_sensitive(self.customInitrdRadiobutton.get_active())
+
+    # fill partition combo box with available partitions
+    # partitions and their types are read from fstab
+    def setupPartitions(self, combobox):
+        try:
+            lines = open(FSTAB_FILE).readlines()
+            for line in lines:
+                for fstype in supportedFilesystemTypes:
+                    if line.find(fstype) != -1:
+                        self.partitions.append((fstype, line.split(" ")[0]))
+                        if debug:
+                            print "found partition in fstab: ", self.partitions[len(self.partitions) -1 ] 
+        except IOError:
+            pass
+        for (fsType, partition) in self.partitions:
+            combobox.append_text("%s (%s)" % (partition, fsType))
+        combobox.set_active(0)
+        return
+
+    # fill raw devices combo box with all partitions listed in /proc/partitions
+    # uses only valid major numbers
+    def setupRawDevices(self, combobox):
+        try:
+            lines = open(PROC_PARTITIONS).readlines()
+            for line in lines:
+                major = line.strip().split(" ")[0]
+                if major in SUPPORTED_MAJOR:
+                    dev = "/dev/%s" % line.strip().rsplit(" ",1)[1]
+                    self.rawDevices.append(dev)
+                    if debug:
+                        print "added '%s' to raw devices" % dev
+        except IOError:
+            pass
+        for dev in self.rawDevices:
+            combobox.append_text(dev)
+        combobox.set_active(0)
+        return
+
+    def locationChanged(self, widget, *args):
+        if widget == self.locationEntry:
+            self.setPath(widget.get_text())
+        else:
+            self.setPath(widget.get_filename())
+
+    def getCmdLine(self, kernel):
+       cmdline = self.dbusObject.getcmdline(kernel)
+       self.origCrashKernel = self.getCrashkernel(cmdline)
+       return cmdline
+       
+
+    def defaultKernelName(self):
+        defKern = self.dbusObject.getdefaultkernel()
+        self.kernelPrefix = defKern.rsplit("/",1)[0]
+        if debug:
+            print "Default kernel = " + defKern
+            print "Kernel prefix = " + self.kernelPrefix
+	return defKern
+
+    def setupCustomKernelCombobox(self, combobox):
+        lines = self.dbusObject.getallkernels().split("\n")
+        for line in lines[:-1]:
+            (name, value) = line.strip().split("=",1)
+            if name == "kernel":
+                text = value.strip('"')
+                if self.defaultKernel.find(text) is not -1:
+                    text = text + " " + TAG_DEFAULT
+                if text.find(self.runningKernel) is not -1:
+                    text = text + " " + TAG_CURRENT
+                combobox.append_text(self.kernelPrefix + text)
+                if debug:
+                   print "Appended kernel:" + self.kernelPrefix + text
+        combobox.set_active(0)
+        return
+
+    def updateCmdLine(self, combobox, *args):
+        self.selectedKernel = combobox.get_active_text()
+        self.selectedKernel = self.selectedKernel.rsplit(TAG_CURRENT,1)[0] # there can be current or default
+        self.selectedKernel = self.selectedKernel.rsplit(TAG_DEFAULT,1)[0] # or default tag
+        self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+        self.updateUsableMem(self.kdumpMemSpinButton)
+
+    def getCrashkernel(self, text):
+        index = text.find("crashkernel=")
+        if index != -1:
+            return text[index:].split(" ")[0].split("=")[1]
+        return ""
+
+    def setCrashkernel(self, gtkEntry, size):
+        oldValue = self.getCrashkernel(gtkEntry.get_text())
+        oldText = gtkEntry.get_text()
+        if oldValue == "":
+            gtkEntry.set_text(oldText + " crashkernel=%dM" % size)
+        else:
+            gtkEntry.set_text(oldText.replace(oldValue,"%dM" % size))
+
+    def cmdlineChanged(self, gtkEntry, *args):
+        value = self.getCrashkernel(gtkEntry.get_text())[:-1]
+        if value == "":
+            self.kdumpEnableCheckButton.set_active(False)
+            self.kdumpEnableCheckButton.toggled()
+        else:
+            self.kdumpMemSpinButton.set_value(float(value))
+            self.updateUsableMem(self.kdumpMemSpinButton)
+        if debug:
+            print "Updated cmdline. Crashkernel set to " + value
+
+    def resetCmdline(self, *args):
+        self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+        self.cmdlineChanged(self.commandLineEntry)
+
+    def setActiveRawDevice(self, deviceName):
+        if self.rawDevices.count(deviceName) > 0:
+            self.deviceCombobox.set_active(self.rawDevices.index(deviceName))
+            return True
+        else:
+            self.showErrorMessage(_("Raw device %s wasn't found on this machine" % deviceName))
+            self.deviceCombobox.set_active(-1)
+            return False
+
+    def setActivePartition(self, partType, partName):
+        if self.partitions.count((partType, partName)) > 0:
+            self.partitionCombobox.set_active(self.partitions.index((partType, partName)))
+            return True
+        else:
+            self.showErrorMessage(_("Local file system partition with name %s and type %s wasn't found" % (partName, partType)))
+            self.partitionCombobox.set_active(-1)
+            return False
+
+    def collectorEntryChanged(self, entry, *args):
+        if not self.setCoreCollector(entry.get_text()):
+            entry.set_text(self.coreCollector)
+
+        # filter level set?
+        idx = self.coreCollector.find("-d")
+        if idx != -1:
+            try:
+                level = int(self.coreCollector[idx:].split(" ")[1])
+            except ValueError:
+                level = 0
+            self.filterChanged(level)
+        return False
+
+    def setCollectorFilter(self, level):
+        idx = self.coreCollector.find("-d")
+        if idx != -1:
+            value = self.coreCollector[idx:].split(" ")[1]
+            self.setCoreCollector(self.coreCollector.replace(\
+                            "-d %s" % value, "-d %d" % level))
+        else:
+            self.setCoreCollector(self.coreCollector + " -d %d" % level)
+
+    def pathChanged(self, entry, *args):
+        self.path = entry.get_text()
+        return False
+
+    def usernameChanged(self, entry, *args):
+        self.userName = entry.get_text()
+        return False
+
+    def servernameChanged(self, entry, *args):
+        self.serverName = entry.get_text()
+        return False
+
+    def setFilterCheckbuttons(self, level):
+        for index in range(NUM_FILTERS-1, -1, -1):
+            if level >= (2**index):
+                level -= (2**index)
+                self.filters[index] = True
+                self.filterCheckbutton[index].set_active(True)
+            else:
+                self.filters[index] = False
+                self.filterCheckbutton[index].set_active(False)
+        self.filterCheckbutton[0].toggled()
+        return
+
+    def filterChanged(self, *args):
+        level = 0
+        if args[0] in self.filterCheckbutton:
+            for x in range(NUM_FILTERS):
+                self.filters[x] = self.filterCheckbutton[x].get_active()
+                level += self.filters[x] * (2**x)
+            self.setCollectorFilter(level)
+            self.filterLevelLabel.set_text("%d" % level)
+        else:
+            level = args[0]
+            self.setFilterCheckbuttons(level)
+
+
 if __name__ == "__main__":
     import getopt
 
@@ -849,14 +1116,12 @@ if __name__ == "__main__":
         elif opt in ("-h", "--help"):
             print >> sys.stderr, "Usage: system-config-kdump.py [--test] [--debug]"
 
-    if not testing:
-        uid = os.getuid()
-        if uid != 0:
-            w = mainWindow()
-            w.showErrorMessage(_("You must be root to run this application."))
-            sys.exit()
-
+#    if not testing:
+#        uid = os.getuid()
+#        if uid != 0:
+#            w = mainWindow()
+#            w.showErrorMessage(_("You must be root to run this application."))
+#            sys.exit()
     win = mainWindow()
     win.setupScreen()
     win.run()
-

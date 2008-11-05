@@ -13,9 +13,26 @@ PREFIX=/usr
 DATADIR=${PREFIX}/share
 PKGDATADIR=${DATADIR}/${PKGNAME}
 PKGIMAGESDIR=${PKGDATADIR}/images
+ETC=/etc
 
-PAMD_DIR        = /etc/pam.d
-SECURITY_DIR    =/etc/security/console.apps
+PAMD_DIR        = ${ETC}/pam.d
+SECURITY_DIR    = ${ETC}/security/console.apps
+
+SERVICE_DIR  = ${DATADIR}/dbus-1/system-services
+SERVICE_DATA = org.fedoraproject.systemconfig.kdump.mechanism.service
+
+CONF_DIR  = ${ETC}/dbus-1/system.d
+CONF_DATA = org.fedoraproject.systemconfig.kdump.mechanism.conf
+
+POLICY_DIR  = ${DATADIR}/PolicyKit/policy
+POLICY_DATA = org.fedoraproject.systemconfig.kdump.policy
+
+LIBEXEC_DIR     = ${PREFIX}/local/libexec
+LIBEXEC_SCRIPTS = system-config-kdump-backend.py
+
+GLADE_DATA = system-config-kdump.glade
+GLADE_DIR  = ${PKGDATADIR}
+
 
 default: subdirs
 
@@ -31,15 +48,24 @@ install: ${PKGNAME}.desktop
 	mkdir -p $(INSTROOT)$(PKGDATADIR)/pixmaps
 	mkdir -p $(INSTROOT)/usr/share/applications
 	mkdir -p $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
-	install -m644 src/*.py $(INSTROOT)$(PKGDATADIR)
-	install src/${PKGNAME} $(INSTROOT)$(PKGDATADIR)/${PKGNAME}
-	install -m644 src/system-config-kdump.glade $(INSTROOT)$(PKGDATADIR)
+	mkdir -p ${INSTROOT}${SERVICE_DIR}
+	mkdir -p ${INSTROOT}${CONF_DIR}
+	mkdir -p ${INSTROOT}${POLICY_DIR}
+	mkdir -p ${INSTROOT}${LIBEXEC_DIR}
+	mkdir -p ${INSTROOT}${GLADE_DIR}
+	install -m644 src/${PKGNAME}.py $(INSTROOT)$(PKGDATADIR)
+	install src/${PKGNAME} $(INSTROOT)/usr/bin
+	install -m644 src/${GLADE_DATA} $(INSTROOT)$(GLADE_DIR)
 	install -m644 pixmaps/*.png $(INSTROOT)$(PKGDATADIR)/pixmaps
 	install -m644 pixmaps/${PKGNAME}.png $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
 	install -m644 ${PKGNAME}.pam $(INSTROOT)$(PAMD_DIR)/${PKGNAME}
 	install -m644 ${PKGNAME}.console $(INSTROOT)$(SECURITY_DIR)/${PKGNAME}
 	install -m644 ${PKGNAME}.desktop $(INSTROOT)/usr/share/applications/${PKGNAME}.desktop
-	ln -sf consolehelper $(INSTROOT)/usr/bin/${PKGNAME}
+	install -m0755 src/${LIBEXEC_SCRIPTS} ${LIBEXEC_DIR}
+	install -m0644 ${SERVICE_DATA} ${SERVICE_DIR}
+	install -m0644 ${CONF_DATA} ${CONF_DIR}
+	install -m0644 ${POLICY_DATA} ${POLICY_DIR}
+#	ln -sf consolehelper $(INSTROOT)/usr/bin/${PKGNAME}
 	for d in $(SUBDIRS); do \
 	(cd $$d; $(MAKE) INSTROOT=$(INSTROOT) MANDIR=$(MANDIR) install) \
 		|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \

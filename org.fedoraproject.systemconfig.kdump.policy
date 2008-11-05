@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+
+  <vendor>system-config-kdump Application</vendor>
+  <vendor_url>http://fedoraproject.org/example</vendor_url>
+  
+  <action id="org.fedoraproject.systemconfig.kdump.getdefaultkernel">
+    <description>Get default kernel name on system</description>
+    <message>System policy prevents getting default kernel name on system</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+  <action id="org.fedoraproject.systemconfig.kdump.getcmdline">
+    <description>Get command line arguments</description>
+    <message>System policy prevents getting command line arguments on system</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+  <action id="org.fedoraproject.systemconfig.kdump.getallkernels">
+    <description>Get all kernel names on system</description>
+    <message>System policy prevents getting all kernel names on system</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+  <action id="org.fedoraproject.systemconfig.kdump.writedumpconfig">
+    <description>Write kdump configuration</description>
+    <message>System policy prevents write access to /etc/kdump.conf</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+  <action id="org.fedoraproject.systemconfig.kdump.writebootconfig">
+    <description>Write bootloader configuration</description>
+    <message>System policy prevents write access to bootloader configuration</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+</policyconfig>
