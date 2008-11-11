@@ -84,16 +84,19 @@ class systemConfigKdumpObject(slip.dbus.service.Object):
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
                           in_signature='s', out_signature='s')
     def writedumpconfig (self, configString):
-        if os.access(KDUMP_CONFIG_FILE, os.W_OK):
-            # make a minimal effort at backing up an existing config
-            try:
-                os.rename(KDUMP_CONFIG_FILE, KDUMP_CONFIG_FILE + ".backup")
-            except:
-                pass
+#        if os.access(KDUMP_CONFIG_FILE, os.W_OK):
+#            # make a minimal effort at backing up an existing config
+#            try:
+#                os.rename(KDUMP_CONFIG_FILE, KDUMP_CONFIG_FILE + ".backup")
+#            except:
+#                pass
 
-        fd = open(KDUMP_CONFIG_FILE, "w")
-        fd.write(configString)
-        fd.close()
+        try:
+            fd = open(KDUMP_CONFIG_FILE, "w")
+            fd.write(configString)
+            fd.close()
+        except IOError,(errno, strerror):
+            return "%s: %s" % (errno, strerror)
 
         # re-read
         return open(KDUMP_CONFIG_FILE).read()
