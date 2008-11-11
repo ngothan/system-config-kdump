@@ -86,6 +86,11 @@ archive:
 snapsrc: archive
 	@rpmbuild -ta $(PKGNAME)-$(VERSION).tar.bz2
 
+selinux-module:
+	checkmodule -M -m -o local-system-config.mod local-system-config.te
+	semodule_package -o local-system-config.pp -m local-system-config.mod
+	semodule -i local-system-config.pp
+
 local: clean
 	@rm -rf ${PKGNAME}-$(VERSION).tar.bz2
 	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
