@@ -683,7 +683,7 @@ class mainWindow:
             print "written kdump config:"
             print written
         if (configString != written):
-            self.showErrorMessage("Error writing kdump configuration")
+            self.showErrorMessage("Error writing kdump configuration: %s" % written)
             return 0
         return 1
 
@@ -701,13 +701,16 @@ class mainWindow:
         # arguments
         if self.kdumpEnabled:
             configString += " --args=\"" + self.commandLineEntry.get_text() + "\""
-            if debug: print "  Setting args to '%s'" % (self.commandLineEntry.get_text())
+            if debug:
+                print "  Setting args to '%s'" % (self.commandLineEntry.get_text())
         else:
             configString += " --remove-args=\"crashkernel=%s\"" % (self.origCrashKernel)
-            if debug: print "  Removing crashkernel=%s" % (self.origCrashKernel)
+            if debug:
+                print "  Removing crashkernel=%s" % (self.origCrashKernel)
         
         check = self.dbusObject.writebootconfig(configString)
-        if debug: print "  check: " + check
+        if debug:
+            print "  check: " + check
 
         return 1
 
@@ -1054,6 +1057,8 @@ class mainWindow:
             except ValueError:
                 level = 0
             self.filterChanged(level)
+	else:
+		self.filterChanged(0)
         return False
 
     def setCollectorFilter(self, level):
