@@ -39,6 +39,7 @@ GRUBBY_CMD        = "/sbin/grubby"
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
 
+# can be replaced by using booty?
 #             bootloader : (config file, kdump offset, kernel path)
 bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
                 "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
@@ -84,13 +85,6 @@ class systemConfigKdumpObject(slip.dbus.service.Object):
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
                           in_signature='s', out_signature='s')
     def writedumpconfig (self, configString):
-#        if os.access(KDUMP_CONFIG_FILE, os.W_OK):
-#            # make a minimal effort at backing up an existing config
-#            try:
-#                os.rename(KDUMP_CONFIG_FILE, KDUMP_CONFIG_FILE + ".backup")
-#            except:
-#                pass
-
         try:
             fd = open(KDUMP_CONFIG_FILE, "w")
             fd.write(configString)
@@ -121,14 +115,6 @@ class systemConfigKdumpObject(slip.dbus.service.Object):
 
         return self.bootloader
 
-
-
-
-#    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.write")
-#    @dbus.service.method("org.fedoraproject.systemconfig.kdump.mechanism",
-#                         in_signature='s', out_signature='')
-#    def write (self, config_data):
-#        print "%s.write ('%s')" % (self, config_data)
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)

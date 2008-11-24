@@ -79,10 +79,6 @@ else:
 
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
-##             bootloader : (config file, kdump offset, kernel path)
-#bootloaders = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
-#                "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
-#                "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
 TYPE_LOCAL = "file"
 TYPE_NET = "net"
@@ -103,9 +99,8 @@ PROC_PARTITIONS = "/proc/partitions"
 
 TAG_CURRENT = _("(current)")
 TAG_DEFAULT = _("(default)")
-#GRUBBY_CMD = "/sbin/grubby"
 
-# get from kernel/Documentation/devices.txt
+# got from kernel/Documentation/devices.txt
 SUPPORTED_MAJOR = [ '2', '3', '8', '9', '13', '14', '19', '21', '22', '28',
                     '31', '33', '34', '36', '40', '44', '45', '47', '48', '49',
                     '50', '51', '52', '53', '54', '55', '56', '57', '65', '66',
@@ -142,12 +137,10 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
 
 """
     TODO:
-write dump config
-write bootloader config
-page 2 filter setup
+page 2 target setup
 localizations
-dbus & polkit things
-XEN support
+using rhpl
+XEN support - using booty?
 """
 
 class DBusProxy (object):
@@ -452,7 +445,7 @@ class mainWindow:
         self.totalMem = totalMem
         self.usableMem = self.totalMem - self.kdumpMem
 
-	self.kdumpMemCurrentLabel.set_text(_("%s" % (kdumpMem)))
+	self.kdumpMemCurrentLabel.set_text("%s" % (kdumpMem))
 
         kdumpMemAdj = gtk.Adjustment(kdumpMem, lowerBound, upperBound, step, step, 64)
         self.kdumpMemSpinButton.set_adjustment(kdumpMemAdj)
@@ -683,7 +676,7 @@ class mainWindow:
             print "written kdump config:"
             print written
         if (configString != written):
-            self.showErrorMessage("Error writing kdump configuration: %s" % written)
+            self.showErrorMessage(_("Error writing kdump configuration: %s" % written))
             return 0
         return 1
 
@@ -714,46 +707,6 @@ class mainWindow:
 
         return 1
 
-#        (blConfig, offset, kpath) = bootloaders[self.bootloader]
-#
-#        # crashkerenl line goes in different places for xen vs. non-xen
-#        if self.xenKernel:
-#            args = 'mbargs'
-#            # x86_64 xen has issues @16M, use 32M instead
-#            if self.arch == 'x86_64':
-#                offset = 32
-#        else:
-#            args = 'args'
-#
-#        # Are we adding or removing the crashkernel param?
-#        if self.kdumpEnabled:
-#            crashKernel = "%iM" % (self.kdumpMem)
-#            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --%s="crashkernel=%s"' \
-#                        % (self.bootloader, kpath, self.runningKernel, 
-#                           args, crashKernel)
-#            chkconfigStatus = "on"
-#            if self.origCrashKernel:
-#                serviceOp = "restart"
-#            else:
-#                serviceOp = "start"
-#        else:
-#            grubbyCmd = '/sbin/grubby --%s --update-kernel=%s/vmlinuz-%s --remove-%s="crashkernel=%s"' \
-#                        % (self.bootloader, kpath, self.runningKernel, 
-#                           args, self.origCrashKernel)
-#            chkconfigStatus = "off"
-#            serviceOp = "stop"
-#
-#        if debug:
-#            print "Using %s bootloader with %iM offset" % (self.bootloader, offset)
-#            print "Grubby command:\n    %s" % grubbyCmd
-#
-#        # FIXME: use rhpl.executil (and handle errors)!
-#        os.system(grubbyCmd)
-#        os.system("/sbin/chkconfig kdump %s" % chkconfigStatus)
-#        os.system("/sbin/service kdump %s" % serviceOp)
-#        if self.bootloader == 'yaboot':
-#            os.system('/sbin/ybin')
-
     def updateUsableMem(self, *args):
         self.kdumpMem = int(args[0].get_value())
         self.usableMem = self.totalMem - self.kdumpMem
@@ -783,12 +736,6 @@ class mainWindow:
         return mb
 
     def setPath(self, path):
-        # XXX are there are times (local_fs) when leading "/" is needed?
-        #if path and not path.startswith("/"):
-        #    path = "/" + path
-        #    self.showErrorMessage(_("Path must start with '/'"))
-        #    return False
-
         if debug:
             print "setting path to '%s'" % path
         self.path = path
@@ -1121,12 +1068,6 @@ if __name__ == "__main__":
         elif opt in ("-h", "--help"):
             print >> sys.stderr, "Usage: system-config-kdump.py [--test] [--debug]"
 
-#    if not testing:
-#        uid = os.getuid()
-#        if uid != 0:
-#            w = mainWindow()
-#            w.showErrorMessage(_("You must be root to run this application."))
-#            sys.exit()
     win = mainWindow()
     win.setupScreen()
     win.run()
