@@ -72,6 +72,19 @@ class systemConfigKdumpObject(slip.dbus.service.Object):
                 return value.strip('"')
         return ""
 
+# Get command line arguments for xen kernel from grubby
+    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getxencmdline")
+    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
+                          in_signature='s', out_signature='s')
+    def getxencmdline (self, kernel):
+        for line in os.popen(GRUBBY_CMD + " --info " + kernel).readlines():
+            (name, value) = line.strip().split("=",1)
+            if name == "module":
+                return value.strip('"')
+        return ""
+
+
+
 # Get all kernel names from grubby
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getallkernels")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",

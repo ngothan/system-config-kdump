@@ -138,9 +138,10 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
 """
     TODO:
 page 2 target setup
+page 3 initrd selection
 localizations
 using rhpl
-XEN support - using booty?
+XEN support - need change in grubby
 """
 
 class DBusProxy (object):
@@ -157,6 +158,11 @@ class DBusProxy (object):
     @polkit.enable_proxy
     def getcmdline (self, kernel):
         return self.dbus_object.getcmdline (kernel, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+
+# Get command line argument for specific xen kernel from grubby
+    @polkit.enable_proxy
+    def getxencmdline (self, kernel):
+        return self.dbus_object.getxencmdline (kernel, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
 # Get all kernel names from grubby
     @polkit.enable_proxy
@@ -210,7 +216,7 @@ class mainWindow:
         self.origCrashKernel = ""
         self.kernelPrefix = "/"
 
-        self.defaultKernel = self.defaultKernelName()
+        self.defaultKernel = self.defaultKernelName()[:-1]
         self.runningKernel = os.popen("/bin/uname -r").read().strip()
         self.selectedKernel = self.defaultKernel
 
@@ -688,8 +694,8 @@ class mainWindow:
         if debug: print "Write bootloader conf:"
         
         # kernel name to change
-        configString += " --update-kernel=" + self.selectedKernel[:-1]
-        if debug: print "  Updating kernel '%s'" % (self.selectedKernel[:-1])
+        configString += " --update-kernel=" + self.selectedKernel
+        if debug: print "  Updating kernel '%s'" % (self.selectedKernel)
 
         # arguments
         if self.kdumpEnabled:
@@ -909,7 +915,10 @@ class mainWindow:
             self.setPath(widget.get_filename())
 
     def getCmdLine(self, kernel):
-       cmdline = self.dbusObject.getcmdline(kernel)
+       if (kernel.find("/boot/xen.")) is not -1:
+           cmdline = self.dbusObject.getxencmdline(kernel)
+       else:
+           cmdline = self.dbusObject.getcmdline(kernel)
        self.origCrashKernel = self.getCrashkernel(cmdline)
        return cmdline
        
@@ -934,7 +943,7 @@ class mainWindow:
                     text = text + " " + TAG_CURRENT
                 combobox.append_text(self.kernelPrefix + text)
                 if debug:
-                   print "Appended kernel:" + self.kernelPrefix + text
+                   print "Appended kernel:\"" + self.kernelPrefix + text+"\""
         combobox.set_active(0)
         return
 

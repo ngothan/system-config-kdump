@@ -25,6 +25,17 @@
     </defaults>
   </action>
 
+  <action id="org.fedoraproject.systemconfig.kdump.getxencmdline">
+    <description>Get command line arguments of xen kernel</description>
+    <message>System policy prevents getting command line arguments on system</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+
+
   <action id="org.fedoraproject.systemconfig.kdump.getallkernels">
     <description>Get all kernel names on system</description>
     <message>System policy prevents getting all kernel names on system</message>
