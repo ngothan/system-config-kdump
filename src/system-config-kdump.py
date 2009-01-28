@@ -273,6 +273,7 @@ class mainWindow:
         self.defaultKernelRadiobutton = self.xml.get_widget("defaultKernelRadiobutton")
         self.customKernelRadiobutton  = self.xml.get_widget("customKernelRadiobutton")
         self.customKernelCombobox     = self.xml.get_widget("customKernelCombobox")
+        self.originalCommandLineEntry = self.xml.get_widget("originalCommandLineEntry")
         self.commandLineEntry         = self.xml.get_widget("commandLineEntry")
         self.clearCmdlineButton       = self.xml.get_widget("clearCmdlineButton")
         self.defaultActionCombo       = self.xml.get_widget("defaultActionCombo")
@@ -309,7 +310,9 @@ class mainWindow:
         self.customInitrdRadiobutton.connect("toggled", self.customInitrdChanged)
         self.customKernelRadiobutton.connect("toggled", self.customKernelChanged)
         self.initrdFilechooserbutton.set_current_folder("/boot")
-        self.commandLineEntry.set_text(self.getCmdLine(self.defaultKernel))
+        line = self.getCmdLine(self.defaultKernel)
+        self.originalCommandLineEntry.set_text(line)
+        self.commandLineEntry.set_text(line)
         self.setupCustomKernelCombobox(self.customKernelCombobox)
         self.customKernelCombobox.connect("changed", self.updateCmdLine)
         self.commandLineEntry.connect("focus-out-event", self.cmdlineChanged)
@@ -431,7 +434,7 @@ class mainWindow:
             self.kdumpEnableCheckButton.set_active(False)
             self.kdumpEnableCheckButton.toggled()
 
-        self.totalMemLabel.set_text("%s" % (totalMem,))
+        self.totalMemLabel.set_text("%s (MB)" % (totalMem,))
 
         # Do some sanity-checking and try to present only sane options.
         #
@@ -451,7 +454,7 @@ class mainWindow:
         self.totalMem = totalMem
         self.usableMem = self.totalMem - self.kdumpMem
 
-	self.kdumpMemCurrentLabel.set_text("%s" % (kdumpMem))
+	self.kdumpMemCurrentLabel.set_text("%s (MB)" % (kdumpMem))
 
         kdumpMemAdj = gtk.Adjustment(kdumpMem, lowerBound, upperBound, step, step, 64)
         self.kdumpMemSpinButton.set_adjustment(kdumpMemAdj)
@@ -460,7 +463,7 @@ class mainWindow:
         self.kdumpMemSpinButton.set_value(kdumpMemGrubby)
         self.updateUsableMem(self.kdumpMemSpinButton)
 
-        self.usableMemLabel.set_text("%s" % (self.usableMem,))
+        self.usableMemLabel.set_text("%s (MB)" % (self.usableMem,))
 
         if debug:
             print "totalMem = %dM\nkdumpMem = %dM\nkdumpMemGrubby = %dM\nusableMem = %dM" % (totalMem, kdumpMem, kdumpMemGrubby, self.usableMem)
@@ -699,24 +702,44 @@ class mainWindow:
 
         # arguments
         if self.kdumpEnabled:
+        # at first remove original kernel cmd line
+            configString += " --remove-args=\"" + self.originalCommandLineEntry.get_text() + "\""
+            if debug:
+                print "  Removing original args '%s'" % (self.originalCommandLineEntry.get_text())
+
+            check = self.dbusObject.writebootconfig(configString)
+            if debug:
+                print "  check: " + check
+
+        # and now set new kernel cmd line
+            configString = " --update-kernel=" + self.selectedKernel
+            if debug:
+                print "  Updating kernel '%s'" % (self.selectedKernel)
+
             configString += " --args=\"" + self.commandLineEntry.get_text() + "\""
             if debug:
                 print "  Setting args to '%s'" % (self.commandLineEntry.get_text())
+
+            check = self.dbusObject.writebootconfig(configString)
+            if debug:
+                print "  check: " + check
+
         else:
+        # kdump is desabled, so only remove crashkernel
             configString += " --remove-args=\"crashkernel=%s\"" % (self.origCrashKernel)
             if debug:
                 print "  Removing crashkernel=%s" % (self.origCrashKernel)
-        
-        check = self.dbusObject.writebootconfig(configString)
-        if debug:
-            print "  check: " + check
+
+            check = self.dbusObject.writebootconfig(configString)
+            if debug:
+                print "  check: " + check
 
         return 1
 
     def updateUsableMem(self, *args):
         self.kdumpMem = int(args[0].get_value())
         self.usableMem = self.totalMem - self.kdumpMem
-        self.usableMemLabel.set_text("%s" % (self.usableMem,))
+        self.usableMemLabel.set_text("%s (MB)" % (self.usableMem,))
         if debug:
             print "setting usableMem to", self.usableMem
         self.setCrashkernel(self.commandLineEntry, self.kdumpMem)
@@ -863,7 +886,9 @@ class mainWindow:
         self.customKernelCombobox.set_sensitive(self.customKernelRadiobutton.get_active())
         if not button.get_active():
             self.selectedKernel = self.defaultKernel
-            self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+            line = self.getCmdLine(self.selectedKernel)
+            self.originalCommandLineEntry.set_text(line)
+            self.commandLineEntry.set_text(line)
         else:
             self.updateCmdLine(self.customKernelCombobox)
         self.updateUsableMem(self.kdumpMemSpinButton)
@@ -951,7 +976,9 @@ class mainWindow:
         self.selectedKernel = combobox.get_active_text()
         self.selectedKernel = self.selectedKernel.rsplit(TAG_CURRENT,1)[0] # there can be current or default
         self.selectedKernel = self.selectedKernel.rsplit(TAG_DEFAULT,1)[0] # or default tag
-        self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+        line = self.getCmdLine(self.selectedKernel)
+        self.originalCommandLineEntry.set_text(line)
+        self.commandLineEntry.set_text(line)
         self.updateUsableMem(self.kdumpMemSpinButton)
 
     def getCrashkernel(self, text):
@@ -980,7 +1007,7 @@ class mainWindow:
             print "Updated cmdline. Crashkernel set to " + value
 
     def resetCmdline(self, *args):
-        self.commandLineEntry.set_text(self.getCmdLine(self.selectedKernel))
+        self.commandLineEntry.set_text(self.originalCommandLineEntry.get_text())
         self.cmdlineChanged(self.commandLineEntry)
 
     def setActiveRawDevice(self, deviceName):
