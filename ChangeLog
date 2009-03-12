@@ -1,143 +1,1758 @@
-2008-03-20  Dave Lehman  <dlehman@redhat.com>
-	* system-config-kdump.spec: bump version to 1.0.14
+commit 3407abad0a181f555834ca07a8966ea0d9ded440
+Author: Roman Rakus <rrakus@redhat.com>
+Date:   2009-01-28
 
-2008-03-20  Dave Lehman  <dlehman@redhat.com>
-	* system-config-kdump.spec: require bitmap-fonts (#433858)
+    modified:   src/system-config-kdump.glade
+    Tabs are now positioned on left side.
+    
+    modified:   src/system-config-kdump.py
+    Units (MB) are now on the right side of labels/widgets.
+    Changing command line arguments now works - at first remove old args and then add new args.
 
-	* src/system-config-kdump.py: translate strings before resolving
-	format specifiers so the translations get found (#314341)
 
-2008-02-08  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py: fix typo
+commit d05d5dbc3d66352a882b7f414bdbaaaaedfd8f7e
+Author: Roman Rakus <rrakus@redhat.com>
+Date:   2008-11-26
 
-2008-01-18  Dave Lehman  <dlehman@redhat.com>
-	* system-config-kdump.spec: update to version 1.0.13
+    Correctly handle XEN arguments updating. But needs grubby bug fix.
 
-2008-01-18  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py: add 'halt' default action and passthrough 
-	handling of unknown configuration items (#253603)
 
-	* src/system-config-kdump.py: handle kdump service stop/start and only 
-	prompt to reboot if memory reservation changed (#239324)
+commit fa3f6a7072dcda7905bb3942d30bb52f1d781b88
+Author: Roman Rakus <rrakus@redhat.com>
+Date:   2008-11-24
 
-2007-10-18  Dave Lehman  <dlehman@redhat.com>
+    Some cleanup
 
-	* system-config-kdump.spec: Change License to GPL2+
 
-2007-09-11  Dave Lehman  <dlehman@redhat.com>
+commit 28101a934ef75151f067e71e60a461a5072c49f6
+Author: Roman Rakus <rrakus@dhcp-lab-179.englab.brq.redhat.com>
+Date:   2008-11-11
 
-	* system-config-kdump.spec: bump version.
+    Some reformatings. Show specific error message while writting kdump.conf fails
 
-2007-09-11  Dave Lehman  <dlehman@redhat.com>
 
-	* src/system-config-kdump.py: warn users that a PAE kernel is required
-	for 32-bit xen w/ >4G memory (#284851, patch from Jarod Wilson)
+commit 99bf1a391c6524f49437e4c417426cd0e5c6fcd5
+Author: Roman Rakus <rrakus@dhcp-lab-179.englab.brq.redhat.com>
+Date:   2008-11-11
 
-2007-08-29  Dave Lehman  <dlehman@redhat.com>
+    Catch exceptions in writting kdump.conf. Don't do backup for simplier selinux policies.
 
-	* system-config-kdump.spec: bump version, update changelog.
 
-2007-08-28  Dave Lehman  <dlehman@redhat.com>
+commit 14c942d4f43914d3a7393e431285a2534890edfb
+Author: Roman Rakus <rrakus@dhcp-lab-179.englab.brq.redhat.com>
+Date:   2008-11-11
 
-	* src/system-config-kdump.py: Add support for enabling and configuring 
-	kdump under Xen (Jarod Wilson, #243191)
+    No we can generate SElinux modul in Makefile with using policy written in new file local.system-config.te
 
-2007-04-05  Dave Lehman  <dlehman@redhat.com>
+ create mode 100644 local-system-config.te
 
-	* system-config-kdump.spec: bump version, add changelog.
+commit 91aa5586ae778275f42baaf6f7a20a9e35d607ed
+Author: Roman Rakus <rrakus@dhcp-lab-179.englab.brq.redhat.com>
+Date:   2008-11-05
 
-2007-02-06  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	only present ext2 and ext3 filesystem types as options (#220223)
+    Reworked
 
-	* src/system-config-kdump.py:
-	align memory requirements with documented system limits (#228711)
+ create mode 100644 org.fedoraproject.systemconfig.kdump.mechanism.conf
+ create mode 100644 org.fedoraproject.systemconfig.kdump.mechanism.service
+ create mode 100644 org.fedoraproject.systemconfig.kdump.policy
+ create mode 100755 src/system-config-kdump-backend.py
+ mode change 100644 => 100755 src/system-config-kdump.py
 
-	* system-config-kdump.spec: update changelog
+commit 8d4e3943aed27508ffe20c6ec9dcb03029249c75
+Author: Roman Rakus <rrakus@dhcp-lab-179.englab.brq.redhat.com>
+Date:   2008-11-05
 
-2006-12-20  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	include kernel path in bootloader info list so bootloader
-	config is modified correctly on ia64 (#220231)
+    Added comment
 
-	* src/system-config-kdump.glade:
-	make locationEditButton ("Edit Location") translatable (#216596)
 
-2006-12-18  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	use file: URIs instead of local: (#218878)
+commit 4a2de15588a7483126abee29bc057179f08a0784
+Author: transif <transif>
+Date:   2008-10-21
 
-	* system-config-kdump.spec:
-	bump version
+        2008-10-21  Shankar Prasad <svenkate@redhat.com> (via
+    shanky@fedoraproject.org)
+    
+          * po/kn.po: Updated few changes to kn.po
 
-2006-11-28  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	rework memory constraints for increased flexibility (#215990)
 
-2006-11-20  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	improve consistency WRT freezing/thawing of widgets (#215991)
-	* po/*:
-	update strings for translation
+commit 15d1b485abc933148fe7d41052f5a4ed0899d9b6
+Author: transif <transif>
+Date:   2008-10-11
 
-2006-10-27  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	remove #!/usr/bin/python
-	* COPYING:
-	add license
-	* system-config-kdump.spec:
-	package ChangeLog and COPYING
+        2008-10-11  Vladimir Melo <vladimirmelo.psi@gmail.com> (via
+    vladimirmelo@fedoraproject.org)
+    
+          * po/pt_BR.po: Brazilian portuguese translation updated.
 
-2006-10-26  Dave Lehman  <dlehman@redhat.com>
-	* Makefile:
-	fix modes on installed files
-	* system-config-kdump.spec:
-	remove unnecessary %preun
-	various minor tweaks to appease rpmlint
-	* src/system-config-kdump.glade:
-	fix path to icon
-	remove reference to stock weather icon (placeholder)
 
-2006-10-24  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	move all location types into combo box
-	scan /sbin/fsck.* for available fs types
-	get rid of kdump config header; preserve kdump config comments instead
-	create a set/get method for the "quiet" attribute
-	* pixmaps/system-config-kdump.png:
-	add 48x48 hicolor icon made by Diana Fong
+commit 5bccb0f56085d671558fec14b6c2c12ee4f98005
+Author: transif <transif>
+Date:   2008-09-27
 
-2006-10-19  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	rearrange UI to allow only one location
-	declare global variables for the type, action string constants
-	check for a usable bootloader early on
-	* system-config-kdump.spec:
-	remove BuildRoot before %install
-	add gettext BuildRequires
-	remove ExclusiveOS tag
-	remove explicit python2 Requires
+        2008-09-27  Xavier Conde <xavi.conde@gmail.com> (via
+    xconde@fedoraproject.org)
+    
+          * po/ca.po: Updated catalan po
 
-2006-10-18  Dave Lehman  <dlehman@redhat.com>
-	* src/system-config-kdump.py:
-	add support for "core_collector" and "path" handlers
-	give choices of "ssh" and "nfs" instead of "net"
-	add validation of edit location dialog results
-	add choice of "none" to default actions
-	remove "ifc" support since it's gone from kexec-tools
-	update kdump config file header
-	fix a couple of strings that weren't getting translated
 
-2006-10-16  Dave Lehman  <dlehman@redhat.com>
+commit 7e5049be0e2bfbf7409765c8649d33f5bea5385f
+Author: transif <transif>
+Date:   2008-09-22
 
-	* src/system-config-kdump.py:
-	fix parsing of crash settings from /proc/cmdline
+        2008-09-22  Terry Chuang <tchuang@redhat.com> (via
+    tchuang@fedoraproject.org)
+    
+          * po/zh_TW.po: Translation completed.
 
-2006-10-10  Dave Lehman  <dlehman@redhat.com>
 
-	* src/system-config-kdump.py,src/system-config-kdump.glade:
-	fix various bugs in writeDumpConfig and writeBootloaderConfig
-	reflect pre-existing "ifc" and "default" lines in GUI on startup
-	don't ever freeze the net interface checkbutton
-	minor GUI tweaks
-	
+commit 1acb157a4eb33dc47a26175a88d1001d91c43aee
+Author: transif <transif>
+Date:   2008-04-26
+
+    2008-04-26  Peter Sulyok <peti@sulyok.hu> (via peti@fedoraproject.org)
+    
+      * po/hu.po: Updated Hungarian translation
+
+
+commit 8e1d3d38f6dee4239d6854fb3c7ee946f5287ae7
+Author: transif <transif>
+Date:   2008-04-10
+
+    2008-04-10  Anatoliy Guskov <anatoliy.guskov@gmail.com> (via
+    aguskov@fedoraproject.org)
+    
+      * po/ru.po: Finish Russina translation
+
+
+commit 24e4cc48c96ffa8cd438fa72a70e6899149c5e98
+Author: transif <transif>
+Date:   2008-04-04
+
+    2008-04-04  Dapid Candra <dapidc@gmail.com> (via dapidc@fedoraproject.org)
+    
+      * po/id.po:
+
+
+commit c8ae61b4fe5a0e2512163358bbb37120eca0e347
+Author: transif <transif>
+Date:   2008-03-24
+
+    2008-03-24  Jaswinder Singh Phulewala <j.phulewala@gmail.com> (via
+    jassy@fedoraproject.org)
+    
+      * po/pa.po: completed.
+
+
+commit 0faca5ab7dfcf1f37fefed5314b173647d3ef47c
+Author: transif <transif>
+Date:   2008-03-23
+
+    2008-03-23  Marek Mahut <mmahut@redhat.com> (via mmahut@fedoraproject.org)
+    
+      * po/sk.po: Updated Slovak translation to 100%.
+
+
+commit 53b9a4874dc9366ffedc6b63b63e600e5b6e93e3
+Author: dlehman <dlehman>
+Date:   2008-03-20
+
+    bump version to 1.0.14
+
+
+commit 7b185887781c7361f4f6064231482482f0f49158
+Author: dlehman <dlehman>
+Date:   2008-03-20
+
+    	* system-config-kdump.spec: require bitmap-fonts (#433858)
+    
+    	* src/system-config-kdump.py: translate strings before resolving
+    	format specifiers so the translations get found (#314341)
+
+
+commit a7f0941f0e3f5c9eb8c72cb4af4a160e93a70820
+Author: transif <transif>
+Date:   2008-02-29
+
+    2008-02-29  Rajesh Ranjan <rajesh672@gmail.com> (via rajesh@fedoraproject.org)
+    
+      * po/mai.po: adding for maithili
+
+ create mode 100644 po/mai.po
+
+commit 8ad881d14b9cb71880a9df371aab34aed66cc379
+Author: dlehman <dlehman>
+Date:   2008-02-08
+
+    	* src/system-config-kdump.py: fix typo
+
+
+commit bedf4ce4058349bceb83c5972f68b0966d9eb707
+Author: dlehman <dlehman>
+Date:   2008-02-02
+
+    Fix desktop file categories (remove SystemSetup, add Settings)
+
+
+commit 9cb8bd5429998d18cdf53188d7719907518f2ab9
+Author: dlehman <dlehman>
+Date:   2008-01-18
+
+    Make sure %{dist} is not defined when querying versions with rpm
+
+
+commit 612d44472403e2befcddd87a8740c4b838de66f0
+Author: dlehman <dlehman>
+Date:   2008-01-18
+
+    update version to 1.0.13
+
+
+commit 1c90775e6ce9a5a60721f58f050804002b49d9f1
+Author: dlehman <dlehman>
+Date:   2008-01-18
+
+    	* src/system-config-kdump.py: add 'halt' default action and passthrough
+    	handling of unknown configuration items (#253603)
+    
+    	* src/system-config-kdump.py: handle kdump service stop/start and only
+    	prompt to reboot if memory reservation changed (#239324)
+
+
+commit 1f6ca59ff90341203c2851a78aeda7241dd27558
+Author: apeter <apeter>
+Date:   2007-12-12
+
+    Updated Malayalam Translation
+
+
+commit 30365e90f7d107ba937228b463e2926da7a7ec23
+Author: vise <vise>
+Date:   2007-12-10
+
+    *** empty log message ***
+
+
+commit 9260b790aead785fa129f7fec6c6cfca3317a2a1
+Author: gauthier <gauthier>
+Date:   2007-10-26
+
+    updated french translation
+
+
+commit 0b41dcad58f6b452b407d45a222889bba6ca0a69
+Author: kmilos <kmilos>
+Date:   2007-10-25
+
+    removed sr@Latn translation
+
+ delete mode 100755 po/sr@Latn.po
+
+commit b4b7b302dbbef94cd2157e5ffc2e7ab900a29a58
+Author: dlehman <dlehman>
+Date:   2007-10-18
+
+    Change License to GPL2+
+
+
+commit 8069fa8b19ca83bdee844a25350f42ef0a28d9f8
+Author: dlehman <dlehman>
+Date:   2007-10-18
+
+    Fix tag naming
+
+
+commit d1a7ee56a85c54947e219fc743559a6c3e4842c6
+Author: kmilos <kmilos>
+Date:   2007-10-09
+
+    updated sr@latin translation
+
+ create mode 100644 po/sr@latin.po
+
+commit 8b27a55f40b2fbebd667f874d02f6fab20c1ef76
+Author: kmaraas <kmaraas>
+Date:   2007-10-04
+
+    Update
+
+
+commit 68d3a857d1986bed3abe18d9eb670ec0deb587ef
+Author: renato <renato>
+Date:   2007-10-01
+
+    *** empty log message ***
+
+
+commit a1a5e84d5b47855934dce19f2a48c409ce023f97
+Author: vpv <vpv>
+Date:   2007-09-25
+
+    Updated Finnish translation
+
+
+commit 689385eb4983d86e9168d39a12eed160a121256b
+Author: kkrothap <kkrothap>
+Date:   2007-09-25
+
+    Updating changes to file te.po
+
+
+commit bb374a8602d9b9a9bc0e886c4518db7c00d612e1
+Author: arclynx <arclynx>
+Date:   2007-09-25
+
+    Updated Malay translation
+
+
+commit f3d648a3c22f05f287f75fc412992382fff509fe
+Author: sbehera <sbehera>
+Date:   2007-09-25
+
+    Updated Oriya Translation
+
+
+commit 8af56b0bfbf1824ac03af72ec4bc0cafb4f10fcb
+Author: ifelix <ifelix>
+Date:   2007-09-24
+
+    Tamil translation updateded
+
+
+commit 2ea233a607e7065e3d2431ff198e101b675e788d
+Author: fvalen <fvalen>
+Date:   2007-09-24
+
+    Updated
+
+
+commit 96ddba262769219d9956e67f323f414d48b30398
+Author: sandeep <sandeep>
+Date:   2007-09-24
+
+    Updating translations
+
+
+commit a863b55fc1f2e369ae978cfd8d341e63d9b7251e
+Author: doncho <doncho>
+Date:   2007-09-23
+
+    Update
+
+
+commit 751c5c6cc72a14fa411c4e9868136ebbfb563dfb
+Author: raada <raada>
+Date:   2007-09-23
+
+    *** empty log message ***
+
+
+commit 93834fab03d827e137b41ef80ef80c25a27f3b7c
+Author: bbbush <bbbush>
+Date:   2007-09-22
+
+    35t: fix 1 fuzzy before f8 translation freeze
+
+
+commit 66a9908fe55b8e0b494dc1026b8fc1ae090a95bb
+Author: rranjan <rranjan>
+Date:   2007-09-21
+
+    hindi fedora update
+
+
+commit e9693b712cdc638c620be33d3e7610a084170bad
+Author: sbehera <sbehera>
+Date:   2007-09-20
+
+    Updated Oriya Translation
+
+
+commit d2c2497827313fae28bdb41780a3f0dbb645d4bc
+Author: svenkate <svenkate>
+Date:   2007-09-20
+
+    kannada translation updationkn.po
+
+
+commit c14c6a98be36cefd88ced070211c37cdc64ca66b
+Author: zepires <zepires>
+Date:   2007-09-20
+
+    Removed spelling errors
+
+
+commit 4dbda3b1107002098fba91e5742560d90880287f
+Author: amit <amit>
+Date:   2007-09-19
+
+    Updated assamese translations
+
+
+commit 4f22841e5035587e2a75f0f5fa7c593fde50c1cd
+Author: covex <covex>
+Date:   2007-09-19
+
+    fix one fuzzy string
+
+
+commit 65d30eeba032822c8ccff213505ca97741cdbca6
+Author: pve-nl <pve-nl>
+Date:   2007-09-17
+
+    Some fixes for system-config-kdump nl.po
+
+
+commit a77cc8c31875126c0753ed1f124bfaa4e78fffb2
+Author: runab <runab>
+Date:   2007-09-17
+
+    Updated Bengali India Translation
+
+
+commit e6814bbbfdadf81e3d46eef7c099335c47608dd7
+Author: hyuuga <hyuuga>
+Date:   2007-09-16
+
+    translation completed. 35
+
+
+commit d25a6463fc7ae18a0963aecfb7fce4752a5a111f
+Author: kmilos <kmilos>
+Date:   2007-09-14
+
+    updated sr@Latn translation
+
+
+commit 58daa0b0745a4c5a5a5aeb765b1c6606dce8fae3
+Author: kmilos <kmilos>
+Date:   2007-09-14
+
+    updated sr translation
+
+
+commit ce20e599ad60ca7b7cb091e9975734b9d24a2025
+Author: beckerde <beckerde>
+Date:   2007-09-14
+
+    *** empty log message ***
+
+
+commit dcfeede953b913d4d383399ba1f1d53db439449e
+Author: eukim <eukim>
+Date:   2007-09-14
+
+    Updated
+
+
+commit 283caea1d87062098cbe7cab96c87ee5b6810b8a
+Author: ankitp <ankitp>
+Date:   2007-09-14
+
+    Updated Gujarati Translations
+
+
+commit c5b0274611668a6955b199a869c49f1ea2057efd
+Author: trinks <trinks>
+Date:   2007-09-14
+
+    *** empty log message ***
+
+
+commit e04b20158d2c51496ad6b1c63302473796db97d3
+Author: raven <raven>
+Date:   2007-09-14
+
+    Updated Polish translation
+
+
+commit 36bc7e72122e8e63da4c69294142c8334fa65ee4
+Author: igor <igor>
+Date:   2007-09-13
+
+    Translation update
+
+
+commit ca130ddda4de82b913a636bbe1c96c5ff1fcd450
+Author: dlehman <dlehman>
+Date:   2007-09-13
+
+    Update strings.
+
+
+commit 25ecf5f439ea9ad79de1b07d266e6a34301a9222
+Author: dlehman <dlehman>
+Date:   2007-09-11
+
+    new version
+
+
+commit 915013e5d070a3215b650f44d96a0494adc04140
+Author: dlehman <dlehman>
+Date:   2007-09-11
+
+    	* src/system-config-kdump.py: warn users that a PAE kernel is required
+    	for 32-bit xen w/ >4G memory (#284851, patch from Jarod Wilson)
+
+
+commit 93e868ccaab1ba3cb252e0ac426a788f29863aaf
+Author: ltenn <ltenn>
+Date:   2007-09-10
+
+    Routine merge by l10n
+
+
+commit cc523bc31f9895e3a0a6d792a0ab4593de2aa0cf
+Author: pve-nl <pve-nl>
+Date:   2007-09-10
+
+    Some fixes for system-config-kdump nl.po
+
+
+commit d4310d41e19735972294371bd5ea6cd59d920955
+Author: xconde <xconde>
+Date:   2007-09-07
+
+    Updated by XC
+
+
+commit 63b72f07bc19da187673385478cbe4e2b03e9aa1
+Author: doncho <doncho>
+Date:   2007-09-05
+
+    Update
+
+
+commit c4970ff7c29189b3e43264f66fa445102812c033
+Author: leah <leah>
+Date:   2007-09-05
+
+    modified some files
+
+
+commit 969f6bb3f4645ca771be069ff05400e6099cc387
+Author: covex <covex>
+Date:   2007-09-04
+
+    czech update
+
+
+commit 5db8e01bff5c451b3876d23311e04da1ba34ae01
+Author: ifelix <ifelix>
+Date:   2007-09-03
+
+    ta translation updated
+
+
+commit 1b7b9144ad5e37571a495fcfead269174797a466
+Author: eukim <eukim>
+Date:   2007-09-03
+
+    Updated
+
+
+commit 0890cf72626a163c94a99a06bbe6f3afbd6201ea
+Author: zepires <zepires>
+Date:   2007-09-02
+
+    Finished changes on RH translations and some docs
+
+
+commit eb80810f7a9e20dc15aae865be64bd1c49b9fd2b
+Author: eukim <eukim>
+Date:   2007-09-02
+
+    Updated
+
+
+commit 535c87965833579492e461194f2530d840bb160e
+Author: zepires <zepires>
+Date:   2007-09-01
+
+    Finished changes on RH translations and docs
+
+
+commit fad559e2ecdef841ed8f8a95c691f7ac0ee24dc8
+Author: mrtom <mrtom>
+Date:   2007-08-30
+
+    translation updated
+
+
+commit d8951d8797a623647a3f1f529c37434b7f1df638
+Author: fvalen <fvalen>
+Date:   2007-08-30
+
+    Updated
+
+
+commit 9a780acac6c1a75b88a2b471dd7e670dd1c4df16
+Author: kmilos <kmilos>
+Date:   2007-08-29
+
+    updated sr@Latn translation
+
+
+commit 4e393cbd143d1de9f5b849b66fdb017fe7d5da51
+Author: kmilos <kmilos>
+Date:   2007-08-29
+
+    updated sr translation
+
+
+commit 8f6b67d2701a3b26a56cc284ad9e8526ccb98215
+Author: hyuuga <hyuuga>
+Date:   2007-08-29
+
+    translation completed. 35
+
+
+commit 4555e2bbde58d8dc4998029ff51ea170d15c600b
+Author: dlehman <dlehman>
+Date:   2007-08-29
+
+    bump version
+
+
+commit 1c9048202134e991030768b88caf0364ade3c5ce
+Author: beckerde <beckerde>
+Date:   2007-08-29
+
+    *** empty log message ***
+
+
+commit 51dca3086c4ad4e828eb55aec622e37eae29204f
+Author: apeter <apeter>
+Date:   2007-08-29
+
+    Updated Malayalam Translation
+
+
+commit 70d8e3d415fe564b101f06d899f7354cc1f82f98
+Author: raven <raven>
+Date:   2007-08-29
+
+    Updated Polish translation
+
+
+commit 463a92676876da1812287794209c4f9b400364f3
+Author: ankitp <ankitp>
+Date:   2007-08-29
+
+    Updated Gujarati Translations
+
+
+commit b42a6bcb0ea9a6828a2866000daa435a03ae185a
+Author: runab <runab>
+Date:   2007-08-29
+
+    Updated Bengali India Translation
+
+
+commit c7dab4296842c0d5fb47853c0317508a857a22e2
+Author: trinks <trinks>
+Date:   2007-08-28
+
+    total:35 fuzzy:0 untranslated:0
+
+
+commit 1fd12f569bd57e11c050233cc11ba2e5add5e84c
+Author: igor <igor>
+Date:   2007-08-28
+
+    Translation update
+
+
+commit d673577da97b66324eea705fb57cccf23c986bc9
+Author: dlehman <dlehman>
+Date:   2007-08-28
+
+    	* src/system-config-kdump.py: Add support for enabling and configuring
+    	kdump under Xen (Jarod Wilson, #243191)
+
+
+commit 85eb66da917db36ccebb4b55cc87596dbc09f83c
+Author: dlehman <dlehman>
+Date:   2007-08-28
+
+    Update strings
+
+
+commit 2e92803f292b6a88bf6e83db641bf914a3b0999f
+Author: arclynx <arclynx>
+Date:   2007-08-13
+
+    Updated Malay translation
+
+
+commit ca60063bf5d3d225dcc4e3962f19abdb4694d19f
+Author: arclynx <arclynx>
+Date:   2007-08-04
+
+    Updated Malay translation
+
+
+commit d54ecfb6798b5ecc4bc68d888da7c911ba89fb18
+Author: ra <ra>
+Date:   2007-08-01
+
+    *** empty log message ***
+
+
+commit f66ab795a208b4f8badad4178b97766b769ca2a7
+Author: arclynx <arclynx>
+Date:   2007-07-29
+
+    Updated Malay translation
+
+
+commit 2007f4f7f966934672d460c90896fc83abc95e4f
+Author: arangel <arangel>
+Date:   2007-07-16
+
+    Updated Macedonian Translation, <arangel@linux.net.mk>
+
+
+commit 6776f1a8101c1e171ef97abaea4e3bf07444aaa4
+Author: arclynx <arclynx>
+Date:   2007-07-15
+
+    Updated Malay translation
+
+
+commit 5943efc8b9e4a180f1cf38fef96f78e2ceb37c4f
+Author: dlehman <dlehman>
+Date:   2007-06-20
+
+    	* system-config-kdump.spec: bump version, add changelog.
+
+
+commit 99455489c1afc5731a05f5b4a07a9c05c62be4a2
+Author: tombo <tombo>
+Date:   2007-06-17
+
+    updated some entry with better translation
+
+
+commit aaef2b8a8148d6eb58705ff700d79e1823d28b6f
+Author: arclynx <arclynx>
+Date:   2007-05-18
+
+    Updated Malay translation
+
+
+commit ded7417c0d0e3e29a1e104057fbd9579e0142157
+Author: arclynx <arclynx>
+Date:   2007-05-13
+
+    Updated Malay translation
+
+
+commit 574e3ee9fbac5d2b54e7d98f6c6651b2631da748
+Author: keldsim <keldsim>
+Date:   2007-04-15
+
+    updates
+    redhat-backgrounds/po/da.po system-config-kdump/po/da.po
+
+
+commit ea8a82dd5c79be81a4969f842d9a71e2bfd2c642
+Author: arclynx <arclynx>
+Date:   2007-04-14
+
+    Updated Malay translation
+
+
+commit 44b475a487ffdb4ae40184f182b1ce0ed588853d
+Author: trinks <trinks>
+Date:   2007-04-09
+
+    *** empty log message ***
+
+
+commit ec72e493636e18faeffbe6fe807befcda2d551bf
+Author: arclynx <arclynx>
+Date:   2007-04-08
+
+    Updated Malay translation
+
+
+commit 747bc8a269205a9f5e5a2421dabdcb65f3b71f3f
+Author: dlehman <dlehman>
+Date:   2007-04-05
+
+    	* src/system-config-kdump.py:
+    	only present ext2 and ext3 filesystem types as options (#220223)
+    
+    	* src/system-config-kdump.py:
+    	align memory requirements with documented system limits (#228711)
+    
+    	* system-config-kdump.spec: update changelog
+
+
+commit 4a91bc933046808df95d37ea8f9881d3dd627804
+Author: rokaaa <rokaaa>
+Date:   2007-04-01
+
+    started translating
+
+
+commit bb2c9d66baae61a20fefc8e0fe5c5329c7caf206
+Author: igor <igor>
+Date:   2007-04-01
+
+    Revision for F7
+
+
+commit 70bfc923e8d56f32ba73c3d908db43435d299be5
+Author: arclynx <arclynx>
+Date:   2007-04-01
+
+    Updated Malay translation
+
+
+commit eb27c75949c2885dbffd573f5cb5e6aa90eb2fcd
+Author: doncho <doncho>
+Date:   2007-03-29
+
+    Initial commit
+
+
+commit 8ba86d95f0f29b60b5ba9fd491e3a048c5ead81f
+Author: satyr <satyr>
+Date:   2007-03-28
+
+    Update
+
+
+commit b29ad2a33f7aff59a204704c78531d7499ae9fee
+Author: tszanto <tszanto>
+Date:   2007-03-27
+
+    *** empty log message ***
+
+
+commit 175b8e4c6ce7a5eff7ff815de50ccb3f1b006179
+Author: trinks <trinks>
+Date:   2007-03-26
+
+    *** empty log message ***
+
+
+commit 15b9af9d2aed2a127a334b9f86da18e94414d809
+Author: amit <amit>
+Date:   2007-03-23
+
+    Updated assamese system-config-kdump translation
+
+
+commit 437bce140d70801fb035caecf62d1da600578c6e
+Author: kmilos <kmilos>
+Date:   2007-03-11
+
+    updated sr@Latn translation
+
+
+commit 68edf8c951dd5e09db1e64d606ccda58f25c3a0f
+Author: kmilos <kmilos>
+Date:   2007-03-11
+
+    updated sr translation
+
+
+commit bc3a0cd3af41c87f601344feb724468312d0ff08
+Author: vpv <vpv>
+Date:   2007-03-09
+
+    Initial Finnish translation
+
+
+commit c7bdbd5d2c9633f9c5fc6ae0c53e94560f1f131d
+Author: arclynx <arclynx>
+Date:   2007-02-11
+
+    Updated Malay translation
+
+
+commit 415a0ac0a23401c511b818a0f94fd09b0513ae8b
+Author: libbe <libbe>
+Date:   2007-01-31
+
+    Updated Norwegian Bokmaal translation
+
+
+commit 3d14bcc7b0ea67aa1c962aba337c6cf8f2137adb
+Author: kerslage <kerslage>
+Date:   2007-01-27
+
+    Finished
+
+
+commit 24d450c6760bb09a29b8cd327f65163b68e840e3
+Author: zoliq <zoliq>
+Date:   2007-01-25
+
+    Slovak translation added
+
+
+commit 907f7a9ce8a0a56b55727486d7b33fa0e5293dd7
+Author: absinthe <absinthe>
+Date:   2007-01-24
+
+    tranlsated system-config-kdump to bosnian
+
+ create mode 100644 po/bs.po
+
+commit 5aefdc31f655f5590ddbaca4da4a6ba2e3f7db8b
+Author: maxik <maxik>
+Date:   2007-01-24
+
+    Maxim Dziumanenko <dziumanenko@gmail.com>
+    
+    	* Update Ukrainian translation.
+
+
+commit ad8cdbf7fdf8cf6b51fc95ecdc2b0f795cca31b9
+Author: arclynx <arclynx>
+Date:   2007-01-21
+
+    Updated Malay translation
+
+
+commit e0198ae8103d988482a6133f37f731fcd9700f4c
+Author: raada <raada>
+Date:   2007-01-19
+
+    *** empty log message ***
+
+
+commit e60874f67ca94e95fe044cdd497afc3817353638
+Author: dlehman <dlehman>
+Date:   2007-01-16
+
+    bump release
+
+
+commit 78a25f78dbc6e87083710f6803a8d76147211d27
+Author: kmaraas <kmaraas>
+Date:   2006-12-27
+
+    Updated
+
+
+commit 31d7ecf3b64b58015b9e9818a5a7801a19d854de
+Author: dlehman <dlehman>
+Date:   2006-12-20
+
+            * src/system-config-kdump.py:
+            include kernel path in bootloader info list so bootloader
+            config is modified correctly on ia64 (#220231)
+    
+            * src/system-config-kdump.glade:
+            make locationEditButton ("Edit Location") translatable (#216596)
+
+
+commit e09eb70893bbf68c99b77b9dfbc5858ba9bc52d4
+Author: dlehman <dlehman>
+Date:   2006-12-19
+
+            * src/system-config-kdump.py:
+            use file: URIs instead of local: (#218878)
+    
+            * system-config-kdump.spec:
+            bump version
+
+
+commit e84b08034c6763c83686484105371d9ffa8ed0e7
+Author: pve-nl <pve-nl>
+Date:   2006-12-18
+
+    Some fixes for system-config-kdump nl.po
+
+
+commit f1eef783d4044cee48a459f7d659d140809631ab
+Author: kmilos <kmilos>
+Date:   2006-12-17
+
+    Updated sr@Latn translation
+
+
+commit 51660d545f8bc4ef75d2e00cb8c0621bf6072223
+Author: kmilos <kmilos>
+Date:   2006-12-17
+
+    Updated sr translation
+
+
+commit 2f4bf781076c0b2e06c2949e056881096d834efc
+Author: vise <vise>
+Date:   2006-12-16
+
+    *** empty log message ***
+
+
+commit 74b928f89deeaa5cb138eddbc719bc2bf7bcf99f
+Author: amit <amit>
+Date:   2006-12-15
+
+    updated assamese system-config-kdump translation
+
+
+commit a5c60cd32a4132615dfbc09a87e50e50892a60ab
+Author: xconde <xconde>
+Date:   2006-12-09
+
+    Updated by Xavier Conde
+
+
+commit d42b6ff9b887cfa7fd3f9c280ad6d2f253c65bc2
+Author: dlehman <dlehman>
+Date:   2006-12-05
+
+    update spec file
+
+
+commit cdb84ce2f0e3ba9a284446fe6def8f080f976cd5
+Author: svenkate <svenkate>
+Date:   2006-12-01
+
+    kannada translation updation
+
+
+commit 8aa2c210b921d4cd30502cba03695adc28d4bef3
+Author: jsingh <jsingh>
+Date:   2006-12-01
+
+    fuzzy removed
+
+
+commit ce167fedadddcae37f166b0e1327801a231db259
+Author: ltenn <ltenn>
+Date:   2006-11-30
+
+    Routine merge by l10n
+
+
+commit 2df77d43d44f753c7c897b20ea6e8c5d74d0e427
+Author: rranjan <rranjan>
+Date:   2006-11-30
+
+    hindi quick proof chk
+
+
+commit 089d797ff38a0ed99a2a093e594b3af231ad06e7
+Author: xhuang <xhuang>
+Date:   2006-11-30
+
+    Update
+
+
+commit 92bbb714e647f454dc017ee8ece2e159495cfc36
+Author: mrtom <mrtom>
+Date:   2006-11-29
+
+    translation updated
+
+
+commit 1a9ec5f3cf9a6214343a5df8842445b4e194f48d
+Author: dlehman <dlehman>
+Date:   2006-11-29
+
+    update specfile to 1.0.7
+
+
+commit 3e265a199c51a9f680e0e58e49bd3e70492be14c
+Author: dlehman <dlehman>
+Date:   2006-11-29
+
+    * src/system-config-kdump.py:
+    rework memory constraints for increased flexibility (#215990)
+
+
+commit e06fedb00d81fbb9e244872b505b839b80cfd61d
+Author: apeter <apeter>
+Date:   2006-11-29
+
+    Updated Malaylam file
+
+
+commit 37852915173624ef6e1c003de8ee40ef767fbc47
+Author: ifelix <ifelix>
+Date:   2006-11-28
+
+    Fedora ta translation updated
+
+
+commit aa6eb87b9ba15f0eeb70044cf05101c199ff63fb
+Author: rbhalera <rbhalera>
+Date:   2006-11-28
+
+    Updated Marathi Translation
+
+
+commit 5822838f73ab2d1f78866e178eee599c9570dbc3
+Author: ccheng <ccheng>
+Date:   2006-11-28
+
+    Routine merge
+
+
+commit 4d09cd489fbc773a6bfa7dc0658cab934b21afca
+Author: noriko <noriko>
+Date:   2006-11-27
+
+    corrected translation of *stat* which was mistranslated as *start*
+
+
+commit 59082b958aa679855aae64e9da21ab7295e42d0d
+Author: ccheng <ccheng>
+Date:   2006-11-27
+
+    Translation done
+
+
+commit 840a71ff8e3fcbe7d0002ef2e9c0cab2be6f6b4b
+Author: noriko <noriko>
+Date:   2006-11-27
+
+    update transated
+
+
+commit 6a5400113b9973031d1dda4482a732bede9af882
+Author: fdecroux <fdecroux>
+Date:   2006-11-27
+
+    Updated
+
+
+commit e6ffe302fe5e62cc4d27bae6909896e3bb32b0f2
+Author: gatons <gatons>
+Date:   2006-11-26
+
+    *** empty log message ***
+
+
+commit 788aa6d668b3a13a2860b7818827abad010df977
+Author: renato <renato>
+Date:   2006-11-25
+
+    new lines
+
+
+commit e2bf6aef4df9e1d860532b42d5130de8ea08f965
+Author: ccheng <ccheng>
+Date:   2006-11-24
+
+    *** empty log message ***
+
+
+commit dcc8a50cedb5349d14d09f4abea6ad094addb87d
+Author: fdecroux <fdecroux>
+Date:   2006-11-24
+
+    Updated
+
+
+commit 6eb03564586d33a86152c2e930f938c16f4e7734
+Author: fdecroux <fdecroux>
+Date:   2006-11-24
+
+    Updated
+
+
+commit 28b8d08616144980e13826b4533c69e93bc2cdec
+Author: sbehera <sbehera>
+Date:   2006-11-24
+
+    Updated Oriya Translation
+
+
+commit d2cd5bd93d46055bd3c86769f3b7752210f6d9d5
+Author: xhuang <xhuang>
+Date:   2006-11-24
+
+    Update
+
+
+commit ee0a9f6f313d95f6957b947f8bb3a81a330fff5c
+Author: rranjan <rranjan>
+Date:   2006-11-23
+
+    hindi fedora update
+
+
+commit 5741cbe56b118a16cac6de3c70f8fa8b1bc4a938
+Author: yulia <yulia>
+Date:   2006-11-23
+
+    fix for rhel5
+
+
+commit 6c2693323ad621eb272cde560948513d65260f03
+Author: eukim <eukim>
+Date:   2006-11-23
+
+    Updated
+
+
+commit 81b5f7a5aa2d2b51788fec460a27aacef263bb40
+Author: ccheng <ccheng>
+Date:   2006-11-22
+
+    Done some translation
+
+
+commit 9f446223d5cd3590297e8eb97af7ca1a3ce16e5c
+Author: ifelix <ifelix>
+Date:   2006-11-22
+
+    Fedora ta translation updated
+
+
+commit 47976c240d66abad888d01735cfb18a6333e9e1c
+Author: rranjan <rranjan>
+Date:   2006-11-22
+
+    Updated Hindi Translations
+
+
+commit 7e589937281eed7cb243a17c08d65a9dc4669ca1
+Author: sbehera <sbehera>
+Date:   2006-11-22
+
+    Update Oriya Translation
+
+
+commit a0ca78ded26d0bcd957423bcc1f63c9eadacb5c0
+Author: vferreir <vferreir>
+Date:   2006-11-22
+
+    minor changes
+
+
+commit bf86e853ebc675dac616054e5e18f544d04a7efa
+Author: fvalen <fvalen>
+Date:   2006-11-22
+
+    Updated
+
+
+commit 0b7c8156caeb594d8145b6cf947d0de0ee95c6f3
+Author: trinks <trinks>
+Date:   2006-11-22
+
+    total:35 fuzzy:0 untranslated:0
+
+
+commit dfd52dc882864da990d18d8c03436cba9758315b
+Author: raven <raven>
+Date:   2006-11-21
+
+    Updated Polish translation
+
+
+commit ebf0bfbb4090992beb1f96ce6538b922f44c609e
+Author: sbehera <sbehera>
+Date:   2006-11-21
+
+    Updated Oriya Translation
+
+
+commit 05c55aa542b5b30a2818815fd1f51f0466b1a126
+Author: ifelix <ifelix>
+Date:   2006-11-21
+
+    ta translation for fedora updated
+
+
+commit 0d24f32b6f054203c00a7b6aed4355c9baae135b
+Author: ankitp <ankitp>
+Date:   2006-11-21
+
+    Updated Gujarati Translations
+
+
+commit cad46ed907f2e9d0ec72aa1cc16f34631be0f105
+Author: sganesh <sganesh>
+Date:   2006-11-21
+
+    Telugu translation commited
+
+
+commit 2024c5b92283806b766cda657c43787596bd59d4
+Author: sganesh <sganesh>
+Date:   2006-11-21
+
+    Telugu translation commited
+
+
+commit a74148449782478c878b6c8c06f68b69e536b8ff
+Author: apeter <apeter>
+Date:   2006-11-21
+
+    Updated Malayalam file
+
+
+commit b9f473f8636b96fb1d26e6749f828237894bf34c
+Author: runab <runab>
+Date:   2006-11-21
+
+    Updated Bengali India Translation:21/11
+
+
+commit 96a7ebad9a93dce4a93220965f46c28f82bc98b6
+Author: mospina <mospina>
+Date:   2006-11-20
+
+    updated
+
+
+commit 290271720b5b64a0a680dbb0ef20586b32cd7894
+Author: zepires <zepires>
+Date:   2006-11-20
+
+    Finished system-config-kdump changes
+
+
+commit ebed90451e81ad233a93ba7c109fa2a7c85e66e0
+Author: dlehman <dlehman>
+Date:   2006-11-20
+
+    * src/system-config-kdump.py:
+    improve consistency WRT freezing/thawing of widgets (#215991)
+
+
+commit 926ebe6773ea12111d08ba643c544f954618415a
+Author: dlehman <dlehman>
+Date:   2006-11-20
+
+    Update strings for translation
+
+
+commit 09afbf8a0142b6e6d5dd3a101f805550e2eb27d3
+Author: ltenn <ltenn>
+Date:   2006-11-20
+
+    Routine merge by l10n
+
+
+commit e8c0b65e65cff83d627b441b7a6a88effb70869e
+Author: pve-nl <pve-nl>
+Date:   2006-11-15
+
+    Some fixes for system-config-kdump nl.po
+
+
+commit d342d632f28cff76e34e15db5eca0bc30b15c574
+Author: arclynx <arclynx>
+Date:   2006-11-14
+
+    Updated Malay translation
+
+
+commit ae49159f67f64fdded994b4f522c80b62ccda684
+Author: andrmart <andrmart>
+Date:   2006-11-10
+
+    Initial translation
+
+
+commit 9b8ff2e201f70f680bd033c93670a3e5d259182a
+Author: amit <amit>
+Date:   2006-11-09
+
+    updated assamese kdump translation
+
+
+commit 97c5b27bb94f1e61f426fc1d36b0deb6885df754
+Author: fvalen <fvalen>
+Date:   2006-11-09
+
+    Updated
+
+
+commit 13aff2adedc1ccb90666765a6ff09c4c1c5441ac
+Author: sganesh <sganesh>
+Date:   2006-11-06
+
+    Telugu translation commited
+
+
+commit 5cf6cd3f42814a64a95cf362b153067370aae1e6
+Author: raven <raven>
+Date:   2006-11-02
+
+    Updated Polish translation
+
+
+commit cf9b276293aa18a1a012169889637be8cda8f910
+Author: eukim <eukim>
+Date:   2006-11-01
+
+    Updated
+
+
+commit 93145a1e02916427e0bff1d5cd851532195ff7dd
+Author: fvalen <fvalen>
+Date:   2006-11-01
+
+    Updated
+
+
+commit 5ffcdab67811824dbce03a4018b2575b7b747d14
+Author: noriko <noriko>
+Date:   2006-11-01
+
+    translation completed
+
+
+commit a8b7d956bf8b0d373709be10fec0cef11d71aa2c
+Author: aalam <aalam>
+Date:   2006-10-31
+
+    update for Punjabi
+
+
+commit 6ffa92d1c44082cc4381d89f37eadf027f2d840e
+Author: dlehman <dlehman>
+Date:   2006-10-27
+
+    * src/system-config-kdump.py:
+    remove #!/usr/bin/python
+    * COPYING:
+    add license
+    * system-config-kdump.spec:
+    package ChangeLog and COPYING
+
+ create mode 100644 COPYING
+
+commit 70313e8ccd32572ff479de336547387d63345427
+Author: dlehman <dlehman>
+Date:   2006-10-26
+
+    * Makefile:
+    fix modes on installed files
+    * system-config-kdump.spec:
+    remove unnecessary %preun
+    various minor tweaks to appease rpmlint
+
+
+commit 68aa013c89df4396450536bb22dec8d07e6c0558
+Author: dlehman <dlehman>
+Date:   2006-10-26
+
+    * src/system-config-kdump.glade:
+    fix path to icon
+    remove reference to stock weather icon (placeholder)
+
+
+commit e8d8a4b22b11671827c25f75a52c64953ea159e1
+Author: dlehman <dlehman>
+Date:   2006-10-26
+
+    * src/system-config-kdump.py:
+    move all location types into combo box
+    scan /sbin/fsck.* for available fs types
+    get rid of kdump config header; preserve kdump config comments instead
+    create a set/get method for the "quiet" attribute
+    * pixmaps
+    add pixmaps dir
+    * pixmaps/system-config-kdump.png:
+    add 48x48 hicolor icon made by Diana Fong
+
+ create mode 100644 pixmaps/system-config-kdump.png
+
+commit cfc13e54f9e63669d5688139c0d97bd111762b36
+Author: xconde <xconde>
+Date:   2006-10-22
+
+    Updated by Xavier Conde
+
+
+commit 753d7eff7e99b26d292500bc1cb312bcd39aeed0
+Author: dlehman <dlehman>
+Date:   2006-10-19
+
+    * src/system-config-kdump.py:
+    rearrange UI to allow only one location
+    declare global variables for the type, action string constants
+    check for a usable bootloader early on
+    * system-config-kdump.spec:
+    remove BuildRoot before %install
+    add gettext BuildRequires
+    remove ExclusiveOS tag
+    remove explicit python2 Requires
+
+
+commit a94384cfab89619a93637defc6a4a3251f3ab95c
+Author: dlehman <dlehman>
+Date:   2006-10-18
+
+    add support for "core_collector" and "path" handlers
+    give choices of "ssh" and "nfs" instead of "net"
+    add validation of edit location dialog results
+    add choice of "none" to default actions
+    remove "ifc" support since it's gone from kexec-tools
+    update kdump config file header
+    fix a couple of strings that weren't getting translated
+
+
+commit d1a68bb99e250df9378d64a5f44bb227d853f21d
+Author: tszanto <tszanto>
+Date:   2006-10-18
+
+    *** empty log message ***
+
+
+commit 860ba410d043cd9b0a42aa155731a4c66ddebfa4
+Author: dlehman <dlehman>
+Date:   2006-10-16
+
+    Update spec file, bump release
+
+
+commit dd36a22fcc7b01c85d98fdfaf6c61649e0aaa8b7
+Author: dlehman <dlehman>
+Date:   2006-10-16
+
+    Fix parsing of crashkernel arg from /proc/cmdline on startup
+
+
+commit 07d4f376fa990cd001e3d411587da55d0808dcf1
+Author: ifelix <ifelix>
+Date:   2006-10-16
+
+    Fedora tamil translation updated
+
+
+commit 029f8564aa7f903661aae21792f7dc88b448cf10
+Author: raada <raada>
+Date:   2006-10-16
+
+    *** empty log message ***
+
+
+commit 2efacdab1e18561cdcc112b5b71f1e7f63181f6d
+Author: keldsim <keldsim>
+Date:   2006-10-15
+
+    updates
+    release-notes/po/da.po system-config-kdump/po/da.po
+
+
+commit d3722c0b328a316f2e856964e81141e7fb88da2b
+Author: arclynx <arclynx>
+Date:   2006-10-14
+
+    Updated Malay translation
+
+
+commit aa65100593a25d0c73b7dd548d3791b90d206e84
+Author: notting <notting>
+Date:   2006-10-13
+
+    Fix broken charset definitions
+
+
+commit 00b7143259b6526a21c0f51b51e29bc39cb79a37
+Author: zyang <zyang>
+Date:   2006-10-13
+
+    *** empty log message ***
+
+
+commit a9436b42bd99211f521b79265d7639f0415eb9e5
+Author: runab <runab>
+Date:   2006-10-13
+
+    Updated Bengali India Translation
+
+
+commit 7ae02caf38d48bb8e25722d47778dcf5ab636c6b
+Author: zyang <zyang>
+Date:   2006-10-13
+
+    *** empty log message ***
+
+
+commit 6399c0665d6a8398d150f3f35d425ad5d12de9cd
+Author: renato <renato>
+Date:   2006-10-13
+
+    *** empty log message ***
+
+
+commit af00de64720b9f037851c7b207cf54a0a5455117
+Author: ankitp <ankitp>
+Date:   2006-10-13
+
+    Updated Gujarati Translations
+
+
+commit 175a70821357b2d83775159f0029c90fa28a5bb7
+Author: rranjan <rranjan>
+Date:   2006-10-13
+
+    kdump hindi translation
+
+
+commit 15c6cb22b8e73a74377df48cb5692206f0e5d4d4
+Author: apeter <apeter>
+Date:   2006-10-13
+
+    Updated Malayalam file
+
+
+commit ed610e1256f4b98233c3827bdab9633c0703d70c
+Author: fdecroux <fdecroux>
+Date:   2006-10-13
+
+    Updated
+
+
+commit a27b7539c969d70867ff1d9283ae99c59a25ee11
+Author: sbehera <sbehera>
+Date:   2006-10-13
+
+    Updated Oriya Translation
+
+
+commit 7e6951a74fef32811c0c2cc63c423b6f1574222c
+Author: vferreir <vferreir>
+Date:   2006-10-13
+
+    *** empty log message ***
+
+
+commit 46509b6c345e60f767336ed157f8273a012c263a
+Author: ccheng <ccheng>
+Date:   2006-10-13
+
+    File creation
+
+ create mode 100644 po/af.po
+ create mode 100644 po/am.po
+ create mode 100644 po/ar.po
+ create mode 100644 po/as.po
+ create mode 100644 po/be.po
+ create mode 100644 po/bg.po
+ create mode 100644 po/bn.po
+ create mode 100644 po/bn_IN.po
+ create mode 100644 po/ca.po
+ create mode 100644 po/cs.po
+ create mode 100644 po/cy.po
+ create mode 100644 po/da.po
+ create mode 100644 po/el.po
+ create mode 100644 po/en_GB.po
+ create mode 100644 po/et.po
+ create mode 100644 po/eu_ES.po
+ create mode 100644 po/fa.po
+ create mode 100644 po/fi.po
+ create mode 100644 po/fr.po
+ create mode 100644 po/gl.po
+ create mode 100644 po/gu.po
+ create mode 100644 po/he.po
+ create mode 100644 po/hi.po
+ create mode 100644 po/hr.po
+ create mode 100644 po/hu.po
+ create mode 100644 po/hy.po
+ create mode 100644 po/id.po
+ create mode 100644 po/is.po
+ create mode 100644 po/it.po
+ create mode 100644 po/ja.po
+ create mode 100644 po/ka.po
+ create mode 100644 po/kn.po
+ create mode 100644 po/ko.po
+ create mode 100644 po/ku.po
+ create mode 100644 po/lo.po
+ create mode 100644 po/lt.po
+ create mode 100644 po/lv.po
+ create mode 100644 po/mk.po
+ create mode 100644 po/ml.po
+ create mode 100644 po/mr.po
+ create mode 100644 po/ms.po
+ create mode 100644 po/my.po
+ create mode 100644 po/nb.po
+ create mode 100644 po/nl.po
+ create mode 100644 po/nn.po
+ create mode 100644 po/no.po
+ create mode 100644 po/nso.po
+ create mode 100644 po/or.po
+ create mode 100644 po/pa.po
+ create mode 100644 po/pl.po
+ create mode 100644 po/pt_BR.po
+ create mode 100644 po/ro.po
+ create mode 100644 po/ru.po
+ create mode 100644 po/si.po
+ create mode 100644 po/sk.po
+ create mode 100644 po/sl.po
+ create mode 100644 po/sq.po
+ create mode 100644 po/sv.po
+ create mode 100644 po/ta.po
+ create mode 100644 po/te.po
+ create mode 100644 po/th.po
+ create mode 100644 po/tr.po
+ create mode 100644 po/uk.po
+ create mode 100644 po/ur.po
+ create mode 100644 po/vi.po
+ create mode 100644 po/zh_CN.po
+ create mode 100644 po/zh_TW.po
+ create mode 100644 po/zu.po
+
+commit c2cdc7fc76a7c3df416a13f8cd591fd09609cc8e
+Author: trinks <trinks>
+Date:   2006-10-12
+
+    total:24 fuzzy:0 untranslated:0
+
+ create mode 100644 po/de.po
+
+commit 32937dd8ee1007b79ae4b2029de7132be73ed382
+Author: kmilos <kmilos>
+Date:   2006-10-12
+
+    *** empty log message ***
+
+ create mode 100755 po/sr.po
+ create mode 100755 po/sr@Latn.po
+
+commit 0e57f08aa475ad2534cf6e72004e8f42c4592ee7
+Author: beckerde <beckerde>
+Date:   2006-10-12
+
+    listo
+
+ create mode 100644 po/es.po
+
+commit 7adf59fbcfb13af5d8ce21fa2046c48a71942791
+Author: zepires <zepires>
+Date:   2006-10-12
+
+    Updates on new translation files
+
+
+commit c16870f83eecc69e5240b54f129efc9253c88797
+Author: zepires <zepires>
+Date:   2006-10-12
+
+    Finished system-config-kdump
+
+ create mode 100644 po/pt.po
+
+commit f41579ad83eabdd7a4c076a0649f21350e24a97f
+Author: dlehman <dlehman>
+Date:   2006-10-11
+
+    Initial revision
+
+ create mode 100644 ChangeLog
+ create mode 100644 Makefile
+ create mode 100644 po/Makefile
+ create mode 100644 po/system-config-kdump.gladestrings
+ create mode 100644 po/system-config-kdump.pot
+ create mode 100755 src/system-config-kdump
+ create mode 100644 src/system-config-kdump.glade
+ create mode 100644 src/system-config-kdump.py
+ create mode 100644 system-config-kdump.console
+ create mode 100644 system-config-kdump.desktop.in
+ create mode 100644 system-config-kdump.pam
+ create mode 100644 system-config-kdump.spec
