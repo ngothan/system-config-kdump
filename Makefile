@@ -33,13 +33,20 @@ LIBEXEC_SCRIPTS = system-config-kdump-backend.py
 GLADE_DATA = system-config-kdump.glade
 GLADE_DIR  = ${PKGDATADIR}
 
+MAKEFILE        := $(lastword $(MAKEFILE_LIST))
+TOPDIR          := $(abspath $(dir $(abspath $(MAKEFILE))))
+DOC_ABS_SRCDIR  = $(TOPDIR)/help
+DOC_MODULE      = system-config-kdump
+DOC_FIGURES_DIR = figures
+DOC_FIGURES     = basic.png expert.png filter.png target.png disabled.png enabled.png
+DOC_ENTITIES    = distro-specifics.ent system-config-kdump-distro-specifics.ent system-config-kdump-abstract.xml system-config-kdump-content.xml
 
 default: subdirs
 
-subdirs:
+subdirs: doc-all
 	for d in $(SUBDIRS); do make -C $$d; [ $$? = 0 ] || exit 1; done
 
-install: ${PKGNAME}.desktop
+install: subdirs ${PKGNAME}.desktop doc-install
 	mkdir -p $(INSTROOT)/usr/bin
 	mkdir -p $(INSTROOT)$(PKGDATADIR)
 	mkdir -p $(INSTROOT)/usr/sbin
@@ -100,9 +107,10 @@ local: clean
 	@rm -rf /tmp/${PKGNAME}-$(VERSION)	
 	@echo "The archive is in ${PKGNAME}-$(VERSION).tar.bz2"
 
-clean:
+clean: doc-clean
 	@rm -fv *~
 	@rm -fv src/*.pyc
+	@rm -fv po/*mo po/*~ po/.depend
 	@rm -fv ${PKGNAME}.desktop
 
 srpm:
@@ -115,3 +123,5 @@ srpm:
 
 %.desktop: %.desktop.in
 	@intltool-merge -d -u po/ $< $@
+
+include doc_rules.mk

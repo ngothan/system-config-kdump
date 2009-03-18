@@ -1,0 +1,224 @@
+<section id="s1-system-config-kdump">
+    <title>Basic Controls</title>
+    <figure float="0" id="disabled-fig">
+        <title>Disabled kdump</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/disabled.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Disabled kdump</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+    <para>
+        THIS HELP IS NOT COMPLETE
+    </para>
+
+
+    <para>
+        After instalation &SYSTEM_CONFIG_KDUMP_TOOL; is kdump disabled. And you cannot change any settings.
+    </para>
+    <para>
+        To enable kdump click on <guilabel>Enable</guilabel> button.
+    </para>
+
+    <figure float="0" id="enabled-fig">
+        <title>Enabled kdump</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/enabled.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Enabled kdump</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+ 
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="s1-system-config-kdump-basic">
+    <title>Basic Settings</title>
+    
+    <figure float="0" id="basic-fig">
+        <title>Basic Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/basic.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Basic Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Basic Settings</guilabel> you can see these items:
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>Total System Memory</guilabel> &mdash; Shows allover memory in your system.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Current kdump Memory</guilabel> &mdash; Shows actual memory reserved for kdump.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>New kdump Memory</guilabel> &mdash; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Usable Memory</guilabel> &mdash; Shows usable memory of system after applying your changes.
+                </para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="s1-system-config-kdump-target">
+    <title>Target Settings</title>
+    
+    <figure float="0" id="target-fig">
+        <title>Target Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/target.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Target Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Target Settings</guilabel> you can see these items:
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>Total System Memory</guilabel> &mdash; Shows allover memory in your system.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Current kdump Memory</guilabel> &mdash; Shows actual memory reserved for kdump.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>New kdump Memory</guilabel> &mdash; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Usable Memory</guilabel> &mdash; Shows usable memory of system after applying your changes.
+                </para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="s1-system-config-kdump-filtering">
+    <title>Filtering Settings</title>
+    
+    <figure float="0" id="filter-fig">
+        <title>Filtering Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/filter.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Filtering Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Filtering Settings</guilabel> you can see these items:
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>Total System Memory</guilabel> &mdash; Shows allover memory in your system.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Current kdump Memory</guilabel> &mdash; Shows actual memory reserved for kdump.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>New kdump Memory</guilabel> &mdash; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Usable Memory</guilabel> &mdash; Shows usable memory of system after applying your changes.
+                </para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="s1-system-config-kdump-expert">
+    <title>Expert Settings</title>
+    
+    <figure float="0" id="expert-fig">
+        <title>Expert Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/expert.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Expert Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Expert Settings</guilabel> you can see these items:
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>Total System Memory</guilabel> &mdash; Shows allover memory in your system.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Current kdump Memory</guilabel> &mdash; Shows actual memory reserved for kdump.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>New kdump Memory</guilabel> &mdash; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Usable Memory</guilabel> &mdash; Shows usable memory of system after applying your changes.
+                </para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+</section>
+

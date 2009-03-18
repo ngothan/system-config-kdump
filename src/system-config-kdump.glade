@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Thu Mar 12 16:14:07 2009 -->
+<!--Generated with glade3 3.4.5 on Wed Mar 18 16:21:57 2009 -->
 <glade-interface>
   <widget class="GtkWindow" id="mainWindow">
     <property name="title" translatable="yes">Kernel Dump Configuration</property>
@@ -111,6 +111,14 @@
                         <property name="use_stock">True</property>
                       </widget>
                     </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitemHelp">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">gtk-help</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
                   </widget>
                 </child>
               </widget>
@@ -181,6 +189,24 @@
                     <property name="expand">False</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="GtkSeparatorToolItem" id="separatortoolitem1">
+                    <property name="visible">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkToolButton" id="toolbuttonHelp">
+                    <property name="visible">True</property>
+                    <property name="stock_id">gtk-help</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -233,79 +259,31 @@
                             <property name="column_spacing">6</property>
                             <property name="row_spacing">12</property>
                             <child>
-                              <widget class="GtkLabel" id="label5">
+                              <widget class="GtkLabel" id="label23">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Total System Memory:</property>
+                                <property name="label" translatable="yes">(MB)</property>
                               </widget>
                               <packing>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label6">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Current kdump Memory:</property>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label7">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">New kdump Memory:</property>
-                              </widget>
-                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="right_attach">3</property>
                                 <property name="top_attach">2</property>
                                 <property name="bottom_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
+                                <property name="x_options"></property>
                                 <property name="y_options"></property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label8">
+                              <widget class="GtkLabel" id="usableMem">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Usable Memory:</property>
+                                <property name="label" translatable="yes">N/A</property>
                               </widget>
                               <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">3</property>
                                 <property name="top_attach">3</property>
                                 <property name="bottom_attach">4</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="totalMem">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">N/A</property>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="kdumpMemCurrent">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">N/A</property>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">3</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options"></property>
                               </packing>
@@ -330,7 +308,7 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="usableMem">
+                              <widget class="GtkLabel" id="kdumpMemCurrent">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <property name="label" translatable="yes">N/A</property>
@@ -338,6 +316,32 @@
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">3</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options"></property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="totalMem">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">N/A</property>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">3</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options"></property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label8">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Usable Memory:</property>
+                              </widget>
+                              <packing>
                                 <property name="top_attach">3</property>
                                 <property name="bottom_attach">4</property>
                                 <property name="x_options">GTK_FILL</property>
@@ -345,17 +349,39 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label23">
+                              <widget class="GtkLabel" id="label7">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">(MB)</property>
+                                <property name="label" translatable="yes">New kdump Memory:</property>
                               </widget>
                               <packing>
-                                <property name="left_attach">2</property>
-                                <property name="right_attach">3</property>
                                 <property name="top_attach">2</property>
                                 <property name="bottom_attach">3</property>
-                                <property name="x_options"></property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options"></property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label6">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Current kdump Memory:</property>
+                              </widget>
+                              <packing>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options"></property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label5">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Total System Memory:</property>
+                              </widget>
+                              <packing>
+                                <property name="x_options">GTK_FILL</property>
                                 <property name="y_options"></property>
                               </packing>
                             </child>
@@ -428,16 +454,34 @@
                                     <property name="n_columns">3</property>
                                     <property name="column_spacing">6</property>
                                     <child>
-                                      <widget class="GtkComboBox" id="partitionCombobox">
+                                      <widget class="GtkEntry" id="locationEntry">
                                         <property name="visible">True</property>
-                                        <property name="tooltip" translatable="yes">Choose partition where you want to save your kdump</property>
-                                        <property name="items" translatable="yes"></property>
+                                        <property name="can_focus">True</property>
+                                        <property name="tooltip" translatable="yes">Target directory on local file system</property>
                                       </widget>
                                       <packing>
                                         <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkLabel" id="label25">
+                                        <property name="visible">True</property>
+                                        <property name="xalign">0</property>
+                                        <property name="label" translatable="yes">Path:</property>
+                                      </widget>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkFileChooserButton" id="localFilechooserbutton">
+                                        <property name="visible">True</property>
+                                        <property name="tooltip" translatable="yes">Choose local filesystem target directory</property>
+                                        <property name="show_hidden">True</property>
+                                        <property name="action">GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</property>
+                                        <property name="title" translatable="yes">Select A Local Filesystem Directory</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="left_attach">2</property>
                                         <property name="right_attach">3</property>
-                                        <property name="top_attach">1</property>
-                                        <property name="bottom_attach">2</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -452,34 +496,16 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <widget class="GtkFileChooserButton" id="localFilechooserbutton">
+                                      <widget class="GtkComboBox" id="partitionCombobox">
                                         <property name="visible">True</property>
-                                        <property name="tooltip" translatable="yes">Choose local filesystem target directory</property>
-                                        <property name="action">GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</property>
-                                        <property name="show_hidden">True</property>
-                                        <property name="title" translatable="yes">Select A Local Filesystem Directory</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="left_attach">2</property>
-                                        <property name="right_attach">3</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="GtkLabel" id="label25">
-                                        <property name="visible">True</property>
-                                        <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Path:</property>
-                                      </widget>
-                                    </child>
-                                    <child>
-                                      <widget class="GtkEntry" id="locationEntry">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="tooltip" translatable="yes">Target directory on local file system</property>
+                                        <property name="tooltip" translatable="yes">Choose partition where you want to save your kdump</property>
+                                        <property name="items" translatable="yes"></property>
                                       </widget>
                                       <packing>
                                         <property name="left_attach">1</property>
-                                        <property name="right_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
                                       </packing>
                                     </child>
                                   </widget>
@@ -616,54 +642,13 @@
                                     <property name="column_spacing">6</property>
                                     <property name="row_spacing">6</property>
                                     <child>
-                                      <widget class="GtkEntry" id="usernameEntry">
-                                        <property name="visible">True</property>
-                                        <property name="sensitive">False</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="tooltip" translatable="yes">User must have necessary write permissions on the server</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="left_attach">1</property>
-                                        <property name="right_attach">2</property>
-                                        <property name="top_attach">2</property>
-                                        <property name="bottom_attach">3</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="GtkEntry" id="pathEntry">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="tooltip" translatable="yes">Path to directory to save kdump file on server</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="left_attach">1</property>
-                                        <property name="right_attach">2</property>
-                                        <property name="top_attach">1</property>
-                                        <property name="bottom_attach">2</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="GtkEntry" id="servernameEntry">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="tooltip" translatable="yes">Network server name</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="left_attach">1</property>
-                                        <property name="right_attach">2</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="GtkLabel" id="label20">
+                                      <widget class="GtkLabel" id="label18">
                                         <property name="visible">True</property>
                                         <property name="xalign">0</property>
-                                        <property name="yalign">0</property>
-                                        <property name="label" translatable="yes">User name:</property>
+                                        <property name="label" translatable="yes">Server name:</property>
                                         <property name="single_line_mode">True</property>
                                       </widget>
                                       <packing>
-                                        <property name="top_attach">2</property>
-                                        <property name="bottom_attach">3</property>
                                         <property name="y_options"></property>
                                       </packing>
                                     </child>
@@ -682,14 +667,55 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <widget class="GtkLabel" id="label18">
+                                      <widget class="GtkLabel" id="label20">
                                         <property name="visible">True</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Server name:</property>
+                                        <property name="yalign">0</property>
+                                        <property name="label" translatable="yes">User name:</property>
                                         <property name="single_line_mode">True</property>
                                       </widget>
                                       <packing>
+                                        <property name="top_attach">2</property>
+                                        <property name="bottom_attach">3</property>
                                         <property name="y_options"></property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkEntry" id="servernameEntry">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="tooltip" translatable="yes">Network server name</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkEntry" id="pathEntry">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="tooltip" translatable="yes">Path to directory to save kdump file on server</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkEntry" id="usernameEntry">
+                                        <property name="visible">True</property>
+                                        <property name="sensitive">False</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="tooltip" translatable="yes">User must have necessary write permissions on the server</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="top_attach">2</property>
+                                        <property name="bottom_attach">3</property>
                                       </packing>
                                     </child>
                                   </widget>
@@ -1172,18 +1198,42 @@
                                         <property name="column_spacing">6</property>
                                         <property name="row_spacing">6</property>
                                         <child>
-                                          <widget class="GtkButton" id="clearCmdlineButton">
+                                          <widget class="GtkLabel" id="label21">
                                             <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="label" translatable="yes">gtk-refresh</property>
-                                            <property name="use_stock">True</property>
-                                            <property name="response_id">0</property>
+                                            <property name="xalign">0</property>
+                                            <property name="xpad">6</property>
+                                            <property name="label" translatable="yes">Edited:</property>
                                           </widget>
                                           <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
+                                            <property name="top_attach">1</property>
                                             <property name="bottom_attach">2</property>
+                                            <property name="x_options">GTK_FILL</property>
+                                            <property name="y_options">GTK_FILL</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkLabel" id="label11">
+                                            <property name="visible">True</property>
+                                            <property name="xalign">0</property>
+                                            <property name="xpad">6</property>
+                                            <property name="label" translatable="yes">Original:</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="x_options">GTK_FILL</property>
+                                            <property name="y_options">GTK_FILL</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkEntry" id="originalCommandLineEntry">
+                                            <property name="visible">True</property>
+                                            <property name="sensitive">False</property>
+                                            <property name="tooltip" translatable="yes">Original kernel command line options</property>
+                                            <property name="editable">False</property>
+                                            <property name="width_chars">32</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="left_attach">1</property>
+                                            <property name="right_attach">2</property>
                                             <property name="x_options">GTK_FILL</property>
                                             <property name="y_options">GTK_FILL</property>
                                           </packing>
@@ -1205,41 +1255,17 @@
                                           </packing>
                                         </child>
                                         <child>
-                                          <widget class="GtkEntry" id="originalCommandLineEntry">
+                                          <widget class="GtkButton" id="clearCmdlineButton">
                                             <property name="visible">True</property>
-                                            <property name="sensitive">False</property>
-                                            <property name="tooltip" translatable="yes">Original kernel command line options</property>
-                                            <property name="editable">False</property>
-                                            <property name="width_chars">32</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <property name="label" translatable="yes">gtk-refresh</property>
+                                            <property name="use_stock">True</property>
+                                            <property name="response_id">0</property>
                                           </widget>
                                           <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <widget class="GtkLabel" id="label11">
-                                            <property name="visible">True</property>
-                                            <property name="xalign">0</property>
-                                            <property name="xpad">6</property>
-                                            <property name="label" translatable="yes">Original:</property>
-                                          </widget>
-                                          <packing>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <widget class="GtkLabel" id="label21">
-                                            <property name="visible">True</property>
-                                            <property name="xalign">0</property>
-                                            <property name="xpad">6</property>
-                                            <property name="label" translatable="yes">Edited:</property>
-                                          </widget>
-                                          <packing>
-                                            <property name="top_attach">1</property>
+                                            <property name="left_attach">2</property>
+                                            <property name="right_attach">3</property>
                                             <property name="bottom_attach">2</property>
                                             <property name="x_options">GTK_FILL</property>
                                             <property name="y_options">GTK_FILL</property>

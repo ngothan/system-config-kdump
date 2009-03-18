@@ -1,0 +1,25 @@
+<!ENTITY SYSTEM_CONFIG_KDUMP_TOOL "Kernel Dump Configuration">
+<!ENTITY SYSTEM_CONFIG_KDUMP_INVOCATION '
+    <indexterm significance="normal"> 
+        <primary><command>system-config-kdump</command> 
+        </primary> 
+        <see>&SYSTEM_CONFIG_KDUMP_TOOL;</see> 
+    </indexterm> 
+
+    <para>
+        You must be running the <application>X</application> Window System and have root privileges to use the &SYSTEM_CONFIG_KDUMP_TOOL;. There are two ways to start the application:
+    </para>
+    <itemizedlist>
+        <listitem>
+            <para>
+                From the desktop, go to <menuchoice>&DISTRO_MAINMENU;<guisubmenu>System</guisubmenu><guisubmenu>Administration</guisubmenu><guimenuitem>Kdump</guimenuitem></menuchoice>
+            </para>
+        </listitem>
+
+        <listitem>
+            <para>
+                Type the command <command>system-config-kdump</command> at a shell prompt (for example, in an <application>XTerm</application> or a <application>GNOME</application> terminal).
+            </para>
+        </listitem>
+    </itemizedlist>
+'>

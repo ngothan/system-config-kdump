@@ -454,12 +454,14 @@ class MainWindow:
         self.menu_enable            = self.xml.get_widget("menuitemEnable")
         self.menu_disable           = self.xml.get_widget("menuitemDisable")
         self.menu_about             = self.xml.get_widget("imagemenuitemAbout")
+        self.menu_help              = self.xml.get_widget("imagemenuitemHelp")
 
         # toolbar
         self.enable_button          = self.xml.get_widget("toolbuttonEnable")
         self.disable_button         = self.xml.get_widget("toolbuttonDisable")
         self.apply_button           = self.xml.get_widget("toolbuttonApply")
         self.reload_button          = self.xml.get_widget("toolbuttonReload")
+        self.help_button            = self.xml.get_widget("toolbuttonHelp")
 
         # tab 0
         self.total_mem_label         = self.xml.get_widget("totalMem")
@@ -522,6 +524,7 @@ class MainWindow:
         self.menu_about.connect("activate", self.show_about_dialog)
         self.menu_reload.connect("activate", self.reset_settings)
         self.menu_apply.connect("activate", self.apply_clicked)
+        self.menu_help.connect("activate", self.show_help)
         self.about_dialog.set_transient_for(self.toplevel)
         self.about_dialog.set_version(VERSION)
         self.about_dialog.set_authors(AUTHORS)
@@ -534,6 +537,7 @@ class MainWindow:
         self.disable_button.connect("clicked", self.kdump_enable_toggled)
         self.reload_button.connect("clicked", self.reset_settings)
         self.apply_button.connect("clicked", self.apply_clicked)
+        self.help_button.connect("clicked", self.show_help)
 
         # tab 0
         self.kdump_mem_spin_button.connect("value_changed", self.update_usable_mem)
@@ -1617,6 +1621,26 @@ class MainWindow:
             return True
         else:
             return False
+
+    def show_help(self, *args):
+        """
+        Showup help in yelp
+        """
+        help_page = "ghelp:system-config-kdump"
+        path = "/usr/bin/yelp"
+
+        if not os.access (path, os.X_OK):
+            d = gtk.MessageDialog (self.toplevel, 0,
+                        gtk.MESSAGE_WARNING, gtk.BUTTONS_CLOSE,
+                        _("The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."))
+            d.set_position (gtk.WIN_POS_CENTER)
+            d.run ()
+            d.destroy ()
+            return
+
+        pid = os.fork ()
+        if pid == 0:
+            os.execv (path, (path, help_page))
 
 
 if __name__ == "__main__":

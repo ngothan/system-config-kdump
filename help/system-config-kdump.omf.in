@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
+<omf>
+  <resource>
+    <!-- <subject>
+      <category>System|Administration</category>
+      <category>System|Configuration|Configuration Tools</category>
+    </subject> -->
+    <subject category="System|Configuration|Configuration Tools"/>
+    <type>administrator's guide</type>
+    <relation seriesid="00628cda-cde2-23a0-32cc-7371745fb1ec82"/>
+    <rights type="GNU GPL" license.version="2" holder="Red Hat, Inc."/>
+  </resource>
+</omf>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % DISTRO_SPECIFICS SYSTEM "distro-specifics.ent">
+<!ENTITY DISTRO_MAINMENU '<guimenu>the main menu on the panel (the menu with the "f" icon)</guimenu>'>
+<!ENTITY % SYSTEM_CONFIG_KDUMP_DISTRO_SPECIFICS SYSTEM "system-config-kdump-distro-specifics.ent">
+<!ENTITY SYSTEM_CONFIG_KDUMP_TOOL "Kernel Dump Configuration">
+<!ENTITY SYSTEM_CONFIG_KDUMP_INVOCATION '
+    <indexterm significance="normal"> 
+        <primary><command>system-config-kdump</command> 
+        </primary> 
+        <see>&SYSTEM_CONFIG_KDUMP_TOOL;</see> 
+    </indexterm> 
+
+    <para>
+        You must be running the <application>X</application> Window System and have root privileges to use the &SYSTEM_CONFIG_KDUMP_TOOL;. There are two ways to start the application:
+    </para>
+    <itemizedlist>
+        <listitem>
+            <para>
+                From the desktop, go to <menuchoice>&DISTRO_MAINMENU;<guisubmenu>System</guisubmenu><guisubmenu>Administration</guisubmenu><guimenuitem>Kdump</guimenuitem></menuchoice>
+            </para>
+        </listitem>
+
+        <listitem>
+            <para>
+                Type the command <command>system-config-kdump</command> at a shell prompt (for example, in an <application>XTerm</application> or a <application>GNOME</application> terminal).
+            </para>
+        </listitem>
+    </itemizedlist>
+'>
+<!ENTITY SYSTEM_CONFIG_KDUMP_ABSTRACT SYSTEM "system-config-kdump-abstract.xml">
+<!ENTITY SYSTEM_CONFIG_KDUMP_CONTENT SYSTEM "system-config-kdump-content.xml">
+]>
+<article><title>Kernel Dump Configuration</title><articleinfo><revhistory><revision><revnumber>1.0</revnumber><date>2008-07-18</date></revision></revhistory><abstract role="description"><para>
+    The <application>Kernel Dump Configuration</application> provides a graphical user interface (GUI) to configure the <application>kernel dump</application>
+</para>
+</abstract><authorgroup><corpauthor role="maintainer">
+                <trademark class="registered">Red Hat</trademark>, Inc.
+            </corpauthor></authorgroup></articleinfo><para>
+    The <application>Kernel Dump Configuration</application> provides a graphical user interface (GUI) to configure the <application>kernel dump</application>
+</para>
+<indexterm significance="normal"><primary><command>system-config-kdump</command> 
+        </primary><see>Kernel Dump Configuration</see></indexterm><para>
+        You must be running the <application>X</application> Window System and have root privileges to use the Kernel Dump Configuration. There are two ways to start the application:
+    </para><itemizedlist><listitem><para>
+                From the desktop, go to <menuchoice><guimenu>the main menu on the panel (the menu with the "f" icon)</guimenu><guisubmenu>System</guisubmenu><guisubmenu>Administration</guisubmenu><guimenuitem>Kdump</guimenuitem></menuchoice>
+            </para></listitem><listitem><para>
+                Type the command <command>system-config-kdump</command> at a shell prompt (for example, in an <application>XTerm</application> or a <application>GNOME</application> terminal).
+            </para></listitem></itemizedlist>
+<section id="s1-system-config-kdump"><title>Basic Controls</title><figure float="0" id="disabled-fig"><title>Disabled kdump</title><mediaobject><imageobject><imagedata fileref="figures/disabled.png" format="PNG"/></imageobject><textobject><para>Disabled kdump</para></textobject></mediaobject></figure><para>
+        THIS HELP IS NOT COMPLETE
+    </para><para>
+        After instalation Kernel Dump Configuration is kdump disabled. And you cannot change any settings.
+    </para><para>
+        To enable kdump click on <guilabel>Enable</guilabel> button.
+    </para><figure float="0" id="enabled-fig"><title>Enabled kdump</title><mediaobject><imageobject><imagedata fileref="figures/enabled.png" format="PNG"/></imageobject><textobject><para>Enabled kdump</para></textobject></mediaobject></figure></section><!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --><section id="s1-system-config-kdump-basic"><title>Basic Settings</title><figure float="0" id="basic-fig"><title>Basic Settings</title><mediaobject><imageobject><imagedata fileref="figures/basic.png" format="PNG"/></imageobject><textobject><para>Basic Settings</para></textobject></mediaobject></figure><para>
+        In <guilabel>Basic Settings</guilabel> you can see these items:
+        <itemizedlist><listitem><para>
+                    <guilabel>Total System Memory</guilabel> &#x2014; Shows allover memory in your system.
+                </para></listitem><listitem><para>
+                    <guilabel>Current kdump Memory</guilabel> &#x2014; Shows actual memory reserved for kdump.
+                </para></listitem><listitem><para>
+                    <guilabel>New kdump Memory</guilabel> &#x2014; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para></listitem><listitem><para>
+                    <guilabel>Usable Memory</guilabel> &#x2014; Shows usable memory of system after applying your changes.
+                </para></listitem></itemizedlist>
+    </para></section><!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --><section id="s1-system-config-kdump-target"><title>Target Settings</title><figure float="0" id="target-fig"><title>Target Settings</title><mediaobject><imageobject><imagedata fileref="figures/target.png" format="PNG"/></imageobject><textobject><para>Target Settings</para></textobject></mediaobject></figure><para>
+        In <guilabel>Target Settings</guilabel> you can see these items:
+        <itemizedlist><listitem><para>
+                    <guilabel>Total System Memory</guilabel> &#x2014; Shows allover memory in your system.
+                </para></listitem><listitem><para>
+                    <guilabel>Current kdump Memory</guilabel> &#x2014; Shows actual memory reserved for kdump.
+                </para></listitem><listitem><para>
+                    <guilabel>New kdump Memory</guilabel> &#x2014; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para></listitem><listitem><para>
+                    <guilabel>Usable Memory</guilabel> &#x2014; Shows usable memory of system after applying your changes.
+                </para></listitem></itemizedlist>
+    </para></section><!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --><section id="s1-system-config-kdump-filtering"><title>Filtering Settings</title><figure float="0" id="filter-fig"><title>Filtering Settings</title><mediaobject><imageobject><imagedata fileref="figures/filter.png" format="PNG"/></imageobject><textobject><para>Filtering Settings</para></textobject></mediaobject></figure><para>
+        In <guilabel>Filtering Settings</guilabel> you can see these items:
+        <itemizedlist><listitem><para>
+                    <guilabel>Total System Memory</guilabel> &#x2014; Shows allover memory in your system.
+                </para></listitem><listitem><para>
+                    <guilabel>Current kdump Memory</guilabel> &#x2014; Shows actual memory reserved for kdump.
+                </para></listitem><listitem><para>
+                    <guilabel>New kdump Memory</guilabel> &#x2014; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para></listitem><listitem><para>
+                    <guilabel>Usable Memory</guilabel> &#x2014; Shows usable memory of system after applying your changes.
+                </para></listitem></itemizedlist>
+    </para></section><!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --><section id="s1-system-config-kdump-expert"><title>Expert Settings</title><figure float="0" id="expert-fig"><title>Expert Settings</title><mediaobject><imageobject><imagedata fileref="figures/expert.png" format="PNG"/></imageobject><textobject><para>Expert Settings</para></textobject></mediaobject></figure><para>
+        In <guilabel>Expert Settings</guilabel> you can see these items:
+        <itemizedlist><listitem><para>
+                    <guilabel>Total System Memory</guilabel> &#x2014; Shows allover memory in your system.
+                </para></listitem><listitem><para>
+                    <guilabel>Current kdump Memory</guilabel> &#x2014; Shows actual memory reserved for kdump.
+                </para></listitem><listitem><para>
+                    <guilabel>New kdump Memory</guilabel> &#x2014; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para></listitem><listitem><para>
+                    <guilabel>Usable Memory</guilabel> &#x2014; Shows usable memory of system after applying your changes.
+                </para></listitem></itemizedlist>
+    </para></section>
+
+</article>

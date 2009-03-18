@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+
+<!ENTITY % DISTRO_SPECIFICS SYSTEM "distro-specifics.ent">
+%DISTRO_SPECIFICS;
+
+<!ENTITY % SYSTEM_CONFIG_KDUMP_DISTRO_SPECIFICS SYSTEM "system-config-kdump-distro-specifics.ent">
+%SYSTEM_CONFIG_KDUMP_DISTRO_SPECIFICS;
+
+<!ENTITY SYSTEM_CONFIG_KDUMP_ABSTRACT SYSTEM "system-config-kdump-abstract.xml">
+<!ENTITY SYSTEM_CONFIG_KDUMP_CONTENT SYSTEM "system-config-kdump-content.xml">
+]>
+
+<article>
+    <title>&SYSTEM_CONFIG_KDUMP_TOOL;</title>
+
+    <articleinfo>
+
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>2008-07-18</date>
+            </revision>
+        </revhistory>
+
+        <abstract role="description">
+&SYSTEM_CONFIG_KDUMP_ABSTRACT;
+        </abstract>
+
+        <authorgroup>
+            <corpauthor role="maintainer">
+                <trademark class="registered">Red Hat</trademark>, Inc.
+            </corpauthor>
+        </authorgroup>
+
+    </articleinfo>
+
+&SYSTEM_CONFIG_KDUMP_ABSTRACT;
+&SYSTEM_CONFIG_KDUMP_INVOCATION;
+&SYSTEM_CONFIG_KDUMP_CONTENT;
+
+</article>
