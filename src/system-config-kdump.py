@@ -23,6 +23,7 @@ import gtk
 # import gobject
 import gtk.glade
 from gtk.gdk import keyval_name
+from rhpl.executil import gtkExecWithCaptureStatus
 
 import sys
 import os
@@ -978,10 +979,11 @@ class MainWindow:
 
     def write_bootloader_config(self):
         """
-        Write settings to bootloader config file
+        Write settings to bootloader config file.
+        Return True on succes.
         """
         if TESTING:
-            return
+            return True
 
         config_string = ""
         if DEBUG:
@@ -1026,7 +1028,7 @@ class MainWindow:
             if DEBUG:
                 print "  check: " + check
 
-        return 1
+        return True
 
     def update_usable_mem(self, spin_button, *args):
         """
@@ -1605,7 +1607,7 @@ class MainWindow:
             tokens = crash_string.split("@")
             kdump_mem_grubby = int(tokens[0][:-1])
             if len(tokens) == 2:
-                kdump_offset_grubby = int(tokens[2][:-1])
+                kdump_offset_grubby = int(tokens[1][:-1])
             if DEBUG:
                 print "grubby --info: crashkernel=%iM@%iM" \
                        % (kdump_mem_grubby, kdump_offset_grubby)
