@@ -20,12 +20,12 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 import gtk
-# import gobject
+import gobject
 import gtk.glade
 from gtk.gdk import keyval_name
 from rhpl.executil import gtkExecWithCaptureStatus
 
-import sys
+import sys, traceback
 import os
 # import stat
 
@@ -134,7 +134,7 @@ LICENSE = _(
 
 COPYRIGHT = '(C) 2006 - 2009 Red Hat, Inc.'
 
-
+EXCEPTION_MARK = "EXCEPTION" # this is used to catch exceptions raised in backend
 
 
 DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT]
@@ -170,6 +170,52 @@ using rhpl
 XEN support - need change in grubby
 help
 """
+
+class progressWindow(gtk.Window):
+    def __init__(self, title, label):
+        gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
+        self.set_deletable(False)
+        self.set_resizable(False)
+        self.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+        self.set_modal(True)
+
+        self.set_title(title)
+        self.progress = gtk.ProgressBar()
+        self.progress.show()
+
+        self.label = gtk.Label(label)
+        self.label.show()
+
+        vbox = gtk.VBox()
+        vbox.set_spacing(10);
+        vbox.set_border_width(10);
+        vbox.show()
+
+        vbox.pack_start(self.label)
+        vbox.pack_start(self.progress)
+
+        self.add(vbox)
+
+    def set_label(self, label):
+        self.label.set_text(label)
+
+    def start(self):
+        self.timer = gobject.timeout_add(100, lambda progress:
+            progress.pulse() or True, self.progress)
+
+    def stop(self):
+        if self.timer:
+            gobject.source_remove(self.timer)
+            self.timer = None
+
+    def show(self):
+        self.start()
+        gtk.Window.show(self)
+
+    def hide(self):
+        self.stop()
+        gtk.Window.hide(self)
+
 
 # all needed for Python-slip, PoilcyKit and dbus
 class DBusProxy (object):
@@ -223,7 +269,15 @@ class DBusProxy (object):
         """
         return self.dbus_object.writebootconfig (config_string, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
-
+    @polkit.enable_proxy
+    def handlekdumpservice(self, chkconfig_status, service_op):
+        """
+        Start or stop kdump service, turn on or off init script
+        """
+        send_string = chkconfig_status
+        if service_op:
+             send_string += ";" + service_op
+        return self.dbus_object.handledumpservice (send_string, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
 
 # This class contains every settings
@@ -802,19 +856,40 @@ class MainWindow:
                                % kernel_kdump_note, _("system-config-kdump: Need reboot"))
 
         if not TESTING:
+            window = progressWindow("Applying configuration","")
+            window.set_transient_for(self.toplevel)
+            window.show()
             if DEBUG:
                 print "writing kdump config"
 
-            if not self.write_dump_config():
+            if not self.write_dump_config(window):
+                window.stop()
+                #error writing dump config
+                window.hide()
                 return
 
             if DEBUG:
                 print "writing bootloader config"
 
-            if not self.write_bootloader_config():
+            if not self.write_bootloader_config(window):
+                window.stop()
+                #error write bootloader
+                window.hide()
                 return
+
+            if DEBUG:
+                print "Handling kdump service"
+
+            if not self.handle_kdump_service(window):
+                window.stop()
+                #error write kdump service
+                window.hide()
+                return
+
             else:
+                window.stop()
                 self.show_message(_("Configurations sucessfully saved"), _("system-config-kdump: Configuration saved"))
+                window.hide()
                 
         else:
             print "would have called write_dump_config"
@@ -918,10 +993,11 @@ class MainWindow:
         self.orig_settings.commandline = self.get_cmdline(self.default_kernel)
         self.orig_settings.orig_commandline = self.orig_settings.commandline
 
-    def write_dump_config(self):
+    def write_dump_config(self, window):
         """
         Write settings to /etc/kdump.conf
         """
+        window.set_label("Saving settings to kdump.conf")
         if TESTING or not self.my_settings.kdump_enabled:
             return 1
 
@@ -953,11 +1029,12 @@ class MainWindow:
             config_string += "path %s\n" % self.my_settings.path
 
         #   local
-        elif self.my_settings.target_type == TYPE_LOCAL and self.my_settings.local_partition != "":
-            (fs_type, partition) = self.my_settings.local_partition.split()
-            if fs_type and partition and fs_type != "None":
-                config_string += "%s %s\n" % (fs_type, partition)
+        elif self.my_settings.target_type == TYPE_LOCAL:
             config_string += "path %s\n" % self.my_settings.path
+            if self.my_settings.local_partition != "":
+                (fs_type, partition) = self.my_settings.local_partition.split()
+                if fs_type and partition and fs_type != "None":
+                    config_string += "%s %s\n" % (fs_type, partition)
 
 
         # core collector
@@ -977,27 +1054,30 @@ class MainWindow:
             return 0
         return 1
 
-    def write_bootloader_config(self):
+    def write_bootloader_config(self, window):
         """
         Write settings to bootloader config file.
         Return True on succes.
         """
+        window.set_label("Writing settings to bootloader configuration file")
         if TESTING:
             return True
 
+        # config string will have arguments for command grubby.
+        # Each one argument will be divided by `;'
         config_string = ""
         if DEBUG:
             print "Write bootloader conf:"
         
         # kernel name to change
-        config_string += " --update-kernel=" + self.my_settings.kernel
+        config_string += "--update-kernel=" + self.my_settings.kernel + ";"
         if DEBUG:
             print "  Updating kernel '%s'" % (self.my_settings.kernel)
 
         # arguments
         if self.my_settings.kdump_enabled:
         # at first remove original kernel cmd line
-            config_string += " --remove-args=\"" + self.my_settings.orig_commandline
+            config_string += "--remove-args=" + self.my_settings.orig_commandline
             if DEBUG:
                 print "  Removing original args '%s'" % (self.my_settings.orig_commandline)
 
@@ -1006,11 +1086,11 @@ class MainWindow:
                 print "  check: " + check
 
         # and now set new kernel cmd line
-            config_string = " --update-kernel=" + self.my_settings.kernel
+            config_string = "--update-kernel=" + self.my_settings.kernel +";"
             if DEBUG:
                 print "  Updating kernel '%s'" % (self.my_settings.kernel)
 
-            config_string += " --args=\"" + self.my_settings.commandline + "\""
+            config_string += "--args=" + self.my_settings.commandline
             if DEBUG:
                 print "  Setting args to '%s'" % (self.my_settings.commandline)
 
@@ -1020,7 +1100,7 @@ class MainWindow:
 
         else:
         # kdump is desabled, so only remove crashkernel
-            config_string += " --remove-args=\"crashkernel=%s\"" % (self.my_settings.kdump_mem)
+            config_string += "--remove-args=crashkernel=%s" % (self.my_settings.kdump_mem)
             if DEBUG:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
 
@@ -1350,8 +1430,9 @@ class MainWindow:
         (Re)Load command line arguments for selected kernel in combobox
         """
         self.my_settings.kernel = combobox.get_active_text()
-        self.my_settings.kernel = self.my_settings.kernel.rsplit(TAG_CURRENT, 1)[0] # there can be current or default
+        self.my_settings.kernel = self.my_settings.kernel.rsplit(TAG_CURRENT, 1)[0] # there can be current
         self.my_settings.kernel = self.my_settings.kernel.rsplit(TAG_DEFAULT, 1)[0] # or default tag
+        self.my_settings.kernel = self.my_settings.kernel.rsplit(" ", 1)[0] # if so, there is <space> at the end
         line = self.get_cmdline(self.my_settings.kernel)
         self.original_command_line_entry.set_text(line)
         self.command_line_entry.set_text(line)
@@ -1644,22 +1725,56 @@ class MainWindow:
         if pid == 0:
             os.execv (path, (path, help_page))
 
+    def handle_kdump_service(self, window):
+        """
+        Start or stop kdump service. Enable or disable it.
+        """
+        window.set_label("Handling services")
+        if self.my_settings.kdump_enabled:
+            chkconfig_status = "on"
+            if self.kdump_mem_current_label.get_text().split()[0] > "0":
+                service_op = "restart"
+            else:
+                service_op = None
+        else:
+            chkconfig_status = "off"
+            if self.kdump_mem_current_label.get_text().split()[0] > "0":
+                service_op = "stop"
+            else:
+                service_op = None
+
+        print self.dbus_object.handlekdumpservice(chkconfig_status, service_op)
+        return True
+        
 
 if __name__ == "__main__":
     import getopt
+    try:
+        opt, arg = getopt.getopt(sys.argv[1:], 'dth', ['debug', 'test', 'testing', 'help'])
+        for (opt, val) in opt:
+            if opt in ("-d", "--debug"):
+                print "*** Debug messages enabled. ***"
+                DEBUG = 1
+            elif opt in ("-t", "--test", "--testing"):
+                print "*** Testing only. No configurations will be modified. ***"
+                TESTING = 1
+            elif opt in ("-h", "--help"):
+                print >> sys.stderr, "Usage: system-config-kdump.py [--test] [--debug]"
 
-    opt, arg = getopt.getopt(sys.argv[1:], 'dth', ['debug', 'test', 'testing', 'help'])
-    for (opt, val) in opt:
-        if opt in ("-d", "--debug"):
-            print "*** Debug messages enabled. ***"
-            DEBUG = 1
-        elif opt in ("-t", "--test", "--testing"):
-            print "*** Testing only. No configurations will be modified. ***"
-            TESTING = 1
-        elif opt in ("-h", "--help"):
-            print >> sys.stderr, "Usage: system-config-kdump.py [--test] [--debug]"
+        win = MainWindow()
+        win.setup_screen()
+        win.run()
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
+                                gtk.BUTTONS_OK, "%s" %traceback.format_exc())
 
-    win = MainWindow()
-    win.setup_screen()
-    win.run()
+        dlg.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+        dlg.set_modal(True)
+        dlg.set_keep_above(True)
+        title = _("Error executing system-config-kdump")
+        dlg.set_title(title)
+        dlg.run()
+        dlg.destroy()
+
 

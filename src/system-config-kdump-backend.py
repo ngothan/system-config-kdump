@@ -34,6 +34,11 @@ except ImportError:
         import slip.dbus.service
     sys.path = _oldsyspath
 
+from rhpl.executil import gtkExecWithCaptureStatus, execWithCaptureStatus
+
+
+EXCEPTION_MARK = "EXCEPTION"
+
 #######
 GRUBBY_CMD        = "/sbin/grubby"
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
@@ -46,6 +51,11 @@ BOOTLOADERS = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
                 "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
 
+##
+## I18N
+##
+from rhpl.translate import _, N_
+import rhpl.translate as translate
 
 
 class SystemConfigKdumpObject(slip.dbus.service.Object):
@@ -59,14 +69,15 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='', out_signature='s')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
-        return os.popen(GRUBBY_CMD + " --default-kernel").read()
+        return self.call(GRUBBY_CMD, "--default-kernel")
+
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getcmdline")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
                           in_signature='s', out_signature='s')
     def getcmdline (self, kernel):
         """ Get command line arguments for kernel from grubby """
-        for line in os.popen(GRUBBY_CMD + " --info " + kernel).readlines():
+        for line in self.call(GRUBBY_CMD, "--info", kernel).splitlines():
             (name, value) = line.strip().split("=", 1)
             if name == "args":
                 return value.strip('"')
@@ -77,7 +88,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='s', out_signature='s')
     def getxencmdline (self, kernel):
         """ Get command line arguments for xen kernel from grubby """
-        for line in os.popen(GRUBBY_CMD + " --info " + kernel).readlines():
+        for line in self.call(GRUBBY_CMD, "--info", kernel).splitlines:
             (name, value) = line.strip().split("=", 1)
             if name == "module":
                 return value.strip('"')
@@ -88,7 +99,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='', out_signature='s')
     def getallkernels (self):
         """ Get all kernel names from grubby """
-        return os.popen(GRUBBY_CMD + " --info ALL").read()
+        return self.call(GRUBBY_CMD,"--info", "ALL")
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writedumpconfig")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
@@ -110,9 +121,11 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
                           in_signature='s', out_signature='s')
     def writebootconfig (self, config_string):
-        """ Write bootloader configuration """
-        what = os.popen(GRUBBY_CMD + " --" + self.bootloader + config_string).read()
-        return what
+        """
+        Write bootloader configuration.
+        in config_string are arguments for grubby divided by `;'
+        """
+        return self.call(*([GRUBBY_CMD] + ["--" + self.bootloader]  + config_string.split(";")))
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
@@ -126,6 +139,43 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
         return bootloader
 
+    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.handledumpservice")
+    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
+                          in_signature='s', out_signature='s')
+    def handledumpservice (self, config_string):
+        """ Turn on/off kdump initscript. Start/stop kdump service """
+        arguments = config_string.split(";")
+        if len(arguments) > 1:
+            self.call("/sbin/chkconfig", "kdump", arguments[0])
+            self.call("/sbin/service", "kdump", arguments[1])
+        else:
+            self.call("/sbin/chkconfig", "kdump", arguments[0])
+        if self.bootloader == 'yaboot':
+            self.call('/sbin/ybin')
+        return ""
+ 
+    def gtkcall (self, *args):
+        """
+        Call command args[0] with args arguments
+        """
+        (status, output) = gtkExecWithCaptureStatus(args[0], args, catchfd = (1, 2))
+        if status:
+            output = _("Command '%s' failed:\n%s") %  (" ".join (args), output)
+            raise RuntimeError(output)
+        else:
+            return output
+
+    def call(self, *args):
+        """
+        Call command args[0] with args arguments
+        """
+        print args
+        (output, status) = execWithCaptureStatus(args[0], args, catchfd = (1, 2))
+        if status:
+            output = _("Command '%s' failed:\n%s") %  (" ".join (args), output)
+            raise RuntimeError(output)
+        else:
+            return output
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
