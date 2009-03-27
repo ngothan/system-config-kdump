@@ -21,7 +21,7 @@
     <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.5//EN"/>
     <identifier url="file:///usr/share/gnome/help/system-config-kdump/C/system-config-kdump.xml"/>
     <language code="C"/>
-    <relation seriesid="00628cda-cde2-23a0-32cc-7371745fb1ec82"/>
+    <relation seriesid="09d2bb42-bdd9-7cae-51dc-314440a4cbf680"/>
     <rights type="GNU GPL" license.version="2" holder="Red Hat, Inc."/>
   </resource>
 </omf>
