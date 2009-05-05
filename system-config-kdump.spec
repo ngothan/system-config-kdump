@@ -1,24 +1,23 @@
-# comment ;)
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 1.0.14
+Version: 2.0.0
 Release: 1%{?dist}
-URL: http://fedora.redhat.com/projects/config-tools/
+URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
 Group: System Environment/Base
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
-Source0: %{name}-%{version}.tar.bz2
+Source0: http://fedorahosted.org/released/system-config-kdump/%{name}-%{version}.tar.bz2
 ExcludeArch: s390 s390x
 BuildRequires: desktop-file-utils
-BuildRequires: intltool, gettext
+BuildRequires: intltool, gettext, gnome-doc-utils, docbook-dtds, rarian-compat, scrollkeeper
 Requires: pygtk2 >= 2.8.6
 Requires: pygtk2-libglade
 Requires: usermode >= 1.36
 Requires: rhpl >= 0.185-1
-Requires: redhat-artwork >= 0.61-1
 Requires: kexec-tools
 Requires: bitmap-fonts
+Requires: yelp
 Requires(pre): gtk2 >= 2.8.20
 Requires(pre): hicolor-icon-theme
 
@@ -50,12 +49,14 @@ touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk-update-icon-cache ]; then
   gtk-update-icon-cache -q %{_datadir}/icons/hicolor
 fi
+%{_bindir}/scrollkeeper-update -q || :
 
 %post
 touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk-update-icon-cache ]; then
   gtk-update-icon-cache -q %{_datadir}/icons/hicolor
 fi
+%{_bindir}/scrollkeeper-update -q || :
 
 
 %files -f %{name}.lang
@@ -65,10 +66,23 @@ fi
 %{_datadir}/applications/*
 %config(noreplace) %{_sysconfdir}/security/console.apps/system-config-kdump
 %config(noreplace) %{_sysconfdir}/pam.d/system-config-kdump
+
+%{_sysconfdir}/dbus-1/system.d/org.fedoraproject.systemconfig.kdump.mechanism.conf
+%{_datadir}/dbus-1/system-services/org.fedoraproject.systemconfig.kdump.mechanism.service
+%{_datadir}/PolicyKit/policy/org.fedoraproject.systemconfig.kdump.policy
+
+
 %{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
+
 %doc ChangeLog COPYING
+%doc %{_datadir}/gnome/help/system-config-kdump
+%doc %{_datadir}/omf/system-config-kdump
+
 
 %changelog
+* Tue May 05 2009 Roman Rakus <rrakus@redhat.com> 2.0.0-1
+- Reworked to satisfy system config tools cleanup
+
 * Thu Mar 20 2008 Dave Lehman <dlehman@redhat.com> 1.0.14-1%{?dist}
 - require bitmap-fonts
   Resolves: rhbz#433858

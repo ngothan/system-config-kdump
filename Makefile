@@ -27,7 +27,7 @@ CONF_DATA = org.fedoraproject.systemconfig.kdump.mechanism.conf
 POLICY_DIR  = ${DATADIR}/PolicyKit/policy
 POLICY_DATA = org.fedoraproject.systemconfig.kdump.policy
 
-LIBEXEC_DIR     = ${PREFIX}/local/libexec
+LIBEXEC_DIR     = ${PKGDATADIR}
 LIBEXEC_SCRIPTS = system-config-kdump-backend.py
 
 GLADE_DATA = system-config-kdump.glade
@@ -40,6 +40,8 @@ DOC_MODULE      = system-config-kdump
 DOC_FIGURES_DIR = figures
 DOC_FIGURES     = basic.png expert.png filter.png target.png disabled.png enabled.png
 DOC_ENTITIES    = distro-specifics.ent system-config-kdump-distro-specifics.ent system-config-kdump-abstract.xml system-config-kdump-content.xml
+
+DESTDIR = $(INSTROOT)
 
 default: subdirs
 
@@ -68,10 +70,10 @@ install: subdirs ${PKGNAME}.desktop doc-install
 	install -m644 ${PKGNAME}.pam $(INSTROOT)$(PAMD_DIR)/${PKGNAME}
 	install -m644 ${PKGNAME}.console $(INSTROOT)$(SECURITY_DIR)/${PKGNAME}
 	install -m644 ${PKGNAME}.desktop $(INSTROOT)/usr/share/applications/${PKGNAME}.desktop
-	install -m0755 src/${LIBEXEC_SCRIPTS} ${LIBEXEC_DIR}
-	install -m0644 ${SERVICE_DATA} ${SERVICE_DIR}
-	install -m0644 ${CONF_DATA} ${CONF_DIR}
-	install -m0644 ${POLICY_DATA} ${POLICY_DIR}
+	install -m0755 src/${LIBEXEC_SCRIPTS} $(INSTROOT)${LIBEXEC_DIR}
+	install -m0644 ${SERVICE_DATA} $(INSTROOT)${SERVICE_DIR}
+	install -m0644 ${CONF_DATA} $(INSTROOT)${CONF_DIR}
+	install -m0644 ${POLICY_DATA} $(INSTROOT)${POLICY_DIR}
 #	ln -sf consolehelper $(INSTROOT)/usr/bin/${PKGNAME}
 	for d in $(SUBDIRS); do \
 	(cd $$d; $(MAKE) INSTROOT=$(INSTROOT) MANDIR=$(MANDIR) install) \

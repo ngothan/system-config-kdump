@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.fedoraproject.systemconfig.kdump.mechanism
-Exec=/usr/local/libexec/system-config-kdump-backend.py
+Exec=/usr/share/system-config-kdump/system-config-kdump-backend.py
 User=root
