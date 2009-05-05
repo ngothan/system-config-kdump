@@ -23,7 +23,6 @@ import gtk
 import gobject
 import gtk.glade
 from gtk.gdk import keyval_name
-from rhpl.executil import gtkExecWithCaptureStatus
 
 import sys, traceback
 import os
@@ -60,7 +59,6 @@ except ImportError:
         import slip.dbus.service
     sys.path = OLDSYSPATH
 
-#system_bus = dbus.SystemBus ()
 
 from slip.dbus import polkit
 
@@ -166,12 +164,10 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
 tab 2 target setup
 tab 3 initrd selection
 localizations
-using rhpl
 XEN support - need change in grubby
-help
 """
 
-class progressWindow(gtk.Window):
+class ProgressWindow(gtk.Window):
     def __init__(self, title, label):
         gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
         self.set_deletable(False)
@@ -187,8 +183,8 @@ class progressWindow(gtk.Window):
         self.label.show()
 
         vbox = gtk.VBox()
-        vbox.set_spacing(10);
-        vbox.set_border_width(10);
+        vbox.set_spacing(10)
+        vbox.set_border_width(10)
         vbox.show()
 
         vbox.pack_start(self.label)
@@ -276,7 +272,7 @@ class DBusProxy (object):
         """
         send_string = chkconfig_status
         if service_op:
-             send_string += ";" + service_op
+            send_string += ";" + service_op
         return self.dbus_object.handledumpservice (send_string, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
 
@@ -472,6 +468,8 @@ class MainWindow:
         self.orig_settings = Settings()
         self.my_settings = Settings()
 
+        self.xen_kdump_kernel = "kernel"
+        self.xen_kernel = False
         #                  fsType, partition
         self.partitions = [(None, "file:///")]
         self.raw_devices = []
@@ -636,7 +634,6 @@ class MainWindow:
         self.core_collector_entry.connect("key-press-event", self.catch_enter, self.collector_entry_changed)
         self.default_action_combobox.connect("changed", self.set_default_action)
 
-        self.tooltips = gtk.Tooltips()
 
         # check architecture
         if self.arch in UNSUPPORTED_ARCHES:
@@ -657,7 +654,6 @@ class MainWindow:
 
 
         # Check for a xen kernel, we do things a bit different w/xen
-        self.xen_kernel = False
         if os.access("/proc/xen", os.R_OK):
             self.xen_kernel = True
 
@@ -694,7 +690,6 @@ class MainWindow:
 
         # i686 xen requires kernel-PAE for kdump if any memory
         # is mapped above 4GB
-        self.xen_kdump_kernel = "kernel"
         if self.arch == "i686" and self.xen_kernel:
             for line in io_mem:
                 if line.find("System RAM") != -1:
@@ -856,7 +851,7 @@ class MainWindow:
                                % kernel_kdump_note, _("system-config-kdump: Need reboot"))
 
         if not TESTING:
-            window = progressWindow("Applying configuration","")
+            window = ProgressWindow("Applying configuration","")
             window.set_transient_for(self.toplevel)
             window.show()
             if DEBUG:
@@ -866,6 +861,7 @@ class MainWindow:
                 window.stop()
                 #error writing dump config
                 window.hide()
+                self.show_error_message(_("Error writing kdump configuration"), _("system-config-kdump: Error write kdump configuration"))
                 return
 
             if DEBUG:
@@ -875,6 +871,7 @@ class MainWindow:
                 window.stop()
                 #error write bootloader
                 window.hide()
+                self.show_error_message(_("Error writing bootloader configuration"), _("system-config-kdump: Error write bootloader configuration"))
                 return
 
             if DEBUG:
@@ -884,6 +881,7 @@ class MainWindow:
                 window.stop()
                 #error write kdump service
                 window.hide()
+                self.show_error_message(_("Error handling kdump services"), _("system-config-kdump: Error handle services"))
                 return
 
             else:
@@ -1044,7 +1042,10 @@ class MainWindow:
         if self.my_settings.default_action is not ACTION_DEFAULT:
             config_string += "default %s\n" % self.my_settings.default_action
 
-        written = self.dbus_object.writedumpconfig(config_string)
+        try:
+            written = self.dbus_object.writedumpconfig(config_string)
+        except dbus.exceptions.DBusException:
+            return 0
 
         if DEBUG:
             print "written kdump config:"
@@ -1080,10 +1081,14 @@ class MainWindow:
             config_string += "--remove-args=" + self.my_settings.orig_commandline
             if DEBUG:
                 print "  Removing original args '%s'" % (self.my_settings.orig_commandline)
-
-            check = self.dbus_object.writebootconfig(config_string)
-            if DEBUG:
-                print "  check: " + check
+            try:
+                check = self.dbus_object.writebootconfig(config_string)
+                if DEBUG:
+                    print "  check: " + check
+                if check.startswith(EXCEPTION_MARK):
+                    return False
+            except dbus.exceptions.DBusException:
+                return False
 
         # and now set new kernel cmd line
             config_string = "--update-kernel=" + self.my_settings.kernel +";"
@@ -1094,9 +1099,15 @@ class MainWindow:
             if DEBUG:
                 print "  Setting args to '%s'" % (self.my_settings.commandline)
 
-            check = self.dbus_object.writebootconfig(config_string)
-            if DEBUG:
-                print "  check: " + check
+            try:
+                check = self.dbus_object.writebootconfig(config_string)
+                if DEBUG:
+                    print "  check: " + check
+                if check.startswith(EXCEPTION_MARK):
+                    return False
+            except dbus.exceptions.DBusException:
+                return False
+
 
         else:
         # kdump is desabled, so only remove crashkernel
@@ -1104,9 +1115,14 @@ class MainWindow:
             if DEBUG:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
 
-            check = self.dbus_object.writebootconfig(config_string)
-            if DEBUG:
-                print "  check: " + check
+            try:
+                check = self.dbus_object.writebootconfig(config_string)
+                if DEBUG:
+                    print "  check: " + check
+                if check.startswith(EXCEPTION_MARK):
+                    return False
+            except dbus.exceptions.DBusException:
+                return False
 
         return True
 
@@ -1730,20 +1746,24 @@ class MainWindow:
         Start or stop kdump service. Enable or disable it.
         """
         window.set_label("Handling services")
-        if self.my_settings.kdump_enabled:
-            chkconfig_status = "on"
-            if self.kdump_mem_current_label.get_text().split()[0] > "0":
-                service_op = "restart"
+        try:
+            if self.my_settings.kdump_enabled:
+                chkconfig_status = "on"
+                if self.kdump_mem_current_label.get_text().split()[0] > "0":
+                    service_op = "restart"
+                else:
+                    service_op = None
             else:
-                service_op = None
-        else:
-            chkconfig_status = "off"
-            if self.kdump_mem_current_label.get_text().split()[0] > "0":
-                service_op = "stop"
-            else:
-                service_op = None
+                chkconfig_status = "off"
+                if self.kdump_mem_current_label.get_text().split()[0] > "0":
+                    service_op = "stop"
+                else:
+                    service_op = None
 
-        print self.dbus_object.handlekdumpservice(chkconfig_status, service_op)
+            if self.dbus_object.handlekdumpservice(chkconfig_status, service_op).startswith(EXCEPTION_MARK):
+                return False
+        except dbus.exceptions.DBusException:
+            return False
         return True
         
 
@@ -1766,15 +1786,14 @@ if __name__ == "__main__":
         win.run()
     except:
         print "Unexpected error:", sys.exc_info()[0]
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
+        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
                                 gtk.BUTTONS_OK, "%s" %traceback.format_exc())
 
-        dlg.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
-        dlg.set_modal(True)
-        dlg.set_keep_above(True)
-        title = _("Error executing system-config-kdump")
-        dlg.set_title(title)
-        dlg.run()
-        dlg.destroy()
+        dialog.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+        dialog.set_modal(True)
+        dialog.set_keep_above(True)
+        dialog.set_title(_("Error executing system-config-kdump"))
+        dialog.run()
+        dialog.destroy()
 
 

@@ -144,15 +144,16 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='s', out_signature='s')
     def handledumpservice (self, config_string):
         """ Turn on/off kdump initscript. Start/stop kdump service """
+        check = ""
         arguments = config_string.split(";")
         if len(arguments) > 1:
-            self.call("/sbin/chkconfig", "kdump", arguments[0])
-            self.call("/sbin/service", "kdump", arguments[1])
+            check += self.call("/sbin/chkconfig", "kdump", arguments[0])
+            check += self.call("/sbin/service", "kdump", arguments[1])
         else:
-            self.call("/sbin/chkconfig", "kdump", arguments[0])
+            check += self.call("/sbin/chkconfig", "kdump", arguments[0])
         if self.bootloader == 'yaboot':
-            self.call('/sbin/ybin')
-        return ""
+            check +=self.call('/sbin/ybin')
+        return check
  
     def gtkcall (self, *args):
         """
@@ -160,22 +161,17 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         """
         (status, output) = gtkExecWithCaptureStatus(args[0], args, catchfd = (1, 2))
         if status:
-            output = _("Command '%s' failed:\n%s") %  (" ".join (args), output)
-            raise RuntimeError(output)
-        else:
-            return output
+            output = EXCEPTION_MARK + _("Command '%s' failed:\n%s") %  (" ".join (args), output)
+        return output
 
     def call(self, *args):
         """
         Call command args[0] with args arguments
         """
-        print args
         (output, status) = execWithCaptureStatus(args[0], args, catchfd = (1, 2))
         if status:
-            output = _("Command '%s' failed:\n%s") %  (" ".join (args), output)
-            raise RuntimeError(output)
-        else:
-            return output
+            output = EXCEPTION_MARK + _("Command '%s' failed:\n%s") %  (" ".join (args), output)
+        return output
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
