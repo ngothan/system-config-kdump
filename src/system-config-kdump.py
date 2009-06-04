@@ -1784,6 +1784,8 @@ if __name__ == "__main__":
         win = MainWindow()
         win.setup_screen()
         win.run()
+    except SystemExit:
+        pass
     except:
         print "Unexpected error:", sys.exc_info()[0]
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
