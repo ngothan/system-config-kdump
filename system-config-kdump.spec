@@ -18,6 +18,7 @@ Requires: rhpl >= 0.185-1
 Requires: kexec-tools
 Requires: bitmap-fonts
 Requires: yelp
+Requires: python-slip-dbus
 Requires(pre): gtk2 >= 2.8.20
 Requires(pre): hicolor-icon-theme
 
