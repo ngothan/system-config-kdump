@@ -34,7 +34,8 @@ except ImportError:
         import slip.dbus.service
     sys.path = _oldsyspath
 
-from rhpl.executil import gtkExecWithCaptureStatus, execWithCaptureStatus
+#from rhpl.executil import gtkExecWithCaptureStatus, execWithCaptureStatus
+import subprocess
 
 
 EXCEPTION_MARK = "EXCEPTION"
@@ -54,7 +55,6 @@ BOOTLOADERS = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
 ##
 ## I18N
 ##
-from rhpl.translate import _, N_
 import rhpl.translate as translate
 
 
@@ -69,7 +69,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='', out_signature='s')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
-        return self.call(GRUBBY_CMD, "--default-kernel")
+        return self.gtkcall(GRUBBY_CMD, "--default-kernel")
 
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getcmdline")
@@ -77,7 +77,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='s', out_signature='s')
     def getcmdline (self, kernel):
         """ Get command line arguments for kernel from grubby """
-        for line in self.call(GRUBBY_CMD, "--info", kernel).splitlines():
+        for line in self.gtkcall(GRUBBY_CMD, "--info", kernel).splitlines():
             (name, value) = line.strip().split("=", 1)
             if name == "args":
                 return value.strip('"')
@@ -88,7 +88,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='s', out_signature='s')
     def getxencmdline (self, kernel):
         """ Get command line arguments for xen kernel from grubby """
-        for line in self.call(GRUBBY_CMD, "--info", kernel).splitlines:
+        for line in self.gtkcall(GRUBBY_CMD, "--info", kernel).splitlines:
             (name, value) = line.strip().split("=", 1)
             if name == "module":
                 return value.strip('"')
@@ -99,7 +99,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature='', out_signature='s')
     def getallkernels (self):
         """ Get all kernel names from grubby """
-        return self.call(GRUBBY_CMD,"--info", "ALL")
+        return self.gtkcall(GRUBBY_CMD,"--info", "ALL")
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writedumpconfig")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
@@ -125,7 +125,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         Write bootloader configuration.
         in config_string are arguments for grubby divided by `;'
         """
-        return self.call(*([GRUBBY_CMD] + ["--" + self.bootloader]  + config_string.split(";")))
+        return self.gtkcall(*([GRUBBY_CMD] + ["--" + self.bootloader]  + config_string.split(";")))
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
@@ -147,31 +147,39 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         check = ""
         arguments = config_string.split(";")
         if len(arguments) > 1:
-            check += self.call("/sbin/chkconfig", "kdump", arguments[0])
-            check += self.call("/sbin/service", "kdump", arguments[1])
+            check += self.gtkcall("/sbin/chkconfig", "kdump", arguments[0])
+            check += self.gtkcall("/sbin/service", "kdump", arguments[1])
         else:
-            check += self.call("/sbin/chkconfig", "kdump", arguments[0])
+            check += self.gtkcall("/sbin/chkconfig", "kdump", arguments[0])
         if self.bootloader == 'yaboot':
-            check +=self.call('/sbin/ybin')
+            check +=self.gtkcall('/sbin/ybin')
         return check
  
     def gtkcall (self, *args):
         """
         Call command args[0] with args arguments
         """
-        (status, output) = gtkExecWithCaptureStatus(args[0], args, catchfd = (1, 2))
-        if status:
-            output = EXCEPTION_MARK + _("Command '%s' failed:\n%s") %  (" ".join (args), output)
-        return output
+#        (status, output) = gtkExecWithCaptureStatus(args[0], args, catchfd = (1, 2))
+        #subprocess.Popen(args)
+        stdout, stderr = subprocess.Popen(args, stdout=subprocess.PIPE).communicate()
+        print "subprocess call:"
+        print args 
+        if stdout:
+            print "-> stdout = " + stdout
+        if stderr:
+            print "-> stderr = " + stderr
+#        if status:
+#            output = EXCEPTION_MARK + ("Command '%s' failed:\n") % (" ".join (args)) + output
+        return stdout
 
-    def call(self, *args):
-        """
-        Call command args[0] with args arguments
-        """
-        (output, status) = execWithCaptureStatus(args[0], args, catchfd = (1, 2))
-        if status:
-            output = EXCEPTION_MARK + _("Command '%s' failed:\n%s") %  (" ".join (args), output)
-        return output
+#    def call(self, *args):
+#        """
+#        Call command args[0] with args arguments
+#        """
+#        (output, status) = execWithCaptureStatus(args[0], args, catchfd = (1, 2))
+#        if status:
+#            output = EXCEPTION_MARK + ("Command '%s' failed:\n") % (" ".join (args)) + output
+#        return output
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)

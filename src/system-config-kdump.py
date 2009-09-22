@@ -65,11 +65,12 @@ from slip.dbus import polkit
 ##
 ## I18N
 ##
-from rhpl.translate import _, N_
-import rhpl.translate as translate
+
+import gettext
 DOMAIN = "system-config-kdump"
-translate.textdomain (DOMAIN)
 gtk.glade.bindtextdomain(DOMAIN)
+_ = lambda x: gettext.ldgettext(DOMAIN, x)
+N_ = lambda x: x
 
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
@@ -796,9 +797,8 @@ class MainWindow:
         When user clicked apply. Do checks. Save settings.
         """
         if self.my_settings.target_type not in (TYPE_RAW, TYPE_LOCAL) and not self.my_settings.path:
-            retc = self.yes_no_dialog(_("Path cannot be empty for '%s' locations. "
-                                    "Reset path to default ('%s')?."
-                                    % (self.my_settings.target_type, PATH_DEFAULT)),
+            retc = self.yes_no_dialog(_("Path cannot be empty for '%s' locations. ") % self.my_settings.target_type
+                                    +_("Reset path to default ('%s')?.") %  PATH_DEFAULT,
                                    _("system-config-kdump: Empty path"))
             if retc == True:
                 self.set_path(PATH_DEFAULT)
@@ -838,10 +838,11 @@ class MainWindow:
         if self.xen_kernel and self.my_settings.kdump_enabled:
             self.show_message(_("WARNING: xen kdump support requires a "
                                "non-xen %s RPM to perform actual crash "
-                               "dump capture. Please be sure you have "
+                               "dump capture.") % self.xen_kdump_kernel
+                               +_("Please be sure you have "
                                "the non-xen %s RPM of the same version "
-                               "as your xen kernel installed.") %
-                               (self.xen_kdump_kernel, self.xen_kdump_kernel), _("system-config-kdump: Need non-xen kernel"))
+                               "as your xen kernel installed.") % self.xen_kdump_kernel,
+                               _("system-config-kdump: Need non-xen kernel"))
 
         if self.my_settings.kdump_enabled and self.my_settings.kdump_mem != self.orig_settings.kdump_mem:
             self.show_message(_("Changing Kdump settings requires rebooting "
@@ -1530,7 +1531,7 @@ class MainWindow:
             self.check_settings()
             return True
         else:
-            self.show_error_message(_("Local file system partition with name %s and type %s wasn't found") % (part_name, part_type),
+            self.show_error_message(_("Local file system partition with name %s") % part_name + _(" and type %s wasn't found") %part_type,
                                       _("system-config-kdump: Local partition error"))
             self.partition_combobox.set_active(-1)
             self.my_settings.local_partition = None
@@ -1764,6 +1765,8 @@ class MainWindow:
                 return False
         except dbus.exceptions.DBusException:
             return False
+        while gtk.events_pending():
+            gtk.main_iteration(False)
         return True
         
 

@@ -24,7 +24,7 @@ SERVICE_DATA = org.fedoraproject.systemconfig.kdump.mechanism.service
 CONF_DIR  = ${ETC}/dbus-1/system.d
 CONF_DATA = org.fedoraproject.systemconfig.kdump.mechanism.conf
 
-POLICY_DIR  = ${DATADIR}/PolicyKit/policy
+POLICY_DIR  = ${DATADIR}/polkit-1/actions
 POLICY_DATA = org.fedoraproject.systemconfig.kdump.policy
 
 LIBEXEC_DIR     = ${PKGDATADIR}
