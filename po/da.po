@@ -1,15 +1,15 @@
 # Danish translation of system-config-kdump
 # This file is distributed under the same license as the system-config-kdump package.
-# Copyright (C) 2009 system-config-kdump.
+# Copyright (C) system-config-kdump
 # Keld Simonsen <keld@rap.dk>, 2006, 2007.
 # Kris Thomsen <lakristho@gmail.com>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: da\n"
+"Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date: 2007-05-15 16:09+0200\n"
+"PO-Revision-Date: 2009-09-28 00:24+0200\n"
 "Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -30,13 +30,13 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump er en ny mekanisme for kernedump ved nedbrud. I tilfælde af et "
-"systemnedbrud kan en kerne-fil blive opfanget ved hjælp af kdump, som kører i "
+"Kdump er en ny mekanisme for dumpning ved kernenedbrud. I tilfælde af et "
+"systemnedbrud kan en core-fil blive opfanget ved hjælp af kdump, som kører i "
 "sammenhæng med en nyopstartet kerne, hvilket gør det langt mere pålideligt "
 "end metoder for opfangning der kører i sammenhæng med den nedbrudte kerne. "
-"At kunne opfange en kerne-fil kan være uvurderligt til at hjælpe til med at "
-"bestemme hovedårsagen til et systemnedbrud. Bemærk at kdump kræver "
-"reservering af en del af systemhukommelsen som vil være utilgængelig for "
+"At kunne opfange en core-fil kan være uvurderligt til at hjælpe til med at "
+"bestemme den grundlæggende årsag til et systemnedbrud. Bemærk at kdump kræver "
+"reservering af en del af systemhukommelsen som vil være utilgængelig til "
 "anden brug."
 
 #: ../src/system-config-kdump.py:84
@@ -64,7 +64,7 @@ msgstr "Konfigurér kdump/kexec"
 
 #: ../src/system-config-kdump.py:135
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr "Beklager, denne arkitektur understøtter ikke kdump i øjeblikket"
+msgstr "Beklager, denne arkitektur understøtter for nærværende ikke kdump"
 
 #: ../src/system-config-kdump.py:146
 msgid "Failed to detect total system memory"
@@ -72,7 +72,7 @@ msgstr "Kunne ikke finde total systemhukommelse"
 
 #: ../src/system-config-kdump.py:157
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Desværre, ia64 xen-kerner understøtter ikke kdump i øjeblikket."
+msgstr "Beklager, ia64 xen-kerner understøtter ikke kdump i øjeblikket."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -81,12 +81,12 @@ msgstr "%s"
 
 #: ../src/system-config-kdump.py:225
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "Dette system har ikke nok hukommelse for at kdump er brugbart"
+msgstr "Dette system har ikke nok hukommelse til at kdump er brugbart"
 
 #: ../src/system-config-kdump.py:301
 #, python-format
 msgid "Path cannot be empty for '%s' locations. Reset path to default ('%s')?."
-msgstr "Sti kan ikke være tom for \"%s\"-steder. Nulstil sti til standard (\"%s\")?"
+msgstr "Sti kan ikke være tom for \"%s\"-steder. Nulstil sti til standard (\"%s\")?."
 
 #: ../src/system-config-kdump.py:311
 #, python-format
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Bemærk at %s-arkitekturen ikke tilbyder en omplacerbar kerne i øjeblikket, "
+"Bemærk at %s-arkitekturen ikke tilbyder en relokerbar kerne i øjeblikket, "
 "og derfor kræver at en separat kerne-kdump-pakke bliver installeret for at "
 "kdump kan fungere. Denne kan installeres via \"yum install kernel-kdump\" hvis "
 "du ønsker det.\n"
@@ -114,9 +114,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
-"ADVARSEL: xen kdump understøttelse behøver en ikke-xen %s RPM til at udføre "
-"opfangning af det aktuelle dump i systemnedbrud. Vær sikker på at du har en ikke-xen %s "
-"af samme version som din xen-kerne installeret."
+"ADVARSEL: xen-kdump-understøttelse kræver en ikke-xen %s RPM til at udføre den aktuelle "
+"nedbrudsdump-opsamling. Vær sikker på at du har en ikke-xen %s RPM af den samme "
+"version som den installerede xen-kerne."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
@@ -125,8 +125,8 @@ msgid ""
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
-"Ændring af Kdump-indstillinger kræver genstart af systemet for at genallokere "
-"hukommelse rigtigt. %s Du skal genstarte systemet for at de nye "
+"Ændring af Kdump-indstillinger kræver genstart af systemet for at reallokere "
+"hukommelse rigtigt. %sDu skal genstarte systemet for at de nye "
 "indstillinger kan træde i kraft."
 
 #: ../src/system-config-kdump.py:355 system-config-kdump.gladestrings:16
@@ -139,7 +139,7 @@ msgstr "Ny placering"
 
 #: ../src/system-config-kdump.py:377
 msgid "Select a location type:"
-msgstr "Vælg en type for placering:"
+msgstr "Vælg en placeringstype:"
 
 #: ../src/system-config-kdump.py:392
 msgid "Enter location:"
@@ -150,39 +150,39 @@ msgid ""
 "SSH locations must be of the form 'user@host'. A path can be specified in "
 "the main window."
 msgstr ""
-"SSH-steder skal være af formatet \"bruger@vært\". En sti kan angives i "
+"SSH-placeringer skal være på formen 'bruger@vært'. En sti kan angives i "
 "hovedvinduet."
 
 #: ../src/system-config-kdump.py:466
 msgid "NFS locations must be of the form 'host:/path'"
-msgstr "NFS-steder skal være af formatet \"vært:/sti\""
+msgstr "NFS-placeringer skal være på formen \"vært:/sti\""
 
 #: ../src/system-config-kdump.py:473 ../src/system-config-kdump.py:478
 msgid "For raw locations you must specify a valid device node."
-msgstr "For rå placeringer skal du angive en gyldig enheds-knude."
+msgstr "For råplaceringer skal du angive en gyldig enheds-knude."
 
 #: ../src/system-config-kdump.py:485
 #, python-format
 msgid "Support for filesystem type '%s' is not present on this system"
-msgstr "Understøttelse af filsystemstypen \"%s\" er ikke til stede på dette system"
+msgstr "Understøttelse af filsystemstype \"%s\" er ikke til stede på dette system"
 
 #: ../src/system-config-kdump.py:500
 #, python-format
 msgid "Failed to stat device node '%s'"
-msgstr "Kunne ikke få status på enheds-knude \"%s\""
+msgstr "Kunne ikke vise status for enheds-knude \"%s\""
 
 #: ../src/system-config-kdump.py:505
 #, python-format
 msgid "'%s' locations must specify a valid device node."
-msgstr "\"%s\"-steder skal angive en gyldig enheds-knude."
+msgstr "\"%s\"-placeringer skal angive en gyldig enheds-knude."
 
 #: ../src/system-config-kdump.py:654
 msgid "No bootloader config file found, aborting configuration!"
-msgstr "Ingen konfigurationsfil til opstartsindlæser fundet, afbryder konfiguration!"
+msgstr "Ingen opstartsindlæser config-fil fundet, afbryder konfiguration!"
 
 #: ../src/system-config-kdump.py:749
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr "Kerne-indsamler skal begynde med \"makedumpfile\""
+msgstr "Core-indsamler skal begynde med 'makedumpfile'"
 
 #: ../src/system-config-kdump.py:839
 msgid "You must be root to run this application."
@@ -214,7 +214,7 @@ msgstr "Sti:"
 
 #: system-config-kdump.gladestrings:14
 msgid "Core Collector:"
-msgstr "Kerne-indsamler:"
+msgstr "Core-indsamler:"
 
 #: system-config-kdump.gladestrings:15
 msgid "Default Action:"
