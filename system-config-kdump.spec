@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
@@ -14,7 +14,6 @@ BuildRequires: intltool, gettext, gnome-doc-utils, docbook-dtds, rarian-compat, 
 Requires: pygtk2 >= 2.8.6
 Requires: pygtk2-libglade
 Requires: usermode >= 1.36
-Requires: rhpl >= 0.185-1
 Requires: kexec-tools
 Requires: bitmap-fonts
 Requires: yelp
@@ -70,8 +69,7 @@ fi
 
 %{_sysconfdir}/dbus-1/system.d/org.fedoraproject.systemconfig.kdump.mechanism.conf
 %{_datadir}/dbus-1/system-services/org.fedoraproject.systemconfig.kdump.mechanism.service
-%{_datadir}/PolicyKit/policy/org.fedoraproject.systemconfig.kdump.policy
-
+%{_datadir}/polkit-1/actions/org.fedoraproject.systemconfig.kdump.policy
 
 %{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
 
@@ -81,6 +79,9 @@ fi
 
 
 %changelog
+* Wed Sep 30 2009 Roman Rakus <rrakus@redhat.com> 2.0.1-1
+- updated to polkit1
+
 * Tue May 05 2009 Roman Rakus <rrakus@redhat.com> 2.0.0-1
 - Reworked to satisfy system config tools cleanup
 

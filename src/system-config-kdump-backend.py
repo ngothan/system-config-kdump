@@ -7,34 +7,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 import os
-try:
-    # try to import the module installed in the system
-    import slip.dbus.service
-except ImportError:
-    # try to find the module in the unpacked source tree
-    import sys
-    import os.path
-    import import_marker
-
-    # try to find the slip.dbus module
-
-    _modfile = import_marker.__file__
-    _path = os.path.dirname (_modfile)
-    _found = False
-    _oldsyspath = sys.path
-    while not _found and _path and _path != "/":
-        _path = os.path.abspath (os.path.join (path, os.path.pardir))
-        sys.path = _oldsyspath + [_path]
-        try:
-            import slip.dbus.service
-            _found = True
-        except ImportError:
-            pass
-    if not _found:
-        import slip.dbus.service
-    sys.path = _oldsyspath
-
-#from rhpl.executil import gtkExecWithCaptureStatus, execWithCaptureStatus
+import slip.dbus.service
 import subprocess
 
 

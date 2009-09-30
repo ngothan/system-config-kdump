@@ -32,34 +32,7 @@ import os
 ## dbus and polkit
 ##
 import dbus
-
-try:
-    # try to import the module installed in the system
-    import slip.dbus.service
-except ImportError:
-    # try to find the module in the unpacked source tree
-    import os.path
-    import import_marker
-
-    # try to find the slip.dbus module
-
-    MODFILE = import_marker.__file__
-    PATH = os.path.dirname (MODFILE)
-    FOUND = False
-    OLDSYSPATH = sys.path
-    while not FOUND and PATH and PATH != "/":
-        PATH = os.path.abspath (os.path.join (PATH, os.path.pardir))
-        sys.path = OLDSYSPATH + [PATH]
-        try:
-            import slip.dbus.service
-            FOUND = True
-        except ImportError:
-            pass
-    if not FOUND:
-        import slip.dbus.service
-    sys.path = OLDSYSPATH
-
-
+import slip.dbus.service
 from slip.dbus import polkit
 
 ##

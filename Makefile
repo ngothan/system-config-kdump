@@ -101,6 +101,7 @@ selinux-module:
 	semodule -i local-system-config.pp
 
 local: clean
+	@git log > ChangeLog
 	@rm -rf ${PKGNAME}-$(VERSION).tar.bz2
 	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
 	@dir=$$PWD; cd /tmp; cp -a $$dir ${PKGNAME}
@@ -114,6 +115,7 @@ clean: doc-clean
 	@rm -fv src/*.pyc
 	@rm -fv po/*mo po/*~ po/.depend
 	@rm -fv ${PKGNAME}.desktop
+	@rm -fv ChangeLog
 
 srpm:
 	@echo Creating src.rpm
