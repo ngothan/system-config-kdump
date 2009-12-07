@@ -106,6 +106,7 @@ local: clean
 	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
 	@dir=$$PWD; cd /tmp; cp -a $$dir ${PKGNAME}
 	@mv /tmp/${PKGNAME} /tmp/${PKGNAME}-$(VERSION)
+	@rm -rf /tmp/${PKGNAME}-${VERSION}/.git
 	@dir=$$PWD; cd /tmp; tar --bzip2 -cSpf $$dir/${PKGNAME}-$(VERSION).tar.bz2 ${PKGNAME}-$(VERSION)
 	@rm -rf /tmp/${PKGNAME}-$(VERSION)	
 	@echo "The archive is in ${PKGNAME}-$(VERSION).tar.bz2"
