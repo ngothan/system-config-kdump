@@ -1402,8 +1402,8 @@ class MainWindow:
         """
         lines = self.dbus_object.getallkernels().split("\n")
         for line in lines[:-1]:
-            (name, value) = line.strip().split("=", 1)
-            if name == "kernel":
+            if line.startswith("kernel="):
+                (name, value) = line.strip().split("=", 1)
                 text = value.strip('"')
                 if self.default_kernel.find(text) is not -1:
                     text = text + " " + TAG_DEFAULT
