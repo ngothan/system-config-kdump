@@ -59,7 +59,7 @@
                 <para>In <xref linkend="system-config-kdump-target"/> you can set up target settings of kdump. You can save kernel dump to local disk and chosen directory. Or send it via SSH or NFS to server</para>
             </listitem>
             <listitem>
-                <para>In <xref linkend="system-config-kdump-filtering"/> you can set up filternig level of kdump.</para>
+                <para>In <xref linkend="system-config-kdump-filtering"/> you can set up filtering level of kdump.</para>
             </listitem>
             <listitem>
                 <para>In <xref linkend="system-config-kdump-expert"/> you can choose kernel, set up its command line arguments, you can choose default action and confgure core collector.</para>
