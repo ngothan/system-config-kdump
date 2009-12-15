@@ -25,11 +25,6 @@ BOOTLOADERS = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
                 "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
 
-##
-## I18N
-##
-import rhpl.translate as translate
-
 
 class SystemConfigKdumpObject(slip.dbus.service.Object):
     def __init__ (self, *p, **k):
