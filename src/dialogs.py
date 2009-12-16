@@ -16,7 +16,7 @@ def show_error_message(text, title, parent = None):
     dlg.destroy()
     return False
 
-def show_message(self, text, title, msgtype=None, parent = None):
+def show_message(text, title, msgtype=None, parent = None):
     """
     Show up gtk information message.
     Text is message text.
@@ -34,7 +34,7 @@ def show_message(self, text, title, msgtype=None, parent = None):
     dlg.run()
     dlg.destroy()
 
-def yes_no_dialog(self, text, title, parent = None):
+def yes_no_dialog(text, title, parent = None):
     """
     Show up gtk message with yes and no buttons.
     Text is message text.

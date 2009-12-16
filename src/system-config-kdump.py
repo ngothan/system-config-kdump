@@ -20,7 +20,6 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 import gtk
-import gobject
 import gtk.glade
 from gtk.gdk import keyval_name
 
@@ -30,6 +29,9 @@ import os
 
 # message, error and yes no dialogs
 import dialogs
+
+# progress window
+from progress import ProgressWindow
 
 ##
 ## dbus and polkit
@@ -143,52 +145,6 @@ tab 3 initrd selection
 localizations
 XEN support - need change in grubby
 """
-
-class ProgressWindow(gtk.Window):
-    def __init__(self, title, label):
-        gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
-        self.set_deletable(False)
-        self.set_resizable(False)
-        self.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
-        self.set_modal(True)
-
-        self.set_title(title)
-        self.progress = gtk.ProgressBar()
-        self.progress.show()
-
-        self.label = gtk.Label(label)
-        self.label.show()
-
-        vbox = gtk.VBox()
-        vbox.set_spacing(10)
-        vbox.set_border_width(10)
-        vbox.show()
-
-        vbox.pack_start(self.label)
-        vbox.pack_start(self.progress)
-
-        self.add(vbox)
-
-    def set_label(self, label):
-        self.label.set_text(label)
-
-    def start(self):
-        self.timer = gobject.timeout_add(100, lambda progress:
-            progress.pulse() or True, self.progress)
-
-    def stop(self):
-        if self.timer:
-            gobject.source_remove(self.timer)
-            self.timer = None
-
-    def show(self):
-        self.start()
-        gtk.Window.show(self)
-
-    def hide(self):
-        self.stop()
-        gtk.Window.hide(self)
-
 
 # all needed for Python-slip, PoilcyKit and dbus
 class DBusProxy (object):
@@ -618,7 +574,8 @@ class MainWindow:
         if self.arch in UNSUPPORTED_ARCHES:
             dialogs.show_error_message(_("Sorry, this architecture does not "
                 "currently support kdump"),
-                _("system-config-kdump: kdump not supported"), self.toplevel)
+                _("system-config-kdump: kdump not supported"),
+                parent = self.toplevel)
             sys.exit(1)
 
         # get total memory of system
@@ -630,7 +587,8 @@ class MainWindow:
         if not total_mem:
             dialogs.show_error_message(
                 _("Failed to detect total system memory"),
-                _("system-config-kdump: Memory error"), self.toplevel)
+                _("system-config-kdump: Memory error"),
+                parent = self.toplevel)
             sys.exit(1)
 
 
@@ -641,7 +599,8 @@ class MainWindow:
         if self.xen_kernel and self.arch == 'ia64':
             dialogs.show_error_message(
                 _("Sorry, ia64 xen kernels do not support kdump at this time."),
-                _("system-config-kdump: kdump not supported"), self.toplevel)
+                _("system-config-kdump: kdump not supported"),
+                parent = self.toplevel)
             sys.exit(1)
 
         # Check to see if kdump memory is already reserved
@@ -720,7 +679,8 @@ class MainWindow:
         if upper_bound < lower_bound:
             dialogs.show_error_message(_("This system does not have "
                 "enough memory for kdump to be viable"),
-                _("system-config-kdump: Not enough memory"), self.toplevel)
+                _("system-config-kdump: Not enough memory"),
+                parent = self.toplevel)
             sys.exit(1)
 
         # Set spinner to lower_bound unless already set on kernel command line
@@ -782,7 +742,8 @@ class MainWindow:
             retc = dialogs.yes_no_dialog(_("Path cannot be empty for '%s'"
                 " locations. ") % self.my_settings.target_type
                 +_("Reset path to default ('%s')?.") %  PATH_DEFAULT,
-                _("system-config-kdump: Empty path"), self.toplevel)
+                _("system-config-kdump: Empty path"),
+                parent = self.toplevel)
             if retc == True:
                 self.set_path(PATH_DEFAULT)
             else:
@@ -790,26 +751,30 @@ class MainWindow:
 
         if self.my_settings.target_type in (TYPE_NFS, TYPE_SSH) and not self.my_settings.server_name:
             dialogs.show_error_message(_("You must specify server. "),
-                _("system-config-kdump: Server name not set"), self.toplevel)
+                _("system-config-kdump: Server name not set"),
+                parent = self.toplevel)
             return
 
         if self.my_settings.target_type in (TYPE_SSH) and not self.my_settings.user_name:
             dialogs.show_error_message(_("You must specify user name. "),
-                _("system-config-kdump: User name not set"), self.toplevel)
+                _("system-config-kdump: User name not set"),
+                parent = self.toplevel)
             return
 
         if (self.my_settings.target_type == TYPE_RAW) and\
         (self.device_combobox.get_active() < 0):
             dialogs.show_error_message(
                 _("You must select one of the raw devices"),
-                _("system-config-kdump: Raw device error"), self.toplevel)
+                _("system-config-kdump: Raw device error"),
+                parent = self.toplevel)
             return
 
         if (self.my_settings.target_type == TYPE_LOCAL) and\
         (self.partition_combobox.get_active() < 0):
             dialogs.show_error_message(
                 _("You must select one of the partitions"),
-                _("system-config-kdump: Local partition error"), self.toplevel)
+                _("system-config-kdump: Local partition error"),
+                parent = self.toplevel)
             return
 
 
@@ -831,14 +796,16 @@ class MainWindow:
                 +_("Please be sure you have the non-xen %s RPM of the "
                 "same version as your xen kernel installed.")
                 % self.xen_kdump_kernel,
-                _("system-config-kdump: Need non-xen kernel"), self.toplevel)
+                _("system-config-kdump: Need non-xen kernel"),
+                parent = self.toplevel)
 
         if self.my_settings.kdump_enabled and self.my_settings.kdump_mem != self.orig_settings.kdump_mem:
             dialogs.show_message(_("Changing Kdump settings requires rebooting "
                 "the system to reallocate memory accordingly. %sYou will have "
                 "to reboot the system for the new settings to take effect.")
                 % kernel_kdump_note,
-                _("system-config-kdump: Need reboot"), self.toplevel)
+                _("system-config-kdump: Need reboot"),
+                parent = self.toplevel)
 
         if not TESTING:
             window = ProgressWindow("Applying configuration","")
@@ -854,7 +821,7 @@ class MainWindow:
                 dialogs.show_error_message(
                     _("Error writing kdump configuration"),
                     _("system-config-kdump: Error write kdump configuration"),
-                    self.toplevel)
+                    parent = self.toplevel)
                 return
 
             if DEBUG:
@@ -867,7 +834,8 @@ class MainWindow:
                 dialogs.show_error_message(
                     _("Error writing bootloader configuration"),
                     _("system-config-kdump: Error write bootloader "
-                    "configuration"), self.toplevel)
+                    "configuration"),
+                    parent = self.toplevel)
                 return
 
             if DEBUG:
@@ -879,14 +847,14 @@ class MainWindow:
                 window.hide()
                 dialogs.show_error_message(_("Error handling kdump services"),
                     _("system-config-kdump: Error handle services"),
-                    self.toplevel)
+                    parent = self.toplevel)
                 return
 
             else:
                 window.stop()
                 dialogs.show_message(_("Configurations sucessfully saved"),
                     _("system-config-kdump: Configuration saved"),
-                    self.toplevel)
+                    parent = self.toplevel)
                 window.hide()
                 
         else:
@@ -947,7 +915,7 @@ class MainWindow:
             dialogs.show_error_message(
                 _("Error reading kdump configuration: %s" % reason),
                 _("system-config-kdump: kdump configuration file error"),
-                self.toplevel)
+                parent = self.toplevel)
             return
 
         for line in [l.strip() for l in lines]:
@@ -1057,7 +1025,7 @@ class MainWindow:
             dialogs.show_error_message(
                 _("Error writing kdump configuration: %s" % written),
                 _("system-config-kdump: write kdump configuration file error"),
-                self.toplevel)
+                parent = self.toplevel)
             return 0
         return 1
 
@@ -1199,7 +1167,8 @@ class MainWindow:
         if collector and not collector.startswith("makedumpfile"):
             dialogs.show_error_message(
                 _("Core collector must begin with 'makedumpfile'"),
-                _("system-config-kdump: Bad core collector"), self.toplevel)
+                _("system-config-kdump: Bad core collector"),
+                parent = self.toplevel)
             self.set_core_collector(self.orig_settings.core_collector)
             return False
 
@@ -1465,7 +1434,8 @@ class MainWindow:
         else:
             dialogs.show_error_message(
                 _("Raw device %s wasn't found on this machine" % device_name),
-                _("system-config-kdump: Raw device error"), self.toplevel)
+                _("system-config-kdump: Raw device error"),
+                parent = self.toplevel)
             self.device_combobox.set_active(-1)
             self.my_settings.raw_device = None
             self.check_settings()
@@ -1486,7 +1456,8 @@ class MainWindow:
             dialogs.show_error_message(
                 _("Local file system partition with name %s") % part_name +
                 _(" and type %s wasn't found") %part_type,
-                _("system-config-kdump: Local partition error"), self.toplevel)
+                _("system-config-kdump: Local partition error"),
+                parent = self.toplevel)
             self.partition_combobox.set_active(-1)
             self.my_settings.local_partition = None
             self.check_settings()
