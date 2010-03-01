@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
@@ -15,7 +15,7 @@ Requires: pygtk2 >= 2.8.6
 Requires: pygtk2-libglade
 Requires: usermode >= 1.36
 Requires: kexec-tools
-Requires: bitmap-fonts
+Requires: bitmap-fixed-fonts
 Requires: yelp
 Requires: python-slip-dbus
 Requires(pre): gtk2 >= 2.8.20
@@ -79,6 +79,9 @@ fi
 
 
 %changelog
+* Tue Feb 02 2010 Roman Rakus <rrakus@redhat.com> 2.0.3-1
+- see ChangeLog
+
 * Mon Dec 07 2009 Roman Rakus <rrakus@redhat.com> 2.0.2-1
 - Don't be interested in non linux entries in bootloaders conf
 
