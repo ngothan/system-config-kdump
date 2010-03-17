@@ -1,0 +1,32 @@
+
+module local-system-config 1.0;
+
+require {
+	type unconfined_t;
+	type boot_t;
+	type polkit_t;
+	type system_crond_var_lib_t;
+	type usr_t;
+	type shell_exec_t;
+	type system_dbusd_t;
+	type polkit_auth_exec_t;
+	type etc_t;
+	class capability setuid;
+	class fifo_file getattr;
+	class dir search;
+	class file { write execute read getattr execute_no_trans };
+}
+
+#============= polkit_t ==============
+allow polkit_t polkit_auth_exec_t:file { read execute execute_no_trans };
+allow polkit_t self:capability setuid;
+allow polkit_t system_crond_var_lib_t:file read;
+allow polkit_t unconfined_t:dir search;
+allow polkit_t unconfined_t:file read;
+
+#============= system_dbusd_t ==============
+allow system_dbusd_t boot_t:file write;
+allow system_dbusd_t self:fifo_file getattr;
+allow system_dbusd_t shell_exec_t:file { read execute getattr execute_no_trans };
+allow system_dbusd_t etc_t:file { read write };
+

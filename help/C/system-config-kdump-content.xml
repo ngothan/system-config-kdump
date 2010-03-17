@@ -1,0 +1,262 @@
+<section id="system-config-kdump">
+    <title>Basic Controls</title>
+    <figure float="0" id="disabled-fig">
+        <title>Disabled kdump</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/disabled.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Disabled kdump</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+    <para>
+        After instalation &SYSTEM_CONFIG_KDUMP_TOOL; is kdump disabled. And you cannot change any settings.
+    </para>
+
+    <para>
+        To enable kdump click on <guilabel>Enable</guilabel> button or <menuchoice><guimenu>Options</guimenu><guimenuitem>Enable</guimenuitem></menuchoice>
+    </para>
+
+    <figure float="0" id="enabled-fig">
+        <title>Enabled kdump</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/enabled.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Enabled kdump</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+    <para>
+        To disable kdump click on <guilabel>Disable</guilabel> button or <menuchoice><guimenu>Options</guimenu><guimenuitem>Disable</guimenuitem></menuchoice>
+    </para>
+
+    <para>
+        <guilabel>Apply</guilabel> button is sensitive only if you change any settings. When you click on <guilabel>Apply</guilabel> your settings will be saved. Apply is also in menu <menuchoice><guimenu>File</guimenu><guimenuitem>Apply</guimenuitem></menuchoice>
+    </para>
+
+    <para>
+        At any time, you can click on <guilabel>Reload</guilabel>. This will revert any changes you made. This is also in menu
+    <menuchoice><guimenu>File</guimenu><guimenuitem>Revert</guimenuitem></menuchoice>
+    </para>
+
+    <para>
+        Button <guilabel>Help</guilabel> or menu item <menuchoice><guimenu>Help</guimenu><guimenuitem>Help</guimenuitem></menuchoice> will show help - which are you now reading.
+    </para>
+
+    <para>
+        When kdump is enabled, you can set it up. You have four tabs for settings.
+        <itemizedlist>
+            <listitem>
+                <para>In <xref linkend="system-config-kdump-basic"/> you can set up basic settings of kdump. Amount of kdump memory.</para>
+            </listitem>
+            <listitem>
+                <para>In <xref linkend="system-config-kdump-target"/> you can set up target settings of kdump. You can save kernel dump to local disk and chosen directory. Or send it via SSH or NFS to server</para>
+            </listitem>
+            <listitem>
+                <para>In <xref linkend="system-config-kdump-filtering"/> you can set up filtering level of kdump.</para>
+            </listitem>
+            <listitem>
+                <para>In <xref linkend="system-config-kdump-expert"/> you can choose kernel, set up its command line arguments, you can choose default action and confgure core collector.</para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+
+    <para>
+        Much more settings can be done by hand in your bootloader configuration file (/etc/grub.conf), in kdump configuration file (/etc/kdump.conf). For more information read /etc/kdump.conf.
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="system-config-kdump-basic">
+    <title>Basic Settings</title>
+    
+    <figure float="0" id="basic-fig">
+        <title>Basic Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/basic.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Basic Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Basic Settings</guilabel> you can see these items:
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>Total System Memory</guilabel> &mdash; Shows allover memory in your system.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Current kdump Memory</guilabel> &mdash; Shows actual memory reserved for kdump.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>New kdump Memory</guilabel> &mdash; Shows new memory you wish to reserve for kdump. Beside is spin button allowing you to change this amount.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>Usable Memory</guilabel> &mdash; Shows usable memory of system after applying your changes.
+                </para>
+            </listitem>
+
+        </itemizedlist>
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="system-config-kdump-target">
+    <title>Target Settings</title>
+    
+    <figure float="0" id="target-fig">
+        <title>Target Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/target.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Target Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Target Settings</guilabel> you can choose 3 target types:
+    </para>
+
+    <section id="system-config-kdump-target-local">
+        <title>Local filesystem</title>
+        <para>
+            In order to save vmcore file to local directory, choose <guilabel>Local filesystem</guilabel>.
+        </para>
+        <para>
+            You can enter path to your directory by hand in <guilabel>path</guilabel> entry. Next to this entry is File chooser button, which allows you to browse your directory tree and choose it.
+        </para>
+        <para>
+            Also you can specify/choose partition in <guilabel>Partition</guilabel> combo box.
+        </para>
+    </section>
+
+    <section id="system-config-kdump-target-raw">
+        <title>Raw device</title>
+        <para>
+            Here you can select device where will be vmcore saved. The vmcore will be saved in raw data. This will dd /proc/vmcore into partition.
+        </para>
+    </section>
+
+    <section id="system-config-kdump-target-network">
+        <title>Network</title>
+        <para>
+            You are allowed to save vmcore to NFS mount and/or send it to server via SSH.
+        </para>
+        <para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <guilabel>NFS</guilabel> &mdash; Will mount fs, specified by <guilabel>Server name</guilabel>, and copy /proc/vmcore to /var/crash/%HOST-%DATE/, supports DNS.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <guilabel>SSH</guilabel> &mdash; Will scp /proc/vmcore to user@server:/var/crash/%HOST-%DATE/, supports DNS
+                </para>
+                <para>
+                    NOTE: make sure user has necessary write permissions on server
+                </para>
+            </listitem>
+        </itemizedlist>
+        </para>
+
+    </section>
+
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="system-config-kdump-filtering">
+    <title>Filtering Settings</title>
+    
+    <figure float="0" id="filter-fig">
+        <title>Filtering Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/filter.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                <para>Filtering Settings</para>
+            </textobject>
+        </mediaobject>
+    </figure>
+
+  
+    <para>
+        In <guilabel>Filtering Settings</guilabel> you can set up filtering level by activating appropriate toggle buttons.
+    </para>
+    <para>
+        You can also set up filtering level in <xref linkend="system-config-kdump-expert"/>
+    </para>
+</section>
+
+<!--- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<section id="system-config-kdump-expert">
+    <title>Expert Settings</title>
+    
+    <figure float="0" id="expert-fig">
+        <title>Expert Settings</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="figures/expert.png" format="PNG" />
+            </imageobject>
+            <textobject>
+                 <para>Expert settings</para>
+            </textobject>
+        </mediaobject>
+
+    </figure>
+    <para>Expert Settings is used to fine settings.</para>
+    <para>
+        You can select kernel in <guilabel>Capture kernel selection</guilabel>, on which you would like to set kdump. In combo box should be listed all available kernels.
+    </para>
+    <para>
+        In <guilabel>Command line options</guilabel> section you can edit command line arguments for selected kernel. At any time you can revert changes by pressing <guilabel>Refresh button</guilabel>
+    </para>
+    <para>
+        There are 4 default actions that you can select in <guilabel>Default action</guilabel> section:
+        <itemizedlist>
+            <listitem>
+                <para>Mount rootfs and run /sbin/init &mdash; This is default action.</para>
+            </listitem>
+            <listitem>
+                <para>Reboot &mdash; simply reboot the system and loose the core that you are trying to retrieve.</para>
+            </listitem>
+            <listitem>
+                <para>Halt &mdash; simply halt the system after attempting to capture a vmcore, regardless of success or failure.</para>
+            </listitem>
+            <listitem>
+                <para>Shell &mdash; drop to an msh session inside the initramfs from where you can try to record the core manually. Exiting this shell reboots the system.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para>
+        In <guilabel>Core collector</guilabel> you can specify core collector command. It should begin with makedumpfile.
+    </para>
+</section>
+

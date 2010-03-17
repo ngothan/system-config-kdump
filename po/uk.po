@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-12 15:45-0500\n"
-"PO-Revision-Date:  2007-01-24 22:54+0200\n"
+"PO-Revision-Date:  2009-09-22 22:54+0200\n"
 "Last-Translator: Maxim Dzіumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,9 +69,8 @@ msgid "Failed to detect total system memory"
 msgstr "Помилка при визначенні обсягу системної пам'яті"
 
 #: ../src/system-config-kdump.py:157
-#, fuzzy
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Ядра з технологією Xen наразі не підтримують kdump!"
+msgstr "Ядра ia64 з технологією Xen наразі не підтримують kdump."
 
 #: ../src/system-config-kdump.py:205 ../src/system-config-kdump.py:247
 #, python-format
@@ -115,6 +114,9 @@ msgid ""
 "dump capture. Please be sure you have the non-xen %s RPM of the same version "
 "as your xen kernel installed."
 msgstr ""
+"ПОПЕРДЖЕННЯ: підтримка xen·kdump вимагає не-xen %s RPM для виконання "
+"знімку дампу аварійного завершення. Будь ласка, перевірте, що у вас є не xen %s RPM тієї "
+"самої версії що і xen ядро."
 
 #: ../src/system-config-kdump.py:328
 #, python-format
