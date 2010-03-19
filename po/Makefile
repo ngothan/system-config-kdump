@@ -25,14 +25,15 @@ MSGFMT		= msgfmt --statistics --verbose
 POFILES		= $(wildcard *.po)
 MOFILES		= $(patsubst %.po,%.mo,$(POFILES))
 PYSRC		= $(wildcard ../src/*.py)
-SRCFILES	= $(PYSRC) $(NLSPACKAGE).gladestrings
+GLADES		= $(wildcard ../src/*.glade)
+SRCFILES	= $(PYSRC) $(GLADES)
 
 #default:: clean
 
 all::  update-po $(MOFILES)
 
 $(POTFILE): $(SRCFILES)
-	$(XGETTEXT) --keyword=_ --keyword=N_ $(SRCFILES)
+	$(XGETTEXT) --keyword=_ --keyword=N_ --keyword=translatable $(SRCFILES)
 	@if cmp -s $(NLSPACKAGE).po $(POTFILE); then \
 	    rm -f $(NLSPACKAGE).po; \
 	else \
