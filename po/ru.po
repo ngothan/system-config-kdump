@@ -1,24 +1,26 @@
-# translation of ru.po to 
+# translation of ru.po to
 # translation of ru.po to
 # translation of ru.po to
 # Translation system-config-kdump to Russian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER.
+#
+#
 # Andrew Martynov <andrewm@inventa.ru>, 2006.
-# Yulia Poyarkova <ypoyarko@redhat.com>, 2006.
-#
-#
+# Yulia <ypoyarko@redhat.com>, 2006, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2008-04-10 16:53+0300\n"
-"Last-Translator: Yulia Poyarkova <ypoyarko@redhat.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"PO-Revision-Date: 2010-03-22 08:40\n"
+"Last-Translator: Yulia <ypoyarko@redhat.com>\n"
+"Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../src/system-config-kdump.py:68
 msgid "mount rootfs and run /sbin/init"
@@ -26,11 +28,11 @@ msgstr "смонтируйте rootfs и выполните /sbin/init"
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
@@ -48,6 +50,19 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
+"Эта программа является свободным программным обеспечением; её можно распространять и "
+"изменять в соответствии с условиями лицензии GNU General Public License "
+"версии 2 или любой более поздней версии.\n"
+"\n"
+"Эта программа распространяется в надежде, что она может быть полезной, но "
+"БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, В ТОМ ЧИСЛЕ "
+"БЕЗ ГАРАНТИЙ КОММЕРЧЕСКОЙ ЦЕННОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Для "
+"получения дополнительных сведений обратитесь к лицензии GNU.\n"
+"\n"
+"Копия лицензии GNU предоставляется вместе с этой программой. \n"
+"Если вы её не получили, запросить её копию можно в Фонде свободного ПО по адресу:\n"
+"Free Software Foundation, Inc., 675 Mass "
+"Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:126
 msgid ""
@@ -60,7 +75,7 @@ msgid ""
 "be unavailable for other uses."
 msgstr ""
 "Kdump представляет новый механизм дампа ядра при аварийном выходе. В случае "
-"системного сбоя kdump может создать снимок файла ядра с точки зрения только "
+"системного сбоя kdump может создать снимок файла только "
 "что загруженного ядра, что намного надежнее методов создания снимка "
 "аварийного ядра. Снимок файла ядра может принести огромную пользу при "
 "определении причины системного сбоя. Обратите внимание, что kdump не требует "
@@ -72,16 +87,16 @@ msgid ""
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
 msgstr ""
-"Kdump попытается поместить vmcore в указанное положение. В случае неудачи "
+"Kdump попытается поместить vmcore в указанное место. В случае неудачи "
 "будет выполнено действие по умолчанию (указано ниже)."
 
 #: ../src/system-config-kdump.py:575
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr "К сожалению данная архитектура не поддерживает kdump"
+msgstr "К сожалению, данная архитектура не поддерживает kdump"
 
 #: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump не поддерживается"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -89,52 +104,49 @@ msgstr "Ошибка при определении общей системной
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: ошибка памяти"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Извините, ядра ia64 xen не поддерживают kdump в настоящий момент."
+msgstr "Извините, ядра xen ia64 в настоящий момент не поддерживают kdump."
 
 #: ../src/system-config-kdump.py:680
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr ""
-"Эта система не имеет достаточного объема памяти для функционирования kdump"
+msgstr "Эта система не имеет достаточного объёма памяти для функционирования kdump"
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: недостаточно памяти"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"Для положений '%s' путь не может быть пустым. Сбросить в значение по "
-"умолчанию ('%s')?"
+msgstr "Путь не может быть пустым для «%s»."
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Использовать путь по умолчанию («%s»)?"
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: пустой путь"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Необходимо указать сервер. "
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: не задано имя сервера"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Необходимо указать имя пользователя. "
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: не задано имя пользователя"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
@@ -300,12 +312,12 @@ msgid "Kernel Dump Configuration"
 msgstr "Настройка Kernel Dump"
 
 #: ../src/system-config-kdump.glade:18
+#, fuzzy
 msgid "_File"
-msgstr ""
+msgstr "_Файл"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
-msgid ""
-"Apply changes, save booloader config file and save kexec/kdump config file"
+msgid "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:27
@@ -342,8 +354,9 @@ msgid "Disable kdump"
 msgstr "Включить kdump"
 
 #: ../src/system-config-kdump.glade:101
+#, fuzzy
 msgid "_Help"
-msgstr ""
+msgstr "_Справка"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
@@ -392,8 +405,9 @@ msgstr "Доступная память (Мб):"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
+#, fuzzy
 msgid "N/A"
-msgstr ""
+msgstr "нет"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
@@ -473,8 +487,9 @@ msgid "SSH"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:649
+#, fuzzy
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "Пользователь"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
@@ -485,8 +500,9 @@ msgid "Network server name"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:687
+#, fuzzy
 msgid "User name:"
-msgstr ""
+msgstr "Пользователь:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
@@ -665,49 +681,3 @@ msgstr ""
 msgid "About system-config-kdump"
 msgstr ""
 
-#~ msgid "Configure kdump/kexec"
-#~ msgstr "Настройка kdump/kexec"
-
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Edit Location"
-#~ msgstr "Изменить расположение"
-
-#~ msgid "New Location"
-#~ msgstr "Новое расположение"
-
-#~ msgid "Select a location type:"
-#~ msgstr "Выберите тип расположения:"
-
-#~ msgid "Enter location:"
-#~ msgstr "Введите расположение:"
-
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "Местоположения SSH должны следовать шаблону 'user@host'. Путь может быть "
-#~ "указан в главном окне."
-
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "Местоположения NFS должны следовать формату 'host:/path'"
-
-#~ msgid "For raw locations you must specify a valid device node."
-#~ msgstr "Адреса устройств могут быть заданы явно."
-
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr "В данной системе не обеспечена поддержка файловых систем '%s'"
-
-#~ msgid "Failed to stat device node '%s'"
-#~ msgstr "Ошибка сбора информации об устройстве '%s'"
-
-#~ msgid "'%s' locations must specify a valid device node."
-#~ msgstr ""
-#~ "Местоположения '%s' должны представлять собой корректный узел устройства."
-
-#~ msgid "No bootloader config file found, aborting configuration!"
-#~ msgstr "Не найден файл настроек загрузчика. Настройка аварийно завершена!"
-
-#~ msgid "local"
-#~ msgstr "локальный"
