@@ -1,13 +1,18 @@
-# translation of es.po to Spanish
+# Fedora Spanish translation system-config-kdump.master.
+# This file is distributed under the same license as the system-config-kdump.master package
+#
 # Manuel Ospina <mospina@redhat.com>, 2006.
+# Domingo Becker <domingobecker@gmail.com>, 2010.
+# Héctor Daniel Cabrera <logan@fedoraproject.org>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: es\n"
+"Project-Id-Version: system-config-kdump.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-22 12:52-0300\n"
-"Last-Translator: Domingo Becker <domingobecker@gmail.com>\n"
-"Language-Team: Spanish <fedora-trans-es@redhat.com>\n"
+"PO-Revision-Date: 2010-03-22 14:28-0300\n"
+"Last-Translator: Héctor Daniel Cabrera <logan@fedoraproject.org>\n"
+"Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -187,31 +192,26 @@ msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: error al manejar servicios"
 
 #: ../src/system-config-kdump.py:855
-#, fuzzy
 msgid "Configurations sucessfully saved"
-msgstr "Estado de silencio guardado"
+msgstr "La configuración ha sido guardada exitosamente"
 
 #: ../src/system-config-kdump.py:856
-#, fuzzy
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
-"system-config-network- Herramienta de configuración de redes\n"
-"\n"
-"Uso: system-config-network -v --verbose"
+msgstr "system-config-kdump: Configuración guardada"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "error al leer la configuración del servicio PAM.\n"
+msgstr "Error al leer la configuración de kdump: %s"
 
 #: ../src/system-config-kdump.py:917
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: error en el archivo de configuración de kdump"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "Error de inicialización de la configuración DNS:"
+msgstr "Error al escribir la configuración de kdump: %s"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
@@ -236,14 +236,13 @@ msgid "Local file system partition with name %s"
 msgstr "Partición del sistema de archivo local con nombre %s"
 
 #: ../src/system-config-kdump.py:1458
-#, fuzzy, python-format
+#, python-format
 msgid " and type %s wasn't found"
-msgstr "Se encontró y reemplazó %d aparición"
+msgstr " y no fue hallado el tipo %s"
 
 #: ../src/system-config-kdump.py:1660
-#, fuzzy
 msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
-msgstr "El visor de ayuda no está. Para poder ver la ayuda debe instalar el paquete 'yelp'."
+msgstr "No es posible encontrar el visor de asistencia. Para poder visualizar la ayuda debe instalarse el paquete 'yelp'."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
@@ -254,7 +253,6 @@ msgid "Kernel Dump Configuration"
 msgstr "Configuración de Volcado del Kernel"
 
 #: ../src/system-config-kdump.glade:18
-#, fuzzy
 msgid "_File"
 msgstr "_Archivo"
 
@@ -264,9 +262,8 @@ msgid "Apply changes, save booloader config file and save kexec/kdump config fil
 msgstr "Aplicar cambios, grabar archivo de configuración del gestor de arranque y guardar el archivo de configuración kexec/kdump"
 
 #: ../src/system-config-kdump.glade:27
-#, fuzzy
 msgid "gtk-apply"
-msgstr "Aplicar _alineación"
+msgstr "aplicar-gtk"
 
 #: ../src/system-config-kdump.glade:36
 #: ../src/system-config-kdump.glade:153
@@ -274,21 +271,18 @@ msgid "Reload original settings from config files"
 msgstr "Recargar los parámetros originales de los archivos de configuración"
 
 #: ../src/system-config-kdump.glade:37
-#, fuzzy
 msgid "gtk-revert-to-saved"
-msgstr "Recuperar la imagen guardada"
+msgstr "revertir-los-cambios-gtk"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
 msgstr "Salir y descartar los cambios no guardados"
 
 #: ../src/system-config-kdump.glade:52
-#, fuzzy
 msgid "gtk-quit"
-msgstr "gtk-quit"
+msgstr "salir-de-gtk"
 
 #: ../src/system-config-kdump.glade:65
-#, fuzzy
 msgid "_Options"
 msgstr "_Opciones"
 
@@ -299,98 +293,81 @@ msgstr "Habilitar kdump"
 
 #: ../src/system-config-kdump.glade:85
 #: ../src/system-config-kdump.glade:184
-#, fuzzy
 msgid "Disable kdump"
-msgstr "_Deshabilita todos"
+msgstr "Deshabilitar kdump"
 
 #: ../src/system-config-kdump.glade:101
-#, fuzzy
 msgid "_Help"
-msgstr "Ay_uda"
+msgstr "_Ayuda"
 
 #: ../src/system-config-kdump.glade:109
-#, fuzzy
 msgid "gtk-about"
-msgstr "gtk-about"
+msgstr "acerca-de-gtk"
 
 #: ../src/system-config-kdump.glade:117
-#, fuzzy
 msgid "gtk-help"
-msgstr "gtk-help"
+msgstr "ayuda-de-gtk"
 
 #: ../src/system-config-kdump.glade:143
-#, fuzzy
 msgid "Apply"
 msgstr "Aplicar"
 
 #: ../src/system-config-kdump.glade:154
-#, fuzzy
 msgid "Reload"
-msgstr "Volver a cargar"
+msgstr "Recargar"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
 msgstr "Habilitar"
 
 #: ../src/system-config-kdump.glade:185
-#, fuzzy
 msgid "Disable"
-msgstr "Desactivado"
+msgstr "Deshabilitar"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "Memoria interna: %d MB total, %d MB libres.\n"
+msgstr "Memoria total del sistema:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "Actualizar traducciones memorizadas"
+msgstr "Memoria kdump actual:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "Memoria de traducción nueva"
+msgstr "Nueva memoria kdump:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Carga de memoria"
+msgstr "Memoria utilizable:"
 
 #: ../src/system-config-kdump.glade:315
 #: ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362
 #: ../src/system-config-kdump.glade:879
-#, fuzzy
 msgid "N/A"
 msgstr "N/D"
 
 #: ../src/system-config-kdump.glade:377
-#, fuzzy
 msgid "(MB)"
-msgstr "mb"
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
-#, fuzzy
 msgid "Basic Settings"
-msgstr "<b>Configuración del Básica del Cortafuego</b>"
+msgstr "Configuraciones básicas"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
 msgstr "Guardar el archivo kdump en el sistema de archivo local"
 
 #: ../src/system-config-kdump.glade:440
-#, fuzzy
 msgid "Local filesystem"
-msgstr "Verificando cuotas de sistema de archivos locales: "
+msgstr "Sistema de archivo local"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
 msgstr "Elegir la partición donde desea guardar su kdump"
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
 msgstr "Partición:"
 
@@ -399,9 +376,8 @@ msgid "Choose local filesystem target directory"
 msgstr "Elegir el directorio destino del sistema de archivo local"
 
 #: ../src/system-config-kdump.glade:486
-#, fuzzy
 msgid "Select A Local Filesystem Directory"
-msgstr "Utilizar directorio CDDB local"
+msgstr "Seleccionar un directorio local de sistema de archivos"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -416,23 +392,18 @@ msgid "Save kdump file in raw device"
 msgstr "Guardar el archivo kdump en un dispositivo en bruto"
 
 #: ../src/system-config-kdump.glade:541
-#, fuzzy
 msgid "Raw device"
-msgstr ""
-"\n"
-"Dispositivo de sonido:   %s"
+msgstr "Dispositivo raw"
 
 #: ../src/system-config-kdump.glade:556
-#, fuzzy
 msgid "Select raw device"
-msgstr "Seleccionar el tipo de dispositivo "
+msgstr "Seleccionar dispositivo rae "
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
 msgstr "Guardar el archivo kdump a través de la red"
 
 #: ../src/system-config-kdump.glade:589
-#, fuzzy
 msgid "Network"
 msgstr "Red"
 
@@ -441,7 +412,6 @@ msgid "Save kdump file via NFS"
 msgstr "Guardar el archivo kdump vía NFS"
 
 #: ../src/system-config-kdump.glade:609
-#, fuzzy
 msgid "NFS"
 msgstr "NFS"
 
@@ -450,7 +420,6 @@ msgid "Save kdump file via SSH"
 msgstr "Guardar el archivo kdump vía SSH"
 
 #: ../src/system-config-kdump.glade:621
-#, fuzzy
 msgid "SSH"
 msgstr "SSH"
 
@@ -463,277 +432,228 @@ msgid "Path to directory to save kdump file on server"
 msgstr "Directorio donde guardar el archivo kdump en el servidor"
 
 #: ../src/system-config-kdump.glade:675
-#, fuzzy
 msgid "Network server name"
-msgstr "Servidor de Nombre Autoritativo"
+msgstr "Nombre del servidor de red"
 
 #: ../src/system-config-kdump.glade:687
-#, fuzzy
 msgid "User name:"
-msgstr "Nombre de Usuario:"
+msgstr "Nombre de usuario:"
 
 #: ../src/system-config-kdump.glade:701
-#, fuzzy
 msgid "Path to direcotory:"
-msgstr "Carpeta de base de datos:"
+msgstr "Ruta al directorio:"
 
 #: ../src/system-config-kdump.glade:714
-#, fuzzy
 msgid "Server name:"
 msgstr "Nombre del servidor:"
 
 #: ../src/system-config-kdump.glade:748
-#, fuzzy
 msgid "Target settings"
-msgstr "<b>Configuración del visor</b>"
+msgstr "Configuraciones del destino"
 
 #: ../src/system-config-kdump.glade:795
 #, fuzzy
 msgid "Exclude zero page"
-msgstr "<b>Centrar en la página:</b>"
+msgstr "Excluir página cero"
 
 #: ../src/system-config-kdump.glade:796
 #, fuzzy
 msgid "zero page"
-msgstr "<b>Orden de páginas</b>"
+msgstr "página cero"
 
 #: ../src/system-config-kdump.glade:808
-#, fuzzy
 msgid "Exclude cache page"
-msgstr "<b>Centrar en la página:</b>"
+msgstr "Excluir página caché"
 
 #: ../src/system-config-kdump.glade:809
-#, fuzzy
 msgid "cache page"
-msgstr "<b>Orden de páginas</b>"
+msgstr "página caché"
 
 #: ../src/system-config-kdump.glade:822
-#, fuzzy
 msgid "Exclude cache private"
-msgstr "Usar una sesión privada"
+msgstr "Excluir caché privado"
 
 #: ../src/system-config-kdump.glade:823
-#, fuzzy
 msgid "cache private"
-msgstr "Clave privada:"
+msgstr "caché privado"
 
 #: ../src/system-config-kdump.glade:836
-#, fuzzy
 msgid "Exclude user data"
-msgstr "Puntero de datos del usuario anónimo"
+msgstr "Excluir datos de usuario"
 
 #: ../src/system-config-kdump.glade:837
-#, fuzzy
 msgid "user data"
-msgstr "Puntero de datos del usuario anónimo"
+msgstr "datos de usuario"
 
 #: ../src/system-config-kdump.glade:850
-#, fuzzy
 msgid "Exclude free page"
-msgstr "<b>Centrar en la página:</b>"
+msgstr "Excluir página libre"
 
 #: ../src/system-config-kdump.glade:851
-#, fuzzy
 msgid "free page"
-msgstr "<b>Orden de páginas</b>"
+msgstr "página libre"
 
 #: ../src/system-config-kdump.glade:868
-#, fuzzy
 msgid "Actual filter level:"
-msgstr "Seleccione el nivel del filtro de depuración."
+msgstr "Nivel de filtro actual:"
 
 #: ../src/system-config-kdump.glade:900
-#, fuzzy
 msgid "<b>Filtering level </b>"
-msgstr "Cuarto nivel"
+msgstr "<b>Nivel de filtro</b>"
 
 #: ../src/system-config-kdump.glade:932
-#, fuzzy
 msgid "ELF file format"
-msgstr "Formato de archivo no soportado."
+msgstr "Formato de archivo ELF"
 
 #: ../src/system-config-kdump.glade:945
-#, fuzzy
 msgid "diskdump file format"
-msgstr "Formato de archivo no soportado."
+msgstr "Formato de archivo diskdump"
 
 #: ../src/system-config-kdump.glade:964
-#, fuzzy
 msgid "<b>Output file format</b>"
-msgstr "Formato de archivo no soportado."
+msgstr "<b>Formato de archivo de salida</b>"
 
 #: ../src/system-config-kdump.glade:992
-#, fuzzy
 msgid "Filtering settings"
-msgstr "<b>Configuración del visor</b>"
+msgstr "Configuraciones de filtro"
 
 #: ../src/system-config-kdump.glade:1041
-#, fuzzy
 msgid "Use default initrd"
-msgstr "(Usar idioma por defecto)"
+msgstr "Utilizar initrd predeterminado"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Generando initrd"
+msgstr "Initrd predeterminado"
 
 #: ../src/system-config-kdump.glade:1056
 #, fuzzy
 msgid "Use custom initrd"
-msgstr "Usar paleta personal"
+msgstr "Utilizar initrd tradicional"
 
 #: ../src/system-config-kdump.glade:1057
 #, fuzzy
 msgid "Custom initrd"
-msgstr "Generando initrd"
+msgstr "Initrd tradicional"
 
 #: ../src/system-config-kdump.glade:1073
 #, fuzzy
 msgid "Choose custom initrd file"
-msgstr "Elija un archivador para restaurar"
+msgstr "Elija un archivo initrd tradicional"
 
 #: ../src/system-config-kdump.glade:1074
-#, fuzzy
 msgid "Select An initrd File"
-msgstr "Seleccione Archivo QIF"
+msgstr "Seleccione un archivo initrd"
 
 #: ../src/system-config-kdump.glade:1091
-#, fuzzy
 msgid "<b>initrd selection</b>"
-msgstr "Selección de dioma"
+msgstr "<b>Selección de initrd</b>"
 
 #: ../src/system-config-kdump.glade:1122
-#, fuzzy
 msgid "Use default kernel image"
-msgstr "El kernel por defecto provee SMP"
+msgstr "Utilizar imagen predeterminada del kernel"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "El kernel por defecto provee SMP"
+msgstr "Kernel predeterminado"
 
 #: ../src/system-config-kdump.glade:1137
 #, fuzzy
 msgid "Use custom kernel image"
-msgstr "La imagen de origen a usar"
+msgstr "Utilizar imagen del kernel tradicional"
 
 #: ../src/system-config-kdump.glade:1138
 #, fuzzy
 msgid "Custom kernel"
-msgstr "Rutinas del núcleo"
+msgstr "Kernel tradicional"
 
 #: ../src/system-config-kdump.glade:1154
 #, fuzzy
 msgid "Choose your custom kernel"
-msgstr "Elija su certificado personal…"
+msgstr "Elija su kernel tradicional"
 
 #: ../src/system-config-kdump.glade:1171
-#, fuzzy
 msgid "<b>Capture kernel selection</b>"
-msgstr "Capturar los mensajes de registro"
+msgstr "<b>Capturar la selección del kernel</b>"
 
 #: ../src/system-config-kdump.glade:1206
-#, fuzzy
 msgid "gtk-refresh"
-msgstr "gtk-refresh"
+msgstr "actualizar-gtk"
 
 #: ../src/system-config-kdump.glade:1222
-#, fuzzy
 msgid "Kernel command line options"
-msgstr "Posibles opciones de línea de comandos:"
+msgstr "Opciones de la línea de comandos del kernel"
 
 #: ../src/system-config-kdump.glade:1238
-#, fuzzy
 msgid "Original kernel command line options"
-msgstr " Opciones de línea de comando específicas de BFIN:\n"
+msgstr "Opciones originales de la línea de comandos del kernel"
 
 #: ../src/system-config-kdump.glade:1254
-#, fuzzy
 msgid "Original:"
 msgstr "Original:"
 
 #: ../src/system-config-kdump.glade:1266
-#, fuzzy
 msgid "Edited:"
-msgstr "Etiquetas editadas"
+msgstr "Editado:"
 
 #: ../src/system-config-kdump.glade:1283
-#, fuzzy
 msgid "<b>Command line options</b>"
-msgstr "Opciones de la línea de comandos"
+msgstr "<b>Opciones de la línea de comandos</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "No hay acción predeterminada asociada"
+msgstr "Elija la acción predeterminada"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "No hay acción predeterminada asociada"
+msgstr "<b>Acción predeterminada</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "Palabras reservadas principales"
+msgstr "<b>Colector de núcleo</b>"
 
 #: ../src/system-config-kdump.glade:1400
-#, fuzzy
 msgid "Expert settings"
-msgstr "<b>Configuración del visor</b>"
+msgstr "Configuraciones avanzadas"
 
 #: ../src/system-config-kdump.glade:1418
-#, fuzzy
 msgid "About system-config-kdump"
-msgstr "Acerca de system-config-nfs"
+msgstr "Acerca de system-config-kdump"
 
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "Configurar kdump/kexec"
-
 #~ msgid "%s"
 #~ msgstr "%s"
-
 #~ msgid "Edit Location"
 #~ msgstr "Editar Ubicación"
-
 #~ msgid "New Location"
 #~ msgstr "Nueva Ubicación"
-
 #~ msgid "Select a location type:"
 #~ msgstr "Seleccione un tipo de ubicación:"
-
 #~ msgid "Enter location:"
 #~ msgstr "Ingrese la Ubicación:"
-
 #~ msgid ""
 #~ "SSH locations must be of the form 'user@host'. A path can be specified in "
 #~ "the main window."
 #~ msgstr ""
 #~ "Las ubicaciones SSH deben tener la forma 'usuario@host'. Se puede "
 #~ "especificar una ruta en la ventana principal. "
-
 #~ msgid "NFS locations must be of the form 'host:/path'"
 #~ msgstr "Las ubicaciones NFS deben tener la forma 'host:/path'"
-
 #~ msgid "For raw locations you must specify a valid device node."
 #~ msgstr ""
 #~ "Para ubicaciones raw usted debe especificar un nodo de dispositivo válido."
-
 #~ msgid "Support for filesystem type '%s' is not present on this system"
 #~ msgstr ""
 #~ "El soporte para archivos de sistemas '%s' no se encuentra en este sistema."
-
 #~ msgid "Failed to stat device node '%s'"
 #~ msgstr "Falló la obtención de información del nodo de dispositivo '%s'"
-
 #~ msgid "'%s' locations must specify a valid device node."
 #~ msgstr ""
 #~ "Las ubicaciones '%s' deben especificar un nodo de dispositivo válido."
-
 #~ msgid "No bootloader config file found, aborting configuration!"
 #~ msgstr ""
 #~ "¡No se encontró el archivo de configuración del gestor de arranque, "
 #~ "abortando la configuración !"
-
 #~ msgid "local"
 #~ msgstr "local"
+
