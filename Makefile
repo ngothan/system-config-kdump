@@ -43,7 +43,7 @@ DOC_ENTITIES    = distro-specifics.ent system-config-kdump-distro-specifics.ent 
 
 DESTDIR = $(INSTROOT)
 
-default: subdirs
+default: subdirs py-build
 
 subdirs: doc-all
 	for d in $(SUBDIRS); do make -C $$d; [ $$? = 0 ] || exit 1; done

@@ -10,7 +10,7 @@ $(PY_SETUP): $(PY_SETUP_IN)
 	sed -e "s/@VERSION@/$(VERSION)/g" < $< > $@
 
 py-install: $(PY_SETUP)
-	python $(PY_SETUP) install
+	python $(PY_SETUP) install --skip-build --root $(INSTROOT)
 
 py-clean: $(PY_SETUP)
 	python $(PY_SETUP) clean
