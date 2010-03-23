@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-22 10:08\n"
+"PO-Revision-Date: 2010-03-23 12:53+1100\n"
 "Last-Translator: Yulia <ypoyarko@redhat.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -51,15 +51,14 @@ msgid ""
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
 "Эта программа является свободным программным обеспечением; её можно распространять и "
-"изменять в соответствии с условиями лицензии GNU General Public License "
-"версии 2 или любой более поздней версии.\n"
+"изменять в соответствии с условиями лицензии GNU General Public License 2 или любой более поздней версии.\n"
 "\n"
 "Эта программа распространяется в надежде, что она может быть полезной, но "
 "БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, В ТОМ ЧИСЛЕ "
 "БЕЗ ГАРАНТИЙ КОММЕРЧЕСКОЙ ЦЕННОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Для "
 "получения дополнительных сведений обратитесь к лицензии GNU.\n"
 "\n"
-"Копия лицензии GNU предоставляется вместе с этой программой. \n"
+"Копия лицензии GNU предоставляется вместе с программой. \n"
 "Если вы её не получили, запросить её копию можно в Фонде свободного ПО по адресу:\n"
 "Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
@@ -74,7 +73,7 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump предоставляет новый механизм дампа ядра при аварийном выходе. В случае "
+"Kdump предоставляет новый механизм создания дампа ядра при аварийном выходе. В случае "
 "системного сбоя kdump может создать снимок файла только "
 "что загруженного ядра, что намного надежнее методов создания снимка "
 "аварийного ядра. Снимок файла ядра может принести огромную пользу при "
@@ -108,11 +107,11 @@ msgstr "system-config-kdump: ошибка памяти"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "Извините, ядра xen ia64 в настоящий момент не поддерживают kdump."
+msgstr "К сожалению, ядра xen ia64 в настоящий момент не поддерживают kdump."
 
 #: ../src/system-config-kdump.py:680
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "Эта система не имеет достаточного объёма памяти для функционирования kdump"
+msgstr "В этой системе недостаточно памяти для функционирования kdump"
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
@@ -178,7 +177,9 @@ msgstr ""
 "\n"
 "\n"
 "Обратите внимание, что на данном этапе архитектура %s не поддерживает "
-"перенос ядра, поэтому для корректного функционирования kdump необходимо установить дополнительный пакет kernel-kdump. Для этого выполните «yum install kernel-kdump».\n"
+"перенос ядра, поэтому для корректного функционирования kdump необходимо "
+"установить дополнительный пакет kernel-kdump. "
+"Для этого выполните «yum install kernel-kdump».\n"
 "\n"
 
 #: ../src/system-config-kdump.py:793
@@ -266,11 +267,11 @@ msgstr "system-config-kdump: ошибка записи файла конфигу
 
 #: ../src/system-config-kdump.py:1169
 msgid "Core collector must begin with 'makedumpfile'"
-msgstr "Сборщик данных ядра должен начинаться с «makedumpfile»"
+msgstr "Коллектор должен начинаться с «makedumpfile»"
 
 #: ../src/system-config-kdump.py:1170
 msgid "system-config-kdump: Bad core collector"
-msgstr "system-config-kdump: плохой сборщик данных ядра"
+msgstr "system-config-kdump: плохой коллектор данных ядра"
 
 #: ../src/system-config-kdump.py:1436
 #, python-format
@@ -292,7 +293,7 @@ msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
-"Не найдена утилита просмотра справки. Чтобы просмотреть справку, необходимо "
+"Не найдена утилита просмотра справки. Для просмотра справки необходимо "
 "установить пакет «yelp»."
 
 #: ../src/system-config-kdump.py:1725
@@ -301,7 +302,7 @@ msgstr "Ошибка запуска system-config-kdump"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
-msgstr "Настройка Kdump"
+msgstr "Настройка дампа ядра"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
@@ -434,7 +435,7 @@ msgstr "Целевой каталог в локальной файловой с�
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr "Сохранить файл kdump на raw-устройство"
+msgstr "Сохранить файл kdump на raw-устройстве"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
@@ -494,55 +495,55 @@ msgstr "Имя сервера:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "Настройки цели"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Исключить нулевые страницы"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "нулевая страница"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr ""
+msgstr "Исключить страницы кэша"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
-msgstr ""
+msgstr "страница кэша"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr ""
+msgstr "Исключить частный кэш"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr ""
+msgstr "частный кэш"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "Исключить данные пользователя"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "данные пользователя"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "Исключить свободные страницы"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "свободная страница"
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Уровень фильтрации:"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Уровень фильтрации </b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
@@ -554,65 +555,63 @@ msgstr "формат diskdump"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Формат полученного файла</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "Настройки фильтрации"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Использовать исходный initrd"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Действие по умолчанию:"
+msgstr "Исходный initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Использовать произвольный initrd"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "Произвольный initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Выберите произвольный файл initrd"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Выберите файл initrd"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>выбор initrd</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Использовать исходный образ ядра"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Действие по умолчанию:"
+msgstr "Исходное ядро"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Использовать произвольный образ ядра"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Произвольное ядро"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Выберите ядро"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Выбор снимка ядра</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
@@ -620,42 +619,39 @@ msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Параметры командной строки ядра"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Параметры командной строки исходного ядра"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Исходное:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Изменено:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Параметры командной строки</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Действие по умолчанию:"
+msgstr "Выберите действие по умолчанию"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Действие по умолчанию:"
+msgstr "<b>Действие по умолчанию</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "Коллектор ядра:"
+msgstr "<b>Коллектор:</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Экспертные настройки"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
