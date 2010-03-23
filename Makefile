@@ -48,7 +48,7 @@ default: subdirs
 subdirs: doc-all
 	for d in $(SUBDIRS); do make -C $$d; [ $$? = 0 ] || exit 1; done
 
-install: subdirs ${PKGNAME}.desktop doc-install
+install: subdirs ${PKGNAME}.desktop doc-install py-install
 	mkdir -p $(INSTROOT)/usr/bin
 	mkdir -p $(INSTROOT)$(PKGDATADIR)
 	mkdir -p $(INSTROOT)/usr/sbin
@@ -111,12 +111,13 @@ local: clean
 	@rm -rf /tmp/${PKGNAME}-$(VERSION)	
 	@echo "The archive is in ${PKGNAME}-$(VERSION).tar.bz2"
 
-clean: doc-clean
+clean: doc-clean py-clean
 	@rm -fv *~
 	@rm -fv src/*.pyc
 	@rm -fv po/*mo po/*~ po/.depend
 	@rm -fv ${PKGNAME}.desktop
 	@rm -fv ChangeLog
+	@rm -fv ${PKGNAME}*.tar.bz2
 
 srpm:
 	@echo Creating src.rpm
@@ -130,3 +131,4 @@ srpm:
 	@intltool-merge -d -u po/ $< $@
 
 include doc_rules.mk
+include py_rules.mk

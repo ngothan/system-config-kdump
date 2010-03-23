@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+from distutils.core import setup
+
+setup(name = "sckdump",
+	version = "@VERSION@",
+	packages=['sckdump'],
+	package_dir={'sckdump': 'src/sckdump'},)
