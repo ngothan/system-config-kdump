@@ -28,10 +28,10 @@ import os
 # import stat
 
 # message, error and yes no dialogs
-import dialogs
+import sckdump.dialogs as dialogs
 
 # progress window
-from progress import ProgressWindow
+from sckdump.progress import ProgressWindow
 
 ##
 ## dbus and polkit
