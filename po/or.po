@@ -1,22 +1,35 @@
-# translation of or.po to Oriya
+# translation of system-config-kdump.master.or.po to Oriya
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Subhransu Behera <sbehera@redhat.com>, 2006.
 # Subhransu Behera <arya_subhransu@yahoo.co.in>, 2007.
+# Manoj Kumar Giri <mgiri@redhat.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: or\n"
+"Project-Id-Version: system-config-kdump.master.or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2007-09-25 12:13+0530\n"
-"Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
-"Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
+"PO-Revision-Date: 2010-03-23 14:47+0530\n"
+"Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
+"Language-Team: Oriya <oriya-it@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -29,11 +42,11 @@ msgstr "rootfs କୁ ମାଉଣ୍ଟ କରନ୍ତୁ ଏବଂ /sbin/init
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
@@ -51,6 +64,19 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
+"Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:126
 msgid ""
@@ -85,7 +111,7 @@ msgstr "କ୍ଷମା କରିବେ, ଏହି ସ୍ଥାପତ୍ଯଟ�
 
 #: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump ସମର୍ଥିତ ନୁହଁ"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -93,7 +119,7 @@ msgstr "ସମ୍ପୂର୍ଣ୍ଣ ତନ୍ତ୍ର ସ୍ମୃତିକ�
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: ସ୍ମୃତିସ୍ଥାନ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -105,56 +131,53 @@ msgstr "kdump ର ସକ୍ଷମତା ପାଇଁ ଏହି ତନ୍ତ୍�
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: ଯଥେଷ୍ଟ ସ୍ମୃତି ସ୍ଥାନ ନାହିଁ"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"'%s' ଅବସ୍ଥାନ ମାନଙ୍କ ପାଇଁ ପଥକୁ ଖାଲି କରିହେବ ନାହିଁ। ପଥକୁ ପୂର୍ବନିର୍ଦ୍ଧାରିତ ('%s') ଭାବରେ "
-"ପୁନଃସ୍ଥାପନ କରନ୍ତୁ? "
+msgstr "'%s' ଅବସ୍ଥାନ ମାନଙ୍କ ପାଇଁ ପଥକୁ ଖାଲି କରିହେବ ନାହିଁ।"
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "ପଥକୁ ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଭାବରେ ସେଟ କରନ୍ତୁ ('%s')?."
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: ଖାଲି ପଥ"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "ଆପଣଙ୍କୁ ସର୍ଭର ଉଲ୍ଲେଖ କରିବା ଉଚିତ।"
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: ସର୍ଭର ନାମ ସେଟ ହୋଇନାହିଁ"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "ଆପଣଙ୍କୁ ଚାଳକ ନାମ ସେଟ କରିବା ଉଚିତ।"
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: ଚାଳକନାମ ସେଟ ହୋଇନାହିଁ"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "ଆପଣଙ୍କୁ ନୂତନ ଉପକରଣ ମଧ୍ଯରୁ ଗୋଟିକୁ ବାଛିବା ଉଚିତ"
 
 #: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: ନୂତନ ଉପକରଣ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "ଏହି ପ୍ରୟୋଗକୁ ଚଳାଇବା ପାଇଁ ଆପଣ ଗୋଟିଏ ପ୍ରମୂଖ ଚାଳକ (ରୁଟ) ହେବା ଉଚିତ।"
+msgstr "ଆପଣଙ୍କୁ ବିଭାଜନ ମଧ୍ଯରୁ ଗୋଟିକୁ ବାଛିବା ଉଚିତ"
 
 #: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: ସ୍ଥାନୀୟ ବିଭାଜନ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:784
 #, python-format
@@ -175,28 +198,26 @@ msgstr ""
 "କରିପାରିବେ। \n"
 
 #: ../src/system-config-kdump.py:793
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
 msgstr ""
 "ଚେତାବନୀ: ବାସ୍ତବିକ ବିଫଳ ଅଦରକାରୀ ତଥ୍ଯ ସଂଗ୍ରହ କରିବା ପାଇଁ xen kdump ସମର୍ଥନ ଗୋଟିଏ xen ବିହୀନ "
-"%s RPM ଆବଶ୍ଯକ କରିଥାଏ। ଦୟାକରି ଏହା ନିଶ୍ଚିତ ହୁଅନ୍ତୁ ଯେ ଆପଣଙ୍କ ନିକଟରେ ଆପଣଙ୍କ ତନ୍ତ୍ରରେ ସ୍ଥାପିତ "
-"xen ସଂସ୍କରଣ ପରି ସମାନ ସଂସ୍କରଣର xen ବିହୀନ %s RPM ଅଛି।"
+"%s RPM ଆବଶ୍ଯକ କରିଥାଏ। "
 
 #: ../src/system-config-kdump.py:796
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
 msgstr ""
-"ଚେତାବନୀ: ବାସ୍ତବିକ ବିଫଳ ଅଦରକାରୀ ତଥ୍ଯ ସଂଗ୍ରହ କରିବା ପାଇଁ xen kdump ସମର୍ଥନ ଗୋଟିଏ xen ବିହୀନ "
-"%s RPM ଆବଶ୍ଯକ କରିଥାଏ। ଦୟାକରି ଏହା ନିଶ୍ଚିତ ହୁଅନ୍ତୁ ଯେ ଆପଣଙ୍କ ନିକଟରେ ଆପଣଙ୍କ ତନ୍ତ୍ରରେ ସ୍ଥାପିତ "
+"ଦୟାକରି ଏହା ନିଶ୍ଚିତ ହୁଅନ୍ତୁ ଯେ ଆପଣଙ୍କ ନିକଟରେ ଆପଣଙ୍କ ତନ୍ତ୍ରରେ ସ୍ଥାପିତ "
 "xen ସଂସ୍କରଣ ପରି ସମାନ ସଂସ୍କରଣର xen ବିହୀନ %s RPM ଅଛି।"
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: non-xen କର୍ଣ୍ଣଲ ଆବଶ୍ୟକ"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
@@ -210,58 +231,57 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:807
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: ପୁନର୍ଚାଳନ ଆବଶ୍ୟକ"
 
 #: ../src/system-config-kdump.py:822
-#, fuzzy
 msgid "Error writing kdump configuration"
-msgstr "କର୍ଣ୍ଣଲ ଆବର୍ଜନା ବିନ୍ଯାସ"
+msgstr "kdump ସଂରଚନା ଲେଖିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: kdump ସଂରଚନା ଲେଖିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "ବୁଟଲୋଡର ସଂରଚନା ଲେଖିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:836
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: ବୁଟଲୋଡର ସଂରଚନା ଲେଖିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
-msgstr ""
+msgstr "kdump ସର୍ଭିସଗୁଡ଼ିକୁ ନିୟନ୍ତ୍ରଣ କରିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: ତ୍ରୁଟି ନିୟନ୍ତ୍ରଣ ସର୍ଭିସଗୁଡ଼ିକ"
 
 #: ../src/system-config-kdump.py:855
 msgid "Configurations sucessfully saved"
-msgstr ""
+msgstr "ବିନ୍ୟାସକୁ ସଫଳତାର ସହିତ ସଂରକ୍ଷଣ କରାଯାଇଛି"
 
 #: ../src/system-config-kdump.py:856
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: ବିନ୍ୟାସକୁ ସଂରକ୍ଷଣ କରାଯାଇଛି"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "କର୍ଣ୍ଣଲ ଆବର୍ଜନା ବିନ୍ଯାସ"
+msgstr "kdump ବିନ୍ୟାସ ପଢ଼ିବାରେ ତ୍ରୁଟି: %s"
 
 #: ../src/system-config-kdump.py:917
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: kdump ବିନ୍ୟାସ ଫାଇଲ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "କର୍ଣ୍ଣଲ ଆବର୍ଜନା ବିନ୍ଯାସ"
+msgstr "kdump ସଂରଚନା ଲେଖିବାରେ ତ୍ରୁଟି: %s"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: kdump ସଂରଚନା ଫାଇଲ ତ୍ରୁଟି ଲେଖନ୍ତୁ"
 
 #: ../src/system-config-kdump.py:1169
 msgid "Core collector must begin with 'makedumpfile'"
@@ -269,32 +289,32 @@ msgstr "ଅନ୍ତଃସ୍ଥଳ ସଂଗ୍ରହକଟି 'makedumpfile' �
 
 #: ../src/system-config-kdump.py:1170
 msgid "system-config-kdump: Bad core collector"
-msgstr ""
+msgstr "system-config-kdump: ଖରାପ ମୂଳ ସଂଗ୍ରହକାରୀ"
 
 #: ../src/system-config-kdump.py:1436
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "ନୂତନ ଉପକରଣ %s ଏହି ଯନ୍ତ୍ରରେ ମିଳିନଥିଲା"
 
 #: ../src/system-config-kdump.py:1457
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "ନାମ %s ସହିତ ସ୍ଥାନୀୟ ଫାଇଲ ତନ୍ତ୍ର ବିଭାଜନ"
 
 #: ../src/system-config-kdump.py:1458
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr "ଏବଂ ପ୍ରକାର %s ମିଳିନଥିଲା"
 
 #: ../src/system-config-kdump.py:1660
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
-msgstr ""
+msgstr "ସହାୟକ ପ୍ରଦର୍ଶକ ମିଳୁନାହିଁ. ସହାୟତା ଦେଖିବାପାଇଁ ଆପଣଙ୍କୁ 'yelp' ପ୍ଯାକେଜ ସ୍ଥାପନ କରିବାକୁ ପଡିବ."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "system-config-kdump ନିଷ୍ପାଦନ କରିବାରେ ତ୍ରୁଟି"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -302,132 +322,124 @@ msgstr "କର୍ଣ୍ଣଲ ଆବର୍ଜନା ବିନ୍ଯାସ"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "ଫାଇଲ (_F)"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
-msgid ""
-"Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
+msgid "Apply changes, save booloader config file and save kexec/kdump config file"
+msgstr "ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ପ୍ରୟୋଗ କରନ୍ତୁ, ବୁଟଲୋଡର ବିନ୍ୟାସ ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ ଏବଂ kexec/kdump ବିନ୍ୟାସ ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
-msgstr ""
+msgstr "gtk-apply"
 
 #: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "ବିନ୍ୟାସ ଫାଇଲଗୁଡ଼ିକରୁ ପ୍ରକୃତ ସଂରଚନାକୁ ପୁନର୍ଧାରଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
-msgstr ""
+msgstr "gtk-ସଂଚଯହେବା-କୁ-ଓଲଟାଗଲା"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "ପ୍ରସ୍ଥାନ ଏବଂ ପ୍ରତ୍ୟାଖାନ ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ସଂରକ୍ଷଣ କରିନଥିଲା"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
-msgstr ""
+msgstr "gtk-quit"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "ବିକଳ୍ପଗୁଡ଼ିକ (_O)"
 
 #: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "kdump କୁ ସକ୍ରିୟ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
 msgid "Disable kdump"
-msgstr "kdump କୁ ସକ୍ରିୟ କରନ୍ତୁ"
+msgstr "kdump କୁ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "ସହାୟତା (_H)"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
-msgstr ""
+msgstr "gtk-about"
 
 #: ../src/system-config-kdump.glade:117
 msgid "gtk-help"
-msgstr ""
+msgstr "gtk-help"
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "ପ୍ରଯୋଗ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "ପୁନର୍ଧାରଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "kdump କୁ ସକ୍ରିୟ କରନ୍ତୁ"
+msgstr "ସକ୍ରିୟ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "ନିଷ୍କ୍ରିୟ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "ସମୁଦାୟ ତନ୍ତ୍ର ସ୍ମୃତି (ମେଗା-ବାଇଟ):"
+msgstr "ସମୁଦାୟ ତନ୍ତ୍ର ସ୍ମୃତି ସ୍ଥାନ:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "kdump ସ୍ମୃତି (ମେଗା-ବାଇଟ):"
+msgstr "ବର୍ତ୍ତମାନର kdump ସ୍ମୃତି ସ୍ଥାନ:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "kdump ସ୍ମୃତି (ମେଗା-ବାଇଟ):"
+msgstr "ନୂତନ kdump ସ୍ମୃତି ସ୍ଥାନ:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "ବ୍ଯବହାର୍ଯ୍ଯ ସ୍ମୃତି (ମେଗା-ବାଇଟ):"
+msgstr "ବ୍ଯବହାର୍ଯ୍ଯ ସ୍ମୃତି ସ୍ଥାନ:"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "ଦରକାର ନାହିଁ"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "ମୌଳିକ ବିନ୍ୟାସ"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "ସ୍ଥାନୀୟ ଫାଇଲତନ୍ତ୍ରରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "ସ୍ଥାନୀୟ ଫାଇଲତନ୍ତ୍ର"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "ଆପଣ ଯେଉଁଠି kdump କୁ ସଂରକ୍ଷଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି ସେହି ବିଭାଜନକୁ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "ଅବସ୍ଥାନ:"
+msgstr "ବିଭାଜନ:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr ""
+msgstr "ସ୍ଥାନୀୟ ଫାଇଲତନ୍ତ୍ର ଲକ୍ଷ୍ଯସ୍ଥଳ ଡିରେକ୍ଟୋରୀ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr ""
+msgstr "ଗୋଟିଏ ସ୍ଥାନୀୟ ଫାଇଲତନ୍ତ୍ର ଲକ୍ଷ୍ଯସ୍ଥଳ ଡିରେକ୍ଟୋରୀ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -435,276 +447,229 @@ msgstr "ପଥ:"
 
 #: ../src/system-config-kdump.glade:504
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "ସ୍ଥାନୀୟ ଫାଇଲତନ୍ତ୍ରରେ ଲକ୍ଷ୍ଯସ୍ଥଳ ଡିରେକ୍ଟୋରୀ"
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "ନୂତନ ଉପକରଣରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr ""
+msgstr "ନୂତନ ଉପକରଣ"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr ""
+msgstr "ନୂତନ ଉପକରଣ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "ନେଟୱର୍କ ମାଧ୍ଯମରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "ନେଟୱର୍କ"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "NFS ମାଧ୍ଯମରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "SSH ମାଧ୍ଯମରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "ଚାଳକ ପାଖରେ ଆବଶ୍ୟକୀୟ ଲେଖିବା ଅନୁମତି ଥିବା ଉଚିତ"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "ସର୍ଭର ଉପରେ kdump ଫାଇଲକୁ ସଂରକ୍ଷଣ କରିବା ପାଇଁ ଡିରେକ୍ଟୋରୀ ପଥ"
 
 #: ../src/system-config-kdump.glade:675
 msgid "Network server name"
-msgstr ""
+msgstr "ନେଟୱର୍କ ସର୍ଭର ନାମ"
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "ଚାଳକ ନାମ:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "ଡିରେକ୍ଟୋରୀ ପଥ"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "ସର୍ଭର ନାମ:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "ଲକ୍ଷ୍ଯସ୍ଥଳ ବିନ୍ୟାସ"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "ଶୂନ୍ୟ ପୃଷ୍ଠାକୁ ବାହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "ଶୂନ୍ୟ ପୃଷ୍ଠା"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr ""
+msgstr "କ୍ୟାଶେ ପୃଷ୍ଠାକୁ ବାହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
-msgstr ""
+msgstr "କ୍ୟାଶେ ପୃଷ୍ଠା"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr ""
+msgstr "କ୍ୟାଶେ ବ୍ୟକ୍ତିଗତକୁ ବାହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr ""
+msgstr "କ୍ୟାଶେ ବ୍ୟକ୍ତିଗତ"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "ଚାଳକ ତଥ୍ୟକୁ ବାହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "ଚାଳକ ତଥ୍ୟ"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "ମୁକ୍ତ ପୃଷ୍ଠାକୁ ବାହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "ମୁକ୍ତ ପୃଷ୍ଠା"
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
-msgstr ""
+msgstr "ପ୍ରକୃତ ଛାଣକ ସ୍ତର"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>ଛାଣକ ସ୍ତର</b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
-msgstr ""
+msgstr "ELF ଫାଇଲ ସଜ୍ଜିକରଣ ଶୈଳୀ"
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
-msgstr ""
+msgstr "diskdump ଫାଇଲ ସଜ୍ଜିକରଣ ଶୈଳୀ"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>ଫଳାଫଳ ଫାଇଲ ସଜ୍ଜିକରଣ ଶୈଳୀ</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "ଛାଣିବା ବିନ୍ୟାସ"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ initrd ବ୍ୟବହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ:"
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "ଇଚ୍ଛାମୁତାବକ initrd ବ୍ୟବହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "ଇଚ୍ଛାମୁତାବକ initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "ଇଚ୍ଛାମୁତାବକ initrd ଫାଇଲ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "ଗୋଟିଏ initrd ଫାଇଲ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>initrd ଚୟନ</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କର୍ଣ୍ଣଲ ପ୍ରତିଛବି ବ୍ୟବହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ:"
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କର୍ଣ୍ଣଲ"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "ଇଚ୍ଛାମୁତାବକ କର୍ଣ୍ଣଲ ପ୍ରତିଛବି ବ୍ୟବହାର କରନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "ଇଚ୍ଛାମୁତାବକ କର୍ଣ୍ଣଲ"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "ଆପଣଙ୍କର ଇଚ୍ଛାମୁତାବକ କର୍ଣ୍ଣଲ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>କର୍ଣ୍ଣଲ ଚୟନକୁ ଅଧିକାର କରନ୍ତୁ</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
-msgstr ""
+msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "କର୍ଣ୍ଣଲ ନିର୍ଦ୍ଦେଶ ନାମା ବିକଳ୍ପଗୁଡ଼ିକ"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "ପ୍ରକୃତ କର୍ଣ୍ଣଲ ନିର୍ଦ୍ଦେଶ ନାମା ବିକଳ୍ପଗୁଡ଼ିକ"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "ମୂଳଭୂତ:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "ସମ୍ପାଦିତ:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>ନିର୍ଦ୍ଦେଶ ନାମା ବିକଳ୍ପଗୁଡିକ</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ:"
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ ବାଛନ୍ତୁ"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ:"
+msgstr "<b>ପୂର୍ବନିର୍ଦ୍ଧାରିତ କାର୍ଯ୍ଯ</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "ଅନ୍ତଃସ୍ଥଳ ସଂଗ୍ରହକ:"
+msgstr "<b>ଅନ୍ତଃସ୍ଥଳ ସଂଗ୍ରହକ</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "ଅଭିଜ୍ଞ ବିନ୍ୟାସ"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
+msgstr "system-config-kdump ବିଷୟରେ"
 
-#~ msgid "Configure kdump/kexec"
-#~ msgstr "kdump/kexec କୁ ବିନ୍ଯାସ କରନ୍ତୁ"
-
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Edit Location"
-#~ msgstr "ଅବସ୍ଥାନକୁ ସମ୍ପାଦନ କରନ୍ତୁ"
-
-#~ msgid "New Location"
-#~ msgstr "ନୂତନ ଅବସ୍ଥାନ"
-
-#~ msgid "Select a location type:"
-#~ msgstr "ଗୋଟିଏ ଅବସ୍ଥାନ ପ୍ରକାରକୁ ଚୟନ କରନ୍ତୁ:"
-
-#~ msgid "Enter location:"
-#~ msgstr "ଅବସ୍ଥାନ ଭରଣ କରନ୍ତୁ:"
-
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "SSH ଅବସ୍ଥାନ ଗୁଡିକ 'user@host' ରୂପରେ ରହିବା ଉଚିତ। ପ୍ରମୂଖ ୱିଣ୍ଡୋରେ ଗୋଟିଏ ପଥ ନିର୍ଦ୍ଦିଷ୍ଟ "
-#~ "କରାଯାଇ ପାରିବ।"
-
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "NFS ଅବସ୍ଥାନ ଗୁଡିକ 'host:/path' ରୂପରେ ରହିବା ଉଚିତିତ"
-
-#~ msgid "For raw locations you must specify a valid device node."
-#~ msgstr "ପ୍ରକୃତ ଅବସ୍ଥାନ ପାଇଁ ଆପଣ ଗୋଟିଏ ବୈଧ ଉପକରଣ ନୋଡ ନିର୍ଦ୍ଦିଷ୍ଟ କରିବା ଉଚିତ।"
-
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr "ଏହି ତନ୍ତ୍ରରେ ଫାଇଲ ତନ୍ତ୍ର ପ୍ରକାର '%s' ପାଇଁ କୌଣସି ସହାୟତା ନାହିଁ"
-
-#~ msgid "Failed to stat device node '%s'"
-#~ msgstr "ଉପକରଣ ନୋଡ '%s' କୁ stat କରିବାରେ ବିଫଳ"
-
-#~ msgid "'%s' locations must specify a valid device node."
-#~ msgstr "'%s' ଅବସ୍ଥାନ ଗୋଟିଏ ବୈଧ ଉପକରଣ ନୋଡକୁ ନିର୍ଦ୍ଦିଷ୍ଟ କରିବା ଉଚିତ।"
-
-#~ msgid "No bootloader config file found, aborting configuration!"
-#~ msgstr "କୌଣସି ବୁଟ-ଲୋଡର config ଫାଇଲ ମିଳିଲା ନାହିଁ, ବିନ୍ଯାସକୁ ପରିତ୍ଯାଗ କରୁଅଛି!"
