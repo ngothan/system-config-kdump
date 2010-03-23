@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-23 12:53+1100\n"
+"PO-Revision-Date: 2010-03-23 13:02+1100\n"
 "Last-Translator: Yulia <ypoyarko@redhat.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -647,7 +647,7 @@ msgstr "<b>Действие по умолчанию</b>"
 
 #: ../src/system-config-kdump.glade:1373
 msgid "<b>Core collector</b>"
-msgstr "<b>Коллектор:</b>"
+msgstr "<b>Коллектор</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
