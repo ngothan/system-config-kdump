@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2008-04-26 07:19+0100\n"
-"Last-Translator: Sulyok Péter <peti@sulyok.hu>\n"
+"PO-Revision-Date: 2010-03-25 14:04+0100\n"
+"Last-Translator: Nikolas Slivka <snicore@gmail.com>\n"
 "Language-Team: Hungarian <fedora-trans-hu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,63 +24,37 @@ msgstr "a gyökér-fájlrendszer csatolása, majd a /sbin/init indítása"
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
-"Ave, Cambridge, MA 02139, USA."
+"You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 msgstr ""
 
 #: ../src/system-config-kdump.py:126
-msgid ""
-"Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of "
-"a freshly booted kernel, making it far more reliable than methods capturing "
-"within the context of the crashed kernel. Being able to capture a core file "
-"can be invaluable in helping determine the root cause of a system crash. "
-"Note that kdump does require reserving a portion of system memory that will "
-"be unavailable for other uses."
-msgstr ""
-"Kdump egy új kernel összeomláskor lerakást csináló mechanizmus. "
-"Rendszerösszeomlás esetén egy lerakás fájlt lehet elkapni kdumppal, ami egy "
-"újonnan indított kernel környezetben fut, ami sokkal megbízhatóbb, mint az "
-"összeomlott kernel környezetben történő lerakás elkapása. A lerakás elkapása "
-"értékes segítség lehet a rendszerösszeomlás gyökér okának meghatározásához. "
-"Vegye észre, hogy a rendszer fenntartja a Kdump számára a rendszermemória "
-"egy részét – ez a memóriarész nem lesz elérhető más célokra."
+msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
+msgstr "Kdump egy új kernel összeomláskor lerakást csináló mechanizmus. Rendszerösszeomlás esetén egy lerakás fájlt lehet elkapni kdumppal, ami egy újonnan indított kernel környezetben fut, ami sokkal megbízhatóbb, mint az összeomlott kernel környezetben történő lerakás elkapása. A lerakás elkapása értékes segítség lehet a rendszerösszeomlás gyökér okának meghatározásához. Vegye észre, hogy a rendszer fenntartja a Kdump számára a rendszermemória egy részét – ez a memóriarész nem lesz elérhető más célokra."
 
 #: ../src/system-config-kdump.py:136
-msgid ""
-"Kdump will attempt to place the vmcore at the specified location. In the "
-"event that it fails to place the vmcore at location, the default action "
-"(specified below) will be executed."
-msgstr ""
-"Kdump megkísérli a megadott helyre tenni a vmcore-t. Ha ez nem sikerül, "
-"akkor az alapértelmezett művelet (lentebb megadva) lesz végrehajtva."
+msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
+msgstr "Kdump megkísérli a megadott helyre tenni a vmcore-t. Ha ez nem sikerül, akkor az alapértelmezett művelet (lentebb megadva) lesz végrehajtva."
 
 #: ../src/system-config-kdump.py:575
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "Sajnos ez az architektúra nem támogatja kdumpot"
 
-#: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
+#: ../src/system-config-kdump.py:577
+#: ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump nem támogatott"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -88,7 +62,7 @@ msgstr "Nem sikerült érzékelni a teljes rendszermemóriát"
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: Memóriahiba"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -100,14 +74,12 @@ msgstr "A rendszerben nincs elég memória kdump működéséhez"
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: Nincs elég memória"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"„%s” helyek útvonala nem lehet üres. Alapértelmezett érték („%s”) legyen az "
-"útvonal?"
+msgstr "'%s' helyek útvonala nem lehet üres."
 
 #: ../src/system-config-kdump.py:744
 #, python-format
@@ -116,81 +88,64 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: Üres útvonal"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Meg kell adnia a kiszolgálót."
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: Kiszolgálónév nincs beállítva"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Meg kell adnia a felhasználónevet."
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: Felhasználónév nincs beállítva"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "Ki kell egyet jelölnie a nyers eszközök közül"
 
-#: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
+#: ../src/system-config-kdump.py:768
+#: ../src/system-config-kdump.py:1437
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: Nyers eszközhiba"
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "Ezen alkalmazás futtatásához rendszergazdai jogosultság szükséges."
+msgstr "Ki kell jelölnie egyet a partíciók közül"
 
-#: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:776
+#: ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: Helyi partíció hiba"
 
 #: ../src/system-config-kdump.py:784
 #, python-format
 msgid ""
 "\n"
 "\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
+"Note that the %s architecture does not feature a relocatable kernel at this time, and thus requires a separate kernel-kdump package to be installed for kdump to function. This can be installed via 'yum install kernel-kdump' at your convenience.\n"
 "\n"
 msgstr ""
 "\n"
 "\n"
-"„%s” architektúrában jelenleg nincs áthelyezhető kernel, így kdump "
-"működéséhez, szükség van egy különálló kernel-kdump csomag telepítésére. Ezt "
-"tetszés szerinti időpontban telepítheti a következő paranccsal: „yum install "
-"kernel-kdump”.\n"
+"„%s” architektúrában jelenleg nincs áthelyezhető kernel, így kdump működéséhez, szükség van egy különálló kernel-kdump csomag telepítésére. Ezt tetszés szerinti időpontban telepítheti a következő paranccsal: „yum install kernel-kdump”.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:793
 #, fuzzy, python-format
-msgid ""
-"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
-"dump capture."
-msgstr ""
-"FIGYELMEZTETÉS: xen kdump támogatás nem xen %s RPM-et igényel, hogy "
-"összeomlási lerakást csináljon. Kérem bizonyosodjon meg arról, hogy "
-"telepítette a nem xen %s RPM ugyanannyiadik változatát, mint a telepített "
-"xen kernel!"
+msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
+msgstr "FIGYELMEZTETÉS: xen kdump támogatás nem xen %s RPM-et igényel, hogy összeomlási lerakást csináljon. Kérem bizonyosodjon meg arról, hogy telepítette a nem xen %s RPM ugyanannyiadik változatát, mint a telepített xen kernel!"
 
 #: ../src/system-config-kdump.py:796
-#, fuzzy, python-format
-msgid ""
-"Please be sure you have the non-xen %s RPM of the same version as your xen "
-"kernel installed."
+#, python-format
+msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
 msgstr ""
-"FIGYELMEZTETÉS: xen kdump támogatás nem xen %s RPM-et igényel, hogy "
-"összeomlási lerakást csináljon. Kérem bizonyosodjon meg arról, hogy "
-"telepítette a nem xen %s RPM ugyanannyiadik változatát, mint a telepített "
-"xen kernel!"
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
@@ -198,23 +153,16 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:803
 #, python-format
-msgid ""
-"Changing Kdump settings requires rebooting the system to reallocate memory "
-"accordingly. %sYou will have to reboot the system for the new settings to "
-"take effect."
-msgstr ""
-"Kdump beállításainak módosításához szükség van a rendszer újraindítására a "
-"memória megfelelő újraosztásának érdekében. %sAz új beállítások érvénybe "
-"léptetéséhez újra kell indítani a rendszert."
+msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
+msgstr "Kdump beállításainak módosításához szükség van a rendszer újraindítására a memória megfelelő újraosztásának érdekében. %sAz új beállítások érvénybe léptetéséhez újra kell indítani a rendszert."
 
 #: ../src/system-config-kdump.py:807
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: Újraindítás szükséges"
 
 #: ../src/system-config-kdump.py:822
-#, fuzzy
 msgid "Error writing kdump configuration"
-msgstr "Kernel Dump beállítás"
+msgstr "Hiba a kdump beállítás írásakor"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
@@ -222,11 +170,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "Hiba a rendszerbetöltő beállításainak írásakor"
 
 #: ../src/system-config-kdump.py:836
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: Hiba a rendszerbetöltő beállításainak írásakor"
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
@@ -234,24 +182,25 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: Hiba a szolgáltatások kezelésekor"
 
 #: ../src/system-config-kdump.py:855
 msgid "Configurations sucessfully saved"
-msgstr ""
+msgstr "Beállítások sikeresen elmentve"
 
 #: ../src/system-config-kdump.py:856
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: Beállítás elmentve"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "Kernel Dump beállítás"
+msgstr "%s hiba a kdump beállítás olvasásakor"
 
 #: ../src/system-config-kdump.py:917
+#, fuzzy
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: kdump konfigurációs fájl hiba"
 
 #: ../src/system-config-kdump.py:1026
 #, fuzzy, python-format
@@ -278,7 +227,7 @@ msgstr ""
 #: ../src/system-config-kdump.py:1457
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "Helyi fájlrendszer-partíció %s névvel"
 
 #: ../src/system-config-kdump.py:1458
 #, python-format
@@ -286,14 +235,12 @@ msgid " and type %s wasn't found"
 msgstr ""
 
 #: ../src/system-config-kdump.py:1660
-msgid ""
-"The help viewer could not be found. To be able to view help, the 'yelp' "
-"package needs to be installed."
-msgstr ""
+msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
+msgstr "A súgómegjelenítő nem található. Ahhoz, hogy megtekinthesse a súgót, a 'yelp' csomagot kell telepítenie."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "Hib a system-config-kdump végrehajtásakor"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -301,20 +248,21 @@ msgstr "Kernel Dump beállítás"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "_Fájl"
 
-#: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
-msgid ""
-"Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
+#: ../src/system-config-kdump.glade:26
+#: ../src/system-config-kdump.glade:142
+msgid "Apply changes, save booloader config file and save kexec/kdump config file"
+msgstr "Változtatások alkalmazása, a rendszerbetöltő konfigurációs fájl és a kexec/kdump konfigurációs fájl elmentése"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
+#: ../src/system-config-kdump.glade:36
+#: ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "Az eredeti beállítások újratöltése a konfigurációs állományokból"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
@@ -322,7 +270,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Kilépés és a nem mentett változtatások elvetése"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
@@ -330,20 +278,21 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "_Beállítások"
 
-#: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
+#: ../src/system-config-kdump.glade:73
+#: ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Kdump engedélyezése"
 
-#: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
+#: ../src/system-config-kdump.glade:85
+#: ../src/system-config-kdump.glade:184
 msgid "Disable kdump"
-msgstr "Kdump engedélyezése"
+msgstr "kdump tiltása"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "_Súgó"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
@@ -355,53 +304,50 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "Alkalmaz"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "Újratöltés"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "Kdump engedélyezése"
+msgstr "Engedélyezés"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "Tiltás"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "Teljes rendszermemória (MB):"
+msgstr "Teljes rendszermemória:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "Kdump-memória (MB):"
+msgstr "Jelenlegi kdump memória:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "Kdump-memória (MB):"
+msgstr "Új kdump memória:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Használható memória (MB):"
+msgstr "Felhasználható memória:"
 
-#: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
-#: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
+#: ../src/system-config-kdump.glade:315
+#: ../src/system-config-kdump.glade:328
+#: ../src/system-config-kdump.glade:362
+#: ../src/system-config-kdump.glade:879
 msgid "N/A"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "Alapbeállítások"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
@@ -409,16 +355,15 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "Helyi fájlrendszer"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "Hely:"
+msgstr "Partíció:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
@@ -434,47 +379,47 @@ msgstr "Útvonal:"
 
 #: ../src/system-config-kdump.glade:504
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "Célkönyvtár a helyi fájlrendszeren"
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "kdump fájl mentése nyers eszközre"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr ""
+msgstr "Nyers eszköz"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr ""
+msgstr "Válassza ki a nyers eszközt"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "kdump fájl mentése hálózaton keresztül"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "Hálózat"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "kdump fájl mentése  NFS-en keresztül"
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "kdump fájl mentése SSH-n keresztül"
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "A felhasználónak legalább írási jogosultságának kell lennie a kiszolgálón"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
@@ -482,11 +427,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:675
 msgid "Network server name"
-msgstr ""
+msgstr "Hálózati kiszolgáló neve"
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "Felhasználónév:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
@@ -494,11 +439,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "Kiszolgálónév:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "Cél-beállítások"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
@@ -526,11 +471,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "Felhasználói adat kizárása"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "felhasználói adatok"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
@@ -541,12 +486,13 @@ msgid "free page"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:868
+#, fuzzy
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Tényleges szűrőszint:"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Szűrési szint</b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
@@ -554,69 +500,67 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
-msgstr ""
+msgstr "diskdump fájlformátum"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Kimeneti fájlformátum</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "Szűrési beállítások"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Alapértelmezett initrd használata"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Alapértelmezett művelet:"
+msgstr "Alapértelmezett initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Egyéni initrd használata"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "Egyéni initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Válassza ki az egyéni initrd fájlt"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Válasszon ki egy initrd fájlt"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>initrd kiválasztás</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Alapértelmezett rendszermag-kép (kernel image) használata"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Alapértelmezett művelet:"
+msgstr "Alapértelmezett rendszermag (kernel)"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Egyéni rendszermag-kép (kernel image) használata"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Egyéni rendszermag (kernel)"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Válassza ki az egyéni rendszermagját (kernel)"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Rendszermag-kijelölés rögzítése</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
@@ -624,7 +568,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Rendszermag (kernel) parancssori kapcsolók"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
@@ -632,25 +576,23 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Eredeti:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Szerkesztett:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Parancssori kapcsolók</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Alapértelmezett művelet:"
+msgstr "Válassza ki az alapértelmezett műveletet"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Alapértelmezett művelet:"
+msgstr "<b>Alapértelmezett művelet</b>"
 
 #: ../src/system-config-kdump.glade:1373
 #, fuzzy
@@ -659,7 +601,7 @@ msgstr "Lerakás gyűjtő:"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Haladó beállítások"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
