@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: system-config-kdump.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-22 14:28-0300\n"
-"Last-Translator: Héctor Daniel Cabrera <logan@fedoraproject.org>\n"
+"PO-Revision-Date: 2010-03-25 08:54-0300\n"
+"Last-Translator: Claudio Rodrigo Pereyra Diaz <claudio@pereyradiaz.com.ar>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -452,12 +452,10 @@ msgid "Target settings"
 msgstr "Configuraciones del destino"
 
 #: ../src/system-config-kdump.glade:795
-#, fuzzy
 msgid "Exclude zero page"
 msgstr "Excluir página cero"
 
 #: ../src/system-config-kdump.glade:796
-#, fuzzy
 msgid "zero page"
 msgstr "página cero"
 
@@ -526,19 +524,16 @@ msgid "Default initrd"
 msgstr "Initrd predeterminado"
 
 #: ../src/system-config-kdump.glade:1056
-#, fuzzy
 msgid "Use custom initrd"
-msgstr "Utilizar initrd tradicional"
+msgstr "Utilizar initrd personalizado"
 
 #: ../src/system-config-kdump.glade:1057
-#, fuzzy
 msgid "Custom initrd"
-msgstr "Initrd tradicional"
+msgstr "Initrd personalizado"
 
 #: ../src/system-config-kdump.glade:1073
-#, fuzzy
 msgid "Choose custom initrd file"
-msgstr "Elija un archivo initrd tradicional"
+msgstr "Elija un archivo initrd personalizado"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
@@ -557,19 +552,16 @@ msgid "Default kernel"
 msgstr "Kernel predeterminado"
 
 #: ../src/system-config-kdump.glade:1137
-#, fuzzy
 msgid "Use custom kernel image"
-msgstr "Utilizar imagen del kernel tradicional"
+msgstr "Utilizar imagen del kernel personalizado"
 
 #: ../src/system-config-kdump.glade:1138
-#, fuzzy
 msgid "Custom kernel"
-msgstr "Kernel tradicional"
+msgstr "Kernel personalizado"
 
 #: ../src/system-config-kdump.glade:1154
-#, fuzzy
 msgid "Choose your custom kernel"
-msgstr "Elija su kernel tradicional"
+msgstr "Elija su kernel personalizado"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
@@ -621,39 +613,51 @@ msgstr "Acerca de system-config-kdump"
 
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "Configurar kdump/kexec"
+
 #~ msgid "%s"
 #~ msgstr "%s"
+
 #~ msgid "Edit Location"
 #~ msgstr "Editar Ubicación"
+
 #~ msgid "New Location"
 #~ msgstr "Nueva Ubicación"
+
 #~ msgid "Select a location type:"
 #~ msgstr "Seleccione un tipo de ubicación:"
+
 #~ msgid "Enter location:"
 #~ msgstr "Ingrese la Ubicación:"
+
 #~ msgid ""
 #~ "SSH locations must be of the form 'user@host'. A path can be specified in "
 #~ "the main window."
 #~ msgstr ""
 #~ "Las ubicaciones SSH deben tener la forma 'usuario@host'. Se puede "
 #~ "especificar una ruta en la ventana principal. "
+
 #~ msgid "NFS locations must be of the form 'host:/path'"
 #~ msgstr "Las ubicaciones NFS deben tener la forma 'host:/path'"
+
 #~ msgid "For raw locations you must specify a valid device node."
 #~ msgstr ""
 #~ "Para ubicaciones raw usted debe especificar un nodo de dispositivo válido."
+
 #~ msgid "Support for filesystem type '%s' is not present on this system"
 #~ msgstr ""
 #~ "El soporte para archivos de sistemas '%s' no se encuentra en este sistema."
+
 #~ msgid "Failed to stat device node '%s'"
 #~ msgstr "Falló la obtención de información del nodo de dispositivo '%s'"
+
 #~ msgid "'%s' locations must specify a valid device node."
 #~ msgstr ""
 #~ "Las ubicaciones '%s' deben especificar un nodo de dispositivo válido."
+
 #~ msgid "No bootloader config file found, aborting configuration!"
 #~ msgstr ""
 #~ "¡No se encontró el archivo de configuración del gestor de arranque, "
 #~ "abortando la configuración !"
+
 #~ msgid "local"
 #~ msgstr "local"
-
