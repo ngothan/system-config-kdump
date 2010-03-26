@@ -62,7 +62,7 @@ install: subdirs ${PKGNAME}.desktop doc-install py-install
 	mkdir -p ${INSTROOT}${POLICY_DIR}
 	mkdir -p ${INSTROOT}${LIBEXEC_DIR}
 	mkdir -p ${INSTROOT}${GLADE_DIR}
-	install -m644 src/${PKGNAME}.py $(INSTROOT)$(PKGDATADIR)
+	install -m0755 src/${PKGNAME}.py $(INSTROOT)$(PKGDATADIR)
 	install src/${PKGNAME} $(INSTROOT)/usr/bin
 	install -m644 src/${GLADE_DATA} $(INSTROOT)$(GLADE_DIR)
 	install -m644 pixmaps/*.png $(INSTROOT)$(PKGDATADIR)/pixmaps

@@ -1,6 +1,6 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 2.0.3
+Version: 2.0.4
 Release: 1%{?dist}
 URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
@@ -64,13 +64,15 @@ fi
 %{_bindir}/system-config-kdump
 %{_datadir}/system-config-kdump
 %{_datadir}/applications/*
-%config(noreplace) %{_sysconfdir}/security/console.apps/system-config-kdump
-%config(noreplace) %{_sysconfdir}/pam.d/system-config-kdump
+%{_libdir}/python?.?/site-packages/*egg*
+%{_libdir}/python?.?/site-packages/sckdump/
 
-%{_sysconfdir}/dbus-1/system.d/org.fedoraproject.systemconfig.kdump.mechanism.conf
+%config %{_sysconfdir}/security/console.apps/system-config-kdump
+%config %{_sysconfdir}/pam.d/system-config-kdump
+%config %{_sysconfdir}/dbus-1/system.d/org.fedoraproject.systemconfig.kdump.mechanism.conf
+
 %{_datadir}/dbus-1/system-services/org.fedoraproject.systemconfig.kdump.mechanism.service
 %{_datadir}/polkit-1/actions/org.fedoraproject.systemconfig.kdump.policy
-
 %{_datadir}/icons/hicolor/48x48/apps/system-config-kdump.png
 
 %doc ChangeLog COPYING
