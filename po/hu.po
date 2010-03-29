@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-25 14:04+0100\n"
+"PO-Revision-Date: 2010-03-29 21:39+0100\n"
 "Last-Translator: Nikolas Slivka <snicore@gmail.com>\n"
 "Language-Team: Hungarian <fedora-trans-hu@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr "'%s' helyek útvonala nem lehet üres."
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Visszaállítja az útvonalat az alapértelmezettre ('%s')?."
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
@@ -148,8 +148,9 @@ msgid "Please be sure you have the non-xen %s RPM of the same version as your xe
 msgstr ""
 
 #: ../src/system-config-kdump.py:799
+#, fuzzy
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: Nem xen rendszermag szüksége"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
@@ -166,7 +167,7 @@ msgstr "Hiba a kdump beállítás írásakor"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: Hiba a kdump beállításának írásakor"
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
@@ -178,7 +179,7 @@ msgstr "system-config-kdump: Hiba a rendszerbetöltő beállításainak írásak
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
-msgstr ""
+msgstr "Hiba a kdump szolgáltatások kezelésekor"
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
@@ -198,14 +199,13 @@ msgid "Error reading kdump configuration: %s"
 msgstr "%s hiba a kdump beállítás olvasásakor"
 
 #: ../src/system-config-kdump.py:917
-#, fuzzy
 msgid "system-config-kdump: kdump configuration file error"
-msgstr "system-config-kdump: kdump konfigurációs fájl hiba"
+msgstr "system-config-kdump: kdump konfigurációs-fájl hiba"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "Kernel Dump beállítás"
+msgstr "%s hiba a kdump beállításának írásakor"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
@@ -222,7 +222,7 @@ msgstr ""
 #: ../src/system-config-kdump.py:1436
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "%s nyers eszköz nem található ezen a gépen"
 
 #: ../src/system-config-kdump.py:1457
 #, python-format
@@ -232,7 +232,7 @@ msgstr "Helyi fájlrendszer-partíció %s névvel"
 #: ../src/system-config-kdump.py:1458
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr " és a(z) %s típus nem található"
 
 #: ../src/system-config-kdump.py:1660
 msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
@@ -257,7 +257,7 @@ msgstr "Változtatások alkalmazása, a rendszerbetöltő konfigurációs fájl 
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
-msgstr ""
+msgstr "gtk-alkalmaz"
 
 #: ../src/system-config-kdump.glade:36
 #: ../src/system-config-kdump.glade:153
@@ -274,7 +274,7 @@ msgstr "Kilépés és a nem mentett változtatások elvetése"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
-msgstr ""
+msgstr "gtk-kilépés"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
@@ -296,11 +296,11 @@ msgstr "_Súgó"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
-msgstr ""
+msgstr "gtk-névjegy"
 
 #: ../src/system-config-kdump.glade:117
 msgid "gtk-help"
-msgstr ""
+msgstr "gtk-súgó"
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
@@ -339,7 +339,7 @@ msgstr "Felhasználható memória:"
 #: ../src/system-config-kdump.glade:362
 #: ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
@@ -351,7 +351,7 @@ msgstr "Alapbeállítások"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "Kdump fájl mentése a helyi fájlrendszeren"
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
@@ -359,7 +359,7 @@ msgstr "Helyi fájlrendszer"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "Válasszon partíciót ahová menteni szeretné a kdump-ot"
 
 #: ../src/system-config-kdump.glade:473
 msgid "Partition:"
@@ -367,11 +367,11 @@ msgstr "Partíció:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr ""
+msgstr "Válasszon cél könyvtárat a helyi fájlrendszeren"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr ""
+msgstr "jelöljön ki egy helyi-fájlrendszer könyvtárat"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -423,7 +423,7 @@ msgstr "A felhasználónak legalább írási jogosultságának kell lennie a kis
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "Útvonal a könyvtárhoz "
 
 #: ../src/system-config-kdump.glade:675
 msgid "Network server name"
@@ -435,7 +435,7 @@ msgstr "Felhasználónév:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "Útvonal a könyvtárhoz:"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
@@ -447,11 +447,11 @@ msgstr "Cél-beállítások"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Zéró oldal kizárása"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "zéró oldal"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
@@ -479,14 +479,13 @@ msgstr "felhasználói adatok"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "Szabad oldal kizárása"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "szabad oldal"
 
 #: ../src/system-config-kdump.glade:868
-#, fuzzy
 msgid "Actual filter level:"
 msgstr "Tényleges szűrőszint:"
 
@@ -496,7 +495,7 @@ msgstr "<b>Szűrési szint</b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
-msgstr ""
+msgstr "ELF fájlformátum"
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
@@ -564,7 +563,7 @@ msgstr "<b>Rendszermag-kijelölés rögzítése</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
-msgstr ""
+msgstr "gtk-frissítés"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
@@ -572,7 +571,7 @@ msgstr "Rendszermag (kernel) parancssori kapcsolók"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Eredeti rendszermag-parancssori kapcsoló beállítások"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
@@ -605,7 +604,7 @@ msgstr "Haladó beállítások"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
+msgstr "System-config-kdump névjegy"
 
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "kdump/kexec beállítása"
