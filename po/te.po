@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump.master.te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-30 16:56+0530\n"
+"PO-Revision-Date: 2010-03-30 17:05+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 
 #: ../src/system-config-kdump.py:68
 msgid "mount rootfs and run /sbin/init"
@@ -361,7 +362,7 @@ msgstr "ఉపయోగించు"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr "అసాధ్యం"
+msgstr "అచేతనముచేయి"
 
 #: ../src/system-config-kdump.glade:265
 msgid "Total System Memory:"
