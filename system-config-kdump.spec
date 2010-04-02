@@ -1,3 +1,5 @@
+%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
+
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
 Version: 2.0.4
@@ -64,8 +66,8 @@ fi
 %{_bindir}/system-config-kdump
 %{_datadir}/system-config-kdump
 %{_datadir}/applications/*
-%{_libdir}/python?.?/site-packages/*egg*
-%{_libdir}/python?.?/site-packages/sckdump/
+%{python_sitelib}/*egg*
+%{python_sitelib}/sckdump/
 
 %config %{_sysconfdir}/security/console.apps/system-config-kdump
 %config %{_sysconfdir}/pam.d/system-config-kdump
@@ -81,6 +83,9 @@ fi
 
 
 %changelog
+* Fri Mar 26 2010 Roman Rakus <rrakus@redhat.com> - 2.0.4-1
+- see ChangeLog
+
 * Tue Feb 02 2010 Roman Rakus <rrakus@redhat.com> 2.0.3-1
 - see ChangeLog
 
