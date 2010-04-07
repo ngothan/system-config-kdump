@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Kdump
+_Name=Kernel crash dumps
 _Comment=Configure kernel crash dumps
 Categories=System;Settings;Application;GTK;
 Icon=system-config-kdump
