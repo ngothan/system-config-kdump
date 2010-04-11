@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date:  2009-09-22 22:54+0200\n"
-"Last-Translator: Maxim Dzіumanenko <dziumanenko@gmail.com>\n"
+"PO-Revision-Date: 2010-04-12 01:00+0300\n"
+"Last-Translator: Maxim V. Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,11 +22,11 @@ msgstr "підключіть rootfs та виконайте /sbin/init"
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
@@ -44,6 +44,18 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
+"Ця програма є вільною; її можна поширювати та "
+"змінювати відповідно до умов ліцензії GNU General Public License 2 чи будь-якої старшої версії.\n"
+"\n"
+"Програма поширюється зі сподіванням, що буде корисною, але "
+"БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ ЧИ НЕЯВНИХ, У ТОМУ ЧИСЛІ "
+"БЕЗ ГАРАНТІЙ КОМЕРЦІЙНОЇ ЦІННОСТІ ТА ПРИДАТНОСТІ ДО ПЕВНОЇ МЕТИ. Додаткову"
+"інформацію дивіться у ліцензії GNU.\n"
+"\n"
+"Копія ліцензії GNU надається размо з програмою. \n"
+"Якщо ви її не отримали, запитайте її у Фонді вільного ПЗ за адресою:\n"
+"Free Software Foundation, Inc., 675 Mass "
+"Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:126
 msgid ""
@@ -58,7 +70,7 @@ msgstr ""
 "Kdump являє собою новий механізм дампу ядра при аварійному завершенні. У "
 "випадку системного збою, kdump може створювати знімок файлу ядра, що "
 "виконується у контексті щойно завантаженого ядра, що набагато надійніше "
-"методів створення знімку у контекстіядра, що зазнало аварії. Знімок файлу "
+"методів створення знімку у контексті ядра, що зазнало аварії. Знімок файлу "
 "ядра може принести величезну користь при визначенні причини системного збою. "
 "Зверніть увагу, що kdump не вимагає спеціального виділення пам'яті винятково "
 "для його роботи."
@@ -78,7 +90,7 @@ msgstr "На жаль ця архітектура не підтримує kdump"
 
 #: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump не підтримується"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -86,7 +98,7 @@ msgstr "Помилка при визначенні обсягу системно
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: помилка пам'яті"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -98,56 +110,53 @@ msgstr "Ця система не має достатньої кількості 
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: бракує пам'яті"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"Для адреси '%s' шлях не може бути порожнім. Встановлюється типове значення "
-"шляху ('%s')?"
+msgstr "Шліх не може бути порожнім для «%s»."
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Використовувати типовий шлях («%s»)?"
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: порожній шлях"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Необхідно вказати сервер."
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: не вказано назву сервера"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Необхідно вказати іс'я користувача."
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: не вказано ім'я користувача"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "Потрібно обрати raw-пристрій"
 
 #: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: помилка raw-пристрою"
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "Для запуску цієї програми необхідні права користувача root."
+msgstr "Потрібно вибрати розділ"
 
 #: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: помилка у локальному розділі"
 
 #: ../src/system-config-kdump.py:784
 #, python-format
@@ -169,28 +178,24 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:793
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
 msgstr ""
-"ПОПЕРДЖЕННЯ: підтримка xen·kdump вимагає не-xen %s RPM для виконання знімку "
-"дампу аварійного завершення. Будь ласка, перевірте, що у вас є не xen %s RPM "
-"тієї самої версії що і xen ядро."
+"ПОПЕРЕДЖЕННЯ: підтримка xen·kdump вимагає, щоб знімок аварійного ядра був створений пакетом %s (не xen)."
 
 #: ../src/system-config-kdump.py:796
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
 msgstr ""
-"ПОПЕРДЖЕННЯ: підтримка xen·kdump вимагає не-xen %s RPM для виконання знімку "
-"дампу аварійного завершення. Будь ласка, перевірте, що у вас є не xen %s RPM "
-"тієї самої версії що і xen ядро."
+"ПОПЕРЕДЖЕННЯ: перевірте, що версія пакету %s (не xen) відповідає версії встановленого ядра xen."
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: потрібне ядро, відмінне від xen"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
@@ -205,58 +210,57 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:807
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: потрібно перезавантажити"
 
 #: ../src/system-config-kdump.py:822
-#, fuzzy
 msgid "Error writing kdump configuration"
-msgstr "Налаштовування Kernel Dump"
+msgstr "Помилка під час запису конфігурації kdump"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: помилка запису конфігурації kdump"
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "Помилка у конфігурації завантажувача"
 
 #: ../src/system-config-kdump.py:836
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: помилка під час запису конфігурації завантажувача"
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
-msgstr ""
+msgstr "Помилка при роботі зі службами kdump"
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: помилка при роботі зі службами"
 
 #: ../src/system-config-kdump.py:855
 msgid "Configurations sucessfully saved"
-msgstr ""
+msgstr "Конфігурація успішно збережено"
 
 #: ../src/system-config-kdump.py:856
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: конфігурацію збережено"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "Налаштовування Kernel Dump"
+msgstr "Помилка при читанні конфігурації kdump: %s"
 
 #: ../src/system-config-kdump.py:917
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: помилка файлу конфігурації kdump"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "Налаштовування Kernel Dump"
+msgstr "Помилка під час запису конфігурації kdump: %s"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: помилка під час запису файлу конфігурації kdump"
 
 #: ../src/system-config-kdump.py:1169
 msgid "Core collector must begin with 'makedumpfile'"
@@ -264,447 +268,390 @@ msgstr "Колектор ядра повинен починатись з 'makedu
 
 #: ../src/system-config-kdump.py:1170
 msgid "system-config-kdump: Bad core collector"
-msgstr ""
+msgstr "system-config-kdump: некоректний колектор даних ядра"
 
 #: ../src/system-config-kdump.py:1436
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "raw-пристрій %s не знайдено"
 
 #: ../src/system-config-kdump.py:1457
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "Розділ локальної файлової системи з назвою %s"
 
 #: ../src/system-config-kdump.py:1458
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr " та типом %s не знайден"
 
 #: ../src/system-config-kdump.py:1660
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
+"Не знайдено утиліту перегляду довідки. Для перегляду довідки треба встановити пакет «yelp»."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "Помилка під час запуску system-config-kdump"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
-msgstr "Налаштовування Kernel Dump"
+msgstr "Налаштовування дампу ядра"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "_Файл"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
+msgstr "Застосувати зміни, зберегти файли конфігурації завантажувача та kexec/kdump"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
-msgstr ""
+msgstr "gtk-apply"
 
 #: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "Перезавантажити оригінальні параметри з файлів конфігурації"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
-msgstr ""
+msgstr "gtk-revert-to-saved"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Вийти без збереження змін"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
-msgstr ""
+msgstr "gtk-quit"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "_Параметри"
 
 #: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Увімкнути kdump"
 
 #: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
 msgid "Disable kdump"
-msgstr "Увімкнути kdump"
+msgstr "Вимкнути kdump"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "_Довідка"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
-msgstr ""
+msgstr "gtk-about"
 
 #: ../src/system-config-kdump.glade:117
 msgid "gtk-help"
-msgstr ""
+msgstr "gtk-help"
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "Застосувати"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "Увімкнути kdump"
+msgstr "Увімкнути"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "Вимкнути"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "Загальний обсяг системної пам'яті (Мб):"
+msgstr "Загальний обсяг пам'яті:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "Пам'ять kdump (Мб):"
+msgstr "Поточний обсяг пам'яті:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "Пам'ять kdump (Мб):"
+msgstr "Нова пам'ять kdump:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Доступна пам'ять (Мб):"
+msgstr "Доступна пам'ять:"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "Н/Д"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(МБ)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "Основні параметри"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "Зберегти файл kdump у локальній файловій системі"
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "Локальна файлова система"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "Виберіть розділ, де буде збережено kdump"
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "Адреса:"
+msgstr "Розділ:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr ""
+msgstr "Виберіть каталог у локальній файловій системі"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr ""
+msgstr "Виберіть каталог у локальній файловій системі"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
-msgstr "Путь:"
+msgstr "Шлях:"
 
 #: ../src/system-config-kdump.glade:504
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "Каталог у локальній файлові системі"
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "Зберегти файл kdump на raw-пристрої"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr ""
+msgstr "Raw-пристрій"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr ""
+msgstr "Виберіть raw-пристрій"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "Зберегти файл kdump у мережі"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "Мережа"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "Зберегти файл kdump за допомогою NFS"
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "Зберегти файл kdump за допомогою SSH"
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "Користувач повинен мати права запису на сервері"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "Шлях до каталогу на сервері для збереження файлу kdump"
 
 #: ../src/system-config-kdump.glade:675
 msgid "Network server name"
-msgstr ""
+msgstr "Назва сервера"
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "Користувач:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "Шлях:"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "Назва сервера:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "Параметри розміщення"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Виключити нульові сторінки"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "нульова сторінка"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr ""
+msgstr "Виключити сторінки кеша"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
-msgstr ""
+msgstr "сторінка кеша"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr ""
+msgstr "Виключити приватний кэш"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr ""
+msgstr "приватний кэш"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "Виключити дані користувача"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "дані користувача"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "Виключити вільні сторінки"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "вільна сторінка"
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Рівень фільтрації:"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Рівень фільтрації </b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
-msgstr ""
+msgstr "ELF"
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
-msgstr ""
+msgstr "diskdump"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Формат отриманого файлу</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "Параметри фільтрації"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Використовувати первинний initrd"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Типова дія:"
+msgstr "Первинний initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Використовувати інший initrd"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "Інший initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Виберіть інший файл initrd"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Виебріть файл initrd"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>вибір initrd</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Використовувати первинний образ ядра"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Типова дія:"
+msgstr "Первинне ядро"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Використовувати первинний образ ядра"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Інше ядро"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Виберіть ядро"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Вибір знімку ядра</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
-msgstr ""
+msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Параметри командного рядка ядра"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Первинні параметри командного рядка ядра"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Оригінальні:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Змінені:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Параметри командного рядка</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Типова дія:"
+msgstr "Виберіть типові дії"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Типова дія:"
+msgstr "<b>Типова дія</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "Колектор ядра:"
+msgstr "<b>Колектор</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Додаткові настройки"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
+msgstr "Про system-config-kdump"
 
-#~ msgid "Configure kdump/kexec"
-#~ msgstr "Налаштовування kdump/kexec"
 
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Edit Location"
-#~ msgstr "Змінити розташування"
-
-#~ msgid "New Location"
-#~ msgstr "Нове розташування"
-
-#~ msgid "Select a location type:"
-#~ msgstr "Виберіть тип розташування:"
-
-#~ msgid "Enter location:"
-#~ msgstr "Введіть розташування:"
-
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "Адреси SSH повинні відповідати шаблону 'user@host'. Шлях може бути "
-#~ "вказаний у головному вікні."
-
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "Адреси NFS повинні відповідати формату 'host:/path'"
-
-#~ msgid "For raw locations you must specify a valid device node."
-#~ msgstr "Адреси пристроїв можуть бути вказані явним чином."
-
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr "Наразі у системі не забезпечена підтримка файлових систем '%s'"
-
-#~ msgid "Failed to stat device node '%s'"
-#~ msgstr "Помилка збирання інформації про пристрій '%s'"
-
-#~ msgid "'%s' locations must specify a valid device node."
-#~ msgstr "Адреси '%s' повинні вказувати на коректний вузол пристрою."
-
-#~ msgid "No bootloader config file found, aborting configuration!"
-#~ msgstr ""
-#~ "Не знайдено файл параметрів завантажувача. Налаштовування аварійно "
-#~ "завершено!"
-
-#~ msgid "local"
-#~ msgstr "локальний"
