@@ -119,7 +119,6 @@ DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT]
 SUPPORTEDFSTYPES = ("ext2", "ext3")
 
 UNSUPPORTED_ARCHES = ("ppc", "s390", "s390x", "i386", "i586")
-KERNEL_KDUMP_ARCHES = ("ppc64")
 DEBUG = 0 
 TESTING = 0
 
@@ -780,14 +779,6 @@ class MainWindow:
 
 
         kernel_kdump_note = ""
-        if self.arch in KERNEL_KDUMP_ARCHES:
-            kernel_kdump_note = _("\n\nNote that the %s architecture does not "
-                                "feature a relocatable kernel at this time, "
-                                "and thus requires a separate kernel-kdump "
-                                "package to be installed for kdump to "
-                                "function. This can be installed via 'yum "
-                                "install kernel-kdump' at your convenience."
-                                "\n\n") % self.arch
 
         if self.xen_kernel and self.my_settings.kdump_enabled:
             dialogs.show_message(_("WARNING: xen kdump support requires a "
