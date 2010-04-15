@@ -17,7 +17,6 @@ Requires: pygtk2 >= 2.8.6
 Requires: pygtk2-libglade
 Requires: usermode >= 1.36
 Requires: kexec-tools
-Requires: bitmap-fixed-fonts
 Requires: yelp
 Requires: python-slip-dbus
 Requires(pre): gtk2 >= 2.8.20
