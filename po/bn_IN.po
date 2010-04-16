@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-24 17:17+0530\n"
+"PO-Revision-Date: 2010-04-16 16:32+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
 "MIME-Version: 1.0\n"
@@ -333,7 +333,7 @@ msgstr "বিবিধ বিকল্প (_O)"
 
 #: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
-msgstr "kdump সক্রিয় করা হবে"
+msgstr "kdump সক্রিয় করুন"
 
 #: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
 msgid "Disable kdump"
@@ -361,7 +361,7 @@ msgstr "পুনরায় লোড করুন"
 
 #: ../src/system-config-kdump.glade:174
 msgid "Enable"
-msgstr "সক্রিয় করা হবে"
+msgstr "সক্রিয় করুন"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
