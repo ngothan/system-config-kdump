@@ -425,7 +425,6 @@ class MainWindow:
         self.default_kernel = self.default_kernel_name()[:-1]
         self.running_kernel = os.popen("/bin/uname -r").read().strip()
 
-        self.bootloader = None
         self.arch = os.popen("/bin/uname -m").read().strip()
 
         # load widgets from glade file
@@ -568,6 +567,11 @@ class MainWindow:
         self.core_collector_entry.connect("key-press-event", self.catch_enter, self.collector_entry_changed)
         self.default_action_combobox.connect("changed", self.set_default_action)
 
+        # maybe we're running from live media with syslinux?
+        if self.default_kernel == '':
+            self.show_error_message(_("Don't know how to configure your boot loader."),
+                                    _("system-config-kdump: no default kernel"))
+            sys.exit(1)
 
         # check architecture
         if self.arch in UNSUPPORTED_ARCHES:

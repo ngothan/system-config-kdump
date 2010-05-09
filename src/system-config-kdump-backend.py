@@ -97,6 +97,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
+        bootloader = None
         for (name, (conf, offset, kpath)) in BOOTLOADERS.items():
             # I hope order doesn't matter
             if os.access(conf, os.W_OK):
