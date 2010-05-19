@@ -1394,12 +1394,30 @@ class MainWindow:
         """
         Called when you change command line.
         """
-        value = self.get_crashkernel(gtk_entry.get_text())[:-1]
+        value = self.get_crashkernel(gtk_entry.get_text())
         if value == "":
             self.kdump_enable_toggled(self.disable_button)
         else:
-            self.kdump_mem_spin_button.set_value(float(value))
-            self.update_usable_mem(self.kdump_mem_spin_button)
+            size = None
+            offset = None
+            try:
+                try:
+                    size, offset = value.split("@", 1)
+                except:
+                    size=value
+                if offset:
+                    if offset[-1] == "M": offset=offset[:-1]
+                    self.my_settings.kdump_offset = float(offset)
+                if size[-1] == "M": size=size[:-1]
+                self.kdump_mem_spin_button.set_value(float(size))
+                self.update_usable_mem(self.kdump_mem_spin_button)
+            except ValueError, reason:
+                self.show_error_message("Invalid craskernel value: %s."
+                    "\nPossible values are:\n\tX\n\tX@Y\n\n%s"
+                    %(value,reason),
+                    "Bad crashkernel value")
+                return False
+
         if DEBUG:
             print "Updated cmdline. Crashkernel set to " + value
         self.my_settings.commandline = gtk_entry.get_text()
