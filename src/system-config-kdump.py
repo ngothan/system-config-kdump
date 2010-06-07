@@ -582,12 +582,14 @@ class MainWindow:
             sys.exit(1)
 
         # get total memory of system
-        total_mem = None
-        for line in open("/proc/meminfo").readlines():
-            if line.startswith("MemTotal:"):
-                total_mem = int(line.split()[1]) / 1024
-
-        if not total_mem:
+        total_mem = 0.0
+        for line in open("/proc/iomem").readlines():
+            if line.find("RAM") != -1 or line.find("MMCONFIG") != -1:
+                hex_ck_start = line.strip().split("-")[0]
+                hex_ck_end = line.strip().split("-")[1].split(":")[0].strip()
+                total_mem += self.hex2mb_float(hex_ck_end) - self.hex2mb_float(hex_ck_start)
+        total_mem = int(total_mem + 0.99999999)
+        if total_mem == 0:
             dialogs.show_error_message(
                 _("Failed to detect total system memory"),
                 _("system-config-kdump: Memory error"),
@@ -665,7 +667,6 @@ class MainWindow:
         if kdump_mem_grubby != 0:
             self.orig_settings.kdump_enabled = True
             self.kdump_enable_toggled(self.enable_button)
-            total_mem += kdump_mem
             self.orig_settings.kdump_offset = kdump_offset
             self.orig_settings.kdump_mem = kdump_mem_grubby
 
@@ -1134,6 +1135,12 @@ class MainWindow:
         """
         divisor = 1048575
         return (int(hex_code, 16) / divisor)
+
+    def hex2mb_float(self, hex_code):
+        """
+        convert hex memory values into MB of RAM in float precision
+        """
+        return float(int(hex_code, 16)) / 1048576
 
     def set_path(self, path):
         """
