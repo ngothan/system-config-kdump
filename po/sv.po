@@ -1,16 +1,18 @@
 # Swedish translation of system-config-kdump.
-# Copyright © 2001-2007 Free Software Foundation, Inc.
+# Copyright © 2001-2007,2010 Free Software Foundation, Inc.
 # Magnus Larsson <fedoratrans@gmail.com>, 2006, 2007.
+# Göran Uddeborg <goeran@uddeborg.se>, 2010.
 #
+# $Revision: 1.2 $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2007-09-22 23:05-0400\n"
-"Last-Translator: Magnus Larsson <fedoratrans@gmail.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"PO-Revision-Date: 2010-06-28 15:38+0200\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,13 +21,15 @@ msgstr ""
 msgid "mount rootfs and run /sbin/init"
 msgstr "montera rootfs och kör /sbin/init"
 
+# c betyder "current" här, översätter med a som i aktuell
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(a)"
 
+# d betyder "default" här, översätter med s som i standard<
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(s)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
@@ -43,6 +47,19 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
+"Detta program är fri programvara.  Du kan vidaredistribuera det\n"
+"och/eller modifiera det under villkoren i GNU General Public License,\n"
+"publicerad av Free Software Foundation, antingen version 2 av licensen\n"
+"eller (om du så vill) någon senare version.\n"
+"\n"
+"Detta program distribueras i hopp om att det ska vara användbart, men\n"
+"UTAN NÅGON GARANTI, även utan underförstådd garanti vid KÖP eller\n"
+"LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL.  Se GNU General Public License\n"
+"för ytterligare information.\n"
+"\n"
+"Du bör ha fått en kopia av GNU General Public License\n"
+"tillsammans med detta program.  Om inte, skriv till Free Software Foundation,\n"
+"Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:126
 msgid ""
@@ -77,7 +94,7 @@ msgstr "Ledsen, denna arkitektur stöder inte kdump"
 
 #: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump stöds inte"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -85,7 +102,7 @@ msgstr "Misslyckades att se det totala systemminnet"
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: Minnesfel"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -98,56 +115,53 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: Inte tillräckligt med minne"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"Sökväg kan inte vara tom för '%s' platser. Återställ sökväg till standard ('%"
-"s')?."
+msgstr "Sökväg kan inte vara tom för \"%s\"-platser. "
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Återställ sökväg till standard (\"%s\")?."
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: Tom sökväg"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Du måste ange server. "
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: Servernamn inte angivet"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Du måste ange användarnamn. "
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: Användarnamn inte angivet"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "Du måste välja en av de råa enheterna"
 
 #: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: Fel på rå enhet"
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "Du måste vara root för att köra detta program."
+msgstr "Du måste välja en av partitionerna"
 
 #: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: Fel på lokal partition"
 
 #: ../src/system-config-kdump.py:784
 #, python-format
@@ -168,28 +182,22 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:793
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
-msgstr ""
-"VARNING: Stöd för xen kdump kräver en icke-xen %s RPM för att kunna fånga "
-"krashdumpar. Kontrollera att du har installerat en icke-xen %s RPM av samma  "
-"version som din xen-kernel."
+msgstr "VARNING: Stöd för xen kdump kräver en icke-xen %s-RPM för att utföra själva uppfångandet av krashdumpar."
 
 #: ../src/system-config-kdump.py:796
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
-msgstr ""
-"VARNING: Stöd för xen kdump kräver en icke-xen %s RPM för att kunna fånga "
-"krashdumpar. Kontrollera att du har installerat en icke-xen %s RPM av samma  "
-"version som din xen-kernel."
+msgstr "Kontrollera att du har icke-xen %s-RPM:en av samma version som din xen-kernel installerad."
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: Behöver en icke-xen-kärna"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
@@ -204,58 +212,57 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:807
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: Behöver omstart"
 
 #: ../src/system-config-kdump.py:822
-#, fuzzy
 msgid "Error writing kdump configuration"
-msgstr "Konfiguration för kärndump"
+msgstr "Fel när konfiguration för kdump skrevs"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: Fel när konfigurationen för kdump skrevs"
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "Fel när konfigurationen för startprogrammet skrevs"
 
 #: ../src/system-config-kdump.py:836
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: Fel när konfigurationen för startprogrammet skrevs"
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
-msgstr ""
+msgstr "Fel i hantering av kdump-tjänster"
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: Fel i hantering av tjänster"
 
 #: ../src/system-config-kdump.py:855
 msgid "Configurations sucessfully saved"
-msgstr ""
+msgstr "Konfigurationen kunde sparas"
 
 #: ../src/system-config-kdump.py:856
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: Konfigurationen sparad"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "Konfiguration för kärndump"
+msgstr "Fel när kdump-konfigurationen lästes: %s"
 
 #: ../src/system-config-kdump.py:917
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: filfel i kdump-konfigurationen"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "Konfiguration för kärndump"
+msgstr "Fel när kdump-konfigurationen skrevs: %s"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: filfel när kdump-konfigurationen skrevs"
 
 #: ../src/system-config-kdump.py:1169
 msgid "Core collector must begin with 'makedumpfile'"
@@ -263,32 +270,32 @@ msgstr "Kärninsamlaren måste börja med 'makedumpfile'"
 
 #: ../src/system-config-kdump.py:1170
 msgid "system-config-kdump: Bad core collector"
-msgstr ""
+msgstr "system-config-kdump: Felaktig kärninsamlare"
 
 #: ../src/system-config-kdump.py:1436
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "Den råa enheten %s finns inte på denna maskin"
 
 #: ../src/system-config-kdump.py:1457
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "Lokal filsystemspartition med namnet %s"
 
 #: ../src/system-config-kdump.py:1458
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr " och typen %s finns inte"
 
 #: ../src/system-config-kdump.py:1660
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
-msgstr ""
+msgstr "Hjälpvisaren fanns inte.  För att kunna visa hjälpen, behöver paketet \"yelp\" vara installerat."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "Fel när system-config-kdump kördes"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -296,132 +303,125 @@ msgstr "Konfiguration för kärndump"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "_Arkiv"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
+msgstr "Verkställ ändringar, spara konfigurationsfil för startprogram och spara konfigurationsfil för kexec/kdump"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
-msgstr ""
+msgstr "gtk-apply"
 
 #: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "Läs om orginalinställningar från konfigurationsfiler"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
-msgstr ""
+msgstr "gtk-revert-to-saved"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Avsluta och förkasta ändringar som inte sparats"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
-msgstr ""
+msgstr "gtk-quit"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "_Alternativ"
 
 #: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Aktivera kdump"
 
 #: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
 msgid "Disable kdump"
-msgstr "Aktivera kdump"
+msgstr "Avaktivera kdump"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "_Hjälp"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
-msgstr ""
+msgstr "gtk-about"
 
 #: ../src/system-config-kdump.glade:117
 msgid "gtk-help"
-msgstr ""
+msgstr "gtk-help"
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "Verkställ"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "Läs om"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "Aktivera kdump"
+msgstr "Aktivera"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "Avaktivera"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "Totalt systemminne (MB):"
+msgstr "Totalt systemminne:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "kdump-minne (MB):"
+msgstr "Aktuellt kdump-minne:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "kdump-minne (MB):"
+msgstr "Nytt kdump-minne:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Användbart minne (MB):"
+msgstr "Användbart minne:"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "ej tillämpligt"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "Grundinställningar"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "Spara kdump-filen i ett lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "Lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "Välj partition där du vill spara din kdump"
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "Plats:"
+msgstr "Partition:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr ""
+msgstr "Välj målkatalog i lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr ""
+msgstr "Välj en katalog i ett lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -429,300 +429,228 @@ msgstr "Sökväg:"
 
 #: ../src/system-config-kdump.glade:504
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "Målkatalog i lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "Spara kdump-fil i en rå enhet"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr ""
+msgstr "Rå enhet"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr ""
+msgstr "Välj rå enhet"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "Spara kdump-fil via nätverk"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "Nätverk"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "Spara kdump-fil via NFS"
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "Spara kdump-fil via SSH"
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "Anvädaren måste ha nödvändiga skrivrättigheter på servern"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "Sökväg till en katalog att spara kdump-filen i på servern"
 
 #: ../src/system-config-kdump.glade:675
-#, fuzzy
 msgid "Network server name"
-msgstr "Nätverksgränssnitt åsidosätta:"
+msgstr "Nätverksserverns namn"
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "Användarnamn:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "Sökväg till katalog:"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "Servernamn:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "Målinställningar"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Utelämna nollsida"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "nollsida"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr ""
+msgstr "Utelämna cachesida"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
-msgstr ""
+msgstr "cachesida"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr ""
+msgstr "Utelämna privat cache"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr ""
+msgstr "privat cache"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "Utelämna användardata"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "användardata"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "Utelämna frisida"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "frisida"
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Faktiskt filternivå:"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Filtreringsninvå </b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
-msgstr ""
+msgstr "ELF-filformat"
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
-msgstr ""
+msgstr "diskdump-filformat"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Utdatafilformat</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "Filtreringsinställningar"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Använd standard-initrd"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Standardåtgärd:"
+msgstr "Standard-initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Använd anpassad initrd"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "Anpassad initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Välj en anpassad initrd-fil"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Välj en initrd-fil"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>initrd-val</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Använd standardkärnavbild"
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Standardåtgärd:"
+msgstr "Standardkärna"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Använd anpassad kärnavbild"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Anpassad kärna"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Välj din anpassade kärna"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Fånga kärnval</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
-msgstr ""
+msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Kärnans kommandoradsflaggor"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Originalflaggor till kärnans kommandorad"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Original:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Redigerad:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Kommandoradsflaggor</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Standardåtgärd:"
+msgstr "Välj standardåtgärd"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Standardåtgärd:"
+msgstr "<b>Standardåtgärd</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "Kärninsamlare:"
+msgstr "<b>Kärninsamlare</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Expertinställningar"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
-
-#~ msgid "Configure kdump/kexec"
-#~ msgstr "Konfigurera kdump/kexec"
-
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Edit Location"
-#~ msgstr "Redigera plats"
-
-#~ msgid "New Location"
-#~ msgstr "Ny plats"
-
-#~ msgid "Select a location type:"
-#~ msgstr "Välj platstyp:"
-
-#~ msgid "Enter location:"
-#~ msgstr "Ange plats:"
-
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "SSH-platser måste vara i form av 'användare@värd'. En sökväg kan "
-#~ "specificeras i huvudfönstret."
-
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "NFS-platser måste vara i form av 'värd:/sökväg'"
-
-#~ msgid "For raw locations you must specify a valid device node."
-#~ msgstr "För råa platser måste du ange en giltig enhetsnod."
-
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr "Stöd för filsystemstyp '%s' finns inte på detta system"
-
-#~ msgid "Failed to stat device node '%s'"
-#~ msgstr "Kunde inte stat enhetsnod '%s'"
-
-#~ msgid "'%s' locations must specify a valid device node."
-#~ msgstr "'%s' platser måste ange en giltig enhetsnod."
-
-#~ msgid "No bootloader config file found, aborting configuration!"
-#~ msgstr ""
-#~ "Fel! Ingen konfigurationsfil för startprogrammet hittades, avbryter "
-#~ "konfigurationen!"
-
-#~ msgid "local"
-#~ msgstr "lokal"
-
-#~ msgid "Reboot"
-#~ msgstr "Starta om"
-
-#~ msgid "Shell"
-#~ msgstr "Skal"
-
-#~ msgid "Move Up"
-#~ msgstr "Flytta upp"
-
-#~ msgid "Move Down"
-#~ msgstr "Flytta ner"
-
-#~ msgid "Type"
-#~ msgstr "Typ"
-
-#~ msgid "Usable Memory (MB):Default Action:Network Interface Override:Reboot"
-#~ msgstr "Starta om"
+msgstr "Om system-config-kdump"
