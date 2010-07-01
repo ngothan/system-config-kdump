@@ -117,7 +117,7 @@ EXCEPTION_MARK = "EXCEPTION" # this is used to catch exceptions raised in backen
 
 DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT, ACTION_POWEROFF]
 
-SUPPORTEDFSTYPES = ("ext2", "ext3")
+SUPPORTEDFSTYPES = ("ext2", "ext3", "ext4")
 
 UNSUPPORTED_ARCHES = ("ppc", "s390", "s390x", "i386", "i586")
 DEBUG = 0 
