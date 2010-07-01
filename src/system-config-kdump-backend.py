@@ -24,8 +24,6 @@ BOOTLOADERS = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
                 "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
                 "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
 
-
-
 class SystemConfigKdumpObject(slip.dbus.service.Object):
     def __init__ (self, *p, **k):
         super (SystemConfigKdumpObject, self).__init__ (*p, **k)
@@ -128,8 +126,6 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         """
         Call command args[0] with args arguments
         """
-#        (status, output) = gtkExecWithCaptureStatus(args[0], args, catchfd = (1, 2))
-        #subprocess.Popen(args)
         stdout, stderr = subprocess.Popen(args, stdout=subprocess.PIPE).communicate()
         print "subprocess call:"
         print args 
@@ -137,18 +133,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             print "-> stdout = " + stdout
         if stderr:
             print "-> stderr = " + stderr
-#        if status:
-#            output = EXCEPTION_MARK + ("Command '%s' failed:\n") % (" ".join (args)) + output
         return stdout
-
-#    def call(self, *args):
-#        """
-#        Call command args[0] with args arguments
-#        """
-#        (output, status) = execWithCaptureStatus(args[0], args, catchfd = (1, 2))
-#        if status:
-#            output = EXCEPTION_MARK + ("Command '%s' failed:\n") % (" ".join (args)) + output
-#        return output
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
