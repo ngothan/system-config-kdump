@@ -65,6 +65,7 @@ NUM_FILTERS = 5
 ACTION_REBOOT = "reboot"
 ACTION_SHELL = "shell"
 ACTION_HALT = "halt"
+ACTION_POWEROFF = "poweroff"
 ACTION_DEFAULT = _("mount rootfs and run /sbin/init")
 
 FSTAB_FILE = "/etc/fstab"
@@ -114,7 +115,7 @@ COPYRIGHT = '(C) 2006 - 2009 Red Hat, Inc.'
 EXCEPTION_MARK = "EXCEPTION" # this is used to catch exceptions raised in backend
 
 
-DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT]
+DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT, ACTION_POWEROFF]
 
 SUPPORTEDFSTYPES = ("ext2", "ext3")
 
