@@ -40,36 +40,42 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getcmdline")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='s')
+                          in_signature='s', out_signature='(iss)')
     def getcmdline (self, kernel):
         """ Get command line arguments for kernel from grubby """
-        for line in self.gtkcall(GRUBBY_CMD, "--info", kernel).splitlines():
-            (name, value) = line.strip().split("=", 1)
-            if name == "args":
-                return value.strip('"')
-        return ""
+        (retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
+        if retcode > 0:
+            return (retcode, std, err)
+        else:
+            for line in std.splitlines():
+                (name, value) = line.strip().split("=", 1)
+                if name == "args":
+                    return (retcode, value.strip('"'), err)
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getxencmdline")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='s')
+                          in_signature='s', out_signature='(iss)')
     def getxencmdline (self, kernel):
         """ Get command line arguments for xen kernel from grubby """
-        for line in self.gtkcall(GRUBBY_CMD, "--info", kernel).splitlines:
-            (name, value) = line.strip().split("=", 1)
-            if name == "module":
-                return value.strip('"')
-        return ""
+        (retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
+        if retcode > 0:
+            return (retcode, std, err)
+        else:
+            for line in std.splitlines:
+                (name, value) = line.strip().split("=", 1)
+                if name == "module":
+                    return (retcode, value.strip('"'), err)
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getallkernels")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='', out_signature='s')
+                          in_signature='', out_signature='(iss)')
     def getallkernels (self):
         """ Get all kernel names from grubby """
         return self.gtkcall(GRUBBY_CMD,"--info", "ALL")
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writedumpconfig")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='s')
+                          in_signature='s', out_signature='(is)')
     def writedumpconfig (self, config_string):
         """ Write kdump configuration to /etc/kdump.conf
             and return what we write into kdump config file """
@@ -78,10 +84,10 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             fd.write(config_string)
             fd.close()
         except IOError,(errno, strerror):
-            return "%s: %s" % (errno, strerror)
+            return (errno, strerror)
 
         # re-read
-        return open(KDUMP_CONFIG_FILE).read()
+        return (0, open(KDUMP_CONFIG_FILE).read())
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writebootconfig")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
@@ -108,32 +114,46 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.handledumpservice")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='s')
-    def handledumpservice (self, config_string):
+                          in_signature='(ss)', out_signature='(iss)')
+    def handledumpservice (self, (chkconfig_status, service_op)):
         """ Turn on/off kdump initscript. Start/stop kdump service """
-        check = ""
-        arguments = config_string.split(";")
-        if len(arguments) > 1:
-            check += self.gtkcall("/sbin/chkconfig", "kdump", arguments[0])
-            check += self.gtkcall("/sbin/service", "kdump", arguments[1])
-        else:
-            check += self.gtkcall("/sbin/chkconfig", "kdump", arguments[0])
+        status = 0
+        std = ""
+        err = ""
+        if chkconfig_status != "":
+            (status, std, err) = self.gtkcall("/sbin/chkconfig", "kdump",
+                                              chkconfig_status)
+            if status > 0:
+                return (status, std, err)
+
+        if service_op != "":
+            (status, std, err) = self.gtkcall("/sbin/service", "kdump",
+                                              service_op)
+            if status > 0:
+                return (status, std, err)
+
         if self.bootloader == 'yaboot':
-            check +=self.gtkcall('/sbin/ybin')
-        return check
+            (status, std, err) = self.gtkcall('/sbin/ybin')
+            if status > 0:
+                return (status, std, err)
+
+        return (status, std, err)
  
     def gtkcall (self, *args):
         """
         Call command args[0] with args arguments
+        Return the tuple with (retcode, stdout, stderr)
         """
-        stdout, stderr = subprocess.Popen(args, stdout=subprocess.PIPE).communicate()
+        the_call = subprocess.Popen(args, stdout = subprocess.PIPE,
+                                    stderr = subprocess.PIPE)
+        stdout, stderr = the_call.communicate()
         print "subprocess call:"
         print args 
         if stdout:
             print "-> stdout = " + stdout
         if stderr:
             print "-> stderr = " + stderr
-        return stdout
+        return (the_call.returncode, stdout or "", stderr or "")
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
