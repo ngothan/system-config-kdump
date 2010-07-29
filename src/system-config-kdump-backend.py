@@ -32,7 +32,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getdefaultkernel")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='', out_signature='s')
+                          in_signature='', out_signature='(iss)')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
         return self.gtkcall(GRUBBY_CMD, "--default-kernel")
@@ -91,7 +91,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writebootconfig")
     @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='s')
+                          in_signature='s', out_signature='(iss)')
     def writebootconfig (self, config_string):
         """
         Write bootloader configuration.

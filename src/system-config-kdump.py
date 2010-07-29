@@ -824,12 +824,13 @@ class MainWindow:
             if DEBUG:
                 print "writing bootloader config"
 
-            if not self.write_bootloader_config(window):
+            correct, error = self.write_bootloader_config(window)
+            if not correct:
                 window.stop()
                 #error write bootloader
                 window.hide()
                 dialogs.show_error_message(
-                    _("Error writing bootloader configuration"),
+                    _("Error writing bootloader configuration:\n%s") %error,
                     _("system-config-kdump: Error write bootloader "
                     "configuration"),
                     parent = self.toplevel)
@@ -1010,17 +1011,18 @@ class MainWindow:
         if self.my_settings.default_action is not ACTION_DEFAULT:
             config_string += "default %s\n" % self.my_settings.default_action
 
+        retcode, written = 0, ""
         try:
-            written = self.dbus_object.writedumpconfig(config_string)
+            retcode, written = self.dbus_object.writedumpconfig(config_string)
         except dbus.exceptions.DBusException:
             return 0
 
         if DEBUG:
             print "written kdump config:"
             print written
-        if (config_string != written):
+        if retcode:
             dialogs.show_error_message(
-                _("Error writing kdump configuration: %s" % written),
+                _("Error writing kdump configuration:\n%s" % written),
                 _("system-config-kdump: write kdump configuration file error"),
                 parent = self.toplevel)
             return 0
@@ -1033,7 +1035,7 @@ class MainWindow:
         """
         window.set_label("Writing settings to bootloader configuration file")
         if TESTING:
-            return True
+            return True, None
 
         # config string will have arguments for command grubby.
         # Each one argument will be divided by `;'
@@ -1053,13 +1055,12 @@ class MainWindow:
             if DEBUG:
                 print "  Removing original args '%s'" % (self.my_settings.orig_commandline)
             try:
-                check = self.dbus_object.writebootconfig(config_string)
-                if DEBUG:
-                    print "  check: " + check
-                if check.startswith(EXCEPTION_MARK):
-                    return False
-            except dbus.exceptions.DBusException:
-                return False
+                retcode, output, error = \
+                    self.dbus_object.writebootconfig(config_string)
+                if retcode:
+                    return False, error
+            except dbus.exceptions.DBusException, error:
+                return False, error
 
         # and now set new kernel cmd line
             config_string = "--update-kernel=" + self.my_settings.kernel +";"
@@ -1071,13 +1072,12 @@ class MainWindow:
                 print "  Setting args to '%s'" % (self.my_settings.commandline)
 
             try:
-                check = self.dbus_object.writebootconfig(config_string)
-                if DEBUG:
-                    print "  check: " + check
-                if check.startswith(EXCEPTION_MARK):
-                    return False
-            except dbus.exceptions.DBusException:
-                return False
+                retcode, output, error = \
+                    self.dbus_object.writebootconfig(config_string)
+                if retcode:
+                    return False, error
+            except dbus.exceptions.DBusException, error:
+                return False, error
 
 
         else:
@@ -1087,15 +1087,14 @@ class MainWindow:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
 
             try:
-                check = self.dbus_object.writebootconfig(config_string)
-                if DEBUG:
-                    print "  check: " + check
-                if check.startswith(EXCEPTION_MARK):
-                    return False
-            except dbus.exceptions.DBusException:
-                return False
+                retcode, output, error = \
+                    self.dbus_object.writebootconfig(config_string)
+                if retcode:
+                    return False, error
+            except dbus.exceptions.DBusException, error:
+                return False, error
 
-        return True
+        return True, None
 
     def update_usable_mem(self, spin_button, *args):
         """
@@ -1326,42 +1325,65 @@ class MainWindow:
         """
         Read command line argument for kernel and return them.
         """
+        (retcode, cmdline, error) = (0, "", "")
         if (kernel.find("/boot/xen.")) is not -1:
-            cmdline = self.dbus_object.getxencmdline(kernel)
+            (retcode, cmdline, error) = self.dbus_object.getxencmdline(kernel)
         else:
-            cmdline = self.dbus_object.getcmdline(kernel)
-        self.my_settings.kdump_mem = self.get_crashkernel(cmdline)
-        return cmdline
+            (retcode, cmdline, error) = self.dbus_object.getcmdline(kernel)
+        if retcode:
+            dialogs.show_error_message(
+                _("Unable to get command line arguments for %s:\n%s")
+                    %(kernel, error),
+                _("system-config-kdump: grubby error"),
+                parent = self.toplevel)
+            return ""
+        else:
+            self.my_settings.kdump_mem = self.get_crashkernel(cmdline)
+            return cmdline
 
     def default_kernel_name(self):
         """
         Read default kernel name from bootloader config and return it.
         Also set up kernel prefix.
         """
-        default_kernel = self.dbus_object.getdefaultkernel()
-        self.kernel_prefix = default_kernel.rsplit("/", 1)[0]
-        if DEBUG:
-            print "Default kernel = " + default_kernel
-            print "Kernel prefix = " + self.kernel_prefix
+        retcode, default_kernel, error = self.dbus_object.getdefaultkernel()
+        if retcode:
+            dialogs.show_error_message(
+                _("Unable to get default kernel:\n%s") %error,
+                _("system-config-kdump: grubby error"),
+                parent = self.toplevel)
+        else:
+            self.kernel_prefix = default_kernel.rsplit("/", 1)[0]
+            if DEBUG:
+                print "Default kernel = " + default_kernel
+                print "Kernel prefix = " + self.kernel_prefix
         return default_kernel
 
     def setup_custom_kernel_combobox(self, combobox):
         """
         Fill custom kernel combobox with all kernels found in bootloader config.
         """
-        lines = self.dbus_object.getallkernels().split("\n")
-        for line in lines[:-1]:
-            if line.startswith("kernel="):
-                (name, value) = line.strip().split("=", 1)
-                text = value.strip('"')
-                if self.default_kernel.find(text) is not -1:
-                    text = text + " " + TAG_DEFAULT
-                if text.find(self.running_kernel) is not -1:
-                    text = text + " " + TAG_CURRENT
-                combobox.append_text(self.kernel_prefix + text)
-                if DEBUG:
-                    print "Appended kernel:\"" + self.kernel_prefix + text + "\""
-        combobox.set_active(0)
+        (retcode, lines, error) = self.dbus_object.getallkernels()
+        if retcode:
+            dialogs.show_error_message(
+                _("Unable to get all kernel names:\n%s") %error,
+                _("system-config-kdump: grubby error"),
+                parent = self.toplevel)
+
+        else:
+            for line in lines.split("\n")[:-1]:
+                if line.startswith("kernel="):
+                    (name, value) = line.strip().split("=", 1)
+                    text = value.strip('"')
+                    if self.default_kernel.find(text) is not -1:
+                        text = text + " " + TAG_DEFAULT
+                    if text.find(self.running_kernel) is not -1:
+                        text = text + " " + TAG_CURRENT
+                    combobox.append_text(self.kernel_prefix + text)
+                    if DEBUG:
+                        print "Appended kernel:\"" + self.kernel_prefix +\
+                            text + "\""
+            combobox.set_active(0)
         return
 
     def update_cmdline(self, combobox):
