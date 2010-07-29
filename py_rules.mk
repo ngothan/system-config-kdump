@@ -6,6 +6,8 @@ PY_SETUP_IN = setup.py.in
 
 PY_SETUP = setup.py
 
+INSTROOT ?= /
+
 $(PY_SETUP): $(PY_SETUP_IN)
 	sed -e "s/@VERSION@/$(VERSION)/g" < $< > $@
 
