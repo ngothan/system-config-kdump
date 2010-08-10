@@ -112,8 +112,6 @@ LICENSE = _(
 
 COPYRIGHT = '(C) 2006 - 2009 Red Hat, Inc.'
 
-EXCEPTION_MARK = "EXCEPTION" # this is used to catch exceptions raised in backend
-
 
 DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT, ACTION_POWEROFF]
 
@@ -1044,23 +1042,28 @@ class MainWindow:
             print "Write bootloader conf:"
         
         # kernel name to change
-        config_string += "--update-kernel=" + self.my_settings.kernel + ";"
         if DEBUG:
             print "  Updating kernel '%s'" % (self.my_settings.kernel)
 
         # arguments
         if self.my_settings.kdump_enabled:
         # at first remove original kernel cmd line
-            config_string += "--remove-args=" + self.my_settings.orig_commandline
-            if DEBUG:
-                print "  Removing original args '%s'" % (self.my_settings.orig_commandline)
-            try:
-                retcode, output, error = \
-                    self.dbus_object.writebootconfig(config_string)
-                if retcode:
+        # but only if there is any
+            if not self.my_settings.orig_commandline == "":
+                config_string += "--update-kernel=" + \
+                    self.my_settings.kernel + ";"
+                config_string += "--remove-args=" + \
+                    self.my_settings.orig_commandline
+                if DEBUG:
+                    print "  Removing original args '%s'" \
+                        % (self.my_settings.orig_commandline)
+                try:
+                    retcode, output, error = \
+                        self.dbus_object.writebootconfig(config_string)
+                    if retcode:
+                        return False, error
+                except dbus.exceptions.DBusException, error:
                     return False, error
-            except dbus.exceptions.DBusException, error:
-                return False, error
 
         # and now set new kernel cmd line
             config_string = "--update-kernel=" + self.my_settings.kernel +";"
@@ -1082,6 +1085,7 @@ class MainWindow:
 
         else:
         # kdump is desabled, so only remove crashkernel
+            config_string += "--update-kernel=" + self.my_settings.kernel + ";"
             config_string += "--remove-args=crashkernel=%s" % (self.my_settings.kdump_mem)
             if DEBUG:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
@@ -1729,8 +1733,15 @@ class MainWindow:
                 else:
                     service_op = None
 
-            if self.dbus_object.handlekdumpservice(chkconfig_status, service_op).startswith(EXCEPTION_MARK):
+            status, std, err = self.dbus_object.handlekdumpservice(
+                chkconfig_status, service_op)
+            if status:
+                dialogs.show_error_message(
+                _("Unable to handle kdump services:\n%s") %err,
+                _("system-config-kdump: Handling services error"),
+                parent = self.toplevel)
                 return False
+
         except dbus.exceptions.DBusException:
             return False
         while gtk.events_pending():

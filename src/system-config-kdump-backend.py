@@ -11,8 +11,6 @@ import slip.dbus.service
 import subprocess
 
 
-EXCEPTION_MARK = "EXCEPTION"
-
 #######
 GRUBBY_CMD        = "/sbin/grubby"
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
