@@ -203,10 +203,9 @@ class DBusProxy (object):
         """
         Start or stop kdump service, turn on or off init script
         """
-        send_string = chkconfig_status
-        if service_op:
-            send_string += ";" + service_op
-        return self.dbus_object.handledumpservice (send_string, dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
+        return self.dbus_object.handledumpservice (
+            (chkconfig_status, service_op),
+            dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
 
 # This class contains every settings
@@ -1722,16 +1721,10 @@ class MainWindow:
         try:
             if self.my_settings.kdump_enabled:
                 chkconfig_status = "on"
-                if self.kdump_mem_current_label.get_text().split()[0] > "0":
-                    service_op = "restart"
-                else:
-                    service_op = None
+                service_op = "restart"
             else:
                 chkconfig_status = "off"
-                if self.kdump_mem_current_label.get_text().split()[0] > "0":
-                    service_op = "stop"
-                else:
-                    service_op = None
+                service_op = "stop"
 
             status, std, err = self.dbus_object.handlekdumpservice(
                 chkconfig_status, service_op)

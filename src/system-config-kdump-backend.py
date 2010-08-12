@@ -118,17 +118,15 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         status = 0
         std = ""
         err = ""
-        if chkconfig_status != "":
-            (status, std, err) = self.gtkcall("/sbin/chkconfig", "kdump",
-                                              chkconfig_status)
-            if status > 0:
-                return (status, std, err)
+        (status, std, err) = self.gtkcall("/sbin/chkconfig", "kdump",
+                                          chkconfig_status)
+        if status > 0:
+            return (status, std, err)
 
-        if service_op != "":
-            (status, std, err) = self.gtkcall("/sbin/service", "kdump",
-                                              service_op)
-            if status > 0:
-                return (status, std, err)
+        (status, std, err) = self.gtkcall("/sbin/service", "kdump",
+                                          service_op)
+        if status > 0:
+            return (status, std, err)
 
         if self.bootloader == 'yaboot':
             (status, std, err) = self.gtkcall('/sbin/ybin')
