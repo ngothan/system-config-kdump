@@ -123,8 +123,9 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         if status > 0:
             return (status, std, err)
 
-        (status, std, err) = self.gtkcall("/sbin/service", "kdump",
-                                          service_op)
+        if service_op != "":
+            (status, std, err) = self.gtkcall("/sbin/service", "kdump",
+                                              service_op)
         if status > 0:
             return (status, std, err)
 
@@ -134,7 +135,14 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 return (status, std, err)
 
         return (status, std, err)
- 
+
+    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.handledumpservice")
+    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
+                          in_signature='', out_signature='(iss)')
+    def getservicestatus (self):
+        """ Get current status of the kdump service """
+        return self.gtkcall("/sbin/service", "kdump", "status")
+
     def gtkcall (self, *args):
         """
         Call command args[0] with args arguments

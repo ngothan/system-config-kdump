@@ -136,6 +136,10 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
                    "at location, the default action (specified below) will "
                    "be executed.")
 
+# kdump service status as returned by `service kdump status'
+SERVICE_STATUS_ON    = [ 0 ]
+SERVICE_STATUS_OFF   = [ 1, 2, 3, 4 ]
+
 """
     TODO:
 tab 2 target setup
@@ -207,6 +211,13 @@ class DBusProxy (object):
             (chkconfig_status, service_op),
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
+    @polkit.enable_proxy
+    def getservicestatus(self):
+        """
+        Get the current status of the kdump service
+        """
+        return self.dbus_object.getservicestatus (
+            dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism")
 
 # This class contains every settings
 class Settings:
@@ -1718,13 +1729,29 @@ class MainWindow:
         Start or stop kdump service. Enable or disable it.
         """
         window.set_label("Handling services")
+
+        # at first, get the current status of the kdump service
         try:
+            service_status, std, err = self.dbus_object.getservicestatus()
+            if service_status not in SERVICE_STATUS_ON + SERVICE_STATUS_OFF:
+                dialogs.show_error_message(
+                _("Unable to get kdump service status:\n%s") %err,
+                _("system-config-kdump: Handling services error"),
+                parent = self.toplevel)
+                return False
+
             if self.my_settings.kdump_enabled:
                 chkconfig_status = "on"
-                service_op = "restart"
+                if service_status in SERVICE_STATUS_ON:
+                    service_op = "restart"
+                else:
+                    service_op = "start"
             else:
                 chkconfig_status = "off"
-                service_op = "stop"
+                if service_status in SERVICE_STATUS_ON:
+                    service_op = "stop"
+                else:
+                    service_op = ""
 
             status, std, err = self.dbus_object.handlekdumpservice(
                 chkconfig_status, service_op)
