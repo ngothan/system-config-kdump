@@ -30,11 +30,11 @@ import os
 # message, error and yes no dialogs
 import sckdump.dialogs as dialogs
 
-# progress window
-from sckdump.progress import ProgressWindow
-
 # dbus proxy
 from sckdump.dbus_proxy import DBusProxy
+
+# progress window
+from sckdump.progress import ProgressWindow
 
 ##
 ## dbus and polkit
@@ -338,7 +338,6 @@ class MainWindow:
             self.xml = gtk.glade.XML ("/usr/share/system-config-kdump/system-config-kdump.glade", domain=DOMAIN)
 
 
-        self.dbus_object = DBusProxy()
         self.orig_settings = Settings()
         self.my_settings = Settings()
 
@@ -362,13 +361,21 @@ class MainWindow:
         self.usable_mem = 0
         self.kernel_prefix = "/"
 
-        self.default_kernel = self.default_kernel_name()[:-1]
         self.running_kernel = os.popen("/bin/uname -r").read().strip()
 
         self.arch = os.popen("/bin/uname -m").read().strip()
 
         # load widgets from glade file
+        print "Loading toplevel"
         self.toplevel = self.xml.get_widget("mainWindow")
+        print "Showing toplevel"
+        self.toplevel.show()
+        print "setting progress window transients"
+        progress_window = ProgressWindow("system-config-kdump", "")
+        self.dbus_object = DBusProxy(progress_window)
+
+        self.default_kernel = self.default_kernel_name()[:-1]
+        progress_window.set_transient_for(self.toplevel)
         self.about_dialog = self.xml.get_widget("aboutdialog")
 
         self.kdump_notebook = self.xml.get_widget("kdumpNotebook")
@@ -432,6 +439,7 @@ class MainWindow:
         self.clear_cmdline_button        = self.xml.get_widget("clearCmdlineButton")
         self.default_action_combobox     = self.xml.get_widget("defaultActionCombo")
         self.core_collector_entry        = self.xml.get_widget("coreCollectorEntry")
+
 
 
 
@@ -746,16 +754,11 @@ class MainWindow:
                 parent = self.toplevel)
 
         if not TESTING:
-            window = ProgressWindow("Applying configuration","")
-            window.set_transient_for(self.toplevel)
-            window.show()
             if DEBUG:
                 print "writing kdump config"
 
-            if not self.write_dump_config(window):
-                window.stop()
+            if not self.write_dump_config():
                 #error writing dump config
-                window.hide()
                 dialogs.show_error_message(
                     _("Error writing kdump configuration"),
                     _("system-config-kdump: Error write kdump configuration"),
@@ -765,11 +768,9 @@ class MainWindow:
             if DEBUG:
                 print "writing bootloader config"
 
-            correct, error = self.write_bootloader_config(window)
+            correct, error = self.write_bootloader_config()
             if not correct:
-                window.stop()
                 #error write bootloader
-                window.hide()
                 dialogs.show_error_message(
                     _("Error writing bootloader configuration:\n%s") %error,
                     _("system-config-kdump: Error write bootloader "
@@ -780,21 +781,17 @@ class MainWindow:
             if DEBUG:
                 print "Handling kdump service"
 
-            if not self.handle_kdump_service(window):
-                window.stop()
+            if not self.handle_kdump_service():
                 #error write kdump service
-                window.hide()
                 dialogs.show_error_message(_("Error handling kdump services"),
                     _("system-config-kdump: Error handle services"),
                     parent = self.toplevel)
                 return
 
             else:
-                window.stop()
                 dialogs.show_message(_("Configurations sucessfully saved"),
                     _("system-config-kdump: Configuration saved"),
                     parent = self.toplevel)
-                window.hide()
                 
         else:
             print "would have called write_dump_config"
@@ -901,11 +898,10 @@ class MainWindow:
         self.orig_settings.commandline = self.get_cmdline(self.default_kernel)
         self.orig_settings.orig_commandline = self.orig_settings.commandline
 
-    def write_dump_config(self, window):
+    def write_dump_config(self):
         """
         Write settings to /etc/kdump.conf
         """
-        window.set_label("Saving settings to kdump.conf")
         if TESTING or not self.my_settings.kdump_enabled:
             return 1
 
@@ -969,12 +965,11 @@ class MainWindow:
             return 0
         return 1
 
-    def write_bootloader_config(self, window):
+    def write_bootloader_config(self):
         """
         Write settings to bootloader config file.
         Return True on succes.
         """
-        window.set_label("Writing settings to bootloader configuration file")
         if TESTING:
             return True, None
 
@@ -1657,12 +1652,10 @@ class MainWindow:
         if pid == 0:
             os.execv (path, (path, help_page))
 
-    def handle_kdump_service(self, window):
+    def handle_kdump_service(self):
         """
         Start or stop kdump service. Enable or disable it.
         """
-        window.set_label("Handling services")
-
         # at first, get the current status of the kdump service
         try:
             service_status, std, err = self.dbus_object.getservicestatus()
