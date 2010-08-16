@@ -600,11 +600,13 @@ class MainWindow:
         total_mem = int(total_mem + 0.99999999)
         if total_mem == 0:
             dialogs.show_error_message(
-                _("Failed to detect total system memory"),
+                _("Failed to detect total system memory from /proc/iomem. "
+                    "Total system memory will not be accurate."),
                 _("system-config-kdump: Memory error"),
                 parent = self.toplevel)
-            sys.exit(1)
-
+            for line in open("/proc/meminfo").readlines():
+                if line.startswith("MemTotal:"):
+                    total_mem = int(line.split()[1]) / 1024
 
         # Check for a xen kernel, we do things a bit different w/xen
         if os.access("/proc/xen", os.R_OK):
