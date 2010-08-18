@@ -757,10 +757,11 @@ class MainWindow:
             if DEBUG:
                 print "writing kdump config"
 
-            if not self.write_dump_config():
+            correct, error = self.write_dump_config()
+            if not correct:
                 #error writing dump config
                 dialogs.show_error_message(
-                    _("Error writing kdump configuration"),
+                    _("Error writing kdump configuration:\n%s") % error,
                     _("system-config-kdump: Error write kdump configuration"),
                     parent = self.toplevel)
                 return
@@ -781,9 +782,11 @@ class MainWindow:
             if DEBUG:
                 print "Handling kdump service"
 
-            if not self.handle_kdump_service():
+            correct, error = self.handle_kdump_service()
+            if not correct:
                 #error write kdump service
-                dialogs.show_error_message(_("Error handling kdump services"),
+                dialogs.show_error_message(
+                    _("Error handling kdump services\n%s") %error,
                     _("system-config-kdump: Error handle services"),
                     parent = self.toplevel)
                 return
@@ -903,7 +906,7 @@ class MainWindow:
         Write settings to /etc/kdump.conf
         """
         if TESTING or not self.my_settings.kdump_enabled:
-            return 1
+            return True, None
 
         # start point
         config_string = ""
@@ -951,19 +954,15 @@ class MainWindow:
         retcode, written = 0, ""
         try:
             retcode, written = self.dbus_object.writedumpconfig(config_string)
-        except dbus.exceptions.DBusException:
-            return 0
+        except dbus.exceptions.DBusException, reason:
+            return False, reason
 
         if DEBUG:
             print "written kdump config:"
             print written
         if retcode:
-            dialogs.show_error_message(
-                _("Error writing kdump configuration:\n%s" % written),
-                _("system-config-kdump: write kdump configuration file error"),
-                parent = self.toplevel)
-            return 0
-        return 1
+            return False, written
+        return True, None
 
     def write_bootloader_config(self):
         """
@@ -1664,7 +1663,7 @@ class MainWindow:
                 _("Unable to get kdump service status:\n%s") %err,
                 _("system-config-kdump: Handling services error"),
                 parent = self.toplevel)
-                return False
+                return True, None
 
             if self.my_settings.kdump_enabled:
                 chkconfig_status = "on"
@@ -1686,13 +1685,13 @@ class MainWindow:
                 _("Unable to handle kdump services:\n%s") %err,
                 _("system-config-kdump: Handling services error"),
                 parent = self.toplevel)
-                return False
+                return True, None
 
-        except dbus.exceptions.DBusException:
-            return False
+        except dbus.exceptions.DBusException, error:
+            return False, error
         while gtk.events_pending():
             gtk.main_iteration(False)
-        return True
+        return True, None
         
 
 if __name__ == "__main__":
