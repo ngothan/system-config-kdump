@@ -783,7 +783,7 @@ class MainWindow:
                 print "Handling kdump service"
 
             correct, error = self.handle_kdump_service()
-            if not correct:
+            if not correct and error:
                 #error write kdump service
                 dialogs.show_error_message(
                     _("Error handling kdump services\n%s") %error,
@@ -791,10 +791,12 @@ class MainWindow:
                     parent = self.toplevel)
                 return
 
-            else:
+            elif correct:
                 dialogs.show_message(_("Configurations sucessfully saved"),
                     _("system-config-kdump: Configuration saved"),
                     parent = self.toplevel)
+            else:
+                return
                 
         else:
             print "would have called write_dump_config"
@@ -1663,7 +1665,7 @@ class MainWindow:
                 _("Unable to get kdump service status:\n%s") %err,
                 _("system-config-kdump: Handling services error"),
                 parent = self.toplevel)
-                return True, None
+                return False, None
 
             if self.my_settings.kdump_enabled:
                 chkconfig_status = "on"
@@ -1685,7 +1687,7 @@ class MainWindow:
                 _("Unable to handle kdump services:\n%s") %err,
                 _("system-config-kdump: Handling services error"),
                 parent = self.toplevel)
-                return True, None
+                return False, None
 
         except dbus.exceptions.DBusException, error:
             return False, error
