@@ -30,8 +30,12 @@ class ProgressWindow(gtk.Window):
         self.label.set_text(label)
 
     def start(self):
-        self.timer = gobject.timeout_add(100, lambda progress:
-            progress.pulse() or True, self.progress)
+        self.timer = gobject.timeout_add(100, self.update_cb)
+
+    def update_cb(self):
+        self.progress.pulse()
+        self.deiconify()
+        return True
 
     def stop(self):
         if self.timer:
