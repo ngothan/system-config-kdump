@@ -1,4 +1,43 @@
 import gtk
+import os
+import gtk.glade
+
+import gettext
+DOMAIN = "system-config-kdump"
+gtk.glade.bindtextdomain(DOMAIN)
+
+if os.access("dialog_call_error.glade", os.F_OK):
+   _XML = gtk.glade.XML("dialog_call_error.glade", domain = DOMAIN)
+else:
+   _XML = gtk.glade.XML(
+       "/usr/share/system-config-kdump/dialog_call_error.glade",
+       domain=DOMAIN)
+
+def show_call_error_message(text, title, cmd, stdout, stderr, parent = None):
+    """
+    Show up gtk window with error message indicating which command failed.
+    text is message text - some talk about the whole problem
+    title is window title
+    cmd is command which failed
+    stdout is standard output from the command
+    stderr is standard error from the command
+    parrent is parent window
+    """
+    dlg = _XML.get_widget("dialog_call_error")
+    dlg.set_transient_for(parent)
+    dlg.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+    dlg.set_modal(True)
+    dlg.set_title(title)
+    _XML.get_widget("label_message").set_text(text)
+    #_XML.get_widget("tv_command").set_buffer(gtk.TextBuffer().set_text(cmd))
+    #_XML.get_widget("tv_stdout").set_buffer(gtk.TextBuffer().set_text(stdout))
+    #_XML.get_widget("tv_stderr").set_buffer(gtk.TextBuffer().set_text(stderr))
+    _XML.get_widget("tv_command").get_buffer().set_text(cmd)
+    _XML.get_widget("tv_stdout").get_buffer().set_text(stdout)
+    _XML.get_widget("tv_stderr").get_buffer().set_text(stderr)
+    dlg.run()
+    dlg.hide()
+    return False
 
 def show_error_message(text, title, parent = None):
     """
@@ -56,3 +95,12 @@ def yes_no_dialog(text, title, parent = None):
 
     return retc
 
+if __name__ == "__main__":
+    yes_no_dialog("Yes no dialog test\n"*10, "TEST")
+    show_message("Show message test\n"*10, "TEST")
+    show_error_message("Show error message test\n"*10, "TEST")
+    show_call_error_message("Show call error message test\n"*10,
+        "TEST",
+        "command test\n"*5,
+        "stdout test\n"*5,
+        "stderr test\n"*5)

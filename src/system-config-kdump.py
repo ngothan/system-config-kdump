@@ -769,15 +769,27 @@ class MainWindow:
             if DEBUG:
                 print "writing bootloader config"
 
-            correct, error = self.write_bootloader_config()
-            if not correct:
+            correct, cmd, stdout, error = self.write_bootloader_config()
+            if DEBUG:
+                print "Write bootloader config returned:"
+                print correct, cmd, stdout, error
+            if not correct and cmd is not None:
                 #error write bootloader
+                dialogs.show_call_call_error_message(
+                    _("Error writing bootloader configuration"),
+                    _("system-config-kdump: Error write bootloader "
+                    "configuration"),
+                    cmd, stdout, error,
+                    parent = self.toplevel)
+                return
+            elif not correct:
                 dialogs.show_error_message(
                     _("Error writing bootloader configuration:\n%s") %error,
                     _("system-config-kdump: Error write bootloader "
                     "configuration"),
                     parent = self.toplevel)
                 return
+
 
             if DEBUG:
                 print "Handling kdump service"
@@ -972,7 +984,7 @@ class MainWindow:
         Return True on succes.
         """
         if TESTING:
-            return True, None
+            return True, None, None, None
 
         # config string will have arguments for command grubby.
         # Each one argument will be divided by `;'
@@ -997,12 +1009,12 @@ class MainWindow:
                     print "  Removing original args '%s'" \
                         % (self.my_settings.orig_commandline)
                 try:
-                    retcode, output, error = \
+                    cmd, retcode, output, error = \
                         self.dbus_object.writebootconfig(config_string)
                     if retcode:
-                        return False, error
+                        return False, cmd, output, error
                 except dbus.exceptions.DBusException, error:
-                    return False, error
+                    return False, None, None, error
 
         # and now set new kernel cmd line
             config_string = "--update-kernel=" + self.my_settings.kernel +";"
@@ -1014,12 +1026,12 @@ class MainWindow:
                 print "  Setting args to '%s'" % (self.my_settings.commandline)
 
             try:
-                retcode, output, error = \
+                cmd, retcode, output, error = \
                     self.dbus_object.writebootconfig(config_string)
                 if retcode:
-                    return False, error
+                    return False, cmd, output, error
             except dbus.exceptions.DBusException, error:
-                return False, error
+                return False, None, None, error
 
 
         else:
@@ -1030,14 +1042,14 @@ class MainWindow:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
 
             try:
-                retcode, output, error = \
+                cmd, retcode, output, error = \
                     self.dbus_object.writebootconfig(config_string)
                 if retcode:
-                    return False, error
+                    return False, cmd, output, error
             except dbus.exceptions.DBusException, error:
-                return False, error
+                return False, None, None, error
 
-        return True, None
+        return True, None, None, None
 
     def update_usable_mem(self, spin_button, *args):
         """
@@ -1270,14 +1282,14 @@ class MainWindow:
         """
         (retcode, cmdline, error) = (0, "", "")
         if (kernel.find("/boot/xen.")) is not -1:
-            (retcode, cmdline, error) = self.dbus_object.getxencmdline(kernel)
+            cmd, retcode, cmdline, error = self.dbus_object.getxencmdline(kernel)
         else:
-            (retcode, cmdline, error) = self.dbus_object.getcmdline(kernel)
+            cmd, retcode, cmdline, error = self.dbus_object.getcmdline(kernel)
         if retcode:
-            dialogs.show_error_message(
-                _("Unable to get command line arguments for %s:\n%s")
-                    %(kernel, error),
+            dialogs.show_call_error_message(
+                _("Unable to get command line arguments for %s") %(kernel),
                 _("system-config-kdump: grubby error"),
+                cmd, cmdline, error,
                 parent = self.toplevel)
             return ""
         else:
@@ -1289,28 +1301,30 @@ class MainWindow:
         Read default kernel name from bootloader config and return it.
         Also set up kernel prefix.
         """
-        retcode, default_kernel, error = self.dbus_object.getdefaultkernel()
+        cmd, retcode, kernel, error = self.dbus_object.getdefaultkernel()
         if retcode:
-            dialogs.show_error_message(
-                _("Unable to get default kernel:\n%s") %error,
+            dialogs.show_call_error_message(
+                _("Unable to get default kernel"),
                 _("system-config-kdump: grubby error"),
+                cmd, kernel, error,
                 parent = self.toplevel)
         else:
-            self.kernel_prefix = default_kernel.rsplit("/", 1)[0]
+            self.kernel_prefix = kernel.rsplit("/", 1)[0]
             if DEBUG:
-                print "Default kernel = " + default_kernel
+                print "Default kernel = " + kernel
                 print "Kernel prefix = " + self.kernel_prefix
-        return default_kernel
+        return kernel
 
     def setup_custom_kernel_combobox(self, combobox):
         """
         Fill custom kernel combobox with all kernels found in bootloader config.
         """
-        (retcode, lines, error) = self.dbus_object.getallkernels()
+        cmd, retcode, lines, error = self.dbus_object.getallkernels()
         if retcode:
-            dialogs.show_error_message(
-                _("Unable to get all kernel names:\n%s") %error,
+            dialogs.show_call_error_message(
+                _("Unable to get all kernel names"),
                 _("system-config-kdump: grubby error"),
+                cmd, lines, error,
                 parent = self.toplevel)
 
         else:
@@ -1659,11 +1673,12 @@ class MainWindow:
         """
         # at first, get the current status of the kdump service
         try:
-            service_status, std, err = self.dbus_object.getservicestatus()
+            cmd, service_status, std, err = self.dbus_object.getservicestatus()
             if service_status not in SERVICE_STATUS_ON + SERVICE_STATUS_OFF:
-                dialogs.show_error_message(
-                _("Unable to get kdump service status:\n%s") %err,
+                dialogs.show_call_error_message(
+                _("Unable to get kdump service status"),
                 _("system-config-kdump: Handling services error"),
+                cmd, std, err,
                 parent = self.toplevel)
                 return False, None
 
@@ -1680,12 +1695,13 @@ class MainWindow:
                 else:
                     service_op = ""
 
-            status, std, err = self.dbus_object.handlekdumpservice(
+            cmd, status, std, err = self.dbus_object.handlekdumpservice(
                 chkconfig_status, service_op)
             if status:
-                dialogs.show_error_message(
-                _("Unable to handle kdump services:\n%s") %err,
+                dialogs.show_call_error_message(
+                _("Unable to handle kdump services"),
                 _("system-config-kdump: Handling services error"),
+                cmd, std, err,
                 parent = self.toplevel)
                 return False, None
 

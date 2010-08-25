@@ -35,15 +35,19 @@ class DBusProxy (object):
         # What was on stderr
         self.err = ""
 
+        # Which command failed
+        self.cmd = ""
+
         # return code
         self.retcode = 0
 
         self.loop = gobject.MainLoop()
 
-    def handle_reply(self, (retcode, std, err)):
+    def handle_reply(self, (cmd, retcode, std, err)):
         self.retcode = retcode
         self.std = std
         self.err = err
+        self.cmd = cmd
         self.loop.quit()
         self.progress_window.hide()
 
@@ -71,7 +75,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
     @polkit.enable_proxy
     def getcmdline (self, kernel):
@@ -86,7 +90,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
     @polkit.enable_proxy
     def getxencmdline (self, kernel):
@@ -101,7 +105,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
     @polkit.enable_proxy
     def getallkernels (self):
@@ -116,7 +120,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
 
     @polkit.enable_proxy
@@ -149,7 +153,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
 
     @polkit.enable_proxy
@@ -165,7 +169,7 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
 
     @polkit.enable_proxy
@@ -180,5 +184,5 @@ class DBusProxy (object):
             reply_handler = self.handle_reply,
             error_handler = self.handle_error)
         self.loop.run()
-        return self.retcode, self.std, self.err
+        return self.cmd, self.retcode, self.std, self.err
 
