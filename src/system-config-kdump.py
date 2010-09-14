@@ -371,7 +371,7 @@ class MainWindow:
         print "Showing toplevel"
         self.toplevel.show()
         print "setting progress window transients"
-        progress_window = ProgressWindow("system-config-kdump", "")
+        progress_window = ProgressWindow(_("system-config-kdump"), "")
         self.dbus_object = DBusProxy(progress_window)
 
         self.default_kernel = self.default_kernel_name()[:-1]
@@ -1403,10 +1403,10 @@ class MainWindow:
                 self.kdump_mem_spin_button.set_value(float(size))
                 self.update_usable_mem(self.kdump_mem_spin_button)
             except ValueError, reason:
-                self.show_error_message("Invalid craskernel value: %s."
-                    "\nPossible values are:\n\tX\n\tX@Y\n\n%s"
+                self.show_error_message(_("Invalid craskernel value: %s."
+                    "\nPossible values are:\n\tX\n\tX@Y\n\n%s")
                     %(value,reason),
-                    "Bad crashkernel value")
+                    _("Bad crashkernel value"))
                 return False
 
         if DEBUG:
