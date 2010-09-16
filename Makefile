@@ -30,7 +30,7 @@ POLICY_DATA = org.fedoraproject.systemconfig.kdump.policy
 LIBEXEC_DIR     = ${PKGDATADIR}
 LIBEXEC_SCRIPTS = system-config-kdump-backend.py
 
-GLADE_DATA = system-config-kdump.glade
+GLADE_DATA = *.glade
 GLADE_DIR  = ${PKGDATADIR}
 
 MAKEFILE        := $(lastword $(MAKEFILE_LIST))
