@@ -41,6 +41,8 @@ from sckdump.progress import ProgressWindow
 ##
 import dbus
 import slip.dbus.service
+from slip.dbus.polkit import NotAuthorizedException
+from slip.dbus.polkit import AUTH_EXC_PREFIX
 
 ##
 ## I18N
@@ -366,13 +368,11 @@ class MainWindow:
         self.arch = os.popen("/bin/uname -m").read().strip()
 
         # load widgets from glade file
-        print "Loading toplevel"
         self.toplevel = self.xml.get_widget("mainWindow")
-        print "Showing toplevel"
         self.toplevel.show()
-        print "setting progress window transients"
         progress_window = ProgressWindow(_("system-config-kdump"), "")
         self.dbus_object = DBusProxy(progress_window)
+        self.dbus_object.connect("proxy-error", self.handle_proxy_error)
 
         self.default_kernel = self.default_kernel_name()[:-1]
         progress_window.set_transient_for(self.toplevel)
@@ -1711,6 +1711,21 @@ class MainWindow:
             gtk.main_iteration(False)
         return True, None
         
+    def handle_proxy_error (self, object, exception):
+        try:
+            if exception.get_dbus_name().startswith(AUTH_EXC_PREFIX):
+                raise NotAuthorizedException(exception.get_dbus_name())
+            else:
+                raise exception
+
+        except NotAuthorizedException, reason:
+            pass
+
+        except dbus.exceptions.DBusException, reason:
+            dialogs.show_error_message(
+                _("Unable to communicate with backend.\n%s") %reason,
+                _("System config kdump: dbus error"),
+                parent = self.toplevel)
 
 if __name__ == "__main__":
     import getopt

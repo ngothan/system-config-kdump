@@ -15,12 +15,13 @@ from sckdump.progress import ProgressWindow
 import dbus.mainloop.glib
 
 # all needed for Python-slip, PoilcyKit and dbus
-class DBusProxy (object):
+class DBusProxy (gobject.GObject):
     """
     Class used for communication with/via dbus
     """
 
     def __init__ (self, progress_window):
+        gobject.GObject.__init__(self)
         dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
         self.bus = dbus.SystemBus ()
         self.dbus_object = self.bus.get_object (
@@ -41,6 +42,10 @@ class DBusProxy (object):
         # return code
         self.retcode = 0
 
+        gobject.signal_new("proxy-error", self, gobject.SIGNAL_RUN_FIRST,
+            gobject.TYPE_NONE,
+            (gobject.TYPE_PYOBJECT,))
+
         self.loop = gobject.MainLoop()
 
     def handle_reply(self, (cmd, retcode, std, err)):
@@ -58,10 +63,13 @@ class DBusProxy (object):
         self.progress_window.hide()
 
     def handle_error(self, exception):
-        print "PROXY handle_error: ", str(exception)
         self.loop.quit()
         self.progress_window.hide()
-        raise exception
+        self.emit("proxy-error", exception)
+        self.retcode = -1
+        self.std = ""
+        self.err = ""
+        self.cmd = None
 
     @polkit.enable_proxy
     def getdefaultkernel (self):
