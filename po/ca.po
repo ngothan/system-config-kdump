@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-09-27 14:52+0100\n"
+"PO-Revision-Date: 2010-09-27 15:15+0100\n"
 "Last-Translator: Robert Antoni Buj Gelonch <robert.buj@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -88,9 +88,9 @@ msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: No hi ha prou memòria"
 
 #: ../src/system-config-kdump.py:742
-#, fuzzy, python-format
+#, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr "No es pot emprar un camí buit per a les ubicacions '%s'. Voleu reiniciar-lo al valor predeterminat ('%s')?."
+msgstr "No pot estar buit per a les localitzacions '%s'. "
 
 #: ../src/system-config-kdump.py:744
 #, python-format
@@ -127,9 +127,8 @@ msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: Error en el dispositiu en cru"
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "S'ha de ser superusuari per executar aquesta aplicació."
+msgstr "Heu de seleccionar una de les particions."
 
 #: ../src/system-config-kdump.py:776
 #: ../src/system-config-kdump.py:1459
@@ -150,14 +149,14 @@ msgstr ""
 "\n"
 
 #: ../src/system-config-kdump.py:793
-#, fuzzy, python-format
+#, python-format
 msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
-msgstr "Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen de la mateixa versió que el nucli instal·lat."
+msgstr "Atenció: el suport kdump amb xen necessita un RPM %s sense xen per a realitzar les captures dels bolcats de fallides."
 
 #: ../src/system-config-kdump.py:796
-#, fuzzy, python-format
+#, python-format
 msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
-msgstr "Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen de la mateixa versió que el nucli instal·lat."
+msgstr "Assegureu-vos que teniu l'RPM %s sense xen amb la mateixa versió que el nucli de Linux xen instal·lat."
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
@@ -228,30 +227,30 @@ msgstr "El col·lector de cores ha de començar amb 'makedumpfile'"
 
 #: ../src/system-config-kdump.py:1170
 msgid "system-config-kdump: Bad core collector"
-msgstr ""
+msgstr "system-config-kdump: Recol·elctor de nucli dolent"
 
 #: ../src/system-config-kdump.py:1436
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "El dispositiu en cru %s no s'ha trobat en aquest ordinador"
 
 #: ../src/system-config-kdump.py:1457
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "La partició del sistema de fitxers local anomenada %s"
 
 #: ../src/system-config-kdump.py:1458
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr " i de tipus %s no ha estat trobada"
 
 #: ../src/system-config-kdump.py:1660
 msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
-msgstr ""
+msgstr "No es pot trobar el visualitzador de l'ajuda. Per a habilitar la visualització de l'ajuda, ha d'instal·lar-se el paquet 'yelp'."
 
 #: ../src/system-config-kdump.py:1725
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "Error mentre s'executava system-config-kdump"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -264,7 +263,7 @@ msgstr "_Fitxer"
 #: ../src/system-config-kdump.glade:26
 #: ../src/system-config-kdump.glade:142
 msgid "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
+msgstr "Aplica els canvis, desa el fitxer de configuració del gestor d'arranc i desa el fitxer de configuració per a kexec/kdump"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
@@ -273,7 +272,7 @@ msgstr "gtk-apply"
 #: ../src/system-config-kdump.glade:36
 #: ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "Torna a carregar les preferències originals des dels fitxers de configuració"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
@@ -281,7 +280,7 @@ msgstr "gtk-revert-to-saved"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Surt i descarta els canvis que no s'hagin desat"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
@@ -362,7 +361,7 @@ msgstr "Preferències bàsiques"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "Desar el fitxer de kdump en el sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
@@ -370,7 +369,7 @@ msgstr "Sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "Trieu en quina partició voleu desar el vostre kdump"
 
 #: ../src/system-config-kdump.glade:473
 msgid "Partition:"
@@ -454,31 +453,31 @@ msgstr "Nom del servidor:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr ""
+msgstr "Preferències del destí"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Exclou les pàgines amb zeros"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
-msgstr ""
+msgstr "Pàgines amb zeros"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr ""
+msgstr "Exclou les pàgines de memòria cau"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
-msgstr ""
+msgstr "Pàgines de memòria cau"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr ""
+msgstr "Exclou la memòria cau privada"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr ""
+msgstr "Memòria cau privada"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
@@ -490,11 +489,11 @@ msgstr "dades d'usuari"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr ""
+msgstr "Exclou les pàgines lliures"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
-msgstr ""
+msgstr "Pàgines lliures"
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
@@ -570,7 +569,7 @@ msgstr "Trieu el vostre nucli de Linux personalitzat"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Selecció de la captura del nucli de Linux</b>"
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
@@ -605,9 +604,8 @@ msgid "<b>Default action</b>"
 msgstr "<b>Acció predeterminada</b>"
 
 #: ../src/system-config-kdump.glade:1373
-#, fuzzy
 msgid "<b>Core collector</b>"
-msgstr "Col·lector de cores:"
+msgstr "<b>Recol·lector del nucli</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
