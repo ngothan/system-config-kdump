@@ -2,6 +2,7 @@
 # Copyright (C) 2004-8 Red Hat, Inc.
 # This file is distributed under the same license as the
 #  system-config-kdump package.
+# Robert Antoni Buj Gelonch <robert.buj@gmail.com>, 2010
 #
 # This file is translated according to the glossary and style guide of
 #   Softcatalà. If you plan to modify this file, please read first the page
@@ -20,12 +21,13 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2008-09-27 23:32+0100\n"
-"Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
+"PO-Revision-Date: 2010-09-27 14:52+0100\n"
+"Last-Translator: Robert Antoni Buj Gelonch <robert.buj@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Catalan\n"
 
 #: ../src/system-config-kdump.py:68
 msgid "mount rootfs and run /sbin/init"
@@ -33,65 +35,37 @@ msgstr "munta rootfs i executa /sbin/init"
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
-"Ave, Cambridge, MA 02139, USA."
+"You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 msgstr ""
 
 #: ../src/system-config-kdump.py:126
-msgid ""
-"Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of "
-"a freshly booted kernel, making it far more reliable than methods capturing "
-"within the context of the crashed kernel. Being able to capture a core file "
-"can be invaluable in helping determine the root cause of a system crash. "
-"Note that kdump does require reserving a portion of system memory that will "
-"be unavailable for other uses."
-msgstr ""
-"El kdump és un nou mecanisme de bolcat de fallada del nucli. En cas de "
-"fallada del sistema, es pot capturar un fitxer core fent servir kdump, que "
-"s'executa en el context d'un nou nucli arrencat de zero, de manera que és "
-"molt més segur que els mètodes que capturen dins del context d'un nucli que "
-"ha fallat. Poder capturar un fitxer de core pot ser imprescindible per "
-"ajudar a determinar l'arrel d'una fallada del sistema. Tingueu en compte que "
-"el kdump requereix reservar una porció de memòria del sistema que resultaria "
-"necessària per a d'altres usos."
+msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
+msgstr "Kdump és un nou mecanisme de bolcat de fallides del nucli. En cas de fallida del sistema, es pot capturar un fitxer del nucli utilitzant kdump, que s'executa en el context d'un nou nucli de Linux arrancat de zero, de manera que és molt més segur que els mètodes que es capturen dins del context d'un nucli que ha fallit. Es pot capturar un fitxer del nucli que pot ser imprescindible per a ajudar a determinar el motiu d'una fallida del sistema. Tingueu en compte que kdump necessita que es reservi una porció de memòria del sistema no disponible per a altres usos."
 
 #: ../src/system-config-kdump.py:136
-msgid ""
-"Kdump will attempt to place the vmcore at the specified location. In the "
-"event that it fails to place the vmcore at location, the default action "
-"(specified below) will be executed."
-msgstr ""
-"El kdump intentarà ubicar el vmcore a la ubicació especificada. En cas que "
-"no pugui fer servir aquella ubicació, es realitzarà l'acció predeterminada "
-"(especificada a sota)."
+msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
+msgstr "Kdump intentarà ubicar el vmcore a la ubicació especificada. En cas que no es pugui utilitzar aquesta ubicació, es realitzarà l'acció predeterminada (especificada a continuació)."
 
 #: ../src/system-config-kdump.py:575
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "Aquesta arquitectura no disposa de kdump per ara"
 
-#: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
+#: ../src/system-config-kdump.py:577
+#: ../src/system-config-kdump.py:602
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump no està suportat"
 
 #: ../src/system-config-kdump.py:589
 msgid "Failed to detect total system memory"
@@ -99,7 +73,7 @@ msgstr "No s'ha pogut detectar la memòria total del sistema"
 
 #: ../src/system-config-kdump.py:590
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: S'ha produït un error de memòria"
 
 #: ../src/system-config-kdump.py:601
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -111,160 +85,138 @@ msgstr "Aquest sistema no té prou memòria per a fer un kdump"
 
 #: ../src/system-config-kdump.py:682
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: No hi ha prou memòria"
 
 #: ../src/system-config-kdump.py:742
 #, fuzzy, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
-"No es pot emprar un camí buit per a les ubicacions '%s'. Voleu reiniciar-lo "
-"al valor predeterminat ('%s')?."
+msgstr "No es pot emprar un camí buit per a les ubicacions '%s'. Voleu reiniciar-lo al valor predeterminat ('%s')?."
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Restablir el camí al predeterminat ('%s')?."
 
 #: ../src/system-config-kdump.py:745
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: Camí buit"
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Heu d'especificar un servidor."
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: No s'ha establert el nom del servidor"
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Heu d'especificar un nom d'usuari."
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: No s'ha establer el nom d'usuari"
 
 #: ../src/system-config-kdump.py:767
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "Heu de seleccionar un dels dispositius en cru"
 
-#: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
+#: ../src/system-config-kdump.py:768
+#: ../src/system-config-kdump.py:1437
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: Error en el dispositiu en cru"
 
 #: ../src/system-config-kdump.py:775
 #, fuzzy
 msgid "You must select one of the partitions"
 msgstr "S'ha de ser superusuari per executar aquesta aplicació."
 
-#: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:776
+#: ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: Error de partició local"
 
 #: ../src/system-config-kdump.py:784
 #, python-format
 msgid ""
 "\n"
 "\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
+"Note that the %s architecture does not feature a relocatable kernel at this time, and thus requires a separate kernel-kdump package to be installed for kdump to function. This can be installed via 'yum install kernel-kdump' at your convenience.\n"
 "\n"
 msgstr ""
 "\n"
 "\n"
-"Tingueu en compte que l'arquitectura %s no disposa d'un nucli reubicable per "
-"ara, i això requereix instal·lar un paquet kernel-kdump separat perquè el "
-"kdump funcioni. Podeu instal·lar-lo amb l'ordre 'yum install kernel-dump'.\n"
+"Tingueu en compte que l'arquitectura %s no disposa d'un nucli reubicable per ara, i això requereix instal·lar un paquet kernel-kdump separat perquè el kdump funcioni. Podeu instal·lar-lo amb l'ordre 'yum install kernel-dump'.\n"
 "\n"
 
 #: ../src/system-config-kdump.py:793
 #, fuzzy, python-format
-msgid ""
-"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
-"dump capture."
-msgstr ""
-"Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a "
-"realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen "
-"de la mateixa versió que el nucli instal·lat."
+msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
+msgstr "Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen de la mateixa versió que el nucli instal·lat."
 
 #: ../src/system-config-kdump.py:796
 #, fuzzy, python-format
-msgid ""
-"Please be sure you have the non-xen %s RPM of the same version as your xen "
-"kernel installed."
-msgstr ""
-"Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a "
-"realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen "
-"de la mateixa versió que el nucli instal·lat."
+msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
+msgstr "Atenció: per fer servir el kdump amb xen es necessita un RPM %s no-xen per a realitzar la captura de bolcat. Assegureu-vos que teniu l'RPM %s sense xen de la mateixa versió que el nucli instal·lat."
 
 #: ../src/system-config-kdump.py:799
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: Es necessita un nucli de Linux sense xen"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
-msgid ""
-"Changing Kdump settings requires rebooting the system to reallocate memory "
-"accordingly. %sYou will have to reboot the system for the new settings to "
-"take effect."
-msgstr ""
-"Per canviar la configuració del kdump s'ha de reiniciar el sistema per "
-"reubicar la memòria adequadament. %sHaureu de reiniciar el sistema perquè "
-"s'apliquin els nous canvis."
+msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
+msgstr "Per canviar la configuració del kdump s'ha de reiniciar el sistema per reubicar la memòria adequadament. %sHaureu de reiniciar el sistema perquè s'apliquin els nous canvis."
 
 #: ../src/system-config-kdump.py:807
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: Es necessita reiniciar"
 
 #: ../src/system-config-kdump.py:822
-#, fuzzy
 msgid "Error writing kdump configuration"
-msgstr "Configuració del bolcat del nucli"
+msgstr "Error en escriure la configuració de kdump"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: Error en escriure la configuració de kdump"
 
 #: ../src/system-config-kdump.py:835
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "S'ha produït un error en escriure la configuració del gestor d'arranc"
 
 #: ../src/system-config-kdump.py:836
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: Error d'escriptura en la configuració del gestor d'arranc"
 
 #: ../src/system-config-kdump.py:848
 msgid "Error handling kdump services"
-msgstr ""
+msgstr "S'ha produït un error en el procés detractament dels serveis de kdump"
 
 #: ../src/system-config-kdump.py:849
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: Error en el procés de tractament dels serveis"
 
 #: ../src/system-config-kdump.py:855
 msgid "Configurations sucessfully saved"
-msgstr ""
+msgstr "La configuració s'ha desat amb ext"
 
 #: ../src/system-config-kdump.py:856
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: Configuració desada"
 
 #: ../src/system-config-kdump.py:916
-#, fuzzy, python-format
+#, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr "Configuració del bolcat del nucli"
+msgstr "Error en llegir la configuració de kdump: %s"
 
 #: ../src/system-config-kdump.py:917
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: Error en el fitxer de configuració de kdump"
 
 #: ../src/system-config-kdump.py:1026
-#, fuzzy, python-format
+#, python-format
 msgid "Error writing kdump configuration: %s"
-msgstr "Configuració del bolcat del nucli"
+msgstr "Error en escriure la configuració de kdump: %s"
 
 #: ../src/system-config-kdump.py:1027
 msgid "system-config-kdump: write kdump configuration file error"
@@ -294,9 +246,7 @@ msgid " and type %s wasn't found"
 msgstr ""
 
 #: ../src/system-config-kdump.py:1660
-msgid ""
-"The help viewer could not be found. To be able to view help, the 'yelp' "
-"package needs to be installed."
+msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
 msgstr ""
 
 #: ../src/system-config-kdump.py:1725
@@ -309,24 +259,25 @@ msgstr "Configuració del bolcat del nucli"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "_Fitxer"
 
-#: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
-msgid ""
-"Apply changes, save booloader config file and save kexec/kdump config file"
+#: ../src/system-config-kdump.glade:26
+#: ../src/system-config-kdump.glade:142
+msgid "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
-msgstr ""
+msgstr "gtk-apply"
 
-#: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
+#: ../src/system-config-kdump.glade:36
+#: ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
-msgstr ""
+msgstr "gtk-revert-to-saved"
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
@@ -334,82 +285,80 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
-msgstr ""
+msgstr "gtk-quit"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "_Opcions"
 
-#: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
+#: ../src/system-config-kdump.glade:73
+#: ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Habilita el kdump"
 
-#: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
+#: ../src/system-config-kdump.glade:85
+#: ../src/system-config-kdump.glade:184
 msgid "Disable kdump"
-msgstr "Habilita el kdump"
+msgstr "Inhabilita kdump"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
-msgstr ""
+msgstr "gtk-about"
 
 #: ../src/system-config-kdump.glade:117
 msgid "gtk-help"
-msgstr ""
+msgstr "gtk-help"
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "Aplica"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "Recarrega"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "Habilita el kdump"
+msgstr "Habilita"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "Inhabilita"
 
 #: ../src/system-config-kdump.glade:265
-#, fuzzy
 msgid "Total System Memory:"
-msgstr "Memòria total del sistema (MB):"
+msgstr "Memòria total del sistema:"
 
 #: ../src/system-config-kdump.glade:276
-#, fuzzy
 msgid "Current kdump Memory:"
-msgstr "Memòria del kdump (MB):"
+msgstr "Memòria actual de kdump:"
 
 #: ../src/system-config-kdump.glade:289
-#, fuzzy
 msgid "New kdump Memory:"
-msgstr "Memòria del kdump (MB):"
+msgstr "Memòria nova de kdump:"
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Memòria usable (MB):"
+msgstr "Memòria utilitzable:"
 
-#: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
-#: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
+#: ../src/system-config-kdump.glade:315
+#: ../src/system-config-kdump.glade:328
+#: ../src/system-config-kdump.glade:362
+#: ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "Preferències bàsiques"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
@@ -417,24 +366,23 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "Sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "Ubicació:"
+msgstr "Partició:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr ""
+msgstr "Tria el directori destí al sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr ""
+msgstr "Selecciona un directori del sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -442,67 +390,67 @@ msgstr "Camí:"
 
 #: ../src/system-config-kdump.glade:504
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "Directori destí en el sistema de fitxers local"
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "Desa kdump en un dispositiu en cru"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr ""
+msgstr "Dispositiu en cru"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr ""
+msgstr "Selecciona el dispositiu en cru"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "Desa el fitxer de kdump a través de la xarxa"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "Xarxa"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "Desa el fitxer de kdump a través d'NFS"
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "Desa el fitxer de kdump a través d'SSH"
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "L'usuari ha de tenir els permisos necessaris d'escriptura en el servidor"
 
 #: ../src/system-config-kdump.glade:662
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "Camí al directori del servidor on desar el fitxer kdump"
 
 #: ../src/system-config-kdump.glade:675
 msgid "Network server name"
-msgstr ""
+msgstr "Nom del servidor de xarxa"
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "Camí al directori:"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "Nom del servidor:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
@@ -534,11 +482,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr ""
+msgstr "Exclore les dades d'usuari"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "dades d'usuari"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
@@ -550,77 +498,75 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:868
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Nivell actual del filtre:"
 
 #: ../src/system-config-kdump.glade:900
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Nivell de filtratge </b>"
 
 #: ../src/system-config-kdump.glade:932
 msgid "ELF file format"
-msgstr ""
+msgstr "format de fitxer ELF"
 
 #: ../src/system-config-kdump.glade:945
 msgid "diskdump file format"
-msgstr ""
+msgstr "format de fitxer diskdump"
 
 #: ../src/system-config-kdump.glade:964
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Format del fitxer de sortida</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr ""
+msgstr "Preferències del filtratge"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Utilitza l'initrd predeterminat"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Acció predeterminada:"
+msgstr "initrd predeterminat"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Utilitza un initrd personalitzat"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
-msgstr ""
+msgstr "initrd personalitzat"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Tria un fitxer initrd personalitzat"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Selecciona un fitxer initrd"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>Selecció d'initrd</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Utilitza la imatge predeterminada del nucli de Linux "
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Acció predeterminada:"
+msgstr "Nucli de Linux predeterminat"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Utilitza una imatge personalitzada del nucli de Linux "
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Nucli de Linux personalitzat"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Trieu el vostre nucli de Linux personalitzat"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
@@ -628,37 +574,35 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1206
 msgid "gtk-refresh"
-msgstr ""
+msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Opcions de la línia de comandes del nucli de Linux"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Opcions originals de línia de comandes del nucli de Linux"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Original:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Editat:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Opcions de la línia de comandes</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Acció predeterminada:"
+msgstr "Tria l'acció predeterminada"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Acció predeterminada:"
+msgstr "<b>Acció predeterminada</b>"
 
 #: ../src/system-config-kdump.glade:1373
 #, fuzzy
@@ -667,11 +611,11 @@ msgstr "Col·lector de cores:"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Preferències avançades"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
+msgstr "Quant a system-config-kdump"
 
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "Configura kdump/kexec"
