@@ -23,15 +23,14 @@ def show_call_error_message(text, title, cmd, stdout, stderr, parent = None):
     stderr is standard error from the command
     parrent is parent window
     """
+    if cmd == "" and stdout == "" and stderr == "":
+        return show_error_message(text, title, parent)
     dlg = _XML.get_widget("dialog_call_error")
     dlg.set_transient_for(parent)
     dlg.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
     dlg.set_modal(True)
     dlg.set_title(title)
     _XML.get_widget("label_message").set_text(text)
-    #_XML.get_widget("tv_command").set_buffer(gtk.TextBuffer().set_text(cmd))
-    #_XML.get_widget("tv_stdout").set_buffer(gtk.TextBuffer().set_text(stdout))
-    #_XML.get_widget("tv_stderr").set_buffer(gtk.TextBuffer().set_text(stderr))
     _XML.get_widget("tv_command").get_buffer().set_text(cmd)
     _XML.get_widget("tv_stdout").get_buffer().set_text(stdout)
     _XML.get_widget("tv_stderr").get_buffer().set_text(stderr)
@@ -104,3 +103,8 @@ if __name__ == "__main__":
         "command test\n"*5,
         "stdout test\n"*5,
         "stderr test\n"*5)
+    show_call_error_message("Show call error message test2\n"*10,
+        "TEST", "", "", "")
+    show_call_error_message("Show call error message test3\n"*10,
+        "TEST", "", "a", "")
+

@@ -69,7 +69,7 @@ class DBusProxy (gobject.GObject):
         self.retcode = -1
         self.std = ""
         self.err = ""
-        self.cmd = None
+        self.cmd = ""
 
     @polkit.enable_proxy
     def getdefaultkernel (self):
