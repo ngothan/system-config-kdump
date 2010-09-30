@@ -44,6 +44,9 @@ import slip.dbus.service
 from slip.dbus.polkit import NotAuthorizedException
 from slip.dbus.polkit import AUTH_EXC_PREFIX
 
+## config
+from sckdump.config import VERSION
+
 ##
 ## I18N
 ##
@@ -90,8 +93,6 @@ PATH_DEFAULT = "/var/crash"
 CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
 
 ENTER_CODES = ["KP_Enter", "Return"]
-
-VERSION = "1.0.0"
 
 AUTHORS = [
     "Dave Lehman <dlehman@redhat.com>",

@@ -3,15 +3,20 @@
 #
 
 PY_SETUP_IN = setup.py.in
+PY_CONFIG_IN = src/sckdump/config.py.in
 
 PY_SETUP = setup.py
+PY_CONFIG = src/sckdump/config.py
 
 INSTROOT ?= /
 
 $(PY_SETUP): $(PY_SETUP_IN)
 	sed -e "s/@VERSION@/$(VERSION)/g" < $< > $@
 
-py-install: $(PY_SETUP)
+$(PY_CONFIG): $(PY_CONFIG_IN)
+	sed -e "s/@VERSION@/$(VERSION)/g" < $< > $@
+
+py-install: $(PY_SETUP) $(PY_CONFIG)
 	python $(PY_SETUP) install --skip-build --root $(INSTROOT)
 
 py-clean: $(PY_SETUP)
@@ -19,6 +24,6 @@ py-clean: $(PY_SETUP)
 	rm $(PY_SETUP)
 	rm -rf build
 
-py-build: $(PY_SETUP)
+py-build: $(PY_SETUP) $(PY_CONFIG)
 	python $(PY_SETUP) build
 
