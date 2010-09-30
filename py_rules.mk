@@ -19,9 +19,9 @@ $(PY_CONFIG): $(PY_CONFIG_IN)
 py-install: $(PY_SETUP) $(PY_CONFIG)
 	python $(PY_SETUP) install --skip-build --root $(INSTROOT)
 
-py-clean: $(PY_SETUP)
+py-clean: $(PY_SETUP) $(PY_CONFIG)
 	python $(PY_SETUP) clean
-	rm $(PY_SETUP)
+	rm $(PY_SETUP) $(PY_CONFIG)
 	rm -rf build
 
 py-build: $(PY_SETUP) $(PY_CONFIG)

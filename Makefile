@@ -114,6 +114,7 @@ local: clean
 clean: doc-clean py-clean
 	@rm -fv *~
 	@rm -fv src/*.pyc
+	@rm -fv src/sckdump/*.pyc
 	@rm -fv po/*mo po/*~ po/.depend
 	@rm -fv ${PKGNAME}.desktop
 	@rm -fv ChangeLog
