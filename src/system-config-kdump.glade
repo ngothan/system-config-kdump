@@ -6,6 +6,7 @@
     <property name="title" translatable="yes">Kernel Dump Configuration</property>
     <property name="default_width">600</property>
     <property name="default_height">400</property>
+    <property name="icon_name">system-config-kdump</property>
     <child>
       <widget class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
