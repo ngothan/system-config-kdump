@@ -1233,13 +1233,20 @@ class MainWindow:
         partitions and their types are read from fstab
         """
         try:
-            lines = open(FSTAB_FILE).readlines()
-            for line in lines:
-                for fstype in SUPPORTEDFSTYPES:
-                    if line.find(fstype) != -1:
-                        self.partitions.append((fstype, line.split(" ")[0]))
+            for line in open(FSTAB_FILE).readlines():
+                if line.startswith("#"):
+                    continue
+                try:
+                    fstab_fields = line.split()
+                    if fstab_fields[2] in SUPPORTEDFSTYPES:
+                        self.partitions.append(
+                            (fstab_fields[2],fstab_fields[0]))
                         if DEBUG:
-                            print "found partition in fstab: ", self.partitions[len(self.partitions) -1 ] 
+                            print "found partition in fstab: ",\
+                                self.partitions[len(self.partitions) -1 ]
+                except IndexError:
+                    # Incorrect line in fstab
+                    pass
         except IOError:
             pass
         for (fs_type, partition) in self.partitions:
