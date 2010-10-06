@@ -346,8 +346,8 @@ class MainWindow:
 
         self.xen_kdump_kernel = "kernel"
         self.xen_kernel = False
-        #                  fsType, partition
-        self.partitions = [(None, "file:///")]
+        #                  "name":     (fsType, mntpoint)
+        self.partitions = {"file:///": (None, "/")}
         self.raw_devices = []
 
         self.arch = None
@@ -1242,18 +1242,18 @@ class MainWindow:
                 try:
                     fstab_fields = line.split()
                     if fstab_fields[2] in SUPPORTEDFSTYPES:
-                        self.partitions.append(
-                            (fstab_fields[2],fstab_fields[0]))
+                        self.partitions[fstab_fields[0]] = \
+                            (fstab_fields[2],fstab_fields[1])
                         if DEBUG:
                             print "found partition in fstab: ",\
-                                self.partitions[len(self.partitions) -1 ]
+                                self.partitions[fstab_fields[0]]
                 except IndexError:
                     # Incorrect line in fstab
                     pass
         except IOError:
             pass
-        for (fs_type, partition) in self.partitions:
-            combobox.append_text("%s (%s)" % (partition, fs_type))
+        for name, (fs_type, mntpoint) in self.partitions.iteritems():
+            combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
         combobox.set_active(0)
         return
 
@@ -1456,23 +1456,27 @@ class MainWindow:
         """
         Make active partition part_name which is of part_type type.
         """
-        if self.partitions.count((part_type, part_name)) > 0:
-            self.partition_combobox.set_active(self.partitions.index((part_type, part_name)))
-            self.my_settings.local_partition = "%s %s" % (part_type, part_name)
-            if DEBUG:
-                print "set_active_partition called: self.my_settings.local_partition = <%s>" % self.my_settings.local_partition
-            self.check_settings()
-            return True
-        else:
-            dialogs.show_error_message(
-                _("Local file system partition with name %s") % part_name +
-                _(" and type %s wasn't found") %part_type,
-                _("system-config-kdump: Local partition error"),
-                parent = self.toplevel)
-            self.partition_combobox.set_active(-1)
-            self.my_settings.local_partition = None
-            self.check_settings()
-            return False
+        for index, (name, (fs_type, mntpoint)) in \
+            enumerate(self.partitions.iteritems()):
+            if name == part_name and fs_type == part_type:
+                self.partition_combobox.set_active(index)
+                self.my_settings.local_partition = \
+                    "%s %s" % (part_type, part_name)
+                if DEBUG:
+                    print "set_active_partition called: "\
+                        "self.my_settings.local_partition = <%s>"\
+                        % self.my_settings.local_partition
+                self.check_settings()
+                return True
+        dialogs.show_error_message(
+            _("Local file system partition with name %s") % part_name +
+            _(" and type %s wasn't found") %part_type,
+            _("system-config-kdump: Local partition error"),
+            parent = self.toplevel)
+        self.partition_combobox.set_active(-1)
+        self.my_settings.local_partition = None
+        self.check_settings()
+        return False
 
     def collector_entry_changed(self, entry, *args):
         """
@@ -1603,10 +1607,10 @@ class MainWindow:
         """
         Called when you change local fs in combobox and will save active one into settings
         """
-        (partition, fs_type) = part_combobox.get_active_text().split()
-        fs_type = fs_type[1:-1]
-        if fs_type != "None":
-            self.my_settings.local_partition = "%s %s" % (fs_type, partition)
+        name = part_combobox.get_active_text().rsplit(":",1)[0]
+        if self.partitions[name][0]:
+            self.my_settings.local_partition = "%s %s"\
+                %(self.partitions[name][0], name)
         else:
             self.my_settings.local_partition = ""
         self.check_settings()
