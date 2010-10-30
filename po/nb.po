@@ -1,7 +1,7 @@
-# Norwegian bokmal translation of kdump.
+# Norwegian bokmål translation of kdump.
 # Copyright (C) 2007 THE kdump'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the kdump package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2007.
+# Kjartan Maraas <kmaraas@gnome.org>, 2007-2010.
 #
 #
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: kdump 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2007-10-04 15:40+0200\n"
-"Last-Translator: Espen Stefansen <espenas@gmail.com>\n"
+"PO-Revision-Date: 2010-10-24 15:28+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian/Bokmaal <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,11 +22,11 @@ msgstr "monter rootfs og kjør /sbin/init"
 
 #: ../src/system-config-kdump.py:73
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:74
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:98
 msgid ""
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:753
 msgid "You must specify server. "
-msgstr ""
+msgstr "Du må oppgi tjener. "
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Server name not set"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:759
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Du må oppgi brukernavn. "
 
 #: ../src/system-config-kdump.py:760
 msgid "system-config-kdump: User name not set"
@@ -130,9 +130,8 @@ msgid "system-config-kdump: Raw device error"
 msgstr ""
 
 #: ../src/system-config-kdump.py:775
-#, fuzzy
 msgid "You must select one of the partitions"
-msgstr "Du må være root for å kjøre dette programmet."
+msgstr "Du må velge en av partisjonene"
 
 #: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
 msgid "system-config-kdump: Local partition error"
@@ -269,7 +268,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr ""
+msgstr "_Fil"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
 msgid ""
@@ -290,7 +289,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:51
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Avslutt og forkast endringer som ikke er lagret"
 
 #: ../src/system-config-kdump.glade:52
 msgid "gtk-quit"
@@ -298,20 +297,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr ""
+msgstr "_Alternativer"
 
 #: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Aktiver kdump"
 
 #: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-#, fuzzy
 msgid "Disable kdump"
-msgstr "Aktiver kdump"
+msgstr "Slå av kdump"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr ""
+msgstr "_Hjelp"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
@@ -323,20 +321,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:143
 msgid "Apply"
-msgstr ""
+msgstr "Bruk"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr ""
+msgstr "Last på nytt"
 
 #: ../src/system-config-kdump.glade:174
-#, fuzzy
 msgid "Enable"
-msgstr "Aktiver kdump"
+msgstr "Slå på"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr ""
+msgstr "Slå av"
 
 #: ../src/system-config-kdump.glade:265
 msgid "Total System Memory:"
@@ -351,22 +348,21 @@ msgid "New kdump Memory:"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:302
-#, fuzzy
 msgid "Usable Memory:"
-msgstr "Brukbart minne (MB):"
+msgstr "Brukbart minne:"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
 msgid "N/A"
-msgstr ""
+msgstr "I/T"
 
 #: ../src/system-config-kdump.glade:377
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr ""
+msgstr "Grunnleggende innstillinger"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
@@ -374,16 +370,15 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:440
 msgid "Local filesystem"
-msgstr ""
+msgstr "Lokalt filsystem"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:473
-#, fuzzy
 msgid "Partition:"
-msgstr "Lokasjon:"
+msgstr "Partisjon:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
@@ -419,7 +414,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
-msgstr ""
+msgstr "Nettverk"
 
 #: ../src/system-config-kdump.glade:608
 msgid "Save kdump file via NFS"
@@ -427,7 +422,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:609
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:620
 msgid "Save kdump file via SSH"
@@ -435,7 +430,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:621
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:649
 msgid "User must have necessary write permissions on the server"
@@ -451,15 +446,15 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:687
 msgid "User name:"
-msgstr ""
+msgstr "Brukernavn:"
 
 #: ../src/system-config-kdump.glade:701
 msgid "Path to direcotory:"
-msgstr ""
+msgstr "Sti til katalog:"
 
 #: ../src/system-config-kdump.glade:714
 msgid "Server name:"
-msgstr ""
+msgstr "Navn på tjener:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
@@ -495,7 +490,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
-msgstr ""
+msgstr "brukerdata"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
@@ -531,12 +526,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr ""
+msgstr "Bruk forvalgt initrd"
 
 #: ../src/system-config-kdump.glade:1042
-#, fuzzy
 msgid "Default initrd"
-msgstr "Forvalgt handling:"
+msgstr "Forvalgt initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
@@ -563,21 +557,20 @@ msgid "Use default kernel image"
 msgstr ""
 
 #: ../src/system-config-kdump.glade:1123
-#, fuzzy
 msgid "Default kernel"
-msgstr "Forvalgt handling:"
+msgstr "Forvalgt kjerne"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Bruk egendefinert kjernefil"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
-msgstr ""
+msgstr "Egendefinert kjerne"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Velg en egendefinert kjerne"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
@@ -597,25 +590,23 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr ""
+msgstr "Original:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
-msgstr ""
+msgstr "Redigert:"
 
 #: ../src/system-config-kdump.glade:1283
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Kommandolinjeflagg</b>"
 
 #: ../src/system-config-kdump.glade:1313
-#, fuzzy
 msgid "Choose default action"
-msgstr "Forvalgt handling:"
+msgstr "Velg forvalgt handling"
 
 #: ../src/system-config-kdump.glade:1328
-#, fuzzy
 msgid "<b>Default action</b>"
-msgstr "Forvalgt handling:"
+msgstr "<b>Forvalgt handling</b>"
 
 #: ../src/system-config-kdump.glade:1373
 msgid "<b>Core collector</b>"
@@ -623,38 +614,8 @@ msgstr ""
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr ""
+msgstr "Avanserte innstillinger"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
-msgstr ""
-
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Edit Location"
-#~ msgstr "Rediger lokasjon"
-
-#~ msgid "New Location"
-#~ msgstr "Ny lokasjon"
-
-#~ msgid "Select a location type:"
-#~ msgstr "Velg en type lokasjon:"
-
-#~ msgid "Enter location:"
-#~ msgstr "Oppgi lokasjon:"
-
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "SSH-lokasjoner må være på formen 'bruker@tjener'. Stien kan være "
-#~ "spesifisert i hovedvinduet."
-
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "NFS-lokasjoner må være på denne formen: 'tjener:/sti'"
-
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr ""
-#~ "Støtte for filsystemet av typen '%s' er ikke tilgjenglig på dette "
-#~ "systemet."
+msgstr "Om system-config-kdump"
