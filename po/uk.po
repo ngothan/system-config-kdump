@@ -8,293 +8,350 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-04-12 01:00+0300\n"
-"Last-Translator: Maxim V. Dziumanenko <dziumanenko@gmail.com>\n"
+"POT-Creation-Date: 2010-09-14 16:01+0200\n"
+"PO-Revision-Date: 2010-11-03 11:43+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/system-config-kdump.py:68
+#: ../src/system-config-kdump.py:72
 msgid "mount rootfs and run /sbin/init"
 msgstr "підключіть rootfs та виконайте /sbin/init"
 
-#: ../src/system-config-kdump.py:73
+#: ../src/system-config-kdump.py:77
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:74
+#: ../src/system-config-kdump.py:78
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:98
+#: ../src/system-config-kdump.py:102
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
-"Ave, Cambridge, MA 02139, USA."
+"You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 msgstr ""
-"Ця програма є вільною; її можна поширювати та "
-"змінювати відповідно до умов ліцензії GNU General Public License 2 чи будь-якої старшої версії.\n"
+"Ця програма є вільною; її можна поширювати та змінювати відповідно до умов ліцензії GNU General Public License 2 чи будь-якої старшої версії.\n"
 "\n"
-"Програма поширюється зі сподіванням, що буде корисною, але "
-"БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ ЧИ НЕЯВНИХ, У ТОМУ ЧИСЛІ "
-"БЕЗ ГАРАНТІЙ КОМЕРЦІЙНОЇ ЦІННОСТІ ТА ПРИДАТНОСТІ ДО ПЕВНОЇ МЕТИ. Додаткову"
-"інформацію дивіться у ліцензії GNU.\n"
+"Програма поширюється зі сподіванням, що буде корисною, але БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ ЧИ НЕЯВНИХ, ЗОКРЕМА БЕЗ ГАРАНТІЙ КОМЕРЦІЙНОЇ ЦІННОСТІ ТА ПРИДАТНОСТІ ДО ПЕВНОЇ МЕТИ. Додаткову інформацію дивіться у ліцензії GNU.\n"
 "\n"
 "Копія ліцензії GNU надається размо з програмою. \n"
 "Якщо ви її не отримали, запитайте її у Фонді вільного ПЗ за адресою:\n"
-"Free Software Foundation, Inc., 675 Mass "
-"Ave, Cambridge, MA 02139, USA."
+"Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 
-#: ../src/system-config-kdump.py:126
-msgid ""
-"Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of "
-"a freshly booted kernel, making it far more reliable than methods capturing "
-"within the context of the crashed kernel. Being able to capture a core file "
-"can be invaluable in helping determine the root cause of a system crash. "
-"Note that kdump does require reserving a portion of system memory that will "
-"be unavailable for other uses."
-msgstr ""
-"Kdump являє собою новий механізм дампу ядра при аварійному завершенні. У "
-"випадку системного збою, kdump може створювати знімок файлу ядра, що "
-"виконується у контексті щойно завантаженого ядра, що набагато надійніше "
-"методів створення знімку у контексті ядра, що зазнало аварії. Знімок файлу "
-"ядра може принести величезну користь при визначенні причини системного збою. "
-"Зверніть увагу, що kdump не вимагає спеціального виділення пам'яті винятково "
-"для його роботи."
+#: ../src/system-config-kdump.py:127
+msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
+msgstr "Kdump являє собою новий механізм дампу ядра при аварійному завершенні. У випадку системного збою, kdump може створювати знімок файлу ядра, що виконується у контексті щойно завантаженого ядра, що набагато надійніше методів створення знімку у контексті ядра, що зазнало аварії. Знімок файлу ядра може принести величезну користь при визначенні причини системного збою. Зверніть увагу, що kdump не вимагає спеціального виділення пам'яті винятково для його роботи."
 
-#: ../src/system-config-kdump.py:136
-msgid ""
-"Kdump will attempt to place the vmcore at the specified location. In the "
-"event that it fails to place the vmcore at location, the default action "
-"(specified below) will be executed."
-msgstr ""
-"Kdump намагається помістити vmcore у вказане місце. У випадку невдачі буде "
-"виконана типова дія (вказана нижче)."
+#: ../src/system-config-kdump.py:137
+msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
+msgstr "Kdump намагається помістити vmcore у вказане місце. У випадку невдачі буде виконана типова дія (вказана нижче)."
 
-#: ../src/system-config-kdump.py:575
+#: ../src/system-config-kdump.py:375
+msgid "system-config-kdump"
+msgstr "system-config-kdump"
+
+#: ../src/system-config-kdump.py:522
+msgid "Don't know how to configure your boot loader."
+msgstr "Не вдалося визначити спосіб налаштування вашої програми для завантаження."
+
+#: ../src/system-config-kdump.py:523
+msgid "system-config-kdump: no default kernel"
+msgstr "system-config-kdump: не вказано типового ядра"
+
+#: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr "На жаль ця архітектура не підтримує kdump"
+msgstr "На жаль, ця архітектура не підтримує kdump"
 
-#: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
+#: ../src/system-config-kdump.py:530
+#: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdump не підтримується"
 
-#: ../src/system-config-kdump.py:589
-msgid "Failed to detect total system memory"
-msgstr "Помилка при визначенні обсягу системної пам'яті"
+#: ../src/system-config-kdump.py:544
+msgid "Failed to detect total system memory from /proc/iomem. Total system memory will not be accurate."
+msgstr "Не вдалося визначити загальний обсяг пам’яті системи за допомогою /proc/iomem. Значення загального обсягу пам’яті буде неточним."
 
-#: ../src/system-config-kdump.py:590
+#: ../src/system-config-kdump.py:546
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: помилка пам'яті"
 
-#: ../src/system-config-kdump.py:601
+#: ../src/system-config-kdump.py:558
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "Ядра ia64 з технологією Xen наразі не підтримують kdump."
 
-#: ../src/system-config-kdump.py:680
+#: ../src/system-config-kdump.py:636
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Ця система не має достатньої кількості пам'яті для роботи kdump"
 
-#: ../src/system-config-kdump.py:682
+#: ../src/system-config-kdump.py:638
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: бракує пам'яті"
 
-#: ../src/system-config-kdump.py:742
+#: ../src/system-config-kdump.py:698
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "Шліх не може бути порожнім для «%s»."
 
-#: ../src/system-config-kdump.py:744
+#: ../src/system-config-kdump.py:700
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "Використовувати типовий шлях («%s»)?"
 
-#: ../src/system-config-kdump.py:745
+#: ../src/system-config-kdump.py:701
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: порожній шлях"
 
-#: ../src/system-config-kdump.py:753
+#: ../src/system-config-kdump.py:709
 msgid "You must specify server. "
 msgstr "Необхідно вказати сервер."
 
-#: ../src/system-config-kdump.py:754
+#: ../src/system-config-kdump.py:710
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: не вказано назву сервера"
 
-#: ../src/system-config-kdump.py:759
+#: ../src/system-config-kdump.py:715
 msgid "You must specify user name. "
 msgstr "Необхідно вказати іс'я користувача."
 
-#: ../src/system-config-kdump.py:760
+#: ../src/system-config-kdump.py:716
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: не вказано ім'я користувача"
 
-#: ../src/system-config-kdump.py:767
+#: ../src/system-config-kdump.py:723
 msgid "You must select one of the raw devices"
 msgstr "Потрібно обрати raw-пристрій"
 
-#: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
+#: ../src/system-config-kdump.py:724
+#: ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: помилка raw-пристрою"
 
-#: ../src/system-config-kdump.py:775
+#: ../src/system-config-kdump.py:731
 msgid "You must select one of the partitions"
 msgstr "Потрібно вибрати розділ"
 
-#: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:732
+#: ../src/system-config-kdump.py:1461
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: помилка у локальному розділі"
 
-#: ../src/system-config-kdump.py:784
+#: ../src/system-config-kdump.py:741
 #, python-format
-msgid ""
-"\n"
-"\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"Зверніть увагу, що на даному етапі архітектура %s не підтримує перенос ядра "
-"під час виконання. Внаслідок цього, для коректної роботи kdump необхідно "
-"додатковий пакет kernel-kdump. Для встановлення виконайте 'yum install "
-"kernel-kdump'.\n"
-"\n"
+msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
+msgstr "ПОПЕРЕДЖЕННЯ: підтримка xen·kdump вимагає, щоб знімок аварійного ядра був створений пакетом %s (не xen)."
 
-#: ../src/system-config-kdump.py:793
+#: ../src/system-config-kdump.py:744
 #, python-format
-msgid ""
-"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
-"dump capture."
-msgstr ""
-"ПОПЕРЕДЖЕННЯ: підтримка xen·kdump вимагає, щоб знімок аварійного ядра був створений пакетом %s (не xen)."
+msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
+msgstr "ПОПЕРЕДЖЕННЯ: перевірте, що версія пакету %s (не xen) відповідає версії встановленого ядра xen."
 
-#: ../src/system-config-kdump.py:796
-#, python-format
-msgid ""
-"Please be sure you have the non-xen %s RPM of the same version as your xen "
-"kernel installed."
-msgstr ""
-"ПОПЕРЕДЖЕННЯ: перевірте, що версія пакету %s (не xen) відповідає версії встановленого ядра xen."
-
-#: ../src/system-config-kdump.py:799
+#: ../src/system-config-kdump.py:747
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: потрібне ядро, відмінне від xen"
+
+#: ../src/system-config-kdump.py:751
+#, python-format
+msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
+msgstr "Зміна параметрів Kdump вимагає перезавантаження системи для виділення необхідної пам'яті. %s Необхідно перезавантажити систему, щоб параметри набрали сисли."
+
+#: ../src/system-config-kdump.py:755
+msgid "system-config-kdump: Need reboot"
+msgstr "system-config-kdump: потрібно перезавантажити"
+
+#: ../src/system-config-kdump.py:766
+#, python-format
+msgid ""
+"Error writing kdump configuration:\n"
+"%s"
+msgstr ""
+"Помилка під час запису налаштувань kdump:\n"
+"%s"
+
+#: ../src/system-config-kdump.py:767
+msgid "system-config-kdump: Error write kdump configuration"
+msgstr "system-config-kdump: помилка запису конфігурації kdump"
+
+#: ../src/system-config-kdump.py:781
+msgid "Error writing bootloader configuration"
+msgstr "Помилка у конфігурації завантажувача"
+
+#: ../src/system-config-kdump.py:782
+#: ../src/system-config-kdump.py:790
+msgid "system-config-kdump: Error write bootloader configuration"
+msgstr "system-config-kdump: помилка під час запису конфігурації завантажувача"
+
+#: ../src/system-config-kdump.py:789
+#, python-format
+msgid ""
+"Error writing bootloader configuration:\n"
+"%s"
+msgstr ""
+"Помилка під час спроби запису налаштувань завантажувача:\n"
+"%s"
 
 #: ../src/system-config-kdump.py:803
 #, python-format
 msgid ""
-"Changing Kdump settings requires rebooting the system to reallocate memory "
-"accordingly. %sYou will have to reboot the system for the new settings to "
-"take effect."
+"Error handling kdump services\n"
+"%s"
 msgstr ""
-"Зміна параметрів Kdump вимагає перезавантаження системи для виділення "
-"необхідної пам'яті. %s Необхідно перезавантажити систему, щоб параметри "
-"набрали сисли."
+"Помилка при роботі зі службами kdump\n"
+"%s"
 
-#: ../src/system-config-kdump.py:807
-msgid "system-config-kdump: Need reboot"
-msgstr "system-config-kdump: потрібно перезавантажити"
-
-#: ../src/system-config-kdump.py:822
-msgid "Error writing kdump configuration"
-msgstr "Помилка під час запису конфігурації kdump"
-
-#: ../src/system-config-kdump.py:823
-msgid "system-config-kdump: Error write kdump configuration"
-msgstr "system-config-kdump: помилка запису конфігурації kdump"
-
-#: ../src/system-config-kdump.py:835
-msgid "Error writing bootloader configuration"
-msgstr "Помилка у конфігурації завантажувача"
-
-#: ../src/system-config-kdump.py:836
-msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: помилка під час запису конфігурації завантажувача"
-
-#: ../src/system-config-kdump.py:848
-msgid "Error handling kdump services"
-msgstr "Помилка при роботі зі службами kdump"
-
-#: ../src/system-config-kdump.py:849
+#: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: помилка при роботі зі службами"
 
-#: ../src/system-config-kdump.py:855
+#: ../src/system-config-kdump.py:809
 msgid "Configurations sucessfully saved"
 msgstr "Конфігурація успішно збережено"
 
-#: ../src/system-config-kdump.py:856
+#: ../src/system-config-kdump.py:810
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: конфігурацію збережено"
 
-#: ../src/system-config-kdump.py:916
+#: ../src/system-config-kdump.py:871
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "Помилка при читанні конфігурації kdump: %s"
 
-#: ../src/system-config-kdump.py:917
+#: ../src/system-config-kdump.py:872
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: помилка файлу конфігурації kdump"
 
-#: ../src/system-config-kdump.py:1026
-#, python-format
-msgid "Error writing kdump configuration: %s"
-msgstr "Помилка під час запису конфігурації kdump: %s"
-
-#: ../src/system-config-kdump.py:1027
-msgid "system-config-kdump: write kdump configuration file error"
-msgstr "system-config-kdump: помилка під час запису файлу конфігурації kdump"
-
-#: ../src/system-config-kdump.py:1169
+#: ../src/system-config-kdump.py:1128
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Колектор ядра повинен починатись з 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:1170
+#: ../src/system-config-kdump.py:1129
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: некоректний колектор даних ядра"
 
-#: ../src/system-config-kdump.py:1436
+#: ../src/system-config-kdump.py:1292
+#, python-format
+msgid "Unable to get command line arguments for %s"
+msgstr "Не вдалося отримати параметри командного рядка для %s"
+
+#: ../src/system-config-kdump.py:1293
+#: ../src/system-config-kdump.py:1310
+#: ../src/system-config-kdump.py:1328
+msgid "system-config-kdump: grubby error"
+msgstr "system-config-kdump: помилка grubby"
+
+#: ../src/system-config-kdump.py:1309
+msgid "Unable to get default kernel"
+msgstr "Не вдалося визначити типове ядро"
+
+#: ../src/system-config-kdump.py:1327
+msgid "Unable to get all kernel names"
+msgstr "Не вдалося визначити всі назви ядер"
+
+#: ../src/system-config-kdump.py:1408
+#, python-format
+msgid ""
+"Invalid craskernel value: %s.\n"
+"Possible values are:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+msgstr ""
+"Некоректне значення crashkernel: %s.\n"
+"Можливі значення:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1411
+msgid "Bad crashkernel value"
+msgstr "Помилкове значення crashkernel"
+
+#: ../src/system-config-kdump.py:1438
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "raw-пристрій %s не знайдено"
 
-#: ../src/system-config-kdump.py:1457
+#: ../src/system-config-kdump.py:1459
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "Розділ локальної файлової системи з назвою %s"
 
-#: ../src/system-config-kdump.py:1458
+#: ../src/system-config-kdump.py:1460
 #, python-format
 msgid " and type %s wasn't found"
-msgstr " та типом %s не знайден"
+msgstr " та типом %s не знайдено"
 
-#: ../src/system-config-kdump.py:1660
+#: ../src/system-config-kdump.py:1662
+msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
+msgstr "Не знайдено утиліту перегляду довідки. Для перегляду довідки треба встановити пакет «yelp»."
+
+#: ../src/system-config-kdump.py:1681
+msgid "Unable to get kdump service status"
+msgstr "Не вдалося визначити стан служби kdump"
+
+#: ../src/system-config-kdump.py:1682
+#: ../src/system-config-kdump.py:1705
+msgid "system-config-kdump: Handling services error"
+msgstr "system-config-kdump: помилка під час роботи зі службами"
+
+#: ../src/system-config-kdump.py:1704
+msgid "Unable to handle kdump services"
+msgstr "Не вдалося обробити дані служб kdump"
+
+#: ../src/system-config-kdump.py:1727
+#, python-format
 msgid ""
-"The help viewer could not be found. To be able to view help, the 'yelp' "
-"package needs to be installed."
+"Not authorized exception.\n"
+"%s"
 msgstr ""
-"Не знайдено утиліту перегляду довідки. Для перегляду довідки треба встановити пакет «yelp»."
+"Виключення, пов’язане з тим, що не отримано уповноваження.\n"
+"%s"
 
-#: ../src/system-config-kdump.py:1725
+#: ../src/system-config-kdump.py:1728
+msgid "System config kdump: authorization error"
+msgstr "system-config-kdump: помилка уповноваження"
+
+#: ../src/system-config-kdump.py:1743
+#, python-format
+msgid ""
+"Unable to communicate with backend.\n"
+"%s"
+msgstr ""
+"Не вдалося здійснити обмін даними з допоміжною програмою.\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1744
+msgid "System config kdump: dbus error"
+msgstr "system-config-kdump: помилка DBus"
+
+#: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
 msgstr "Помилка під час запуску system-config-kdump"
+
+#: ../src/dialog_call_error.glade:64
+#: ../src/dialog_call_error.glade:99
+#: ../src/dialog_call_error.glade:134
+msgid "a"
+msgstr " "
+
+#: ../src/dialog_call_error.glade:72
+msgid "Called command"
+msgstr "Викликана команда"
+
+#: ../src/dialog_call_error.glade:107
+msgid "Stdandard output"
+msgstr "Стандартне виведення"
+
+#: ../src/dialog_call_error.glade:142
+msgid "Standard error"
+msgstr "Стандартна помилка"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -304,18 +361,19 @@ msgstr "Налаштовування дампу ядра"
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
-msgid ""
-"Apply changes, save booloader config file and save kexec/kdump config file"
+#: ../src/system-config-kdump.glade:26
+#: ../src/system-config-kdump.glade:142
+msgid "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr "Застосувати зміни, зберегти файли конфігурації завантажувача та kexec/kdump"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
 msgstr "gtk-apply"
 
-#: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
+#: ../src/system-config-kdump.glade:36
+#: ../src/system-config-kdump.glade:153
 msgid "Reload original settings from config files"
-msgstr "Перезавантажити оригінальні параметри з файлів конфігурації"
+msgstr "Перезавантажити оригінальні параметри з файлів налаштувань"
 
 #: ../src/system-config-kdump.glade:37
 msgid "gtk-revert-to-saved"
@@ -333,11 +391,13 @@ msgstr "gtk-quit"
 msgid "_Options"
 msgstr "_Параметри"
 
-#: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
+#: ../src/system-config-kdump.glade:73
+#: ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
 msgstr "Увімкнути kdump"
 
-#: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
+#: ../src/system-config-kdump.glade:85
+#: ../src/system-config-kdump.glade:184
 msgid "Disable kdump"
 msgstr "Вимкнути kdump"
 
@@ -385,8 +445,10 @@ msgstr "Нова пам'ять kdump:"
 msgid "Usable Memory:"
 msgstr "Доступна пам'ять:"
 
-#: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
-#: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
+#: ../src/system-config-kdump.glade:315
+#: ../src/system-config-kdump.glade:328
+#: ../src/system-config-kdump.glade:362
+#: ../src/system-config-kdump.glade:879
 msgid "N/A"
 msgstr "Н/Д"
 
@@ -620,11 +682,11 @@ msgstr "Параметри командного рядка ядра"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr "Первинні параметри командного рядка ядра"
+msgstr "Початкові параметри командного рядка ядра"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
-msgstr "Оригінальні:"
+msgstr "Початкові:"
 
 #: ../src/system-config-kdump.glade:1266
 msgid "Edited:"
@@ -648,10 +710,33 @@ msgstr "<b>Колектор</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr "Додаткові настройки"
+msgstr "Додаткові налаштування"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
 msgstr "Про system-config-kdump"
 
+#~ msgid "Failed to detect total system memory"
+#~ msgstr "Помилка при визначенні обсягу системної пам'яті"
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "Note that the %s architecture does not feature a relocatable kernel at "
+#~ "this time, and thus requires a separate kernel-kdump package to be "
+#~ "installed for kdump to function. This can be installed via 'yum install "
+#~ "kernel-kdump' at your convenience.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "Зверніть увагу, що на даному етапі архітектура %s не підтримує перенос "
+#~ "ядра під час виконання. Внаслідок цього, для коректної роботи kdump "
+#~ "необхідно додатковий пакет kernel-kdump. Для встановлення виконайте 'yum "
+#~ "install kernel-kdump'.\n"
+#~ "\n"
+#~ msgid "Error writing kdump configuration"
+#~ msgstr "Помилка під час запису конфігурації kdump"
+#~ msgid "system-config-kdump: write kdump configuration file error"
+#~ msgstr ""
+#~ "system-config-kdump: помилка під час запису файлу конфігурації kdump"
 
