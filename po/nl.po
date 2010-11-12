@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-07-07 21:56+0200\n"
+"POT-Creation-Date: 2010-09-14 16:01+0200\n"
+"PO-Revision-Date: 2010-11-12 15:55+0200\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Fedora\n"
 "Language: nl\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.6.1\n"
 
-#: ../src/system-config-kdump.py:68
+#: ../src/system-config-kdump.py:72
 msgid "mount rootfs and run /sbin/init"
 msgstr "rootfs aankoppelen en /sbin/init uitvoeren"
 
-#: ../src/system-config-kdump.py:73
+#: ../src/system-config-kdump.py:77
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:74
+#: ../src/system-config-kdump.py:78
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:98
+#: ../src/system-config-kdump.py:102
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -60,7 +60,7 @@ msgstr ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 
-#: ../src/system-config-kdump.py:126
+#: ../src/system-config-kdump.py:127
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -77,10 +77,9 @@ msgstr ""
 "binnen de context van de gecrashte kernel. Het kunnen vastleggen van een "
 "core bestand kan onmisbaar zijn bij het zoeken naar de hoofdoorzaak van een "
 "systeem crash. Let er op dat kdump vereist dat een gedeelte van het systeem "
-"geheugen wordt gereserveerd dat niet beschikbaar zal zijn voor ander "
-"gebruik."
+"geheugen wordt gereserveerd dat niet beschikbaar zal zijn voor ander gebruik."
 
-#: ../src/system-config-kdump.py:136
+#: ../src/system-config-kdump.py:137
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -90,102 +89,99 @@ msgstr ""
 "Wanneer het plaatsen van het vmcore bestand op locatie mislukt, zal de "
 "standaardactie (beneden opgegeven) worden uitgevoerd."
 
-#: ../src/system-config-kdump.py:575
+#: ../src/system-config-kdump.py:375
+msgid "system-config-kdump"
+msgstr "system-config-kdump"
+
+#: ../src/system-config-kdump.py:522
+msgid "Don't know how to configure your boot loader."
+msgstr "Weet niet hoe jouw boot-lader geconfigureerd moet worden."
+
+#: ../src/system-config-kdump.py:523
+msgid "system-config-kdump: no default kernel"
+msgstr "system-config-kdump: geen standaard kernel"
+
+#: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr ""
 "Sorry, deze architectuur heeft op dit moment geen ondersteuning voor kdump"
 
-#: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
+#: ../src/system-config-kdump.py:530 ../src/system-config-kdump.py:559
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdump wordt niet ondersteund"
 
-#: ../src/system-config-kdump.py:589
-msgid "Failed to detect total system memory"
-msgstr "Het detecteren van de totale hoeveelheid systeem geheugen is mislukt"
+#: ../src/system-config-kdump.py:544
+msgid ""
+"Failed to detect total system memory from /proc/iomem. Total system memory "
+"will not be accurate."
+msgstr ""
+"Opsporen totaal systeemgeheugen van /proc/iomem mislukte. Totaal "
+"systeemgeheugen zal niet nauwkeurig zijn."
 
-#: ../src/system-config-kdump.py:590
+#: ../src/system-config-kdump.py:546
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: Geheugen fout"
 
-#: ../src/system-config-kdump.py:601
+#: ../src/system-config-kdump.py:558
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr ""
 "Sorry, ia64 xen kernels hebben op dit moment geen ondersteuning voor kdump."
 
-#: ../src/system-config-kdump.py:680
+#: ../src/system-config-kdump.py:636
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Dit systeem heeft niet genoeg geheugen om te werken met kdump"
 
-#: ../src/system-config-kdump.py:682
+#: ../src/system-config-kdump.py:638
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: Niet genoeg geheugen"
 
-#: ../src/system-config-kdump.py:742
+#: ../src/system-config-kdump.py:698
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "Pad kan niet leeg zijn voor '%s' locaties."
 
-#: ../src/system-config-kdump.py:744
+#: ../src/system-config-kdump.py:700
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "Pad opnieuw instellen naar standaard ('%s')?."
 
-#: ../src/system-config-kdump.py:745
+#: ../src/system-config-kdump.py:701
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: Leeg pad"
 
-#: ../src/system-config-kdump.py:753
+#: ../src/system-config-kdump.py:709
 msgid "You must specify server. "
 msgstr "Je moet een server opgeven. "
 
-#: ../src/system-config-kdump.py:754
+#: ../src/system-config-kdump.py:710
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: Server naam is niet ingesteld"
 
-#: ../src/system-config-kdump.py:759
+#: ../src/system-config-kdump.py:715
 msgid "You must specify user name. "
 msgstr "Je moet een gebruikersnaam specificeren. "
 
-#: ../src/system-config-kdump.py:760
+#: ../src/system-config-kdump.py:716
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: Gebruikersnaam niet ingesteld"
 
-#: ../src/system-config-kdump.py:767
+#: ../src/system-config-kdump.py:723
 msgid "You must select one of the raw devices"
 msgstr "Je moet een van de ruwe apparaten selecteren"
 
-#: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
+#: ../src/system-config-kdump.py:724 ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: Ruw apparaat fout"
 
-#: ../src/system-config-kdump.py:775
+#: ../src/system-config-kdump.py:731
 msgid "You must select one of the partitions"
 msgstr "Je moet een van de partities selecteren"
 
-#: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:732 ../src/system-config-kdump.py:1461
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: Locale partitie fout"
 
-#: ../src/system-config-kdump.py:784
-#, python-format
-msgid ""
-"\n"
-"\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"Merk op dat de %s architectuur op dit moment geen mogelijkheid heeft voor "
-"een relocatable kernel, daarom is voor het functioneren van kdump een "
-"afzonderlijk kernel-kdump pakket vereist. Dit kan worden geïnstalleerd met "
-"behulp van 'yum install kernel-kdump'.\n"
-"\n"
-
-#: ../src/system-config-kdump.py:793
+#: ../src/system-config-kdump.py:741
 #, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
@@ -194,7 +190,7 @@ msgstr ""
 "WAARSCHUWING: kdump-ondersteuning voor xen vereist een niet-xen %s RPM om de "
 "crash dump afhandeling uit te voeren."
 
-#: ../src/system-config-kdump.py:796
+#: ../src/system-config-kdump.py:744
 #, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
@@ -203,11 +199,11 @@ msgstr ""
 "Zorg ervoor dat de niet-xen %s RPM dezelfde versie heeft als de versie van "
 "de geïnstalleerde xen kernel."
 
-#: ../src/system-config-kdump.py:799
+#: ../src/system-config-kdump.py:747
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: Niet-xen kernel is nodig"
 
-#: ../src/system-config-kdump.py:803
+#: ../src/system-config-kdump.py:751
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -218,84 +214,133 @@ msgstr ""
 "herstart om geheugen toe te wijzen. %sJe moet het systeem herstarten om de "
 "nieuwe instellingen actief te maken."
 
-#: ../src/system-config-kdump.py:807
+#: ../src/system-config-kdump.py:755
 msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: Opnieuw opstarten is nodig"
 
-#: ../src/system-config-kdump.py:822
-msgid "Error writing kdump configuration"
-msgstr "Fout tijdens het schrijven van kdump configuratie"
+#: ../src/system-config-kdump.py:766
+#, python-format
+msgid ""
+"Error writing kdump configuration:\n"
+"%s"
+msgstr ""
+"Fout tijdens schrijven kdump configuratie:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:823
+#: ../src/system-config-kdump.py:767
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr "system-config-kdump: Fout schrijven kdump configuratie"
 
-#: ../src/system-config-kdump.py:835
+#: ../src/system-config-kdump.py:781
 msgid "Error writing bootloader configuration"
-msgstr "Fout tijdens het schrijven van boot lader configuratie"
+msgstr "Fout tijdens het schrijven van boot-lader configuratie"
 
-#: ../src/system-config-kdump.py:836
+#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:790
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: Fouten schrijven boot lader configuratie"
+msgstr "system-config-kdump: Fouten schrijven boot-lader configuratie"
 
-#: ../src/system-config-kdump.py:848
-msgid "Error handling kdump services"
-msgstr "Fout bij het afhandelen van kdump servies"
+#: ../src/system-config-kdump.py:789
+#, python-format
+msgid ""
+"Error writing bootloader configuration:\n"
+"%s"
+msgstr ""
+"Fout tijdens het schrijven van boot-lader configuratie\"\n"
+"%s"
 
-#: ../src/system-config-kdump.py:849
+#: ../src/system-config-kdump.py:803
+#, python-format
+msgid ""
+"Error handling kdump services\n"
+"%s"
+msgstr ""
+"Fout bij het afhandelen van kdump servies\n"
+"%s"
+
+#: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: Fout afhandelen services"
 
-#: ../src/system-config-kdump.py:855
+#: ../src/system-config-kdump.py:809
 msgid "Configurations sucessfully saved"
 msgstr "Configuraties met succes opgeslagen"
 
-#: ../src/system-config-kdump.py:856
+#: ../src/system-config-kdump.py:810
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: Configuratie opgeslagen"
 
-#: ../src/system-config-kdump.py:916
+#: ../src/system-config-kdump.py:871
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "Fout tijdens het lezen van kdump configuratie: %s"
 
-#: ../src/system-config-kdump.py:917
+#: ../src/system-config-kdump.py:872
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: kdump configuratie bestand fout"
 
-#: ../src/system-config-kdump.py:1026
-#, python-format
-msgid "Error writing kdump configuration: %s"
-msgstr "Fout tijdens schrijven kdump configuratie: %s"
-
-#: ../src/system-config-kdump.py:1027
-msgid "system-config-kdump: write kdump configuration file error"
-msgstr "system-config-kdump:schrijven kdump configuratie bestand fout"
-
-#: ../src/system-config-kdump.py:1169
+#: ../src/system-config-kdump.py:1128
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Core collector moet beginnen met 'makedumpfile'"
 
-#: ../src/system-config-kdump.py:1170
+#: ../src/system-config-kdump.py:1129
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: Fout bij core collector"
 
-#: ../src/system-config-kdump.py:1436
+#: ../src/system-config-kdump.py:1292
+#, python-format
+msgid "Unable to get command line arguments for %s"
+msgstr "Kan commando-regel argumenten voor %s niet verkrijgen"
+
+#: ../src/system-config-kdump.py:1293 ../src/system-config-kdump.py:1310
+#: ../src/system-config-kdump.py:1328
+msgid "system-config-kdump: grubby error"
+msgstr "system-config-kdump: smerige fout"
+
+#: ../src/system-config-kdump.py:1309
+msgid "Unable to get default kernel"
+msgstr "Kan standaard kernel niet verkrijgen"
+
+#: ../src/system-config-kdump.py:1327
+msgid "Unable to get all kernel names"
+msgstr "Kan alle kernel namen niet verkrijgen"
+
+#: ../src/system-config-kdump.py:1408
+#, python-format
+msgid ""
+"Invalid craskernel value: %s.\n"
+"Possible values are:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+msgstr ""
+"Ongeldige crash-kernel waarde: %s.\n"
+"Mogelijke waardes zijn:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1411
+msgid "Bad crashkernel value"
+msgstr "Slechte crash-kernel waarde"
+
+#: ../src/system-config-kdump.py:1438
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "Ruw apparaat %s werd niet gevonden op deze machine"
 
-#: ../src/system-config-kdump.py:1457
+#: ../src/system-config-kdump.py:1459
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "Lokaal bestandssysteem partitie met naam %s"
 
-#: ../src/system-config-kdump.py:1458
+#: ../src/system-config-kdump.py:1460
 #, python-format
 msgid " and type %s wasn't found"
 msgstr " en type %s werd niet gevonden"
 
-#: ../src/system-config-kdump.py:1660
+#: ../src/system-config-kdump.py:1662
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
@@ -303,9 +348,64 @@ msgstr ""
 "De hulp viewer werd niet gevonden. Om hulp te kunnen bekijken, moet het "
 "'yelp' pakket geïnstalleerd zijn."
 
-#: ../src/system-config-kdump.py:1725
+#: ../src/system-config-kdump.py:1681
+msgid "Unable to get kdump service status"
+msgstr "Kan kdump service status niet verkrijgen"
+
+#: ../src/system-config-kdump.py:1682 ../src/system-config-kdump.py:1705
+msgid "system-config-kdump: Handling services error"
+msgstr "system-config-kdump: Services afhandeling fout"
+
+#: ../src/system-config-kdump.py:1704
+msgid "Unable to handle kdump services"
+msgstr "Kan kdump services niet afhandelen"
+
+#: ../src/system-config-kdump.py:1727
+#, python-format
+msgid ""
+"Not authorized exception.\n"
+"%s"
+msgstr ""
+"Niet geautoriseerde uitzondering.\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1728
+msgid "System config kdump: authorization error"
+msgstr "system-config-kdump: autorisatie fout"
+
+#: ../src/system-config-kdump.py:1743
+#, python-format
+msgid ""
+"Unable to communicate with backend.\n"
+"%s"
+msgstr ""
+"Kan niet communiceren met backend.\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1744
+msgid "System config kdump: dbus error"
+msgstr "system-config-kdump: dbus fout"
+
+#: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
 msgstr "Fout tijdens het uitvoeren van system-config-kdump"
+
+#: ../src/dialog_call_error.glade:64 ../src/dialog_call_error.glade:99
+#: ../src/dialog_call_error.glade:134
+msgid "a"
+msgstr "een"
+
+#: ../src/dialog_call_error.glade:72
+msgid "Called command"
+msgstr "Aangeroepen commando"
+
+#: ../src/dialog_call_error.glade:107
+msgid "Stdandard output"
+msgstr "Standaard output"
+
+#: ../src/dialog_call_error.glade:142
+msgid "Standard error"
+msgstr "Standaard fout"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -666,6 +766,33 @@ msgstr "Expert instellingen"
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
 msgstr "Over system-config-kdump"
+
+#~ msgid "Failed to detect total system memory"
+#~ msgstr ""
+#~ "Het detecteren van de totale hoeveelheid systeem geheugen is mislukt"
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "Note that the %s architecture does not feature a relocatable kernel at "
+#~ "this time, and thus requires a separate kernel-kdump package to be "
+#~ "installed for kdump to function. This can be installed via 'yum install "
+#~ "kernel-kdump' at your convenience.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "Merk op dat de %s architectuur op dit moment geen mogelijkheid heeft voor "
+#~ "een relocatable kernel, daarom is voor het functioneren van kdump een "
+#~ "afzonderlijk kernel-kdump pakket vereist. Dit kan worden geïnstalleerd "
+#~ "met behulp van 'yum install kernel-kdump'.\n"
+#~ "\n"
+
+#~ msgid "Error writing kdump configuration"
+#~ msgstr "Fout tijdens het schrijven van kdump configuratie"
+
+#~ msgid "system-config-kdump: write kdump configuration file error"
+#~ msgstr "system-config-kdump:schrijven kdump configuratie bestand fout"
 
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "Kdump/kexec configureren"
