@@ -1127,7 +1127,10 @@ class MainWindow:
                 _("Core collector must begin with 'makedumpfile'"),
                 _("system-config-kdump: Bad core collector"),
                 parent = self.toplevel)
-            self.set_core_collector(self.orig_settings.core_collector)
+            if not self.orig_settings.core_collector.startswith("makedumpfile"):
+                self.set_core_collector(CORE_COLLECTOR_DEFAULT)
+            else:
+                self.set_core_collector(self.orig_settings.core_collector)
             return False
 
         if DEBUG:
