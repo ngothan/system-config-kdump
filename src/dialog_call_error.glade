@@ -104,7 +104,7 @@
                     <child>
                       <widget class="GtkLabel" id="label3">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Stdandard output</property>
+                        <property name="label" translatable="yes">Standard output</property>
                       </widget>
                       <packing>
                         <property name="type">label_item</property>

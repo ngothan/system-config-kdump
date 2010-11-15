@@ -805,7 +805,7 @@ class MainWindow:
                 return
 
             elif correct:
-                dialogs.show_message(_("Configurations sucessfully saved"),
+                dialogs.show_message(_("Configurations successfully saved"),
                     _("system-config-kdump: Configuration saved"),
                     parent = self.toplevel)
             else:
@@ -1411,7 +1411,7 @@ class MainWindow:
                 self.kdump_mem_spin_button.set_value(float(size))
                 self.update_usable_mem(self.kdump_mem_spin_button)
             except ValueError, reason:
-                self.show_error_message(_("Invalid craskernel value: %s."
+                self.show_error_message(_("Invalid crashkernel value: %s."
                     "\nPossible values are:\n\tX\n\tX@Y\n\n%s")
                     %(value,reason),
                     _("Bad crashkernel value"))
