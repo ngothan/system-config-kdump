@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-kdump.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-14 16:01+0200\n"
-"PO-Revision-Date: 2010-12-07 02:00+0800\n"
+"PO-Revision-Date: 2010-12-08 00:18+0800\n"
 "Last-Translator: chiachen <luojiazhen@gmail.com>\n"
 "Language-Team: Wei Liu\n"
 "MIME-Version: 1.0\n"
@@ -60,18 +60,16 @@ msgid "Kdump will attempt to place the vmcore at the specified location. In the 
 msgstr "Kdump 将试图把 vmcore 存放在指定的位置。如果这个过程失败了，将执行下面指定的缺省动作。"
 
 #: ../src/system-config-kdump.py:375
-#, fuzzy
 msgid "system-config-kdump"
-msgstr "关于 system-config-kdump"
+msgstr "关于system-config-kdump"
 
 #: ../src/system-config-kdump.py:522
 msgid "Don't know how to configure your boot loader."
 msgstr "不知道怎样配置你的引导加载器。"
 
 #: ../src/system-config-kdump.py:523
-#, fuzzy
 msgid "system-config-kdump: no default kernel"
-msgstr "system-config-kdump：需要非 xen 内核"
+msgstr "system-config-kdump:默认内核不存在"
 
 #: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
@@ -174,11 +172,13 @@ msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump：需要重启"
 
 #: ../src/system-config-kdump.py:766
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
-msgstr "写入内核转储配置出错：%s"
+msgstr ""
+"写入kdump配置出错：\n"
+"%s"
 
 #: ../src/system-config-kdump.py:767
 msgid "system-config-kdump: Error write kdump configuration"
@@ -194,18 +194,22 @@ msgid "system-config-kdump: Error write bootloader configuration"
 msgstr "system-config-kdump：写入引导装载程序配置出错"
 
 #: ../src/system-config-kdump.py:789
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
-msgstr "写入引导装载程序配置出错"
+msgstr ""
+"写入引导装载程序配置出错\n"
+"%s"
 
 #: ../src/system-config-kdump.py:803
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
-msgstr "处理 kdump 服务出错"
+msgstr ""
+"处理kdump服务出错\n"
+"%s"
 
 #: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
@@ -244,14 +248,12 @@ msgstr "不能为%s获取命令行参数。"
 #: ../src/system-config-kdump.py:1293
 #: ../src/system-config-kdump.py:1310
 #: ../src/system-config-kdump.py:1328
-#, fuzzy
 msgid "system-config-kdump: grubby error"
-msgstr "system-config-kdump：内存错误"
+msgstr "grub引导错误"
 
 #: ../src/system-config-kdump.py:1309
-#, fuzzy
 msgid "Unable to get default kernel"
-msgstr "使用默认内核映像"
+msgstr "不能获取默认内核映像"
 
 #: ../src/system-config-kdump.py:1327
 msgid "Unable to get all kernel names"
@@ -303,14 +305,12 @@ msgstr "不能获取kdump服务状态。"
 
 #: ../src/system-config-kdump.py:1682
 #: ../src/system-config-kdump.py:1705
-#, fuzzy
 msgid "system-config-kdump: Handling services error"
-msgstr "system-config-kdump：裸设备错误"
+msgstr "处理服务出错"
 
 #: ../src/system-config-kdump.py:1704
-#, fuzzy
 msgid "Unable to handle kdump services"
-msgstr "处理 kdump 服务出错"
+msgstr "处理kdump服务失败"
 
 #: ../src/system-config-kdump.py:1727
 #, python-format
@@ -322,9 +322,8 @@ msgstr ""
 "%s"
 
 #: ../src/system-config-kdump.py:1728
-#, fuzzy
 msgid "System config kdump: authorization error"
-msgstr "system-config-kdump：本地分区错误"
+msgstr "本地分区错误"
 
 #: ../src/system-config-kdump.py:1743
 #, python-format
@@ -336,9 +335,8 @@ msgstr ""
 "%s"
 
 #: ../src/system-config-kdump.py:1744
-#, fuzzy
 msgid "System config kdump: dbus error"
-msgstr "system-config-kdump：内存错误"
+msgstr "内存错误"
 
 #: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
@@ -727,6 +725,7 @@ msgstr "关于 system-config-kdump"
 
 #~ msgid "Failed to detect total system memory"
 #~ msgstr "检测系统内存的总数失败了"
+
 #~ msgid ""
 #~ "\n"
 #~ "\n"
@@ -742,8 +741,9 @@ msgstr "关于 system-config-kdump"
 #~ "kernel-kdump 包来运行 kdump。在方便的时候你可以用“yum install kernel-"
 #~ "kdump”来安装它。\n"
 #~ "\n"
+
 #~ msgid "Error writing kdump configuration"
 #~ msgstr "内核转储配置"
+
 #~ msgid "system-config-kdump: write kdump configuration file error"
 #~ msgstr "system-config-kdump：写入 kdump 配置文件出错"
-
