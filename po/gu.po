@@ -3,13 +3,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Ankit Patel <ankit@redhat.com>, 2006, 2007.
-# Sweta Kothari <swkothar@redhat.com>, 2010.
+# Sweta Kothari <swkothar@redhat.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump.master.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 10:32+0100\n"
-"PO-Revision-Date: 2010-03-23 11:10+0530\n"
+"POT-Creation-Date: 2010-09-14 16:01+0200\n"
+"PO-Revision-Date: 2011-01-03 15:53+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -22,19 +22,19 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../src/system-config-kdump.py:68
+#: ../src/system-config-kdump.py:72
 msgid "mount rootfs and run /sbin/init"
 msgstr "rootfs માઉન્ટ કરો અને /sbin/init ચલાવો"
 
-#: ../src/system-config-kdump.py:73
+#: ../src/system-config-kdump.py:77
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:74
+#: ../src/system-config-kdump.py:78
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:98
+#: ../src/system-config-kdump.py:102
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -64,7 +64,7 @@ msgstr ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 
-#: ../src/system-config-kdump.py:126
+#: ../src/system-config-kdump.py:127
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -81,7 +81,7 @@ msgstr ""
 "સાબિત થઈ શકે. નોંધ કરો કે kdump સિસ્ટમ મેમરીનો ભાગ આરક્ષિત કરવાનું જરૂરી રહે છે કે જે અન્ય "
 "વપરાશો માટે બિનઉપલબ્ધ રહશે."
 
-#: ../src/system-config-kdump.py:136
+#: ../src/system-config-kdump.py:137
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
@@ -90,121 +90,115 @@ msgstr ""
 "Kdump એ vmcore ને સ્પષ્ટ થયેલ સ્થાને મૂકવાનું પસંદ કરશે. ઘટનામાં કે જે નિષ્ફળ જાય છે તે "
 "vmcore ને તે સ્થાને મૂકવામાં નિષ્ફળ જાય છે, મૂળભૂત ક્રિયા (નીચે સ્પષ્ટ થતયેલ) ચલાવવામાં આવશે."
 
-#: ../src/system-config-kdump.py:575
+#: ../src/system-config-kdump.py:375
+msgid "system-config-kdump"
+msgstr "system-config-kdump"
+
+#: ../src/system-config-kdump.py:522
+msgid "Don't know how to configure your boot loader."
+msgstr "કેવી રીતે તમારા બુટ લોડરને રૂપરેખાંકિત કરવુ જાણતા નથી."
+
+#: ../src/system-config-kdump.py:523
+msgid "system-config-kdump: no default kernel"
+msgstr "system-config-kdump: મૂળભૂત કર્નલ નથી"
+
+#: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "માફ કરજો, આ આર્કીટેક્ચર વર્તમાનમાં kdump ને આધાર આપતું નથી"
 
-#: ../src/system-config-kdump.py:577 ../src/system-config-kdump.py:602
+#: ../src/system-config-kdump.py:530 ../src/system-config-kdump.py:559
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdump આધારભૂત નથી"
 
-#: ../src/system-config-kdump.py:589
-msgid "Failed to detect total system memory"
-msgstr "કુલ સિસ્ટમ મેમરી શોધવામાં નિષ્ફળ"
+#: ../src/system-config-kdump.py:544
+msgid ""
+"Failed to detect total system memory from /proc/iomem. Total system memory "
+"will not be accurate."
+msgstr "/proc/iomem માંથી કુલ સિસ્ટમ મેમરીને શોધવાનું નિષ્ફળ. કુલ સિસ્ટમ મેમરી ચોક્કસ હશે નહિં."
 
-#: ../src/system-config-kdump.py:590
+#: ../src/system-config-kdump.py:546
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: મેમરી ભૂલ"
 
-#: ../src/system-config-kdump.py:601
+#: ../src/system-config-kdump.py:558
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
-msgstr "માફ કરજો, ia64 xen કર્નલો આ સમયે kdump ને આધાર આપતા નથી!"
+msgstr "માફ કરજો, ia64 xen કર્નલો આ સમયે kdump ને આધાર આપતા નથી."
 
-#: ../src/system-config-kdump.py:680
+#: ../src/system-config-kdump.py:636
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "આ સિસ્ટમ પાસે kdump ને યોગ્ય રાખવા માટે પૂરતી મેમરી નથી"
 
-#: ../src/system-config-kdump.py:682
+#: ../src/system-config-kdump.py:638
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: પૂરતી મેમરી નથી"
 
-#: ../src/system-config-kdump.py:742
+#: ../src/system-config-kdump.py:698
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "પાથ '%s' સ્થાનો માટે ખાલી રાખી શકાતા નથી. "
 
-#: ../src/system-config-kdump.py:744
+#: ../src/system-config-kdump.py:700
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "મૂળભૂત ('%s') માટે પાથને પુન:સુયોજિત કરો?."
 
-#: ../src/system-config-kdump.py:745
+#: ../src/system-config-kdump.py:701
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: ખાલી પાથ"
 
-#: ../src/system-config-kdump.py:753
+#: ../src/system-config-kdump.py:709
 msgid "You must specify server. "
 msgstr "તમારે સર્વરને સ્પષ્ટ કરવુ જ પડશે. "
 
-#: ../src/system-config-kdump.py:754
+#: ../src/system-config-kdump.py:710
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: સર્વર નામ સુયોજિત નથી"
 
-#: ../src/system-config-kdump.py:759
+#: ../src/system-config-kdump.py:715
 msgid "You must specify user name. "
 msgstr "તમારે વપરાશકર્તા નામને સ્પષ્ટ કરવુ જ પડશે. "
 
-#: ../src/system-config-kdump.py:760
+#: ../src/system-config-kdump.py:716
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: વપરાશકર્તા નામ સુયોજિત નથી"
 
-#: ../src/system-config-kdump.py:767
+#: ../src/system-config-kdump.py:723
 msgid "You must select one of the raw devices"
 msgstr "તમારે રૉ ઉપકરણોનાં એકને પસંદ કરવા જ પડશે"
 
-#: ../src/system-config-kdump.py:768 ../src/system-config-kdump.py:1437
+#: ../src/system-config-kdump.py:724 ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: રૉ ઉપકરણ ભૂલ"
 
-#: ../src/system-config-kdump.py:775
+#: ../src/system-config-kdump.py:731
 msgid "You must select one of the partitions"
 msgstr "તમારે પાર્ટીશનોનાં એકને પસંદ કરવુ જ પડશે"
 
-#: ../src/system-config-kdump.py:776 ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:732 ../src/system-config-kdump.py:1461
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: સ્થાનિય પાર્ટીશન ભૂલ"
 
-#: ../src/system-config-kdump.py:784
-#, python-format
-msgid ""
-"\n"
-"\n"
-"Note that the %s architecture does not feature a relocatable kernel at this "
-"time, and thus requires a separate kernel-kdump package to be installed for "
-"kdump to function. This can be installed via 'yum install kernel-kdump' at "
-"your convenience.\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"નોંધ કરો કે %s આર્કીટેક્ચર આ સમયે પુનઃસ્થાનીય કરી શકાય તેવું લક્ષણ આપતું નથી, અને આથી તેને "
-"kdump ને કામ આપવા માટે અલગ kernel-kdump પેકેજ સ્થાપિત થયેલ હોય એ જરૂરી નથી. આ 'yum "
-"install kernel-kdump' મારફતે તમારી સરળતાએ કરીને સ્થાપિત કરી શકાય છે.\n"
-"\n"
-
-#: ../src/system-config-kdump.py:793
+#: ../src/system-config-kdump.py:741
 #, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
-msgstr ""
-"ચેતવણી: xen kdump આધારને વાસ્તવિક ભંગાણ ડમ્પ મેળવવા માટે બિન-xen કર્નલ %s RPM જરૂરી "
-"છે."
+msgstr "ચેતવણી: xen kdump આધારને વાસ્તવિક ભંગાણ ડમ્પ મેળવવા માટે બિન-xen કર્નલ %s RPM જરૂરી છે."
 
-#: ../src/system-config-kdump.py:796
+#: ../src/system-config-kdump.py:744
 #, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
 msgstr ""
-"મહેરબાની કરીને તમારી પાસે સ્થાપિત xen કર્નલની આવૃત્તિ જેટલી જ બિન-xen કર્નલ %s RPM હોય "
-"તેની ખાતરી કરો."
+"મહેરબાની કરીને તમારી પાસે સ્થાપિત xen કર્નલની આવૃત્તિ જેટલી જ બિન-xen કર્નલ %s RPM "
+"હોય તેની ખાતરી કરો."
 
-#: ../src/system-config-kdump.py:799
+#: ../src/system-config-kdump.py:747
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: બિન-xen કર્નલની જરૂર છે"
 
-#: ../src/system-config-kdump.py:803
+#: ../src/system-config-kdump.py:751
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -214,92 +208,198 @@ msgstr ""
 "Kdump સુયોજનો બદલવા માટે મેમરીને અનુલક્ષીને ફરીથી ફાળવણી કરવા માટે સિસ્ટમને રીબુટ "
 "કરવાની જરૂર છે. %s તમારે સિસ્ટમને નવા સુયોજનોની અસર જોવા માટે રીબુટ કરવાની જરૂર રહેશે."
 
-#: ../src/system-config-kdump.py:807
+#: ../src/system-config-kdump.py:755
 msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: પુન:બુટ કરવાની જરૂર છે"
 
-#: ../src/system-config-kdump.py:822
-msgid "Error writing kdump configuration"
-msgstr "kdump રૂપરેખાંકનને લખતી વખતે ભૂલ"
+#: ../src/system-config-kdump.py:766
+#, python-format
+msgid ""
+"Error writing kdump configuration:\n"
+"%s"
+msgstr ""
+"kdump રૂપરેખાંકનને લખવા દરમ્યાન ભૂલ:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:823
+#: ../src/system-config-kdump.py:767
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr "system-config-kdump: kdump રૂપરેખાંકનને લખતા ભૂલ"
 
-#: ../src/system-config-kdump.py:835
+#: ../src/system-config-kdump.py:781
 msgid "Error writing bootloader configuration"
 msgstr "બુટલોડર રૂપરેખાંકનને લખવા દરમ્યાન ભૂલ"
 
-#: ../src/system-config-kdump.py:836
+#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:790
 msgid "system-config-kdump: Error write bootloader configuration"
 msgstr "system-config-kdump: બુટલોડર રૂપરેખાંકનને લખતા ભૂલ"
 
-#: ../src/system-config-kdump.py:848
-msgid "Error handling kdump services"
-msgstr "kdump સેવાઓને સંભાળી રહ્યા હોય ત્યારે ભૂલ"
+#: ../src/system-config-kdump.py:789
+#, python-format
+msgid ""
+"Error writing bootloader configuration:\n"
+"%s"
+msgstr ""
+"બુટલોડર રૂપરેખાંકનને લખવા દરમ્યાન ભૂલ:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:849
+#: ../src/system-config-kdump.py:803
+#, python-format
+msgid ""
+"Error handling kdump services\n"
+"%s"
+msgstr ""
+"kdump સેવાઓને સંભાળી રહ્યા હોય ત્યારે ભૂલ\n"
+"%s"
+
+#: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: સેવાઓને સંભાળતી વખતે ભૂલ"
 
-#: ../src/system-config-kdump.py:855
+#: ../src/system-config-kdump.py:809
 msgid "Configurations sucessfully saved"
 msgstr "રૂપરેખાંકનો સફળતાપૂર્વક સંગ્રહ થયેલ છે"
 
-#: ../src/system-config-kdump.py:856
+#: ../src/system-config-kdump.py:810
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: સંગ્રહ થયેલ રૂપરેખાંકન"
 
-#: ../src/system-config-kdump.py:916
+#: ../src/system-config-kdump.py:871
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "kdump રૂપરેખાંકનને વાંચતી વખતે ભૂલ: %s"
 
-#: ../src/system-config-kdump.py:917
+#: ../src/system-config-kdump.py:872
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: kdump રૂપરેખાંકન ફાઇલ ભૂલ"
 
-#: ../src/system-config-kdump.py:1026
-#, python-format
-msgid "Error writing kdump configuration: %s"
-msgstr "kdump રૂપરેખાંકનને લખવા દરમ્યાન ભૂલ: %s"
-
-#: ../src/system-config-kdump.py:1027
-msgid "system-config-kdump: write kdump configuration file error"
-msgstr "system-config-kdump: kdump રૂપરેખાંકન ફાઇલ ભૂલને લખો"
-
-#: ../src/system-config-kdump.py:1169
+#: ../src/system-config-kdump.py:1128
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "મૂળ સંગ્રહનાર 'makedumpfile' સાથે શરૂ થવો જ જોઈએ"
 
-#: ../src/system-config-kdump.py:1170
+#: ../src/system-config-kdump.py:1129
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: ખરાબ કૉર ક્લેક્ટર"
 
-#: ../src/system-config-kdump.py:1436
+#: ../src/system-config-kdump.py:1292
+#, python-format
+msgid "Unable to get command line arguments for %s"
+msgstr "%s માટે આદેશ વાક્ય દલીલોને મેળવવાનું અસમર્થ"
+
+#: ../src/system-config-kdump.py:1293 ../src/system-config-kdump.py:1310
+#: ../src/system-config-kdump.py:1328
+msgid "system-config-kdump: grubby error"
+msgstr "system-config-kdump: grubby ભૂલ"
+
+#: ../src/system-config-kdump.py:1309
+msgid "Unable to get default kernel"
+msgstr "મૂળભૂત કર્નલને મેળવવાનું અસમર્થ"
+
+#: ../src/system-config-kdump.py:1327
+msgid "Unable to get all kernel names"
+msgstr "બધા કર્નલ નામોને મેળવવાનું અસમર્થ"
+
+#: ../src/system-config-kdump.py:1408
+#, python-format
+msgid ""
+"Invalid craskernel value: %s.\n"
+"Possible values are:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+msgstr ""
+"અયોગ્ય craskernel કિંમત: %s.\n"
+"શક્ય કિંમતો આ છે:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1411
+msgid "Bad crashkernel value"
+msgstr "ખરાબ crashkernel કિંમત"
+
+#: ../src/system-config-kdump.py:1438
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "રૉ ઉપકરણ %s એ આ મશીન પર મળ્યુ ન હતુ"
 
-#: ../src/system-config-kdump.py:1457
+#: ../src/system-config-kdump.py:1459
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "નામ %s સાથે સ્થાનિય ફાઇલ સિસ્ટમ પાર્ટીશન"
 
-#: ../src/system-config-kdump.py:1458
+#: ../src/system-config-kdump.py:1460
 #, python-format
 msgid " and type %s wasn't found"
 msgstr " અને પ્રકાર %s મળ્યુ ન હતુ"
 
-#: ../src/system-config-kdump.py:1660
+#: ../src/system-config-kdump.py:1662
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
-msgstr "મદદ દર્શકને શોધી શક્યા નહિં. મદદને જોવા માટે સક્ષમ થવા, 'yelp' પેકેજને સ્થાપિત કરવાની જરૂર છે."
+msgstr ""
+"મદદ દર્શકને શોધી શક્યા નહિં. મદદને જોવા માટે સક્ષમ થવા, 'yelp' પેકેજને સ્થાપિત કરવાની "
+"જરૂર છે."
 
-#: ../src/system-config-kdump.py:1725
+#: ../src/system-config-kdump.py:1681
+msgid "Unable to get kdump service status"
+msgstr "kdump સેવી સ્થિતિને મેળવવાનું અસમર્થ"
+
+#: ../src/system-config-kdump.py:1682 ../src/system-config-kdump.py:1705
+msgid "system-config-kdump: Handling services error"
+msgstr "system-config-kdump: સેવા ભૂલ ને સંભાળી રહ્યા છીએ"
+
+#: ../src/system-config-kdump.py:1704
+msgid "Unable to handle kdump services"
+msgstr "kdump સેવાઓને સંભાળી રાખવાનું અસમર્થ"
+
+#: ../src/system-config-kdump.py:1727
+#, python-format
+msgid ""
+"Not authorized exception.\n"
+"%s"
+msgstr ""
+"અપવાદ સત્તા થયેલ નથી.\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1728
+msgid "System config kdump: authorization error"
+msgstr "System config kdump: સત્તાધિકરણ ભૂલ"
+
+#: ../src/system-config-kdump.py:1743
+#, python-format
+msgid ""
+"Unable to communicate with backend.\n"
+"%s"
+msgstr ""
+"બેકએન્ડ સાથે વાર્તાલાપ કરવાનું અસમર્થ.\n"
+"%s"
+
+#: ../src/system-config-kdump.py:1744
+msgid "System config kdump: dbus error"
+msgstr "System config kdump: dbus ભૂલ"
+
+#: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
 msgstr "system-config-kdump ને ચલાવવા દરમ્યાન ભૂલ"
+
+#: ../src/dialog_call_error.glade:64 ../src/dialog_call_error.glade:99
+#: ../src/dialog_call_error.glade:134
+msgid "a"
+msgstr "a"
+
+#: ../src/dialog_call_error.glade:72
+msgid "Called command"
+msgstr "Called આદેશ"
+
+#: ../src/dialog_call_error.glade:107
+msgid "Stdandard output"
+msgstr "મૂળભૂત આઉટપુટ"
+
+#: ../src/dialog_call_error.glade:142
+msgid "Standard error"
+msgstr "મૂળભૂત ભૂલ"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -311,7 +411,9 @@ msgstr "ફાઇલ (_F)"
 
 #: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
 msgid "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr "બદલાવોને લાગુ કરો, બુટલોડર રૂપરેખાંકિત ફાઇલને સંગ્રહો અને kexec/kdump રૂપરેખાંકિત ફાઇલને સંગ્રહો"
+msgstr ""
+"બદલાવોને લાગુ કરો, બુટલોડર રૂપરેખાંકિત ફાઇલને સંગ્રહો અને kexec/kdump રૂપરેખાંકિત ફાઇલને "
+"સંગ્રહો"
 
 #: ../src/system-config-kdump.glade:27
 msgid "gtk-apply"
