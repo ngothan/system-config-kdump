@@ -67,7 +67,7 @@ msgstr "system-config-kdump: 非デフォルトの kernel"
 
 #: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
-msgstr "申し訳ございません。このアーキテクチャは現在 kdump をサポートしていません。"
+msgstr "申し訳ございません。このアーキテクチャは現時点で kdump をサポートしていません。"
 
 #: ../src/system-config-kdump.py:530
 #: ../src/system-config-kdump.py:559
@@ -88,7 +88,7 @@ msgstr "残念ながら ia64 Xen カーネルは現時点で kdump をサポー�
 
 #: ../src/system-config-kdump.py:636
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "このシステムには kdump が実行できるほどのメモリがありません。"
+msgstr "このシステムには kdump を実行するために必要なメモリ量が搭載されていません。"
 
 #: ../src/system-config-kdump.py:638
 msgid "system-config-kdump: Not enough memory"
@@ -106,36 +106,36 @@ msgstr "パスをデフォルト ('%s') にリセットしますか ?"
 
 #: ../src/system-config-kdump.py:701
 msgid "system-config-kdump: Empty path"
-msgstr "system-config-kdump: パスが指定されていません"
+msgstr "system-config-kdump: パスが指定されていません。"
 
 #: ../src/system-config-kdump.py:709
 msgid "You must specify server. "
-msgstr "サーバーを指定する必要があります"
+msgstr "サーバーを指定する必要があります。"
 
 #: ../src/system-config-kdump.py:710
 msgid "system-config-kdump: Server name not set"
-msgstr "system-config-kdump: サーバー名がセットされていません"
+msgstr "system-config-kdump: サーバー名がセットされていません。"
 
 #: ../src/system-config-kdump.py:715
 msgid "You must specify user name. "
-msgstr "ユーザー名を指定する必要があります"
+msgstr "ユーザー名を指定する必要があります。"
 
 #: ../src/system-config-kdump.py:716
 msgid "system-config-kdump: User name not set"
-msgstr "system-config-kdump: ユーザー名がセットされていません"
+msgstr "system-config-kdump: ユーザー名がセットされていません。"
 
 #: ../src/system-config-kdump.py:723
 msgid "You must select one of the raw devices"
-msgstr "生デバイスの１つを選択する必要があります"
+msgstr "rawデバイスの１つを選択する必要があります。"
 
 #: ../src/system-config-kdump.py:724
 #: ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: Raw device error"
-msgstr "system-config-kdump: 生デバイスのエラー"
+msgstr "system-config-kdump: rawデバイスのエラー"
 
 #: ../src/system-config-kdump.py:731
 msgid "You must select one of the partitions"
-msgstr "パーティションの１つを選択しなければなりません"
+msgstr "パーティションの１つを選択しなければなりません。"
 
 #: ../src/system-config-kdump.py:732
 #: ../src/system-config-kdump.py:1461
@@ -145,16 +145,16 @@ msgstr "system-config-kdump: ローカルパーティションエラー"
 #: ../src/system-config-kdump.py:741
 #, python-format
 msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
-msgstr "警告: xen kdump サポートが実際のクラッシュダンプキャプチャを実行する為には 非-xen %s RPM を必要とします。"
+msgstr "警告: xen kdump サポートが実際のクラッシュダンプキャプチャを実行する為には通常のカーネル(Xenカーネルではない) %s RPM を必要とします。"
 
 #: ../src/system-config-kdump.py:744
 #, python-format
 msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
-msgstr "xen カーネルにインストールしているものと同一バージョンの非-xen %s RPM があることを確認してください。"
+msgstr "xen カーネルにインストールしているものと同一バージョンの通常のカーネル(Xenカーネルではない) %s RPM があることを確認してください。"
 
 #: ../src/system-config-kdump.py:747
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr "system-config-kdump: 非-xen カーネルが必要です"
+msgstr "system-config-kdump: 通常のカーネル(Xenカーネルではない)が必要です。"
 
 #: ../src/system-config-kdump.py:751
 #, python-format
@@ -163,7 +163,7 @@ msgstr "Kdump 設定を変更すると、変更に応じてメモリを再割り
 
 #: ../src/system-config-kdump.py:755
 msgid "system-config-kdump: Need reboot"
-msgstr "system-config-kdump: 再起動が必要です"
+msgstr "system-config-kdump: 再起動が必要です。"
 
 #: ../src/system-config-kdump.py:766
 #, python-format
@@ -171,21 +171,21 @@ msgid ""
 "Error writing kdump configuration:\n"
 "%s"
 msgstr ""
-"kdump 設定への書き込エラー :\n"
+"kdump 設定を保存する際に書き込みエラーが発生しました。 :\n"
 "%s"
 
 #: ../src/system-config-kdump.py:767
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr "system-config-kdump: kdump 設定の書き込みでエラー"
+msgstr "system-config-kdump: kdump 設定を保存する際に書き込みエラーが発生しました。"
 
 #: ../src/system-config-kdump.py:781
 msgid "Error writing bootloader configuration"
-msgstr "ブートローダ設定の書き込み中にエラーです"
+msgstr "ブートローダ設定を保存する際に書き込みエラーが発生しました。"
 
 #: ../src/system-config-kdump.py:782
 #: ../src/system-config-kdump.py:790
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: ブートローダ設定の書き込みエラー"
+msgstr "system-config-kdump: ブートローダ設定を保存する際に書き込みエラーが発生しました。"
 
 #: ../src/system-config-kdump.py:789
 #, python-format
@@ -193,7 +193,7 @@ msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
 msgstr ""
-"ブートローダ設定への書き込みエラー :\n"
+"ブートローダ設定を保存する際に書き込みエラーが発生しました。 :\n"
 "%s"
 
 #: ../src/system-config-kdump.py:803
@@ -207,11 +207,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
-msgstr "system-config-kdump: サービス処理エラー"
+msgstr "system-config-kdump: サービス処理中にエラー"
 
 #: ../src/system-config-kdump.py:809
 msgid "Configurations sucessfully saved"
-msgstr "設定は正常に保存されました"
+msgstr "設定は正常に保存されました。"
 
 #: ../src/system-config-kdump.py:810
 msgid "system-config-kdump: Configuration saved"
@@ -247,11 +247,11 @@ msgstr "system-config-kdump: grubby エラー"
 
 #: ../src/system-config-kdump.py:1309
 msgid "Unable to get default kernel"
-msgstr "デフォルトカーネルイメージが取得できません"
+msgstr "デフォルトカーネルイメージが取得できません。"
 
 #: ../src/system-config-kdump.py:1327
 msgid "Unable to get all kernel names"
-msgstr "全ての kernel name が取得できません。"
+msgstr "すべてのカーネルの名前が取得できません。"
 
 #: ../src/system-config-kdump.py:1408
 #, python-format
@@ -263,7 +263,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"正しくない craskernel 値 : %s.\n"
+"正しくない crashkernel 値 : %s.\n"
 "以下の値が考えられます :\n"
 "\tX\n"
 "\tX@Y\n"
@@ -272,12 +272,12 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1411
 msgid "Bad crashkernel value"
-msgstr "間違った crashkernel 値"
+msgstr "不正な crashkernel 値"
 
 #: ../src/system-config-kdump.py:1438
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr "生デバイス %s はこのマシンでは発見出来ませんでした"
+msgstr "rawデバイスのエラー %s はこのマシンでは発見出来ませんでした"
 
 #: ../src/system-config-kdump.py:1459
 #, python-format
@@ -287,7 +287,7 @@ msgstr "%s の名前を持つローカルファイルシステムパーティシ
 #: ../src/system-config-kdump.py:1460
 #, python-format
 msgid " and type %s wasn't found"
-msgstr "そしてタイプ %s は見付かりませんでした"
+msgstr "そしてタイプ %s は見つかりません。"
 
 #: ../src/system-config-kdump.py:1662
 msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
@@ -304,7 +304,7 @@ msgstr "system-config-kdump: サービスの処理中にエラー発生"
 
 #: ../src/system-config-kdump.py:1704
 msgid "Unable to handle kdump services"
-msgstr "kdump サービスの処理ができません"
+msgstr "kdump サービスの処理ができません。"
 
 #: ../src/system-config-kdump.py:1727
 #, python-format
@@ -325,7 +325,7 @@ msgid ""
 "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
-"backend と交信できません。\n"
+"バックエンドサービスと通信できません。\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1744
@@ -334,7 +334,7 @@ msgstr "system-config-kdump: dbus エラー"
 
 #: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
-msgstr "system-config-kdump の実行中にエラー"
+msgstr "system-config-kdump 起動中にエラー"
 
 #: ../src/dialog_call_error.glade:64
 #: ../src/dialog_call_error.glade:99
@@ -360,7 +360,7 @@ msgstr "カーネルダンプの設定"
 
 #: ../src/system-config-kdump.glade:18
 msgid "_File"
-msgstr "ファイル（_F）"
+msgstr "ファイル(_F)"
 
 #: ../src/system-config-kdump.glade:26
 #: ../src/system-config-kdump.glade:142
@@ -390,21 +390,21 @@ msgstr "gtk-quit"
 
 #: ../src/system-config-kdump.glade:65
 msgid "_Options"
-msgstr "オプション（_O）"
+msgstr "オプション(_O)"
 
 #: ../src/system-config-kdump.glade:73
 #: ../src/system-config-kdump.glade:173
 msgid "Enable kdump"
-msgstr "kdump を有効にする"
+msgstr "kdump を有効化します。"
 
 #: ../src/system-config-kdump.glade:85
 #: ../src/system-config-kdump.glade:184
 msgid "Disable kdump"
-msgstr "kdump を無効にする"
+msgstr "kdump を無効化します。"
 
 #: ../src/system-config-kdump.glade:101
 msgid "_Help"
-msgstr "ヘルプ（_H）"
+msgstr "ヘルプ(_H)"
 
 #: ../src/system-config-kdump.glade:109
 msgid "gtk-about"
@@ -420,15 +420,15 @@ msgstr "適用"
 
 #: ../src/system-config-kdump.glade:154
 msgid "Reload"
-msgstr "再ロード"
+msgstr "再読み込み"
 
 #: ../src/system-config-kdump.glade:174
 msgid "Enable"
-msgstr "有効にする"
+msgstr "有効化"
 
 #: ../src/system-config-kdump.glade:185
 msgid "Disable"
-msgstr "無効にする"
+msgstr "無効化"
 
 #: ../src/system-config-kdump.glade:265
 msgid "Total System Memory:"
@@ -471,7 +471,7 @@ msgstr "ローカルファイルシステム"
 
 #: ../src/system-config-kdump.glade:459
 msgid "Choose partition where you want to save your kdump"
-msgstr "kdump の保存先となるパーティションを選択します"
+msgstr "kdump の保存先となるパーティションを選択します。"
 
 #: ../src/system-config-kdump.glade:473
 msgid "Partition:"
@@ -479,11 +479,11 @@ msgstr "パーティション:"
 
 #: ../src/system-config-kdump.glade:483
 msgid "Choose local filesystem target directory"
-msgstr "ローカルファイルシステムのターゲットディレクトリを選択"
+msgstr "ローカルファイルシステム上の出力先ディレクトリを選択してください。"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Select A Local Filesystem Directory"
-msgstr "ローカルファイルシステムディレクトリを選択"
+msgstr "ローカルファイルシステム上のディレクトリを選択してください。"
 
 #: ../src/system-config-kdump.glade:497
 msgid "Path:"
@@ -495,19 +495,19 @@ msgstr "ローカルファイルシステム上のターゲットディレクト
 
 #: ../src/system-config-kdump.glade:540
 msgid "Save kdump file in raw device"
-msgstr "生デバイスに kdump ファイルを保存"
+msgstr "rawデバイスに kdump ファイルを保存する。"
 
 #: ../src/system-config-kdump.glade:541
 msgid "Raw device"
-msgstr "生デバイス"
+msgstr "rawデバイス"
 
 #: ../src/system-config-kdump.glade:556
 msgid "Select raw device"
-msgstr "生デバイスを選択"
+msgstr "rawデバイスを選択"
 
 #: ../src/system-config-kdump.glade:588
 msgid "Save kdump file via network"
-msgstr "ネットワーク経由で kdump ファイルを保存"
+msgstr "ネットワーク経由で kdump ファイルを保存します。"
 
 #: ../src/system-config-kdump.glade:589
 msgid "Network"
@@ -555,11 +555,11 @@ msgstr "サーバー名:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr "ターゲットセッティング"
+msgstr "出力先"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
-msgstr "ゼロページを除外"
+msgstr "ゼロページを除外します。"
 
 #: ../src/system-config-kdump.glade:796
 msgid "zero page"
@@ -567,7 +567,7 @@ msgstr "ゼロページ"
 
 #: ../src/system-config-kdump.glade:808
 msgid "Exclude cache page"
-msgstr "キャッシュページを除外"
+msgstr "キャッシュページを除外します。"
 
 #: ../src/system-config-kdump.glade:809
 msgid "cache page"
@@ -575,7 +575,7 @@ msgstr "キャッシュページ"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr "キャッシュプライベートを除外"
+msgstr "キャッシュプライベートを除外します。"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
@@ -583,7 +583,7 @@ msgstr "キャッシュプライベート"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
-msgstr "ユーザーデータを除外"
+msgstr "ユーザーデータを除外します。"
 
 #: ../src/system-config-kdump.glade:837
 msgid "user data"
@@ -591,7 +591,7 @@ msgstr "ユーザーデータ"
 
 #: ../src/system-config-kdump.glade:850
 msgid "Exclude free page"
-msgstr "フリーページを除外"
+msgstr "フリーページを除外します。"
 
 #: ../src/system-config-kdump.glade:851
 msgid "free page"
@@ -619,11 +619,11 @@ msgstr "<b>出力ファイル形式</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr "フィルタリングセッティング"
+msgstr "フィルタリング"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
-msgstr "デフォルト initrd の使用"
+msgstr "デフォルトの initrd を使用します。"
 
 #: ../src/system-config-kdump.glade:1042
 msgid "Default initrd"
@@ -631,7 +631,7 @@ msgstr "デフォルトの initrd"
 
 #: ../src/system-config-kdump.glade:1056
 msgid "Use custom initrd"
-msgstr "カスタム initrd の使用"
+msgstr "カスタム initrd を使用します。"
 
 #: ../src/system-config-kdump.glade:1057
 msgid "Custom initrd"
@@ -639,11 +639,11 @@ msgstr "カスタム initrd"
 
 #: ../src/system-config-kdump.glade:1073
 msgid "Choose custom initrd file"
-msgstr "カスタム initrd ファイルの選択"
+msgstr "カスタム initrd ファイルの選択してください。"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr "initrd ファイルを１つ選択"
+msgstr "initrd ファイルを１つ選択してください。"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
@@ -651,7 +651,7 @@ msgstr "<b>initrd の選択</b>"
 
 #: ../src/system-config-kdump.glade:1122
 msgid "Use default kernel image"
-msgstr "デフォルトカーネルイメージの使用"
+msgstr "デフォルトカーネルイメージを使用します。"
 
 #: ../src/system-config-kdump.glade:1123
 msgid "Default kernel"
@@ -659,7 +659,7 @@ msgstr "デフォルトのカーネル"
 
 #: ../src/system-config-kdump.glade:1137
 msgid "Use custom kernel image"
-msgstr "カスタムカーネルイメージの使用"
+msgstr "カスタムカーネルイメージを使用します。"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Custom kernel"
@@ -667,7 +667,7 @@ msgstr "カスタムカーネル"
 
 #: ../src/system-config-kdump.glade:1154
 msgid "Choose your custom kernel"
-msgstr "個人のカスタムカーネルを選択"
+msgstr "カスタムカーネルを選択してください。"
 
 #: ../src/system-config-kdump.glade:1171
 msgid "<b>Capture kernel selection</b>"
@@ -679,11 +679,11 @@ msgstr "gtk-refresh"
 
 #: ../src/system-config-kdump.glade:1222
 msgid "Kernel command line options"
-msgstr "カーネルコマンドラインオプション"
+msgstr "カーネルオプション"
 
 #: ../src/system-config-kdump.glade:1238
 msgid "Original kernel command line options"
-msgstr "オリジナルのカーネルコマンドラインオプション"
+msgstr "オリジナルのカーネルオプション"
 
 #: ../src/system-config-kdump.glade:1254
 msgid "Original:"
@@ -699,7 +699,7 @@ msgstr "<b>コマンドラインオプション</b>"
 
 #: ../src/system-config-kdump.glade:1313
 msgid "Choose default action"
-msgstr "デフォルト動作の選択"
+msgstr "デフォルト動作の選択してください。"
 
 #: ../src/system-config-kdump.glade:1328
 msgid "<b>Default action</b>"
@@ -711,7 +711,7 @@ msgstr "<b>コアコレクタ</b>"
 
 #: ../src/system-config-kdump.glade:1400
 msgid "Expert settings"
-msgstr "エキスパートセッティング"
+msgstr "上級者設定"
 
 #: ../src/system-config-kdump.glade:1418
 msgid "About system-config-kdump"
