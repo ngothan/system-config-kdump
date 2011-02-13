@@ -40,7 +40,7 @@ msgstr ""
 "\n"
 "Програма поширюється зі сподіванням, що буде корисною, але БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ ЧИ НЕЯВНИХ, ЗОКРЕМА БЕЗ ГАРАНТІЙ КОМЕРЦІЙНОЇ ЦІННОСТІ ТА ПРИДАТНОСТІ ДО ПЕВНОЇ МЕТИ. Додаткову інформацію дивіться у ліцензії GNU.\n"
 "\n"
-"Копія ліцензії GNU надається размо з програмою. \n"
+"Копія ліцензії GNU надається разом з програмою. \n"
 "Якщо ви її не отримали, запитайте її у Фонді вільного ПЗ за адресою:\n"
 "Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 
@@ -96,7 +96,7 @@ msgstr "system-config-kdump: бракує пам'яті"
 #: ../src/system-config-kdump.py:698
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr "Шліх не може бути порожнім для «%s»."
+msgstr "Шлях не може бути порожнім для «%s»."
 
 #: ../src/system-config-kdump.py:700
 #, python-format
@@ -117,7 +117,7 @@ msgstr "system-config-kdump: не вказано назву сервера"
 
 #: ../src/system-config-kdump.py:715
 msgid "You must specify user name. "
-msgstr "Необхідно вказати іс'я користувача."
+msgstr "Необхідно вказати ім'я користувача."
 
 #: ../src/system-config-kdump.py:716
 msgid "system-config-kdump: User name not set"
@@ -158,7 +158,7 @@ msgstr "system-config-kdump: потрібне ядро, відмінне від 
 #: ../src/system-config-kdump.py:751
 #, python-format
 msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
-msgstr "Зміна параметрів Kdump вимагає перезавантаження системи для виділення необхідної пам'яті. %s Необхідно перезавантажити систему, щоб параметри набрали сисли."
+msgstr "Зміна параметрів Kdump вимагає перезавантаження системи для виділення необхідної пам'яті. %s Необхідно перезавантажити систему, щоб параметри набули чинності."
 
 #: ../src/system-config-kdump.py:755
 msgid "system-config-kdump: Need reboot"
@@ -574,11 +574,11 @@ msgstr "сторінка кеша"
 
 #: ../src/system-config-kdump.glade:822
 msgid "Exclude cache private"
-msgstr "Виключити приватний кэш"
+msgstr "Виключити приватний кеш"
 
 #: ../src/system-config-kdump.glade:823
 msgid "cache private"
-msgstr "приватний кэш"
+msgstr "приватний кеш"
 
 #: ../src/system-config-kdump.glade:836
 msgid "Exclude user data"
@@ -642,7 +642,7 @@ msgstr "Виберіть інший файл initrd"
 
 #: ../src/system-config-kdump.glade:1074
 msgid "Select An initrd File"
-msgstr "Виебріть файл initrd"
+msgstr "Виберіть файл initrd"
 
 #: ../src/system-config-kdump.glade:1091
 msgid "<b>initrd selection</b>"
