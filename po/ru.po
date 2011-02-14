@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-14 16:01+0200\n"
-"PO-Revision-Date: 2011-02-14 12:34+1100\n"
+"PO-Revision-Date: 2011-02-14 12:37+1100\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -299,7 +299,7 @@ msgstr "Использовать исходный образ ядра"
 
 #: ../src/system-config-kdump.py:1327
 msgid "Unable to get all kernel names"
-msgstr ""
+msgstr "Не удалось получить имена ядер"
 
 #: ../src/system-config-kdump.py:1408
 #, python-format
@@ -341,12 +341,11 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1681
 msgid "Unable to get kdump service status"
-msgstr ""
+msgstr "Не удалось получить статус службы kdump"
 
 #: ../src/system-config-kdump.py:1682 ../src/system-config-kdump.py:1705
-#, fuzzy
 msgid "system-config-kdump: Handling services error"
-msgstr "system-config-kdump: ошибка raw-устройства"
+msgstr "system-config-kdump: ошибка обработчика"
 
 #: ../src/system-config-kdump.py:1704
 #, fuzzy
@@ -361,9 +360,8 @@ msgid ""
 msgstr ""
 
 #: ../src/system-config-kdump.py:1728
-#, fuzzy
 msgid "System config kdump: authorization error"
-msgstr "system-config-kdump: ошибка локального раздела"
+msgstr "system-config-kdump: ошибка авторизации"
 
 #: ../src/system-config-kdump.py:1743
 #, python-format
@@ -373,9 +371,8 @@ msgid ""
 msgstr ""
 
 #: ../src/system-config-kdump.py:1744
-#, fuzzy
 msgid "System config kdump: dbus error"
-msgstr "system-config-kdump: ошибка памяти"
+msgstr "system-config-kdump: ошибка dbus"
 
 #: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
