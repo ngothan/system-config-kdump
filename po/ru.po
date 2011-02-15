@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-14 16:01+0200\n"
-"PO-Revision-Date: 2011-02-14 12:37+1100\n"
+"PO-Revision-Date: 2011-02-15 11:56+1100\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -336,7 +336,7 @@ msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
-"Не найдена утилита просмотра справки. Для просмотра справки необходимо "
+"Не найдена утилита просмотра справки. Необходимо "
 "установить пакет «yelp»."
 
 #: ../src/system-config-kdump.py:1681
@@ -385,15 +385,15 @@ msgstr ""
 
 #: ../src/dialog_call_error.glade:72
 msgid "Called command"
-msgstr ""
+msgstr "Вызванная команда"
 
 #: ../src/dialog_call_error.glade:107
 msgid "Stdandard output"
-msgstr ""
+msgstr "stdout"
 
 #: ../src/dialog_call_error.glade:142
 msgid "Standard error"
-msgstr ""
+msgstr "stderr"
 
 #: ../src/system-config-kdump.glade:6
 msgid "Kernel Dump Configuration"
@@ -481,7 +481,7 @@ msgstr "Новая память kdump:"
 
 #: ../src/system-config-kdump.glade:302
 msgid "Usable Memory:"
-msgstr "Доступная память:"
+msgstr "Доступно:"
 
 #: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
 #: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
@@ -494,7 +494,7 @@ msgstr "(МБ)"
 
 #: ../src/system-config-kdump.glade:402
 msgid "Basic Settings"
-msgstr "Основные настройки"
+msgstr "Основные"
 
 #: ../src/system-config-kdump.glade:439
 msgid "Save kdump file in local filesystem"
@@ -590,7 +590,7 @@ msgstr "Имя сервера:"
 
 #: ../src/system-config-kdump.glade:748
 msgid "Target settings"
-msgstr "Настройки размещения"
+msgstr "Расположение"
 
 #: ../src/system-config-kdump.glade:795
 msgid "Exclude zero page"
@@ -654,7 +654,7 @@ msgstr "<b>Формат полученного файла</b>"
 
 #: ../src/system-config-kdump.glade:992
 msgid "Filtering settings"
-msgstr "Настройки фильтрации"
+msgstr "Фильтрация"
 
 #: ../src/system-config-kdump.glade:1041
 msgid "Use default initrd"
