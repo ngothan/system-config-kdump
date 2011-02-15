@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: system-config-kdump.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-14 16:01+0200\n"
-"PO-Revision-Date: 2010-11-16 10:50-0400\n"
-"Last-Translator: Dennis Tobar <dennis.tobar@gmail.com>\n"
+"PO-Revision-Date: 2011-02-15 09:13-0300\n"
+"Last-Translator: Héctor Daniel Cabrera <logan@fedoraproject.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,18 +55,16 @@ msgid "Kdump will attempt to place the vmcore at the specified location. In the 
 msgstr "Kdump intentará ubicar el vmcore en la ubicación especificada. En caso de que no se pueda ubicar vmcore en este lugar, la acción predeterminada (especificada a continuación) se ejecutará."
 
 #: ../src/system-config-kdump.py:375
-#, fuzzy
 msgid "system-config-kdump"
-msgstr "Acerca de system-config-kdump"
+msgstr "system-config-kdump"
 
 #: ../src/system-config-kdump.py:522
 msgid "Don't know how to configure your boot loader."
-msgstr ""
+msgstr "No es posible saber de qué manera configurar su gestor de arranque."
 
 #: ../src/system-config-kdump.py:523
-#, fuzzy
 msgid "system-config-kdump: no default kernel"
-msgstr "system-config-kdump: se necesita un kernel que no sea xen"
+msgstr "system-config-kdump: no existe un kernel predeterminado"
 
 #: ../src/system-config-kdump.py:528
 msgid "Sorry, this architecture does not currently support kdump"
@@ -79,7 +77,7 @@ msgstr "system-config-kdump: kdump no soportado"
 
 #: ../src/system-config-kdump.py:544
 msgid "Failed to detect total system memory from /proc/iomem. Total system memory will not be accurate."
-msgstr ""
+msgstr "Falló al detectar la memoria total del sistema desde /proc/iomem. La memoria total del sistema podría no ser exacta."
 
 #: ../src/system-config-kdump.py:546
 msgid "system-config-kdump: Memory error"
@@ -169,11 +167,13 @@ msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: se necesita reiniciar"
 
 #: ../src/system-config-kdump.py:766
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
-msgstr "Error al escribir la configuración de kdump: %s"
+msgstr ""
+"Error al escribir la configuración de kdump:\n"
+"%s"
 
 #: ../src/system-config-kdump.py:767
 msgid "system-config-kdump: Error write kdump configuration"
@@ -189,18 +189,22 @@ msgid "system-config-kdump: Error write bootloader configuration"
 msgstr "system-config-kdump: error al escribir la configuración del gestor de arranque"
 
 #: ../src/system-config-kdump.py:789
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
-msgstr "Error al escribir la configuración del gestor de arranque"
+msgstr ""
+"Error al escribir la configuración del gestor de arranque:\n"
+"%s"
 
 #: ../src/system-config-kdump.py:803
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
-msgstr "Error en el manejo de los servicios de kdump"
+msgstr ""
+"Error en el manejo de los servicios de kdump\n"
+"%s"
 
 #: ../src/system-config-kdump.py:804
 msgid "system-config-kdump: Error handle services"
@@ -234,23 +238,21 @@ msgstr "system-config-kdump: colector principal incorrecto"
 #: ../src/system-config-kdump.py:1292
 #, python-format
 msgid "Unable to get command line arguments for %s"
-msgstr ""
+msgstr "No es posible obtener argumentos de línea de comando para %s"
 
 #: ../src/system-config-kdump.py:1293
 #: ../src/system-config-kdump.py:1310
 #: ../src/system-config-kdump.py:1328
-#, fuzzy
 msgid "system-config-kdump: grubby error"
-msgstr "system-config-kdump: error en memoria"
+msgstr "system-config-kdump: grubby error"
 
 #: ../src/system-config-kdump.py:1309
-#, fuzzy
 msgid "Unable to get default kernel"
-msgstr "Utilizar imagen predeterminada del kernel"
+msgstr "No es posible obtener el kernel predeterminado"
 
 #: ../src/system-config-kdump.py:1327
 msgid "Unable to get all kernel names"
-msgstr ""
+msgstr "No es posible obtener todos los nombres del kernel"
 
 #: ../src/system-config-kdump.py:1408
 #, python-format
@@ -262,10 +264,16 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"Valor de crashkernel no válido: %s.\n"
+"Los valores posibles son:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1411
 msgid "Bad crashkernel value"
-msgstr ""
+msgstr "Valor de crashkernel no válido"
 
 #: ../src/system-config-kdump.py:1438
 #, python-format
@@ -288,18 +296,16 @@ msgstr "No es posible encontrar el visor de asistencia. Para poder visualizar la
 
 #: ../src/system-config-kdump.py:1681
 msgid "Unable to get kdump service status"
-msgstr ""
+msgstr "No es posible obtener el estado del servicio kdump"
 
 #: ../src/system-config-kdump.py:1682
 #: ../src/system-config-kdump.py:1705
-#, fuzzy
 msgid "system-config-kdump: Handling services error"
-msgstr "system-config-kdump: error en el dispositivo en bruto"
+msgstr "system-config-kdump: Error de manipulación de servicios"
 
 #: ../src/system-config-kdump.py:1704
-#, fuzzy
 msgid "Unable to handle kdump services"
-msgstr "Error en el manejo de los servicios de kdump"
+msgstr "No es posible manipular servicios de kdump"
 
 #: ../src/system-config-kdump.py:1727
 #, python-format
@@ -307,11 +313,12 @@ msgid ""
 "Not authorized exception.\n"
 "%s"
 msgstr ""
+"Excepción no autorizada.\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1728
-#, fuzzy
 msgid "System config kdump: authorization error"
-msgstr "system-config-kdump: error de partición local"
+msgstr "System-config-kdump: error de autorización"
 
 #: ../src/system-config-kdump.py:1743
 #, python-format
@@ -319,11 +326,12 @@ msgid ""
 "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
+"No es posible comunicarse con el motor.\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1744
-#, fuzzy
 msgid "System config kdump: dbus error"
-msgstr "system-config-kdump: error en memoria"
+msgstr "System-config-kdump: error de dbus"
 
 #: ../src/system-config-kdump.py:1774
 msgid "Error executing system-config-kdump"
@@ -337,11 +345,11 @@ msgstr "a"
 
 #: ../src/dialog_call_error.glade:72
 msgid "Called command"
-msgstr ""
+msgstr "Comando solicitado"
 
 #: ../src/dialog_call_error.glade:107
 msgid "Stdandard output"
-msgstr ""
+msgstr "Resultado estándar"
 
 #: ../src/dialog_call_error.glade:142
 msgid "Standard error"
@@ -712,6 +720,7 @@ msgstr "Acerca de system-config-kdump"
 
 #~ msgid "Failed to detect total system memory"
 #~ msgstr "La detección total de la memoria del sistema falló"
+
 #~ msgid ""
 #~ "\n"
 #~ "\n"
@@ -728,46 +737,61 @@ msgstr "Acerca de system-config-kdump"
 #~ "para que kdump funcione. La instalación puede realizarse a través de 'yum "
 #~ "install kernel-kdump' en cualquier momento.\n"
 #~ "\n"
+
 #~ msgid "Error writing kdump configuration"
 #~ msgstr "Error al escribir la configuración de kdump"
+
 #~ msgid "system-config-kdump: write kdump configuration file error"
 #~ msgstr ""
 #~ "system-config-kdump: error de archivo al escribir configuración de kdump"
+
 #~ msgid "Configure kdump/kexec"
 #~ msgstr "Configurar kdump/kexec"
+
 #~ msgid "%s"
 #~ msgstr "%s"
+
 #~ msgid "Edit Location"
 #~ msgstr "Editar Ubicación"
+
 #~ msgid "New Location"
 #~ msgstr "Nueva Ubicación"
+
 #~ msgid "Select a location type:"
 #~ msgstr "Seleccione un tipo de ubicación:"
+
 #~ msgid "Enter location:"
 #~ msgstr "Ingrese la Ubicación:"
+
 #~ msgid ""
 #~ "SSH locations must be of the form 'user@host'. A path can be specified in "
 #~ "the main window."
 #~ msgstr ""
 #~ "Las ubicaciones SSH deben tener la forma 'usuario@host'. Se puede "
 #~ "especificar una ruta en la ventana principal. "
+
 #~ msgid "NFS locations must be of the form 'host:/path'"
 #~ msgstr "Las ubicaciones NFS deben tener la forma 'host:/path'"
+
 #~ msgid "For raw locations you must specify a valid device node."
 #~ msgstr ""
 #~ "Para ubicaciones raw usted debe especificar un nodo de dispositivo válido."
+
 #~ msgid "Support for filesystem type '%s' is not present on this system"
 #~ msgstr ""
 #~ "El soporte para archivos de sistemas '%s' no se encuentra en este sistema."
+
 #~ msgid "Failed to stat device node '%s'"
 #~ msgstr "Falló la obtención de información del nodo de dispositivo '%s'"
+
 #~ msgid "'%s' locations must specify a valid device node."
 #~ msgstr ""
 #~ "Las ubicaciones '%s' deben especificar un nodo de dispositivo válido."
+
 #~ msgid "No bootloader config file found, aborting configuration!"
 #~ msgstr ""
 #~ "¡No se encontró el archivo de configuración del gestor de arranque, "
 #~ "abortando la configuración !"
+
 #~ msgid "local"
 #~ msgstr "local"
-
