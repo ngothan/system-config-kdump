@@ -67,6 +67,8 @@ TYPE_SSH = "ssh"
 TYPE_RAW = "raw"
 TYPE_DEFAULT = TYPE_LOCAL
 
+DEFAULT_FS = "file:///"
+
 NUM_FILTERS = 5
 
 ACTION_REBOOT = "reboot"
@@ -347,7 +349,7 @@ class MainWindow:
         self.xen_kdump_kernel = "kernel"
         self.xen_kernel = False
         #                  "name":     (fsType, mntpoint)
-        self.partitions = {"file:///": (None, "/")}
+        self.partitions = {DEFAULT_FS: (None, "/")}
         self.raw_devices = []
 
         self.arch = None
@@ -1252,9 +1254,12 @@ class MainWindow:
                     pass
         except IOError:
             pass
+        index = 0
         for name, (fs_type, mntpoint) in self.partitions.iteritems():
             combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
-        combobox.set_active(0)
+            if (name == DEFAULT_FS):
+                combobox.set_active(index)
+            index += 1
         return
 
     def setup_raw_devices(self, combobox):
