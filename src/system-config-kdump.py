@@ -1114,8 +1114,6 @@ class MainWindow:
         if (self.location_entry.get_text() != path):
             self.location_entry.set_text(path)
 
-        if (self.local_filechooser_button.get_filename() != path):
-            self.local_filechooser_button.set_current_folder(path)
         self.my_settings.path = path
         self.check_settings()
         return True
