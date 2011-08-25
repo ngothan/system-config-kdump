@@ -776,7 +776,7 @@ class MainWindow:
                 print correct, cmd, stdout, error
             if not correct and cmd is not None:
                 #error write bootloader
-                dialogs.show_call_call_error_message(
+                dialogs.show_call_error_message(
                     _("Error writing bootloader configuration"),
                     _("system-config-kdump: Error write bootloader "
                     "configuration"),
