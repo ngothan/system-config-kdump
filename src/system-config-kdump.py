@@ -411,6 +411,7 @@ class MainWindow:
         self.location_entry           = self.xml.get_widget("locationEntry")
         self.table_localfs            = self.xml.get_widget("tableLocalfs")
         self.local_filechooser_button = self.xml.get_widget("localFilechooserbutton")
+        self.local_hint_label         = self.xml.get_widget("localDumpHintLabel")
         self.raw_device_radiobutton   = self.xml.get_widget("rawDeviceRadiobutton")
         self.device_combobox          = self.xml.get_widget("deviceCombobox")
         self.network_radiobutton      = self.xml.get_widget("networkRadiobutton")
@@ -1115,6 +1116,7 @@ class MainWindow:
             self.location_entry.set_text(path)
 
         self.my_settings.path = path
+        self.update_local_hint_label(self.my_settings.local_partition, path)
         self.check_settings()
         return True
 
@@ -1616,7 +1618,17 @@ class MainWindow:
                 %(self.partitions[name][0], name)
         else:
             self.my_settings.local_partition = ""
+        self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
         self.check_settings()
+
+    def update_local_hint_label(self, partition, path):
+        """
+        Update local_hint_label text with set partition and path
+        """
+        if partition == "":
+            self.local_hint_label.set_text(_("Will mount / as usual and copy core to /%s/%%DATE") %(path))
+        else:
+            self.local_hint_label.set_text(_("Will mount %s on /mnt and copy core to /mnt/%s/%%DATE") %(partition, path))
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
