@@ -20,7 +20,6 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 import gtk
-import gtk.glade
 from gtk.gdk import keyval_name
 
 import sys, traceback
@@ -337,11 +336,12 @@ class MainWindow:
     Main window. What user see.
     """
     def __init__(self):
-        if os.access("system-config-kdump.glade", os.F_OK):
-            self.xml = gtk.glade.XML ("./system-config-kdump.glade", domain=DOMAIN)
+        builder = gtk.Builder()
+        if os.access("system-config-kdump.ui", os.F_OK):
+            builder.add_from_file ("./system-config-kdump.ui")
         else:
-            self.xml = gtk.glade.XML ("/usr/share/system-config-kdump/system-config-kdump.glade", domain=DOMAIN)
-
+            builder.add_from_file ("/usr/share/system-config-kdump/system-config-kdump.ui")
+        builder.connect_signals(self)
 
         self.orig_settings = Settings()
         self.my_settings = Settings()
@@ -370,8 +370,8 @@ class MainWindow:
 
         self.arch = os.popen("/bin/uname -m").read().strip()
 
-        # load widgets from glade file
-        self.toplevel = self.xml.get_widget("mainWindow")
+        # load widgets from builder file
+        self.toplevel = builder.get_object("mainWindow")
         self.toplevel.show()
         progress_window = ProgressWindow(_("system-config-kdump"), "")
         self.dbus_object = DBusProxy(progress_window)
@@ -379,70 +379,70 @@ class MainWindow:
 
         self.default_kernel = self.default_kernel_name()[:-1]
         progress_window.set_transient_for(self.toplevel)
-        self.about_dialog = self.xml.get_widget("aboutdialog")
+        self.about_dialog = builder.get_object("aboutdialog")
 
-        self.kdump_notebook = self.xml.get_widget("kdumpNotebook")
+        self.kdump_notebook = builder.get_object("kdumpNotebook")
 
         # menu
-        self.menu_apply             = self.xml.get_widget("menuitemapply")
-        self.menu_reload            = self.xml.get_widget("menuitemreload")
-        self.menu_quit              = self.xml.get_widget("menuitemquit")
-        self.menu_enable            = self.xml.get_widget("menuitemEnable")
-        self.menu_disable           = self.xml.get_widget("menuitemDisable")
-        self.menu_about             = self.xml.get_widget("imagemenuitemAbout")
-        self.menu_help              = self.xml.get_widget("imagemenuitemHelp")
+        self.menu_apply             = builder.get_object("menuitemapply")
+        self.menu_reload            = builder.get_object("menuitemreload")
+        self.menu_quit              = builder.get_object("menuitemquit")
+        self.menu_enable            = builder.get_object("menuitemEnable")
+        self.menu_disable           = builder.get_object("menuitemDisable")
+        self.menu_about             = builder.get_object("imagemenuitemAbout")
+        self.menu_help              = builder.get_object("imagemenuitemHelp")
 
         # toolbar
-        self.enable_button          = self.xml.get_widget("toolbuttonEnable")
-        self.disable_button         = self.xml.get_widget("toolbuttonDisable")
-        self.apply_button           = self.xml.get_widget("toolbuttonApply")
-        self.reload_button          = self.xml.get_widget("toolbuttonReload")
-        self.help_button            = self.xml.get_widget("toolbuttonHelp")
+        self.enable_button          = builder.get_object("toolbuttonEnable")
+        self.disable_button         = builder.get_object("toolbuttonDisable")
+        self.apply_button           = builder.get_object("toolbuttonApply")
+        self.reload_button          = builder.get_object("toolbuttonReload")
+        self.help_button            = builder.get_object("toolbuttonHelp")
 
         # tab 0
-        self.total_mem_label         = self.xml.get_widget("totalMem")
-        self.kdump_mem_current_label = self.xml.get_widget("kdumpMemCurrent")
-        self.kdump_mem_spin_button   = self.xml.get_widget("kdumpMemSpinButton")
-        self.usable_mem_label        = self.xml.get_widget("usableMem")
+        self.total_mem_label         = builder.get_object("totalMem")
+        self.kdump_mem_current_label = builder.get_object("kdumpMemCurrent")
+        self.kdump_mem_spin_button   = builder.get_object("kdumpMemSpinButton")
+        self.usable_mem_label        = builder.get_object("usableMem")
 
         # tab 1
-        self.localfs_radiobutton      = self.xml.get_widget("localfsRadiobutton")
-        self.partition_combobox       = self.xml.get_widget("partitionCombobox")
-        self.location_entry           = self.xml.get_widget("locationEntry")
-        self.table_localfs            = self.xml.get_widget("tableLocalfs")
-        self.local_filechooser_button = self.xml.get_widget("localFilechooserbutton")
-        self.local_hint_label         = self.xml.get_widget("localDumpHintLabel")
-        self.raw_device_radiobutton   = self.xml.get_widget("rawDeviceRadiobutton")
-        self.device_combobox          = self.xml.get_widget("deviceCombobox")
-        self.network_radiobutton      = self.xml.get_widget("networkRadiobutton")
-        self.network_type_vbox        = self.xml.get_widget("networkTypeVbox")
-        self.nfs_radiobutton          = self.xml.get_widget("nfsRadiobutton")
-        self.ssh_radiobutton          = self.xml.get_widget("sshRadiobutton")
-        self.network_config_table     = self.xml.get_widget("networkConfigTable")
-        self.username_entry           = self.xml.get_widget("usernameEntry")
-        self.path_entry               = self.xml.get_widget("pathEntry")
-        self.servername_entry         = self.xml.get_widget("servernameEntry")
+        self.localfs_radiobutton      = builder.get_object("localfsRadiobutton")
+        self.partition_combobox       = builder.get_object("partitionCombobox")
+        self.location_entry           = builder.get_object("locationEntry")
+        self.table_localfs            = builder.get_object("tableLocalfs")
+#        self.local_filechooser_button = builder.get_object("localFilechooserbutton")
+        self.local_hint_label         = builder.get_object("localDumpHintLabel")
+        self.raw_device_radiobutton   = builder.get_object("rawDeviceRadiobutton")
+        self.device_combobox          = builder.get_object("deviceCombobox")
+        self.network_radiobutton      = builder.get_object("networkRadiobutton")
+        self.network_type_vbox        = builder.get_object("networkTypeVbox")
+        self.nfs_radiobutton          = builder.get_object("nfsRadiobutton")
+        self.ssh_radiobutton          = builder.get_object("sshRadiobutton")
+        self.network_config_table     = builder.get_object("networkConfigTable")
+        self.username_entry           = builder.get_object("usernameEntry")
+        self.path_entry               = builder.get_object("pathEntry")
+        self.servername_entry         = builder.get_object("servernameEntry")
 
         # tab 2
         for x in range(NUM_FILTERS):
-            self.filter_check_button[x]      = self.xml.get_widget("filterCheckbutton%d" % x)
-        self.filter_level_label              = self.xml.get_widget("filterLevelLabel")
-#        self.elf_file_format_radio_button      = self.xml.get_widget("elfFileFormatRadioButton")
-#        self.diskdupm_file_format_radio_button = self.xml.get_widget("diskdumpFileFormatRadioButton")
+            self.filter_check_button[x]      = builder.get_object("filterCheckbutton%d" % x)
+        self.filter_level_label              = builder.get_object("filterLevelLabel")
+#        self.elf_file_format_radio_button      = builder.get_object("elfFileFormatRadioButton")
+#        self.diskdupm_file_format_radio_button = builder.get_object("diskdumpFileFormatRadioButton")
 
 
         # tab 3
-#        self.default_initrd_radio_button = self.xml.get_widget("defaultInitrdRadiobutton")
-        self.custom_initrd_radio_button  = self.xml.get_widget("customInitrdRadiobutton")
-        self.initrd_file_chooser_button  = self.xml.get_widget("initrdFilechooserbutton")
-        self.default_kernel_radio_button = self.xml.get_widget("defaultKernelRadiobutton")
-        self.custom_kernel_radio_button  = self.xml.get_widget("customKernelRadiobutton")
-        self.custom_kernel_combobox      = self.xml.get_widget("customKernelCombobox")
-        self.original_command_line_entry = self.xml.get_widget("originalCommandLineEntry")
-        self.command_line_entry          = self.xml.get_widget("commandLineEntry")
-        self.clear_cmdline_button        = self.xml.get_widget("clearCmdlineButton")
-        self.default_action_combobox     = self.xml.get_widget("defaultActionCombo")
-        self.core_collector_entry        = self.xml.get_widget("coreCollectorEntry")
+#        self.default_initrd_radio_button = builder.get_object("defaultInitrdRadiobutton")
+        self.custom_initrd_radio_button  = builder.get_object("customInitrdRadiobutton")
+        self.initrd_file_chooser_button  = builder.get_object("initrdFilechooserbutton")
+        self.default_kernel_radio_button = builder.get_object("defaultKernelRadiobutton")
+        self.custom_kernel_radio_button  = builder.get_object("customKernelRadiobutton")
+        self.custom_kernel_combobox      = builder.get_object("customKernelCombobox")
+        self.original_command_line_entry = builder.get_object("originalCommandLineEntry")
+        self.command_line_entry          = builder.get_object("commandLineEntry")
+        self.clear_cmdline_button        = builder.get_object("clearCmdlineButton")
+        self.default_action_combobox     = builder.get_object("defaultActionCombo")
+        self.core_collector_entry        = builder.get_object("coreCollectorEntry")
 
 
 
@@ -491,7 +491,7 @@ class MainWindow:
         self.device_combobox.connect("changed", self.changed_raw_device)
         self.location_entry.connect("focus-out-event", self.location_changed)
         self.location_entry.connect("key-press-event", self.catch_enter, self.location_changed)
-        self.local_filechooser_button.connect("selection-changed", self.location_changed)
+#        self.local_filechooser_button.connect("selection-changed", self.location_changed)
         self.path_entry.connect("focus-out-event", self.path_changed)
         self.path_entry.connect("key-press-event", self.catch_enter, self.path_changed)
         self.servername_entry.connect("focus-out-event", self.servername_changed)
@@ -1619,6 +1619,7 @@ class MainWindow:
         else:
             self.my_settings.local_partition = ""
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
+#        self.local_filechooser_button.set_sensitive(name == DEFAULT_FS)
         self.check_settings()
 
     def update_local_hint_label(self, partition, path):
