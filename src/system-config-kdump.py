@@ -519,7 +519,7 @@ class MainWindow:
 
         # maybe we're running from live media with syslinux?
         if self.default_kernel == '':
-            self.show_error_message(_("Don't know how to configure your boot loader."),
+            dialogs.show_error_message(_("Don't know how to configure your boot loader."),
                                     _("system-config-kdump: no default kernel"))
             sys.exit(1)
 
@@ -565,7 +565,6 @@ class MainWindow:
         kdump_mem = 0
         kdump_mem_grubby = 0
         kdump_offset = 0
-        kdump_offset_grubby = 0
         # PowerPC64 doesn't list crashkernel reservation in /proc/iomem
         if self.arch != 'ppc64':
             io_mem = open("/proc/iomem").readlines()
