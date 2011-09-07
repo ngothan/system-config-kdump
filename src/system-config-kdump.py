@@ -1622,9 +1622,9 @@ class MainWindow:
         Update local_hint_label text with set partition and path
         """
         if partition == "":
-            self.local_hint_label.set_text(_("core will be in /var/crash/%%DATE on rootfs"))
+            self.local_hint_label.set_text(_("core will be in /var/crash/%DATE on rootfs"))
         else:
-            self.local_hint_label.set_text(_("core will be in /%s/%%DATE on %s") %(path, partition))
+            self.local_hint_label.set_text(_("core will be in %s/%%DATE on %s") %(path, partition))
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
