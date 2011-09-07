@@ -1613,6 +1613,7 @@ class MainWindow:
                 %(self.partitions[name][0], name)
         else:
             self.my_settings.local_partition = ""
+        self.location_entry.set_sensitive(self.my_settings.local_partition != "")
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
         self.check_settings()
 
@@ -1621,9 +1622,9 @@ class MainWindow:
         Update local_hint_label text with set partition and path
         """
         if partition == "":
-            self.local_hint_label.set_text(_("Will mount / as usual and copy core to /%s/%%DATE") %(path))
+            self.local_hint_label.set_text(_("core will be in /var/crash/%%DATE on rootfs"))
         else:
-            self.local_hint_label.set_text(_("Will mount %s on /mnt and copy core to /mnt/%s/%%DATE") %(partition, path))
+            self.local_hint_label.set_text(_("core will be in /%s/%%DATE on %s") %(path, partition))
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
