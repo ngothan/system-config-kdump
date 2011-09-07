@@ -410,7 +410,6 @@ class MainWindow:
         self.partition_combobox       = builder.get_object("partitionCombobox")
         self.location_entry           = builder.get_object("locationEntry")
         self.table_localfs            = builder.get_object("tableLocalfs")
-#        self.local_filechooser_button = builder.get_object("localFilechooserbutton")
         self.local_hint_label         = builder.get_object("localDumpHintLabel")
         self.raw_device_radiobutton   = builder.get_object("rawDeviceRadiobutton")
         self.device_combobox          = builder.get_object("deviceCombobox")
@@ -491,7 +490,6 @@ class MainWindow:
         self.device_combobox.connect("changed", self.changed_raw_device)
         self.location_entry.connect("focus-out-event", self.location_changed)
         self.location_entry.connect("key-press-event", self.catch_enter, self.location_changed)
-#        self.local_filechooser_button.connect("selection-changed", self.location_changed)
         self.path_entry.connect("focus-out-event", self.path_changed)
         self.path_entry.connect("key-press-event", self.catch_enter, self.path_changed)
         self.servername_entry.connect("focus-out-event", self.servername_changed)
@@ -1287,10 +1285,7 @@ class MainWindow:
         """
         Called when you change path entry for local file system.
         """
-        if widget == self.location_entry:
-            self.set_path(widget.get_text())
-        else:
-            self.set_path(widget.get_filename())
+        self.set_path(widget.get_text())
 
     def get_cmdline(self, kernel):
         """
@@ -1619,7 +1614,6 @@ class MainWindow:
         else:
             self.my_settings.local_partition = ""
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
-#        self.local_filechooser_button.set_sensitive(name == DEFAULT_FS)
         self.check_settings()
 
     def update_local_hint_label(self, partition, path):
