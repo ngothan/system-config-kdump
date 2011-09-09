@@ -39,7 +39,7 @@ from sckdump.progress import ProgressWindow
 ## dbus and polkit
 ##
 import dbus
-import slip.dbus.service
+#import slip.dbus.service #unused import?
 from slip.dbus.polkit import NotAuthorizedException
 from slip.dbus.polkit import AUTH_EXC_PREFIX
 
@@ -119,12 +119,13 @@ LICENSE = _(
 COPYRIGHT = '(C) 2006 - 2009 Red Hat, Inc.'
 
 
-DEFAULTACTIONS = [ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT, ACTION_POWEROFF]
+DEFAULTACTIONS = [ ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT,
+                   ACTION_POWEROFF ]
 
 SUPPORTEDFSTYPES = ("ext2", "ext3", "ext4")
 
 UNSUPPORTED_ARCHES = ("ppc", "s390", "s390x", "i386", "i586")
-DEBUG = 0 
+DEBUG = 0
 TESTING = 0
 
 KDUMP_BLURB = _("Kdump is a new kernel crash dumping mechanism. In the event "
@@ -145,14 +146,6 @@ LOCATION_BLURB = _("Kdump will attempt to place the vmcore at the specified "
 # kdump service status as returned by `service kdump status'
 SERVICE_STATUS_ON    = [ 0 ]
 SERVICE_STATUS_OFF   = [ 1, 2, 3, 4 ]
-
-"""
-    TODO:
-tab 2 target setup
-tab 3 initrd selection
-localizations
-XEN support - need change in grubby
-"""
 
 # This class contains every settings
 class Settings:
@@ -340,7 +333,8 @@ class MainWindow:
         if os.access("system-config-kdump.ui", os.F_OK):
             builder.add_from_file ("./system-config-kdump.ui")
         else:
-            builder.add_from_file ("/usr/share/system-config-kdump/system-config-kdump.ui")
+            builder.add_from_file (
+                "/usr/share/system-config-kdump/system-config-kdump.ui")
         builder.connect_signals(self)
 
         self.orig_settings = Settings()
@@ -355,7 +349,6 @@ class MainWindow:
         self.arch = None
 
         self._quiet = False # if set, don't pop up any message boxes or dialogs
-    
         self.kdump_config_comments = []
         self.misc_config = []
 
@@ -411,7 +404,7 @@ class MainWindow:
         self.location_entry           = builder.get_object("locationEntry")
         self.table_localfs            = builder.get_object("tableLocalfs")
         self.local_hint_label         = builder.get_object("localDumpHintLabel")
-        self.raw_device_radiobutton   = builder.get_object("rawDeviceRadiobutton")
+        self.raw_device_radiobutton = builder.get_object("rawDeviceRadiobutton")
         self.device_combobox          = builder.get_object("deviceCombobox")
         self.network_radiobutton      = builder.get_object("networkRadiobutton")
         self.network_type_vbox        = builder.get_object("networkTypeVbox")
@@ -424,27 +417,29 @@ class MainWindow:
 
         # tab 2
         for x in range(NUM_FILTERS):
-            self.filter_check_button[x]      = builder.get_object("filterCheckbutton%d" % x)
-        self.filter_level_label              = builder.get_object("filterLevelLabel")
-#        self.elf_file_format_radio_button      = builder.get_object("elfFileFormatRadioButton")
-#        self.diskdupm_file_format_radio_button = builder.get_object("diskdumpFileFormatRadioButton")
-
+            self.filter_check_button[x] = builder.get_object(
+                "filterCheckbutton%d" % x)
+        self.filter_level_label = builder.get_object("filterLevelLabel")
 
         # tab 3
-#        self.default_initrd_radio_button = builder.get_object("defaultInitrdRadiobutton")
-        self.custom_initrd_radio_button  = builder.get_object("customInitrdRadiobutton")
-        self.initrd_file_chooser_button  = builder.get_object("initrdFilechooserbutton")
-        self.default_kernel_radio_button = builder.get_object("defaultKernelRadiobutton")
-        self.custom_kernel_radio_button  = builder.get_object("customKernelRadiobutton")
-        self.custom_kernel_combobox      = builder.get_object("customKernelCombobox")
-        self.original_command_line_entry = builder.get_object("originalCommandLineEntry")
-        self.command_line_entry          = builder.get_object("commandLineEntry")
-        self.clear_cmdline_button        = builder.get_object("clearCmdlineButton")
-        self.default_action_combobox     = builder.get_object("defaultActionCombo")
-        self.core_collector_entry        = builder.get_object("coreCollectorEntry")
-
-
-
+#        self.default_initrd_radio_button = \
+#            builder.get_object("defaultInitrdRadiobutton")
+        self.custom_initrd_radio_button = \
+            builder.get_object("customInitrdRadiobutton")
+        self.initrd_file_chooser_button = \
+            builder.get_object("initrdFilechooserbutton")
+        self.default_kernel_radio_button = \
+            builder.get_object("defaultKernelRadiobutton")
+        self.custom_kernel_radio_button = \
+            builder.get_object("customKernelRadiobutton")
+        self.custom_kernel_combobox = \
+            builder.get_object("customKernelCombobox")
+        self.original_command_line_entry = \
+            builder.get_object("originalCommandLineEntry")
+        self.command_line_entry = builder.get_object("commandLineEntry")
+        self.clear_cmdline_button = builder.get_object("clearCmdlineButton")
+        self.default_action_combobox = builder.get_object("defaultActionCombo")
+        self.core_collector_entry = builder.get_object("coreCollectorEntry")
 
     def setup_screen(self):
         """
@@ -477,7 +472,8 @@ class MainWindow:
         self.help_button.connect("clicked", self.show_help)
 
         # tab 0
-        self.kdump_mem_spin_button.connect("value_changed", self.update_usable_mem)
+        self.kdump_mem_spin_button.connect("value_changed",
+            self.update_usable_mem)
 
         # tab 1
         self.localfs_radiobutton.connect("toggled", self.target_type_changed)
@@ -489,10 +485,13 @@ class MainWindow:
         self.setup_raw_devices(self.device_combobox)
         self.device_combobox.connect("changed", self.changed_raw_device)
         self.location_entry.connect("focus-out-event", self.location_changed)
-        self.location_entry.connect("key-press-event", self.catch_enter, self.location_changed)
+        self.location_entry.connect("key-press-event", self.catch_enter,
+            self.location_changed)
         self.path_entry.connect("focus-out-event", self.path_changed)
-        self.path_entry.connect("key-press-event", self.catch_enter, self.path_changed)
-        self.servername_entry.connect("focus-out-event", self.servername_changed)
+        self.path_entry.connect("key-press-event", self.catch_enter,
+            self.path_changed)
+        self.servername_entry.connect("focus-out-event",
+            self.servername_changed)
         self.servername_entry.connect("changed", self.servername_changed)
         self.username_entry.connect("focus-out-event", self.username_changed)
         self.username_entry.connect("changed", self.username_changed)
@@ -502,8 +501,10 @@ class MainWindow:
             self.filter_check_button[x].connect("toggled", self.filter_changed)
 
         # tab 3
-        self.custom_initrd_radio_button.connect("toggled", self.custom_initrd_changed)
-        self.custom_kernel_radio_button.connect("toggled", self.custom_kernel_changed)
+        self.custom_initrd_radio_button.connect("toggled",
+            self.custom_initrd_changed)
+        self.custom_kernel_radio_button.connect("toggled",
+            self.custom_kernel_changed)
         self.initrd_file_chooser_button.set_current_folder("/boot")
         line = self.get_cmdline(self.default_kernel)
         self.original_command_line_entry.set_text(line)
@@ -511,16 +512,21 @@ class MainWindow:
         self.setup_custom_kernel_combobox(self.custom_kernel_combobox)
         self.custom_kernel_combobox.connect("changed", self.update_cmdline)
         self.command_line_entry.connect("focus-out-event", self.cmdline_changed)
-        self.command_line_entry.connect("key-press-event", self.catch_enter, self.cmdline_changed)
+        self.command_line_entry.connect("key-press-event", self.catch_enter,
+            self.cmdline_changed)
         self.clear_cmdline_button.connect("clicked", self.reset_cmdline)
-        self.core_collector_entry.connect("focus-out-event", self.collector_entry_changed)
-        self.core_collector_entry.connect("key-press-event", self.catch_enter, self.collector_entry_changed)
-        self.default_action_combobox.connect("changed", self.set_default_action)
+        self.core_collector_entry.connect("focus-out-event",
+            self.collector_entry_changed)
+        self.core_collector_entry.connect("key-press-event", self.catch_enter,
+            self.collector_entry_changed)
+        self.default_action_combobox.connect("changed",
+            self.set_default_action)
 
         # maybe we're running from live media with syslinux?
         if self.default_kernel == '':
-            dialogs.show_error_message(_("Don't know how to configure your boot loader."),
-                                    _("system-config-kdump: no default kernel"))
+            dialogs.show_error_message(
+                _("Don't know how to configure your boot loader."),
+                _("system-config-kdump: no default kernel"))
             sys.exit(1)
 
         # check architecture
@@ -537,7 +543,8 @@ class MainWindow:
             if line.find("RAM") != -1 or line.find("MMCONFIG") != -1:
                 hex_ck_start = line.strip().split("-")[0]
                 hex_ck_end = line.strip().split("-")[1].split(":")[0].strip()
-                total_mem += self.hex2mb_float(hex_ck_end) - self.hex2mb_float(hex_ck_start)
+                total_mem += self.hex2mb_float(hex_ck_end) - \
+                    self.hex2mb_float(hex_ck_start)
         total_mem = int(total_mem + 0.99999999)
         if total_mem == 0:
             dialogs.show_error_message(
@@ -571,14 +578,15 @@ class MainWindow:
             for line in io_mem:
                 if line.find("Crash kernel") != -1:
                     hex_ck_start = line.strip().split("-")[0]
-                    hex_ck_end = line.strip().split("-")[1].split(":")[0].strip()
+                    hex_ck_end = \
+                        line.strip().split("-")[1].split(":")[0].strip()
                     kdump_offset = self.hex2mb(hex_ck_start)
                     kdump_mem = self.hex2mb(hex_ck_end) - kdump_offset
                     break
         else:
             cmdline = open("/proc/cmdline").read()
             if cmdline.find("crashkernel=") > -1:
-                crash_string = filter(lambda t: t.startswith("crashkernel="), 
+                crash_string = filter(lambda t: t.startswith("crashkernel="),
                                      cmdline.split())[0].split("=")[1]
                 tokens = crash_string.split("@")
                 kdump_mem = int(tokens[0][:-1])
@@ -595,7 +603,7 @@ class MainWindow:
                         self.xen_kdump_kernel = "kernel-PAE"
                         break
 
-	# read current kdump settings from grubby
+        # read current kdump settings from grubby
         (kdump_mem_grubby, kdump_offset_grubby) = self.grubby_crashkernel()
 
         # Defaults
@@ -629,7 +637,7 @@ class MainWindow:
         self.total_mem_label.set_text("%s (MB)" % (total_mem,))
 
         # Do some sanity-checking and try to present only sane options.
-        upper_bound = (total_mem - min_usable) - (total_mem % step) 
+        upper_bound = (total_mem - min_usable) - (total_mem % step)
 
         if upper_bound < lower_bound:
             dialogs.show_error_message(_("This system does not have "
@@ -649,7 +657,8 @@ class MainWindow:
 
         self.kdump_mem_current_label.set_text("%s (MB)" % (kdump_mem))
 
-        kdump_mem_adj = gtk.Adjustment(kdump_mem, lower_bound, upper_bound, step, step, 64)
+        kdump_mem_adj = gtk.Adjustment(kdump_mem, lower_bound, upper_bound,
+            step, step, 64)
         self.kdump_mem_spin_button.set_adjustment(kdump_mem_adj)
         self.kdump_mem_spin_button.set_update_policy(gtk.UPDATE_IF_VALID)
         self.kdump_mem_spin_button.set_numeric(True)
@@ -659,7 +668,9 @@ class MainWindow:
         self.usable_mem_label.set_text("%s (MB)" % (self.usable_mem,))
 
         if DEBUG:
-            print "total_mem = %dM\nkdump_mem = %dM\nkdump_mem_grubby = %dM\nusable_mem = %dM" % (total_mem, kdump_mem, kdump_mem_grubby, self.usable_mem)
+            print "total_mem = %dM\nkdump_mem = %dM\nkdump_mem_grubby = %dM\n"\
+            "usable_mem = %dM" % (total_mem, kdump_mem, kdump_mem_grubby,
+            self.usable_mem)
 
         for action in DEFAULTACTIONS:
             self.default_action_combobox.append_text(action)
@@ -693,7 +704,8 @@ class MainWindow:
         """
         When user clicked apply. Do checks. Save settings.
         """
-        if self.my_settings.target_type not in (TYPE_RAW, TYPE_LOCAL) and not self.my_settings.path:
+        if self.my_settings.target_type not in (TYPE_RAW, TYPE_LOCAL) \
+        and not self.my_settings.path:
             retc = dialogs.yes_no_dialog(_("Path cannot be empty for '%s'"
                 " locations. ") % self.my_settings.target_type
                 +_("Reset path to default ('%s')?.") %  PATH_DEFAULT,
@@ -704,13 +716,15 @@ class MainWindow:
             else:
                 return
 
-        if self.my_settings.target_type in (TYPE_NFS, TYPE_SSH) and not self.my_settings.server_name:
+        if self.my_settings.target_type in (TYPE_NFS, TYPE_SSH) \
+        and not self.my_settings.server_name:
             dialogs.show_error_message(_("You must specify server. "),
                 _("system-config-kdump: Server name not set"),
                 parent = self.toplevel)
             return
 
-        if self.my_settings.target_type in (TYPE_SSH) and not self.my_settings.user_name:
+        if self.my_settings.target_type in (TYPE_SSH) \
+        and not self.my_settings.user_name:
             dialogs.show_error_message(_("You must specify user name. "),
                 _("system-config-kdump: User name not set"),
                 parent = self.toplevel)
@@ -746,10 +760,11 @@ class MainWindow:
                 _("system-config-kdump: Need non-xen kernel"),
                 parent = self.toplevel)
 
-        if self.my_settings.kdump_enabled and self.my_settings.kdump_mem != self.orig_settings.kdump_mem:
-            dialogs.show_message(_("Changing Kdump settings requires rebooting "
-                "the system to reallocate memory accordingly. %sYou will have "
-                "to reboot the system for the new settings to take effect.")
+        if self.my_settings.kdump_enabled \
+        and self.my_settings.kdump_mem != self.orig_settings.kdump_mem:
+            dialogs.show_message(_("Changing Kdump settings requires rebooting"
+                " the system to reallocate memory accordingly. %sYou will have"
+                " to reboot the system for the new settings to take effect.")
                 % kernel_kdump_note,
                 _("system-config-kdump: Need reboot"),
                 parent = self.toplevel)
@@ -810,7 +825,6 @@ class MainWindow:
                     parent = self.toplevel)
             else:
                 return
-                
         else:
             print "would have called write_dump_config"
             print "would have called write_bootloader_config"
@@ -892,7 +906,6 @@ class MainWindow:
                 print >> sys.stderr, "  \'%s\'" % (line,)
                 continue
 
-            # XXX is case going to be an issue?
             if loc_type == "default":
                 self.orig_settings.default_action = location
                 self.set_default_action(location)
@@ -905,9 +918,11 @@ class MainWindow:
                 self.orig_settings.core_collector = location
                 idx = location.find("-d")
                 if idx != -1:
-                    self.orig_settings.filter_level = location[idx:].split(" ")[1]
+                    self.orig_settings.filter_level = \
+                        location[idx:].split(" ")[1]
                 self.set_core_collector(location)
-            elif loc_type in (TYPE_RAW, TYPE_NET) or loc_type in SUPPORTEDFSTYPES:
+            elif loc_type in (TYPE_RAW, TYPE_NET) \
+            or loc_type in SUPPORTEDFSTYPES:
                 self.orig_settings.set_location(loc_type, location)
                 self.set_location(loc_type, location)
             else:
@@ -947,7 +962,8 @@ class MainWindow:
 
         #   scp
         elif self.my_settings.target_type == TYPE_SSH:
-            config_string += "net %s@%s\n" % (self.my_settings.user_name, self.my_settings.server_name)
+            config_string += "net %s@%s\n" % (self.my_settings.user_name,
+                self.my_settings.server_name)
             config_string += "path %s\n" % self.my_settings.path
 
         #   local
@@ -992,9 +1008,6 @@ class MainWindow:
         config_string = ""
         if DEBUG:
             print "Write bootloader conf:"
-        
-        # kernel name to change
-        if DEBUG:
             print "  Updating kernel '%s'" % (self.my_settings.kernel)
 
         # arguments
@@ -1038,7 +1051,8 @@ class MainWindow:
         else:
         # kdump is desabled, so only remove crashkernel
             config_string += "--update-kernel=" + self.my_settings.kernel + ";"
-            config_string += "--remove-args=crashkernel=%s" % (self.my_settings.kdump_mem)
+            config_string += \
+                "--remove-args=crashkernel=%s" % (self.my_settings.kdump_mem)
             if DEBUG:
                 print "  Removing crashkernel=%s" % (self.my_settings.kdump_mem)
 
@@ -1062,7 +1076,8 @@ class MainWindow:
             self.usable_mem_label.set_text("%s (MB)" % (self.usable_mem,))
             if DEBUG:
                 print "setting usable_mem to", self.usable_mem
-            self.set_crashkernel(self.command_line_entry, self.my_settings.kdump_mem)
+            self.set_crashkernel(self.command_line_entry,
+                self.my_settings.kdump_mem)
         else:
             self.my_settings.kdump_mem = 0
         self.check_settings()
@@ -1072,7 +1087,8 @@ class MainWindow:
         Select default action in combobox and set it in settings
         """
         if action in DEFAULTACTIONS:
-            self.default_action_combobox.set_active(DEFAULTACTIONS.index(action))
+            self.default_action_combobox.set_active(
+                DEFAULTACTIONS.index(action))
             self.my_settings.default_action = action
         else:
             idx = self.default_action_combobox.get_active()
@@ -1189,7 +1205,7 @@ class MainWindow:
             self.changed_partition(self.partition_combobox)
         elif (raw):
             self.my_settings.target_type = TYPE_RAW
-        else: 
+        else:
             self.nfs_changed(self.nfs_radiobutton)
         self.check_settings()
 
@@ -1204,13 +1220,13 @@ class MainWindow:
             self.username_entry.set_sensitive(True)
             self.my_settings.target_type = TYPE_SSH
         self.check_settings()
-            
 
     def custom_kernel_changed(self, button):
         """
         It's called when you choose from default kernel and custom kernel
         """
-        self.custom_kernel_combobox.set_sensitive(self.custom_kernel_radio_button.get_active())
+        self.custom_kernel_combobox.set_sensitive(
+            self.custom_kernel_radio_button.get_active())
         if not button.get_active():
             self.my_settings.kernel = self.default_kernel
             line = self.get_cmdline(self.default_kernel)
@@ -1227,7 +1243,8 @@ class MainWindow:
         """
         Called when you choose default or custom initrd
         """
-        self.initrd_file_chooser_button.set_sensitive(self.custom_initrd_radio_button.get_active())
+        self.initrd_file_chooser_button.set_sensitive(
+            self.custom_initrd_radio_button.get_active())
 
     def setup_partitions(self, combobox):
         """
@@ -1244,7 +1261,7 @@ class MainWindow:
                         self.partitions[fstab_fields[0]] = \
                             (fstab_fields[2],fstab_fields[1])
                         if DEBUG:
-                            print "found partition in fstab: ",\
+                            print "found partition in fstab: ", \
                                 self.partitions[fstab_fields[0]]
                 except IndexError:
                     # Incorrect line in fstab
@@ -1292,7 +1309,8 @@ class MainWindow:
         """
         (retcode, cmdline, error) = (0, "", "")
         if (kernel.find("/boot/xen.")) is not -1:
-            cmd, retcode, cmdline, error = self.dbus_object.getxencmdline(kernel)
+            cmd, retcode, cmdline, error = \
+                self.dbus_object.getxencmdline(kernel)
         else:
             cmd, retcode, cmdline, error = self.dbus_object.getcmdline(kernel)
         if retcode:
@@ -1358,9 +1376,12 @@ class MainWindow:
         (Re)Load command line arguments for selected kernel in combobox
         """
         self.my_settings.kernel = combobox.get_active_text()
-        self.my_settings.kernel = self.my_settings.kernel.rsplit(TAG_CURRENT, 1)[0] # there can be current
-        self.my_settings.kernel = self.my_settings.kernel.rsplit(TAG_DEFAULT, 1)[0] # or default tag
-        self.my_settings.kernel = self.my_settings.kernel.rsplit(" ", 1)[0] # if so, there is <space> at the end
+        self.my_settings.kernel = self.my_settings.kernel.rsplit(
+            TAG_CURRENT, 1)[0] # there can be current
+        self.my_settings.kernel = self.my_settings.kernel.rsplit(
+            TAG_DEFAULT, 1)[0] # or default tag
+        self.my_settings.kernel = self.my_settings.kernel.rsplit(
+            " ", 1)[0] # if so, there is <space> at the end
         line = self.get_cmdline(self.my_settings.kernel)
         self.original_command_line_entry.set_text(line)
         self.command_line_entry.set_text(line)
@@ -1380,7 +1401,7 @@ class MainWindow:
 
     def set_crashkernel(self, gtk_entry, size):
         """
-        Set command line from gtk_entry crashkernel amount to size. 
+        Set command line from gtk_entry crashkernel amount to size.
         """
         old_value = self.get_crashkernel(gtk_entry.get_text())
         old_text = gtk_entry.get_text()
@@ -1405,11 +1426,13 @@ class MainWindow:
                 try:
                     size, offset = value.split("@", 1)
                 except:
-                    size=value
+                    size = value
                 if offset:
-                    if offset[-1] == "M": offset=offset[:-1]
+                    if offset[-1] == "M":
+                        offset = offset[:-1]
                     self.my_settings.kdump_offset = float(offset)
-                if size[-1] == "M": size=size[:-1]
+                if size[-1] == "M":
+                    size = size[:-1]
                 self.kdump_mem_spin_button.set_value(float(size))
                 self.update_usable_mem(self.kdump_mem_spin_button)
             except ValueError, reason:
@@ -1427,9 +1450,10 @@ class MainWindow:
     def reset_cmdline(self, button):
         """
         Called when you click Refresh button.
-        Will set command line entry to default command line entry. 
+        Will set command line entry to default command line entry.
         """
-        self.command_line_entry.set_text(self.original_command_line_entry.get_text())
+        self.command_line_entry.set_text(
+            self.original_command_line_entry.get_text())
         self.cmdline_changed(self.command_line_entry)
 
     def set_active_raw_device(self, device_name):
@@ -1508,7 +1532,8 @@ class MainWindow:
             self.set_core_collector(self.my_settings.core_collector.replace(\
                             "-d %s" % value, "-d %d" % level))
         else:
-            self.set_core_collector(self.my_settings.core_collector + " -d %d" % level)
+            self.set_core_collector(
+                self.my_settings.core_collector + " -d %d" % level)
         self.check_settings()
 
     def path_changed(self, entry, *args):
@@ -1584,17 +1609,23 @@ class MainWindow:
         Move original settings to my settings. This will revert any changes.
         """
         self.load_dump_config()
-        (self.orig_settings.kdump_mem, self.orig_settings.kdump_offset) = self.grubby_crashkernel()
+        (self.orig_settings.kdump_mem, self.orig_settings.kdump_offset) = \
+            self.grubby_crashkernel()
         self.orig_settings.copy_settings(self.my_settings)
         if DEBUG:
-            print "Reseting settings. orig kdump_mem = <%s>, my kdump_mem = <%s>" % (self.orig_settings.kdump_mem, self.my_settings.kdump_mem)
+            print "Reseting settings. orig kdump_mem = <%s>, "\
+                "my kdump_mem = <%s>" % (self.orig_settings.kdump_mem,
+                    self.my_settings.kdump_mem)
         if self.orig_settings.kdump_mem > 0:
             self.kdump_mem_spin_button.set_value(self.orig_settings.kdump_mem)
 
         if DEBUG:
-            print "self.default_kernel: <%s>, self.orig_settings.kernel: <%s>" % (self.default_kernel, self.orig_settings.kernel)
-            print "self.my_settings.kernel: <%s>, self.orig_settings.kernel: <%s>" % (self.my_settings.kernel, self.orig_settings.kernel)
-        self.default_kernel_radio_button.set_active(self.default_kernel == self.orig_settings.kernel)
+            print "self.default_kernel: <%s>, self.orig_settings.kernel: "\
+                "<%s>" % (self.default_kernel, self.orig_settings.kernel)
+            print "self.my_settings.kernel: <%s>, self.orig_settings.kernel: "\
+                "<%s>" % (self.my_settings.kernel, self.orig_settings.kernel)
+        self.default_kernel_radio_button.set_active(
+            self.default_kernel == self.orig_settings.kernel)
         self.custom_kernel_changed(self.custom_kernel_radio_button)
         self.check_settings()
         if self.my_settings.kdump_enabled:
@@ -1606,13 +1637,14 @@ class MainWindow:
         """
         Called when you change local fs in combobox and will save active one into settings
         """
-        name = part_combobox.get_active_text().rsplit(":",1)[0]
+        name = part_combobox.get_active_text().rsplit(":", 1)[0]
         if self.partitions[name][0]:
             self.my_settings.local_partition = "%s %s"\
-                %(self.partitions[name][0], name)
+                % (self.partitions[name][0], name)
         else:
             self.my_settings.local_partition = ""
-        self.location_entry.set_sensitive(self.my_settings.local_partition != "")
+        self.location_entry.set_sensitive(
+            self.my_settings.local_partition != "")
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
         self.check_settings()
 
@@ -1621,9 +1653,11 @@ class MainWindow:
         Update local_hint_label text with set partition and path
         """
         if partition == "":
-            self.local_hint_label.set_text(_("core will be in /var/crash/%DATE on rootfs"))
+            self.local_hint_label.set_text(
+                _("core will be in /var/crash/%DATE on rootfs"))
         else:
-            self.local_hint_label.set_text(_("core will be in %s/%%DATE on %s") %(path, partition))
+            self.local_hint_label.set_text(
+                _("core will be in %s/%%DATE on %s") %(path, partition))
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
@@ -1682,7 +1716,8 @@ class MainWindow:
         if not os.access (path, os.X_OK):
             d = gtk.MessageDialog (self.toplevel, 0,
                         gtk.MESSAGE_WARNING, gtk.BUTTONS_CLOSE,
-                        _("The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."))
+                        _("The help viewer could not be found. To be able to "
+                        "view help, the 'yelp' package needs to be installed."))
             d.set_position (gtk.WIN_POS_CENTER)
             d.run ()
             d.destroy ()
@@ -1735,7 +1770,7 @@ class MainWindow:
         while gtk.events_pending():
             gtk.main_iteration(False)
         return True, None
-        
+
     def handle_proxy_error (self, object, exception):
         try:
             if exception.get_dbus_name().startswith(AUTH_EXC_PREFIX):
@@ -1755,16 +1790,17 @@ class MainWindow:
 if __name__ == "__main__":
     import getopt
     try:
-        opt, arg = getopt.getopt(sys.argv[1:], 'dth', ['debug', 'test', 'testing', 'help'])
+        opt, arg = getopt.getopt(sys.argv[1:], 'dth',
+            ['debug', 'test', 'testing', 'help'])
         for (opt, val) in opt:
             if opt in ("-d", "--debug"):
                 print "*** Debug messages enabled. ***"
                 DEBUG = 1
             elif opt in ("-t", "--test", "--testing"):
-                print "*** Testing only. No configurations will be modified. ***"
+                print "*** Testing only. No configs will be modified. ***"
                 TESTING = 1
             elif opt in ("-h", "--help"):
-                print >> sys.stderr, "Usage: system-config-kdump.py [--test] [--debug]"
+                print "Usage: system-config-kdump.py [--test] [--debug]"
 
         win = MainWindow()
         win.setup_screen()
@@ -1773,7 +1809,7 @@ if __name__ == "__main__":
         pass
     except:
         print "Unexpected error:", sys.exc_info()[0]
-        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, 
+        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
                                 gtk.BUTTONS_OK, "%s" %traceback.format_exc())
 
         dialog.set_position(gtk.WIN_POS_CENTER_ON_PARENT)

@@ -9,9 +9,6 @@ gtk.glade.bindtextdomain(DOMAIN)
 _ = lambda x: gettext.ldgettext(DOMAIN, x)
 N_ = lambda x: x
 
-# progress window
-from sckdump.progress import ProgressWindow
-
 import dbus.mainloop.glib
 
 # all needed for Python-slip, PoilcyKit and dbus

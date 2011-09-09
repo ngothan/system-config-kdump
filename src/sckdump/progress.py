@@ -26,6 +26,8 @@ class ProgressWindow(gtk.Window):
 
         self.add(vbox)
 
+        self.timer = None
+
     def set_label(self, label):
         self.label.set_text(label)
 

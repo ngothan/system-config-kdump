@@ -2,16 +2,15 @@ import gtk
 import os
 import gtk.glade
 
-import gettext
 DOMAIN = "system-config-kdump"
 gtk.glade.bindtextdomain(DOMAIN)
 
 if os.access("dialog_call_error.glade", os.F_OK):
-   _XML = gtk.glade.XML("dialog_call_error.glade", domain = DOMAIN)
+    _XML = gtk.glade.XML("dialog_call_error.glade", domain = DOMAIN)
 else:
-   _XML = gtk.glade.XML(
-       "/usr/share/system-config-kdump/dialog_call_error.glade",
-       domain=DOMAIN)
+    _XML = gtk.glade.XML(
+        "/usr/share/system-config-kdump/dialog_call_error.glade",
+        domain=DOMAIN)
 
 def show_call_error_message(text, title, cmd, stdout, stderr, parent = None):
     """

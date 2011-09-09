@@ -18,9 +18,15 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
 # can be replaced by using booty?
 #             bootloader : (config file, kdump offset, kernel path)
-BOOTLOADERS = { "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
-                "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
-                "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat") }
+BOOTLOADERS = {
+  "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
+  "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
+  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat")
+}
+
+AUTH         = "org.fedoraproject.systemconfig.kdump"
+MECHANISM    = "org.fedoraproject.systemconfig.kdump.mechanism"
+KDUMP_OBJECT = "/org/fedoraproject/systemconfig/kdump/object"
 
 class SystemConfigKdumpObject(slip.dbus.service.Object):
     def __init__ (self, *p, **k):
@@ -28,17 +34,17 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         self.bootloader = self.set_bootloader()
 
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getdefaultkernel")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".getdefaultkernel")
+    @dbus.service.method (MECHANISM,
+                          in_signature = '', out_signature = '(siss)')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
         return self.gtkcall(GRUBBY_CMD, "--default-kernel")
 
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getcmdline")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".getcmdline")
+    @dbus.service.method (MECHANISM,
+                          in_signature = 's', out_signature = '(siss)')
     def getcmdline (self, kernel):
         """ Get command line arguments for kernel from grubby """
         (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
@@ -50,9 +56,9 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 if name == "args":
                     return (cmd, retcode, value.strip('"'), err)
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getxencmdline")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".getxencmdline")
+    @dbus.service.method (MECHANISM,
+                          in_signature = 's', out_signature = '(siss)')
     def getxencmdline (self, kernel):
         """ Get command line arguments for xen kernel from grubby """
         (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
@@ -64,16 +70,16 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 if name == "module":
                     return (cmd, retcode, value.strip('"'), err)
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.getallkernels")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".getallkernels")
+    @dbus.service.method (MECHANISM,
+                          in_signature = '', out_signature = '(siss)')
     def getallkernels (self):
         """ Get all kernel names from grubby """
-        return self.gtkcall(GRUBBY_CMD,"--info", "ALL")
+        return self.gtkcall(GRUBBY_CMD, "--info", "ALL")
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writedumpconfig")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='(is)')
+    @slip.dbus.polkit.require_auth (AUTH + ".writedumpconfig")
+    @dbus.service.method (MECHANISM,
+                          in_signature = 's', out_signature = '(is)')
     def writedumpconfig (self, config_string):
         """ Write kdump configuration to /etc/kdump.conf
             and return what we write into kdump config file """
@@ -87,15 +93,16 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         # re-read
         return (0, open(KDUMP_CONFIG_FILE).read())
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.writebootconfig")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='s', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".writebootconfig")
+    @dbus.service.method (MECHANISM,
+                          in_signature = 's', out_signature = '(siss)')
     def writebootconfig (self, config_string):
         """
         Write bootloader configuration.
         in config_string are arguments for grubby divided by `;'
         """
-        return self.gtkcall(*([GRUBBY_CMD] + ["--" + self.bootloader]  + config_string.split(";")))
+        return self.gtkcall(*([GRUBBY_CMD] + ["--" + self.bootloader] +
+                            config_string.split(";")))
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
@@ -104,15 +111,13 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             # I hope order doesn't matter
             if os.access(conf, os.W_OK):
                 bootloader = name
-
         if bootloader is None:
             return ""
-
         return bootloader
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.handledumpservice")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='(ss)', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".handledumpservice")
+    @dbus.service.method (MECHANISM,
+                          in_signature = '(ss)', out_signature = '(siss)')
     def handledumpservice (self, (chkconfig_status, service_op)):
         """ Turn on/off kdump initscript. Start/stop kdump service """
         status = 0
@@ -136,9 +141,9 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
         return (cmd, status, std, err)
 
-    @slip.dbus.polkit.require_auth ("org.fedoraproject.systemconfig.kdump.handledumpservice")
-    @dbus.service.method ("org.fedoraproject.systemconfig.kdump.mechanism",
-                          in_signature='', out_signature='(siss)')
+    @slip.dbus.polkit.require_auth (AUTH + ".handledumpservice")
+    @dbus.service.method (MECHANISM,
+                          in_signature = '', out_signature = '(siss)')
     def getservicestatus (self):
         """ Get current status of the kdump service """
         return self.gtkcall("/sbin/service", "kdump", "status")
@@ -152,7 +157,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                                     stderr = subprocess.PIPE)
         stdout, stderr = the_call.communicate()
         print "subprocess call:"
-        print args 
+        print args
         if stdout:
             print "-> stdout = " + stdout
         if stderr:
@@ -165,8 +170,8 @@ if __name__ == '__main__':
 
     BUS = dbus.SystemBus ()
 
-    NAME = dbus.service.BusName ("org.fedoraproject.systemconfig.kdump.mechanism", BUS)
-    OBJECT = SystemConfigKdumpObject (BUS, '/org/fedoraproject/systemconfig/kdump/object')
+    NAME = dbus.service.BusName (MECHANISM, BUS)
+    OBJECT = SystemConfigKdumpObject (BUS, KDUMP_OBJECT)
 
     MAINLOOP = gobject.MainLoop ()
     slip.dbus.service.set_mainloop (MAINLOOP)
