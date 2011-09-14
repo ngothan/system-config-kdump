@@ -330,11 +330,12 @@ class MainWindow:
     """
     def __init__(self):
         builder = gtk.Builder()
-        if os.access("system-config-kdump.ui", os.F_OK):
-            builder.add_from_file ("./system-config-kdump.ui")
+        builder.set_translation_domain(DOMAIN)
+        if os.access("system-config-kdump.glade", os.F_OK):
+            builder.add_from_file ("./system-config-kdump.glade")
         else:
             builder.add_from_file (
-                "/usr/share/system-config-kdump/system-config-kdump.ui")
+                "/usr/share/system-config-kdump/system-config-kdump.glade")
         builder.connect_signals(self)
 
         self.orig_settings = Settings()
