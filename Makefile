@@ -48,7 +48,7 @@ default: subdirs py-build
 subdirs: doc-all
 	for d in $(SUBDIRS); do make -C $$d; [ $$? = 0 ] || exit 1; done
 
-install: subdirs ${PKGNAME}.desktop doc-install py-install
+install: ${PKGNAME}.desktop doc-install py-install
 	mkdir -p $(INSTROOT)/usr/bin
 	mkdir -p $(INSTROOT)$(PKGDATADIR)
 	mkdir -p $(INSTROOT)/usr/sbin
