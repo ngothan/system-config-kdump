@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-14 16:01+0200\n"
+"POT-Creation-Date: 2011-09-22 16:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/system-config-kdump.py:72
+#: ../src/system-config-kdump.py:77
 msgid "mount rootfs and run /sbin/init"
 msgstr ""
 
-#: ../src/system-config-kdump.py:77
+#: ../src/system-config-kdump.py:82
 msgid "(c)"
 msgstr ""
 
-#: ../src/system-config-kdump.py:78
+#: ../src/system-config-kdump.py:83
 msgid "(d)"
 msgstr ""
 
-#: ../src/system-config-kdump.py:102
+#: ../src/system-config-kdump.py:105
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -46,7 +46,7 @@ msgid ""
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
 
-#: ../src/system-config-kdump.py:127
+#: ../src/system-config-kdump.py:131
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
 "crash, a core file can be captured using kdump, which runs in the context of "
@@ -57,120 +57,120 @@ msgid ""
 "be unavailable for other uses."
 msgstr ""
 
-#: ../src/system-config-kdump.py:137
+#: ../src/system-config-kdump.py:141
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:375
+#: ../src/system-config-kdump.py:370
 msgid "system-config-kdump"
 msgstr ""
 
-#: ../src/system-config-kdump.py:522
+#: ../src/system-config-kdump.py:529
 msgid "Don't know how to configure your boot loader."
 msgstr ""
 
-#: ../src/system-config-kdump.py:523
+#: ../src/system-config-kdump.py:530
 msgid "system-config-kdump: no default kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.py:528
+#: ../src/system-config-kdump.py:535
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr ""
 
-#: ../src/system-config-kdump.py:530 ../src/system-config-kdump.py:559
+#: ../src/system-config-kdump.py:537 ../src/system-config-kdump.py:567
 msgid "system-config-kdump: kdump not supported"
 msgstr ""
 
-#: ../src/system-config-kdump.py:544
+#: ../src/system-config-kdump.py:552
 msgid ""
 "Failed to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
 
-#: ../src/system-config-kdump.py:546
+#: ../src/system-config-kdump.py:554
 msgid "system-config-kdump: Memory error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:558
+#: ../src/system-config-kdump.py:566
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr ""
 
-#: ../src/system-config-kdump.py:636
+#: ../src/system-config-kdump.py:644
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr ""
 
-#: ../src/system-config-kdump.py:638
+#: ../src/system-config-kdump.py:646
 msgid "system-config-kdump: Not enough memory"
 msgstr ""
 
-#: ../src/system-config-kdump.py:698
+#: ../src/system-config-kdump.py:710
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr ""
 
-#: ../src/system-config-kdump.py:700
+#: ../src/system-config-kdump.py:712
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr ""
 
-#: ../src/system-config-kdump.py:701
+#: ../src/system-config-kdump.py:713
 msgid "system-config-kdump: Empty path"
 msgstr ""
 
-#: ../src/system-config-kdump.py:709
+#: ../src/system-config-kdump.py:722
 msgid "You must specify server. "
 msgstr ""
 
-#: ../src/system-config-kdump.py:710
+#: ../src/system-config-kdump.py:723
 msgid "system-config-kdump: Server name not set"
 msgstr ""
 
-#: ../src/system-config-kdump.py:715
+#: ../src/system-config-kdump.py:729
 msgid "You must specify user name. "
 msgstr ""
 
-#: ../src/system-config-kdump.py:716
+#: ../src/system-config-kdump.py:730
 msgid "system-config-kdump: User name not set"
 msgstr ""
 
-#: ../src/system-config-kdump.py:723
+#: ../src/system-config-kdump.py:737
 msgid "You must select one of the raw devices"
 msgstr ""
 
-#: ../src/system-config-kdump.py:724 ../src/system-config-kdump.py:1439
+#: ../src/system-config-kdump.py:738 ../src/system-config-kdump.py:1472
 msgid "system-config-kdump: Raw device error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:731
+#: ../src/system-config-kdump.py:745
 msgid "You must select one of the partitions"
 msgstr ""
 
-#: ../src/system-config-kdump.py:732 ../src/system-config-kdump.py:1461
+#: ../src/system-config-kdump.py:746 ../src/system-config-kdump.py:1498
 msgid "system-config-kdump: Local partition error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:741
+#: ../src/system-config-kdump.py:755
 #, python-format
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
 msgstr ""
 
-#: ../src/system-config-kdump.py:744
+#: ../src/system-config-kdump.py:758
 #, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:747
+#: ../src/system-config-kdump.py:761
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.py:751
+#: ../src/system-config-kdump.py:766
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
@@ -178,94 +178,94 @@ msgid ""
 "take effect."
 msgstr ""
 
-#: ../src/system-config-kdump.py:755
+#: ../src/system-config-kdump.py:770
 msgid "system-config-kdump: Need reboot"
 msgstr ""
 
-#: ../src/system-config-kdump.py:766
+#: ../src/system-config-kdump.py:781
 #, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:767
+#: ../src/system-config-kdump.py:782
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr ""
 
-#: ../src/system-config-kdump.py:781
+#: ../src/system-config-kdump.py:796
 msgid "Error writing bootloader configuration"
 msgstr ""
 
-#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:790
+#: ../src/system-config-kdump.py:797 ../src/system-config-kdump.py:805
 msgid "system-config-kdump: Error write bootloader configuration"
 msgstr ""
 
-#: ../src/system-config-kdump.py:789
+#: ../src/system-config-kdump.py:804
 #, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:803
+#: ../src/system-config-kdump.py:818
 #, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:804
+#: ../src/system-config-kdump.py:819
 msgid "system-config-kdump: Error handle services"
 msgstr ""
 
-#: ../src/system-config-kdump.py:809
-msgid "Configurations sucessfully saved"
+#: ../src/system-config-kdump.py:824
+msgid "Configurations successfully saved"
 msgstr ""
 
-#: ../src/system-config-kdump.py:810
+#: ../src/system-config-kdump.py:825
 msgid "system-config-kdump: Configuration saved"
 msgstr ""
 
-#: ../src/system-config-kdump.py:871
+#: ../src/system-config-kdump.py:885
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:872
+#: ../src/system-config-kdump.py:886
 msgid "system-config-kdump: kdump configuration file error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1128
+#: ../src/system-config-kdump.py:1143
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1129
+#: ../src/system-config-kdump.py:1144
 msgid "system-config-kdump: Bad core collector"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1292
+#: ../src/system-config-kdump.py:1319
 #, python-format
 msgid "Unable to get command line arguments for %s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1293 ../src/system-config-kdump.py:1310
-#: ../src/system-config-kdump.py:1328
+#: ../src/system-config-kdump.py:1320 ../src/system-config-kdump.py:1337
+#: ../src/system-config-kdump.py:1355
 msgid "system-config-kdump: grubby error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1309
+#: ../src/system-config-kdump.py:1336
 msgid "Unable to get default kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1327
+#: ../src/system-config-kdump.py:1354
 msgid "Unable to get all kernel names"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1408
+#: ../src/system-config-kdump.py:1440
 #, python-format
 msgid ""
-"Invalid craskernel value: %s.\n"
+"Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -273,66 +273,64 @@ msgid ""
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1411
+#: ../src/system-config-kdump.py:1443
 msgid "Bad crashkernel value"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1438
+#: ../src/system-config-kdump.py:1471
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:1496
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1460
+#: ../src/system-config-kdump.py:1497
 #, python-format
 msgid " and type %s wasn't found"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1662
+#: ../src/system-config-kdump.py:1658
+msgid "core will be in /var/crash/%DATE on rootfs"
+msgstr ""
+
+#: ../src/system-config-kdump.py:1661
+#, python-format
+msgid "core will be in %s/%%DATE on %s"
+msgstr ""
+
+#: ../src/system-config-kdump.py:1720
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
 
-#: ../src/system-config-kdump.py:1681
+#: ../src/system-config-kdump.py:1740
 msgid "Unable to get kdump service status"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1682 ../src/system-config-kdump.py:1705
+#: ../src/system-config-kdump.py:1741 ../src/system-config-kdump.py:1764
 msgid "system-config-kdump: Handling services error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1704
+#: ../src/system-config-kdump.py:1763
 msgid "Unable to handle kdump services"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1727
-#, python-format
-msgid ""
-"Not authorized exception.\n"
-"%s"
-msgstr ""
-
-#: ../src/system-config-kdump.py:1728
-msgid "System config kdump: authorization error"
-msgstr ""
-
-#: ../src/system-config-kdump.py:1743
+#: ../src/system-config-kdump.py:1787
 #, python-format
 msgid ""
 "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1744
+#: ../src/system-config-kdump.py:1788
 msgid "System config kdump: dbus error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1774
+#: ../src/system-config-kdump.py:1819
 msgid "Error executing system-config-kdump"
 msgstr ""
 
@@ -346,367 +344,339 @@ msgid "Called command"
 msgstr ""
 
 #: ../src/dialog_call_error.glade:107
-msgid "Stdandard output"
+msgid "Standard output"
 msgstr ""
 
 #: ../src/dialog_call_error.glade:142
 msgid "Standard error"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:6
+#: ../src/system-config-kdump.glade:7
+msgid "About system-config-kdump"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:70
 msgid "Kernel Dump Configuration"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:18
+#: ../src/system-config-kdump.glade:90
 msgid "_File"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:26 ../src/system-config-kdump.glade:142
+#: ../src/system-config-kdump.glade:101 ../src/system-config-kdump.glade:240
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:27
-msgid "gtk-apply"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:36 ../src/system-config-kdump.glade:153
+#: ../src/system-config-kdump.glade:114 ../src/system-config-kdump.glade:254
 msgid "Reload original settings from config files"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:37
-msgid "gtk-revert-to-saved"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:51
+#: ../src/system-config-kdump.glade:133
 msgid "Exit and discard not saved changes"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:52
-msgid "gtk-quit"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:65
+#: ../src/system-config-kdump.glade:150
 msgid "_Options"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:73 ../src/system-config-kdump.glade:173
-msgid "Enable kdump"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:85 ../src/system-config-kdump.glade:184
-msgid "Disable kdump"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:101
+#: ../src/system-config-kdump.glade:187
 msgid "_Help"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:109
-msgid "gtk-about"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:117
-msgid "gtk-help"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:143
+#: ../src/system-config-kdump.glade:242
 msgid "Apply"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:154
+#: ../src/system-config-kdump.glade:256
 msgid "Reload"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:174
+#: ../src/system-config-kdump.glade:277
+msgid "Enable kdump"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:279
 msgid "Enable"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:185
+#: ../src/system-config-kdump.glade:291
+msgid "Disable kdump"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:293
 msgid "Disable"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:265
+#: ../src/system-config-kdump.glade:385
 msgid "Total System Memory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:276
+#: ../src/system-config-kdump.glade:397
 msgid "Current kdump Memory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:289
+#: ../src/system-config-kdump.glade:411
 msgid "New kdump Memory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:302
+#: ../src/system-config-kdump.glade:425
 msgid "Usable Memory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:315 ../src/system-config-kdump.glade:328
-#: ../src/system-config-kdump.glade:362 ../src/system-config-kdump.glade:879
+#: ../src/system-config-kdump.glade:439 ../src/system-config-kdump.glade:453
+#: ../src/system-config-kdump.glade:488 ../src/system-config-kdump.glade:1084
 msgid "N/A"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:377
+#: ../src/system-config-kdump.glade:504
 msgid "(MB)"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:402
+#: ../src/system-config-kdump.glade:530
 msgid "Basic Settings"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:439
-msgid "Save kdump file in local filesystem"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:440
+#: ../src/system-config-kdump.glade:566
 msgid "Local filesystem"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:459
+#: ../src/system-config-kdump.glade:570
+msgid "Save kdump file in local filesystem"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:592
 msgid "Choose partition where you want to save your kdump"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:473
+#: ../src/system-config-kdump.glade:613
 msgid "Partition:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:483
-msgid "Choose local filesystem target directory"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:486
-msgid "Select A Local Filesystem Directory"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:497
+#: ../src/system-config-kdump.glade:626
 msgid "Path:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:504
+#: ../src/system-config-kdump.glade:636
 msgid "Target directory on local file system"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:540
-msgid "Save kdump file in raw device"
+#: ../src/system-config-kdump.glade:648
+msgid "localDumpHintLabel"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:541
+#: ../src/system-config-kdump.glade:689
 msgid "Raw device"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:556
+#: ../src/system-config-kdump.glade:693
+msgid "Save kdump file in raw device"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:710
 msgid "Select raw device"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:588
-msgid "Save kdump file via network"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:589
+#: ../src/system-config-kdump.glade:751
 msgid "Network"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:608
-msgid "Save kdump file via NFS"
+#: ../src/system-config-kdump.glade:755
+msgid "Save kdump file via network"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:609
+#: ../src/system-config-kdump.glade:775
 msgid "NFS"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:620
-msgid "Save kdump file via SSH"
+#: ../src/system-config-kdump.glade:779
+msgid "Save kdump file via NFS"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:621
+#: ../src/system-config-kdump.glade:793
 msgid "SSH"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:649
+#: ../src/system-config-kdump.glade:797
+msgid "Save kdump file via SSH"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:829
 msgid "User must have necessary write permissions on the server"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:662
+#: ../src/system-config-kdump.glade:842
 msgid "Path to directory to save kdump file on server"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:675
+#: ../src/system-config-kdump.glade:855
 msgid "Network server name"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:687
+#: ../src/system-config-kdump.glade:868
 msgid "User name:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:701
-msgid "Path to direcotory:"
+#: ../src/system-config-kdump.glade:883
+msgid "Path to directory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:714
+#: ../src/system-config-kdump.glade:897
 msgid "Server name:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:748
+#: ../src/system-config-kdump.glade:934
 msgid "Target settings"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:795
-msgid "Exclude zero page"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:796
+#: ../src/system-config-kdump.glade:982
 msgid "zero page"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:808
-msgid "Exclude cache page"
+#: ../src/system-config-kdump.glade:986
+msgid "Exclude zero page"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:809
+#: ../src/system-config-kdump.glade:998
 msgid "cache page"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:822
-msgid "Exclude cache private"
+#: ../src/system-config-kdump.glade:1002
+msgid "Exclude cache page"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:823
+#: ../src/system-config-kdump.glade:1014
 msgid "cache private"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:836
-msgid "Exclude user data"
+#: ../src/system-config-kdump.glade:1018
+msgid "Exclude cache private"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:837
+#: ../src/system-config-kdump.glade:1030
 msgid "user data"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:850
-msgid "Exclude free page"
+#: ../src/system-config-kdump.glade:1034
+msgid "Exclude user data"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:851
+#: ../src/system-config-kdump.glade:1046
 msgid "free page"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:868
+#: ../src/system-config-kdump.glade:1050
+msgid "Exclude free page"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:1070
 msgid "Actual filter level:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:900
+#: ../src/system-config-kdump.glade:1108
 msgid "<b>Filtering level </b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:932
+#: ../src/system-config-kdump.glade:1140
 msgid "ELF file format"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:945
+#: ../src/system-config-kdump.glade:1156
 msgid "diskdump file format"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:964
+#: ../src/system-config-kdump.glade:1180
 msgid "<b>Output file format</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:992
+#: ../src/system-config-kdump.glade:1207
 msgid "Filtering settings"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1041
-msgid "Use default initrd"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:1042
+#: ../src/system-config-kdump.glade:1257
 msgid "Default initrd"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1056
-msgid "Use custom initrd"
+#: ../src/system-config-kdump.glade:1261
+msgid "Use default initrd"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1057
+#: ../src/system-config-kdump.glade:1275
 msgid "Custom initrd"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1073
+#: ../src/system-config-kdump.glade:1279
+msgid "Use custom initrd"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:1297
 msgid "Choose custom initrd file"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1074
+#: ../src/system-config-kdump.glade:1298
 msgid "Select An initrd File"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1091
+#: ../src/system-config-kdump.glade:1317
 msgid "<b>initrd selection</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1122
-msgid "Use default kernel image"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:1123
+#: ../src/system-config-kdump.glade:1348
 msgid "Default kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1137
-msgid "Use custom kernel image"
+#: ../src/system-config-kdump.glade:1352
+msgid "Use default kernel image"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1138
+#: ../src/system-config-kdump.glade:1366
 msgid "Custom kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1154
+#: ../src/system-config-kdump.glade:1370
+msgid "Use custom kernel image"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:1388
 msgid "Choose your custom kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1171
+#: ../src/system-config-kdump.glade:1413
 msgid "<b>Capture kernel selection</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1206
-msgid "gtk-refresh"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:1222
+#: ../src/system-config-kdump.glade:1465
 msgid "Kernel command line options"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1238
+#: ../src/system-config-kdump.glade:1482
 msgid "Original kernel command line options"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1254
+#: ../src/system-config-kdump.glade:1499
 msgid "Original:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1266
+#: ../src/system-config-kdump.glade:1512
 msgid "Edited:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1283
+#: ../src/system-config-kdump.glade:1530
 msgid "<b>Command line options</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1313
+#: ../src/system-config-kdump.glade:1562
 msgid "Choose default action"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1328
+#: ../src/system-config-kdump.glade:1586
 msgid "<b>Default action</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1373
+#: ../src/system-config-kdump.glade:1635
 msgid "<b>Core collector</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1400
+#: ../src/system-config-kdump.glade:1661
 msgid "Expert settings"
-msgstr ""
-
-#: ../src/system-config-kdump.glade:1418
-msgid "About system-config-kdump"
 msgstr ""
