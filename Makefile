@@ -83,14 +83,17 @@ install: ${PKGNAME}.desktop doc-install py-install
 force-tag:
 	cvs tag -cFR $(CVSTAG) .
 
-archive: 
-	cvs tag -cFR $(CVSTAG) .
-	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
-	@CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r$(CVSTAG) ${MODULENAME}
-	@mv /tmp/${MODULENAME} /tmp/${PKGNAME}-$(VERSION)
-	@dir=$$PWD; cd /tmp; tar --bzip2 -cSpf $$dir/${PKGNAME}-$(VERSION).tar.bz2 ${PKGNAME}-$(VERSION)
-	@rm -rf /tmp/${PKGNAME}-$(VERSION)
-	@echo "The archive is in ${PKGNAME}-$(VERSION).tar.bz2"
+changelog:
+	@git log > ChangeLog
+
+archive: clean changelog
+	@git archive --format=tar --prefix=${PKGNAME}-$(VERSION)/ HEAD > ${PKGNAME}-$(VERSION).tar
+	@mkdir -p ${PKGNAME}-$(VERSION)/
+	@cp ChangeLog ${PKGNAME}-$(VERSION)/
+	@tar --append -f ${PKGNAME}-$(VERSION).tar ${PKGNAME}-$(VERSION)
+	@bzip2 -f ${PKGNAME}-$(VERSION).tar
+	@rm -rf ${PKGNAME}-$(VERSION)
+	@echo "The archive is at ${PKGNAME}-$(VERSION).tar.bz2"
 
 snapsrc: archive
 	@rpmbuild -ta $(PKGNAME)-$(VERSION).tar.bz2
@@ -99,17 +102,6 @@ selinux-module:
 	checkmodule -M -m -o local-system-config.mod local-system-config.te
 	semodule_package -o local-system-config.pp -m local-system-config.mod
 	semodule -i local-system-config.pp
-
-local: clean
-	@git log > ChangeLog
-	@rm -rf ${PKGNAME}-$(VERSION).tar.bz2
-	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
-	@dir=$$PWD; cd /tmp; cp -a $$dir ${PKGNAME}
-	@mv /tmp/${PKGNAME} /tmp/${PKGNAME}-$(VERSION)
-	@rm -rf /tmp/${PKGNAME}-${VERSION}/.git
-	@dir=$$PWD; cd /tmp; tar --bzip2 -cSpf $$dir/${PKGNAME}-$(VERSION).tar.bz2 ${PKGNAME}-$(VERSION)
-	@rm -rf /tmp/${PKGNAME}-$(VERSION)	
-	@echo "The archive is in ${PKGNAME}-$(VERSION).tar.bz2"
 
 clean: doc-clean py-clean
 	@rm -fv *~
