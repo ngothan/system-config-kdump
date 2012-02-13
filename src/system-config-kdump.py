@@ -188,8 +188,12 @@ class Settings:
                 self.target_type = TYPE_SSH
             else:
                 # NFS
-                self.server_name = path
-                self.target_type = TYPE_NFS
+                try:
+                    self.server_name = path.split(":")[0]
+                    self.target_type = TYPE_NFS
+                    self.path = path.split(":")[1]
+                except IndexError:
+                    pass
 
         # RAW
         elif location_type == TYPE_RAW:
@@ -905,9 +909,14 @@ class MainWindow:
                 self.username_entry.set_text(user_name)
             else:
                 # NFS
-                self.nfs_radiobutton.set_active(True)
-                self.my_settings.server_name = path
-                self.servername_entry.set_text(path)
+                try:
+                    self.nfs_radiobutton.set_active(True)
+                    self.my_settings.server_name = path.split(":")[0]
+                    self.my_settings.path = path.split(":")[1]
+                    self.servername_entry.set_text(path.split(":")[0])
+                    self.path_entry.set_text(path.split(":")[1])
+                except IndexError:
+                    pass
             self.nfs_radiobutton.toggled()
 
         # RAW
@@ -1008,8 +1017,8 @@ class MainWindow:
 
         #   nfs
         elif self.my_settings.target_type == TYPE_NFS:
-            config_string += "net %s\n" % self.my_settings.server_name
-            config_string += "path %s\n" % self.my_settings.path
+            config_string += "net %s:%s\n" % (self.my_settings.server_name,
+                self.my_settings.path)
 
         #   scp
         elif self.my_settings.target_type == TYPE_SSH:
