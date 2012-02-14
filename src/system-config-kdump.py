@@ -24,6 +24,7 @@ from gtk.gdk import keyval_name
 
 import sys, traceback
 import os
+from decimal import *
 # import stat
 
 # message, error and yes no dialogs
@@ -592,18 +593,20 @@ class MainWindow:
                 tokens = crash_string.split("@")
                 # Handle also Extended crashkernel syntax
                 def ws2mb(s):
+                    if s == "":
+                        return Decimal("Infinity")
                     mult = 1
                     if s[-1:] == "G":
                         mult = 1024
                     return int(s[:-1]) * mult
 
                 for rng in tokens[0].split(","):
-                    va = rng.split[":"]
+                    va = rng.split(":")
                     if len(va) == 1: # old syntax
                         kdump_mem = ws2mb(va[0])
                         break
                     else:
-                        rmin, rmax = va[0].split(":")
+                        rmin, rmax = va[0].split("-")
                         rmin = ws2mb(rmin)
                         rmax = ws2mb(rmax)
                         if total_mem >= rmin and total_mem < rmax:
@@ -622,6 +625,8 @@ class MainWindow:
                         self.xen_kdump_kernel = "kernel-PAE"
                         break
 
+        total_mem += kdump_mem
+        self.total_mem = total_mem
         # read current kdump settings from grubby
         (kdump_mem_grubby, kdump_offset_grubby) = self.grubby_crashkernel()
 
@@ -671,7 +676,6 @@ class MainWindow:
             kdump_mem = kdump_mem - (kdump_mem % step)
             self.orig_settings.kdump_mem = kdump_mem
 
-        self.total_mem = total_mem
         self.usable_mem = self.total_mem - kdump_mem
 
         self.kdump_mem_current_label.set_text("%s (MB)" % (kdump_mem))
@@ -1706,9 +1710,30 @@ class MainWindow:
             crash_string = filter(lambda t: t.startswith("crashkernel="),
                                           line.split())[0].split("=")[1]
             tokens = crash_string.split("@")
-            kdump_mem_grubby = int(tokens[0][:-1])
-            if len(tokens) == 2:
-                kdump_offset_grubby = int(tokens[1][:-1])
+            # Handle also Extended crashkernel syntax
+            def ws2mb(s):
+                if s == "":
+                    return Decimal("Infinity")
+                mult = 1
+                if s[-1:] == "G":
+                    mult = 1024
+                return int(s[:-1]) * mult
+
+            for rng in tokens[0].split(","):
+                va = rng.split(":")
+                if len(va) == 1: # old syntax
+                    kdump_mem_grubby = ws2mb(va[0])
+                    break
+                else:
+                    rmin, rmax = va[0].split("-")
+                    rmin = ws2mb(rmin)
+                    rmax = ws2mb(rmax)
+                    if self.total_mem >= rmin and self.total_mem < rmax:
+                        kdump_mem_grubby = ws2mb(va[1])
+                        break
+
+                if len(tokens) == 2:
+                    kdump_offset_grubby = int(tokens[1][:-1])
             if DEBUG:
                 print "grubby --info: crashkernel=%iM@%iM" \
                        % (kdump_mem_grubby, kdump_offset_grubby)
