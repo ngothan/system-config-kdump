@@ -590,7 +590,25 @@ class MainWindow:
                 crash_string = filter(lambda t: t.startswith("crashkernel="),
                                      cmdline.split())[0].split("=")[1]
                 tokens = crash_string.split("@")
-                kdump_mem = int(tokens[0][:-1])
+                # Handle also Extended crashkernel syntax
+                def ws2mb(s):
+                    mult = 1
+                    if s[-1:] == "G":
+                        mult = 1024
+                    return int(s[:-1]) * mult
+
+                for rng in tokens[0].split(","):
+                    va = rng.split[":"]
+                    if len(va) == 1: # old syntax
+                        kdump_mem = ws2mb(va[0])
+                        break
+                    else:
+                        rmin, rmax = va[0].split(":")
+                        rmin = ws2mb(rmin)
+                        rmax = ws2mb(rmax)
+                        if total_mem >= rmin and total_mem < rmax:
+                            kdump_mem = ws2mb(va[1])
+                            break
                 if len(tokens) == 2:
                     kdump_offset = int(tokens[1][:-1])
 
