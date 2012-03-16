@@ -486,16 +486,9 @@ class MainWindow:
         self.partition_combobox.connect("changed", self.changed_partition)
         self.setup_raw_devices(self.device_combobox)
         self.device_combobox.connect("changed", self.changed_raw_device)
-        self.location_entry.connect("focus-out-event", self.location_changed)
-        self.location_entry.connect("key-press-event", self.catch_enter,
-            self.location_changed)
-        self.path_entry.connect("focus-out-event", self.path_changed)
-        self.path_entry.connect("key-press-event", self.catch_enter,
-            self.path_changed)
-        self.servername_entry.connect("focus-out-event",
-            self.servername_changed)
+        self.location_entry.connect("changed", self.location_changed)
+        self.path_entry.connect("changed", self.path_changed)
         self.servername_entry.connect("changed", self.servername_changed)
-        self.username_entry.connect("focus-out-event", self.username_changed)
         self.username_entry.connect("changed", self.username_changed)
 
         # tab 2
@@ -727,6 +720,10 @@ class MainWindow:
         """
         When user clicked apply. Do checks. Save settings.
         """
+        # For some entry widgets we need to make sure all settings are applied
+        self.cmdline_changed(self.command_line_entry)
+        self.collector_entry_changed(self.core_collector_entry)
+
         if self.my_settings.target_type not in (TYPE_RAW, TYPE_LOCAL) \
         and not self.my_settings.path:
             retc = dialogs.yes_no_dialog(_("Path cannot be empty for '%s'"
