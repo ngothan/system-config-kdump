@@ -1849,6 +1849,12 @@ if __name__ == "__main__":
         win = MainWindow()
         win.setup_screen()
         win.run()
+    except dbus.exceptions.DBusException, reason:
+        if (reason.get_dbus_name() == "org.freedesktop.DBus.Error.NoServer"):
+            dialogs.show_error_message(
+                _("D-Bus server is not running.\n"
+                  "Please make sure D-Bus is running.\n"),
+                _("System config kdump: dbus error"))
     except SystemExit:
         pass
     except:
