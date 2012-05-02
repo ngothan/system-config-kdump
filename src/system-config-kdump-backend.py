@@ -21,7 +21,8 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 BOOTLOADERS = {
   "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
   "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
-  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat")
+  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat"),
+  "zipl"   : ("/etc/zipl.conf", 0, "/boot")
 }
 
 AUTH         = "org.fedoraproject.systemconfig.kdump"
