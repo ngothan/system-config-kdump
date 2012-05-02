@@ -140,6 +140,10 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             if status > 0:
                 return (cmd, status, std, err)
 
+        if self.bootloader == 'zipl':
+            (cmd, status, std, err) = self.gtkcall('/sbin/zipl')
+            if status > 0:
+                return (cmd, status, std, err)
         return (cmd, status, std, err)
 
     @slip.dbus.polkit.require_auth (AUTH + ".handledumpservice")
