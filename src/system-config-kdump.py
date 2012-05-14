@@ -543,7 +543,7 @@ class MainWindow:
         total_mem = int(total_mem + 0.99999999)
         if total_mem == 0:
             dialogs.show_message(
-                _("Failed to detect total system memory from /proc/iomem. "
+                _("Unable to detect total system memory from /proc/iomem. "
                     "Total system memory will not be accurate."),
                 _("system-config-kdump: Memory error"),
                 parent = self.toplevel)
