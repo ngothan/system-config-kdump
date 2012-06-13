@@ -372,7 +372,7 @@ class MainWindow:
         self.dbus_object = DBusProxy(progress_window)
         self.dbus_object.connect("proxy-error", self.handle_proxy_error)
 
-        self.default_kernel = self.default_kernel_name()[:-1]
+        self.default_kernel = self.default_kernel_name().strip()
         progress_window.set_transient_for(self.toplevel)
         self.about_dialog = builder.get_object("aboutdialog")
 
@@ -1384,10 +1384,16 @@ class MainWindow:
                         text = text + " " + TAG_DEFAULT
                     if text.find(self.running_kernel) is not -1:
                         text = text + " " + TAG_CURRENT
-                    combobox.append_text(self.kernel_prefix + text)
-                    if DEBUG:
-                        print "Appended kernel:\"" + self.kernel_prefix +\
-                            text + "\""
+                    if text.startswith(self.kernel_prefix):
+                        combobox.append_text(text)
+                        if DEBUG:
+                            print 'Appended kernel:"' + text + '"'
+                    else:
+                        combobox.append_text(self.kernel_prefix + text)
+                        if DEBUG:
+                            print "Appended kernel:\"" + self.kernel_prefix +\
+                                text + "\""
+
             combobox.set_active(0)
         return
 

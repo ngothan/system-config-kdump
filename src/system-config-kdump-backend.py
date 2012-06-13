@@ -20,6 +20,7 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 #             bootloader : (config file, kdump offset, kernel path)
 BOOTLOADERS = {
   "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
+  "grub2"  : ("/boot/grub2/grub.cfg", 16, "/boot"),
   "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
   "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat"),
   "zipl"   : ("/etc/zipl.conf", 0, "/boot")
@@ -40,7 +41,24 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = '', out_signature = '(siss)')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
-        return self.gtkcall(GRUBBY_CMD, "--default-kernel")
+#        return self.gtkcall(GRUBBY_CMD, "--default-kernel")
+        (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--default-kernel")
+        if (std != ""):
+            return (cmd, retcode, std, err)
+        else:
+            # default kernel is not set, we will use the first one
+            # which is linux kernel entry
+            name, value = "", ""
+            (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", "ALL")
+            for line in std.splitlines():
+                try:
+                    (name, value) = line.strip().split("=", 1)
+                    if name == "kernel":
+                        break
+                except ValueError:
+                    pass
+            return (cmd, retcode, value, err)
+
 
 
     @slip.dbus.polkit.require_auth (AUTH + ".getcmdline")

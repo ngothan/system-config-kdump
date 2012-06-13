@@ -9,6 +9,9 @@ gtk.glade.bindtextdomain(DOMAIN)
 _ = lambda x: gettext.ldgettext(DOMAIN, x)
 N_ = lambda x: x
 
+# set timeout of dbus calls to 2 minutes
+TIMEOUT=120
+
 import dbus.mainloop.glib
 
 # all needed for Python-slip, PoilcyKit and dbus
@@ -78,7 +81,7 @@ class DBusProxy (gobject.GObject):
         self.dbus_object.getdefaultkernel(
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -93,7 +96,7 @@ class DBusProxy (gobject.GObject):
             kernel,
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -108,7 +111,7 @@ class DBusProxy (gobject.GObject):
             kernel,
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -123,7 +126,7 @@ class DBusProxy (gobject.GObject):
         self.dbus_object.getallkernels(
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -140,7 +143,7 @@ class DBusProxy (gobject.GObject):
             config_string,
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply_config,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.retcode, self.err
 
@@ -156,7 +159,7 @@ class DBusProxy (gobject.GObject):
             config_string,
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -172,7 +175,7 @@ class DBusProxy (gobject.GObject):
             (chkconfig_status, service_op),
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
@@ -187,7 +190,7 @@ class DBusProxy (gobject.GObject):
         self.dbus_object.getservicestatus(
             dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
             reply_handler = self.handle_reply,
-            error_handler = self.handle_error)
+            error_handler = self.handle_error, timeout=TIMEOUT)
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
