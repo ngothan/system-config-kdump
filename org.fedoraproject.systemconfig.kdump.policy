@@ -7,10 +7,9 @@
   <vendor>system-config-kdump Application</vendor>
   <vendor_url>http://fedoraproject.org/example</vendor_url>
 
-<!--  <action id="org.fedoraproject.systemconfig.kdump.getdefaultkernel">-->
-  <action id="org.fedoraproject.systemconfig.kdump.getdefaultkernel">
-    <description>Get default kernel name on system</description>
-    <message>System policy prevents getting default kernel name on system</message>
+  <action id="org.fedoraproject.systemconfig.kdump.noauth">
+    <description>Get information about kdump settings</description>
+    <message>Getting information about kdump settings requires authentication</message>
     <defaults>
       <allow_any>yes</allow_any>
       <allow_inactive>yes</allow_inactive>
@@ -18,68 +17,14 @@
     </defaults>
   </action>
 
-  <action id="org.fedoraproject.systemconfig.kdump.getcmdline">
-    <description>Get command line arguments</description>
-    <message>System policy prevents getting command line arguments on system</message>
-    <defaults>
-      <allow_any>yes</allow_any>
-      <allow_inactive>yes</allow_inactive>
-      <allow_active>yes</allow_active>
-    </defaults>
-  </action>
-
-  <action id="org.fedoraproject.systemconfig.kdump.getxencmdline">
-    <description>Get command line arguments of xen kernel</description>
-    <message>System policy prevents getting command line arguments on system</message>
-    <defaults>
-      <allow_any>yes</allow_any>
-      <allow_inactive>yes</allow_inactive>
-      <allow_active>yes</allow_active>
-    </defaults>
-  </action>
-
-
-
-  <action id="org.fedoraproject.systemconfig.kdump.getallkernels">
-    <description>Get all kernel names on system</description>
-    <message>System policy prevents getting all kernel names on system</message>
-    <defaults>
-      <allow_any>yes</allow_any>
-      <allow_inactive>yes</allow_inactive>
-      <allow_active>yes</allow_active>
-    </defaults>
-  </action>
-
-  <action id="org.fedoraproject.systemconfig.kdump.writedumpconfig">
-    <description>Write kdump configuration</description>
-    <message>System policy prevents write access to /etc/kdump.conf</message>
+  <action id="org.fedoraproject.systemconfig.kdump.auth">
+    <description>Manage kdump settings</description>
+    <message>Managing kdump settings requires authentication</message>
     <defaults>
       <allow_any>auth_admin_keep</allow_any>
       <allow_inactive>auth_admin_keep</allow_inactive>
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
   </action>
-
-  <action id="org.fedoraproject.systemconfig.kdump.writebootconfig">
-    <description>Write bootloader configuration</description>
-    <message>System policy prevents write access to bootloader configuration</message>
-    <defaults>
-      <allow_any>auth_admin_keep</allow_any>
-      <allow_inactive>auth_admin_keep</allow_inactive>
-      <allow_active>auth_admin_keep</allow_active>
-    </defaults>
-  </action>
-
-
-  <action id="org.fedoraproject.systemconfig.kdump.handledumpservice">
-    <description>Turn on/off kdump init script. Stop/start kdump service</description>
-    <message>System policy prevents handling services</message>
-    <defaults>
-      <allow_any>auth_admin_keep</allow_any>
-      <allow_inactive>auth_admin_keep</allow_inactive>
-      <allow_active>auth_admin_keep</allow_active>
-    </defaults>
-  </action>
-
 
 </policyconfig>

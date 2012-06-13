@@ -26,7 +26,8 @@ BOOTLOADERS = {
   "zipl"   : ("/etc/zipl.conf", 0, "/boot")
 }
 
-AUTH         = "org.fedoraproject.systemconfig.kdump"
+AUTH         = "org.fedoraproject.systemconfig.kdump.auth"
+NOAUTH         = "org.fedoraproject.systemconfig.kdump.noauth"
 MECHANISM    = "org.fedoraproject.systemconfig.kdump.mechanism"
 KDUMP_OBJECT = "/org/fedoraproject/systemconfig/kdump/object"
 
@@ -36,7 +37,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         self.bootloader = self.set_bootloader()
 
 
-    @slip.dbus.polkit.require_auth (AUTH + ".getdefaultkernel")
+    @slip.dbus.polkit.require_auth (NOAUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = '', out_signature = '(siss)')
     def getdefaultkernel (self):
@@ -61,7 +62,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
 
 
-    @slip.dbus.polkit.require_auth (AUTH + ".getcmdline")
+    @slip.dbus.polkit.require_auth (NOAUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = 's', out_signature = '(siss)')
     def getcmdline (self, kernel):
@@ -75,7 +76,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 if name == "args":
                     return (cmd, retcode, value.strip('"'), err)
 
-    @slip.dbus.polkit.require_auth (AUTH + ".getxencmdline")
+    @slip.dbus.polkit.require_auth (NOAUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = 's', out_signature = '(siss)')
     def getxencmdline (self, kernel):
@@ -89,14 +90,14 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 if name == "module":
                     return (cmd, retcode, value.strip('"'), err)
 
-    @slip.dbus.polkit.require_auth (AUTH + ".getallkernels")
+    @slip.dbus.polkit.require_auth (NOAUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = '', out_signature = '(siss)')
     def getallkernels (self):
         """ Get all kernel names from grubby """
         return self.gtkcall(GRUBBY_CMD, "--info", "ALL")
 
-    @slip.dbus.polkit.require_auth (AUTH + ".writedumpconfig")
+    @slip.dbus.polkit.require_auth (AUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = 's', out_signature = '(is)')
     def writedumpconfig (self, config_string):
@@ -112,7 +113,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         # re-read
         return (0, open(KDUMP_CONFIG_FILE).read())
 
-    @slip.dbus.polkit.require_auth (AUTH + ".writebootconfig")
+    @slip.dbus.polkit.require_auth (AUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = 's', out_signature = '(siss)')
     def writebootconfig (self, config_string):
@@ -134,7 +135,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             return ""
         return bootloader
 
-    @slip.dbus.polkit.require_auth (AUTH + ".handledumpservice")
+    @slip.dbus.polkit.require_auth (AUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = '(ss)', out_signature = '(siss)')
     def handledumpservice (self, (chkconfig_status, service_op)):
@@ -164,7 +165,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 return (cmd, status, std, err)
         return (cmd, status, std, err)
 
-    @slip.dbus.polkit.require_auth (AUTH + ".handledumpservice")
+    @slip.dbus.polkit.require_auth (AUTH)
     @dbus.service.method (MECHANISM,
                           in_signature = '', out_signature = '(siss)')
     def getservicestatus (self):
