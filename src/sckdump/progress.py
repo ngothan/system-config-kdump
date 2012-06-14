@@ -33,7 +33,7 @@ class ProgressWindow(gtk.Window):
 
     def start(self):
         self.deiconify()
-        self.timer = gobject.timeout_add(100, self.update_cb)
+        self.timer = gobject.timeout_add(500, self.update_cb)
 
     def update_cb(self):
         self.progress.pulse()
