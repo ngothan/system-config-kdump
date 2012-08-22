@@ -359,7 +359,7 @@ class MainWindow:
 
         self.total_mem = 0
         self.usable_mem = 0
-        self.kernel_prefix = "/"
+        self.kernel_prefix = ""
 
         self.running_kernel = os.popen("/bin/uname -r").read().strip()
 
@@ -1357,7 +1357,8 @@ class MainWindow:
                 cmd, kernel, error,
                 parent = self.toplevel)
         else:
-            self.kernel_prefix = kernel.rsplit("/", 1)[0]
+            if (self.arch != "s390x"):
+                self.kernel_prefix = kernel.rsplit("/", 1)[0]
             if DEBUG:
                 print "Default kernel = " + kernel
                 print "Kernel prefix = " + self.kernel_prefix
