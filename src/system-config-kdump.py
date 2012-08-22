@@ -582,7 +582,7 @@ class MainWindow:
             cmdline = open("/proc/cmdline").read()
             if cmdline.find("crashkernel=") > -1:
                 crash_string = filter(lambda t: t.startswith("crashkernel="),
-                                     cmdline.split())[0].split("=")[1]
+                                     cmdline.split())[-1].split("=")[1]
                 tokens = crash_string.split("@")
                 # Handle also Extended crashkernel syntax
                 def ws2mb(s):
