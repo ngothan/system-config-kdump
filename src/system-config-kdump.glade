@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkAboutDialog" id="aboutdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -84,9 +84,9 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkMenuItem" id="menuitemFile">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_File</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -96,10 +96,10 @@
                     <child>
                       <object class="GtkImageMenuItem" id="menuitemapply">
                         <property name="label">gtk-apply</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Apply changes, save booloader config file and save kexec/kdump config file</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -109,10 +109,10 @@
                     <child>
                       <object class="GtkImageMenuItem" id="menuitemreload">
                         <property name="label">gtk-revert-to-saved</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Reload original settings from config files</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -128,10 +128,10 @@
                     <child>
                       <object class="GtkImageMenuItem" id="menuitemquit">
                         <property name="label">gtk-quit</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Exit and discard not saved changes</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -144,9 +144,9 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitemOptions">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Options</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -156,9 +156,9 @@
                     <child>
                       <object class="GtkImageMenuItem" id="menuitemEnable">
                         <property name="label">Enable kdump</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -167,9 +167,9 @@
                     <child>
                       <object class="GtkImageMenuItem" id="menuitemDisable">
                         <property name="label">Disable kdump</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -181,9 +181,9 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitemHelp">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Help</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -193,9 +193,9 @@
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitemAbout">
                         <property name="label">gtk-about</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -204,9 +204,9 @@
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitemHelp">
                         <property name="label">gtk-help</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
@@ -235,6 +235,7 @@
                 <property name="show_arrow">False</property>
                 <child>
                   <object class="GtkToolButton" id="toolbuttonApply">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Apply changes, save booloader config file and save kexec/kdump config file</property>
@@ -249,6 +250,7 @@
                 </child>
                 <child>
                   <object class="GtkToolButton" id="toolbuttonReload">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Reload original settings from config files</property>
@@ -272,6 +274,7 @@
                 </child>
                 <child>
                   <object class="GtkToolButton" id="toolbuttonEnable">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Enable kdump</property>
@@ -286,6 +289,7 @@
                 </child>
                 <child>
                   <object class="GtkToolButton" id="toolbuttonDisable">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Disable kdump</property>
@@ -309,6 +313,7 @@
                 </child>
                 <child>
                   <object class="GtkToolButton" id="toolbuttonHelp">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="use_action_appearance">False</property>
@@ -370,146 +375,207 @@
                         <property name="top_padding">6</property>
                         <property name="left_padding">6</property>
                         <child>
-                          <object class="GtkTable" id="memoryTable">
+                          <object class="GtkVBox" id="box1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="n_rows">4</property>
-                            <property name="n_columns">3</property>
-                            <property name="column_spacing">6</property>
-                            <property name="row_spacing">12</property>
                             <child>
-                              <object class="GtkLabel" id="label5">
+                              <object class="GtkVBox" id="box2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Total System Memory:</property>
+                                <property name="spacing">12</property>
+                                <child>
+                                  <object class="GtkRadioButton" id="fadumpRadiobutton">
+                                    <property name="label" translatable="yes">Firmware assisted dump</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="draw_indicator">True</property>
+                                    <property name="group">ManualdumpRadiobutton</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkRadioButton" id="ManualdumpRadiobutton">
+                                    <property name="label" translatable="yes">Manual settings</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="active">True</property>
+                                    <property name="draw_indicator">True</property>
+                                    <property name="group">fadumpRadiobutton</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
                               </object>
                               <packing>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="label6">
+                              <object class="GtkTable" id="memoryTable">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Current kdump Memory:</property>
+                                <property name="border_width">12</property>
+                                <property name="n_rows">4</property>
+                                <property name="n_columns">3</property>
+                                <property name="column_spacing">6</property>
+                                <property name="row_spacing">12</property>
+                                <child>
+                                  <object class="GtkLabel" id="label5">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">Total System Memory:</property>
+                                  </object>
+                                  <packing>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label6">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">Current kdump Memory:</property>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label7">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">New kdump Memory:</property>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label8">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">Usable Memory:</property>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="totalMem">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">N/A</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="kdumpMemCurrent">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">N/A</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkSpinButton" id="kdumpMemSpinButton">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="width_chars">6</property>
+                                    <property name="shadow_type">none</property>
+                                    <property name="adjustment">adjustment1</property>
+                                    <property name="numeric">True</property>
+                                    <property name="update_policy">if-valid</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="usableMem">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">N/A</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label23">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">(MB)</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
                               </object>
                               <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label7">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">New kdump Memory:</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label8">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Usable Memory:</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">3</property>
-                                <property name="bottom_attach">4</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="totalMem">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">N/A</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="kdumpMemCurrent">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">N/A</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">3</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkSpinButton" id="kdumpMemSpinButton">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="width_chars">6</property>
-                                <property name="shadow_type">none</property>
-                                <property name="adjustment">adjustment1</property>
-                                <property name="numeric">True</property>
-                                <property name="update_policy">if-valid</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="usableMem">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">N/A</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">3</property>
-                                <property name="top_attach">3</property>
-                                <property name="bottom_attach">4</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options"></property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label23">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">(MB)</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">2</property>
-                                <property name="right_attach">3</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                                <property name="x_options"></property>
-                                <property name="y_options"></property>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
@@ -564,13 +630,16 @@
                                 <child>
                                   <object class="GtkRadioButton" id="localfsRadiobutton">
                                     <property name="label" translatable="yes">Local filesystem</property>
+                                    <property name="use_action_appearance">False</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip_text" translatable="yes">Save kdump file in local filesystem</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="xalign">0.5</property>
                                     <property name="active">True</property>
                                     <property name="draw_indicator">True</property>
+                                    <property name="group">rawDeviceRadiobutton</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -687,11 +756,13 @@
                                 <child>
                                   <object class="GtkRadioButton" id="rawDeviceRadiobutton">
                                     <property name="label" translatable="yes">Raw device</property>
+                                    <property name="use_action_appearance">False</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip_text" translatable="yes">Save kdump file in raw device</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="xalign">0.5</property>
                                     <property name="active">True</property>
                                     <property name="draw_indicator">True</property>
                                     <property name="group">localfsRadiobutton</property>
@@ -749,11 +820,13 @@
                                 <child>
                                   <object class="GtkRadioButton" id="networkRadiobutton">
                                     <property name="label" translatable="yes">Network</property>
+                                    <property name="use_action_appearance">False</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip_text" translatable="yes">Save kdump file via network</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="xalign">0.5</property>
                                     <property name="active">True</property>
                                     <property name="draw_indicator">True</property>
                                     <property name="group">localfsRadiobutton</property>
@@ -773,11 +846,13 @@
                                     <child>
                                       <object class="GtkRadioButton" id="nfsRadiobutton">
                                         <property name="label" translatable="yes">NFS</property>
+                                        <property name="use_action_appearance">False</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
                                         <property name="tooltip_text" translatable="yes">Save kdump file via NFS</property>
                                         <property name="use_action_appearance">False</property>
+                                        <property name="xalign">0.5</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
                                         <property name="group">sshRadiobutton</property>
@@ -791,11 +866,13 @@
                                     <child>
                                       <object class="GtkRadioButton" id="sshRadiobutton">
                                         <property name="label" translatable="yes">SSH</property>
+                                        <property name="use_action_appearance">False</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
                                         <property name="tooltip_text" translatable="yes">Save kdump file via SSH</property>
                                         <property name="use_action_appearance">False</property>
+                                        <property name="xalign">0.5</property>
                                         <property name="draw_indicator">True</property>
                                         <property name="group">nfsRadiobutton</property>
                                       </object>
@@ -980,11 +1057,13 @@
                                         <child>
                                           <object class="GtkCheckButton" id="filterCheckbutton0">
                                             <property name="label" translatable="yes">zero page</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Exclude zero page</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -996,11 +1075,13 @@
                                         <child>
                                           <object class="GtkCheckButton" id="filterCheckbutton1">
                                             <property name="label" translatable="yes">cache page</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Exclude cache page</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -1012,11 +1093,13 @@
                                         <child>
                                           <object class="GtkCheckButton" id="filterCheckbutton2">
                                             <property name="label" translatable="yes">cache private</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Exclude cache private</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -1028,11 +1111,13 @@
                                         <child>
                                           <object class="GtkCheckButton" id="filterCheckbutton3">
                                             <property name="label" translatable="yes">user data</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Exclude user data</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -1044,11 +1129,13 @@
                                         <child>
                                           <object class="GtkCheckButton" id="filterCheckbutton4">
                                             <property name="label" translatable="yes">free page</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Exclude free page</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -1138,12 +1225,15 @@
                                         <child>
                                           <object class="GtkRadioButton" id="elfFileFromatRadiobutton">
                                             <property name="label" translatable="yes">ELF file format</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
+                                            <property name="group">diskdumpFileFormatRadiobutton</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -1154,10 +1244,12 @@
                                         <child>
                                           <object class="GtkRadioButton" id="diskdumpFileFormatRadiobutton">
                                             <property name="label" translatable="yes">diskdump file format</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
                                             <property name="group">elfFileFromatRadiobutton</property>
@@ -1255,13 +1347,16 @@
                                         <child>
                                           <object class="GtkRadioButton" id="defaultInitrdRadiobutton">
                                             <property name="label" translatable="yes">Default initrd</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Use default initrd</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
+                                            <property name="group">customInitrdRadiobutton</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -1273,11 +1368,13 @@
                                         <child>
                                           <object class="GtkRadioButton" id="customInitrdRadiobutton">
                                             <property name="label" translatable="yes">Custom initrd</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Use custom initrd</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
                                             <property name="group">defaultInitrdRadiobutton</property>
@@ -1346,13 +1443,16 @@
                                         <child>
                                           <object class="GtkRadioButton" id="defaultKernelRadiobutton">
                                             <property name="label" translatable="yes">Default kernel</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Use default kernel image</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
+                                            <property name="group">customKernelRadiobutton</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -1364,11 +1464,13 @@
                                         <child>
                                           <object class="GtkRadioButton" id="customKernelRadiobutton">
                                             <property name="label" translatable="yes">Custom kernel</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">Use custom kernel image</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="xalign">0.5</property>
                                             <property name="active">True</property>
                                             <property name="draw_indicator">True</property>
                                             <property name="group">defaultKernelRadiobutton</property>
@@ -1444,6 +1546,7 @@
                                         <child>
                                           <object class="GtkButton" id="clearCmdlineButton">
                                             <property name="label">gtk-refresh</property>
+                                            <property name="use_action_appearance">False</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">True</property>
