@@ -10,7 +10,7 @@ _ = lambda x: gettext.ldgettext(DOMAIN, x)
 N_ = lambda x: x
 
 # set timeout of dbus calls to 2 minutes
-TIMEOUT=120
+TIMEOUT=300
 
 import dbus.mainloop.glib
 
