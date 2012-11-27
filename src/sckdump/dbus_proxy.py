@@ -9,7 +9,7 @@ gtk.glade.bindtextdomain(DOMAIN)
 _ = lambda x: gettext.ldgettext(DOMAIN, x)
 N_ = lambda x: x
 
-# set timeout of dbus calls to 2 minutes
+# set timeout of dbus calls to 5 minutes
 TIMEOUT=300
 
 import dbus.mainloop.glib
