@@ -551,22 +551,9 @@ class MainWindow:
 
         # get total memory of system
         total_mem = 0.0
-        for line in open("/proc/iomem").readlines():
-            if line.find("RAM") != -1 or line.find("MMCONFIG") != -1:
-                hex_ck_start = line.strip().split("-")[0]
-                hex_ck_end = line.strip().split("-")[1].split(":")[0].strip()
-                total_mem += self.hex2mb_float(hex_ck_end) - \
-                    self.hex2mb_float(hex_ck_start)
-        total_mem = int(total_mem + 0.99999999)
-        if total_mem == 0:
-            dialogs.show_message(
-                _("Unable to detect total system memory from /proc/iomem. "
-                    "Total system memory will not be accurate."),
-                _("system-config-kdump: Memory error"),
-                parent = self.toplevel)
-            for line in open("/proc/meminfo").readlines():
-                if line.startswith("MemTotal:"):
-                    total_mem = int(line.split()[1]) / 1024
+        for line in open("/proc/meminfo").readlines():
+            if line.startswith("MemTotal:"):
+                total_mem = int(line.split()[1]) / 1024
 
         # Check for a xen kernel, we do things a bit different w/xen
         if os.access("/proc/xen", os.R_OK):
