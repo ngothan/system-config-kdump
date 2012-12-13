@@ -75,7 +75,7 @@ ACTION_REBOOT = "reboot"
 ACTION_SHELL = "shell"
 ACTION_HALT = "halt"
 ACTION_POWEROFF = "poweroff"
-ACTION_DEFAULT = _("mount rootfs and run /sbin/init")
+ACTION_DEFAULT = _("Dump to rootfs and reboot")
 
 FSTAB_FILE = "/etc/fstab"
 PROC_PARTITIONS = "/proc/partitions"
