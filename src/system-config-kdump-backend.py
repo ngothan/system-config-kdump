@@ -143,14 +143,14 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         status = 0
         std = ""
         err = ""
-        (cmd, status, std, err) = self.gtkcall("/sbin/chkconfig", "kdump",
-                                          chkconfig_status)
+        (cmd, status, std, err) = self.gtkcall("/usr/bin/systemctl",
+                                               chkconfig_status, "kdump")
         if status > 0:
             return (cmd, status, std, err)
 
         if service_op != "":
-            (cmd, status, std, err) = self.gtkcall("/sbin/service", "kdump",
-                                              service_op)
+            (cmd, status, std, err) = self.gtkcall("/usr/bin/kdumpctl",
+                                                   service_op)
         if status > 0:
             return (cmd, status, std, err)
 
@@ -170,7 +170,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = '', out_signature = '(siss)')
     def getservicestatus (self):
         """ Get current status of the kdump service """
-        return self.gtkcall("/sbin/service", "kdump", "status")
+        return self.gtkcall("/usr/bin/kdumpctl", "status")
 
     def gtkcall (self, *args):
         """

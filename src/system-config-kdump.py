@@ -1900,13 +1900,13 @@ class MainWindow:
                 return False, None
 
             if self.my_settings.kdump_enabled:
-                chkconfig_status = "on"
+                chkconfig_status = "enable"
                 if service_status in SERVICE_STATUS_ON:
                     service_op = "restart"
                 else:
                     service_op = "start"
             else:
-                chkconfig_status = "off"
+                chkconfig_status = "disable"
                 if service_status in SERVICE_STATUS_ON:
                     service_op = "stop"
                 else:
