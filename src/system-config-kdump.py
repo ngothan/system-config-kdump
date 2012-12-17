@@ -61,7 +61,6 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
 
 TYPE_LOCAL = "file"
-TYPE_NET = "net"
 TYPE_NFS = "nfs"
 TYPE_SSH = "ssh"
 TYPE_RAW = "raw"
@@ -179,22 +178,15 @@ class Settings:
         and are appropriately parsed. Then we save user and server name,
         raw device, path and so on. Look at kdump.conf to more info.
         """
-        self.target_type = location_type
         # SSH or NFS
-        if location_type == TYPE_NET:
-            if path.find("@") != -1:
-                # SSH
-                (self.user_name, self.server_name) = path.split("@")
-                self.target_type = TYPE_SSH
-            else:
-                # NFS
-                try:
-                    self.server_name = path.split(":")[0]
-                    self.target_type = TYPE_NFS
-                    self.path = path.split(":")[1]
-                except IndexError:
-                    pass
-
+        if location_type == TYPE_SSH:
+            # SSH
+            (self.user_name, self.server_name) = path.split("@")
+            self.target_type = TYPE_SSH
+        elif location_type == TYPE_NFS:
+            # NFS
+            self.server_name = path
+            self.target_type = TYPE_NFS
         # RAW
         elif location_type == TYPE_RAW:
             self.raw_device = path
@@ -897,26 +889,22 @@ class MainWindow:
             print "set_location " + location_type  + " " + path
 
         # SSH or NFS
-        if location_type == TYPE_NET:
+        if location_type == TYPE_SSH:
+            # SSH
             self.network_radiobutton.set_active(True)
-            if path.find("@") != -1:
-                # SSH
-                self.ssh_radiobutton.set_active(True)
-                (user_name, server_name) = path.split("@")
-                self.my_settings.user_name = user_name
-                self.my_settings.server_name = server_name
-                self.servername_entry.set_text(server_name)
-                self.username_entry.set_text(user_name)
-            else:
-                # NFS
-                try:
-                    self.nfs_radiobutton.set_active(True)
-                    self.my_settings.server_name = path.split(":")[0]
-                    self.my_settings.path = path.split(":")[1]
-                    self.servername_entry.set_text(path.split(":")[0])
-                    self.path_entry.set_text(path.split(":")[1])
-                except IndexError:
-                    pass
+            self.ssh_radiobutton.set_active(True)
+            (user_name, server_name) = path.split("@")
+            self.my_settings.user_name = user_name
+            self.my_settings.server_name = server_name
+            self.servername_entry.set_text(server_name)
+            self.username_entry.set_text(user_name)
+            self.nfs_radiobutton.toggled()
+        elif location_type == TYPE_NFS:
+            # NFS
+            self.network_radiobutton.set_active(True)
+            self.nfs_radiobutton.set_active(True)
+            self.my_settings.server_name = path
+            self.servername_entry.set_text(path)
             self.nfs_radiobutton.toggled()
 
         # RAW
@@ -981,7 +969,7 @@ class MainWindow:
                     self.orig_settings.filter_level = \
                         location[idx:].split(" ")[1]
                 self.set_core_collector(location)
-            elif loc_type in (TYPE_RAW, TYPE_NET) \
+            elif loc_type in (TYPE_RAW, TYPE_SSH, TYPE_NFS) \
             or loc_type in SUPPORTEDFSTYPES:
                 self.orig_settings.set_location(loc_type, location)
                 self.set_location(loc_type, location)
@@ -1017,12 +1005,12 @@ class MainWindow:
 
         #   nfs
         elif self.my_settings.target_type == TYPE_NFS:
-            config_string += "net %s:%s\n" % (self.my_settings.server_name,
-                self.my_settings.path)
+            config_string += "nfs %s\n" % (self.my_settings.server_name)
+            config_string += "path %s\n" % self.my_settings.path
 
         #   scp
         elif self.my_settings.target_type == TYPE_SSH:
-            config_string += "net %s@%s\n" % (self.my_settings.user_name,
+            config_string += "ssh %s@%s\n" % (self.my_settings.user_name,
                 self.my_settings.server_name)
             config_string += "path %s\n" % self.my_settings.path
 
