@@ -1,343 +1,341 @@
-# translation of ta.po to Tamil
-# translation of ta.po to
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-#
+# 
+# Translators:
 # Felix <ifelix@redhat.com>, 2006.
 # I felix <ifelix@redhat.com>, 2007.
+# Shantha kumar <shkumar@redhat.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: ta\n"
+"Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-14 16:01+0200\n"
-"PO-Revision-Date: 2011-02-15 16:09+0530\n"
-"Last-Translator: i felix\n"
-"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
+"POT-Creation-Date: 2013-04-03 15:01+0200\n"
+"PO-Revision-Date: 2013-04-03 13:01+0000\n"
+"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"Language-Team: Tamil <tamil-users@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-
-#: ../src/system-config-kdump.py:72
-msgid "mount rootfs and run /sbin/init"
-msgstr "rootfsஐ ஏற்றி /sbin/initஐ இயக்கவும்"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../src/system-config-kdump.py:77
+msgid "Dump to rootfs and reboot"
+msgstr ""
+
+#: ../src/system-config-kdump.py:82
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:78
+#: ../src/system-config-kdump.py:83
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:102
+#: ../src/system-config-kdump.py:105
 msgid ""
 "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
 "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
 "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
-msgstr ""
-"இந்த நிரலானது இலவச மென்பொருளாகும்; இதை நீங்கள் மீண்டும் விநியோகிக்கலாம்/அல்லது GNU General Public License க்கு கீழ் இதை மாற்றி இலவச மென்பொருள் நிறுவனத்தில் வெளியிடலாம்; பதிப்பு 2 உரிமமாக, அல்லது (உங்கள் விருப்பத்தில்) பின்னர் ஏதாவது பதிப்பில் வெளியிடலாம்.\n"
-"\n"
-"இந்த நிரல் பயன்படும் என்பதால் விநியோகிக்கப்பட்டுள்ளது, ஆனால் வாரண்டி இல்லாமல்; MERCHANTABILITY அல்லது  FITNESS FOR A PARTICULAR PURPOSE. GNU General Public உரிமத்தில் மேலும் விவரங்களுக்கு பார்க்கவும்.\n"
-"\n"
-"GNU General Public License உடன் இந்த நிரலுக்கான ஒரு நகலை நீங்கள் பெற்றிருக்க வேண்டும்; இல்லை எனில்,Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA-க்கு எழுதவும்."
+msgstr "இந்த நிரலானது இலவச மென்பொருளாகும்; இதை நீங்கள் மீண்டும் விநியோகிக்கலாம்/அல்லது GNU General Public License க்கு கீழ் இதை மாற்றி இலவச மென்பொருள் நிறுவனத்தில் வெளியிடலாம்; பதிப்பு 2 உரிமமாக, அல்லது (உங்கள் விருப்பத்தில்) பின்னர் ஏதாவது பதிப்பில் வெளியிடலாம்.\n\nஇந்த நிரல் பயன்படும் என்பதால் விநியோகிக்கப்பட்டுள்ளது, ஆனால் வாரண்டி இல்லாமல்; MERCHANTABILITY அல்லது  FITNESS FOR A PARTICULAR PURPOSE. GNU General Public உரிமத்தில் மேலும் விவரங்களுக்கு பார்க்கவும்.\n\nGNU General Public License உடன் இந்த நிரலுக்கான ஒரு நகலை நீங்கள் பெற்றிருக்க வேண்டும்; இல்லை எனில்,Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA-க்கு எழுதவும்."
 
-#: ../src/system-config-kdump.py:127
-msgid "Kdump is a new kernel crash dumping mechanism. In the event of a system crash, a core file can be captured using kdump, which runs in the context of a freshly booted kernel, making it far more reliable than methods capturing within the context of the crashed kernel. Being able to capture a core file can be invaluable in helping determine the root cause of a system crash. Note that kdump does require reserving a portion of system memory that will be unavailable for other uses."
+#: ../src/system-config-kdump.py:131
+msgid ""
+"Kdump is a new kernel crash dumping mechanism. In the event of a system "
+"crash, a core file can be captured using kdump, which runs in the context of"
+" a freshly booted kernel, making it far more reliable than methods capturing"
+" within the context of the crashed kernel. Being able to capture a core file"
+" can be invaluable in helping determine the root cause of a system crash. "
+"Note that kdump does require reserving a portion of system memory that will "
+"be unavailable for other uses."
 msgstr "Kdump ஒரு புதிய கர்னல் crash dumping தொழில்நுட்பமாகும். கணினி சிக்கலாகும் போது,ஒரு கோர் கோப்பு kdumpஐ பயன்படுத்தி, புதிதாக துவக்கப்பட்ட கர்னல் சூழலில் இயங்குவதை மீட்கும், அதை மிகவும் உகந்ததாக இருப்பதை விட அழிக்கப்பட்ட கர்னல் சூழலுக்குள் எடுக்கலாம்.ஒரு கோர் கோப்பினை மீட்பதை விட ரூட்டில் கணினி அழிப்பது வரையறுக்கப்படும். kdumpக்கு கணினியின் நினைவகம் பதிவு செய்வது தேவைப்படும் அது வேறு பயனர்களுக்கு இருக்காது என்பதை குறித்து கொள்ளவும்."
 
-#: ../src/system-config-kdump.py:137
-msgid "Kdump will attempt to place the vmcore at the specified location. In the event that it fails to place the vmcore at location, the default action (specified below) will be executed."
+#: ../src/system-config-kdump.py:141
+msgid ""
+"Kdump will attempt to place the vmcore at the specified location. In the "
+"event that it fails to place the vmcore at location, the default action "
+"(specified below) will be executed."
 msgstr "Kdump குறிப்பிட்ட இடத்தில் vmcoreஐ வைக்க முயற்சிக்கும். இந்த நிகழ்வில் vmcoreஐ ஒரு இடத்தில் வைக்க தவறும், அப்போது முன்னிருப்பு செயல் (கீழே குறிப்பிட்டது போல) செயல்படுத்தப்படும்."
 
-#: ../src/system-config-kdump.py:375
+#: ../src/system-config-kdump.py:376
 msgid "system-config-kdump"
 msgstr "system-config-kdump"
 
-#: ../src/system-config-kdump.py:522
+#: ../src/system-config-kdump.py:534
 msgid "Don't know how to configure your boot loader."
 msgstr "உங்கள் துவக்க ஏற்றியை எவ்வாறு கட்டமைக்க வேண்டுமென தெரியாது."
 
-#: ../src/system-config-kdump.py:523
+#: ../src/system-config-kdump.py:535
 msgid "system-config-kdump: no default kernel"
 msgstr "system-config-kdump: முன்னிருப்பு கெர்னல் எதுவும் இல்லை"
 
-#: ../src/system-config-kdump.py:528
+#: ../src/system-config-kdump.py:540
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "இந்த வடிவமைப்பு தற்போது kdumpக்கு துணை புரியாது"
 
-#: ../src/system-config-kdump.py:530
-#: ../src/system-config-kdump.py:559
+#: ../src/system-config-kdump.py:542 ../src/system-config-kdump.py:572
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdump துணைப்புரியவில்லை"
 
-#: ../src/system-config-kdump.py:544
-msgid "Failed to detect total system memory from /proc/iomem. Total system memory will not be accurate."
-msgstr "/proc/iomemஇலிருந்து மொத்த கணினி நினைவகத்தை கண்டுபிடிக்க முடியவில்லை. மொத்த கணினி நினைவகம் சரியானது இல்லை."
+#: ../src/system-config-kdump.py:557
+msgid ""
+"Unable to detect total system memory from /proc/iomem. Total system memory "
+"will not be accurate."
+msgstr ""
 
-#: ../src/system-config-kdump.py:546
+#: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: நினைவகம் இல்லை"
 
-#: ../src/system-config-kdump.py:558
+#: ../src/system-config-kdump.py:571
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "இந்த நேரத்தில் ia64 Xen கர்னல்கள் kdumpக்கு துணைபுரியவில்லை."
 
-#: ../src/system-config-kdump.py:636
+#: ../src/system-config-kdump.py:677
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "kdump இல் இருக்க இந்த கணினியில் போதிய நினைவகம் இல்லை"
 
-#: ../src/system-config-kdump.py:638
+#: ../src/system-config-kdump.py:679
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: போதுமான முகவரிஎதுவும் இல்லை"
 
-#: ../src/system-config-kdump.py:698
+#: ../src/system-config-kdump.py:746
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "'%s' இடங்களுக்காக பாதையை காலியாக்க முடியாது."
 
-#: ../src/system-config-kdump.py:700
+#: ../src/system-config-kdump.py:748
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "முன்னிருப்பு ('%s')க்கு பாதையை மறுஅமைக்கவா?."
 
-#: ../src/system-config-kdump.py:701
+#: ../src/system-config-kdump.py:749
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: காலி பாதை"
 
-#: ../src/system-config-kdump.py:709
+#: ../src/system-config-kdump.py:758
 msgid "You must specify server. "
 msgstr "நீங்கள் சேவையகத்தை குறிப்பிட வேண்டும்."
 
-#: ../src/system-config-kdump.py:710
+#: ../src/system-config-kdump.py:759
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: சேவையகப் பெயர் அமைக்கப்படவில்லை"
 
-#: ../src/system-config-kdump.py:715
+#: ../src/system-config-kdump.py:765
 msgid "You must specify user name. "
 msgstr "நீங்கள் பயனர் பெயரை குறிப்பிட வேண்டும்."
 
-#: ../src/system-config-kdump.py:716
+#: ../src/system-config-kdump.py:766
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: பயனர் பெயர் அமைக்கப்படவில்லை"
 
-#: ../src/system-config-kdump.py:723
+#: ../src/system-config-kdump.py:773
 msgid "You must select one of the raw devices"
 msgstr "ரா சாதனங்களிலிருந்து ஒன்றை நீங்கள் தேர்ந்தெடுக்க வேண்டும்"
 
-#: ../src/system-config-kdump.py:724
-#: ../src/system-config-kdump.py:1439
+#: ../src/system-config-kdump.py:774 ../src/system-config-kdump.py:1574
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: ரா சாதனப் பிழை"
 
-#: ../src/system-config-kdump.py:731
+#: ../src/system-config-kdump.py:781
 msgid "You must select one of the partitions"
 msgstr "இந்த பகிர்வுகளிலிருந்து நீங்கள் ஒன்றை தேர்ந்தெடுக்க வேண்டும்"
 
-#: ../src/system-config-kdump.py:732
-#: ../src/system-config-kdump.py:1461
+#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:1600
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: உள்ளார்ந்த பகிர்வு பிழை"
 
-#: ../src/system-config-kdump.py:741
+#: ../src/system-config-kdump.py:791
 #, python-format
-msgid "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash dump capture."
+msgid ""
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash"
+" dump capture."
 msgstr "எச்சரிக்கை: xen kdump க்கு ஒரு xen கர்னல் அல்லாத %s RPM துணை அசல் crash dumpஐ கைப்பற்ற தேவைப்படுகிறது. "
 
-#: ../src/system-config-kdump.py:744
+#: ../src/system-config-kdump.py:794
 #, python-format
-msgid "Please be sure you have the non-xen %s RPM of the same version as your xen kernel installed."
+msgid ""
+"Please be sure you have the non-xen %s RPM of the same version as your xen "
+"kernel installed."
 msgstr "xen கர்னல் அல்லாத %s RPM அதே பதிப்பை உங்கள் xen கர்னலை நிறுவும் போது வைத்திருக்கவும்."
 
-#: ../src/system-config-kdump.py:747
+#: ../src/system-config-kdump.py:797
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: சென் கெர்னல்-இல்லாதது தேவைப்படுகிறது"
 
-#: ../src/system-config-kdump.py:751
+#: ../src/system-config-kdump.py:802
 #, python-format
-msgid "Changing Kdump settings requires rebooting the system to reallocate memory accordingly. %sYou will have to reboot the system for the new settings to take effect."
+msgid ""
+"Changing Kdump settings requires rebooting the system to reallocate memory "
+"accordingly. %sYou will have to reboot the system for the new settings to "
+"take effect."
 msgstr "Kdump அமைவுகளை மாற்றினால் நினைவகத்தை மறு ஒதுக்கீடு செய்ய கணினியை மறு துவக்கம் செய்ய வேண்டும். %s புதிய அமைவுகள் செயலுக்கு வர கணினியை மீண்டும் துவக்கவும்."
 
-#: ../src/system-config-kdump.py:755
+#: ../src/system-config-kdump.py:806
 msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: மறுதுவக்கம் தேவைப்படுகிறது"
 
-#: ../src/system-config-kdump.py:766
+#: ../src/system-config-kdump.py:817
 #, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"பிழை எழுதும் kdump கட்டமைப்பு\n"
-"%s"
+msgstr "பிழை எழுதும் kdump கட்டமைப்பு\n%s"
 
-#: ../src/system-config-kdump.py:767
+#: ../src/system-config-kdump.py:818
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr "system-config-kdump: kdump கட்டமைப்பை எழுதுவதில் பிழை"
 
-#: ../src/system-config-kdump.py:781
+#: ../src/system-config-kdump.py:832
 msgid "Error writing bootloader configuration"
 msgstr "துவக்க ஏற்றி கட்டமைப்பை எழுதுவதில் பிழை"
 
-#: ../src/system-config-kdump.py:782
-#: ../src/system-config-kdump.py:790
+#: ../src/system-config-kdump.py:833 ../src/system-config-kdump.py:841
 msgid "system-config-kdump: Error write bootloader configuration"
 msgstr "system-config-kdump: துவக்க ஏற்றி கட்டமைப்பை எழுதுவதில் பிழை"
 
-#: ../src/system-config-kdump.py:789
+#: ../src/system-config-kdump.py:840
 #, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"பிழை எழுதும் துவக்கேற்றி கட்டமைப்பு:\n"
-"%s"
+msgstr "பிழை எழுதும் துவக்கேற்றி கட்டமைப்பு:\n%s"
 
-#: ../src/system-config-kdump.py:803
+#: ../src/system-config-kdump.py:854
 #, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
-msgstr ""
-"பிழை கையாளும் kdump சேவைகள்\n"
-"%s"
+msgstr "பிழை கையாளும் kdump சேவைகள்\n%s"
 
-#: ../src/system-config-kdump.py:804
+#: ../src/system-config-kdump.py:855
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: பிழை கையாளும் சேவைகள்"
 
-#: ../src/system-config-kdump.py:809
-msgid "Configurations sucessfully saved"
-msgstr "கட்டமைப்புகள் வெற்றிகரமாக சேமிக்கப்பட்டது"
+#: ../src/system-config-kdump.py:860
+msgid "Configurations successfully saved"
+msgstr "அமைவாக்கங்கள் வெற்றிகரமாக சேமிக்கப்பட்டது"
 
-#: ../src/system-config-kdump.py:810
+#: ../src/system-config-kdump.py:861
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: கட்டமைப்பு சேமிக்கப்பட்டது"
 
-#: ../src/system-config-kdump.py:871
+#: ../src/system-config-kdump.py:932
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "பிழை வாசிக்கும் kdump கட்டமைப்பு: %s"
 
-#: ../src/system-config-kdump.py:872
+#: ../src/system-config-kdump.py:933
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: kdump கட்டமைப்பு கோப்பு பிழை"
 
-#: ../src/system-config-kdump.py:1128
+#: ../src/system-config-kdump.py:1194
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "கோர் சேகரிப்பவர் 'makedumpfile'உடன் ஆரம்பிக்க வேண்டும்"
 
-#: ../src/system-config-kdump.py:1129
+#: ../src/system-config-kdump.py:1195
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: மோசமான மைய வசூலிப்பவர்"
 
-#: ../src/system-config-kdump.py:1292
+#: ../src/system-config-kdump.py:1370
 #, python-format
 msgid "Unable to get command line arguments for %s"
 msgstr "%sக்கான கட்டளை வரி விவாதங்கள் பெற முடியவில்லை"
 
-#: ../src/system-config-kdump.py:1293
-#: ../src/system-config-kdump.py:1310
-#: ../src/system-config-kdump.py:1328
+#: ../src/system-config-kdump.py:1371 ../src/system-config-kdump.py:1388
+#: ../src/system-config-kdump.py:1407
 msgid "system-config-kdump: grubby error"
 msgstr "system-config-kdump: ஒழுங்கான பிழை"
 
-#: ../src/system-config-kdump.py:1309
+#: ../src/system-config-kdump.py:1387
 msgid "Unable to get default kernel"
 msgstr "முன்னிருப்பு கெர்னலைபெற முடியவில்லை"
 
-#: ../src/system-config-kdump.py:1327
+#: ../src/system-config-kdump.py:1406
 msgid "Unable to get all kernel names"
 msgstr "அனைத்து கெர்னல் பெயர்களை பெற முடியவில்லை"
 
-#: ../src/system-config-kdump.py:1408
+#: ../src/system-config-kdump.py:1542
 #, python-format
 msgid ""
-"Invalid craskernel value: %s.\n"
+"Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"தவறான க்ராஷ்கெர்னல் மதிப்பு: %s.\n"
-"சரியான மதிப்புகளாவன:\n"
-"\tX\n"
-"\tX@Y\n"
-"\n"
-"%s"
+msgstr "தவறான செயலிழப்பு கெர்னல் மதிப்பு: %s.\nசாத்தியமுள்ள மதிப்புகள்:\n\tX\n\tX@Y\n\n%s"
 
-#: ../src/system-config-kdump.py:1411
+#: ../src/system-config-kdump.py:1545
 msgid "Bad crashkernel value"
 msgstr "மோசமான க்ராஷ்கெர்னல் மதிப்பு"
 
-#: ../src/system-config-kdump.py:1438
+#: ../src/system-config-kdump.py:1573
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "ரா சாதனம் %s இந்த கணினியில் காணப்படவில்லை"
 
-#: ../src/system-config-kdump.py:1459
+#: ../src/system-config-kdump.py:1598
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "பெயர் %s உடன் உள்ளமை கோப்பு முறைமை பகிர்வு"
 
-#: ../src/system-config-kdump.py:1460
+#: ../src/system-config-kdump.py:1599
 #, python-format
 msgid " and type %s wasn't found"
 msgstr "வகை %s காணப்படவில்லை"
 
-#: ../src/system-config-kdump.py:1662
-msgid "The help viewer could not be found. To be able to view help, the 'yelp' package needs to be installed."
+#: ../src/system-config-kdump.py:1761
+msgid "core will be in /var/crash/%DATE on rootfs"
+msgstr "கோரானது rootfs இல் /var/crash/%DATE இல் இருக்கும்"
+
+#: ../src/system-config-kdump.py:1764
+#, python-format
+msgid "core will be in %s/%%DATE on %s"
+msgstr "கோரானது %s இல் %s/%%DATE இல் இருக்கும்"
+
+#: ../src/system-config-kdump.py:1864
+msgid ""
+"The help viewer could not be found. To be able to view help, the 'yelp' "
+"package needs to be installed."
 msgstr "உதவி பார்வையாளர் கண்டுபிடிக்க முடியாது. இந்த உதவியை பார்க்க,  'yelp' தொகுப்பு நிறுவப்பட வேண்டும்."
 
-#: ../src/system-config-kdump.py:1681
+#: ../src/system-config-kdump.py:1884
 msgid "Unable to get kdump service status"
 msgstr "kdump சேவை நிலையை பெற முடியவில்லை"
 
-#: ../src/system-config-kdump.py:1682
-#: ../src/system-config-kdump.py:1705
+#: ../src/system-config-kdump.py:1885 ../src/system-config-kdump.py:1908
 msgid "system-config-kdump: Handling services error"
 msgstr "system-config-kdump: கையாளும் சேவைகளின் பிழை"
 
-#: ../src/system-config-kdump.py:1704
+#: ../src/system-config-kdump.py:1907
 msgid "Unable to handle kdump services"
 msgstr "kdump சேவைகளை கையாள முடியவில்லை"
 
-#: ../src/system-config-kdump.py:1727
-#, python-format
-msgid ""
-"Not authorized exception.\n"
-"%s"
-msgstr ""
-"அங்கீகார விதிவிலக்கில்லை.\n"
-"%s"
-
-#: ../src/system-config-kdump.py:1728
-msgid "System config kdump: authorization error"
-msgstr "System config kdump: அங்கீகார பிழை"
-
-#: ../src/system-config-kdump.py:1743
+#: ../src/system-config-kdump.py:1931
 #, python-format
 msgid ""
 "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"பின் முனையுடன் தெரியப்படுத்த முடியவில்லை.\n"
-"%s"
+msgstr "பின் முனையுடன் தெரியப்படுத்த முடியவில்லை.\n%s"
 
-#: ../src/system-config-kdump.py:1744
+#: ../src/system-config-kdump.py:1932 ../src/system-config-kdump.py:1958
 msgid "System config kdump: dbus error"
 msgstr "System config kdump: dபஸ் பிழை"
 
-#: ../src/system-config-kdump.py:1774
+#: ../src/system-config-kdump.py:1956
+msgid ""
+"D-Bus server is not running.\n"
+"Please make sure D-Bus is running.\n"
+msgstr ""
+
+#: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
 msgstr "system-config-kdumpஇல் பிழை செயலாற்றுகிறது"
 
-#: ../src/dialog_call_error.glade:64
-#: ../src/dialog_call_error.glade:99
+#: ../src/dialog_call_error.glade:64 ../src/dialog_call_error.glade:99
 #: ../src/dialog_call_error.glade:134
 msgid "a"
 msgstr "a"
@@ -347,426 +345,347 @@ msgid "Called command"
 msgstr "அழைக்கப்பட்ட கட்டளை"
 
 #: ../src/dialog_call_error.glade:107
-msgid "Stdandard output"
-msgstr "நிலையான வெளிப்பாடு"
+msgid "Standard output"
+msgstr "பொதுவான வெளியீடு"
 
 #: ../src/dialog_call_error.glade:142
 msgid "Standard error"
 msgstr "நிலையான பிழை"
 
-#: ../src/system-config-kdump.glade:6
-msgid "Kernel Dump Configuration"
-msgstr "கர்னல் டம்ப் கட்டமைப்பு"
-
-#: ../src/system-config-kdump.glade:18
-msgid "_File"
-msgstr "கோப்பு (_F)"
-
-#: ../src/system-config-kdump.glade:26
-#: ../src/system-config-kdump.glade:142
-msgid "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr "மாற்றங்களை செயல்படுத்தி, துவக்க ஏற்றி கட்டமை கோப்பு மற்றும் kexec/kdump கட்டமை கோப்பை சேமிக்கவும்config file"
-
-#: ../src/system-config-kdump.glade:27
-msgid "gtk-apply"
-msgstr "gtk-செயல்படுத்தி"
-
-#: ../src/system-config-kdump.glade:36
-#: ../src/system-config-kdump.glade:153
-msgid "Reload original settings from config files"
-msgstr "கட்டமை கோப்புகளிலிருந்து உண்மையான அமைவுகளை மீளேற்றவும்"
-
-#: ../src/system-config-kdump.glade:37
-msgid "gtk-revert-to-saved"
-msgstr "gtk-revert-to-சேமிக்கப்பட்டது"
-
-#: ../src/system-config-kdump.glade:51
-msgid "Exit and discard not saved changes"
-msgstr "சேமிக்கப்பட்ட மாற்றங்களை வெளியேற்றி கைவிடவும்"
-
-#: ../src/system-config-kdump.glade:52
-msgid "gtk-quit"
-msgstr "gtk-நிறுத்து"
-
-#: ../src/system-config-kdump.glade:65
-msgid "_Options"
-msgstr "விருப்பங்கள் (_O)"
-
-#: ../src/system-config-kdump.glade:73
-#: ../src/system-config-kdump.glade:173
-msgid "Enable kdump"
-msgstr "kdumpஐ செயல்படுத்தவும்"
-
-#: ../src/system-config-kdump.glade:85
-#: ../src/system-config-kdump.glade:184
-msgid "Disable kdump"
-msgstr "kdumpஐ செயல்நீக்கவும்"
-
-#: ../src/system-config-kdump.glade:101
-msgid "_Help"
-msgstr "உதவி (_H)"
-
-#: ../src/system-config-kdump.glade:109
-msgid "gtk-about"
-msgstr "gtk-பற்றி"
-
-#: ../src/system-config-kdump.glade:117
-msgid "gtk-help"
-msgstr "gtk-உதவி"
-
-#: ../src/system-config-kdump.glade:143
-msgid "Apply"
-msgstr "செயல்படுத்து"
-
-#: ../src/system-config-kdump.glade:154
-msgid "Reload"
-msgstr "மீளேற்று"
-
-#: ../src/system-config-kdump.glade:174
-msgid "Enable"
-msgstr "செயல்படுத்தவும்"
-
-#: ../src/system-config-kdump.glade:185
-msgid "Disable"
-msgstr "செயல்நீக்கு"
-
-#: ../src/system-config-kdump.glade:265
-msgid "Total System Memory:"
-msgstr "மொத்த கணினி நினைவகம்:"
-
-#: ../src/system-config-kdump.glade:276
-msgid "Current kdump Memory:"
-msgstr "நடப்பு kdump நினைவகம் :"
-
-#: ../src/system-config-kdump.glade:289
-msgid "New kdump Memory:"
-msgstr "புதிய kdump நினைவகம் :"
-
-#: ../src/system-config-kdump.glade:302
-msgid "Usable Memory:"
-msgstr "பயன்படுத்தக்கூடிய நினைவகம் :"
-
-#: ../src/system-config-kdump.glade:315
-#: ../src/system-config-kdump.glade:328
-#: ../src/system-config-kdump.glade:362
-#: ../src/system-config-kdump.glade:879
-msgid "N/A"
-msgstr "N/A"
-
-#: ../src/system-config-kdump.glade:377
-msgid "(MB)"
-msgstr "(MB)"
-
-#: ../src/system-config-kdump.glade:402
-msgid "Basic Settings"
-msgstr "அடிப்படை அமைவுகள்"
-
-#: ../src/system-config-kdump.glade:439
-msgid "Save kdump file in local filesystem"
-msgstr "kdump கோப்பை உள்ளமை கோப்புமுறைமையில் சேமி"
-
-#: ../src/system-config-kdump.glade:440
-msgid "Local filesystem"
-msgstr "உள்ளமை கோப்புமுறைமை"
-
-#: ../src/system-config-kdump.glade:459
-msgid "Choose partition where you want to save your kdump"
-msgstr "உங்கள்  kdumpஐ சேமிக்க விரும்பும் இடத்தில் பகிர்வை தேர்ந்தெடுக்கவும்"
-
-#: ../src/system-config-kdump.glade:473
-msgid "Partition:"
-msgstr "பகிர்வு:"
-
-#: ../src/system-config-kdump.glade:483
-msgid "Choose local filesystem target directory"
-msgstr "உள்ளமை கோப்புமுறைமை இலக்கு அடைவை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:486
-msgid "Select A Local Filesystem Directory"
-msgstr "ஒரு உள்ளமை கோப்புமுறைமை அடைவை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:497
-msgid "Path:"
-msgstr "பாதை:"
-
-#: ../src/system-config-kdump.glade:504
-msgid "Target directory on local file system"
-msgstr "உள்ளமை கோப்பு முறைமையில் அலக்கு அடைவு"
-
-#: ../src/system-config-kdump.glade:540
-msgid "Save kdump file in raw device"
-msgstr "kdump கோப்பை ரா சாதனத்தில் சேமிக்கவும்"
-
-#: ../src/system-config-kdump.glade:541
-msgid "Raw device"
-msgstr "ரா சாதனம்"
-
-#: ../src/system-config-kdump.glade:556
-msgid "Select raw device"
-msgstr "ரா சாதனத்தை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:588
-msgid "Save kdump file via network"
-msgstr "kdump கப்பினை பிணையம் வழியாக சேமிக்கவும்"
-
-#: ../src/system-config-kdump.glade:589
-msgid "Network"
-msgstr "பிணையம்"
-
-#: ../src/system-config-kdump.glade:608
-msgid "Save kdump file via NFS"
-msgstr "kdump கோப்பினை  NFS வழியாக சேமிக்கவும்"
-
-#: ../src/system-config-kdump.glade:609
-msgid "NFS"
-msgstr "NFS"
-
-#: ../src/system-config-kdump.glade:620
-msgid "Save kdump file via SSH"
-msgstr "kdump கோப்பினை SSH வழியாக சேமிக்கவும்"
-
-#: ../src/system-config-kdump.glade:621
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/system-config-kdump.glade:649
-msgid "User must have necessary write permissions on the server"
-msgstr "சேவையகத்தில் பயனர் தேவையான எழுதும் அனுமதிகளை கொண்டிருக்க வேண்டும்"
-
-#: ../src/system-config-kdump.glade:662
-msgid "Path to directory to save kdump file on server"
-msgstr "kdump கோப்பை சேவையகத்தில் அடைவில் சேமிப்பதற்கான பாதை"
-
-#: ../src/system-config-kdump.glade:675
-msgid "Network server name"
-msgstr "இணைய சேவையகப் பெயர்"
-
-#: ../src/system-config-kdump.glade:687
-msgid "User name:"
-msgstr "பயனர் பெயர்:"
-
-#: ../src/system-config-kdump.glade:701
-msgid "Path to direcotory:"
-msgstr "அடைவிற்கான பாதை:"
-
-#: ../src/system-config-kdump.glade:714
-msgid "Server name:"
-msgstr "சேவையகப் பெயர்:"
-
-#: ../src/system-config-kdump.glade:748
-msgid "Target settings"
-msgstr "இலக்கு அமைவுகள்"
-
-#: ../src/system-config-kdump.glade:795
-msgid "Exclude zero page"
-msgstr "பூஜ்ஜிய பக்கம் இல்லாமல்"
-
-#: ../src/system-config-kdump.glade:796
-msgid "zero page"
-msgstr "பூஜ்ஜிய பக்கம்"
-
-#: ../src/system-config-kdump.glade:808
-msgid "Exclude cache page"
-msgstr "கேஷ் பக்கம் இல்லாமல்"
-
-#: ../src/system-config-kdump.glade:809
-msgid "cache page"
-msgstr "கேஷ் பக்கம்"
-
-#: ../src/system-config-kdump.glade:822
-msgid "Exclude cache private"
-msgstr "கேஷ் தனிப்பட்டது இல்லாமல்"
-
-#: ../src/system-config-kdump.glade:823
-msgid "cache private"
-msgstr "கேஷ் தனிப்பட்டது"
-
-#: ../src/system-config-kdump.glade:836
-msgid "Exclude user data"
-msgstr "பயனர் தரவை நீக்கு"
-
-#: ../src/system-config-kdump.glade:837
-msgid "user data"
-msgstr "பயனர் தரவு"
-
-#: ../src/system-config-kdump.glade:850
-msgid "Exclude free page"
-msgstr "காலி பக்கத்தை நீக்கு"
-
-#: ../src/system-config-kdump.glade:851
-msgid "free page"
-msgstr "இலவசப் பக்கம்"
-
-#: ../src/system-config-kdump.glade:868
-msgid "Actual filter level:"
-msgstr "சரியான வடிப்பி நிலை:"
-
-#: ../src/system-config-kdump.glade:900
-msgid "<b>Filtering level </b>"
-msgstr "<b>வடிப்பு நிலை</b>"
-
-#: ../src/system-config-kdump.glade:932
-msgid "ELF file format"
-msgstr "ELF கோப்பு வடிவம்"
-
-#: ../src/system-config-kdump.glade:945
-msgid "diskdump file format"
-msgstr "வட்டுடம்ப் கோப்பு வடிவம்"
-
-#: ../src/system-config-kdump.glade:964
-msgid "<b>Output file format</b>"
-msgstr "<b>வெளிப்பாடு கோப்பு வடிவம்</b>"
-
-#: ../src/system-config-kdump.glade:992
-msgid "Filtering settings"
-msgstr "வடிக்கும் அமைவுகள்"
-
-#: ../src/system-config-kdump.glade:1041
-msgid "Use default initrd"
-msgstr "முன்னிருப்பு initrdஐ பயன்படுத்து"
-
-#: ../src/system-config-kdump.glade:1042
-msgid "Default initrd"
-msgstr "முன்னிருப்பு  initrd"
-
-#: ../src/system-config-kdump.glade:1056
-msgid "Use custom initrd"
-msgstr "தனிபயன் initrdஐ பயன்படுத்து"
-
-#: ../src/system-config-kdump.glade:1057
-msgid "Custom initrd"
-msgstr "தனிபயன் initrd"
-
-#: ../src/system-config-kdump.glade:1073
-msgid "Choose custom initrd file"
-msgstr "தனிபயன் initrd கோப்பை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:1074
-msgid "Select An initrd File"
-msgstr "ஒரு initrd கோப்பை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:1091
-msgid "<b>initrd selection</b>"
-msgstr "<b>initrd தேர்ந்தெடுத்தல்</b>"
-
-#: ../src/system-config-kdump.glade:1122
-msgid "Use default kernel image"
-msgstr "முன்னிருப்பு கெர்னல் படத்தை பயன்படுத்து"
-
-#: ../src/system-config-kdump.glade:1123
-msgid "Default kernel"
-msgstr "முன்னிருப்பு கெர்னல்"
-
-#: ../src/system-config-kdump.glade:1137
-msgid "Use custom kernel image"
-msgstr "தனிபயன் கெர்னல் படத்தை பயன்படுத்து"
-
-#: ../src/system-config-kdump.glade:1138
-msgid "Custom kernel"
-msgstr "தனிபயன் கெர்னல்"
-
-#: ../src/system-config-kdump.glade:1154
-msgid "Choose your custom kernel"
-msgstr "உங்கள் தனிபயன் கெர்னலை தேர்ந்தெடு"
-
-#: ../src/system-config-kdump.glade:1171
-msgid "<b>Capture kernel selection</b>"
-msgstr "<b>கெர்னல் தேர்ந்தெடுப்பை பிடி</b>"
-
-#: ../src/system-config-kdump.glade:1206
-msgid "gtk-refresh"
-msgstr "gtk-புதுப்பி"
-
-#: ../src/system-config-kdump.glade:1222
-msgid "Kernel command line options"
-msgstr "கெர்னல் கட்டளை வரி விருப்பங்கள்"
-
-#: ../src/system-config-kdump.glade:1238
-msgid "Original kernel command line options"
-msgstr "அசல் கெர்னல் கட்டளை வரி விருப்பங்கள்"
-
-#: ../src/system-config-kdump.glade:1254
-msgid "Original:"
-msgstr "அசல்:"
-
-#: ../src/system-config-kdump.glade:1266
-msgid "Edited:"
-msgstr "திருத்தப்பட்டது:"
-
-#: ../src/system-config-kdump.glade:1283
-msgid "<b>Command line options</b>"
-msgstr "<b>கட்டளை வரி விருப்பங்கள்</b>"
-
-#: ../src/system-config-kdump.glade:1313
-msgid "Choose default action"
-msgstr "முன்னிருப்பு செயலை தேர்ந்தெடுக்கவும்"
-
-#: ../src/system-config-kdump.glade:1328
-msgid "<b>Default action</b>"
-msgstr "<b>முன்னிருப்பு செயல்</b>"
-
-#: ../src/system-config-kdump.glade:1373
-msgid "<b>Core collector</b>"
-msgstr "<b>கோர் சேகரிப்பவர்</b>"
-
-#: ../src/system-config-kdump.glade:1400
-msgid "Expert settings"
-msgstr "திறமையுள்ள அமைவுகள் "
-
-#: ../src/system-config-kdump.glade:1418
+#: ../src/system-config-kdump.glade:7
 msgid "About system-config-kdump"
 msgstr "system-config-kdumpஐ பற்றி"
 
-#~ msgid "Failed to detect total system memory"
-#~ msgstr "மொத்த கணினி நினைவகத்தை காண முடியவில்லை"
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "Note that the %s architecture does not feature a relocatable kernel at "
-#~ "this time, and thus requires a separate kernel-kdump package to be "
-#~ "installed for kdump to function. This can be installed via 'yum install "
-#~ "kernel-kdump' at your convenience.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "%s வடிவமைப்பு இந்த நேரத்தில் மாறும் கர்னல் வசதியை கொண்டிருக்கவில்லை,அதனால் இதற்கு ஒரு "
-#~ "தனி kernel-kdump தொகுப்பு kdumpக்கு நிறுவப்பட்டு செயல்படுத்தப்பட வேண்டும். இது "
-#~ "'yum install kernel-kdump' வழியாக உங்கள் தேவைப்கேற்ப நிறுவப்படும்.\n"
-#~ "\n"
+#: ../src/system-config-kdump.glade:70
+msgid "Kernel Dump Configuration"
+msgstr "கர்னல் டம்ப் கட்டமைப்பு"
 
-#, fuzzy
-#~ msgid "Error writing kdump configuration"
-#~ msgstr "கர்னல் டம்ப் கட்டமைப்பு"
-#~ msgid "Configure kdump/kexec"
-#~ msgstr "kdump/kexec ஐ கட்டமைக்கவும்"
-#~ msgid "%s"
-#~ msgstr "%s"
-#~ msgid "Edit Location"
-#~ msgstr "இடத்தைத் திருத்தவும்"
-#~ msgid "New Location"
-#~ msgstr "புதிய இடம்"
-#~ msgid "Select a location type:"
-#~ msgstr "ஒரு இட வகையை தேர்ந்தெடுக்கவும்:"
-#~ msgid "Enter location:"
-#~ msgstr "இடத்தை உள்ளிடவும்:"
-#~ msgid ""
-#~ "SSH locations must be of the form 'user@host'. A path can be specified in "
-#~ "the main window."
-#~ msgstr ""
-#~ "SSH இடங்கள் 'user@host' வடிவில் இருக்க வேண்டும். ஒரு பாதை முக்கிய சாளரத்தில் "
-#~ "குறிப்பிடப்படலாம். the main window."
-#~ msgid "NFS locations must be of the form 'host:/path'"
-#~ msgstr "NFS இடங்கள் 'host:/path' என்ற வடிவில் இருக்க வேண்டும்"
-#~ msgid "For raw locations you must specify a valid device node."
-#~ msgstr "raw இடங்களுக்கு ஒரு சரியான சாதன முனையை குறிப்பிட வேண்டும்."
-#~ msgid "Support for filesystem type '%s' is not present on this system"
-#~ msgstr "இந்த கணினியில் கோப்பு முறைமை வகை '%s' இல்லை"
-#~ msgid "Failed to stat device node '%s'"
-#~ msgstr "stat சாதன முனை '%s' செயலிழக்கப்பட்டது"
-#~ msgid "'%s' locations must specify a valid device node."
-#~ msgstr "'%s' இடங்கள் ஒரு சரியாற சாதன முனையுடன் குறிப்பிடப்பட வேண்டும்."
-#~ msgid "No bootloader config file found, aborting configuration!"
-#~ msgstr ""
-#~ "துவக்க ஏற்றி கட்டமைப்பு கோப்பினை காண முடியவில்லை, கட்டமைப்பினை நிறுத்துகிறது!"
+#: ../src/system-config-kdump.glade:90
+msgid "_File"
+msgstr "கோப்பு (_F)"
 
+#: ../src/system-config-kdump.glade:102 ../src/system-config-kdump.glade:241
+msgid ""
+"Apply changes, save booloader config file and save kexec/kdump config file"
+msgstr "மாற்றங்களை செயல்படுத்தி, துவக்க ஏற்றி கட்டமை கோப்பு மற்றும் kexec/kdump கட்டமை கோப்பை சேமிக்கவும்config file"
+
+#: ../src/system-config-kdump.glade:115 ../src/system-config-kdump.glade:256
+msgid "Reload original settings from config files"
+msgstr "கட்டமை கோப்புகளிலிருந்து உண்மையான அமைவுகளை மீளேற்றவும்"
+
+#: ../src/system-config-kdump.glade:134
+msgid "Exit and discard not saved changes"
+msgstr "சேமிக்கப்பட்ட மாற்றங்களை வெளியேற்றி கைவிடவும்"
+
+#: ../src/system-config-kdump.glade:150
+msgid "_Options"
+msgstr "விருப்பங்கள் (_O)"
+
+#: ../src/system-config-kdump.glade:187
+msgid "_Help"
+msgstr "உதவி (_H)"
+
+#: ../src/system-config-kdump.glade:243
+msgid "Apply"
+msgstr "செயல்படுத்து"
+
+#: ../src/system-config-kdump.glade:258
+msgid "Reload"
+msgstr "மீளேற்று"
+
+#: ../src/system-config-kdump.glade:280
+msgid "Enable kdump"
+msgstr "kdumpஐ செயல்படுத்தவும்"
+
+#: ../src/system-config-kdump.glade:282
+msgid "Enable"
+msgstr "செயல்படுத்தவும்"
+
+#: ../src/system-config-kdump.glade:295
+msgid "Disable kdump"
+msgstr "kdumpஐ செயல்நீக்கவும்"
+
+#: ../src/system-config-kdump.glade:297
+msgid "Disable"
+msgstr "செயல்நீக்கு"
+
+#: ../src/system-config-kdump.glade:388
+msgid "Firmware assisted dump"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:406
+msgid "Manual settings"
+msgstr ""
+
+#: ../src/system-config-kdump.glade:444
+msgid "Total System Memory:"
+msgstr "மொத்த கணினி நினைவகம்:"
+
+#: ../src/system-config-kdump.glade:456
+msgid "Current kdump Memory:"
+msgstr "நடப்பு kdump நினைவகம் :"
+
+#: ../src/system-config-kdump.glade:470
+msgid "New kdump Memory:"
+msgstr "புதிய kdump நினைவகம் :"
+
+#: ../src/system-config-kdump.glade:484
+msgid "Usable Memory:"
+msgstr "பயன்படுத்தக்கூடிய நினைவகம் :"
+
+#: ../src/system-config-kdump.glade:498 ../src/system-config-kdump.glade:512
+#: ../src/system-config-kdump.glade:547 ../src/system-config-kdump.glade:1171
+msgid "N/A"
+msgstr "N/A"
+
+#: ../src/system-config-kdump.glade:563
+msgid "(MB)"
+msgstr "(MB)"
+
+#: ../src/system-config-kdump.glade:596
+msgid "Basic Settings"
+msgstr "அடிப்படை அமைவுகள்"
+
+#: ../src/system-config-kdump.glade:632
+msgid "Local filesystem"
+msgstr "உள்ளமை கோப்புமுறைமை"
+
+#: ../src/system-config-kdump.glade:637
+msgid "Save kdump file in local filesystem"
+msgstr "kdump கோப்பை உள்ளமை கோப்புமுறைமையில் சேமி"
+
+#: ../src/system-config-kdump.glade:661
+msgid "Choose partition where you want to save your kdump"
+msgstr "உங்கள்  kdumpஐ சேமிக்க விரும்பும் இடத்தில் பகிர்வை தேர்ந்தெடுக்கவும்"
+
+#: ../src/system-config-kdump.glade:682
+msgid "Partition:"
+msgstr "பகிர்வு:"
+
+#: ../src/system-config-kdump.glade:695
+msgid "Path:"
+msgstr "பாதை:"
+
+#: ../src/system-config-kdump.glade:705
+msgid "Target directory on local file system"
+msgstr "உள்ளமை கோப்பு முறைமையில் அலக்கு அடைவு"
+
+#: ../src/system-config-kdump.glade:717
+msgid "localDumpHintLabel"
+msgstr "localDumpHintLabel"
+
+#: ../src/system-config-kdump.glade:758
+msgid "Raw device"
+msgstr "ரா சாதனம்"
+
+#: ../src/system-config-kdump.glade:763
+msgid "Save kdump file in raw device"
+msgstr "kdump கோப்பை ரா சாதனத்தில் சேமிக்கவும்"
+
+#: ../src/system-config-kdump.glade:781
+msgid "Select raw device"
+msgstr "ரா சாதனத்தை தேர்ந்தெடு"
+
+#: ../src/system-config-kdump.glade:822
+msgid "Network"
+msgstr "பிணையம்"
+
+#: ../src/system-config-kdump.glade:827
+msgid "Save kdump file via network"
+msgstr "kdump கப்பினை பிணையம் வழியாக சேமிக்கவும்"
+
+#: ../src/system-config-kdump.glade:848
+msgid "NFS"
+msgstr "NFS"
+
+#: ../src/system-config-kdump.glade:853
+msgid "Save kdump file via NFS"
+msgstr "kdump கோப்பினை  NFS வழியாக சேமிக்கவும்"
+
+#: ../src/system-config-kdump.glade:868
+msgid "SSH"
+msgstr "SSH"
+
+#: ../src/system-config-kdump.glade:873
+msgid "Save kdump file via SSH"
+msgstr "kdump கோப்பினை SSH வழியாக சேமிக்கவும்"
+
+#: ../src/system-config-kdump.glade:906
+msgid "User must have necessary write permissions on the server"
+msgstr "சேவையகத்தில் பயனர் தேவையான எழுதும் அனுமதிகளை கொண்டிருக்க வேண்டும்"
+
+#: ../src/system-config-kdump.glade:919
+msgid "Path to directory to save kdump file on server"
+msgstr "kdump கோப்பை சேவையகத்தில் அடைவில் சேமிப்பதற்கான பாதை"
+
+#: ../src/system-config-kdump.glade:932
+msgid "Network server name"
+msgstr "இணைய சேவையகப் பெயர்"
+
+#: ../src/system-config-kdump.glade:945
+msgid "User name:"
+msgstr "பயனர் பெயர்:"
+
+#: ../src/system-config-kdump.glade:960
+msgid "Path to directory:"
+msgstr "கோப்பகத்திற்கான பாதை:"
+
+#: ../src/system-config-kdump.glade:974
+msgid "Server name:"
+msgstr "சேவையகப் பெயர்:"
+
+#: ../src/system-config-kdump.glade:1011
+msgid "Target settings"
+msgstr "இலக்கு அமைவுகள்"
+
+#: ../src/system-config-kdump.glade:1059
+msgid "zero page"
+msgstr "பூஜ்ஜிய பக்கம்"
+
+#: ../src/system-config-kdump.glade:1064
+msgid "Exclude zero page"
+msgstr "பூஜ்ஜிய பக்கம் இல்லாமல்"
+
+#: ../src/system-config-kdump.glade:1077
+msgid "cache page"
+msgstr "கேஷ் பக்கம்"
+
+#: ../src/system-config-kdump.glade:1082
+msgid "Exclude cache page"
+msgstr "கேஷ் பக்கம் இல்லாமல்"
+
+#: ../src/system-config-kdump.glade:1095
+msgid "cache private"
+msgstr "கேஷ் தனிப்பட்டது"
+
+#: ../src/system-config-kdump.glade:1100
+msgid "Exclude cache private"
+msgstr "கேஷ் தனிப்பட்டது இல்லாமல்"
+
+#: ../src/system-config-kdump.glade:1113
+msgid "user data"
+msgstr "பயனர் தரவு"
+
+#: ../src/system-config-kdump.glade:1118
+msgid "Exclude user data"
+msgstr "பயனர் தரவை நீக்கு"
+
+#: ../src/system-config-kdump.glade:1131
+msgid "free page"
+msgstr "இலவசப் பக்கம்"
+
+#: ../src/system-config-kdump.glade:1136
+msgid "Exclude free page"
+msgstr "காலி பக்கத்தை நீக்கு"
+
+#: ../src/system-config-kdump.glade:1157
+msgid "Actual filter level:"
+msgstr "சரியான வடிப்பி நிலை:"
+
+#: ../src/system-config-kdump.glade:1195
+msgid "<b>Filtering level </b>"
+msgstr "<b>வடிப்பு நிலை</b>"
+
+#: ../src/system-config-kdump.glade:1227
+msgid "ELF file format"
+msgstr "ELF கோப்பு வடிவம்"
+
+#: ../src/system-config-kdump.glade:1246
+msgid "diskdump file format"
+msgstr "வட்டுடம்ப் கோப்பு வடிவம்"
+
+#: ../src/system-config-kdump.glade:1272
+msgid "<b>Output file format</b>"
+msgstr "<b>வெளிப்பாடு கோப்பு வடிவம்</b>"
+
+#: ../src/system-config-kdump.glade:1299
+msgid "Filtering settings"
+msgstr "வடிக்கும் அமைவுகள்"
+
+#: ../src/system-config-kdump.glade:1349
+msgid "Default initrd"
+msgstr "முன்னிருப்பு  initrd"
+
+#: ../src/system-config-kdump.glade:1354
+msgid "Use default initrd"
+msgstr "முன்னிருப்பு initrdஐ பயன்படுத்து"
+
+#: ../src/system-config-kdump.glade:1370
+msgid "Custom initrd"
+msgstr "தனிபயன் initrd"
+
+#: ../src/system-config-kdump.glade:1375
+msgid "Use custom initrd"
+msgstr "தனிபயன் initrdஐ பயன்படுத்து"
+
+#: ../src/system-config-kdump.glade:1394
+msgid "Choose custom initrd file"
+msgstr "தனிபயன் initrd கோப்பை தேர்ந்தெடு"
+
+#: ../src/system-config-kdump.glade:1395
+msgid "Select An initrd File"
+msgstr "ஒரு initrd கோப்பை தேர்ந்தெடு"
+
+#: ../src/system-config-kdump.glade:1414
+msgid "<b>initrd selection</b>"
+msgstr "<b>initrd தேர்ந்தெடுத்தல்</b>"
+
+#: ../src/system-config-kdump.glade:1445
+msgid "Default kernel"
+msgstr "முன்னிருப்பு கெர்னல்"
+
+#: ../src/system-config-kdump.glade:1450
+msgid "Use default kernel image"
+msgstr "முன்னிருப்பு கெர்னல் படத்தை பயன்படுத்து"
+
+#: ../src/system-config-kdump.glade:1466
+msgid "Custom kernel"
+msgstr "தனிபயன் கெர்னல்"
+
+#: ../src/system-config-kdump.glade:1471
+msgid "Use custom kernel image"
+msgstr "தனிபயன் கெர்னல் படத்தை பயன்படுத்து"
+
+#: ../src/system-config-kdump.glade:1490
+msgid "Choose your custom kernel"
+msgstr "உங்கள் தனிபயன் கெர்னலை தேர்ந்தெடு"
+
+#: ../src/system-config-kdump.glade:1515
+msgid "<b>Capture kernel selection</b>"
+msgstr "<b>கெர்னல் தேர்ந்தெடுப்பை பிடி</b>"
+
+#: ../src/system-config-kdump.glade:1568
+msgid "Kernel command line options"
+msgstr "கெர்னல் கட்டளை வரி விருப்பங்கள்"
+
+#: ../src/system-config-kdump.glade:1585
+msgid "Original kernel command line options"
+msgstr "அசல் கெர்னல் கட்டளை வரி விருப்பங்கள்"
+
+#: ../src/system-config-kdump.glade:1602
+msgid "Original:"
+msgstr "அசல்:"
+
+#: ../src/system-config-kdump.glade:1615
+msgid "Edited:"
+msgstr "திருத்தப்பட்டது:"
+
+#: ../src/system-config-kdump.glade:1633
+msgid "<b>Command line options</b>"
+msgstr "<b>கட்டளை வரி விருப்பங்கள்</b>"
+
+#: ../src/system-config-kdump.glade:1665
+msgid "Choose default action"
+msgstr "முன்னிருப்பு செயலை தேர்ந்தெடுக்கவும்"
+
+#: ../src/system-config-kdump.glade:1689
+msgid "<b>Default action</b>"
+msgstr "<b>முன்னிருப்பு செயல்</b>"
+
+#: ../src/system-config-kdump.glade:1738
+msgid "<b>Core collector</b>"
+msgstr "<b>கோர் சேகரிப்பவர்</b>"
+
+#: ../src/system-config-kdump.glade:1764
+msgid "Expert settings"
+msgstr "திறமையுள்ள அமைவுகள் "
