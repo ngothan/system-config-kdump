@@ -357,7 +357,7 @@
             <property name="border_width">6</property>
             <property name="tab_pos">left</property>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow4">
+              <object class="GtkScrolledWindow" id="basicPage">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child>
@@ -600,7 +600,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow3">
+              <object class="GtkScrolledWindow" id="targetPage">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child>
@@ -1016,7 +1016,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow2">
+              <object class="GtkScrolledWindow" id="filteringPage">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child>
@@ -1304,7 +1304,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow1">
+              <object class="GtkScrolledWindow" id="expertPage">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child>

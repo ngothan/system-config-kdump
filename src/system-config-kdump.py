@@ -400,6 +400,7 @@ class MainWindow:
         self.help_button            = builder.get_object("toolbuttonHelp")
 
         # tab 0
+        self.basic_page              = builder.get_object("basicPage")
         self.total_mem_label         = builder.get_object("totalMem")
         self.kdump_mem_current_label = builder.get_object("kdumpMemCurrent")
         self.kdump_mem_spin_button   = builder.get_object("kdumpMemSpinButton")
@@ -410,6 +411,7 @@ class MainWindow:
 
 
         # tab 1
+        self.target_page              = builder.get_object("targetPage")
         self.localfs_radiobutton      = builder.get_object("localfsRadiobutton")
         self.partition_combobox       = builder.get_object("partitionCombobox")
         self.location_entry           = builder.get_object("locationEntry")
@@ -427,12 +429,14 @@ class MainWindow:
         self.servername_entry         = builder.get_object("servernameEntry")
 
         # tab 2
+        self.filter_page              = builder.get_object("filteringPage")
         for x in range(NUM_FILTERS):
             self.filter_check_button[x] = builder.get_object(
                 "filterCheckbutton%d" % x)
         self.filter_level_label = builder.get_object("filterLevelLabel")
 
         # tab 3
+        self.expert_page                = builder.get_object("expertPage")
 #        self.default_initrd_radio_button = \
 #            builder.get_object("defaultInitrdRadiobutton")
         self.custom_initrd_radio_button = \
@@ -459,6 +463,9 @@ class MainWindow:
 
         # widgets setup and signals connect
         self.toplevel.connect("destroy", self.destroy)
+
+        # notebook
+        self.kdump_notebook.connect("switch-page", self.page_changed)
 
         # menu
         self.menu_enable.connect("activate", self.kdump_enable_toggled)
@@ -738,8 +745,7 @@ class MainWindow:
         When user clicked apply. Do checks. Save settings.
         """
         # For some entry widgets we need to make sure all settings are applied
-        self.cmdline_changed(self.command_line_entry)
-        self.collector_entry_changed(self.core_collector_entry)
+        self.page_changed(self.kdump_notebook)
 
         if self.my_settings.target_type not in (TYPE_RAW, TYPE_LOCAL) \
         and not self.my_settings.path:
@@ -1116,6 +1122,22 @@ class MainWindow:
                 return False, None, None, error
 
         return True, None, None, None
+
+    def page_changed(self, notebook, *args):
+        """
+        Update configuration and widgets on other pages based on current page
+        contents
+
+        This method is called on notebook page changes and when the apply
+        button is clicked to ensure that the internal configuration as well as
+        all the widgets are consistent with each other.
+        """
+        current_page = notebook.get_nth_page(notebook.get_current_page())
+        if current_page == self.basic_page:
+            self.update_usable_mem(self.kdump_mem_spin_button)
+        elif current_page == self.expert_page:
+            self.cmdline_changed(self.command_line_entry)
+            self.collector_entry_changed(self.core_collector_entry)
 
     def update_usable_mem(self, spin_button, *args):
         """
