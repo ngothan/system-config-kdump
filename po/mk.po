@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Arangel Angov <arangel@linux.net.mk>, 2007.
-# Igor Donev <igor.donev@gmail.com>, 2007.
+# Arangel Angov <arangel@linux.net.mk>, 2007
+# Igor Donev <igor.donev@gmail.com>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

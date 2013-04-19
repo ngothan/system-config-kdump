@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ankit Patel <ankit@redhat.com>, 2006, 2007.
-# Sweta Kothari <swkothar@redhat.com>, 2010, 2011, 2012.
+# Ankit Patel <ankit@redhat.com>, 2006-2007
+# sweta <swkothar@redhat.com>, 2010-2012
+# sweta <swkothar@redhat.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-04 05:57+0000\n"
+"Last-Translator: sweta <swkothar@redhat.com>\n"
 "Language-Team: Gujarati <trans-gu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "rootfs માં ડમ્પ કરો અને રિબુટ કરો"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -82,7 +83,7 @@ msgstr "system-config-kdump: kdump આધારભૂત નથી"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "/proc/iomem માંથી કુલ સિસ્ટમ મેમરીને શોધવાનું અસમર્થ. કુલ સિસ્ટમ મેમપી ચોક્કસ હશે નહિં"
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -328,7 +329,7 @@ msgstr "System config kdump: dbus ભૂલ"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "D-Bus સર્વર ચાલી રહ્યુ નથી.\nમહેરબાની કરીને ખાતરી કરો કે D-Bus ચાલી રહ્યુ છે.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -410,11 +411,11 @@ msgstr "નિષ્ક્રિય કરો"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "ફર્મવેર આસિસ્ટેડ ડમ્પ"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "મેન્યુઅલ સુયોજનો"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

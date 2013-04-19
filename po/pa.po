@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# A S Alam <apbrar@gmail.com>, 2006.
-# Jaswinder Singh <j.phulewala@gmail.com>, 2011.
-# Jaswinder Singh <jsingh@redhat.com>, 2006, 2008, 2010, 2012.
+# A S Alam <apbrar@gmail.com>, 2006
+# Jaswinder Singh <j.phulewala@gmail.com>, 2011
+# Jaswinder Singh <jsingh@redhat.com>, 2006, 2008, 2010, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

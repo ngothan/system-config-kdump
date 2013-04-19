@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Nils-Christoph Fiedler <ncfiedler@fedoraproject.org>, 2010.
+# ncfiedler <ncfiedler@gnome.org>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

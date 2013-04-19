@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Doncho N. Gunchev <gunchev@gmail.com>, 2007.
-# Miroslav Ivanov <satyr@globalnet.bg>, 2007.
-# Valentin Laskov <laskov@festa.bg>, 2012.
+# Doncho N. Gunchev <gunchev@gmail.com>, 2007
+# Miroslav Ivanov <satyr@globalnet.bg>, 2007
+# Valentin Laskov <laskov@festa.bg>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

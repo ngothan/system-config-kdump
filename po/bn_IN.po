@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Runa Bhattacharjee <runabh@gmail.com>, 2007, 2011.
-# Runa Bhattacharjee <runab@redhat.com>, 2006, 2007, 2010.
-#   <runabh@gmail.com>, 2012.
+# runa <runabh@gmail.com>, 2007, 2011
+# runab <runab@redhat.com>, 2006, 2007, 2010
+# runa <runabh@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

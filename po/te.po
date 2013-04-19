@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Krishna Babu K <kkrothap@redhat.com>, 2010, 2012.
+# Krishnababu Krothapalli <kkrothap@redhat.com>, 2010, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

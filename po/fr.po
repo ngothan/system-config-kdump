@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alain PORTAL <aportal@univ-montp2.fr>, 2006, 2007.
-# Decroux Fabien <fdecroux@redhat.com>, 2006.
-# Gauthier Ancelin <gauthier.ancelin@laposte.net>, 2007, 2010.
-# Jérôme Fenal <jfenal@gmail.com>, 2012.
-# Kévin Raymond <shaiton@fedoraproject.org>, 2012.
-# Thomas Canniot <mrtom@fedoraproject.org>, 2007, 2010.
+# Alain PORTAL <aportal@univ-montp2.fr>, 2006, 2007
+# Decroux Fabien <fdecroux@redhat.com>, 2006
+# Gauthier Ancelin <gauthier.ancelin@laposte.net>, 2007, 2010
+# Jérôme Fenal <jfenal@gmail.com>, 2012-2013
+# Kévin Raymond <shaiton@fedoraproject.org>, 2012
+# Thomas Canniot <mrtom@fedoraproject.org>, 2007, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-04 21:13+0000\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Vider sur rootfs et redémarrer"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -86,7 +86,7 @@ msgstr "system-config-kdump : kdump non pris en charge"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Impossible de détecter la totalité de la mémoire système depuis /proc/iomem. La totalité de la mémoire système ne sera pas précise."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -332,7 +332,7 @@ msgstr "System config kdump : erreur dbus"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "Le serveur D-Bus n'est pas en cours d'exécution.\nVeuillez vous assurer que D-Bus est bien en cours d'exécution.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -414,11 +414,11 @@ msgstr "Désactiver"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Vidage assisté par le microcode"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Configuration manuelle"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

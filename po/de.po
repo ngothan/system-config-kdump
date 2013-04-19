@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Gerd Koenig <koenig@transporeon.com>, 2010.
-# Roman Spirgi <bigant@fedoraproject.org>, 2012.
-# sknirT omiT <moc.tahder@sknirtt>, 2010.
+# Gerd Koenig <koenig@transporeon.com>, 2010
+# Roman Spirgi <bigant@fedoraproject.org>, 2012-2013
+# sknirT omiT <moc.tahder@sknirtt>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-09 12:46+0000\n"
+"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
 "Language-Team: German <trans-de@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Speicherauszug schreiben und neu starten"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -83,7 +83,7 @@ msgstr "system-config-kdump: kdump wird nicht unterstützt"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Die Grösse des Arbeitsspeichers kann von /proc/iomem nicht ausgelesen werden. Die Gesamtgrösse des Arbeitsspeichers ist deshalb ungenau."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -329,7 +329,7 @@ msgstr "System config kdump: Dbus-Fehler"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "Der D-Bus-Server läuft nicht.\nBitte stellen Sie sicher, dass der Dienst läuft.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -411,11 +411,11 @@ msgstr "Deaktivieren"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Firmware gestützter Speicherauszug"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Manuelle Einstellungen"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

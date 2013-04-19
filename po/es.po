@@ -3,17 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Domingo Becker <domingobecker@gmail.com>, 2010.
-# Gladys Guerrero <gguerrer@redhat.com>, 2012.
-# Héctor Daniel Cabrera <logan@fedoraproject.org>, 2010.
-# Manuel Ospina <mospina@redhat.com>, 2006.
+# Domingo Becker <domingobecker@gmail.com>, 2010
+# vareli <ehespinosa@ya.com>, 2013
+# Gladys Guerrero <gguerrer@redhat.com>, 2012
+# Daniel Cabrera <logan@fedoraproject.org>, 2010
+# Manuel Ospina <mospina@redhat.com>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-09 07:11+0000\n"
+"Last-Translator: vareli <ehespinosa@ya.com>\n"
 "Language-Team: Spanish <trans-es@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Volcar a rootfs y reiniciar"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -84,7 +85,7 @@ msgstr "system-config-kdump: kdump no soportado"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Incapaz de detectar la memoria total del sistema desde /proc/iomem. La memoria total del sistema no estará asegurada."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -330,7 +331,7 @@ msgstr "System-config-kdump: error de dbus"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "El servidor D-Bus no está corriendo. \nPor favor asegure que el servidor D-Bus está corriendo.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -412,11 +413,11 @@ msgstr "Inhabilitar"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Volcado asistido de firmware"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Ajustes manuales"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

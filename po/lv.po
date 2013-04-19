@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Andrew Martynov <andrewm@inventa.ru>, 2006.
-# Gatis Kalnins <gatis.kalnins@metatrons.lv>, 2006.
-# Yulia Poyarkova <ypoyarko@redhat.com>, 2006.
+# Andrew Martynov <andrewm@inventa.ru>, 2006
+# Gatis Kalnins <gatis.kalnins@metatrons.lv>, 2006
+# Yulia Poyarkova <ypoyarko@redhat.com>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

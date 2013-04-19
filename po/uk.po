@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Maxim Dubovoy <max@mylinux.com.ua>, 2003.
-# Yuri Chornoivan <yurchor@ukr.net>, 2012.
+# Maxim Dubovoy <max@mylinux.com.ua>, 2003
+# Yuri Chornoivan <yurchor@ukr.net>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-03 13:54+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Створити дамп у rootfs і перезавантажити комп’ютер"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -82,7 +82,7 @@ msgstr "system-config-kdump: kdump не підтримується"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Не вдалося визначити загальний обсяг пам’яті системи за допомогою /proc/iomem. Значення загального обсягу пам’яті буде неточним."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -328,7 +328,7 @@ msgstr "system-config-kdump: помилка DBus"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "Сервер D-Bus не запущено.\nБудь ласка, забезпечте працездатність служби D-Bus.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -410,11 +410,11 @@ msgstr "Вимкнути"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Дамп за допомогою мікропрограми"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Параметри обробки вручну"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

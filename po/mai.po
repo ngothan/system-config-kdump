@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sangeeta Kumari <sangeeta09@gmail.com>, 2008, 2009.
+# Sangeeta Kumari <sangeeta09@gmail.com>, 2008, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

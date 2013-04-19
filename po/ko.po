@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Eunju Kim <eukim@redhat.com>, 2006-2007.
-# Eun-Ju Kim <eukim@redhat.com>, 2012.
-# Hyunsok Oh <hoh@redhat.com>, 2010.
+# eukim <eukim@redhat.com>, 2006-2007
+# eukim <eukim@redhat.com>, 2012
+# Hyunsok Oh <hoh@redhat.com>, 2010,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-05 12:14+0000\n"
+"Last-Translator: eukim <eukim@redhat.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/fedora/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "rootfs로 덤프하고 재부팅 "
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -83,7 +83,7 @@ msgstr "system-config-kdump: kdump를 지원하지 않음"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "/proc/iomem에서 총 시스템 메모리를 감지할 수 없습니다. 총 시스템 메모리가 정확하지 않을 수 있습니다. "
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -329,7 +329,7 @@ msgstr "System config kdump: dbus 오류"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "D-Bus 서버가 실행되고 있지 않습니다.\nD-Bus가 실행되고 있는지 확인하십시오.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -411,11 +411,11 @@ msgstr "비활성화"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "펌웨어 보조 덤프 "
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "수동 설정 "
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

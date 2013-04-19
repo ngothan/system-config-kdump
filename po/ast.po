@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Xandru Armesto <xandru@softastur.org>, 2009.
+# Xandru <xandru@softastur.org>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

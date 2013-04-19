@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adnan Hodzic <AbsintheSyringe@gmail.com>, 2007.
-# Renato Pavicic <renato@translator-shop.org>, 2006.
+# Adnan Hodzic <AbsintheSyringe@gmail.com>, 2007
+# Renato Pavicic <renato@translator-shop.org>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Rok Papez <rok.papez@lugos.si>, 2007.
+# Rok Papez <rok.papez@lugos.si>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

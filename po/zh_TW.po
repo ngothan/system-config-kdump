@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Chester Cheng <ccheng@redhat.com>, 2006.
-# Terry Chuang <tchuang@redhat.com>, 2008.
-# Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
+# Chester Cheng <ccheng@redhat.com>, 2006
+# Terry Chuang <tchuang@redhat.com>, 2008,2013
+# chaoweilun <chaoweilun@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-03 23:34+0000\n"
+"Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
 "Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "傾印至 rootfs 並重新啟動"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -83,7 +83,7 @@ msgstr "system-config-kdump：kdump 不受支援"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "無法由 /proc/iomem 偵測到系統記憶體的總數量。系統記憶體的總數量將不會是精確的。"
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -329,7 +329,7 @@ msgstr "系統組態 kdump：dbus 錯誤"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "D-Bus 伺服器並非運作中。\n請確定 D-Bus 處於運作狀態。\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -411,11 +411,11 @@ msgstr "停用"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "支援韌體的傾印"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "手動設定"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

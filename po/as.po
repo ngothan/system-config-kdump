@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
-# Amitakhya Phukan <aphukan@fedoraproject.org>, 2010.
-# Amitakhya Phukan <aphukan@redhat.com>, 2006-2007.
-# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012.
+# Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2010
+# Amitakhya Phukan <aphukan@redhat.com>, 2006-2007
+# ngoswami <ngoswami@redhat.com>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-18 10:06+0000\n"
+"Last-Translator: ngoswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese (http://www.transifex.com/projects/p/fedora/language/as/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "rootfs লে ডাম্প কৰি পুনৰাম্ভ কৰক"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -40,7 +40,7 @@ msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
 "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
-msgstr "এই প্ৰগ্ৰামটো এটা বিনামুলিয়া চফ্টওৱেৰ; আপুনি Free Software Foundation ৰ দ্বাৰা প্ৰকাশিত GNU General Public License ৰ চুক্তিসমূহৰ অন্তৰ্গত ইয়াক পুনৰ বিলাব পাৰিব অথবা সলনি  কৰিব পাৰিব; হৈতো লাইচেঞ্চৰ সংস্কৰণ ২, অথবা (আপুনাৰ বিকল্পত) যিকোনো পৰৱৰ্তী সংস্কৰণ।\n\nএই প্ৰগ্ৰামটো এইটো আশাত বিলোৱা হৈছে যে ই ব্যৱহাৰযোগ্য হ'ব, কিন্তু কোনো ওৱাৰেন্টি নথকাকৈ; ব্যৱসায়ীক  অথবা কোনো এটা বিশেষ কাৰণৰ যোগ্যতাৰ বাবে বুজুৱা ওৱাৰেন্টি  নথকাকৈ। অধিক যানিবলৈ  GNU General Public License চাওক।\n\nআপুনি হৈতো ইতিমধ্যে এই প্ৰগ্ৰামৰ সৈতে GNU General Public License ৰ কপি এটা পাইছে। যদি নাই পোৱা, Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA লে লিখক।"
+msgstr "এই প্ৰগ্ৰামটো এটা বিনামুলিয়া চফ্টৱেৰ; আপুনি Free Software Foundation ৰ দ্বাৰা প্ৰকাশিত GNU General Public License ৰ চুক্তিসমূহৰ অন্তৰ্গত ইয়াক পুনৰ বিলাব পাৰিব অথবা সলনি  কৰিব পাৰিব; হৈতো লাইচেঞ্চৰ সংস্কৰণ ২, অথবা (আপুনাৰ বিকল্পত) যিকোনো পৰৱৰ্তী সংস্কৰণ।\n\nএই প্ৰগ্ৰামটো এইটো আশাত বিলোৱা হৈছে যে ই ব্যৱহাৰযোগ্য হ'ব, কিন্তু কোনো ৱাৰেন্টি নথকাকৈ; ব্যৱসায়ীক  অথবা কোনো এটা বিশেষ কাৰণৰ যোগ্যতাৰ বাবে বুজুৱা ৱাৰেন্টি  নথকাকৈ। অধিক যানিবলৈ  GNU General Public License চাওক।\n\nআপুনি হৈতো ইতিমধ্যে এই প্ৰগ্ৰামৰ সৈতে GNU General Public License ৰ কপি এটা পাইছে। যদি নাই পোৱা, Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA লে লিখক।"
 
 #: ../src/system-config-kdump.py:131
 msgid ""
@@ -84,7 +84,7 @@ msgstr "system-config-kdump: kdump সমৰ্থিত নহয়"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "/proc/iomem ৰ পৰা সৰ্বমুঠ চিস্টেম মেমৰি চিনাক্ত কৰিবলে অক্ষম। সৰ্বমুঠ চিস্টেম মেমৰি সঠিক নহব।"
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -105,7 +105,7 @@ msgstr "system-config-kdump: পৰ্যাপ্ত মেমৰি উপস�
 #: ../src/system-config-kdump.py:746
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr "'%s' অৱস্থানৰ ক্ষেত্ৰত পথ ৰিক্ত ৰাখা সম্ভৱ নহয়।"
+msgstr "'%s' অৱস্থানৰ ক্ষেত্ৰত পথ ৰিক্ত ৰখা সম্ভৱ নহয়।"
 
 #: ../src/system-config-kdump.py:748
 #, python-format
@@ -267,7 +267,7 @@ msgid ""
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr "অবৈধ ক্ৰেশকাৰনেল মান: %s.\nসম্ভাব্য মানসমূহ:\n\tX\n\tX@Y\n\n%s"
+msgstr "অবৈধ স্খলনকাৰনেল মান: %s.\nসম্ভাব্য মানসমূহ:\n\tX\n\tX@Y\n\n%s"
 
 #: ../src/system-config-kdump.py:1545
 msgid "Bad crashkernel value"
@@ -330,7 +330,7 @@ msgstr "চিস্টেম সংৰূপ kdump: dbus ত্ৰুটি"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "D-Bus চাৰ্ভাৰ চলি থকা নাই।\nD-Bus চলি আছে বুলি সুনিশ্চিত কৰক।\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -412,11 +412,11 @@ msgstr "অসামৰ্থবান কৰক"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "ফাৰ্মৱেৰ সহযোগিত ডাম্প"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "হস্তচালিত সংহতিসমূহ"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

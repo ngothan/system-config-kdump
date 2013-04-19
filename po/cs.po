@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adam Přibyl <pribyl@lowlevel.cz>, 2007.
-# Milan Kerslager <kerslage@linux.cz>, 2007.
+# Adam Přibyl <pribyl@lowlevel.cz>, 2007
+# Milan Kerslager <kerslage@linux.cz>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006.
-# Francesco Tombolini <tombo@adamantio.net>, 2007.
-# Silvio Pierro <perplesso82@gmail.com>, 2012.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006
+# Francesco Tombolini <tombo@adamantio.net>, 2007
+# Silvio Pierro <perplesso82@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

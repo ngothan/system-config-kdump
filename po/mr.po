@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
-# sandeep shedmake <sandeep.shedmake@gmail.com>, 2007.
-# Sandeep Shedmake <sshedmak@redhat.com>, 2010, 2011, 2012.
+# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006
+# sandeep shedmake <sandeep.shedmake@gmail.com>, 2007
+# sandeeps <sshedmak@redhat.com>, 2010, 2011, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

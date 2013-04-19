@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Arpad Biro <biro_arpad@yahoo.com>, 2006, 2007.
-# Zoltan Hoppár <hopparz@gmail.com>, 2012.
+# Arpad Biro <biro_arpad@yahoo.com>, 2006, 2007
+# Zoltan Hoppár <hopparz@gmail.com>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-05 18:20+0000\n"
+"Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Dump-olja le a rootfs-hez és indítson újra"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -82,7 +82,7 @@ msgstr "system-config-kdump: kdump nem támogatott"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Sikertelen lekérdezés összes rendszer memóriaterület kapcsán a /proc/iomem-ről. A teljes elérhető memória mennyiség nem lesz pontos."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -328,7 +328,7 @@ msgstr "System config kdump: dbus hiba"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "A D-Bus kiszolgáló nem működik.\nKérem győződjön meg róla, hogy a folyamat aktív.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -410,11 +410,11 @@ msgstr "Tiltás"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Firmware által támogatott dump"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Kézi beállítások"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ayesha Akhtar <ayesha@ankur.org.bd>, 2012.
-# Mahay Alam Khan <mak@ankur.org.bd>, 2012.
-# Newton Baidya <newton@ankur.org.bd>, 2012.
-# Robin Mehdee <robin@ankur.org.bd>, 2012.
-# Runa Bhattacharjee <runabh@gmail.com>, 2007, 2011.
-# Runa Bhattacharjee <runab@redhat.com>, 2006, 2007, 2010.
-#   <runabh@gmail.com>, 2012.
+# Ayesha Akhtar <ayesha@ankur.org.bd>, 2012
+# Mahay Alam Khan <mak@ankur.org.bd>, 2012
+# Newton Baidya <newton@ankur.org.bd>, 2012
+# Robin Mehdee <robin@ankur.org.bd>, 2012
+# runa <runabh@gmail.com>, 2007, 2011
+# runab <runab@redhat.com>, 2006, 2007, 2010
+# runa <runabh@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"

@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2006, 2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2006,2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-03 15:01+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2013-04-04 18:33+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:77
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Zrzuca do głównego systemu plików i uruchamia ponownie"
 
 #: ../src/system-config-kdump.py:82
 msgid "(c)"
@@ -81,7 +81,7 @@ msgstr "system-config-kdump: kdump nie jest obsługiwane"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
+msgstr "Nie można wykryć całkowitej ilości pamięci systemowej z /proc/iomem. Całkowita ilość pamięci systemowej nie będzie dokładna."
 
 #: ../src/system-config-kdump.py:559
 msgid "system-config-kdump: Memory error"
@@ -327,7 +327,7 @@ msgstr "system-config-kdump: błąd usługi D-Bus"
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "Serwer D-Bus nie jest uruchomiony.\nProszę się upewnić, że serwer D-Bus jest uruchomiony.\n"
 
 #: ../src/system-config-kdump.py:1969
 msgid "Error executing system-config-kdump"
@@ -409,11 +409,11 @@ msgstr "Wyłączenie"
 
 #: ../src/system-config-kdump.glade:388
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Zrzut zarządzany przez oprogramowanie sprzętowe"
 
 #: ../src/system-config-kdump.glade:406
 msgid "Manual settings"
-msgstr ""
+msgstr "Ręczne ustawienia"
 
 #: ../src/system-config-kdump.glade:444
 msgid "Total System Memory:"

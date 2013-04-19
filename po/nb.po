@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Kjartan Maraas <kmaraas@gnome.org>, 2007.
+# Kjartan Maraas <kmaraas@gnome.org>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
