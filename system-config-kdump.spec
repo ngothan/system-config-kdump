@@ -10,7 +10,6 @@ Group: System Environment/Base
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Source0: http://fedorahosted.org/released/system-config-kdump/%{name}-%{version}.tar.bz2
-ExcludeArch: s390 s390x
 BuildRequires: desktop-file-utils
 BuildRequires: intltool, gettext, gnome-doc-utils, docbook-dtds, rarian-compat, scrollkeeper
 Requires: pygtk2 >= 2.8.6
