@@ -92,6 +92,7 @@ SUPPORTED_MAJOR = [ '2', '3', '8', '9', '13', '14', '19', '21', '22', '28',
 
 PATH_DEFAULT = "/var/crash"
 CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
+FILTER_LEVEL_DEFAULT = 31
 
 ENTER_CODES = ["KP_Enter", "Return"]
 
@@ -162,7 +163,7 @@ class Settings:
         self.raw_device = ""                # raw device, where...
         self.server_name = ""               # network server, where...
         self.user_name = ""                 # user on server
-        self.filter_level = 0               #
+        self.filter_level = FILTER_LEVEL_DEFAULT
         self.initrd = ""                    # which initrd we will use
         self.kernel = ""                    # which kernel
         self.orig_commandline = ""          #
@@ -1640,10 +1641,10 @@ class MainWindow:
             try:
                 level = int(self.my_settings.core_collector[idx:].split(" ")[1])
             except ValueError:
-                level = 0
+                level = FILTER_LEVEL_DEFAULT
             self.filter_changed(level)
         else:
-            self.filter_changed(0)
+            self.filter_changed(FILTER_LEVEL_DEFAULT)
         self.check_settings()
         return False
 
