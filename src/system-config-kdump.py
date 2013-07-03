@@ -1513,7 +1513,7 @@ class MainWindow:
             if size != 0:
                 gtk_entry.set_text(old_text.replace(old_value,"%dM" % size))
             else:
-                gtk_entry.set_text(old_text.replace("crashkernel=%s" \
+                gtk_entry.set_text(old_text.replace(" crashkernel=%s" \
                     %old_value, ""))
         self.my_settings.commandline = gtk_entry.get_text()
         self.my_settings.kdump_mem = size
