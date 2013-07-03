@@ -43,7 +43,9 @@
   </object>
   <object class="GtkListStore" id="liststore1">
     <columns>
-      <!-- column-name item -->
+      <!-- column-name label -->
+      <column type="gchararray"/>
+      <!-- column-name action -->
       <column type="gchararray"/>
     </columns>
   </object>
@@ -1660,6 +1662,7 @@
                                         <property name="can_focus">False</property>
                                         <child>
                                           <object class="GtkComboBox" id="defaultActionCombo">
+                                            <property name="width_request">291</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="tooltip_text" translatable="yes">Choose default action</property>
@@ -1686,7 +1689,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;Default action&lt;/b&gt;</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Action if dumping fails&lt;/b&gt;</property>
                                     <property name="use_markup">True</property>
                                   </object>
                                 </child>

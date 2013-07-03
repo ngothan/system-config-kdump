@@ -70,12 +70,6 @@ DEFAULT_FS = "file:///"
 
 NUM_FILTERS = 5
 
-ACTION_REBOOT = "reboot"
-ACTION_SHELL = "shell"
-ACTION_HALT = "halt"
-ACTION_POWEROFF = "poweroff"
-ACTION_DEFAULT = _("Dump to rootfs and reboot")
-
 FSTAB_FILE = "/etc/fstab"
 PROC_PARTITIONS = "/proc/partitions"
 
@@ -120,8 +114,12 @@ LICENSE = _(
 COPYRIGHT = '(C) 2006 - 2009 Red Hat, Inc.'
 
 
-DEFAULTACTIONS = [ ACTION_DEFAULT, ACTION_REBOOT, ACTION_SHELL, ACTION_HALT,
-                   ACTION_POWEROFF ]
+DEFAULTACTIONS = [ ('reboot', _('Reboot')),
+                   ('halt', _('Halt')),
+                   ('poweroff', _('Power off')),
+                   ('shell', _('Start a shell')),
+                   ('dump_to_rootfs', _('Dump to rootfs and reboot')) ]
+ACTION_DEFAULT = DEFAULTACTIONS[0][0]
 
 SUPPORTEDFSTYPES = ("ext2", "ext3", "ext4")
 
@@ -713,10 +711,10 @@ class MainWindow:
             "usable_mem = %dM" % (total_mem, kdump_mem, kdump_mem_grubby,
             self.usable_mem)
 
-        for action in DEFAULTACTIONS:
-            self.default_action_combobox.append_text(action)
+        for (action, label) in DEFAULTACTIONS:
+            self.default_action_combobox.get_model().append([label, action])
         self.default_action_combobox.set_active(0)
-        self.orig_settings.default_action = DEFAULTACTIONS[0]
+        self.orig_settings.default_action = ACTION_DEFAULT
 
         self.set_location(TYPE_DEFAULT, PATH_DEFAULT)
         self.set_path(PATH_DEFAULT)
@@ -1161,13 +1159,17 @@ class MainWindow:
         """
         Select default action in combobox and set it in settings
         """
-        if action in DEFAULTACTIONS:
-            self.default_action_combobox.set_active(
-                DEFAULTACTIONS.index(action))
+        combo = self.default_action_combobox
+
+        if action in [act for (act, lbl) in DEFAULTACTIONS]:
+            for row in combo.get_model():
+                if row[1] == action:
+                    combo.set_active_iter(row.iter)
             self.my_settings.default_action = action
         else:
-            idx = self.default_action_combobox.get_active()
-            self.my_settings.default_action = DEFAULTACTIONS[idx]
+            it = combo.get_active_iter()
+            active_row = combo.get_model()[it]
+            self.my_settings.default_action = active_row[1]
 
         if DEBUG:
             print "setting default_action to", self.my_settings.default_action
