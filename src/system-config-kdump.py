@@ -893,6 +893,8 @@ class MainWindow:
         if DEBUG:
             print "set_location " + location_type  + " " + path
 
+        success = True
+
         # SSH or NFS
         if location_type == TYPE_SSH:
             # SSH
@@ -916,6 +918,8 @@ class MainWindow:
         elif location_type == TYPE_RAW:
             if self.set_active_raw_device(path):
                 self.raw_device_radiobutton.set_active(True)
+            else:
+                success = False
 
         elif location_type == TYPE_LOCAL:
             self.my_settings.path = path
@@ -924,6 +928,8 @@ class MainWindow:
         else:
             self.set_active_partition(location_type, path)
         self.localfs_radiobutton.toggled()
+
+        return success
 
     def load_dump_config(self):
         """
@@ -976,8 +982,9 @@ class MainWindow:
                 self.set_core_collector(location)
             elif loc_type in (TYPE_RAW, TYPE_SSH, TYPE_NFS) \
             or loc_type in SUPPORTEDFSTYPES:
-                self.orig_settings.set_location(loc_type, location)
-                self.set_location(loc_type, location)
+                # if the location is bogus, do not save it into orig_settings
+                if self.set_location(loc_type, location):
+                    self.orig_settings.set_location(loc_type, location)
             else:
                 self.misc_config.append(" ".join((loc_type, location)))
         self.orig_settings.kernel = self.default_kernel
