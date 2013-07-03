@@ -1923,6 +1923,9 @@ class MainWindow:
                 chkconfig_status = "enable"
                 if service_status in SERVICE_STATUS_ON:
                     service_op = "restart"
+                # do not start kdump service if there's no reserved memory
+                elif self.orig_settings.kdump_mem == 0:
+                    service_op = ""
                 else:
                     service_op = "start"
             else:
