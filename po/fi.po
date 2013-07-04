@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2007, 2010
 # Ville Skyttä <ville.skytta@iki.fi>, 2012
@@ -9,254 +9,314 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 15:01+0200\n"
+"POT-Creation-Date: 2013-07-04 15:34+0200\n"
 "PO-Revision-Date: 2013-04-03 13:01+0000\n"
 "Last-Translator: mmilata <mmilata@redhat.com>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/fedora/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/fedora/language/"
+"fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/system-config-kdump.py:77
-msgid "Dump to rootfs and reboot"
-msgstr ""
-
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:76
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:83
+#: ../src/system-config-kdump.py:77
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:105
+#: ../src/system-config-kdump.py:100
 msgid ""
-"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
 "\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
 "\n"
-"You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
-msgstr "Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) version 2 tai (valinnan mukaan) myöhemmän version ehtojen mukaisesti.\n\nTätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen mutta ilman mitään takuuta; edes hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL- lisenssistä lisää yksityiskohtia.\n\nTämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei ole, kirjoita osoitteeseen Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
+"Ave, Cambridge, MA 02139, USA."
+msgstr ""
+"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free "
+"Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) "
+"version 2 tai (valinnan mukaan) myöhemmän version ehtojen mukaisesti.\n"
+"\n"
+"Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen mutta "
+"ilman mitään takuuta; edes hiljaista takuuta kaupallisesti hyväksyttävästä "
+"laadusta tai soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL- lisenssistä "
+"lisää yksityiskohtia.\n"
+"\n"
+"Tämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei ole, "
+"kirjoita osoitteeseen Free Software Foundation, Inc., 675 Mass Ave, "
+"Cambridge, MA 02139, USA."
 
-#: ../src/system-config-kdump.py:131
+#: ../src/system-config-kdump.py:117
+msgid "Reboot"
+msgstr ""
+
+#: ../src/system-config-kdump.py:118
+msgid "Halt"
+msgstr ""
+
+#: ../src/system-config-kdump.py:119
+msgid "Power off"
+msgstr ""
+
+#: ../src/system-config-kdump.py:120
+msgid "Start a shell"
+msgstr ""
+
+#: ../src/system-config-kdump.py:121
+msgid "Dump to rootfs and reboot"
+msgstr ""
+
+#: ../src/system-config-kdump.py:130
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of"
-" a freshly booted kernel, making it far more reliable than methods capturing"
-" within the context of the crashed kernel. Being able to capture a core file"
-" can be invaluable in helping determine the root cause of a system crash. "
+"crash, a core file can be captured using kdump, which runs in the context of "
+"a freshly booted kernel, making it far more reliable than methods capturing "
+"within the context of the crashed kernel. Being able to capture a core file "
+"can be invaluable in helping determine the root cause of a system crash. "
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
-msgstr "Kdump on uusi järjestelmä, jolla ytimen kaatumisesta saa vedoksen. Järjestelmän kaatuessa voidaan saada muistivedos käyttäen kdumpia, joka toimii uuden ytimen alla. Näin vedoksen saaminen on luotettavampaa kuin kaatuneen ytimen alta. Muistivedoksen saaminen voi olla tärkeä apu etsittäessä järjestelmän kaatumisen alkuperäistä syytä. Huomaa, että kdumpille on varattava järjestelmän muistista osa, jota ei voi käyttää muuhun."
+msgstr ""
+"Kdump on uusi järjestelmä, jolla ytimen kaatumisesta saa vedoksen. "
+"Järjestelmän kaatuessa voidaan saada muistivedos käyttäen kdumpia, joka "
+"toimii uuden ytimen alla. Näin vedoksen saaminen on luotettavampaa kuin "
+"kaatuneen ytimen alta. Muistivedoksen saaminen voi olla tärkeä apu "
+"etsittäessä järjestelmän kaatumisen alkuperäistä syytä. Huomaa, että "
+"kdumpille on varattava järjestelmän muistista osa, jota ei voi käyttää "
+"muuhun."
 
-#: ../src/system-config-kdump.py:141
+#: ../src/system-config-kdump.py:140
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
-msgstr "Kdump yrittää sijoittaa vmcoren määritettyyn paikkaan. Jos se epäonnistuu, oletustoiminto (määritetty alla) suoritetaan."
+msgstr ""
+"Kdump yrittää sijoittaa vmcoren määritettyyn paikkaan. Jos se epäonnistuu, "
+"oletustoiminto (määritetty alla) suoritetaan."
 
-#: ../src/system-config-kdump.py:376
+#: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
 msgstr "system-config-kdump"
 
-#: ../src/system-config-kdump.py:534
+#: ../src/system-config-kdump.py:540
 msgid "Don't know how to configure your boot loader."
 msgstr ""
 
-#: ../src/system-config-kdump.py:535
+#: ../src/system-config-kdump.py:541
 msgid "system-config-kdump: no default kernel"
 msgstr "system-config-kdump: ei oletusydintä"
 
-#: ../src/system-config-kdump.py:540
+#: ../src/system-config-kdump.py:546
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "Tämä arkkitehtuuri ei tue kdumpia tällä hetkellä"
 
-#: ../src/system-config-kdump.py:542 ../src/system-config-kdump.py:572
+#: ../src/system-config-kdump.py:548 ../src/system-config-kdump.py:578
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdumpia ei tueta"
 
-#: ../src/system-config-kdump.py:557
+#: ../src/system-config-kdump.py:563
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
 
-#: ../src/system-config-kdump.py:559
+#: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: Muistivirhe"
 
-#: ../src/system-config-kdump.py:571
+#: ../src/system-config-kdump.py:577
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "IA64-xen-ytimet eivät tue kdumpia tällä hetkellä."
 
-#: ../src/system-config-kdump.py:677
+#: ../src/system-config-kdump.py:683
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "Järjestelmässä ei ole riittävästi muistia kdumpin toimintaan"
 
-#: ../src/system-config-kdump.py:679
+#: ../src/system-config-kdump.py:685
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: Ei tarpeeksi muistia"
 
-#: ../src/system-config-kdump.py:746
+#: ../src/system-config-kdump.py:751
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "Polku ei voi olla tyhjä ”%s”-sijainneille."
 
-#: ../src/system-config-kdump.py:748
+#: ../src/system-config-kdump.py:753
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "Asetetaanko polku oletusarvoon (”%s”)?"
 
-#: ../src/system-config-kdump.py:749
+#: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: Tyhjä polku"
 
-#: ../src/system-config-kdump.py:758
+#: ../src/system-config-kdump.py:763
 msgid "You must specify server. "
 msgstr "Palvelin on annettava."
 
-#: ../src/system-config-kdump.py:759
+#: ../src/system-config-kdump.py:764
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: Palvelimen nimeä ei ole asetettu"
 
-#: ../src/system-config-kdump.py:765
+#: ../src/system-config-kdump.py:770
 msgid "You must specify user name. "
 msgstr "Käyttäjätunnus on annettava."
 
-#: ../src/system-config-kdump.py:766
+#: ../src/system-config-kdump.py:771
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: Käyttäjätunnusta ei ole asetettu"
 
-#: ../src/system-config-kdump.py:773
+#: ../src/system-config-kdump.py:778
 msgid "You must select one of the raw devices"
 msgstr "On valittava yksi raakalaitteista"
 
-#: ../src/system-config-kdump.py:774 ../src/system-config-kdump.py:1574
+#: ../src/system-config-kdump.py:779 ../src/system-config-kdump.py:1606
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: Raakalaitevirhe"
 
-#: ../src/system-config-kdump.py:781
+#: ../src/system-config-kdump.py:786
 msgid "You must select one of the partitions"
 msgstr "On valittava yksi osioista"
 
-#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:1600
+#: ../src/system-config-kdump.py:787 ../src/system-config-kdump.py:1632
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: Paikallisen osion virhe"
 
-#: ../src/system-config-kdump.py:791
+#: ../src/system-config-kdump.py:796
 #, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash"
-" dump capture."
-msgstr "VAROITUS: xen-kdump-tuki vaatii xenittömän RPM-paketin %s tallentaakseen kaatumavedoksen."
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture."
+msgstr ""
+"VAROITUS: xen-kdump-tuki vaatii xenittömän RPM-paketin %s tallentaakseen "
+"kaatumavedoksen."
 
-#: ../src/system-config-kdump.py:794
+#: ../src/system-config-kdump.py:799
 #, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
-msgstr "Varmista että asennettuna on xenitön RPM-paketti %s, joka on samaa versiota kuin asennettu xen-ydin."
+msgstr ""
+"Varmista että asennettuna on xenitön RPM-paketti %s, joka on samaa versiota "
+"kuin asennettu xen-ydin."
 
-#: ../src/system-config-kdump.py:797
+#: ../src/system-config-kdump.py:802
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: Tarvitaan xenitön ydin"
 
-#: ../src/system-config-kdump.py:802
+#: ../src/system-config-kdump.py:807
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr "Kdumpin asetusten muuttaminen vaatii järjestelmän uudelleenkäynnistyksen, jotta muistia voidaan varata. %s. Jatketaanko tätä muutosta ja käynnistetäänkö järjestelmä uudelleen sen jälkeen, kun firstboot on valmis?"
+msgstr ""
+"Kdumpin asetusten muuttaminen vaatii järjestelmän uudelleenkäynnistyksen, "
+"jotta muistia voidaan varata. %s. Jatketaanko tätä muutosta ja "
+"käynnistetäänkö järjestelmä uudelleen sen jälkeen, kun firstboot on valmis?"
 
-#: ../src/system-config-kdump.py:806
+#: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: Uudelleenkäynnistys tarvitaan"
 
-#: ../src/system-config-kdump.py:817
+#: ../src/system-config-kdump.py:822
 #, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
-msgstr "Virhe kirjoitettaessa kdump-asetuksia:\n%s"
+msgstr ""
+"Virhe kirjoitettaessa kdump-asetuksia:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:818
+#: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr "system-config-kdump: Virhe kirjoitettaessa kdump-asetuksia"
 
-#: ../src/system-config-kdump.py:832
+#: ../src/system-config-kdump.py:837
 msgid "Error writing bootloader configuration"
 msgstr "Virhe kirjoitettaessa käynnistyslataimen asetuksia"
 
-#: ../src/system-config-kdump.py:833 ../src/system-config-kdump.py:841
+#: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: Virhe kirjoitettaessa käynnistyslataimen asetuksia"
+msgstr ""
+"system-config-kdump: Virhe kirjoitettaessa käynnistyslataimen asetuksia"
 
-#: ../src/system-config-kdump.py:840
+#: ../src/system-config-kdump.py:845
 #, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
-msgstr "Virhe kirjoitettaessa käynnistyslataimen asetuksia:\n%s"
+msgstr ""
+"Virhe kirjoitettaessa käynnistyslataimen asetuksia:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:854
+#: ../src/system-config-kdump.py:859
 #, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
-msgstr "Virhe käsiteltäessä kdump-palveluita\n%s"
+msgstr ""
+"Virhe käsiteltäessä kdump-palveluita\n"
+"%s"
 
-#: ../src/system-config-kdump.py:855
+#: ../src/system-config-kdump.py:860
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: Virhe käsiteltäessä palveluita"
 
-#: ../src/system-config-kdump.py:860
+#: ../src/system-config-kdump.py:865
 msgid "Configurations successfully saved"
 msgstr ""
 
-#: ../src/system-config-kdump.py:861
+#: ../src/system-config-kdump.py:866
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: Asetukset on tallennettu"
 
-#: ../src/system-config-kdump.py:932
+#: ../src/system-config-kdump.py:943
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "Virhe luettaessa kdump-asetuksia: %s"
 
-#: ../src/system-config-kdump.py:933
+#: ../src/system-config-kdump.py:944
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: kdump-asetustiedoston virhe"
 
-#: ../src/system-config-kdump.py:1194
+#: ../src/system-config-kdump.py:1226
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "Vedoksen keräilijän on olettava ”makedumpfile”"
 
-#: ../src/system-config-kdump.py:1195
+#: ../src/system-config-kdump.py:1227
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: Virheellinen vedoksenkeräin"
 
-#: ../src/system-config-kdump.py:1370
+#: ../src/system-config-kdump.py:1402
 #, python-format
 msgid "Unable to get command line arguments for %s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1371 ../src/system-config-kdump.py:1388
-#: ../src/system-config-kdump.py:1407
+#: ../src/system-config-kdump.py:1403 ../src/system-config-kdump.py:1420
+#: ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: grubby error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1387
+#: ../src/system-config-kdump.py:1419
 msgid "Unable to get default kernel"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1406
+#: ../src/system-config-kdump.py:1438
 msgid "Unable to get all kernel names"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1542
+#: ../src/system-config-kdump.py:1574
 #, python-format
 msgid ""
 "Invalid crashkernel value: %s.\n"
@@ -267,70 +327,72 @@ msgid ""
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1545
+#: ../src/system-config-kdump.py:1577
 msgid "Bad crashkernel value"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1573
+#: ../src/system-config-kdump.py:1605
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "Raakalaitetta %s ei löytynyt tästä koneesta"
 
-#: ../src/system-config-kdump.py:1598
+#: ../src/system-config-kdump.py:1630
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "Paikallista tiedostojärjestelmäosiota, jonka nimi on %s"
 
-#: ../src/system-config-kdump.py:1599
+#: ../src/system-config-kdump.py:1631
 #, python-format
 msgid " and type %s wasn't found"
 msgstr " ja tyyppi on %s ei löytynyt."
 
-#: ../src/system-config-kdump.py:1761
+#: ../src/system-config-kdump.py:1793
 msgid "core will be in /var/crash/%DATE on rootfs"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1764
+#: ../src/system-config-kdump.py:1796
 #, python-format
 msgid "core will be in %s/%%DATE on %s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1864
+#: ../src/system-config-kdump.py:1896
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
-msgstr "Ohjeiden näyttöohjelmaa ei löytynyt. Paketti nimeltä ”yelp” on asennettava, jotta ohjeita voidaan näyttää."
+msgstr ""
+"Ohjeiden näyttöohjelmaa ei löytynyt. Paketti nimeltä ”yelp” on asennettava, "
+"jotta ohjeita voidaan näyttää."
 
-#: ../src/system-config-kdump.py:1884
+#: ../src/system-config-kdump.py:1916
 msgid "Unable to get kdump service status"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1885 ../src/system-config-kdump.py:1908
+#: ../src/system-config-kdump.py:1917 ../src/system-config-kdump.py:1943
 msgid "system-config-kdump: Handling services error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1907
+#: ../src/system-config-kdump.py:1942
 msgid "Unable to handle kdump services"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1931
+#: ../src/system-config-kdump.py:1966
 #, python-format
 msgid ""
 "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1932 ../src/system-config-kdump.py:1958
+#: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
 msgid "System config kdump: dbus error"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1956
+#: ../src/system-config-kdump.py:1991
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1969
+#: ../src/system-config-kdump.py:2004
 msgid "Error executing system-config-kdump"
 msgstr "Virhe suoritettaessa system-config-kdumpia"
 
@@ -355,336 +417,341 @@ msgstr ""
 msgid "About system-config-kdump"
 msgstr "Tietoja system-config-kdumpista"
 
-#: ../src/system-config-kdump.glade:70
+#: ../src/system-config-kdump.glade:72
 msgid "Kernel Dump Configuration"
 msgstr "Ydinvedoksen asetukset"
 
-#: ../src/system-config-kdump.glade:90
+#: ../src/system-config-kdump.glade:92
 msgid "_File"
 msgstr "_Tiedosto"
 
-#: ../src/system-config-kdump.glade:102 ../src/system-config-kdump.glade:241
+#: ../src/system-config-kdump.glade:104 ../src/system-config-kdump.glade:243
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr "Ota muutokset käyttöön, tallenna käynnistyslataimen asetustiedosto ja tallenna kexec/kdump-asetustiedosto"
+msgstr ""
+"Ota muutokset käyttöön, tallenna käynnistyslataimen asetustiedosto ja "
+"tallenna kexec/kdump-asetustiedosto"
 
-#: ../src/system-config-kdump.glade:115 ../src/system-config-kdump.glade:256
+#: ../src/system-config-kdump.glade:117 ../src/system-config-kdump.glade:258
 msgid "Reload original settings from config files"
 msgstr "Lataa alkuperäiset asetukset uudelleen asetustiedostoista"
 
-#: ../src/system-config-kdump.glade:134
+#: ../src/system-config-kdump.glade:136
 msgid "Exit and discard not saved changes"
 msgstr "Poistu ja hylkää tallentamattomat muutokset"
 
-#: ../src/system-config-kdump.glade:150
+#: ../src/system-config-kdump.glade:152
 msgid "_Options"
 msgstr "_Asetukset"
 
-#: ../src/system-config-kdump.glade:187
+#: ../src/system-config-kdump.glade:189
 msgid "_Help"
 msgstr "_Ohje"
 
-#: ../src/system-config-kdump.glade:243
+#: ../src/system-config-kdump.glade:245
 msgid "Apply"
 msgstr "Käytä"
 
-#: ../src/system-config-kdump.glade:258
+#: ../src/system-config-kdump.glade:260
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: ../src/system-config-kdump.glade:280
+#: ../src/system-config-kdump.glade:282
 msgid "Enable kdump"
 msgstr "Käytä kdumpia"
 
-#: ../src/system-config-kdump.glade:282
+#: ../src/system-config-kdump.glade:284
 msgid "Enable"
 msgstr "Ota käyttöön"
 
-#: ../src/system-config-kdump.glade:295
+#: ../src/system-config-kdump.glade:297
 msgid "Disable kdump"
 msgstr "Älä käytä kdumpia"
 
-#: ../src/system-config-kdump.glade:297
+#: ../src/system-config-kdump.glade:299
 msgid "Disable"
 msgstr "Poista käytöstä"
 
-#: ../src/system-config-kdump.glade:388
+#: ../src/system-config-kdump.glade:390
 msgid "Firmware assisted dump"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:406
+#: ../src/system-config-kdump.glade:408
 msgid "Manual settings"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:444
+#: ../src/system-config-kdump.glade:446
 msgid "Total System Memory:"
 msgstr "Järjestelmän muistin kokonaismäärä:"
 
-#: ../src/system-config-kdump.glade:456
+#: ../src/system-config-kdump.glade:458
 msgid "Current kdump Memory:"
 msgstr "Nykyinen kdump-muisti:"
 
-#: ../src/system-config-kdump.glade:470
+#: ../src/system-config-kdump.glade:472
 msgid "New kdump Memory:"
 msgstr "Uusi kdump-muisti:"
 
-#: ../src/system-config-kdump.glade:484
+#: ../src/system-config-kdump.glade:486
 msgid "Usable Memory:"
 msgstr "Käytettävissä oleva muisti:"
 
-#: ../src/system-config-kdump.glade:498 ../src/system-config-kdump.glade:512
-#: ../src/system-config-kdump.glade:547 ../src/system-config-kdump.glade:1171
+#: ../src/system-config-kdump.glade:500 ../src/system-config-kdump.glade:514
+#: ../src/system-config-kdump.glade:549 ../src/system-config-kdump.glade:1173
 msgid "N/A"
 msgstr "Ei saatavilla"
 
-#: ../src/system-config-kdump.glade:563
+#: ../src/system-config-kdump.glade:565
 msgid "(MB)"
 msgstr "(Mt)"
 
-#: ../src/system-config-kdump.glade:596
+#: ../src/system-config-kdump.glade:598
 msgid "Basic Settings"
 msgstr "Perusasetukset"
 
-#: ../src/system-config-kdump.glade:632
+#: ../src/system-config-kdump.glade:634
 msgid "Local filesystem"
 msgstr "Paikallinen tiedostojärjestelmä"
 
-#: ../src/system-config-kdump.glade:637
+#: ../src/system-config-kdump.glade:639
 msgid "Save kdump file in local filesystem"
 msgstr "Tallenna kdump-tiedosto paikalliselle tiedostojärjestelmälle"
 
-#: ../src/system-config-kdump.glade:661
+#: ../src/system-config-kdump.glade:663
 msgid "Choose partition where you want to save your kdump"
 msgstr "Valitse osio, jonne kdump tallennetaan"
 
-#: ../src/system-config-kdump.glade:682
+#: ../src/system-config-kdump.glade:684
 msgid "Partition:"
 msgstr "Osio:"
 
-#: ../src/system-config-kdump.glade:695
+#: ../src/system-config-kdump.glade:697
 msgid "Path:"
 msgstr "Polku:"
 
-#: ../src/system-config-kdump.glade:705
+#: ../src/system-config-kdump.glade:707
 msgid "Target directory on local file system"
 msgstr "Kohdehakemisto paikallisella tiedostojärjestelmällä"
 
-#: ../src/system-config-kdump.glade:717
+#: ../src/system-config-kdump.glade:719
 msgid "localDumpHintLabel"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:758
+#: ../src/system-config-kdump.glade:760
 msgid "Raw device"
 msgstr "Raakalaite"
 
-#: ../src/system-config-kdump.glade:763
+#: ../src/system-config-kdump.glade:765
 msgid "Save kdump file in raw device"
 msgstr "Tallenna kdump-tiedosto raakalaitteelle"
 
-#: ../src/system-config-kdump.glade:781
+#: ../src/system-config-kdump.glade:783
 msgid "Select raw device"
 msgstr "Valitse raakalaite"
 
-#: ../src/system-config-kdump.glade:822
+#: ../src/system-config-kdump.glade:824
 msgid "Network"
 msgstr "Verkko"
 
-#: ../src/system-config-kdump.glade:827
+#: ../src/system-config-kdump.glade:829
 msgid "Save kdump file via network"
 msgstr "Tallenna kdump verkon kautta"
 
-#: ../src/system-config-kdump.glade:848
+#: ../src/system-config-kdump.glade:850
 msgid "NFS"
 msgstr "NFS"
 
-#: ../src/system-config-kdump.glade:853
+#: ../src/system-config-kdump.glade:855
 msgid "Save kdump file via NFS"
 msgstr "Tallenna kdump NFS:n kautta"
 
-#: ../src/system-config-kdump.glade:868
+#: ../src/system-config-kdump.glade:870
 msgid "SSH"
 msgstr "SSH"
 
-#: ../src/system-config-kdump.glade:873
+#: ../src/system-config-kdump.glade:875
 msgid "Save kdump file via SSH"
 msgstr "Tallenna kdump SSH:n kautta"
 
-#: ../src/system-config-kdump.glade:906
+#: ../src/system-config-kdump.glade:908
 msgid "User must have necessary write permissions on the server"
 msgstr "Käyttäjällä on oltava tarvittavat kirjoitusoikeudet palvelimelle"
 
-#: ../src/system-config-kdump.glade:919
+#: ../src/system-config-kdump.glade:921
 msgid "Path to directory to save kdump file on server"
 msgstr "Polku palvelimen hakemistoon, jonne kdump-tiedosto tallennetaan"
 
-#: ../src/system-config-kdump.glade:932
+#: ../src/system-config-kdump.glade:934
 msgid "Network server name"
 msgstr "Verkon palvelimen nimi"
 
-#: ../src/system-config-kdump.glade:945
+#: ../src/system-config-kdump.glade:947
 msgid "User name:"
 msgstr "Käyttäjätunnus:"
 
-#: ../src/system-config-kdump.glade:960
+#: ../src/system-config-kdump.glade:962
 msgid "Path to directory:"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:974
+#: ../src/system-config-kdump.glade:976
 msgid "Server name:"
 msgstr "Palvelimen nimi:"
 
-#: ../src/system-config-kdump.glade:1011
+#: ../src/system-config-kdump.glade:1013
 msgid "Target settings"
 msgstr "Kohteen asetukset"
 
-#: ../src/system-config-kdump.glade:1059
+#: ../src/system-config-kdump.glade:1061
 msgid "zero page"
 msgstr "nollasivu"
 
-#: ../src/system-config-kdump.glade:1064
+#: ../src/system-config-kdump.glade:1066
 msgid "Exclude zero page"
 msgstr "Ohita nollasivu"
 
-#: ../src/system-config-kdump.glade:1077
+#: ../src/system-config-kdump.glade:1079
 msgid "cache page"
 msgstr "välimuistisivu"
 
-#: ../src/system-config-kdump.glade:1082
+#: ../src/system-config-kdump.glade:1084
 msgid "Exclude cache page"
 msgstr "Ohita välimuistisivu"
 
-#: ../src/system-config-kdump.glade:1095
+#: ../src/system-config-kdump.glade:1097
 msgid "cache private"
 msgstr "yksityinen välimuisti"
 
-#: ../src/system-config-kdump.glade:1100
+#: ../src/system-config-kdump.glade:1102
 msgid "Exclude cache private"
 msgstr "Ohita yksityinen välimuisti"
 
-#: ../src/system-config-kdump.glade:1113
+#: ../src/system-config-kdump.glade:1115
 msgid "user data"
 msgstr "käyttäjän data"
 
-#: ../src/system-config-kdump.glade:1118
+#: ../src/system-config-kdump.glade:1120
 msgid "Exclude user data"
 msgstr "Ohita käyttäjän data"
 
-#: ../src/system-config-kdump.glade:1131
+#: ../src/system-config-kdump.glade:1133
 msgid "free page"
 msgstr "vapaa sivu"
 
-#: ../src/system-config-kdump.glade:1136
+#: ../src/system-config-kdump.glade:1138
 msgid "Exclude free page"
 msgstr "Ohita vapaa sivu"
 
-#: ../src/system-config-kdump.glade:1157
+#: ../src/system-config-kdump.glade:1159
 msgid "Actual filter level:"
 msgstr "Käytössä oleva suodintaso:"
 
-#: ../src/system-config-kdump.glade:1195
+#: ../src/system-config-kdump.glade:1197
 msgid "<b>Filtering level </b>"
 msgstr "<b>Suodintaso</b>"
 
-#: ../src/system-config-kdump.glade:1227
+#: ../src/system-config-kdump.glade:1229
 msgid "ELF file format"
 msgstr "ELF-tiedostomuoto"
 
-#: ../src/system-config-kdump.glade:1246
+#: ../src/system-config-kdump.glade:1248
 msgid "diskdump file format"
 msgstr "diskdump-tiedostomuoto"
 
-#: ../src/system-config-kdump.glade:1272
+#: ../src/system-config-kdump.glade:1274
 msgid "<b>Output file format</b>"
 msgstr "<b>Tulostiedoston muoto</b>"
 
-#: ../src/system-config-kdump.glade:1299
+#: ../src/system-config-kdump.glade:1301
 msgid "Filtering settings"
 msgstr "Suodinasetukset"
 
-#: ../src/system-config-kdump.glade:1349
+#: ../src/system-config-kdump.glade:1351
 msgid "Default initrd"
 msgstr "Oletus-initrd"
 
-#: ../src/system-config-kdump.glade:1354
+#: ../src/system-config-kdump.glade:1356
 msgid "Use default initrd"
 msgstr "Käytä oletus-initrd:tä"
 
-#: ../src/system-config-kdump.glade:1370
+#: ../src/system-config-kdump.glade:1372
 msgid "Custom initrd"
 msgstr "Mukautettu initrd"
 
-#: ../src/system-config-kdump.glade:1375
+#: ../src/system-config-kdump.glade:1377
 msgid "Use custom initrd"
 msgstr "Käytä mukautettua initrd:tä"
 
-#: ../src/system-config-kdump.glade:1394
+#: ../src/system-config-kdump.glade:1396
 msgid "Choose custom initrd file"
 msgstr "Valitse mukautettu initrd-tiedosto"
 
-#: ../src/system-config-kdump.glade:1395
+#: ../src/system-config-kdump.glade:1397
 msgid "Select An initrd File"
 msgstr "Valitse initrd-tiedosto"
 
-#: ../src/system-config-kdump.glade:1414
+#: ../src/system-config-kdump.glade:1416
 msgid "<b>initrd selection</b>"
 msgstr "<b>initrd:n valinta</b>"
 
-#: ../src/system-config-kdump.glade:1445
+#: ../src/system-config-kdump.glade:1447
 msgid "Default kernel"
 msgstr "Oletusydin"
 
-#: ../src/system-config-kdump.glade:1450
+#: ../src/system-config-kdump.glade:1452
 msgid "Use default kernel image"
 msgstr "Käytä oletus-ydinkuvaa"
 
-#: ../src/system-config-kdump.glade:1466
+#: ../src/system-config-kdump.glade:1468
 msgid "Custom kernel"
 msgstr "Mukautettu ydin"
 
-#: ../src/system-config-kdump.glade:1471
+#: ../src/system-config-kdump.glade:1473
 msgid "Use custom kernel image"
 msgstr "Käytä mukautettua ydinkuvaa"
 
-#: ../src/system-config-kdump.glade:1490
+#: ../src/system-config-kdump.glade:1492
 msgid "Choose your custom kernel"
 msgstr "Valitse mukautettu ydin"
 
-#: ../src/system-config-kdump.glade:1515
+#: ../src/system-config-kdump.glade:1517
 msgid "<b>Capture kernel selection</b>"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:1568
+#: ../src/system-config-kdump.glade:1570
 msgid "Kernel command line options"
 msgstr "Ytimen komentorivivalitsimet"
 
-#: ../src/system-config-kdump.glade:1585
+#: ../src/system-config-kdump.glade:1587
 msgid "Original kernel command line options"
 msgstr "Alkuperäiset ytimen komentorivivalitsimet"
 
-#: ../src/system-config-kdump.glade:1602
+#: ../src/system-config-kdump.glade:1604
 msgid "Original:"
 msgstr "Alkuperäinen:"
 
-#: ../src/system-config-kdump.glade:1615
+#: ../src/system-config-kdump.glade:1617
 msgid "Edited:"
 msgstr "Muokattu:"
 
-#: ../src/system-config-kdump.glade:1633
+#: ../src/system-config-kdump.glade:1635
 msgid "<b>Command line options</b>"
 msgstr "<b>Komentorivivalitsimet</b>"
 
-#: ../src/system-config-kdump.glade:1665
+#: ../src/system-config-kdump.glade:1668
 msgid "Choose default action"
 msgstr "Valitse oletustoiminto"
 
-#: ../src/system-config-kdump.glade:1689
-msgid "<b>Default action</b>"
-msgstr "<b>Oletustoiminto</b>"
+#: ../src/system-config-kdump.glade:1692
+msgid "<b>Action if dumping fails</b>"
+msgstr ""
 
-#: ../src/system-config-kdump.glade:1738
+#: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"
 msgstr "<b>Vedoskeräin</b>"
 
-#: ../src/system-config-kdump.glade:1764
+#: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Asiantuntija-asetukset"
+
+#~ msgid "<b>Default action</b>"
+#~ msgstr "<b>Oletustoiminto</b>"

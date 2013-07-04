@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # A S Alam <apbrar@gmail.com>, 2006
 # Jaswinder Singh <j.phulewala@gmail.com>, 2011
@@ -10,254 +10,307 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-kdump\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 15:01+0200\n"
+"POT-Creation-Date: 2013-07-04 15:34+0200\n"
 "PO-Revision-Date: 2013-04-03 13:01+0000\n"
 "Last-Translator: mmilata <mmilata@redhat.com>\n"
 "Language-Team: Panjabi (Punjabi) <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/system-config-kdump.py:77
-msgid "Dump to rootfs and reboot"
-msgstr ""
-
-#: ../src/system-config-kdump.py:82
+#: ../src/system-config-kdump.py:76
 msgid "(c)"
 msgstr "(c)"
 
-#: ../src/system-config-kdump.py:83
+#: ../src/system-config-kdump.py:77
 msgid "(d)"
 msgstr "(d)"
 
-#: ../src/system-config-kdump.py:105
+#: ../src/system-config-kdump.py:100
 msgid ""
-"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
 "\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
 "\n"
-"You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
-msgstr "ਇਹ ਪਰੋਗਰਾਮ ਫਰੀ ਸਾਫਟਵੇਅਰ ਹੈ; ਤੁਸੀਂ ਇਸ ਨੂੰ ਮੁੜ-ਵੰਡ ਅਤੇ/ਜਾਂ ਸੋਧ ਸਕਦੇ ਹੋ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈੰਸ ਦੀਆਂ ਸ਼ਰਤਾਂ ਮੁਤਾਬਕ ਜੋ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਡੇਸ਼ਨ ਦੁਆਰਾ ਪਬਲਿਸ ਕੀਤਾ ਗਿਆ ਹੈ; ਲਾਈਸੈੰਸ ਦਾ ਵਰਜਨ 2, ਜਾਂ (ਤੁਹਾਡੀ ਚੋਣ ਮੁਤਾਬਕ) ਕੋਈ ਬਾਅਦ ਵਾਲਾ ਵਰਜਨ\n\nਇਸ ਪਰੋਗਰਾਮ ਨੂੰ ਵੰਡਣ ਦਾ ਉਦੇਸ਼ ਹੈ ਕਿ ਇਹ ਵਰਤਣਯੋਗ ਹੋਵੇਗਾ, ਪਰ ਬਿਨਾਂ ਕਿਸੇ ਵਾਰੰਟੀ; ਵਿਕਰੇਤਾ ਦੀ ਗਾਰੰਟੀ ਤੋਂ ਵੀ ਬਿਨਾਂ ਜਾਂ ਖਾਸ ਉਦੇਸ਼ ਦੇ ਯੋਗ ਹੋਣ ਦੀ ਗਾਰੰਟੀ ਤੋਂ ਬਿਨਾਂ। ਵੇਰਵੇ ਲਈ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈੰਸ ਵੇਖੋ।\n\nਤੁਹਾਨੂੰ ਇਸ ਪਰੋਗਰਾਮ ਨਾਲ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈੰਸ ਦੀ ਇੱਕ ਕਾਪੀ ਮਿਲਣੀ ਚਾਹੀਦੀ ਹੈ; ਜੇ ਨਹੀਂ, ਤਾਂ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਡੇਸ਼ਨ, Inc., 675 Mass Ave, Cambridge, MA 02139, USA ਨੂੰ ਲਿਖੋ।"
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
+"Ave, Cambridge, MA 02139, USA."
+msgstr ""
+"ਇਹ ਪਰੋਗਰਾਮ ਫਰੀ ਸਾਫਟਵੇਅਰ ਹੈ; ਤੁਸੀਂ ਇਸ ਨੂੰ ਮੁੜ-ਵੰਡ ਅਤੇ/ਜਾਂ ਸੋਧ ਸਕਦੇ ਹੋ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈੰਸ "
+"ਦੀਆਂ ਸ਼ਰਤਾਂ ਮੁਤਾਬਕ ਜੋ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਡੇਸ਼ਨ ਦੁਆਰਾ ਪਬਲਿਸ ਕੀਤਾ ਗਿਆ ਹੈ; ਲਾਈਸੈੰਸ ਦਾ ਵਰਜਨ 2, "
+"ਜਾਂ (ਤੁਹਾਡੀ ਚੋਣ ਮੁਤਾਬਕ) ਕੋਈ ਬਾਅਦ ਵਾਲਾ ਵਰਜਨ\n"
+"\n"
+"ਇਸ ਪਰੋਗਰਾਮ ਨੂੰ ਵੰਡਣ ਦਾ ਉਦੇਸ਼ ਹੈ ਕਿ ਇਹ ਵਰਤਣਯੋਗ ਹੋਵੇਗਾ, ਪਰ ਬਿਨਾਂ ਕਿਸੇ ਵਾਰੰਟੀ; ਵਿਕਰੇਤਾ ਦੀ "
+"ਗਾਰੰਟੀ ਤੋਂ ਵੀ ਬਿਨਾਂ ਜਾਂ ਖਾਸ ਉਦੇਸ਼ ਦੇ ਯੋਗ ਹੋਣ ਦੀ ਗਾਰੰਟੀ ਤੋਂ ਬਿਨਾਂ। ਵੇਰਵੇ ਲਈ GNU ਜਨਰਲ ਪਬਲਿਕ "
+"ਲਾਈਸੈੰਸ ਵੇਖੋ।\n"
+"\n"
+"ਤੁਹਾਨੂੰ ਇਸ ਪਰੋਗਰਾਮ ਨਾਲ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈੰਸ ਦੀ ਇੱਕ ਕਾਪੀ ਮਿਲਣੀ ਚਾਹੀਦੀ ਹੈ; ਜੇ ਨਹੀਂ, ਤਾਂ "
+"ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਡੇਸ਼ਨ, Inc., 675 Mass Ave, Cambridge, MA 02139, USA ਨੂੰ ਲਿਖੋ।"
 
-#: ../src/system-config-kdump.py:131
+#: ../src/system-config-kdump.py:117
+msgid "Reboot"
+msgstr ""
+
+#: ../src/system-config-kdump.py:118
+msgid "Halt"
+msgstr ""
+
+#: ../src/system-config-kdump.py:119
+msgid "Power off"
+msgstr ""
+
+#: ../src/system-config-kdump.py:120
+msgid "Start a shell"
+msgstr ""
+
+#: ../src/system-config-kdump.py:121
+msgid "Dump to rootfs and reboot"
+msgstr ""
+
+#: ../src/system-config-kdump.py:130
 msgid ""
 "Kdump is a new kernel crash dumping mechanism. In the event of a system "
-"crash, a core file can be captured using kdump, which runs in the context of"
-" a freshly booted kernel, making it far more reliable than methods capturing"
-" within the context of the crashed kernel. Being able to capture a core file"
-" can be invaluable in helping determine the root cause of a system crash. "
+"crash, a core file can be captured using kdump, which runs in the context of "
+"a freshly booted kernel, making it far more reliable than methods capturing "
+"within the context of the crashed kernel. Being able to capture a core file "
+"can be invaluable in helping determine the root cause of a system crash. "
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
-msgstr "Kdump ਇੱਕ ਨਵੀਂ ਕਰਨਲ ਕਰੈਸ਼ ਡੰਪਿੰਗ ਵਿਧੀ ਹੈ। ਜੇ ਸਿਸਟਮ ਕਰੈਸ਼ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਕੋਰ ਫਾਇਲ ਨੂੰ kdump ਦੁਆਰਾ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, ਜੋ ਤਾਜ਼ੇ ਬੂਟ ਹੋਏ ਕਰਨਲ ਵਿੱਚ ਚੱਲਦਾ ਹੈ, ਇਸ ਨਾਲ ਕਰੈਸ਼ ਕਰਨਲ ਵਿਚਲੇ ਤਰੀਕਿਆਂ ਨਾਲੋਂ ਵਧੀਆਂ ਹੋਵੇਗਾ। ਕੋਰ ਫਾਇਲ ਪ੍ਰਾਪਤ ਕਰਨ ਨਾਲ ਪਰਬੰਧਕ(root) ਲਈ ਵਡਮੁੱਲਾ ਹੋ ਸਕਦਾ ਹੈ। ਯਾਦ ਰੱਖੋ ਕਿ kdump ਲਈ ਸਿਸਟਮ ਮੈਮੋਰੀ ਦਾ ਹਿੱਸਾ ਰਾਖਵਾਂ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ ਜੋ ਹੋਰ ਵਰਤੋਂ ਲਈ ਉਪਲੱਬਧ ਨਹੀਂ ਹੋਵੇਗੀ।"
+msgstr ""
+"Kdump ਇੱਕ ਨਵੀਂ ਕਰਨਲ ਕਰੈਸ਼ ਡੰਪਿੰਗ ਵਿਧੀ ਹੈ। ਜੇ ਸਿਸਟਮ ਕਰੈਸ਼ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਕੋਰ ਫਾਇਲ ਨੂੰ kdump "
+"ਦੁਆਰਾ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, ਜੋ ਤਾਜ਼ੇ ਬੂਟ ਹੋਏ ਕਰਨਲ ਵਿੱਚ ਚੱਲਦਾ ਹੈ, ਇਸ ਨਾਲ ਕਰੈਸ਼ ਕਰਨਲ ਵਿਚਲੇ "
+"ਤਰੀਕਿਆਂ ਨਾਲੋਂ ਵਧੀਆਂ ਹੋਵੇਗਾ। ਕੋਰ ਫਾਇਲ ਪ੍ਰਾਪਤ ਕਰਨ ਨਾਲ ਪਰਬੰਧਕ(root) ਲਈ ਵਡਮੁੱਲਾ ਹੋ ਸਕਦਾ ਹੈ। "
+"ਯਾਦ ਰੱਖੋ ਕਿ kdump ਲਈ ਸਿਸਟਮ ਮੈਮੋਰੀ ਦਾ ਹਿੱਸਾ ਰਾਖਵਾਂ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ ਜੋ ਹੋਰ ਵਰਤੋਂ ਲਈ "
+"ਉਪਲੱਬਧ ਨਹੀਂ ਹੋਵੇਗੀ।"
 
-#: ../src/system-config-kdump.py:141
+#: ../src/system-config-kdump.py:140
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
-msgstr "Kdump, vmcore ਨੂੰ ਦਰਸਾਈ ਸਥਿਤੀ ਉੱਪਰ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੇਗਾ। ਜੇ ਇਹ vmcore ਨੂੰ ਰੱਖਣ ਵਿੱਚ ਫੇਲ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਮੂਲ ਕਾਰਵਾਈ (ਹੇਠਾਂ ਦਿੱਤੀ) ਹੋਵੇਗੀ।"
+msgstr ""
+"Kdump, vmcore ਨੂੰ ਦਰਸਾਈ ਸਥਿਤੀ ਉੱਪਰ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੇਗਾ। ਜੇ ਇਹ vmcore ਨੂੰ ਰੱਖਣ ਵਿੱਚ ਫੇਲ ਹੋ "
+"ਜਾਂਦਾ ਹੈ, ਤਾਂ ਮੂਲ ਕਾਰਵਾਈ (ਹੇਠਾਂ ਦਿੱਤੀ) ਹੋਵੇਗੀ।"
 
-#: ../src/system-config-kdump.py:376
+#: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
 msgstr "system-config-kdump"
 
-#: ../src/system-config-kdump.py:534
+#: ../src/system-config-kdump.py:540
 msgid "Don't know how to configure your boot loader."
 msgstr "ਤੁਹਾਡੇ ਬੂਟ ਲੋਡਰ ਸੰਰਚਿਤ ਕਰਨ ਬਾਰੇ ਕੁਝ ਨਹੀਂ ਜਾਣਦਾ।"
 
-#: ../src/system-config-kdump.py:535
+#: ../src/system-config-kdump.py:541
 msgid "system-config-kdump: no default kernel"
 msgstr "system-config-kdump: ਕੋਈ ਮੂਲ ਕਰਨਲ ਨਹੀਂ"
 
-#: ../src/system-config-kdump.py:540
+#: ../src/system-config-kdump.py:546
 msgid "Sorry, this architecture does not currently support kdump"
 msgstr "ਮਾਫ ਕਰਨਾ, ਇਹ ਢਾਂਚਾ ਹਾਲੇ kdump ਨੂੰ ਸਹਿਯੋਗ ਨਹੀਂ ਹੈ"
 
-#: ../src/system-config-kdump.py:542 ../src/system-config-kdump.py:572
+#: ../src/system-config-kdump.py:548 ../src/system-config-kdump.py:578
 msgid "system-config-kdump: kdump not supported"
 msgstr "system-config-kdump: kdump ਨੂੰ ਸਹਿਯੋਗ ਨਹੀਂ ਹੈ"
 
-#: ../src/system-config-kdump.py:557
+#: ../src/system-config-kdump.py:563
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
 
-#: ../src/system-config-kdump.py:559
+#: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
 msgstr "system-config-kdump: ਮੈਮੋਰੀ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:571
+#: ../src/system-config-kdump.py:577
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
 msgstr "ਅਫਸੋਸ ਹੈ ਕਿ ia64 Xen ਕਰਨਲ kdump ਨੂੰ ਹਾਲੇ ਸਹਿਯੋਗ ਨਹੀਂ ਕਰਦੇ ਹਨ!"
 
-#: ../src/system-config-kdump.py:677
+#: ../src/system-config-kdump.py:683
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr "ਇਸ ਸਿਸਟਮ ਉੱਪਰ kdump ਲਈ ਲੋੜੀਂਦੀ ਮੈਮੋਰੀ ਨਹੀਂ ਹੈ"
 
-#: ../src/system-config-kdump.py:679
+#: ../src/system-config-kdump.py:685
 msgid "system-config-kdump: Not enough memory"
 msgstr "system-config-kdump: ਲੋੜੀਂਦੀ ਮੈਮੋਰੀ ਨਹੀਂ ਹੈ"
 
-#: ../src/system-config-kdump.py:746
+#: ../src/system-config-kdump.py:751
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
 msgstr "'%s' ਟਿਕਾਣੇ ਲਈ ਮਾਰਗ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ।"
 
-#: ../src/system-config-kdump.py:748
+#: ../src/system-config-kdump.py:753
 #, python-format
 msgid "Reset path to default ('%s')?."
 msgstr "ਮੂਲ ਮਾਰਗ ਮੁੜ-ਸੈੱਟ ਕਰੋ ('%s')?।"
 
-#: ../src/system-config-kdump.py:749
+#: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Empty path"
 msgstr "system-config-kdump: ਖਾਲੀ ਮਾਰਗ"
 
-#: ../src/system-config-kdump.py:758
+#: ../src/system-config-kdump.py:763
 msgid "You must specify server. "
 msgstr "ਤੁਹਾਨੂੰ ਸਰਵਰ ਨਾਂ ਦੇਣਾ ਪਵੇਗਾ।"
 
-#: ../src/system-config-kdump.py:759
+#: ../src/system-config-kdump.py:764
 msgid "system-config-kdump: Server name not set"
 msgstr "system-config-kdump: ਸਰਵਰ ਨਾਂ ਨਹੀਂ ਦਿੱਤਾ"
 
-#: ../src/system-config-kdump.py:765
+#: ../src/system-config-kdump.py:770
 msgid "You must specify user name. "
 msgstr "ਤੁਹਾਨੂੰ ਯੂਜ਼ਰ ਨਾਂ ਸੈੱਟ ਕਰਨਾ ਪਵੇਗਾ"
 
-#: ../src/system-config-kdump.py:766
+#: ../src/system-config-kdump.py:771
 msgid "system-config-kdump: User name not set"
 msgstr "system-config-kdump: ਯੂਜ਼ਰ ਨਾਂ ਸੈੱਟ ਨਹੀਂ ਕੀਤਾ"
 
-#: ../src/system-config-kdump.py:773
+#: ../src/system-config-kdump.py:778
 msgid "You must select one of the raw devices"
 msgstr "ਤੁਹਾਨੂੰ ਇੱਕ ਫਾਲਤੂ ਜੰਤਰ ਚੁਣਨਾ ਪਵੇਗਾ"
 
-#: ../src/system-config-kdump.py:774 ../src/system-config-kdump.py:1574
+#: ../src/system-config-kdump.py:779 ../src/system-config-kdump.py:1606
 msgid "system-config-kdump: Raw device error"
 msgstr "system-config-kdump: ਫਾਲਤੂ ਜੰਤਰ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:781
+#: ../src/system-config-kdump.py:786
 msgid "You must select one of the partitions"
 msgstr "ਤੁਹਾਨੂੰ ਇੱਕ ਭਾਗ ਚੁਣਨਾ ਪਵੇਗਾ"
 
-#: ../src/system-config-kdump.py:782 ../src/system-config-kdump.py:1600
+#: ../src/system-config-kdump.py:787 ../src/system-config-kdump.py:1632
 msgid "system-config-kdump: Local partition error"
 msgstr "system-config-kdump: ਲੋਕਲ ਭਾਗ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:791
+#: ../src/system-config-kdump.py:796
 #, python-format
 msgid ""
-"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash"
-" dump capture."
-msgstr "ਚੇਤਾਵਨੀ: xen kdump ਸਹਿਯੋਗ ਲਈ ਇੱਕ ਨਾਲ-xen %s RPM ਦੀ ਲੋੜ ਹੈ ਤਾਂ ਕਿ ਅਸਲੀ ਕਰੈਸ਼ ਡੰਪ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕੇ।"
+"WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
+"dump capture."
+msgstr ""
+"ਚੇਤਾਵਨੀ: xen kdump ਸਹਿਯੋਗ ਲਈ ਇੱਕ ਨਾਲ-xen %s RPM ਦੀ ਲੋੜ ਹੈ ਤਾਂ ਕਿ ਅਸਲੀ ਕਰੈਸ਼ ਡੰਪ ਪ੍ਰਾਪਤ "
+"ਕੀਤਾ ਜਾ ਸਕੇ।"
 
-#: ../src/system-config-kdump.py:794
+#: ../src/system-config-kdump.py:799
 #, python-format
 msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
-msgstr "ਚੇਤਾਵਨੀ: xen kdump ਸਹਿਯੋਗ ਲਈ ਇੱਕ ਨਾਲ-xen %s RPM ਦੀ ਲੋੜ ਹੈ ਤਾਂ ਕਿ ਅਸਲੀ ਕਰੈਸ਼ ਡੰਪ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕੇ।"
+msgstr ""
+"ਚੇਤਾਵਨੀ: xen kdump ਸਹਿਯੋਗ ਲਈ ਇੱਕ ਨਾਲ-xen %s RPM ਦੀ ਲੋੜ ਹੈ ਤਾਂ ਕਿ ਅਸਲੀ ਕਰੈਸ਼ ਡੰਪ ਪ੍ਰਾਪਤ "
+"ਕੀਤਾ ਜਾ ਸਕੇ।"
 
-#: ../src/system-config-kdump.py:797
+#: ../src/system-config-kdump.py:802
 msgid "system-config-kdump: Need non-xen kernel"
 msgstr "system-config-kdump: ਗੈਰ-xen ਕਰਨਲ ਦੀ ਲੋੜ"
 
-#: ../src/system-config-kdump.py:802
+#: ../src/system-config-kdump.py:807
 #, python-format
 msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr "Kdump ਵਿਵਸਥਾ ਤਬਦੀਲ ਕਰਨ ਲਈ ਸਿਸਟਮ ਮੂੜ ਚਾਲੂ ਕਰਨਾ ਜਰੂਰੀ ਹੈ ਤਾਂ ਕਿ ਮੈਮੋਰੀ ਮੁੜ ਸਥਾਪਿਤ ਕੀਤੀ ਜਾ ਸਕੇ। %sਤੁਹਾਨੂੰ ਨਵੀਂ ਵਿਵਸਥਾ ਲਾਗੂ ਕਰਨ ਲਈ ਸਿਸਟਮ ਮੁੜ ਚਾਲੂ ਕਰਨਾ ਪਵੇਗਾ।"
+msgstr ""
+"Kdump ਵਿਵਸਥਾ ਤਬਦੀਲ ਕਰਨ ਲਈ ਸਿਸਟਮ ਮੂੜ ਚਾਲੂ ਕਰਨਾ ਜਰੂਰੀ ਹੈ ਤਾਂ ਕਿ ਮੈਮੋਰੀ ਮੁੜ ਸਥਾਪਿਤ ਕੀਤੀ "
+"ਜਾ ਸਕੇ। %sਤੁਹਾਨੂੰ ਨਵੀਂ ਵਿਵਸਥਾ ਲਾਗੂ ਕਰਨ ਲਈ ਸਿਸਟਮ ਮੁੜ ਚਾਲੂ ਕਰਨਾ ਪਵੇਗਾ।"
 
-#: ../src/system-config-kdump.py:806
+#: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
 msgstr "system-config-kdump: ਮੁੜ-ਚਾਲੂ ਕਰਨ ਦੀ ਲੋੜ"
 
-#: ../src/system-config-kdump.py:817
+#: ../src/system-config-kdump.py:822
 #, python-format
 msgid ""
 "Error writing kdump configuration:\n"
 "%s"
-msgstr "ਕੇਡੰਪ ਸੰਰਚਨਾ ਲਿਖਣ ਵਿੱਚ ਗਲਤੀ:\n%s"
+msgstr ""
+"ਕੇਡੰਪ ਸੰਰਚਨਾ ਲਿਖਣ ਵਿੱਚ ਗਲਤੀ:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:818
+#: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
 msgstr "system-config-kdump: kdump ਸੰਰਚਨਾ ਲਿਖਣ ਵੇਲੇ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:832
+#: ../src/system-config-kdump.py:837
 msgid "Error writing bootloader configuration"
 msgstr "ਬੂਟਲੋਡਰ ਸੰਰਚਨਾ ਲਿਖਣ ਵੇਲੇ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:833 ../src/system-config-kdump.py:841
+#: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
 msgstr "system-config-kdump: ਬੂਟਲੋਡਰ ਸੰਰਚਨਾ ਲਿਖਣ ਵੇਲੇ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:840
+#: ../src/system-config-kdump.py:845
 #, python-format
 msgid ""
 "Error writing bootloader configuration:\n"
 "%s"
-msgstr "ਬੂਟਲੋਡਰ ਸੰਰਚਨਾ ਲਿਖਣ ਵੇਲੇ ਗਲਤੀ:\n%s"
+msgstr ""
+"ਬੂਟਲੋਡਰ ਸੰਰਚਨਾ ਲਿਖਣ ਵੇਲੇ ਗਲਤੀ:\n"
+"%s"
 
-#: ../src/system-config-kdump.py:854
+#: ../src/system-config-kdump.py:859
 #, python-format
 msgid ""
 "Error handling kdump services\n"
 "%s"
-msgstr "ਕੇਡੰਪ ਸਰਵਿਸਾਂ ਦੇ ਪਰਬੰਧਨ ਵਿੱਚ ਗਲਤੀ\n%s"
+msgstr ""
+"ਕੇਡੰਪ ਸਰਵਿਸਾਂ ਦੇ ਪਰਬੰਧਨ ਵਿੱਚ ਗਲਤੀ\n"
+"%s"
 
-#: ../src/system-config-kdump.py:855
+#: ../src/system-config-kdump.py:860
 msgid "system-config-kdump: Error handle services"
 msgstr "system-config-kdump: ਗਲਤੀ ਹੈਂਡਲ ਸਰਵਿਸ"
 
-#: ../src/system-config-kdump.py:860
+#: ../src/system-config-kdump.py:865
 msgid "Configurations successfully saved"
 msgstr "ਸਫਲਤਾਪੂਰਕ ਸੰਭਾਲਿਆ ਗਿਆ ਹੈ"
 
-#: ../src/system-config-kdump.py:861
+#: ../src/system-config-kdump.py:866
 msgid "system-config-kdump: Configuration saved"
 msgstr "system-config-kdump: ਸੰਰਚਨਾ ਸੰਭਾਲੀ ਗਈ"
 
-#: ../src/system-config-kdump.py:932
+#: ../src/system-config-kdump.py:943
 #, python-format
 msgid "Error reading kdump configuration: %s"
 msgstr "kdump ਸੰਰਚਨਾ ਪੜਨ ਵੇਲੇ ਗਲਤੀ: %s"
 
-#: ../src/system-config-kdump.py:933
+#: ../src/system-config-kdump.py:944
 msgid "system-config-kdump: kdump configuration file error"
 msgstr "system-config-kdump: kdump ਸੰਰਚਨਾ ਫਾਇਲ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:1194
+#: ../src/system-config-kdump.py:1226
 msgid "Core collector must begin with 'makedumpfile'"
 msgstr "ਕੋਰ ਕੁਲੈਕਟਰ 'makedumpfile' ਨਾਲ ਸ਼ੁਰੂ ਹੋਣਾ ਜਰੂਰੀ ਹੈ"
 
-#: ../src/system-config-kdump.py:1195
+#: ../src/system-config-kdump.py:1227
 msgid "system-config-kdump: Bad core collector"
 msgstr "system-config-kdump: ਗਲਤ ਕੋਰ ਕੁਲੈਕਟਰ"
 
-#: ../src/system-config-kdump.py:1370
+#: ../src/system-config-kdump.py:1402
 #, python-format
 msgid "Unable to get command line arguments for %s"
 msgstr "%s ਲਈ ਕਮਾਂਡ ਲਾਈਨ ਆਰਗੂਮੈਂਟ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../src/system-config-kdump.py:1371 ../src/system-config-kdump.py:1388
-#: ../src/system-config-kdump.py:1407
+#: ../src/system-config-kdump.py:1403 ../src/system-config-kdump.py:1420
+#: ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: grubby error"
 msgstr "system-config-kdump: grubby ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:1387
+#: ../src/system-config-kdump.py:1419
 msgid "Unable to get default kernel"
 msgstr "ਮੂਲ ਕਰਨਲ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../src/system-config-kdump.py:1406
+#: ../src/system-config-kdump.py:1438
 msgid "Unable to get all kernel names"
 msgstr "ਸਭ ਕਰਨਲ ਨਾਂ ਪ੍ਰਾਪਤ ਕਰਨ ਤੋਂ ਅਸਫਲ"
 
-#: ../src/system-config-kdump.py:1542
+#: ../src/system-config-kdump.py:1574
 #, python-format
 msgid ""
 "Invalid crashkernel value: %s.\n"
@@ -266,72 +319,80 @@ msgid ""
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr "ਗਲਤ crashkernel ਮੁੱਲ: %s।\nਸੰਭਵ ਮੁੱਲ ਹਨ:\n\tX\n\tX@Y\n\n%s"
+msgstr ""
+"ਗਲਤ crashkernel ਮੁੱਲ: %s।\n"
+"ਸੰਭਵ ਮੁੱਲ ਹਨ:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
 
-#: ../src/system-config-kdump.py:1545
+#: ../src/system-config-kdump.py:1577
 msgid "Bad crashkernel value"
 msgstr "ਗਲਤ ਕਰੈਸ਼ਕਰਨਲ ਮੁੱਲ"
 
-#: ../src/system-config-kdump.py:1573
+#: ../src/system-config-kdump.py:1605
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
 msgstr "ਫਾਲਤੂ ਜੰਤਰ %s ਇਸ ਮਸ਼ੀਨ ਤੇ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: ../src/system-config-kdump.py:1598
+#: ../src/system-config-kdump.py:1630
 #, python-format
 msgid "Local file system partition with name %s"
 msgstr "ਲੋਕਲ ਫਾਇਲ ਸਿਸਟਮ ਭਾਗ ਜਿਸ ਦਾ ਨਾਂ %s ਹੈ"
 
-#: ../src/system-config-kdump.py:1599
+#: ../src/system-config-kdump.py:1631
 #, python-format
 msgid " and type %s wasn't found"
 msgstr "ਅਤੇ ਕਿਸਮ %s ਨਹੀਂ ਲੱਭੀ"
 
-#: ../src/system-config-kdump.py:1761
+#: ../src/system-config-kdump.py:1793
 msgid "core will be in /var/crash/%DATE on rootfs"
 msgstr "ਕੋਰ /var/crash/%DATE ਵਿੱਚ rootfs ਉੱਪਰ ਹੋਵੇਗੀ"
 
-#: ../src/system-config-kdump.py:1764
+#: ../src/system-config-kdump.py:1796
 #, python-format
 msgid "core will be in %s/%%DATE on %s"
 msgstr "ਕੋਰ %s/%%DATE ਵਿੱਚ %s ਉੱਪਰ ਹੋਵੇਗੀ"
 
-#: ../src/system-config-kdump.py:1864
+#: ../src/system-config-kdump.py:1896
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr "ਮਦਦ ਝਲਕਾਰਾ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਮਦਦ ਵੇਖਣ ਲਈ, 'yelp' ਪੈਕੇਜ ਇੰਸਟਾਲ ਕਰਨਾ ਪਵੇਗਾ।"
 
-#: ../src/system-config-kdump.py:1884
+#: ../src/system-config-kdump.py:1916
 msgid "Unable to get kdump service status"
 msgstr "ਕੇਡੰਪ ਸਰਵਿਸ ਸਥਿਤੀ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../src/system-config-kdump.py:1885 ../src/system-config-kdump.py:1908
+#: ../src/system-config-kdump.py:1917 ../src/system-config-kdump.py:1943
 msgid "system-config-kdump: Handling services error"
 msgstr "system-config-kdump: ਸਰਵਿਸਾਂ ਦੇ ਪਰਬੰਧਨ ਵਿੱਚ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:1907
+#: ../src/system-config-kdump.py:1942
 msgid "Unable to handle kdump services"
 msgstr "kdump ਸਰਵਿਸਾਂ ਦੇ ਪਰਬੰਧਨ ਵੇਲੇ ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:1931
+#: ../src/system-config-kdump.py:1966
 #, python-format
 msgid ""
 "Unable to communicate with backend.\n"
 "%s"
-msgstr "ਬੈਕਐਂਡ ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕਰ ਸਕਦਾ।\n%s"
+msgstr ""
+"ਬੈਕਐਂਡ ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕਰ ਸਕਦਾ।\n"
+"%s"
 
-#: ../src/system-config-kdump.py:1932 ../src/system-config-kdump.py:1958
+#: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
 msgid "System config kdump: dbus error"
 msgstr "System config kdump: dbus ਗਲਤੀ"
 
-#: ../src/system-config-kdump.py:1956
+#: ../src/system-config-kdump.py:1991
 msgid ""
 "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
-#: ../src/system-config-kdump.py:1969
+#: ../src/system-config-kdump.py:2004
 msgid "Error executing system-config-kdump"
 msgstr "system-config-kdump ਚਲਾਉਣ ਵੇਲੇ ਗਲਤੀ"
 
@@ -356,336 +417,339 @@ msgstr "ਮਿਆਰੀ ਗਲਤੀ"
 msgid "About system-config-kdump"
 msgstr "system-config-kdump ਬਾਰੇ"
 
-#: ../src/system-config-kdump.glade:70
+#: ../src/system-config-kdump.glade:72
 msgid "Kernel Dump Configuration"
 msgstr "ਕਰਨਲ ਡੰਪ ਸੰਰਚਨਾ"
 
-#: ../src/system-config-kdump.glade:90
+#: ../src/system-config-kdump.glade:92
 msgid "_File"
 msgstr "ਫਾਇਲ(_F)"
 
-#: ../src/system-config-kdump.glade:102 ../src/system-config-kdump.glade:241
+#: ../src/system-config-kdump.glade:104 ../src/system-config-kdump.glade:243
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr "ਤਬਦੀਲੀਆਂ ਲਾਗੂ ਕਰੋ, ਬੂਟਲੋਡਰ ਸੰਰਚਨਾ ਫਾਇਲ ਸੰਭਾਲੋ ਅਤੇ kexec/kdump ਸੰਰਚਨਾ ਫਾਇਲ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:115 ../src/system-config-kdump.glade:256
+#: ../src/system-config-kdump.glade:117 ../src/system-config-kdump.glade:258
 msgid "Reload original settings from config files"
 msgstr "ਸੰਰਚਨਾ ਫਾਇਲ ਤੋਂ ਅਸਲੀ ਸੈਟਿੰਗ ਮੁੜਲੋਡ ਕਰੋ"
 
-#: ../src/system-config-kdump.glade:134
+#: ../src/system-config-kdump.glade:136
 msgid "Exit and discard not saved changes"
 msgstr "ਬਾਹਰ ਜਾਓ ਅਤੇ ਸੰਭਾਲੀਆਂ ਤਬਦੀਲੀਆਂ ਰੱਦ ਕਰੋ"
 
-#: ../src/system-config-kdump.glade:150
+#: ../src/system-config-kdump.glade:152
 msgid "_Options"
 msgstr "ਚੋਣਾਂ(_O)"
 
-#: ../src/system-config-kdump.glade:187
+#: ../src/system-config-kdump.glade:189
 msgid "_Help"
 msgstr "ਮੱਦਦ(_H)"
 
-#: ../src/system-config-kdump.glade:243
+#: ../src/system-config-kdump.glade:245
 msgid "Apply"
 msgstr "ਲਾਗੂ"
 
-#: ../src/system-config-kdump.glade:258
+#: ../src/system-config-kdump.glade:260
 msgid "Reload"
 msgstr "ਮੁੜ-ਲੋਡ"
 
-#: ../src/system-config-kdump.glade:280
+#: ../src/system-config-kdump.glade:282
 msgid "Enable kdump"
 msgstr "kdump ਯੋਗ"
 
-#: ../src/system-config-kdump.glade:282
+#: ../src/system-config-kdump.glade:284
 msgid "Enable"
 msgstr "ਯੋਗ"
 
-#: ../src/system-config-kdump.glade:295
+#: ../src/system-config-kdump.glade:297
 msgid "Disable kdump"
 msgstr "kdump ਅਯੋਗ"
 
-#: ../src/system-config-kdump.glade:297
+#: ../src/system-config-kdump.glade:299
 msgid "Disable"
 msgstr "ਅਯੋਗ"
 
-#: ../src/system-config-kdump.glade:388
+#: ../src/system-config-kdump.glade:390
 msgid "Firmware assisted dump"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:406
+#: ../src/system-config-kdump.glade:408
 msgid "Manual settings"
 msgstr ""
 
-#: ../src/system-config-kdump.glade:444
+#: ../src/system-config-kdump.glade:446
 msgid "Total System Memory:"
 msgstr "ਕੁੱਲ ਸਿਸਟਮ ਮੈਮੋਰੀ :"
 
-#: ../src/system-config-kdump.glade:456
+#: ../src/system-config-kdump.glade:458
 msgid "Current kdump Memory:"
 msgstr "ਮੌਜੂਦਾ kdump ਮੈਮੋਰੀ:"
 
-#: ../src/system-config-kdump.glade:470
+#: ../src/system-config-kdump.glade:472
 msgid "New kdump Memory:"
 msgstr "ਨਵੀਂ kdump ਮੈਮੋਰੀ:"
 
-#: ../src/system-config-kdump.glade:484
+#: ../src/system-config-kdump.glade:486
 msgid "Usable Memory:"
 msgstr "ਵਰਤਣਯੋਗ ਮੈਮੋਰੀ:"
 
-#: ../src/system-config-kdump.glade:498 ../src/system-config-kdump.glade:512
-#: ../src/system-config-kdump.glade:547 ../src/system-config-kdump.glade:1171
+#: ../src/system-config-kdump.glade:500 ../src/system-config-kdump.glade:514
+#: ../src/system-config-kdump.glade:549 ../src/system-config-kdump.glade:1173
 msgid "N/A"
 msgstr "N/A"
 
-#: ../src/system-config-kdump.glade:563
+#: ../src/system-config-kdump.glade:565
 msgid "(MB)"
 msgstr "(MB)"
 
-#: ../src/system-config-kdump.glade:596
+#: ../src/system-config-kdump.glade:598
 msgid "Basic Settings"
 msgstr "ਮੁਢਲੀ ਸੈਟਿੰਗ"
 
-#: ../src/system-config-kdump.glade:632
+#: ../src/system-config-kdump.glade:634
 msgid "Local filesystem"
 msgstr "ਲੋਕਲ ਫਾਇਲ-ਸਿਸਟਮ"
 
-#: ../src/system-config-kdump.glade:637
+#: ../src/system-config-kdump.glade:639
 msgid "Save kdump file in local filesystem"
 msgstr "kdump ਫਾਇਲ ਨੂੰ ਲੋਕਲ ਫਾਇਲ-ਸਿਸਟਮ ਤੇ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:661
+#: ../src/system-config-kdump.glade:663
 msgid "Choose partition where you want to save your kdump"
 msgstr "ਭਾਗ ਚੁਣੋ ਜਿੱਥੇ ਤੁਸੀਂ ਆਪਣਾ kdump ਸੰਭਾਲਣਾ ਹੈ"
 
-#: ../src/system-config-kdump.glade:682
+#: ../src/system-config-kdump.glade:684
 msgid "Partition:"
 msgstr "ਭਾਗ:"
 
-#: ../src/system-config-kdump.glade:695
+#: ../src/system-config-kdump.glade:697
 msgid "Path:"
 msgstr "ਮਾਰਗ:"
 
-#: ../src/system-config-kdump.glade:705
+#: ../src/system-config-kdump.glade:707
 msgid "Target directory on local file system"
 msgstr "ਲੋਕਲ ਫਾਇਲ ਸਿਸਟਮ ਤੇ ਟਾਰਗਿਟ ਡਾਇਰੈਕਟਰੀ"
 
-#: ../src/system-config-kdump.glade:717
+#: ../src/system-config-kdump.glade:719
 msgid "localDumpHintLabel"
 msgstr "localDumpHintLabel"
 
-#: ../src/system-config-kdump.glade:758
+#: ../src/system-config-kdump.glade:760
 msgid "Raw device"
 msgstr "ਫਾਲਤੂ ਜੰਤਰ"
 
-#: ../src/system-config-kdump.glade:763
+#: ../src/system-config-kdump.glade:765
 msgid "Save kdump file in raw device"
 msgstr "ਫਾਲਤੂ ਜੰਤਰ ਵਿੱਚ dump ਫਾਇਲ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:781
+#: ../src/system-config-kdump.glade:783
 msgid "Select raw device"
 msgstr "ਫਾਲਤੂ ਜੰਤਰ ਚੁਣੋ"
 
-#: ../src/system-config-kdump.glade:822
+#: ../src/system-config-kdump.glade:824
 msgid "Network"
 msgstr "ਨੈੱਟਵਰਕ"
 
-#: ../src/system-config-kdump.glade:827
+#: ../src/system-config-kdump.glade:829
 msgid "Save kdump file via network"
 msgstr "kdump ਫਾਇਲ ਨੈੱਟਵਰਕ ਰਾਹੀਂ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:848
+#: ../src/system-config-kdump.glade:850
 msgid "NFS"
 msgstr "NFS"
 
-#: ../src/system-config-kdump.glade:853
+#: ../src/system-config-kdump.glade:855
 msgid "Save kdump file via NFS"
 msgstr "kdump ਫਾਇਲ NFS ਰਾਹੀਂ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:868
+#: ../src/system-config-kdump.glade:870
 msgid "SSH"
 msgstr "SSH"
 
-#: ../src/system-config-kdump.glade:873
+#: ../src/system-config-kdump.glade:875
 msgid "Save kdump file via SSH"
 msgstr "kdump ਫਾਇਲ SSH ਰਾਹੀਂ ਸੰਭਾਲੋ"
 
-#: ../src/system-config-kdump.glade:906
+#: ../src/system-config-kdump.glade:908
 msgid "User must have necessary write permissions on the server"
 msgstr "ਸਰਵਰ ਤੇ ਤੁਹਾਨੂੰ ਲੋੜੀਂਦੇ ਅਧਿਕਾਰ ਹੋਣੇ ਜਰੂਰੀ ਹੈ"
 
-#: ../src/system-config-kdump.glade:919
+#: ../src/system-config-kdump.glade:921
 msgid "Path to directory to save kdump file on server"
 msgstr "ਸਰਵਰ ਤੇ kdump ਫਾਇਲ ਸੰਭਾਲਣ ਲਈ ਡਾਇਰੈਕਟਰੀ ਮਾਰਗ"
 
-#: ../src/system-config-kdump.glade:932
+#: ../src/system-config-kdump.glade:934
 msgid "Network server name"
 msgstr "ਨੈੱਟਵਰਕ ਸਰਵਰ ਨਾਂ"
 
-#: ../src/system-config-kdump.glade:945
+#: ../src/system-config-kdump.glade:947
 msgid "User name:"
 msgstr "ਯੂਜ਼ਰ ਨਾਂ:"
 
-#: ../src/system-config-kdump.glade:960
+#: ../src/system-config-kdump.glade:962
 msgid "Path to directory:"
 msgstr "ਡਾਇਰੈਕਟਰੀ ਦਾ ਟਿਕਾਣਾ:"
 
-#: ../src/system-config-kdump.glade:974
+#: ../src/system-config-kdump.glade:976
 msgid "Server name:"
 msgstr "ਸਰਵਰ ਨਾਂ:"
 
-#: ../src/system-config-kdump.glade:1011
+#: ../src/system-config-kdump.glade:1013
 msgid "Target settings"
 msgstr "ਟਾਰਗਿਟ ਸੈਟਿੰਗ"
 
-#: ../src/system-config-kdump.glade:1059
+#: ../src/system-config-kdump.glade:1061
 msgid "zero page"
 msgstr "ਜ਼ੀਰੋ ਪੇਜ਼"
 
-#: ../src/system-config-kdump.glade:1064
+#: ../src/system-config-kdump.glade:1066
 msgid "Exclude zero page"
 msgstr "ਜ਼ੀਰੋ ਪੇਜ਼ ਹਟਾਓ"
 
-#: ../src/system-config-kdump.glade:1077
+#: ../src/system-config-kdump.glade:1079
 msgid "cache page"
 msgstr "ਕੈਸ਼ੇ ਪੇਜ਼"
 
-#: ../src/system-config-kdump.glade:1082
+#: ../src/system-config-kdump.glade:1084
 msgid "Exclude cache page"
 msgstr "ਕੈਸ਼ੇ ਪੇਜ਼ ਹਟਾਓ"
 
-#: ../src/system-config-kdump.glade:1095
+#: ../src/system-config-kdump.glade:1097
 msgid "cache private"
 msgstr "ਕੈਸ਼ੇ ਪਰਾਈਵੇਟ"
 
-#: ../src/system-config-kdump.glade:1100
+#: ../src/system-config-kdump.glade:1102
 msgid "Exclude cache private"
 msgstr "ਕੈਸ਼ੇ ਪਰਾਈਵੇਟ ਹਟਾਓ"
 
-#: ../src/system-config-kdump.glade:1113
+#: ../src/system-config-kdump.glade:1115
 msgid "user data"
 msgstr "ਯੂਜ਼ਰ ਡਾਟਾ"
 
-#: ../src/system-config-kdump.glade:1118
+#: ../src/system-config-kdump.glade:1120
 msgid "Exclude user data"
 msgstr "ਯੂਜ਼ਰ ਡਾਟਾ ਹਟਾਓ"
 
-#: ../src/system-config-kdump.glade:1131
+#: ../src/system-config-kdump.glade:1133
 msgid "free page"
 msgstr "ਫਰੀ ਪੇਜ਼"
 
-#: ../src/system-config-kdump.glade:1136
+#: ../src/system-config-kdump.glade:1138
 msgid "Exclude free page"
 msgstr "ਫਰੀ ਪੇਜ਼ ਹਟਾਓ"
 
-#: ../src/system-config-kdump.glade:1157
+#: ../src/system-config-kdump.glade:1159
 msgid "Actual filter level:"
 msgstr "ਅਸਲ ਫਿਲਟਰ ਲੈਵਲ:"
 
-#: ../src/system-config-kdump.glade:1195
+#: ../src/system-config-kdump.glade:1197
 msgid "<b>Filtering level </b>"
 msgstr "<b>ਫਿਲਟਰਿੰਗ ਲੈਵਲ </b>"
 
-#: ../src/system-config-kdump.glade:1227
+#: ../src/system-config-kdump.glade:1229
 msgid "ELF file format"
 msgstr "ELF ਫਾਇਲ ਫਾਰਮੈਟ"
 
-#: ../src/system-config-kdump.glade:1246
+#: ../src/system-config-kdump.glade:1248
 msgid "diskdump file format"
 msgstr "diskdump ਫਾਇਲ ਫਾਰਮੈਟ"
 
-#: ../src/system-config-kdump.glade:1272
+#: ../src/system-config-kdump.glade:1274
 msgid "<b>Output file format</b>"
 msgstr "<b>ਆਊਟਪੁੱਟ ਫਾਇਲ ਫਾਰਮੈਟ</b>"
 
-#: ../src/system-config-kdump.glade:1299
+#: ../src/system-config-kdump.glade:1301
 msgid "Filtering settings"
 msgstr "ਫਿਲਟਰਿੰਗ ਸੈਟਿੰਗ"
 
-#: ../src/system-config-kdump.glade:1349
+#: ../src/system-config-kdump.glade:1351
 msgid "Default initrd"
 msgstr "ਮੂਲ initrd"
 
-#: ../src/system-config-kdump.glade:1354
+#: ../src/system-config-kdump.glade:1356
 msgid "Use default initrd"
 msgstr "ਮੂਲ initrd ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1370
+#: ../src/system-config-kdump.glade:1372
 msgid "Custom initrd"
 msgstr "ਪਸੰਦੀ ਦੀ initrd"
 
-#: ../src/system-config-kdump.glade:1375
+#: ../src/system-config-kdump.glade:1377
 msgid "Use custom initrd"
 msgstr "ਪਸੰਦੀ ਦੀ initrd ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1394
+#: ../src/system-config-kdump.glade:1396
 msgid "Choose custom initrd file"
 msgstr "ਪਸੰਦੀ ਦੀ initrd ਫਾਇਲ ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1395
+#: ../src/system-config-kdump.glade:1397
 msgid "Select An initrd File"
 msgstr "ਇੱਕ initrd ਫਾਇਲ ਚੁਣੋ"
 
-#: ../src/system-config-kdump.glade:1414
+#: ../src/system-config-kdump.glade:1416
 msgid "<b>initrd selection</b>"
 msgstr "<b>initrd ਚੋਣ</b>"
 
-#: ../src/system-config-kdump.glade:1445
+#: ../src/system-config-kdump.glade:1447
 msgid "Default kernel"
 msgstr "ਮੂਲ ਕਰਨਲ"
 
-#: ../src/system-config-kdump.glade:1450
+#: ../src/system-config-kdump.glade:1452
 msgid "Use default kernel image"
 msgstr "ਮੂਲ ਕਰਨਲ ਈਮੇਜ਼ ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1466
+#: ../src/system-config-kdump.glade:1468
 msgid "Custom kernel"
 msgstr "ਮਨਪਸੰਦ ਕਰਨਲ"
 
-#: ../src/system-config-kdump.glade:1471
+#: ../src/system-config-kdump.glade:1473
 msgid "Use custom kernel image"
 msgstr "ਮਨਪਸੰਦ ਕਰਨਲ ਈਮੇਜ਼ ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1490
+#: ../src/system-config-kdump.glade:1492
 msgid "Choose your custom kernel"
 msgstr "ਮਨਪਸੰਦ ਕਰਨਲ ਵਰਤੋ"
 
-#: ../src/system-config-kdump.glade:1515
+#: ../src/system-config-kdump.glade:1517
 msgid "<b>Capture kernel selection</b>"
 msgstr "<b>ਕਰਨਲ ਚੋਣ ਵੇਖੋ</b>"
 
-#: ../src/system-config-kdump.glade:1568
+#: ../src/system-config-kdump.glade:1570
 msgid "Kernel command line options"
 msgstr "ਕਰਨਲ ਕਮਾਂਡ ਲਾਈਨ ਚੋਣਾਂ"
 
-#: ../src/system-config-kdump.glade:1585
+#: ../src/system-config-kdump.glade:1587
 msgid "Original kernel command line options"
 msgstr "ਅਸਲੀ ਕਰਨਲ ਕਮਾਂਡ ਲਾਈਨ ਚੋਣਾਂ"
 
-#: ../src/system-config-kdump.glade:1602
+#: ../src/system-config-kdump.glade:1604
 msgid "Original:"
 msgstr "ਅਸਲੀ:"
 
-#: ../src/system-config-kdump.glade:1615
+#: ../src/system-config-kdump.glade:1617
 msgid "Edited:"
 msgstr "ਸੋਧਿਆ:"
 
-#: ../src/system-config-kdump.glade:1633
+#: ../src/system-config-kdump.glade:1635
 msgid "<b>Command line options</b>"
 msgstr "<b>ਕਮਾਂਡ ਲਾਈਨ ਚੋਣਾਂ</b>"
 
-#: ../src/system-config-kdump.glade:1665
+#: ../src/system-config-kdump.glade:1668
 msgid "Choose default action"
 msgstr "ਮੂਲ ਕਾਰਵਾਈ ਚੁਣੋ"
 
-#: ../src/system-config-kdump.glade:1689
-msgid "<b>Default action</b>"
-msgstr "<b>ਮੂਲ ਕਾਰਵਾਈ</b>"
+#: ../src/system-config-kdump.glade:1692
+msgid "<b>Action if dumping fails</b>"
+msgstr ""
 
-#: ../src/system-config-kdump.glade:1738
+#: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"
 msgstr "<b>ਕੋਰ ਕੁਲੈਕਟਰ</b>"
 
-#: ../src/system-config-kdump.glade:1764
+#: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "ਮਾਹਿਰ ਸੈਟਿੰਗ"
+
+#~ msgid "<b>Default action</b>"
+#~ msgstr "<b>ਮੂਲ ਕਾਰਵਾਈ</b>"
