@@ -17,13 +17,14 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
 
 # can be replaced by using booty?
-#             bootloader : (config file, kdump offset, kernel path)
+# bootloader : possible conf locations
 BOOTLOADERS = {
-  "grub"   : ("/boot/grub/grub.conf", 16, "/boot"),
-  "grub2"  : ("/boot/grub2/grub.cfg", 16, "/boot"),
-  "yaboot" : ("/boot/etc/yaboot.conf", 32, "/boot"),
-  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf", 256, "/boot/efi/EFI/redhat"),
-  "zipl"   : ("/etc/zipl.conf", 0, "/boot")
+  "grub"   : ("/boot/grub/grub.conf", "/boot/efi/EFI/redhat/grub.conf"),
+  "grub2"  : ("/boot/grub2/grub.cfg", "/boot/efi/EFI/redhat/grub.cfg",
+              "/boot/efi/EFI/fedora/grub.cfg"),
+  "yaboot" : ("/boot/etc/yaboot.conf",),
+  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf",),
+  "zipl"   : ("/etc/zipl.conf",)
 }
 
 AUTH         = "org.fedoraproject.systemconfig.kdump.auth"
@@ -126,13 +127,12 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
-        bootloader = None
-        for (name, (conf, offset, kpath)) in BOOTLOADERS.items():
-            # I hope order doesn't matter
-            if os.access(conf, os.W_OK):
-                bootloader = name
-        if bootloader is None:
-            return ""
+        bootloader = ""
+        for (name, conf_locations) in BOOTLOADERS.items():
+            for conf in conf_locations:
+                if os.access(conf, os.W_OK):
+                    bootloader = name
+
         return bootloader
 
     @slip.dbus.polkit.require_auth (AUTH)
