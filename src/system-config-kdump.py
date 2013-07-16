@@ -622,7 +622,6 @@ class MainWindow:
                         self.xen_kdump_kernel = "kernel-PAE"
                         break
 
-        total_mem += kdump_mem
         self.total_mem = total_mem
         # read current kdump settings from grubby
         (kdump_mem_grubby, kdump_offset_grubby) = self.grubby_crashkernel()
