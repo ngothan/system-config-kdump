@@ -2,7 +2,7 @@
 
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
-Version: 2.0.12
+Version: 2.0.13
 Release: 1%{?dist}
 URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
@@ -81,6 +81,9 @@ fi
 
 
 %changelog
+* Tue Jul 23 2013 Martin Milata <mmilata@redhat.com> - 2.0.13-1
+- see ChangeLog
+
 * Wed Jul 10 2013 Martin Milata <mmilata@redhat.com> - 2.0.12-1
 - see ChangeLog
 
