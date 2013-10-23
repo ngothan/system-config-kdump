@@ -12,7 +12,6 @@ import subprocess
 
 
 #######
-GRUBBY_CMD        = "/sbin/grubby"
 KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 
 
@@ -43,15 +42,14 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = '', out_signature = '(siss)')
     def getdefaultkernel (self):
         """ Get default kernel name from grubby """
-#        return self.gtkcall(GRUBBY_CMD, "--default-kernel")
-        (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--default-kernel")
+        (cmd, retcode, std, err) = self.grubby("--default-kernel")
         if (std != ""):
             return (cmd, retcode, std, err)
         else:
             # default kernel is not set, we will use the first one
             # which is linux kernel entry
             name, value = "", ""
-            (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", "ALL")
+            (cmd, retcode, std, err) = self.grubby("--info", "ALL")
             for line in std.splitlines():
                 try:
                     (name, value) = line.strip().split("=", 1)
@@ -68,7 +66,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = 's', out_signature = '(siss)')
     def getcmdline (self, kernel):
         """ Get command line arguments for kernel from grubby """
-        (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
+        (cmd, retcode, std, err) = self.grubby("--info", kernel)
         if retcode > 0:
             return (cmd, retcode, std, err)
         else:
@@ -82,7 +80,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = 's', out_signature = '(siss)')
     def getxencmdline (self, kernel):
         """ Get command line arguments for xen kernel from grubby """
-        (cmd, retcode, std, err) = self.gtkcall(GRUBBY_CMD, "--info", kernel)
+        (cmd, retcode, std, err) = self.grubby("--info", kernel)
         if retcode > 0:
             return (cmd, retcode, std, err)
         else:
@@ -96,7 +94,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                           in_signature = '', out_signature = '(siss)')
     def getallkernels (self):
         """ Get all kernel names from grubby """
-        return self.gtkcall(GRUBBY_CMD, "--info", "ALL")
+        return self.grubby("--info", "ALL")
 
     @slip.dbus.polkit.require_auth (AUTH)
     @dbus.service.method (MECHANISM,
@@ -122,8 +120,7 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         Write bootloader configuration.
         in config_string are arguments for grubby divided by `;'
         """
-        return self.gtkcall(*([GRUBBY_CMD] + ["--" + self.bootloader] +
-                            config_string.split(";")))
+        return self.grubby(*(config_string.split(";")))
 
     def set_bootloader(self):
         """ Choose which bootloader is on the system """
@@ -188,6 +185,12 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
             print "-> stderr = " + stderr
         return ("".join(str(a) + " " for a in args),
             the_call.returncode, stdout or "", stderr or "")
+
+    def grubby (self, *args):
+        """
+        Call gruby for our bootloader.
+        """
+        return self.gtkcall("/sbin/grubby", "--" + self.bootloader, *args)
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
