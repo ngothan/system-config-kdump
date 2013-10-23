@@ -18,12 +18,13 @@ KDUMP_CONFIG_FILE = "/etc/kdump.conf"
 # can be replaced by using booty?
 # bootloader : possible conf locations
 BOOTLOADERS = {
-  "grub"   : ("/boot/grub/grub.conf", "/boot/efi/EFI/redhat/grub.conf"),
-  "grub2"  : ("/boot/grub2/grub.cfg", "/boot/efi/EFI/redhat/grub.cfg",
-              "/boot/efi/EFI/fedora/grub.cfg"),
-  "yaboot" : ("/boot/etc/yaboot.conf",),
-  "elilo"  : ("/boot/efi/EFI/redhat/elilo.conf",),
-  "zipl"   : ("/etc/zipl.conf",)
+  "grub"     : ("/boot/grub/grub.conf", "/boot/efi/EFI/redhat/grub.conf"),
+  "grub2"    : ("/boot/grub2/grub.cfg", "/boot/efi/EFI/redhat/grub.cfg",
+                "/boot/efi/EFI/fedora/grub.cfg"),
+  "yaboot"   : ("/boot/etc/yaboot.conf",),
+  "elilo"    : ("/boot/efi/EFI/redhat/elilo.conf",),
+  "zipl"     : ("/etc/zipl.conf",),
+  "extlinux" : ("/boot/extlinux/extlinux.conf",)
 }
 
 AUTH         = "org.fedoraproject.systemconfig.kdump.auth"
