@@ -3,7 +3,7 @@
 Summary: A graphical interface for configuring kernel crash dumping
 Name: system-config-kdump
 Version: 2.0.13
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://fedorahosted.org/system-config-kdump/
 License: GPL2+
 Group: System Environment/Base
@@ -49,14 +49,14 @@ touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk-update-icon-cache ]; then
   gtk-update-icon-cache -q %{_datadir}/icons/hicolor
 fi
-%{_bindir}/scrollkeeper-update -q || :
+%{_bindir}/scrollkeeper-update -q 2>/dev/null || :
 
 %post
 touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk-update-icon-cache ]; then
   gtk-update-icon-cache -q %{_datadir}/icons/hicolor
 fi
-%{_bindir}/scrollkeeper-update -q || :
+%{_bindir}/scrollkeeper-update -q 2>/dev/null || :
 
 
 %files -f %{name}.lang
@@ -78,7 +78,6 @@ fi
 %doc ChangeLog COPYING
 %doc %{_datadir}/gnome/help/system-config-kdump
 %doc %{_datadir}/omf/system-config-kdump
-
 
 %changelog
 * Tue Jul 23 2013 Martin Milata <mmilata@redhat.com> - 2.0.13-1
