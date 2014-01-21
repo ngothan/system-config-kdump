@@ -85,7 +85,7 @@ SUPPORTED_MAJOR = [ '2', '3', '8', '9', '13', '14', '19', '21', '22', '28',
                     '135', '147', '180' ]
 
 PATH_DEFAULT = "/var/crash"
-CORE_COLLECTOR_DEFAULT = "makedumpfile -c"
+CORE_COLLECTOR_DEFAULT = "makedumpfile -l"
 FILTER_LEVEL_DEFAULT = 31
 
 ENTER_CODES = ["KP_Enter", "Return"]
