@@ -24,6 +24,7 @@ from gtk.gdk import keyval_name
 
 import sys, traceback
 import os
+from collections import OrderedDict
 from decimal import *
 # import stat
 
@@ -347,7 +348,8 @@ class MainWindow:
         self.xen_kdump_kernel = "kernel"
         self.xen_kernel = False
         #                  "name":     (fsType, mntpoint)
-        self.partitions = {DEFAULT_FS: (None, "/")}
+        self.partitions = OrderedDict()
+        self.partitions[DEFAULT_FS] = (None, "/")
         self.raw_devices = []
 
         self.arch = None
@@ -1340,9 +1342,11 @@ class MainWindow:
             pass
         index = 0
         for name, (fs_type, mntpoint) in self.partitions.iteritems():
-            combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
             if (name == DEFAULT_FS):
+                combobox.append_text(_("Root file system"))
                 combobox.set_active(index)
+            else:
+                combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
             index += 1
         return
 
@@ -1759,12 +1763,13 @@ class MainWindow:
         """
         Called when you change local fs in combobox and will save active one into settings
         """
-        name = part_combobox.get_active_text().rsplit(":", 1)[0]
-        if self.partitions[name][0]:
-            self.my_settings.local_partition = "%s %s"\
-                % (self.partitions[name][0], name)
-        else:
-            self.my_settings.local_partition = ""
+        selected_idx = part_combobox.get_active()
+        self.my_settings.local_partition = ""
+        if selected_idx >= 0:
+            (name, (fs, mntpoint)) = self.partitions.items()[selected_idx]
+            if fs:
+                self.my_settings.local_partition = "%s %s" % (fs, name)
+
         self.location_entry.set_sensitive(
             self.my_settings.local_partition != "")
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
