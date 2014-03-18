@@ -194,6 +194,11 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
         return self.gtkcall("/sbin/grubby", "--" + self.bootloader, *args)
 
 if __name__ == '__main__':
+    # dbus-daemon cleans the environment including PATH. On s390x, zipl calls
+    # a script that does not use absolute paths to commands. The result is
+    # rhbz#1077113. Set the path here for the time being.
+    os.environ['PATH'] = '/sbin:/bin:/usr/sbin:/usr/bin'
+
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
     BUS = dbus.SystemBus ()
