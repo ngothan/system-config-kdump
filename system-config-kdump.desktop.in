@@ -1,7 +1,7 @@
 [Desktop Entry]
 _Name=Kernel crash dumps
 _Comment=Configure kernel crash dumps
-Categories=System;Settings;Application;GTK;
+Categories=GNOME;GTK;System;
 Icon=system-config-kdump
 Exec=/usr/bin/system-config-kdump
 Type=Application
