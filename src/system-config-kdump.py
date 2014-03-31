@@ -24,6 +24,7 @@ from gtk.gdk import keyval_name
 
 import sys, traceback
 import os
+import signal
 from collections import OrderedDict
 from decimal import *
 # import stat
@@ -1969,6 +1970,9 @@ if __name__ == "__main__":
             elif opt in ("-h", "--help"):
                 print "Usage: system-config-kdump.py [--test] [--debug]"
 
+        # workaround https://bugzilla.gnome.org/show_bug.cgi?id=622084
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
+
         win = MainWindow()
         win.setup_screen()
         win.run()
@@ -1978,9 +1982,7 @@ if __name__ == "__main__":
                 _("D-Bus server is not running.\n"
                   "Please make sure D-Bus is running.\n"),
                 _("System config kdump: dbus error"))
-    except SystemExit:
-        pass
-    except:
+    except Exception:
         print "Unexpected error:", sys.exc_info()[0]
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
                                 gtk.BUTTONS_OK, "%s" %traceback.format_exc())
