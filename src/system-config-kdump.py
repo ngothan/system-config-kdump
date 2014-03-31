@@ -581,8 +581,12 @@ class MainWindow:
                     hex_ck_start = line.strip().split("-")[0]
                     hex_ck_end = \
                         line.strip().split("-")[1].split(":")[0].strip()
-                    kdump_offset = self.hex2mb(hex_ck_start)
-                    kdump_mem = self.hex2mb(hex_ck_end) - kdump_offset
+                    kdump_offset = int(hex_ck_start, 16)
+                    # hex_ck_end is the last byte in the range (not one after
+                    # the last), we need to add 1 in order to compute its size
+                    kdump_mem = int(hex_ck_end, 16) + 1 - kdump_offset
+                    kdump_offset /= 1024**2
+                    kdump_mem /= 1024**2
                     break
         else:
             cmdline = open("/proc/cmdline").read()
@@ -1171,14 +1175,6 @@ class MainWindow:
 
         self.check_settings()
         return True
-
-    def hex2mb(self, hex_code):
-        """
-        convert hex memory values into MB of RAM so we can
-        read /proc/iomem and show something a human understands
-        """
-        divisor = 1048575
-        return (int(hex_code, 16) / divisor)
 
     def hex2mb_float(self, hex_code):
         """
