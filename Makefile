@@ -112,12 +112,11 @@ clean: doc-clean py-clean
 	@rm -fv ChangeLog
 	@rm -fv ${PKGNAME}*.tar.bz2
 
-srpm:
+srpm: archive
 	@echo Creating src.rpm
-	@mkdir -p $(HOME)/rpmbuild/$(PKGNAME)-$(VERSION)
-	@mv $(PKGNAME)-$(VERSION).tar.bz2 $(HOME)/rpmbuild/$(PKGNAME)-$(VERSION)/
-	@cp $(PKGNAME).spec $(HOME)/rpmbuild/$(PKGNAME)-$(VERSION)/
-	@pushd $(HOME)/rpmbuild/$(PKGNAME)-$(VERSION) &> /dev/null ; rpmbuild --nodeps -bs $(PKGNAME).spec ; popd &> /dev/null
+	@mv $(PKGNAME)-$(VERSION).tar.bz2 $(HOME)/rpmbuild/SOURCES/
+	@cp $(PKGNAME).spec $(HOME)/rpmbuild/SPECS/
+	@rpmbuild --nodeps -bs $(HOME)/rpmbuild/SPECS/$(PKGNAME).spec
 	@echo SRPM is: $(HOME)/rpmbuild/SRPMS/$(PKGNAME)-$(VERSION)-$(RELEASE).src.rpm
 
 %.desktop: %.desktop.in
