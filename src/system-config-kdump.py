@@ -1767,8 +1767,6 @@ class MainWindow:
             if fs:
                 self.my_settings.local_partition = "%s %s" % (fs, name)
 
-        self.location_entry.set_sensitive(
-            self.my_settings.local_partition != "")
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
         self.check_settings()
 
@@ -1778,7 +1776,7 @@ class MainWindow:
         """
         if partition == "":
             self.local_hint_label.set_text(
-                _("core will be in /var/crash/%DATE on rootfs"))
+                _("core will be in %s/%%DATE on rootfs") % path)
         else:
             self.local_hint_label.set_text(
                 _("core will be in %s/%%DATE on %s") %(path, partition))
