@@ -1340,7 +1340,7 @@ class MainWindow:
         index = 0
         for name, (fs_type, mntpoint) in self.partitions.iteritems():
             if (name == DEFAULT_FS):
-                combobox.append_text(_("Root file system"))
+                combobox.append_text(_("Unspecified"))
                 combobox.set_active(index)
             else:
                 combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
@@ -1770,16 +1770,58 @@ class MainWindow:
         self.update_local_hint_label(self.my_settings.local_partition, self.location_entry.get_text())
         self.check_settings()
 
+    @staticmethod
+    def partition_for_dir(path):
+        """
+        Returns (device, mountpoint, fs_type) corresponding to partition on
+        which the directory resides. The directory doesn't have to exist. Returns
+        None on error.
+        """
+        if len(path) > 0 and path[-1] != '/':
+            path += '/'
+
+        with open('/proc/mounts', 'r') as fh:
+            lines = fh.read().splitlines()
+
+        mounts = []
+        for line in lines:
+            line = line.split()
+
+            dev = line[0]
+            mntpoint = line[1]
+            fstype = line[2]
+
+            if ((path.startswith(mntpoint + '/') or mntpoint == '/')
+                    and dev != 'rootfs'):
+                mounts.append((dev, mntpoint, fstype))
+
+        mounts.sort(reverse = True, key = lambda (dev, mntpoint, fstype): len(mntpoint))
+        if mounts:
+            return mounts[0]
+        else:
+            return None
+
     def update_local_hint_label(self, partition, path):
         """
         Update local_hint_label text with set partition and path
         """
-        if partition == "":
+
+        # if the partition is not specified, try to find it out
+        if partition == '':
+            result = self.partition_for_dir(path)
+            if result:
+                (dev, mntpoint, fstype) = result
+                partition = "%s %s" % (fstype, dev)
+                if mntpoint != '/':
+                    # path relative to the partition
+                    path = path[len(mntpoint):]
+
+        if partition != '':
             self.local_hint_label.set_text(
-                _("core will be in %s/%%DATE on rootfs") % path)
+                 _("core will be in %s/%%DATE on %s") % (path, partition))
         else:
             self.local_hint_label.set_text(
-                _("core will be in %s/%%DATE on %s") %(path, partition))
+                _("core will be in %s/%%DATE on root file system") % path)
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
