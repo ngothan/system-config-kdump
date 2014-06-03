@@ -73,18 +73,15 @@ DEFAULT_FS = "file:///"
 NUM_FILTERS = 5
 
 FSTAB_FILE = "/etc/fstab"
-PROC_PARTITIONS = "/proc/partitions"
 
 TAG_CURRENT = _("(c)")
 TAG_DEFAULT = _("(d)")
 
 # got from kernel/Documentation/devices.txt
-SUPPORTED_MAJOR = [ '2', '3', '8', '9', '13', '14', '19', '21', '22', '28',
-                    '31', '33', '34', '36', '40', '44', '45', '47', '48', '49',
-                    '50', '51', '52', '53', '54', '55', '56', '57', '65', '66',
-                    '67', '68', '69', '70', '71', '88', '89', '90', '91', '94',
-                    '99', '128', '129', '130', '131', '132', '133', '134',
-                    '135', '147', '180' ]
+SUPPORTED_MAJOR = [ 2, 3, 8, 9, 13, 14, 19, 21, 22, 28, 31, 33, 34, 36, 40,
+                    44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65,
+                    66, 67, 68, 69, 70, 71, 88, 89, 90, 91, 94, 99, 128, 129,
+                    130, 131, 132, 133, 134, 135, 147, 180 ]
 
 PATH_DEFAULT = "/var/crash"
 CORE_COLLECTOR_DEFAULT = "makedumpfile -l"
@@ -1351,22 +1348,24 @@ class MainWindow:
         """
         fill raw devices combo box with all partitions listed in /proc/partitions
         uses only valid major numbers
+        partitions that are mounted or used by LVM are not listed
         """
-        try:
-            lines = open(PROC_PARTITIONS).readlines()
-            for line in lines:
-                major = line.strip().split(" ")[0]
-                if major in SUPPORTED_MAJOR:
-                    dev = "/dev/%s" % line.strip().rsplit(" ", 1)[1]
-                    self.raw_devices.append(dev)
-                    if DEBUG:
-                        print "added '%s' to raw devices" % dev
-        except IOError:
-            pass
+        self.raw_devices = []
+
+        partitions = self.dbus_object.getunusedpartitions()
+        for (dev, major, minor) in partitions:
+            if major in SUPPORTED_MAJOR:
+                self.raw_devices.append(dev)
+                if DEBUG:
+                    print "added '%s' to raw devices" % dev
+
         for dev in self.raw_devices:
             combobox.append_text(dev)
         combobox.set_active(0)
-        return
+
+        if len(self.raw_devices) > 0:
+            self.my_settings.raw_device = self.raw_devices[0]
+            self.orig_settings.raw_device = self.raw_devices[0]
 
     def location_changed(self, widget, *args):
         """
@@ -1589,7 +1588,8 @@ class MainWindow:
             return True
         else:
             dialogs.show_error_message(
-                _("Raw device %s wasn't found on this machine" % device_name),
+                _("Raw device %s wasn't found on this machine."
+                  " Please make sure it's not mounted or used by LVM." % device_name),
                 _("system-config-kdump: Raw device error"),
                 parent = self.toplevel)
             self.device_combobox.set_active(-1)

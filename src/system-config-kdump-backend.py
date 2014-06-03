@@ -7,6 +7,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 import os
+import errno
 import slip.dbus.service
 import subprocess
 
@@ -169,6 +170,37 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
     def getservicestatus (self):
         """ Get current status of the kdump service """
         return self.gtkcall("/usr/bin/kdumpctl", "status")
+
+    @slip.dbus.polkit.require_auth (NOAUTH)
+    @dbus.service.method (MECHANISM,
+                          in_signature = '', out_signature = 'a(sii)')
+    def getunusedpartitions (self):
+        partitions = []
+        try:
+            with open('/proc/partitions') as fh:
+                lines = fh.readlines()[2:] # skip the header
+        except IOError:
+            return []
+
+        for line in lines:
+            items = line.strip().split()
+            major = int(items[0])
+            minor = int(items[1])
+            dev = '/dev/%s' % items[3]
+
+            # check if the device is used
+            try:
+                fd = os.open(dev, os.O_RDONLY|os.O_EXCL)
+                os.close(fd)
+            except OSError as e:
+                if e.errno == errno.EBUSY:
+                    continue
+                else:
+                    raise
+
+            partitions.append((dev, major, minor))
+
+        return partitions
 
     def gtkcall (self, *args):
         """

@@ -62,6 +62,11 @@ class DBusProxy (gobject.GObject):
         self.loop.quit()
         self.progress_window.hide()
 
+    def handle_reply_partitions(self, partitions):
+        self.partitions = partitions
+        self.loop.quit()
+        self.progress_window.hide()
+
     def handle_error(self, exception):
         self.loop.quit()
         self.progress_window.hide()
@@ -194,3 +199,16 @@ class DBusProxy (gobject.GObject):
         self.loop.run()
         return self.cmd, self.retcode, self.std, self.err
 
+    @polkit.enable_proxy
+    def getunusedpartitions(self):
+        """
+        Get list of partitions that are not mounted or otherwise used
+        """
+        self.progress_window.set_label(_("Getting unused partitions"))
+        self.progress_window.show()
+        self.dbus_object.getunusedpartitions(
+            dbus_interface = "org.fedoraproject.systemconfig.kdump.mechanism",
+            reply_handler = self.handle_reply_partitions,
+            error_handler = self.handle_error, timeout=TIMEOUT)
+        self.loop.run()
+        return self.partitions
