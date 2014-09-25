@@ -120,7 +120,7 @@ DEFAULTACTIONS = [ ('reboot', _('Reboot')),
                    ('dump_to_rootfs', _('Dump to rootfs and reboot')) ]
 ACTION_DEFAULT = DEFAULTACTIONS[0][0]
 
-SUPPORTEDFSTYPES = ("ext2", "ext3", "ext4")
+SUPPORTEDFSTYPES = ("ext2", "ext3", "ext4", "minix", "btrfs", "xfs")
 
 UNSUPPORTED_ARCHES = ("ppc", "s390", "i386", "i586")
 DEBUG = 0
