@@ -678,8 +678,6 @@ class MainWindow:
 
         # Set spinner to lower_bound unless already set on kernel command line
         if kdump_mem != 0:
-            # round it down to a multiple of %step
-            kdump_mem = kdump_mem - (kdump_mem % step)
             self.orig_settings.kdump_mem = kdump_mem
 
         self.usable_mem = self.total_mem - kdump_mem
