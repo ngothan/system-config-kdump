@@ -196,7 +196,8 @@ class SystemConfigKdumpObject(slip.dbus.service.Object):
                 if e.errno == errno.EBUSY:
                     continue
                 else:
-                    raise
+                    # EACCESS, ENOMEDIUM, ...
+                    pass
 
             partitions.append((dev, major, minor))
 

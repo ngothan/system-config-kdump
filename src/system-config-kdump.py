@@ -1340,7 +1340,6 @@ class MainWindow:
             else:
                 combobox.append_text("%s: %s on %s" % (name, fs_type, mntpoint))
             index += 1
-        return
 
     def setup_raw_devices(self, combobox):
         """
