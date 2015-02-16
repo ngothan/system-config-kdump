@@ -1610,6 +1610,18 @@ class MainWindow:
                         % self.my_settings.local_partition
                 self.check_settings()
                 return True
+
+        # It might happen that the partition from kdump.conf is not among those
+        # we extracted from /etc/fstab. This can happen when the partition is
+        # specified by UUID in kdump.conf and by device node in fstab. Allow
+        # the user to choose this device - if it is unsuitable, the kdump
+        # service restart will fail later.
+        if part_type in SUPPORTEDFSTYPES:
+            self.partitions[part_name] = (part_type, None)
+            self.partition_combobox.append_text(_("%s: %s (original setting)") % (part_name, part_type))
+            self.partition_combobox.set_active(len(self.partitions) - 1)
+            return True
+
         dialogs.show_error_message(
             _("Local file system partition with name %s") % part_name +
             _(" and type %s wasn't found") %part_type,
