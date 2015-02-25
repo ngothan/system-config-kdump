@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Geert Warrink <geert.warrink@onsnet.nu>, 2010,2012-2013
 # Peter van Egdom <p.van.egdom@gmail.com>, 2006, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 14:04+0000\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/fedora/language/"
-"nl/)\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 10:04-0400\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/fedora/language/nl/"
+")\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -96,6 +97,7 @@ msgstr ""
 "core bestand kan onmisbaar zijn bij het zoeken naar de hoofdoorzaak van een "
 "systeem crash. Let er op dat kdump vereist dat een gedeelte van het systeem "
 "geheugen wordt gereserveerd dat niet beschikbaar zal zijn voor ander gebruik."
+""
 
 #: ../src/system-config-kdump.py:140
 msgid ""
@@ -238,11 +240,9 @@ msgstr "system-config-kdump: Opnieuw opstarten is nodig"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Fout tijdens schrijven kdump configuratie:\n"
+msgstr "Fout tijdens schrijven kdump configuratie:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -259,20 +259,16 @@ msgstr "system-config-kdump: Fouten schrijven boot-lader configuratie"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Fout tijdens het schrijven van boot-lader configuratie\"\n"
+msgstr "Fout tijdens het schrijven van boot-lader configuratie\"\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Fout bij het afhandelen van kdump servies\n"
+msgstr "Fout bij het afhandelen van kdump servies\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -324,15 +320,13 @@ msgstr "Kan alle kernel namen niet verkrijgen"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"Ongeldige crashkernel waarde: %s.\n"
+msgstr "Ongeldige crashkernel waarde: %s.\n"
 "Mogelijke waardes zijn:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -389,11 +383,9 @@ msgstr "Kan kdump services niet afhandelen"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Kan niet communiceren met backend.\n"
+msgstr "Kan niet communiceren met backend.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -401,11 +393,9 @@ msgid "System config kdump: dbus error"
 msgstr "system-config-kdump: dbus fout"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
-"D-Bus server draait niet.\n"
+msgstr "D-Bus server draait niet.\n"
 "Zorg ervoor dat D-Bus draait.\n"
 
 #: ../src/system-config-kdump.py:2004
@@ -768,6 +758,3 @@ msgstr "<b>Core collector</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Expert instellingen"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Standaard actie</b>"

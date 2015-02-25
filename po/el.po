@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # jiannis bonatakis <california17@gmail.com>, 2010
 # jiannis bonatakis <jbonatakis@gmail.com>, 2012
 # jobo <jobo@fedoraproject.org>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
-"Language-Team: Greek <trans-el@lists.fedoraproject.org>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 09:01-0400\n"
+"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"Language-Team: Greek <trans-el@lists.fedoraproject.org>\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -233,8 +234,7 @@ msgstr "system-config-kdump: Χρειάζεται επανακίνηση"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
 msgstr ""
 
@@ -252,15 +252,13 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
 msgstr ""
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
 msgstr ""
 
@@ -313,8 +311,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -370,8 +367,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
 
@@ -380,8 +376,7 @@ msgid "System config kdump: dbus error"
 msgstr ""
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 

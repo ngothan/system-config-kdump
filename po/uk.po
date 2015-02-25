@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Maxim Dubovoy <max@mylinux.com.ua>, 2003
 # Yuri Chornoivan <yurchor@ukr.net>, 2012-2013
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:54+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"PO-Revision-Date: 2013-04-03 09:54-0400\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -232,11 +233,9 @@ msgstr "system-config-kdump: потрібно перезавантажити"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Помилка під час запису налаштувань kdump:\n"
+msgstr "Помилка під час запису налаштувань kdump:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -249,24 +248,21 @@ msgstr "Помилка у конфігурації завантажувача"
 
 #: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: помилка під час запису конфігурації завантажувача"
+msgstr ""
+"system-config-kdump: помилка під час запису конфігурації завантажувача"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Помилка під час спроби запису налаштувань завантажувача:\n"
+msgstr "Помилка під час спроби запису налаштувань завантажувача:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Помилка при роботі зі службами kdump\n"
+msgstr "Помилка при роботі зі службами kdump\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -318,8 +314,7 @@ msgstr "Не вдалося визначити всі назви ядер"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -383,11 +378,9 @@ msgstr "Не вдалося обробити дані служб kdump"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Не вдалося здійснити обмін даними з допоміжною програмою.\n"
+msgstr "Не вдалося здійснити обмін даними з допоміжною програмою.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -395,8 +388,7 @@ msgid "System config kdump: dbus error"
 msgstr "system-config-kdump: помилка DBus"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 "Сервер D-Bus не запущено.\n"
@@ -761,6 +753,3 @@ msgstr "<b>Колектор</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Додаткові налаштування"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Типова дія</b>"

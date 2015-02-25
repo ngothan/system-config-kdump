@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # eukim <eukim@redhat.com>, 2006-2007
 # eukim <eukim@redhat.com>, 2012
 # Hyunsok Oh <hoh@redhat.com>, 2010,2013
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-05 12:14+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-04 08:14-0400\n"
 "Last-Translator: eukim <eukim@redhat.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/fedora/language/"
 "ko/)\n"
 "Language: ko\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -89,12 +90,10 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump는 새 커널 크래시 덤프 메카니즘입니다. 시스템이 크래시되었을 때, 주요 파"
-"일은 새로 부팅된 커널의 문맥에서 실행되는 Kdump를 가지고 캡쳐될 수 있으며, 이"
-"는 크래시된 커널의 문맥안에서 캡쳐하는 방법 보다 신뢰성있는 방법을 제공합니"
-"다. 주요 파일을 캡쳐할 수 있게 되는 것은 시스템 크래시로 인한 root를 결정하"
-"는 데에 유용합니다. kdump에서 사용하기 위해서 일부 시스템 메모리를 다른 용도"
-"로 사용하지 못하고 보존해 두어야 함에 유의하십시오."
+"Kdump는 새 커널 크래시 덤프 메카니즘입니다. 시스템이 크래시되었을 때, 주요 파일은 새로 부팅된 커널의 문맥에서 실행되는 "
+"Kdump를 가지고 캡쳐될 수 있으며, 이는 크래시된 커널의 문맥안에서 캡쳐하는 방법 보다 신뢰성있는 방법을 제공합니다. 주요 파일을 "
+"캡쳐할 수 있게 되는 것은 시스템 크래시로 인한 root를 결정하는 데에 유용합니다. kdump에서 사용하기 위해서 일부 시스템 메모리를 "
+"다른 용도로 사용하지 못하고 보존해 두어야 함에 유의하십시오."
 
 #: ../src/system-config-kdump.py:140
 msgid ""
@@ -102,8 +101,7 @@ msgid ""
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
 msgstr ""
-"Kdump는 특정 장소에 vmcore를 위치시키려 합니다. 이러한 작업이 실패할 경우, 기"
-"본 동작이(아래에 명시됨) 실행됩니다."
+"Kdump는 특정 장소에 vmcore를 위치시키려 합니다. 이러한 작업이 실패할 경우, 기본 동작이(아래에 명시됨) 실행됩니다."
 
 #: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
@@ -129,9 +127,7 @@ msgstr "system-config-kdump: kdump를 지원하지 않음"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
-"/proc/iomem에서 총 시스템 메모리를 감지할 수 없습니다. 총 시스템 메모리가 정"
-"확하지 않을 수 있습니다. "
+msgstr "/proc/iomem에서 총 시스템 메모리를 감지할 수 없습니다. 총 시스템 메모리가 정확하지 않을 수 있습니다. "
 
 #: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
@@ -200,9 +196,7 @@ msgstr "system-config-kdump: 로컬 파티션 오류"
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
-msgstr ""
-"경고: xen kdump 지원에서 실제 크래시 덤프를 캡쳐하려면 비-xen %s RPM이 필요합"
-"니다."
+msgstr "경고: xen kdump 지원에서 실제 크래시 덤프를 캡쳐하려면 비-xen %s RPM이 필요합니다."
 
 #: ../src/system-config-kdump.py:799
 #, python-format
@@ -222,8 +216,8 @@ msgid ""
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
 msgstr ""
-"Kdump 설정을 변경한 다음에는 그에 따라 메모리를 재배치하기 위해 시스템을 재부"
-"팅해야 합니다. %s 새로운 설정 사항을 적용하시려면 시스템을 재부팅해야 합니다."
+"Kdump 설정을 변경한 다음에는 그에 따라 메모리를 재배치하기 위해 시스템을 재부팅해야 합니다. %s 새로운 설정 사항을 적용하시려면 "
+"시스템을 재부팅해야 합니다."
 
 #: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
@@ -231,11 +225,9 @@ msgstr "system-config-kdump: 재부팅 필요함"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"kdump 설정을 기록하는 중 오류가 발생했습니다:\n"
+msgstr "kdump 설정을 기록하는 중 오류가 발생했습니다:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -252,20 +244,16 @@ msgstr "system-config-kdump: 부트로더 설정 기록 실패"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"부트로더 설정을 기록하는 데 실패했습니다:\n"
+msgstr "부트로더 설정을 기록하는 데 실패했습니다:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"kdump 서비스 처리 도중 오류가 발생했습니다\n"
+msgstr "kdump 서비스 처리 도중 오류가 발생했습니다\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -317,15 +305,13 @@ msgstr "모든 커널 이름을 가져올 수 없음 "
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"잘못된 crashkernel 값입니다: %s.\n"
+msgstr "잘못된 crashkernel 값입니다: %s.\n"
 "가능한 값은 다음과 같습니다:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -364,9 +350,7 @@ msgstr "코어는 %s 상의 %s/%%DATE에 있음"
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
-msgstr ""
-"도움말 뷰어를 찾을 수 없습니다. 도움말을 보려면 'yelp' 패키지를 설치해야 합니"
-"다."
+msgstr "도움말 뷰어를 찾을 수 없습니다. 도움말을 보려면 'yelp' 패키지를 설치해야 합니다."
 
 #: ../src/system-config-kdump.py:1916
 msgid "Unable to get kdump service status"
@@ -382,11 +366,9 @@ msgstr "kdump 서비스를 처리할 수 없음 "
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"백엔드 서비스와 통신할 수 없습니다.\n"
+msgstr "백엔드 서비스와 통신할 수 없습니다.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -394,11 +376,9 @@ msgid "System config kdump: dbus error"
 msgstr "System config kdump: dbus 오류"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
-"D-Bus 서버가 실행되고 있지 않습니다.\n"
+msgstr "D-Bus 서버가 실행되고 있지 않습니다.\n"
 "D-Bus가 실행되고 있는지 확인하십시오.\n"
 
 #: ../src/system-config-kdump.py:2004
@@ -437,8 +417,7 @@ msgstr "파일(_F)"
 #: ../src/system-config-kdump.glade:104 ../src/system-config-kdump.glade:243
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
-msgstr ""
-"변경 사항을 적용하고, 부트로더 설장 파일과 kexec/kdump 설정 파일 저장합니다"
+msgstr "변경 사항을 적용하고, 부트로더 설장 파일과 kexec/kdump 설정 파일 저장합니다"
 
 #: ../src/system-config-kdump.glade:117 ../src/system-config-kdump.glade:258
 msgid "Reload original settings from config files"
@@ -760,6 +739,3 @@ msgstr "<b>핵심 콜렉터</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "전문가 설정"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>기본 동작</b>"

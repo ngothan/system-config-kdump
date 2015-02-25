@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Gerd Koenig <koenig@transporeon.com>, 2010
 # Roman Spirgi <bigant@fedoraproject.org>, 2012-2013
 # sknirT omiT <moc.tahder@sknirtt>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-09 12:46+0000\n"
-"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
-"Language-Team: German <trans-de@lists.fedoraproject.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-08 08:46-0400\n"
+"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
+"Language-Team: German <trans-de@lists.fedoraproject.org>\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -131,8 +132,8 @@ msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
-"Die Grösse des Arbeitsspeichers kann von /proc/iomem nicht ausgelesen "
-"werden. Die Gesamtgrösse des Arbeitsspeichers ist deshalb ungenau."
+"Die Grösse des Arbeitsspeichers kann von /proc/iomem nicht ausgelesen werden."
+" Die Gesamtgrösse des Arbeitsspeichers ist deshalb ungenau."
 
 #: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
@@ -144,7 +145,8 @@ msgstr "Leider unterstützen ia64 Xen-Kernels kdump derzeit nicht."
 
 #: ../src/system-config-kdump.py:683
 msgid "This system does not have enough memory for kdump to be viable"
-msgstr "Dieses System besitzt für die Realisierung von kdump zu wenig Speicher"
+msgstr ""
+"Dieses System besitzt für die Realisierung von kdump zu wenig Speicher"
 
 #: ../src/system-config-kdump.py:685
 msgid "system-config-kdump: Not enough memory"
@@ -235,11 +237,9 @@ msgstr "system-config-kdump: Neustart erforderlich"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Fehler beim Schreiben der kdump-Konfiguration:\n"
+msgstr "Fehler beim Schreiben der kdump-Konfiguration:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -252,24 +252,21 @@ msgstr "Fehler beim Schreiben der Bootloaderkonfiguration"
 
 #: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr "system-config-kdump: Fehler beim Schreiben der Bootloaderkonfiguration"
+msgstr ""
+"system-config-kdump: Fehler beim Schreiben der Bootloaderkonfiguration"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Fehler beim Schreiben der Bootloader-Konfiguration:\n"
+msgstr "Fehler beim Schreiben der Bootloader-Konfiguration:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Fehlerbehandlung Kdump-Services\n"
+msgstr "Fehlerbehandlung Kdump-Services\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -321,15 +318,13 @@ msgstr "Keine Kernel-Namen abrufbar"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"Ungültiger Crashkernel-Wert: %s.\n"
+msgstr "Ungültiger Crashkernel-Wert: %s.\n"
 "Mögliche Werte sind:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -386,11 +381,9 @@ msgstr "Es ist nicht möglich, die Kdump-Dienste zu bearbeiten"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Es ist nicht möglich, mit dem Backend zu kommunizieren.\n"
+msgstr "Es ist nicht möglich, mit dem Backend zu kommunizieren.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -398,8 +391,7 @@ msgid "System config kdump: dbus error"
 msgstr "System config kdump: Dbus-Fehler"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 "Der D-Bus-Server läuft nicht.\n"
@@ -767,6 +759,3 @@ msgstr "<b>Core-Collector</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Experteneinstellung"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Standard-Aktion</b>"

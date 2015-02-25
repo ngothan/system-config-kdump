@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Alain PORTAL <aportal@univ-montp2.fr>, 2006, 2007
 # Decroux Fabien <fdecroux@redhat.com>, 2006
@@ -11,17 +11,18 @@
 # Thomas Canniot <mrtom@fedoraproject.org>, 2007, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-04 21:13+0000\n"
-"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-04 05:13-0400\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
+"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -241,11 +242,9 @@ msgstr "system-config-kdump : redémarrage nécessaire"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Erreur lors de l'écriture de la configuration kdump :\n"
+msgstr "Erreur lors de l'écriture de la configuration kdump :\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -255,7 +254,8 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:837
 msgid "Error writing bootloader configuration"
-msgstr "Erreur lors de l'écriture de la configuration du chargeur de démarrage"
+msgstr ""
+"Erreur lors de l'écriture de la configuration du chargeur de démarrage"
 
 #: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
@@ -265,8 +265,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
 msgstr ""
 "Erreur lors de l'écriture de la configuration du chargeur de démarrage :\n"
@@ -274,11 +273,9 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Erreur lors de la gestion des services kdump\n"
+msgstr "Erreur lors de la gestion des services kdump\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -330,8 +327,7 @@ msgstr "Impossible d'obtenir le nom de tous les noyaux"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -366,7 +362,8 @@ msgstr " et le type %s n'a pas été trouvé"
 
 #: ../src/system-config-kdump.py:1793
 msgid "core will be in /var/crash/%DATE on rootfs"
-msgstr "le contenu sera sur le système de fichier racine dans /var/crash/%DATE"
+msgstr ""
+"le contenu sera sur le système de fichier racine dans /var/crash/%DATE"
 
 #: ../src/system-config-kdump.py:1796
 #, python-format
@@ -395,11 +392,9 @@ msgstr "Impossible de gérer les service kdump"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Impossible de communiquer avec le moteur.\n"
+msgstr "Impossible de communiquer avec le moteur.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -407,8 +402,7 @@ msgid "System config kdump: dbus error"
 msgstr "System config kdump : erreur dbus"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 "Le serveur D-Bus n'est pas en cours d'exécution.\n"
@@ -775,6 +769,3 @@ msgstr "<b>Collecteur principal</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Paramètres avancés"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Action par défaut</b>"

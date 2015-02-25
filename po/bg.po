@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Doncho N. Gunchev <gunchev@gmail.com>, 2007
 # Miroslav Ivanov <satyr@globalnet.bg>, 2007
 # Valentin Laskov <laskov@festa.bg>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
-"Language-Team: Bulgarian <trans-bg@lists.fedoraproject.org>\n"
-"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 09:01-0400\n"
+"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"Language-Team: Bulgarian <trans-bg@lists.fedoraproject.org>\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -232,11 +233,9 @@ msgstr "system-config-kdump: Нужно е рестартиране"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Грешка при запис на kdump конфигурацията:\n"
+msgstr "Грешка при запис на kdump конфигурацията:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -253,20 +252,16 @@ msgstr "system-config-kdump: Грешка при запис конфигурац
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Грешка при запис конфигурацията на bootloader-а:\n"
+msgstr "Грешка при запис конфигурацията на bootloader-а:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Грешка при управлението на kdump услугите\n"
+msgstr "Грешка при управлението на kdump услугите\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -318,8 +313,7 @@ msgstr "Не мога да получа имената на всички ядр�
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -383,11 +377,9 @@ msgstr "Невъзможно е управлението на услугите k
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Невъзможна е комуникацията с поддържащия слой.\n"
+msgstr "Невъзможна е комуникацията с поддържащия слой.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -395,8 +387,7 @@ msgid "System config kdump: dbus error"
 msgstr "System config kdump: dbus грешка"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
@@ -760,6 +751,3 @@ msgstr "<b>Core collector</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Настройки за експерти"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Действие по подразбиране</b>"

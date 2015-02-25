@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Leah Liu <lliu@redhat.com>, 2007, 2010
 # Wei Liu <LLIU@REDHAT.COM>, 2012-2013
 # Xi Huang <xhuang@redhat.com>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-11 01:20+0000\n"
-"Last-Translator: Wei Liu <LLIU@REDHAT.COM>\n"
-"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-10 09:20-0400\n"
+"Last-Translator: Wei Liu <LLIU@REDHAT.COM>\n"
+"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
+"Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -88,9 +89,8 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump 是一个新的内核崩溃卸载机制。在系统崩溃的时候，在系统新启动的内核的上下"
-"文里运行的 kdump 能够截获一个核心文件，这比在已经崩溃的核心的上下文里去获取可"
-"靠的多。能够截获核心文件对于诊断系统崩溃的根本原因是非常重要的。请注意 kdump "
+"Kdump 是一个新的内核崩溃卸载机制。在系统崩溃的时候，在系统新启动的内核的上下文里运行的 kdump "
+"能够截获一个核心文件，这比在已经崩溃的核心的上下文里去获取可靠的多。能够截获核心文件对于诊断系统崩溃的根本原因是非常重要的。请注意 kdump "
 "要求预留一部分系统内存，这部分内存对于其他用户是不可用的。"
 
 #: ../src/system-config-kdump.py:140
@@ -98,9 +98,7 @@ msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
-msgstr ""
-"Kdump 将试图把 vmcore 存放在指定的位置。如果这个过程失败了，将执行下面指定的"
-"缺省动作。"
+msgstr "Kdump 将试图把 vmcore 存放在指定的位置。如果这个过程失败了，将执行下面指定的缺省动作。"
 
 #: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
@@ -214,9 +212,7 @@ msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr ""
-"改变 Kdump 设置要求重新启动系统以重新分配内存。%s 您必须重启系统以使新设置生"
-"效。"
+msgstr "改变 Kdump 设置要求重新启动系统以重新分配内存。%s 您必须重启系统以使新设置生效。"
 
 #: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
@@ -224,11 +220,9 @@ msgstr "system-config-kdump：需要重启"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"写入kdump配置出错：\n"
+msgstr "写入kdump配置出错：\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -245,20 +239,16 @@ msgstr "system-config-kdump：写入引导装载程序配置出错"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"写入引导装载程序配置出错\n"
+msgstr "写入引导装载程序配置出错\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"处理kdump服务出错\n"
+msgstr "处理kdump服务出错\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -310,15 +300,13 @@ msgstr "不能获取所有内核名称。"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"无效 crashkernel 值：%s.\n"
+msgstr "无效 crashkernel 值：%s.\n"
 "可能的值为：\n"
 "\tX\n"
 "\tX@Y\n"
@@ -373,11 +361,9 @@ msgstr "处理kdump服务失败"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"不能和后端进行沟通。\n"
+msgstr "不能和后端进行沟通。\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -385,11 +371,9 @@ msgid "System config kdump: dbus error"
 msgstr "内存错误"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
-"D-Bus 服务器尚未运行。\n"
+msgstr "D-Bus 服务器尚未运行。\n"
 "请确定 D-Bus 正在运行。\n"
 
 #: ../src/system-config-kdump.py:2004
@@ -750,6 +734,3 @@ msgstr "核心控制器："
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "专家设置"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "默认动作："

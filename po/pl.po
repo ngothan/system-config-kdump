@@ -1,23 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Piotr Drąg <piotrdrag@gmail.com>, 2006,2012-2013
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-04 18:33+0000\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-04 02:33-0400\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
+"Language: pl\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -51,13 +52,13 @@ msgstr ""
 "Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on użyteczny - "
 "jednak BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI "
 "HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. W celu uzyskania "
-"bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną "
-"GNU.\n"
+"bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną GNU."
+"\n"
 "\n"
 "Z pewnością wraz z niniejszym programem dostarczono także egzemplarz "
-"Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie "
-"- proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA 02110-130159 USA."
+"Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie -"
+" proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, Fifth "
+"Floor, Boston, MA 02110-130159 USA."
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
@@ -147,7 +148,8 @@ msgstr "Jądra Xena IA64 nie obsługują jeszcze kdump."
 #: ../src/system-config-kdump.py:683
 msgid "This system does not have enough memory for kdump to be viable"
 msgstr ""
-"Ten system nie posiada wystarczającej ilości pamięci, aby kdump mogło działać"
+"Ten system nie posiada wystarczającej ilości pamięci, aby kdump mogło "
+"działać"
 
 #: ../src/system-config-kdump.py:685
 msgid "system-config-kdump: Not enough memory"
@@ -238,11 +240,9 @@ msgstr "system-config-kdump: wymagane jest ponowne uruchomienie"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Błąd podczas zapisywania konfiguracji kdump:\n"
+msgstr "Błąd podczas zapisywania konfiguracji kdump:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -259,20 +259,16 @@ msgstr "system-config-kdump: błąd zapisu konfiguracji programu startowego"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Błąd podczas zapisywania konfiguracji programu startowego:\n"
+msgstr "Błąd podczas zapisywania konfiguracji programu startowego:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Błąd podczas obsługiwania usług kdump\n"
+msgstr "Błąd podczas obsługiwania usług kdump\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -324,15 +320,13 @@ msgstr "Nie można uzyskać nazw wszystkich jąder"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"Nieprawidłowa wartość craskernel: %s.\n"
+msgstr "Nieprawidłowa wartość craskernel: %s.\n"
 "Możliwe wartości:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -390,11 +384,9 @@ msgstr "Nie można obsłużyć usług kdump"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Nie można komunikować się z zapleczem.\n"
+msgstr "Nie można komunikować się z zapleczem.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -402,8 +394,7 @@ msgid "System config kdump: dbus error"
 msgstr "system-config-kdump: błąd usługi D-Bus"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 "Serwer D-Bus nie jest uruchomiony.\n"
@@ -769,6 +760,3 @@ msgstr "<b>Zbieranie plików core</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Ustawienia zaawansowane"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Domyślna czynność</b>"

@@ -1,23 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Ali Al-Ammari <ali.a.alammari@gmail.com>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
-"Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 09:01-0400\n"
+"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
+"Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -47,9 +48,9 @@ msgstr ""
 "(GNU) العامّة التي نشرتها مؤسّسة البرمجيات الحرّة؛ الإصدارة الثانيّة أو إيّ "
 "إصدارة لاحقة تريدها.\n"
 "\n"
-"يوزّع هذا البرنامج على أمل أن يكون مفيداً، ولكن دون أيّ ضمانات؛ ولا حتى قابليّة "
-"التشغيل أو الاستخدام أو الملاءمة لغرض معيّن. لمزيد من التفاصيل، راجع رخصة غنو "
-"العامّة لمزيد من التفاصيل.\n"
+"يوزّع هذا البرنامج على أمل أن يكون مفيداً، ولكن دون أيّ ضمانات؛ ولا حتى "
+"قابليّة التشغيل أو الاستخدام أو الملاءمة لغرض معيّن. لمزيد من التفاصيل، راجع "
+"رخصة غنو العامّة لمزيد من التفاصيل.\n"
 "\n"
 "يفترض أنك تلقيت نسخة من رخصة غنو العامّة مع هذا البرنامج. إذا لم تتلقّ نسخة. "
 "يمكنك مكاتبة: Free Software Foundation, Inc., 59 Temple Place, Suite 330, "
@@ -89,8 +90,8 @@ msgstr ""
 "ملف لبّي باستخدام kdump، والذي يعمل في سياق نواة حديثة التشغيل (booted)، مما "
 "يجعله أكثر فعالية من أساليب تلتقط في سياق نواة متعطلة. قد تكون القدرة على "
 "التقاط ملف لبّي مهمة في المساعدة على تحديد السبب الجذري لتعطل النظام. مع "
-"العلم أن kdump يتطلّب حجز مقدار معيّن من ذاكرة النّظام، والتي لن تكون متوفّرة "
-"لاستخدامات أخرى."
+"العلم أن kdump يتطلّب حجز مقدار معيّن من ذاكرة النّظام، والتي لن تكون "
+"متوفّرة لاستخدامات أخرى."
 
 #: ../src/system-config-kdump.py:140
 msgid ""
@@ -223,8 +224,7 @@ msgstr "system-config-kdump: بحاجة إلى إعادة التشغيل"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
 msgstr ""
 
@@ -242,15 +242,13 @@ msgstr "system-config-kdump: خطأ في كتابة إعدادات محمّل ا
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
 msgstr ""
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
 msgstr ""
 
@@ -303,8 +301,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -362,8 +359,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
 
@@ -372,8 +368,7 @@ msgid "System config kdump: dbus error"
 msgstr ""
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
@@ -736,6 +731,3 @@ msgstr "<b>مجمع core</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "إعدادات متقدمة"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>الحركة الافتراضية</b>"

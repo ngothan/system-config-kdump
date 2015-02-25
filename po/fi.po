@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2007, 2010
 # Ville Skyttä <ville.skytta@iki.fi>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 09:01-0400\n"
 "Last-Translator: mmilata <mmilata@redhat.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/fedora/language/"
 "fi/)\n"
 "Language: fi\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -231,11 +232,9 @@ msgstr "system-config-kdump: Uudelleenkäynnistys tarvitaan"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Virhe kirjoitettaessa kdump-asetuksia:\n"
+msgstr "Virhe kirjoitettaessa kdump-asetuksia:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -253,20 +252,16 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Virhe kirjoitettaessa käynnistyslataimen asetuksia:\n"
+msgstr "Virhe kirjoitettaessa käynnistyslataimen asetuksia:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Virhe käsiteltäessä kdump-palveluita\n"
+msgstr "Virhe käsiteltäessä kdump-palveluita\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -318,8 +313,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -377,8 +371,7 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
 msgstr ""
 
@@ -387,8 +380,7 @@ msgid "System config kdump: dbus error"
 msgstr ""
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
@@ -752,6 +744,3 @@ msgstr "<b>Vedoskeräin</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Asiantuntija-asetukset"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Oletustoiminto</b>"

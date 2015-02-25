@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Chester Cheng <ccheng@redhat.com>, 2006
 # Terry Chuang <tchuang@redhat.com>, 2008,2013
 # chaoweilun <chaoweilun@gmail.com>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 23:34+0000\n"
-"Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
-"Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
-"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 07:34-0400\n"
+"Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
+"Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
+"Language: zh-TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -44,15 +45,13 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
-"這個程式是自由軟體；您可以遵循由自由軟體基金會所發布的 GNU 通用公共授權，來再"
-"次散布它和/或修改它；無論您依據的是本授權的第二版，或 (您自行選擇的) 任何後續"
-"的版本。\n"
+"這個程式是自由軟體；您可以遵循由自由軟體基金會所發布的 GNU 通用公共授權，來再次散布它和/或修改它；無論您依據的是本授權的第二版，或 "
+"(您自行選擇的) 任何後續的版本。\n"
 "\n"
-"發行本程式是希望它能夠有用，但是沒有任何擔保；亦無對於某一特定目的之適售性與"
-"適用性的暗示性擔保。請參看 GNU 通用公共授權以獲得更多細節。\n"
+"發行本程式是希望它能夠有用，但是沒有任何擔保；亦無對於某一特定目的之適售性與適用性的暗示性擔保。請參看 GNU 通用公共授權以獲得更多細節。\n"
 "\n"
-"您應該已經收到隨附於這個程式的 GNU 通用公共授權複本；如果沒有，請寫信到 Free "
-"Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
+"您應該已經收到隨附於這個程式的 GNU 通用公共授權複本；如果沒有，請寫信到 Free Software Foundation, Inc., 675 "
+"Mass Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
@@ -84,19 +83,16 @@ msgid ""
 "Note that kdump does require reserving a portion of system memory that will "
 "be unavailable for other uses."
 msgstr ""
-"Kdump 是新的內核當機傾印機制。當系統當機時，kdump 會在完整無缺的啟動內核環境"
-"中擷取核心檔案，這會比在當機的內核環境中擷取要更為可靠。擷取核心檔案能幫助您"
-"找出系統當機的根源。請注意，kdump 並不需要保留一部分的系統記憶體，導致這部份"
-"記憶體無法使用。"
+"Kdump 是新的內核當機傾印機制。當系統當機時，kdump "
+"會在完整無缺的啟動內核環境中擷取核心檔案，這會比在當機的內核環境中擷取要更為可靠。擷取核心檔案能幫助您找出系統當機的根源。請注意，kdump "
+"並不需要保留一部分的系統記憶體，導致這部份記憶體無法使用。"
 
 #: ../src/system-config-kdump.py:140
 msgid ""
 "Kdump will attempt to place the vmcore at the specified location. In the "
 "event that it fails to place the vmcore at location, the default action "
 "(specified below) will be executed."
-msgstr ""
-"Kdump 會試著在特別的地方，置入 vmcore。當無法置入 vmcore 時，會執行預設動作"
-"（如下所述）。"
+msgstr "Kdump 會試著在特別的地方，置入 vmcore。當無法置入 vmcore 時，會執行預設動作（如下所述）。"
 
 #: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
@@ -122,9 +118,7 @@ msgstr "system-config-kdump：kdump 不受支援"
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
-msgstr ""
-"無法由 /proc/iomem 偵測到系統記憶體的總數量。系統記憶體的總數量將不會是精確"
-"的。"
+msgstr "無法由 /proc/iomem 偵測到系統記憶體的總數量。系統記憶體的總數量將不會是精確的。"
 
 #: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
@@ -193,8 +187,7 @@ msgstr "system-config-kdump：本地分割區錯誤"
 msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
-msgstr ""
-"警告：xen kdump 支援需要一個 non-xen %s 的 RPM 才可執行實際的故障傾印擷取。"
+msgstr "警告：xen kdump 支援需要一個 non-xen %s 的 RPM 才可執行實際的故障傾印擷取。"
 
 #: ../src/system-config-kdump.py:799
 #, python-format
@@ -213,9 +206,7 @@ msgid ""
 "Changing Kdump settings requires rebooting the system to reallocate memory "
 "accordingly. %sYou will have to reboot the system for the new settings to "
 "take effect."
-msgstr ""
-"要改變 Kdump 的設定，使用者必須重新開機，才能重新分配記憶體。%s 要讓新的設定"
-"生效，請重新啟動系統。"
+msgstr "要改變 Kdump 的設定，使用者必須重新開機，才能重新分配記憶體。%s 要讓新的設定生效，請重新啟動系統。"
 
 #: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
@@ -223,11 +214,9 @@ msgstr "system-config-kdump：需要重新開機"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"寫入 kdump 組態時發生錯誤：\n"
+msgstr "寫入 kdump 組態時發生錯誤：\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -244,20 +233,16 @@ msgstr "system-config-kdump：寫入開機管理程式組態時發生錯誤"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"寫入開機載入器組態時發生錯誤：\n"
+msgstr "寫入開機載入器組態時發生錯誤：\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"處理 kdump 服務時發生錯誤\n"
+msgstr "處理 kdump 服務時發生錯誤\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -309,15 +294,13 @@ msgstr "無法取得所有內核名稱"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"無效的 crashkernel 值：%s。\n"
+msgstr "無效的 crashkernel 值：%s。\n"
 "可能的值為：\n"
 "\tX\n"
 "\tX@Y\n"
@@ -372,11 +355,9 @@ msgstr "無法處理 kdump 服務"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"無法與後端程式溝通。\n"
+msgstr "無法與後端程式溝通。\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -384,11 +365,9 @@ msgid "System config kdump: dbus error"
 msgstr "系統組態 kdump：dbus 錯誤"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
-"D-Bus 伺服器並非運作中。\n"
+msgstr "D-Bus 伺服器並非運作中。\n"
 "請確定 D-Bus 處於運作狀態。\n"
 
 #: ../src/system-config-kdump.py:2004
@@ -749,6 +728,3 @@ msgstr "<b>核心收集器</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "專家設定項目"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>預設動作</b>"

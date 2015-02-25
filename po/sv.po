@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Göran Uddeborg <goeran@uddeborg.se>, 2010, 2011
 # Magnus Larsson <fedoratrans@gmail.com>, 2006-2007
 # Ulrika Uddeborg <aurorauddeborg@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-kdump\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-04 15:34+0200\n"
-"PO-Revision-Date: 2013-04-03 13:01+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-03 09:01-0400\n"
 "Last-Translator: mmilata <mmilata@redhat.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/fedora/language/"
 "sv/)\n"
 "Language: sv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.5.1\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -235,11 +236,9 @@ msgstr "system-config-kdump: Behöver omstart"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
-msgid ""
-"Error writing kdump configuration:\n"
+msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
-"Fel när kdump-konfigurationen skrevs:\n"
+msgstr "Fel när kdump-konfigurationen skrevs:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:823
@@ -257,20 +256,16 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:845
 #, python-format
-msgid ""
-"Error writing bootloader configuration:\n"
+msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
-"Fel när konfigurationen för startprogrammet skrevs:\n"
+msgstr "Fel när konfigurationen för startprogrammet skrevs:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
-msgid ""
-"Error handling kdump services\n"
+msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
-"Fel i hantering av kdump-tjänster:\n"
+msgstr "Fel i hantering av kdump-tjänster:\n"
 "%s"
 
 #: ../src/system-config-kdump.py:860
@@ -322,15 +317,13 @@ msgstr "Kan inte hitta alla kärnnamn"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
-msgid ""
-"Invalid crashkernel value: %s.\n"
+msgid "Invalid crashkernel value: %s.\n"
 "Possible values are:\n"
 "\tX\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
-"Ogiltigt värde på krashkärna: %s.\n"
+msgstr "Ogiltigt värde på krashkärna: %s.\n"
 "Möjliga värden är:\n"
 "\tX\n"
 "\tX@Y\n"
@@ -370,8 +363,8 @@ msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
-"Hjälpvisaren fanns inte.  För att kunna visa hjälpen, behöver paketet \"yelp"
-"\" vara installerat."
+"Hjälpvisaren fanns inte.  För att kunna visa hjälpen, behöver paketet "
+"\"yelp\" vara installerat."
 
 #: ../src/system-config-kdump.py:1916
 msgid "Unable to get kdump service status"
@@ -387,11 +380,9 @@ msgstr "Kan inte hantera kdump-tjänster"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
-msgid ""
-"Unable to communicate with backend.\n"
+msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
-"Det går inte att kommunicera med bakänden.\n"
+msgstr "Det går inte att kommunicera med bakänden.\n"
 "%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
@@ -399,8 +390,7 @@ msgid "System config kdump: dbus error"
 msgstr "System config kdump: dbus-fel"
 
 #: ../src/system-config-kdump.py:1991
-msgid ""
-"D-Bus server is not running.\n"
+msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
 
@@ -764,6 +754,3 @@ msgstr "<b>Kärninsamlare</b>"
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
 msgstr "Expertinställningar"
-
-#~ msgid "<b>Default action</b>"
-#~ msgstr "<b>Standardåtgärd</b>"
