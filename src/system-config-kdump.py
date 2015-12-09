@@ -426,6 +426,7 @@ class MainWindow:
         self.username_entry           = builder.get_object("usernameEntry")
         self.path_entry               = builder.get_object("pathEntry")
         self.servername_entry         = builder.get_object("servernameEntry")
+        self.servername_label         = builder.get_object("networkServerLabel")
 
         # tab 2
         self.filter_page              = builder.get_object("filteringPage")
@@ -750,6 +751,13 @@ class MainWindow:
         and not self.my_settings.server_name:
             dialogs.show_error_message(_("You must specify server. "),
                 _("system-config-kdump: Server name not set"),
+                parent = self.toplevel)
+            return
+
+        if self.my_settings.target_type == TYPE_NFS \
+        and ":" not in self.my_settings.server_name:
+            dialogs.show_error_message(_("You must specify exported directory as well as server (in the <host>:<path> format)."),
+                _("system-config-kdump: NFS directory not set"),
                 parent = self.toplevel)
             return
 
@@ -1280,9 +1288,11 @@ class MainWindow:
         if (nfs_radio_button.get_active()):
             self.username_entry.set_sensitive(False)
             self.my_settings.target_type = TYPE_NFS
+            self.servername_label.set_text(_("Export (host:path):"))
         else:
             self.username_entry.set_sensitive(True)
             self.my_settings.target_type = TYPE_SSH
+            self.servername_label.set_text(_("Server name:"))
         self.check_settings()
 
     def custom_kernel_changed(self, button):
