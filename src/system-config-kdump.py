@@ -427,6 +427,7 @@ class MainWindow:
         self.path_entry               = builder.get_object("pathEntry")
         self.servername_entry         = builder.get_object("servernameEntry")
         self.servername_label         = builder.get_object("networkServerLabel")
+        self.nfs_hint_label           = builder.get_object("nfsHintLabel")
 
         # tab 2
         self.filter_page              = builder.get_object("filteringPage")
@@ -1140,6 +1141,7 @@ class MainWindow:
         elif current_page == self.expert_page:
             self.cmdline_changed(self.command_line_entry)
             self.collector_entry_changed(self.core_collector_entry)
+        self.update_nfs_hint_label()
 
     def update_usable_mem(self, spin_button, *args):
         """
@@ -1294,6 +1296,7 @@ class MainWindow:
             self.my_settings.target_type = TYPE_SSH
             self.servername_label.set_text(_("Server name:"))
         self.check_settings()
+        self.update_nfs_hint_label()
 
     def custom_kernel_changed(self, button):
         """
@@ -1699,6 +1702,7 @@ class MainWindow:
         """
         self.my_settings.server_name = entry.get_text()
         self.check_settings()
+        self.update_nfs_hint_label()
         return False
 
     def set_filter_checkbuttons(self, level):
@@ -1820,6 +1824,24 @@ class MainWindow:
         else:
             return None
 
+    @staticmethod
+    def nfs_mounts():
+        with open('/proc/mounts', 'r') as fh:
+            lines = fh.read().splitlines()
+
+        mounts = []
+        for line in lines:
+            line = line.split()
+
+            dev = line[0]
+            mntpoint = line[1]
+            fstype = line[2]
+
+            if fstype == "nfs":
+                mounts.append(dev)
+
+        return mounts
+
     def update_local_hint_label(self, partition, path):
         """
         Update local_hint_label text with set partition and path
@@ -1841,6 +1863,13 @@ class MainWindow:
         else:
             self.local_hint_label.set_text(
                 _("core will be in %s/%%DATE on root file system") % path)
+
+    def update_nfs_hint_label(self):
+        if (self.my_settings.target_type == TYPE_NFS
+                and self.my_settings.server_name not in self.nfs_mounts()):
+            self.nfs_hint_label.set_visible(True)
+        else:
+            self.nfs_hint_label.set_visible(False)
 
     def changed_raw_device(self, raw_dev_box, *args):
         """
