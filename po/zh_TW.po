@@ -6,6 +6,7 @@
 # Chester Cheng <ccheng@redhat.com>, 2006
 # Terry Chuang <tchuang@redhat.com>, 2008,2013
 # chaoweilun <chaoweilun@gmail.com>, 2010
+# Cheng-Chia Tseng <pswo10680@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -14,12 +15,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-03 07:34-0400\n"
-"Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
+"PO-Revision-Date: 2015-03-21 07:11-0400\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
 "Language: zh-TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -55,19 +56,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "重新開機"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "停止"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "關閉電源"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "啟動 Shell"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
@@ -719,7 +720,7 @@ msgstr "選擇預設的動作"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>傾印失敗時的動作</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"

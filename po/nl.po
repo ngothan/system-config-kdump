@@ -5,6 +5,7 @@
 # Translators:
 # Geert Warrink <geert.warrink@onsnet.nu>, 2010,2012-2013
 # Peter van Egdom <p.van.egdom@gmail.com>, 2006, 2007
+# Geert Warrink <geert.warrink@onsnet.nu>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -13,13 +14,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-03 10:04-0400\n"
+"PO-Revision-Date: 2015-04-08 08:39-0400\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/fedora/language/nl/"
 ")\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -61,19 +62,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "Herstarten"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "Stoppen"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "Uitzetten"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "Start een shell"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
@@ -749,7 +750,7 @@ msgstr "Kies standaard actie"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>Actie als het dumpen mislukt</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"

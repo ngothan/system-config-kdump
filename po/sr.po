@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Miloš Komarčević <kmilos@gmail.com>, 2006
+# Momcilo Medic <medicmomcilo@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,21 +13,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-03 09:01-0400\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2015-06-16 01:03-0400\n"
+"Last-Translator: Momcilo Medic <medicmomcilo@gmail.com>\n"
 "Language-Team: Serbian <trans-sr@lists.fedoraproject.org>\n"
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
-msgstr ""
+msgstr "(c)"
 
 #: ../src/system-config-kdump.py:77
 msgid "(d)"
-msgstr ""
+msgstr "(d)"
 
 #: ../src/system-config-kdump.py:100
 msgid ""
@@ -44,26 +45,39 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
+"Овај програм је слободан софтвер; можете га раздељивати и/или мењати под "
+"условима ГНУ Опште јавне лиценце као што ју је објавила Задужбина за "
+"слободан софтвер; или под лиценцом верзије 2, или (по вашем избору) под било "
+"којом каснијом верзијом.\n"
+"\n"
+"Овај програм се раздељује у нади да ће бити од користи, али БЕЗ ИКАКВЕ "
+"ГАРАНЦИЈЕ; чак и без подразумеване гаранције ПРИКЛАДНОСТИ ЗА ПРОДАЈУ или "
+"ПОДОБНОСТИ ЗА ПОСЕБНУ НАМЕНУ. Погледајте ГНУ Општу јавну лиценцу за више "
+"детаља.\n"
+"\n"
+"Требало би да сте примили узорак ГНУ Опште јавне лиценце уз овај програм; "
+"ако нисте, пишите Задужбини за слободан софтвер: Free Software Foundation, "
+"Inc., 675 Mass Ave, Cambridge, MA 02139, USA."
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "Покрени поново"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "Заустави"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "Искључи"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "Покрени љуску"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Избаци у rootfs и покрени поново"
 
 #: ../src/system-config-kdump.py:130
 msgid ""
@@ -95,15 +109,15 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:375
 msgid "system-config-kdump"
-msgstr ""
+msgstr "system-config-kdump"
 
 #: ../src/system-config-kdump.py:540
 msgid "Don't know how to configure your boot loader."
-msgstr ""
+msgstr "Не знам како да подесим ваш покретачки програм."
 
 #: ../src/system-config-kdump.py:541
 msgid "system-config-kdump: no default kernel"
-msgstr ""
+msgstr "system-config-kdump: нема подразумеваног кернела"
 
 #: ../src/system-config-kdump.py:546
 msgid "Sorry, this architecture does not currently support kdump"
@@ -111,17 +125,19 @@ msgstr "Жалим, ова архитектура тренутно не подр
 
 #: ../src/system-config-kdump.py:548 ../src/system-config-kdump.py:578
 msgid "system-config-kdump: kdump not supported"
-msgstr ""
+msgstr "system-config-kdump: kdump није подржан"
 
 #: ../src/system-config-kdump.py:563
 msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
+"Немогуће откривање укупне системске меморије из /proc/iomem. Количина укупне "
+"системске меморије неће бити прецизна."
 
 #: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
-msgstr ""
+msgstr "system-config-kdump: Грешка меморије"
 
 #: ../src/system-config-kdump.py:577
 msgid "Sorry, ia64 xen kernels do not support kdump at this time."
@@ -133,53 +149,53 @@ msgstr "Систем не поседује довољно меморије ка�
 
 #: ../src/system-config-kdump.py:685
 msgid "system-config-kdump: Not enough memory"
-msgstr ""
+msgstr "system-config-kdump: Нема довољно меморије"
 
 #: ../src/system-config-kdump.py:751
 #, python-format
 msgid "Path cannot be empty for '%s' locations. "
-msgstr ""
+msgstr "Путања не може бити празна за '%s' локације. "
 
 #: ../src/system-config-kdump.py:753
 #, python-format
 msgid "Reset path to default ('%s')?."
-msgstr ""
+msgstr "Вратити путању на подразумевану ('%s')?."
 
 #: ../src/system-config-kdump.py:754
 msgid "system-config-kdump: Empty path"
-msgstr ""
+msgstr "system-config-kdump: Празна путања"
 
 #: ../src/system-config-kdump.py:763
 msgid "You must specify server. "
-msgstr ""
+msgstr "Морате навести сервер."
 
 #: ../src/system-config-kdump.py:764
 msgid "system-config-kdump: Server name not set"
-msgstr ""
+msgstr "system-config-kdump: Име сервера није постављено"
 
 #: ../src/system-config-kdump.py:770
 msgid "You must specify user name. "
-msgstr ""
+msgstr "Морате навести корисничко име."
 
 #: ../src/system-config-kdump.py:771
 msgid "system-config-kdump: User name not set"
-msgstr ""
+msgstr "system-config-kdump: Корисничко име није постављено"
 
 #: ../src/system-config-kdump.py:778
 msgid "You must select one of the raw devices"
-msgstr ""
+msgstr "Морае означити један од raw уређаја"
 
 #: ../src/system-config-kdump.py:779 ../src/system-config-kdump.py:1606
 msgid "system-config-kdump: Raw device error"
-msgstr ""
+msgstr "system-config-kdump: Грешка raw уређаја"
 
 #: ../src/system-config-kdump.py:786
 msgid "You must select one of the partitions"
-msgstr ""
+msgstr "Морате означити једну од партиција"
 
 #: ../src/system-config-kdump.py:787 ../src/system-config-kdump.py:1632
 msgid "system-config-kdump: Local partition error"
-msgstr ""
+msgstr "system-config-kdump: Грешка локалне партиције"
 
 #: ../src/system-config-kdump.py:796
 #, python-format
@@ -187,6 +203,8 @@ msgid ""
 "WARNING: xen kdump support requires a non-xen %s RPM to perform actual crash "
 "dump capture."
 msgstr ""
+"УПОЗОРЕЊЕ: подршка за xen kdump захтева non-xen %s RPM да изврши снимање "
+"остатака при краху."
 
 #: ../src/system-config-kdump.py:799
 #, python-format
@@ -194,10 +212,12 @@ msgid ""
 "Please be sure you have the non-xen %s RPM of the same version as your xen "
 "kernel installed."
 msgstr ""
+"Осигурајте се да имате non-xen %s RPM исте верзије као ваш инсталирани xen "
+"кернел."
 
 #: ../src/system-config-kdump.py:802
 msgid "system-config-kdump: Need non-xen kernel"
-msgstr ""
+msgstr "system-config-kdump: Потребан је non-xen кернел"
 
 #: ../src/system-config-kdump.py:807
 #, python-format
@@ -212,58 +232,61 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:811
 msgid "system-config-kdump: Need reboot"
-msgstr ""
+msgstr "system-config-kdump: Потребно је поновно покретање система"
 
 #: ../src/system-config-kdump.py:822
 #, python-format
 msgid "Error writing kdump configuration:\n"
 "%s"
-msgstr ""
+msgstr "Грешка при упису kdump подешавања:\n"
+"%s"
 
 #: ../src/system-config-kdump.py:823
 msgid "system-config-kdump: Error write kdump configuration"
-msgstr ""
+msgstr "system-config-kdump: Грешка при упису kdump подешавања"
 
 #: ../src/system-config-kdump.py:837
 msgid "Error writing bootloader configuration"
-msgstr ""
+msgstr "Грешка уписа подешавања покретачког програма"
 
 #: ../src/system-config-kdump.py:838 ../src/system-config-kdump.py:846
 msgid "system-config-kdump: Error write bootloader configuration"
-msgstr ""
+msgstr "system-config-kdump: Грешка уписа подешавања покретачког програма"
 
 #: ../src/system-config-kdump.py:845
 #, python-format
 msgid "Error writing bootloader configuration:\n"
 "%s"
-msgstr ""
+msgstr "Грешка уписа подешавања покретачког програма:\n"
+"%s"
 
 #: ../src/system-config-kdump.py:859
 #, python-format
 msgid "Error handling kdump services\n"
 "%s"
-msgstr ""
+msgstr "Грешка при руковању kdump сервисима\n"
+"%s"
 
 #: ../src/system-config-kdump.py:860
 msgid "system-config-kdump: Error handle services"
-msgstr ""
+msgstr "system-config-kdump: Грешка при руковању сервисима"
 
 #: ../src/system-config-kdump.py:865
 msgid "Configurations successfully saved"
-msgstr ""
+msgstr "Подешавања су успешно сачувана"
 
 #: ../src/system-config-kdump.py:866
 msgid "system-config-kdump: Configuration saved"
-msgstr ""
+msgstr "system-config-kdump: Подешавања сачувана"
 
 #: ../src/system-config-kdump.py:943
 #, python-format
 msgid "Error reading kdump configuration: %s"
-msgstr ""
+msgstr "Грешка при учитавању kdump подешавања: %s"
 
 #: ../src/system-config-kdump.py:944
 msgid "system-config-kdump: kdump configuration file error"
-msgstr ""
+msgstr "system-config-kdump: kdump грешка датотеке подешавања"
 
 #: ../src/system-config-kdump.py:1226
 msgid "Core collector must begin with 'makedumpfile'"
@@ -271,25 +294,25 @@ msgstr "Сабирач сржи мора почети са „makedumpfile“"
 
 #: ../src/system-config-kdump.py:1227
 msgid "system-config-kdump: Bad core collector"
-msgstr ""
+msgstr "system-config-kdump: Лоше језгро колектора"
 
 #: ../src/system-config-kdump.py:1402
 #, python-format
 msgid "Unable to get command line arguments for %s"
-msgstr ""
+msgstr "Неуспешно преузимање аргумената команде линије за %s"
 
 #: ../src/system-config-kdump.py:1403 ../src/system-config-kdump.py:1420
 #: ../src/system-config-kdump.py:1439
 msgid "system-config-kdump: grubby error"
-msgstr ""
+msgstr "system-config-kdump: grubby грешка"
 
 #: ../src/system-config-kdump.py:1419
 msgid "Unable to get default kernel"
-msgstr ""
+msgstr "Неуспешно очитавање подразумеваног кернела"
 
 #: ../src/system-config-kdump.py:1438
 msgid "Unable to get all kernel names"
-msgstr ""
+msgstr "Неуспешно очитавање имена свих кернела"
 
 #: ../src/system-config-kdump.py:1574
 #, python-format
@@ -299,93 +322,103 @@ msgid "Invalid crashkernel value: %s.\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr ""
+msgstr "Неисправна crashkernel вредност: %s.\n"
+"Могуће вредности су:\n"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1577
 msgid "Bad crashkernel value"
-msgstr ""
+msgstr "Лоша crashkernel вредност"
 
 #: ../src/system-config-kdump.py:1605
 #, python-format
 msgid "Raw device %s wasn't found on this machine"
-msgstr ""
+msgstr "Raw уређај %s није пронађен на овој машини"
 
 #: ../src/system-config-kdump.py:1630
 #, python-format
 msgid "Local file system partition with name %s"
-msgstr ""
+msgstr "Локална партиција са именом %s"
 
 #: ../src/system-config-kdump.py:1631
 #, python-format
 msgid " and type %s wasn't found"
-msgstr ""
+msgstr "и врстом %s није пронађен"
 
 #: ../src/system-config-kdump.py:1793
 msgid "core will be in /var/crash/%DATE on rootfs"
-msgstr ""
+msgstr "језгро ће бити у /var/crash/%DATE на rootfs-у"
 
 #: ../src/system-config-kdump.py:1796
 #, python-format
 msgid "core will be in %s/%%DATE on %s"
-msgstr ""
+msgstr "језгро ће бити у %s/%%DATE на %s"
 
 #: ../src/system-config-kdump.py:1896
 msgid ""
 "The help viewer could not be found. To be able to view help, the 'yelp' "
 "package needs to be installed."
 msgstr ""
+"Прегледач помоћи није пронађен. Да бисте могли видети помоћ, потребно је да "
+"'yelp' пакет буде инсталиран."
 
 #: ../src/system-config-kdump.py:1916
 msgid "Unable to get kdump service status"
-msgstr ""
+msgstr "Неуспешно очитавање стања kdump сервиса"
 
 #: ../src/system-config-kdump.py:1917 ../src/system-config-kdump.py:1943
 msgid "system-config-kdump: Handling services error"
-msgstr ""
+msgstr "system-config-kdump: Грешка руковања сервисима"
 
 #: ../src/system-config-kdump.py:1942
 msgid "Unable to handle kdump services"
-msgstr ""
+msgstr "Неуспешно руковање kdump сервисима"
 
 #: ../src/system-config-kdump.py:1966
 #, python-format
 msgid "Unable to communicate with backend.\n"
 "%s"
-msgstr ""
+msgstr "Неуспешна комуникација са позадинским механизмом.\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1967 ../src/system-config-kdump.py:1993
 msgid "System config kdump: dbus error"
-msgstr ""
+msgstr "System config kdump: dbus грешка"
 
 #: ../src/system-config-kdump.py:1991
 msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
 msgstr ""
+"D-Bus сервер није покренут.\n"
+"Молим осигурајте се да D-Bus буде покренут.\n"
 
 #: ../src/system-config-kdump.py:2004
 msgid "Error executing system-config-kdump"
-msgstr ""
+msgstr "Грешка при извршавању system-config-kdump"
 
 #: ../src/dialog_call_error.glade:64 ../src/dialog_call_error.glade:99
 #: ../src/dialog_call_error.glade:134
 msgid "a"
-msgstr ""
+msgstr "а"
 
 #: ../src/dialog_call_error.glade:72
 msgid "Called command"
-msgstr ""
+msgstr "Позвана команда"
 
 #: ../src/dialog_call_error.glade:107
 msgid "Standard output"
-msgstr ""
+msgstr "Стандардни излаз"
 
 #: ../src/dialog_call_error.glade:142
 msgid "Standard error"
-msgstr ""
+msgstr "Стандардне грешке"
 
 #: ../src/system-config-kdump.glade:7
 msgid "About system-config-kdump"
-msgstr ""
+msgstr "О програму system-config-kdump"
 
 #: ../src/system-config-kdump.glade:72
 msgid "Kernel Dump Configuration"
@@ -393,36 +426,38 @@ msgstr "Подешавање избачаја језгра"
 
 #: ../src/system-config-kdump.glade:92
 msgid "_File"
-msgstr ""
+msgstr "_Датотека"
 
 #: ../src/system-config-kdump.glade:104 ../src/system-config-kdump.glade:243
 msgid ""
 "Apply changes, save booloader config file and save kexec/kdump config file"
 msgstr ""
+"Примени промене, сачувај датотеку подешавања за покретачки програм и сачувај "
+"kexec/kdump датотеку подешавања"
 
 #: ../src/system-config-kdump.glade:117 ../src/system-config-kdump.glade:258
 msgid "Reload original settings from config files"
-msgstr ""
+msgstr "Поново учитај оригиналне поставке из датотека подешавања"
 
 #: ../src/system-config-kdump.glade:136
 msgid "Exit and discard not saved changes"
-msgstr ""
+msgstr "Изађи и занемари све промене које нису сачуване"
 
 #: ../src/system-config-kdump.glade:152
 msgid "_Options"
-msgstr ""
+msgstr "_Опције"
 
 #: ../src/system-config-kdump.glade:189
 msgid "_Help"
-msgstr ""
+msgstr "_Помоћ"
 
 #: ../src/system-config-kdump.glade:245
 msgid "Apply"
-msgstr ""
+msgstr "Примени"
 
 #: ../src/system-config-kdump.glade:260
 msgid "Reload"
-msgstr ""
+msgstr "Учитај поново"
 
 #: ../src/system-config-kdump.glade:282
 msgid "Enable kdump"
@@ -430,68 +465,68 @@ msgstr "Укључи kdump"
 
 #: ../src/system-config-kdump.glade:284
 msgid "Enable"
-msgstr ""
+msgstr "Омогући"
 
 #: ../src/system-config-kdump.glade:297
 msgid "Disable kdump"
-msgstr ""
+msgstr "Онемогући kdump"
 
 #: ../src/system-config-kdump.glade:299
 msgid "Disable"
-msgstr ""
+msgstr "Онемогући"
 
 #: ../src/system-config-kdump.glade:390
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Слика стања помогнута firmware-ом"
 
 #: ../src/system-config-kdump.glade:408
 msgid "Manual settings"
-msgstr ""
+msgstr "Ручна подешавања"
 
 #: ../src/system-config-kdump.glade:446
 msgid "Total System Memory:"
-msgstr ""
+msgstr "Укупна системска меморија:"
 
 #: ../src/system-config-kdump.glade:458
 msgid "Current kdump Memory:"
-msgstr ""
+msgstr "Тренутна kdump меморија:"
 
 #: ../src/system-config-kdump.glade:472
 msgid "New kdump Memory:"
-msgstr ""
+msgstr "Нова kdump меморија:"
 
 #: ../src/system-config-kdump.glade:486
 msgid "Usable Memory:"
-msgstr ""
+msgstr "Употребљива меморија:"
 
 #: ../src/system-config-kdump.glade:500 ../src/system-config-kdump.glade:514
 #: ../src/system-config-kdump.glade:549 ../src/system-config-kdump.glade:1173
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../src/system-config-kdump.glade:565
 msgid "(MB)"
-msgstr ""
+msgstr "(MB)"
 
 #: ../src/system-config-kdump.glade:598
 msgid "Basic Settings"
-msgstr ""
+msgstr "Основна подешавања"
 
 #: ../src/system-config-kdump.glade:634
 msgid "Local filesystem"
-msgstr ""
+msgstr "Локални систем датотека"
 
 #: ../src/system-config-kdump.glade:639
 msgid "Save kdump file in local filesystem"
-msgstr ""
+msgstr "Сачувај kdump датотеку на локалном систему датотека"
 
 #: ../src/system-config-kdump.glade:663
 msgid "Choose partition where you want to save your kdump"
-msgstr ""
+msgstr "Одаберите партицију где желите сачувати ваш kdump"
 
 #: ../src/system-config-kdump.glade:684
 msgid "Partition:"
-msgstr ""
+msgstr "Партиција:"
 
 #: ../src/system-config-kdump.glade:697
 msgid "Path:"
@@ -499,224 +534,224 @@ msgstr "Путања:"
 
 #: ../src/system-config-kdump.glade:707
 msgid "Target directory on local file system"
-msgstr ""
+msgstr "Одредишни директоријум на локалном систему датотека"
 
 #: ../src/system-config-kdump.glade:719
 msgid "localDumpHintLabel"
-msgstr ""
+msgstr "localDumpHintLabel"
 
 #: ../src/system-config-kdump.glade:760
 msgid "Raw device"
-msgstr ""
+msgstr "Raw уређај"
 
 #: ../src/system-config-kdump.glade:765
 msgid "Save kdump file in raw device"
-msgstr ""
+msgstr "Сачувај kdump датотеку на raw уређају"
 
 #: ../src/system-config-kdump.glade:783
 msgid "Select raw device"
-msgstr ""
+msgstr "Изабери raw уређај"
 
 #: ../src/system-config-kdump.glade:824
 msgid "Network"
-msgstr ""
+msgstr "Мрежа"
 
 #: ../src/system-config-kdump.glade:829
 msgid "Save kdump file via network"
-msgstr ""
+msgstr "Сачувај kdump датотеку преко мреже"
 
 #: ../src/system-config-kdump.glade:850
 msgid "NFS"
-msgstr ""
+msgstr "NFS"
 
 #: ../src/system-config-kdump.glade:855
 msgid "Save kdump file via NFS"
-msgstr ""
+msgstr "Сачувај kdump датотеку преко NFS-a"
 
 #: ../src/system-config-kdump.glade:870
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../src/system-config-kdump.glade:875
 msgid "Save kdump file via SSH"
-msgstr ""
+msgstr "Сачувај kdump датотеку преко SSH"
 
 #: ../src/system-config-kdump.glade:908
 msgid "User must have necessary write permissions on the server"
-msgstr ""
+msgstr "Корисници морају имати потребне дозволе за упис на серверу"
 
 #: ../src/system-config-kdump.glade:921
 msgid "Path to directory to save kdump file on server"
-msgstr ""
+msgstr "Путања до директоријума за чување kdump датотеке на серверу"
 
 #: ../src/system-config-kdump.glade:934
 msgid "Network server name"
-msgstr ""
+msgstr "Име мрежног сервера"
 
 #: ../src/system-config-kdump.glade:947
 msgid "User name:"
-msgstr ""
+msgstr "Корисничко име: "
 
 #: ../src/system-config-kdump.glade:962
 msgid "Path to directory:"
-msgstr ""
+msgstr "Путања до директоријума:"
 
 #: ../src/system-config-kdump.glade:976
 msgid "Server name:"
-msgstr ""
+msgstr "Име сервера:"
 
 #: ../src/system-config-kdump.glade:1013
 msgid "Target settings"
-msgstr ""
+msgstr "Подешавање одредишта"
 
 #: ../src/system-config-kdump.glade:1061
 msgid "zero page"
-msgstr ""
+msgstr "нулта страница"
 
 #: ../src/system-config-kdump.glade:1066
 msgid "Exclude zero page"
-msgstr ""
+msgstr "Изостави нулту страницу"
 
 #: ../src/system-config-kdump.glade:1079
 msgid "cache page"
-msgstr ""
+msgstr "кеширана страница"
 
 #: ../src/system-config-kdump.glade:1084
 msgid "Exclude cache page"
-msgstr ""
+msgstr "Изостави кеширану страницу"
 
 #: ../src/system-config-kdump.glade:1097
 msgid "cache private"
-msgstr ""
+msgstr "приватни кеш"
 
 #: ../src/system-config-kdump.glade:1102
 msgid "Exclude cache private"
-msgstr ""
+msgstr "Изостави приватни кеш"
 
 #: ../src/system-config-kdump.glade:1115
 msgid "user data"
-msgstr ""
+msgstr "кориснички подаци"
 
 #: ../src/system-config-kdump.glade:1120
 msgid "Exclude user data"
-msgstr ""
+msgstr "Изостави корисничке податке"
 
 #: ../src/system-config-kdump.glade:1133
 msgid "free page"
-msgstr ""
+msgstr "слободна страница"
 
 #: ../src/system-config-kdump.glade:1138
 msgid "Exclude free page"
-msgstr ""
+msgstr "Изостави слободну страницу"
 
 #: ../src/system-config-kdump.glade:1159
 msgid "Actual filter level:"
-msgstr ""
+msgstr "Прави ниво филтера:"
 
 #: ../src/system-config-kdump.glade:1197
 msgid "<b>Filtering level </b>"
-msgstr ""
+msgstr "<b>Ниво филтрирања </b>"
 
 #: ../src/system-config-kdump.glade:1229
 msgid "ELF file format"
-msgstr ""
+msgstr "ELF формат датотеке"
 
 #: ../src/system-config-kdump.glade:1248
 msgid "diskdump file format"
-msgstr ""
+msgstr "diskdump формат датотеке"
 
 #: ../src/system-config-kdump.glade:1274
 msgid "<b>Output file format</b>"
-msgstr ""
+msgstr "<b>Излазни формат датотеке</b>"
 
 #: ../src/system-config-kdump.glade:1301
 msgid "Filtering settings"
-msgstr ""
+msgstr "Подешавања филтрирања"
 
 #: ../src/system-config-kdump.glade:1351
 msgid "Default initrd"
-msgstr ""
+msgstr "Подразумевани initrd"
 
 #: ../src/system-config-kdump.glade:1356
 msgid "Use default initrd"
-msgstr ""
+msgstr "Користи подразумевани initrd"
 
 #: ../src/system-config-kdump.glade:1372
 msgid "Custom initrd"
-msgstr ""
+msgstr "Прилагођени initrd"
 
 #: ../src/system-config-kdump.glade:1377
 msgid "Use custom initrd"
-msgstr ""
+msgstr "Користи прилагођени initrd"
 
 #: ../src/system-config-kdump.glade:1396
 msgid "Choose custom initrd file"
-msgstr ""
+msgstr "Одабери прилагођену initrd датотеку"
 
 #: ../src/system-config-kdump.glade:1397
 msgid "Select An initrd File"
-msgstr ""
+msgstr "Одабери initrd датотеку"
 
 #: ../src/system-config-kdump.glade:1416
 msgid "<b>initrd selection</b>"
-msgstr ""
+msgstr "<b>initrd одабир</b>"
 
 #: ../src/system-config-kdump.glade:1447
 msgid "Default kernel"
-msgstr ""
+msgstr "Подразумевани кернел"
 
 #: ../src/system-config-kdump.glade:1452
 msgid "Use default kernel image"
-msgstr ""
+msgstr "Користи подразумевану слику кернела"
 
 #: ../src/system-config-kdump.glade:1468
 msgid "Custom kernel"
-msgstr ""
+msgstr "Прилагођени кернел"
 
 #: ../src/system-config-kdump.glade:1473
 msgid "Use custom kernel image"
-msgstr ""
+msgstr "Користи прилагођену слику кернела"
 
 #: ../src/system-config-kdump.glade:1492
 msgid "Choose your custom kernel"
-msgstr ""
+msgstr "Одаберите прилагођени кернел"
 
 #: ../src/system-config-kdump.glade:1517
 msgid "<b>Capture kernel selection</b>"
-msgstr ""
+msgstr "<b>Сними избор кернела</b>"
 
 #: ../src/system-config-kdump.glade:1570
 msgid "Kernel command line options"
-msgstr ""
+msgstr "Опције командне линије кернела"
 
 #: ../src/system-config-kdump.glade:1587
 msgid "Original kernel command line options"
-msgstr ""
+msgstr "Оригиналне опције командне линије кернела"
 
 #: ../src/system-config-kdump.glade:1604
 msgid "Original:"
-msgstr ""
+msgstr "Оригинал:"
 
 #: ../src/system-config-kdump.glade:1617
 msgid "Edited:"
-msgstr ""
+msgstr "Измењено:"
 
 #: ../src/system-config-kdump.glade:1635
 msgid "<b>Command line options</b>"
-msgstr ""
+msgstr "<b>Опције командне линије</b>"
 
 #: ../src/system-config-kdump.glade:1668
 msgid "Choose default action"
-msgstr ""
+msgstr "Изаберите подразумевану акцију"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>Акција ако избацивање не успе</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"
-msgstr ""
+msgstr "<b>Језгро колектора</b>"
 
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
-msgstr ""
+msgstr "Стручна подешавања"

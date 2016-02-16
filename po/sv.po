@@ -6,6 +6,7 @@
 # Göran Uddeborg <goeran@uddeborg.se>, 2010, 2011
 # Magnus Larsson <fedoratrans@gmail.com>, 2006-2007
 # Ulrika Uddeborg <aurorauddeborg@gmail.com>, 2012
+# Göran Uddeborg <goeran@uddeborg.se>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -14,13 +15,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-03 09:01-0400\n"
-"Last-Translator: mmilata <mmilata@redhat.com>\n"
+"PO-Revision-Date: 2015-02-27 11:24-0500\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/fedora/language/"
 "sv/)\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -63,23 +64,23 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "Starta om"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "Stanna"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "Stäng av"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "Starta ett skal"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
-msgstr ""
+msgstr "Dumpa till rotfilsystemet och starta om"
 
 #: ../src/system-config-kdump.py:130
 msgid ""
@@ -133,6 +134,8 @@ msgid ""
 "Unable to detect total system memory from /proc/iomem. Total system memory "
 "will not be accurate."
 msgstr ""
+"Kan inte avgöra det totala systemminnet från /proc/iomem.  Det totala "
+"systemminnet kommer inte vara korrekt."
 
 #: ../src/system-config-kdump.py:565
 msgid "system-config-kdump: Memory error"
@@ -392,7 +395,8 @@ msgstr "System config kdump: dbus-fel"
 #: ../src/system-config-kdump.py:1991
 msgid "D-Bus server is not running.\n"
 "Please make sure D-Bus is running.\n"
-msgstr ""
+msgstr "D-Bus-servern kör inte\n"
+"Se till att D-Bus kör.\n"
 
 #: ../src/system-config-kdump.py:2004
 msgid "Error executing system-config-kdump"
@@ -476,11 +480,11 @@ msgstr "Avaktivera"
 
 #: ../src/system-config-kdump.glade:390
 msgid "Firmware assisted dump"
-msgstr ""
+msgstr "Dump assisterad av fast programvara"
 
 #: ../src/system-config-kdump.glade:408
 msgid "Manual settings"
-msgstr ""
+msgstr "Manuella inställningar"
 
 #: ../src/system-config-kdump.glade:446
 msgid "Total System Memory:"
@@ -745,7 +749,7 @@ msgstr "Välj standardåtgärd"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>Åtgärd om dumpandet misslyckas</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"

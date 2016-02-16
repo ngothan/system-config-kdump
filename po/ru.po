@@ -7,6 +7,8 @@
 # Yulia Poyarkova <ypoyarko@redhat.com>, 2006, 2010, 2012
 # Yulia <yulia.poyarkova@redhat.com>, 2013
 # Yulia <yulia.poyarkova@redhat.com>, 2012
+# yuliya <ypoyarko@redhat.com>, 2015. #zanata
+# yuliya <ypoyarko@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,13 +17,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-03 09:54-0400\n"
-"Last-Translator: Yulia <yulia.poyarkova@redhat.com>\n"
+"PO-Revision-Date: 2016-02-09 10:13-0500\n"
+"Last-Translator: yuliya <ypoyarko@redhat.com>\n"
 "Language-Team: Russian <trans-ru@lists.fedoraproject.org>\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -47,12 +49,12 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 675 Mass "
 "Ave, Cambridge, MA 02139, USA."
 msgstr ""
-"Эта программа относится к категории свободного программного обеспечения; "
-"разрешается её изменять и распространять в соответствии с условиями лицензии "
+"Эта программа относится к категории свободного программного обеспечения; ее "
+"изменение и распространение допускается в соответствии с условиями лицензии "
 "GNU General Public License 2 и её поздних версий, опубликованных фондом "
 "свободного программного обеспечения. \n"
 "\n"
-"Программа распространяется в надежде, что она может быть полезной, но БЕЗ "
+"Программа распространяется в надежде, что она сможет принести пользу, но БЕЗ "
 "КАКИХ-ЛИБО ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, В ТОМ ЧИСЛЕ БЕЗ "
 "ГАРАНТИЙ КОММЕРЧЕСКОЙ ЦЕННОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Подробную "
 "информацию можно найти в тексте лицензии GNU. \n"
@@ -62,19 +64,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "Перезагрузить"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "Прервать"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "Выключить"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "Открыть оболочку"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
@@ -93,8 +95,8 @@ msgstr ""
 "Kdump предоставляет механизм создания дампа памяти при аварийном выходе. В "
 "случае системного сбоя kdump может создать снимок после загрузки нового "
 "ядра, что намного надежнее создания снимка аварийного ядра. Полученный файл "
-"может помочь при диагностике причин сбоя. Обратите внимание, что kdump "
-"требует выделить память исключительно для его работы."
+"может помочь при диагностике причин сбоя. Обратите внимание, что для kdump "
+"память выделяется отдельно."
 
 #: ../src/system-config-kdump.py:140
 msgid ""
@@ -347,12 +349,12 @@ msgstr "  (тип %s) не найден"
 
 #: ../src/system-config-kdump.py:1793
 msgid "core will be in /var/crash/%DATE on rootfs"
-msgstr "данные ядра будут сохранены в /var/crash/%DATE в rootfs"
+msgstr "данные будут сохранены в /var/crash/%DATE в rootfs"
 
 #: ../src/system-config-kdump.py:1796
 #, python-format
 msgid "core will be in %s/%%DATE on %s"
-msgstr "данные ядра будут сохранены в  %s/%%DATE в %s"
+msgstr "данные будут сохранены в  %s/%%DATE в %s"
 
 #: ../src/system-config-kdump.py:1896
 msgid ""
@@ -413,11 +415,11 @@ msgstr "Stderr"
 
 #: ../src/system-config-kdump.glade:7
 msgid "About system-config-kdump"
-msgstr "О system-config-kdump"
+msgstr "О программе system-config-kdump"
 
 #: ../src/system-config-kdump.glade:72
 msgid "Kernel Dump Configuration"
-msgstr "Настройка дампа ядра"
+msgstr "Конфигурация KDump"
 
 #: ../src/system-config-kdump.glade:92
 msgid "_File"
@@ -475,15 +477,15 @@ msgstr "Дамп на микропрограммном уровне"
 
 #: ../src/system-config-kdump.glade:408
 msgid "Manual settings"
-msgstr "Ручные настройки"
+msgstr "Настроить вручную"
 
 #: ../src/system-config-kdump.glade:446
 msgid "Total System Memory:"
-msgstr "Общий объём памяти:"
+msgstr "Всего памяти:"
 
 #: ../src/system-config-kdump.glade:458
 msgid "Current kdump Memory:"
-msgstr "Текущая память kdump:"
+msgstr "Память kdump:"
 
 #: ../src/system-config-kdump.glade:472
 msgid "New kdump Memory:"
@@ -728,7 +730,7 @@ msgstr "Исходные:"
 
 #: ../src/system-config-kdump.glade:1617
 msgid "Edited:"
-msgstr "Изменённые:"
+msgstr "Новые:"
 
 #: ../src/system-config-kdump.glade:1635
 msgid "<b>Command line options</b>"
@@ -740,7 +742,7 @@ msgstr "Выберите действие по умолчанию"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>Действие в случае неудачи</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"
@@ -748,4 +750,4 @@ msgstr "<b>Команда</b>"
 
 #: ../src/system-config-kdump.glade:1767
 msgid "Expert settings"
-msgstr "Дополнительные"
+msgstr "Дополнительно"

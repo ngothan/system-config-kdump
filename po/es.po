@@ -8,6 +8,7 @@
 # Gladys Guerrero <gguerrer@redhat.com>, 2012
 # Daniel Cabrera <logan@fedoraproject.org>, 2010
 # Manuel Ospina <mospina@redhat.com>, 2006
+# Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -16,12 +17,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-09 03:11-0400\n"
-"Last-Translator: vareli <ehespinosa@ya.com>\n"
+"PO-Revision-Date: 2015-09-05 08:29-0400\n"
+"Last-Translator: Máximo Castañeda Riloba <mcrcctm@gmail.com>\n"
 "Language-Team: Spanish <trans-es@lists.fedoraproject.org>\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.5.1\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../src/system-config-kdump.py:76
 msgid "(c)"
@@ -63,19 +64,19 @@ msgstr ""
 
 #: ../src/system-config-kdump.py:117
 msgid "Reboot"
-msgstr ""
+msgstr "Reiniciar"
 
 #: ../src/system-config-kdump.py:118
 msgid "Halt"
-msgstr ""
+msgstr "Parar"
 
 #: ../src/system-config-kdump.py:119
 msgid "Power off"
-msgstr ""
+msgstr "Apagar"
 
 #: ../src/system-config-kdump.py:120
 msgid "Start a shell"
-msgstr ""
+msgstr "Iniciar consola"
 
 #: ../src/system-config-kdump.py:121
 msgid "Dump to rootfs and reboot"
@@ -327,11 +328,13 @@ msgid "Invalid crashkernel value: %s.\n"
 "\tX@Y\n"
 "\n"
 "%s"
-msgstr "Valor de kernel inválido: %s\n"
+msgstr ""
+"Valor de crashkernel inválido: %s\n"
 "Los valores posibles son:\n"
-"»X\n"
-"»X@Y\n"
-" %s"
+"\tX\n"
+"\tX@Y\n"
+"\n"
+"%s"
 
 #: ../src/system-config-kdump.py:1577
 msgid "Bad crashkernel value"
@@ -750,7 +753,7 @@ msgstr "Elija la acción predeterminada"
 
 #: ../src/system-config-kdump.glade:1692
 msgid "<b>Action if dumping fails</b>"
-msgstr ""
+msgstr "<b>Acción si falla el volcado</b>"
 
 #: ../src/system-config-kdump.glade:1741
 msgid "<b>Core collector</b>"
