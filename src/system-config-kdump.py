@@ -1837,7 +1837,7 @@ class MainWindow:
             mntpoint = line[1]
             fstype = line[2]
 
-            if fstype == "nfs":
+            if fstype == "nfs" or fstype == "nfs4":
                 mounts.append(dev)
 
         return mounts
